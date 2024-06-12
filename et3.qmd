@@ -1,0 +1,31 @@
+---
+title: "LME (all) (ET3)"
+format:
+  html:
+    toc: true
+---
+
+Extended Data Table 3 is the output of linear mixed-effects models run on all complete cases in the [helper-lme](helper-lmm.qmd) script using the model `(value ~ age at consent + smoking pack years + visitId + (1|subjectId)`.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, message = F, warning = F, eval = T)
+```
+
+```{r libraries}
+library(dplyr)
+library(here)
+here::i_am('et3.qmd')
+```
+
+```{r}
+load(here("out/out_lmm_factor.Rdata"))
+source(here("src/renameVarsLME.R"))
+out_lmm<- renameVarsLME(out_lmm)
+```
+
+```{r}
+DT::datatable(out_lmm[["Basic model with packyears"]] |> 
+                dplyr::filter(!is.na(p.value_visitIdM6)) |> 
+                dplyr::arrange(p.value_visitIdM6) |> 
+  dplyr::select(assay:p.value_smoking_py))
+```

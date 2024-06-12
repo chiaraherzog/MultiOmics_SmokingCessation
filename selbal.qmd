@@ -1,0 +1,1687 @@
+---
+title: "Selbal selected balances"
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-overflow: wrap
+    code-tools: true
+---
+
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = T, message = F, warning = F, eval = F)
+```
+
+```{r libs}
+### package fixed, pull from own github repo
+#devtools::install_github(repo = "ChVav/selbal")
+library(selbal)
+library(tidyverse)
+library(MultiAssayExperiment)
+library(ampvis2)
+library(grid)
+
+```
+
+```{r colors}
+cols <- c("#1b69a1", "#48a0af", "#71b5a9", "#ec6669", "#f39668", "#bd647d", "#832c9b", "#5f70a8")
+```
+
+Training and optimizing selbal for selection of microbial taxa associated with smoking.
+
+* Alternative method to pcoa/pca/lmm to discover features associated with smoking/smoking cessation
+* Selbal: forward selection algorithm for the identification of two groups of variables whose balance is most associated with the response variable
+* Note that zero's are replaced by a very small value
+* training balance on M0 smoker versus control group
+* evaluating balance on all groups
+
+```{r}
+
+# ASV tables including control group
+ASVtable_saliva_extend <- readRDS("./out/ctrl_group_microbiome/1-output/ASVtable_saliva_S_ctrl.Rds")
+pheno_saliva_extend <- readRDS("./out/ctrl_group_microbiome/1-output/pheno_saliva_S_ctrl.Rds")
+
+ASVtable_stool_extend <- readRDS("./out/ctrl_group_microbiome/1-output/ASVtable_stool_S_ctrl.Rds")
+pheno_stool_extend <- readRDS("./out/ctrl_group_microbiome/1-output/pheno_stool_S_ctrl.Rds")
+
+```
+
+# Saliva
+## Families
+### Model 1
+
+* opt.cri = 1se
+
+#### Train
+
+```{r, eval = F}
+
+# x matrix, rows = counts for each sample, columns = taxa
+# y vector with the response variable. (factor if dichotomous or numeric if continuouas)
+x <- amp_load(otutable=ASVtable_saliva_extend,
+              metadata=pheno_saliva_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Family",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  dplyr::select(matches("M0")) %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_saliva_extend %>%
+  dplyr::filter(sampleId %in% c(x$sampleId)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId")
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+
+# Run selbal.cv function (with the default values for zero.rep and opt.cri)
+CV.BAL.dic <- selbal.cv(x = x, 
+                        y = y, 
+                        n.fold = 3, # setting folds to 4 gave an error
+                        n.iter = 10, 
+                        covar = NULL, 
+                        logit.acc = "AUC") # setting user_numVar = 4 gave error
+
+# save output
+saveRDS(CV.BAL.dic, file = "out/selbal/salivaselbal1_family.Rds")
+
+```
+
+#### Evaluate
+
+```{r}
+
+CV.BAL.dic <- readRDS("out/selbal/salivaselbal1_family.Rds")
+# built-in evaluation
+
+CV.BAL.dic$accuracy.nvar
+
+
+```
+
+```{r}
+
+CV.BAL.dic$var.barplot
+
+
+```
+
+```{r, fig.width = 15, fig.height = 5}
+
+grid.draw(CV.BAL.dic$global.plot)
+
+```
+
+* 2 taxa selected
+
+```{r, fig.width = 15, fig.height = 5}
+ 
+plot.tab(CV.BAL.dic$cv.tab)
+
+```
+
+* not getting a robust selection? might be due to prevalence or outlier in control group
+
+```{r}
+
+CV.BAL.dic$cv.accuracy; summary(CV.BAL.dic$cv.accuracy)
+
+```
+
+* cross-validation accuracy 0.71
+
+```{r}
+# final score calculation, include all data
+x <- amp_load(otutable=ASVtable_saliva_extend,
+              metadata=pheno_saliva_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Family",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_saliva_extend %>%
+  dplyr::filter(!is.na(group)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId") %>%
+  na.omit()
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+out <- data.frame(sampleId = rownames(x),
+                  selbalScore_salivaSmok = bal.value(CV.BAL.dic$global.balance,log(cmultRepl2(x))))
+
+# plot score
+my_cols <- c(cols[2],cols[4],cols[1],cols[4],cols[1],cols[4],cols[1],cols[4])
+names(my_cols) <- c("control","M0 smoker","M2 ex-smoker", "M2 smoker","M4 ex-smoker", "M4 smoker","M6 ex-smoker", "M6 smoker")
+
+tmp <- pheno_saliva_extend %>%
+  #dplyr::filter(sampleId %in% c(out$sampleId)) %>%
+  dplyr::select(sampleId,group) %>%
+  dplyr::full_join(out)
+
+plot <-  tmp %>%
+  ggplot(aes(x = selbalScore_salivaSmok, y = group, fill = group)) +
+      geom_boxplot(color = 'black', size = 1) +
+      scale_fill_manual(values = my_cols) +
+      theme_bw() +
+      ylab('') +
+      xlab('selbalScore') +
+      theme(legend.position = 'none') + 
+      coord_flip()
+
+plot
+
+```
+
+### Model 2
+
+* opt.cri = max
+
+#### Train
+
+```{r, eval = F}
+
+# x matrix, rows = counts for each sample, columns = taxa
+# y vector with the response variable. (factor if dichotomous or numeric if continuouas)
+x <- amp_load(otutable=ASVtable_saliva_extend,
+              metadata=pheno_saliva_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Family",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  dplyr::select(matches("M0")) %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_saliva_extend %>%
+  dplyr::filter(sampleId %in% c(x$sampleId)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId")
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+
+# Run selbal.cv function (with the default values for zero.rep and opt.cri)
+CV.BAL.dic <- selbal.cv(x = x, 
+                        y = y, 
+                        n.fold = 3, 
+                        n.iter = 10,
+                        covar = NULL, 
+                        logit.acc = "AUC",
+                        opt.cri = "max") # setting folds to 4 gave an error
+
+# save output
+saveRDS(CV.BAL.dic, file = "out/selbal/salivaselbal2_family.Rds")
+
+```
+
+#### Evaluate
+
+```{r}
+
+CV.BAL.dic <- readRDS("out/selbal/salivaselbal2_family.Rds")
+# built-in evaluation
+
+CV.BAL.dic$accuracy.nvar
+
+
+```
+
+```{r}
+
+CV.BAL.dic$var.barplot
+
+
+```
+
+```{r, fig.width = 15, fig.height = 5}
+
+grid.draw(CV.BAL.dic$global.plot)
+
+```
+
+* 4 taxa selected
+
+```{r, fig.width = 15, fig.height = 5}
+ 
+plot.tab(CV.BAL.dic$cv.tab)
+
+```
+
+* not getting a robust selection? might be due to prevalence or outlier in control group
+
+```{r}
+
+CV.BAL.dic$cv.accuracy; summary(CV.BAL.dic$cv.accuracy)
+
+```
+
+* cross-validation accuracy 0.72
+
+```{r}
+# final score calculation, include all data
+x <- amp_load(otutable=ASVtable_saliva_extend,
+              metadata=pheno_saliva_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Family",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_saliva_extend %>%
+  dplyr::filter(!is.na(group)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId") %>%
+  na.omit()
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+out <- data.frame(sampleId = rownames(x),
+                  selbalScore_salivaSmok = bal.value(CV.BAL.dic$global.balance,log(cmultRepl2(x))))
+
+# plot score
+my_cols <- c(cols[2],cols[4],cols[1],cols[4],cols[1],cols[4],cols[1],cols[4])
+names(my_cols) <- c("control","M0 smoker","M2 ex-smoker", "M2 smoker","M4 ex-smoker", "M4 smoker","M6 ex-smoker", "M6 smoker")
+
+tmp <- pheno_saliva_extend %>%
+  #dplyr::filter(sampleId %in% c(out$sampleId)) %>%
+  dplyr::select(sampleId,group) %>%
+  dplyr::full_join(out)
+
+plot <-  tmp %>%
+  ggplot(aes(x = selbalScore_salivaSmok, y = group, fill = group)) +
+      geom_boxplot(color = 'black', size = 1) +
+      scale_fill_manual(values = my_cols) +
+      theme_bw() +
+      ylab('') +
+      xlab('selbalScore') +
+      theme(legend.position = 'none') + 
+      coord_flip()
+
+plot
+
+```
+
+## Orders
+### Model 1
+
+* opt.cri = 1se
+
+#### Train
+
+```{r, eval = F}
+
+# x matrix, rows = counts for each sample, columns = taxa
+# y vector with the response variable. (factor if dichotomous or numeric if continuouas)
+x <- amp_load(otutable=ASVtable_saliva_extend,
+              metadata=pheno_saliva_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Order",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  dplyr::select(matches("M0")) %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_saliva_extend %>%
+  dplyr::filter(sampleId %in% c(x$sampleId)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId")
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+
+# Run selbal.cv function (with the default values for zero.rep and opt.cri)
+set.seed(43)
+CV.BAL.dic <- selbal.cv(x = x, 
+                        y = y, 
+                        n.fold = 3, # setting folds to 4 gave an error
+                        n.iter = 10, 
+                        covar = NULL, 
+                        logit.acc = "AUC") # setting user_numVar = 4 gave error
+
+# save output
+saveRDS(CV.BAL.dic, file = "out/selbal/salivaselbal1_order.Rds")
+
+```
+
+#### Evaluate
+
+```{r}
+
+CV.BAL.dic <- readRDS("out/selbal/salivaselbal1_order.Rds")
+# built-in evaluation
+
+CV.BAL.dic$accuracy.nvar
+
+
+```
+
+```{r}
+
+CV.BAL.dic$var.barplot
+
+
+```
+
+```{r, fig.width = 15, fig.height = 5}
+
+grid.draw(CV.BAL.dic$global.plot)
+
+```
+
+* 2 taxa selected
+
+```{r, fig.width = 15, fig.height = 5}
+ 
+plot.tab(CV.BAL.dic$cv.tab)
+
+```
+
+* not getting a robust selection? might be due to prevalence or outlier in control group
+
+```{r}
+
+CV.BAL.dic$cv.accuracy; summary(CV.BAL.dic$cv.accuracy)
+
+```
+
+* cross-validation accuracy 0.75
+
+```{r}
+# final score calculation, include all data
+x <- amp_load(otutable=ASVtable_saliva_extend,
+              metadata=pheno_saliva_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Order",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_saliva_extend %>%
+  dplyr::filter(!is.na(group)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId") %>%
+  na.omit()
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+out <- data.frame(sampleId = rownames(x),
+                  selbalScore_salivaSmok = bal.value(CV.BAL.dic$global.balance,log(cmultRepl2(x))))
+
+# plot score
+my_cols <- c(cols[2],cols[4],cols[1],cols[4],cols[1],cols[4],cols[1],cols[4])
+names(my_cols) <- c("control","M0 smoker","M2 ex-smoker", "M2 smoker","M4 ex-smoker", "M4 smoker","M6 ex-smoker", "M6 smoker")
+
+tmp <- pheno_saliva_extend %>%
+  #dplyr::filter(sampleId %in% c(out$sampleId)) %>%
+  dplyr::select(sampleId,group) %>%
+  dplyr::full_join(out)
+
+plot <-  tmp %>%
+  ggplot(aes(x = selbalScore_salivaSmok, y = group, fill = group)) +
+      geom_boxplot(color = 'black', size = 1) +
+      scale_fill_manual(values = my_cols) +
+      theme_bw() +
+      ylab('') +
+      xlab('selbalScore') +
+      theme(legend.position = 'none') + 
+      coord_flip()
+
+plot
+
+```
+
+### Model 2
+
+* opt.cri = max
+
+```{r, eval = F}
+
+# x matrix, rows = counts for each sample, columns = taxa
+# y vector with the response variable. (factor if dichotomous or numeric if continuouas)
+x <- amp_load(otutable=ASVtable_saliva_extend,
+              metadata=pheno_saliva_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Order",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  dplyr::select(matches("M0")) %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_saliva_extend %>%
+  dplyr::filter(sampleId %in% c(x$sampleId)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId")
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+
+# Run selbal.cv function (with the default values for zero.rep and opt.cri)
+CV.BAL.dic <- selbal.cv(x = x, 
+                        y = y, 
+                        n.fold = 3, 
+                        n.iter = 10,
+                        covar = NULL, 
+                        logit.acc = "AUC",
+                        opt.cri = "max") # setting folds to 4 gave an error
+
+# save output
+saveRDS(CV.BAL.dic, file = "out/selbal/salivaselbal2_order.Rds")
+
+```
+
+#### Evaluate
+
+```{r}
+
+CV.BAL.dic <- readRDS("out/selbal/salivaselbal2_order.Rds")
+# built-in evaluation
+
+CV.BAL.dic$accuracy.nvar
+
+
+```
+
+```{r}
+
+CV.BAL.dic$var.barplot
+
+
+```
+
+```{r, fig.width = 15, fig.height = 5}
+
+grid.draw(CV.BAL.dic$global.plot)
+
+```
+
+* 5 taxa selected
+
+```{r, fig.width = 15, fig.height = 5}
+ 
+plot.tab(CV.BAL.dic$cv.tab)
+
+```
+
+* not getting a robust selection? might be due to prevalence or outlier in control group
+
+```{r}
+
+CV.BAL.dic$cv.accuracy; summary(CV.BAL.dic$cv.accuracy)
+
+```
+
+* cross-validation accuracy 0.76
+
+```{r}
+# final score calculation, include all data
+x <- amp_load(otutable=ASVtable_saliva_extend,
+              metadata=pheno_saliva_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Order",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_saliva_extend %>%
+  dplyr::filter(!is.na(group)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId") %>%
+  na.omit()
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+out <- data.frame(sampleId = rownames(x),
+                  selbalScore_salivaSmok = bal.value(CV.BAL.dic$global.balance,log(cmultRepl2(x))))
+
+# plot score
+my_cols <- c(cols[2],cols[4],cols[1],cols[4],cols[1],cols[4],cols[1],cols[4])
+names(my_cols) <- c("control","M0 smoker","M2 ex-smoker", "M2 smoker","M4 ex-smoker", "M4 smoker","M6 ex-smoker", "M6 smoker")
+
+tmp <- pheno_saliva_extend %>%
+  #dplyr::filter(sampleId %in% c(out$sampleId)) %>%
+  dplyr::select(sampleId,group) %>%
+  dplyr::full_join(out)
+
+plot <-  tmp %>%
+  ggplot(aes(x = selbalScore_salivaSmok, y = group, fill = group)) +
+      geom_boxplot(color = 'black', size = 1) +
+      scale_fill_manual(values = my_cols) +
+      theme_bw() +
+      ylab('') +
+      xlab('selbalScore') +
+      theme(legend.position = 'none') + 
+      coord_flip()
+
+plot
+
+```
+
+
+## Classes
+### Model 1
+
+* opt.cri = 1se
+
+#### Train
+
+```{r, eval = F}
+
+# x matrix, rows = counts for each sample, columns = taxa
+# y vector with the response variable. (factor if dichotomous or numeric if continuouas)
+x <- amp_load(otutable=ASVtable_saliva_extend,
+              metadata=pheno_saliva_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Class",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  dplyr::select(matches("M0")) %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_saliva_extend %>%
+  dplyr::filter(sampleId %in% c(x$sampleId)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId")
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+
+# Run selbal.cv function (with the default values for zero.rep and opt.cri)
+set.seed(43)
+CV.BAL.dic <- selbal.cv(x = x, 
+                        y = y, 
+                        n.fold = 3, # setting folds to 4 gave an error
+                        n.iter = 10, 
+                        covar = NULL, 
+                        logit.acc = "AUC") # setting user_numVar = 4 gave error
+
+# save output
+saveRDS(CV.BAL.dic, file = "out/selbal/salivaselbal1_class.Rds")
+
+```
+
+#### Evaluate
+
+```{r}
+
+CV.BAL.dic <- readRDS("out/selbal/salivaselbal1_class.Rds")
+# built-in evaluation
+
+CV.BAL.dic$accuracy.nvar
+
+
+```
+
+```{r}
+
+CV.BAL.dic$var.barplot
+
+
+```
+
+```{r, fig.width = 15, fig.height = 5}
+
+grid.draw(CV.BAL.dic$global.plot)
+
+```
+
+* 2 taxa selected
+
+```{r, fig.width = 15, fig.height = 5}
+ 
+plot.tab(CV.BAL.dic$cv.tab)
+
+```
+
+* not getting a robust selection? might be due to prevalence or outlier in control group
+
+```{r}
+
+CV.BAL.dic$cv.accuracy; summary(CV.BAL.dic$cv.accuracy)
+
+```
+
+* cross-validation accuracy 0.80
+
+```{r}
+# final score calculation, include all data
+x <- amp_load(otutable=ASVtable_saliva_extend,
+              metadata=pheno_saliva_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Class",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_saliva_extend %>%
+  dplyr::filter(!is.na(group)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId") %>%
+  na.omit()
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+out <- data.frame(sampleId = rownames(x),
+                  selbalScore_salivaSmok = bal.value(CV.BAL.dic$global.balance,log(cmultRepl2(x))))
+
+# plot score
+my_cols <- c(cols[2],cols[4],cols[1],cols[4],cols[1],cols[4],cols[1],cols[4])
+names(my_cols) <- c("control","M0 smoker","M2 ex-smoker", "M2 smoker","M4 ex-smoker", "M4 smoker","M6 ex-smoker", "M6 smoker")
+
+tmp <- pheno_saliva_extend %>%
+  #dplyr::filter(sampleId %in% c(out$sampleId)) %>%
+  dplyr::select(sampleId,group) %>%
+  dplyr::full_join(out)
+
+plot <-  tmp %>%
+  ggplot(aes(x = selbalScore_salivaSmok, y = group, fill = group)) +
+      geom_boxplot(color = 'black', size = 1) +
+      scale_fill_manual(values = my_cols) +
+      theme_bw() +
+      ylab('') +
+      xlab('selbalScore') +
+      theme(legend.position = 'none') + 
+      coord_flip()
+
+plot
+
+```
+
+
+### Model 2
+
+* opt.cri = max
+
+#### Train
+
+```{r, eval = F}
+
+# x matrix, rows = counts for each sample, columns = taxa
+# y vector with the response variable. (factor if dichotomous or numeric if continuouas)
+x <- amp_load(otutable=ASVtable_saliva_extend,
+              metadata=pheno_saliva_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Class",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  dplyr::select(matches("M0")) %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_saliva_extend %>%
+  dplyr::filter(sampleId %in% c(x$sampleId)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId")
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+
+# Run selbal.cv function (with the default values for zero.rep and opt.cri)
+set.seed(43)
+CV.BAL.dic <- selbal.cv(x = x, 
+                        y = y, 
+                        n.fold = 3, # setting folds to 4 gave an error
+                        n.iter = 10, 
+                        covar = NULL, 
+                        logit.acc = "AUC",
+                        opt.cri = "max") # setting user_numVar = 4 gave error
+
+# save output
+saveRDS(CV.BAL.dic, file = "out/selbal/salivaselbal2_class.Rds")
+
+```
+
+#### Evaluate
+
+* again 2 taxa selected
+
+# Stool
+## Families
+### Model 1
+
+* opt.cri = 1se
+
+#### Train
+
+```{r, eval = F}
+
+# x matrix, rows = counts for each sample, columns = taxa
+# y vector with the response variable. (factor if dichotomous or numeric if continuouas)
+x <- amp_load(otutable=ASVtable_stool_extend,
+              metadata=pheno_stool_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Class",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  dplyr::select(matches("M0")) %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_stool_extend %>%
+  dplyr::filter(sampleId %in% c(x$sampleId)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId")
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+
+# Run selbal.cv function (with the default values for zero.rep and opt.cri)
+CV.BAL.dic <- selbal.cv(x = x, 
+                        y = y, 
+                        n.fold = 3, 
+                        n.iter = 10, 
+                        covar = NULL, 
+                        logit.acc = "AUC") 
+
+# save output
+saveRDS(CV.BAL.dic, file = "out/selbal/stoolselbal1_family.Rds")
+
+```
+
+
+#### Evaluate
+
+```{r}
+
+CV.BAL.dic <- readRDS("out/selbal/stoolselbal1_family.Rds")
+# built-in evaluation
+
+CV.BAL.dic$accuracy.nvar
+
+
+```
+
+```{r}
+
+CV.BAL.dic$var.barplot
+
+
+```
+
+```{r, fig.width = 15, fig.height = 5}
+
+grid.draw(CV.BAL.dic$global.plot)
+
+```
+
+* 4 taxa selected
+
+```{r, fig.width = 15, fig.height = 5}
+ 
+plot.tab(CV.BAL.dic$cv.tab)
+
+```
+
+* not getting a robust selection? might be due to prevalence or outlier in control group
+
+```{r}
+
+CV.BAL.dic$cv.accuracy; summary(CV.BAL.dic$cv.accuracy)
+
+```
+
+* cross-validation accuracy 0.61
+
+```{r}
+# final score calculation, include all data
+x <- amp_load(otutable=ASVtable_stool_extend,
+              metadata=pheno_stool_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Family",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_stool_extend %>%
+  dplyr::filter(!is.na(group)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId") %>%
+  na.omit()
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+out <- data.frame(sampleId = rownames(x),
+                  selbalScore_stoolSmok = bal.value(CV.BAL.dic$global.balance,log(cmultRepl2(x))))
+
+# plot score
+my_cols <- c(cols[2],cols[4],cols[1],cols[4],cols[1],cols[4],cols[1],cols[4])
+names(my_cols) <- c("control","M0 smoker","M2 ex-smoker", "M2 smoker","M4 ex-smoker", "M4 smoker","M6 ex-smoker", "M6 smoker")
+
+tmp <- pheno_stool_extend %>%
+  #dplyr::filter(sampleId %in% c(out$sampleId)) %>%
+  dplyr::select(sampleId,group) %>%
+  dplyr::full_join(out)
+
+plot <-  tmp %>%
+  ggplot(aes(x = selbalScore_stoolSmok, y = group, fill = group)) +
+      geom_boxplot(color = 'black', size = 1) +
+      scale_fill_manual(values = my_cols) +
+      theme_bw() +
+      ylab('') +
+      xlab('selbalScore') +
+      theme(legend.position = 'none') + 
+      coord_flip()
+
+plot
+
+```
+
+
+### Model 2
+
+* opt.cri = max
+
+#### Train
+
+```{r, eval = F}
+
+# x matrix, rows = counts for each sample, columns = taxa
+# y vector with the response variable. (factor if dichotomous or numeric if continuouas)
+x <- amp_load(otutable=ASVtable_stool_extend,
+              metadata=pheno_stool_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Family",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  dplyr::select(matches("M0")) %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_stool_extend %>%
+  dplyr::filter(sampleId %in% c(x$sampleId)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId")
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+
+# Run selbal.cv function (with the default values for zero.rep and opt.cri)
+set.seed(43)
+CV.BAL.dic <- selbal.cv(x = x, 
+                        y = y, 
+                        n.fold = 3, 
+                        n.iter = 10,
+                        covar = NULL, 
+                        logit.acc = "AUC",
+                        opt.cri = "max") # setting folds to 4 gave an error
+
+# save output
+saveRDS(CV.BAL.dic, file = "out/selbal/stoolselbal2_family.Rds")
+
+```
+
+#### Evaluate
+
+```{r}
+
+CV.BAL.dic <- readRDS("out/selbal/stoolselbal2_family.Rds")
+# built-in evaluation
+
+CV.BAL.dic$accuracy.nvar
+
+
+```
+
+```{r}
+
+CV.BAL.dic$var.barplot
+
+
+```
+
+```{r, fig.width = 15, fig.height = 5}
+
+grid.draw(CV.BAL.dic$global.plot)
+
+```
+
+* 6 taxa selected
+
+```{r, fig.width = 15, fig.height = 5}
+ 
+plot.tab(CV.BAL.dic$cv.tab)
+
+```
+
+* not getting a robust selection? might be due to prevalence or outlier in control group
+
+```{r}
+
+CV.BAL.dic$cv.accuracy; summary(CV.BAL.dic$cv.accuracy)
+
+```
+
+* cross-validation accuracy 0.62
+
+```{r}
+# final score calculation, include all data
+x <- amp_load(otutable=ASVtable_stool_extend,
+              metadata=pheno_stool_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Family",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_stool_extend %>%
+  dplyr::filter(!is.na(group)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId") %>%
+  na.omit()
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+out <- data.frame(sampleId = rownames(x),
+                  selbalScore_stoolSmok = bal.value(CV.BAL.dic$global.balance,log(cmultRepl2(x))))
+
+# plot score
+my_cols <- c(cols[2],cols[4],cols[1],cols[4],cols[1],cols[4],cols[1],cols[4])
+names(my_cols) <- c("control","M0 smoker","M2 ex-smoker", "M2 smoker","M4 ex-smoker", "M4 smoker","M6 ex-smoker", "M6 smoker")
+
+tmp <- pheno_stool_extend %>%
+  #dplyr::filter(sampleId %in% c(out$sampleId)) %>%
+  dplyr::select(sampleId,group) %>%
+  dplyr::full_join(out)
+
+plot <-  tmp %>%
+  ggplot(aes(x = selbalScore_stoolSmok, y = group, fill = group)) +
+      geom_boxplot(color = 'black', size = 1) +
+      scale_fill_manual(values = my_cols) +
+      theme_bw() +
+      ylab('') +
+      xlab('selbalScore') +
+      theme(legend.position = 'none') + 
+      coord_flip()
+
+plot
+
+```
+
+## Orders
+### Model 1
+
+* opt.cri = 1se
+
+#### Train
+
+```{r, eval = F}
+
+# x matrix, rows = counts for each sample, columns = taxa
+# y vector with the response variable. (factor if dichotomous or numeric if continuouas)
+x <- amp_load(otutable=ASVtable_stool_extend,
+              metadata=pheno_stool_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Order",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  dplyr::select(matches("M0")) %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_stool_extend %>%
+  dplyr::filter(sampleId %in% c(x$sampleId)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId")
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+
+# Run selbal.cv function (with the default values for zero.rep and opt.cri)
+set.seed(43)
+CV.BAL.dic <- selbal.cv(x = x, 
+                        y = y, 
+                        n.fold = 3, 
+                        n.iter = 10, 
+                        covar = NULL, 
+                        logit.acc = "AUC") 
+
+# save output
+saveRDS(CV.BAL.dic, file = "out/selbal/stoolselbal1_order.Rds")
+
+```
+
+#### Evaluate
+
+* extremely low AUC
+
+```{r}
+
+CV.BAL.dic <- readRDS("out/selbal/stoolselbal1_order.Rds")
+# built-in evaluation
+
+CV.BAL.dic$accuracy.nvar
+
+
+```
+
+```{r}
+
+CV.BAL.dic$var.barplot
+
+
+```
+
+```{r, fig.width = 15, fig.height = 5}
+
+grid.draw(CV.BAL.dic$global.plot)
+
+```
+
+* 2 taxa selected
+
+```{r, fig.width = 15, fig.height = 5}
+ 
+plot.tab(CV.BAL.dic$cv.tab)
+
+```
+
+* not getting a robust selection? might be due to prevalence or outlier in control group
+
+```{r}
+
+CV.BAL.dic$cv.accuracy; summary(CV.BAL.dic$cv.accuracy)
+
+```
+
+* cross-validation accuracy 0.58
+
+```{r}
+# final score calculation, include all data
+x <- amp_load(otutable=ASVtable_stool_extend,
+              metadata=pheno_stool_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Order",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_stool_extend %>%
+  dplyr::filter(!is.na(group)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId") %>%
+  na.omit()
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+out <- data.frame(sampleId = rownames(x),
+                  selbalScore_stoolSmok = bal.value(CV.BAL.dic$global.balance,log(cmultRepl2(x))))
+
+# plot score
+my_cols <- c(cols[2],cols[4],cols[1],cols[4],cols[1],cols[4],cols[1],cols[4])
+names(my_cols) <- c("control","M0 smoker","M2 ex-smoker", "M2 smoker","M4 ex-smoker", "M4 smoker","M6 ex-smoker", "M6 smoker")
+
+tmp <- pheno_stool_extend %>%
+  #dplyr::filter(sampleId %in% c(out$sampleId)) %>%
+  dplyr::select(sampleId,group) %>%
+  dplyr::full_join(out)
+
+plot <-  tmp %>%
+  ggplot(aes(x = selbalScore_stoolSmok, y = group, fill = group)) +
+      geom_boxplot(color = 'black', size = 1) +
+      scale_fill_manual(values = my_cols) +
+      theme_bw() +
+      ylab('') +
+      xlab('selbalScore') +
+      theme(legend.position = 'none') + 
+      coord_flip()
+
+plot
+
+```
+
+* score higher in ex-smokers compared to smokers at later time points
+
+### Model 2
+
+* opt.cri = max
+
+#### Train
+
+```{r, eval = F}
+
+# x matrix, rows = counts for each sample, columns = taxa
+# y vector with the response variable. (factor if dichotomous or numeric if continuouas)
+x <- amp_load(otutable=ASVtable_stool_extend,
+              metadata=pheno_stool_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Order",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  dplyr::select(matches("M0")) %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_stool_extend %>%
+  dplyr::filter(sampleId %in% c(x$sampleId)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId")
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+
+# Run selbal.cv function (with the default values for zero.rep and opt.cri)
+CV.BAL.dic <- selbal.cv(x = x, 
+                        y = y, 
+                        n.fold = 3, 
+                        n.iter = 10,
+                        covar = NULL, 
+                        logit.acc = "AUC",
+                        opt.cri = "max") # setting folds to 4 gave an error
+
+# save output
+saveRDS(CV.BAL.dic, file = "out/selbal/stoolselbal2_order.Rds")
+
+```
+
+#### Evaluate
+
+```{r}
+
+CV.BAL.dic <- readRDS("out/selbal/stoolselbal2_order.Rds")
+# built-in evaluation
+
+CV.BAL.dic$accuracy.nvar
+
+
+```
+
+```{r}
+
+CV.BAL.dic$var.barplot
+
+
+```
+
+```{r, fig.width = 15, fig.height = 5}
+
+grid.draw(CV.BAL.dic$global.plot)
+
+```
+
+* 6 taxa selected
+
+```{r, fig.width = 15, fig.height = 5}
+ 
+plot.tab(CV.BAL.dic$cv.tab)
+
+```
+
+* not getting a robust selection? might be due to prevalence or outlier in control group
+
+```{r}
+
+CV.BAL.dic$cv.accuracy; summary(CV.BAL.dic$cv.accuracy)
+
+```
+
+* cross-validation accuracy 0.62
+
+```{r}
+# final score calculation, include all data
+x <- amp_load(otutable=ASVtable_stool_extend,
+              metadata=pheno_stool_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Order",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_stool_extend %>%
+  dplyr::filter(!is.na(group)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId") %>%
+  na.omit()
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+out <- data.frame(sampleId = rownames(x),
+                  selbalScore_stoolSmok = bal.value(CV.BAL.dic$global.balance,log(cmultRepl2(x))))
+
+# plot score
+my_cols <- c(cols[2],cols[4],cols[1],cols[4],cols[1],cols[4],cols[1],cols[4])
+names(my_cols) <- c("control","M0 smoker","M2 ex-smoker", "M2 smoker","M4 ex-smoker", "M4 smoker","M6 ex-smoker", "M6 smoker")
+
+tmp <- pheno_stool_extend %>%
+  #dplyr::filter(sampleId %in% c(out$sampleId)) %>%
+  dplyr::select(sampleId,group) %>%
+  dplyr::full_join(out)
+
+plot <-  tmp %>%
+  ggplot(aes(x = selbalScore_stoolSmok, y = group, fill = group)) +
+      geom_boxplot(color = 'black', size = 1) +
+      scale_fill_manual(values = my_cols) +
+      theme_bw() +
+      ylab('') +
+      xlab('selbalScore') +
+      theme(legend.position = 'none') + 
+      coord_flip()
+
+plot
+
+```
+
+## Classes
+### Model 1
+
+* opt.cri = 1se
+
+#### Train
+
+```{r, eval = F}
+
+# x matrix, rows = counts for each sample, columns = taxa
+# y vector with the response variable. (factor if dichotomous or numeric if continuouas)
+x <- amp_load(otutable=ASVtable_stool_extend,
+              metadata=pheno_stool_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Class",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  dplyr::select(matches("M0")) %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_stool_extend %>%
+  dplyr::filter(sampleId %in% c(x$sampleId)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId")
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+
+# Run selbal.cv function (with the default values for zero.rep and opt.cri)
+CV.BAL.dic <- selbal.cv(x = x, 
+                        y = y, 
+                        n.fold = 3, 
+                        n.iter = 10, 
+                        covar = NULL, 
+                        logit.acc = "AUC") 
+
+# save output
+saveRDS(CV.BAL.dic, file = "out/selbal/stoolselbal1_class.Rds")
+
+```
+
+#### Evaluate
+
+* extremely low AUC
+
+```{r}
+
+CV.BAL.dic <- readRDS("out/selbal/stoolselbal1_class.Rds")
+# built-in evaluation
+
+CV.BAL.dic$accuracy.nvar
+
+
+```
+
+```{r}
+
+CV.BAL.dic$var.barplot
+
+
+```
+
+```{r, fig.width = 15, fig.height = 5}
+
+grid.draw(CV.BAL.dic$global.plot)
+
+```
+
+* 2 taxa selected
+
+```{r, fig.width = 15, fig.height = 5}
+ 
+plot.tab(CV.BAL.dic$cv.tab)
+
+```
+
+* not getting a robust selection? might be due to prevalence or outlier in control group
+
+```{r}
+
+CV.BAL.dic$cv.accuracy; summary(CV.BAL.dic$cv.accuracy)
+
+```
+
+* cross-validation accuracy 0.57
+
+```{r}
+# final score calculation, include all data
+x <- amp_load(otutable=ASVtable_stool_extend,
+              metadata=pheno_stool_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Class",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_stool_extend %>%
+  dplyr::filter(!is.na(group)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId") %>%
+  na.omit()
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+out <- data.frame(sampleId = rownames(x),
+                  selbalScore_stoolSmok = bal.value(CV.BAL.dic$global.balance,log(cmultRepl2(x))))
+
+# plot score
+my_cols <- c(cols[2],cols[4],cols[1],cols[4],cols[1],cols[4],cols[1],cols[4])
+names(my_cols) <- c("control","M0 smoker","M2 ex-smoker", "M2 smoker","M4 ex-smoker", "M4 smoker","M6 ex-smoker", "M6 smoker")
+
+tmp <- pheno_stool_extend %>%
+  #dplyr::filter(sampleId %in% c(out$sampleId)) %>%
+  dplyr::select(sampleId,group) %>%
+  dplyr::full_join(out)
+
+plot <-  tmp %>%
+  ggplot(aes(x = selbalScore_stoolSmok, y = group, fill = group)) +
+      geom_boxplot(color = 'black', size = 1) +
+      scale_fill_manual(values = my_cols) +
+      theme_bw() +
+      ylab('') +
+      xlab('selbalScore') +
+      theme(legend.position = 'none') + 
+      coord_flip()
+
+plot
+
+```
+
+* score higher in ex-smokers compared to smokers at later time points
+
+
+### Model 2
+
+* opt.cri = max
+
+#### Train
+
+```{r, eval = F}
+
+# x matrix, rows = counts for each sample, columns = taxa
+# y vector with the response variable. (factor if dichotomous or numeric if continuouas)
+x <- amp_load(otutable=ASVtable_stool_extend,
+              metadata=pheno_stool_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Class",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  dplyr::select(matches("M0")) %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_stool_extend %>%
+  dplyr::filter(sampleId %in% c(x$sampleId)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId")
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+
+# Run selbal.cv function (with the default values for zero.rep and opt.cri)
+CV.BAL.dic <- selbal.cv(x = x, 
+                        y = y, 
+                        n.fold = 3, 
+                        n.iter = 10,
+                        covar = NULL, 
+                        logit.acc = "AUC",
+                        opt.cri = "max") # setting folds to 4 gave an error
+
+# save output
+saveRDS(CV.BAL.dic, file = "out/selbal/stoolselbal2_class.Rds")
+
+```
+
+#### Evaluate
+
+```{r}
+
+CV.BAL.dic <- readRDS("out/selbal/stoolselbal2_class.Rds")
+# built-in evaluation
+
+CV.BAL.dic$accuracy.nvar
+
+
+```
+
+* again 2 taxa selected

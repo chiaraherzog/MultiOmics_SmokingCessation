@@ -1,0 +1,1180 @@
+---
+title: "Epigenetic data (F3, E3)"
+format:
+  html:
+    toc: true
+---
+
+# Figures
+
+::: {.panel-tabset} 
+
+## Main figure 3
+
+![](figures-png/figure3.png)
+
+## Extended Data Figure 3
+
+![](figures-png/e3.png)
+
+:::
+
+# Code
+
+## Setup
+
+```{r setup, include=T}
+knitr::opts_chunk$set(echo = F, message = F, warning = F, eval = F)
+```
+
+```{r libs}
+suppressWarnings(suppressMessages({
+  library(here)
+  library(dplyr)
+  library(ggplot2)
+  library(patchwork)
+  library(ggtext)
+  library(ggnewscale)
+  library(broom)
+  library(lme4)
+  library(ComplexHeatmap)
+  library(ggh4x)
+  library(MultiAssayExperiment)
+  library(RColorBrewer)
+  library(viridis)
+})
+```
+
+```{r colors}
+cols <- c("#1b69a1", "#48a0af", "#71b5a9", "#ec6669", "#f39668", "#bd647d", "#832c9b", "#5f70a8")
+```
+
+```{r here}
+here::i_am('fig3-epi.qmd')
+```
+
+```{r functions}
+source(here("src/filter_smk.R"))
+source(here("src/plot_lmm_heatmap_v3.R"))
+source(here("src/paired_longitudinal_compliance.R"))
+source(here("src/plot_tissue_comparison.R"))
+source(here("src/longitudinal.R"))
+source(here("src/plotSMKReplacement_T.R"))
+source(here("src/highlightIndivLongitudinal.R"))
+```
+
+```{r cerv.load, eval = F}
+path = here("data/data_raw.Rdata")
+df_raw_cerv <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: cervical"],
+                                        colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
+                                                    "basename_cervical", "age_at_consent",
+                                                    "nic_replacement",
+                                                    "smkstop",
+                                                    "cessation_date"))) |> 
+   filter_smk(age_norm = T, type_norm = T)
+
+path = here("data/data_baseline_change.Rdata")
+df_change_cerv <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: cervical"],
+                                        colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
+                                                    "basename_cervical", "age_at_consent",
+                                                    "nic_replacement",
+                                                    "smkstop",
+                                                    "cessation_date"))) |> 
+   filter_smk(age_norm = T, type_norm = T)
+
+
+path = here("data/data_normalized.Rdata")
+df_scaled_cerv <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: cervical"],
+                                        colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
+                                                    "basename_cervical", "age_at_consent", "bmi_at_consent",
+                                                    "nic_replacement",
+                                                    "smkstop",
+                                                    "cessation_date"))) |> 
+   filter_smk(age_norm = T, type_norm = T)
+
+path = here("data/data_normalized_baseline.Rdata")
+df_scaled_change_cerv <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: cervical"],
+                                        colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
+                                                    "basename_cervical", "age_at_consent",
+                                                    "nic_replacement",
+                                                    "smkstop",
+                                                    "cessation_date"))) |> 
+   filter_smk(age_norm = T, type_norm = T)
+```
+
+```{r buc.load, eval = F}
+path = here("data/data_raw.Rdata")
+df_raw_buccal <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: buccal"],
+                                        colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
+                                                    "basename_buccal", "age_at_consent",
+                                                    "nic_replacement",
+                                                    "smkstop",
+                                                    "cessation_date"))) |> 
+   filter_smk(age_norm = T, type_norm = T)
+
+path = here("data/data_baseline_change.Rdata")
+df_change_buccal <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: buccal"],
+                                        colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
+                                                    "basename_buccal", "age_at_consent",
+                                                    "nic_replacement",
+                                                    "smkstop",
+                                                    "cessation_date"))) |> 
+   filter_smk(age_norm = T, type_norm = T)
+
+
+path = here("data/data_normalized.Rdata")
+df_scaled_buccal <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: buccal"],
+                                        colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
+                                                    "basename_buccal", "age_at_consent",
+                                                    "nic_replacement",
+                                                    "smkstop",
+                                                    "cessation_date"))) |> 
+   filter_smk(age_norm = T, type_norm = T)
+
+path = here("data/data_normalized_baseline.Rdata")
+df_scaled_change_buccal <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: buccal"],
+                                        colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
+                                                    "basename_buccal", "age_at_consent",
+                                                    "nic_replacement",
+                                                    "smkstop",
+                                                    "cessation_date"))) |> 
+   filter_smk(age_norm = T, type_norm = T)
+```
+
+```{r blood.load, eval = F}
+path = here("data/data_raw.Rdata")
+df_raw_blood <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: blood"],
+                                        colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
+                                                    "basename_blood", "age_at_consent",
+                                                    "nic_replacement",
+                                                    "smkstop",
+                                                    "cessation_date"))) |> 
+   filter_smk(age_norm = T, type_norm = T) 
+
+path = here("data/data_baseline_change.Rdata")
+df_change_blood <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: blood"],
+                                        colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
+                                                    "basename_blood", "age_at_consent",
+                                                    "nic_replacement",
+                                                    "smkstop",
+                                                    "cessation_date"))) |> 
+   filter_smk(age_norm = T, type_norm = T)
+
+
+path = here("data/data_normalized.Rdata")
+df_scaled_blood <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: blood"],
+                                        colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
+                                                    "basename_blood", "age_at_consent", "bmi_at_consent",
+                                                    "nic_replacement",
+                                                    "smkstop",
+                                                    "cessation_date"))) |> 
+   filter_smk(age_norm = T, type_norm = T) 
+
+path = here("data/data_normalized_baseline.Rdata")
+df_scaled_change_blood <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: blood"],
+                                        colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
+                                                    "basename_blood", "age_at_consent",
+                                                    "nic_replacement",
+                                                    "smkstop",
+                                                    "cessation_date"))) |> 
+   filter_smk(age_norm = T, type_norm = T)
+```
+
+## Main figure
+
+### a) PCA Heatmap
+
+```{r pca, eval = F}
+load(here("../../../../../data/tirolgesund/beta_merged.Rdata"))
+load(here("data/data_raw.Rdata"))
+
+features <-  c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py", "cig_curr", "mpstatrs", "age_at_consent", "bmi_at_consent", "etohu_curr", "diet")
+
+# Function to subset and get top variable CpGs
+topVarCpGs <- function(data, beta, tissue = c('buccal', 'cervical', 'blood'), top_sites = 0.05, vars = features){
+  
+  tmp <- wideFormat(data[,,grepl(paste0("Composite methylation scores: ", tissue), names(data@ExperimentList))],
+                   colDataCols =  c(vars, paste0("basename_", tissue))) |> 
+    as.data.frame() |>
+    dplyr::filter(interventionId == 'S')
+  
+  completecases <- tmp |>
+      dplyr::group_by(subjectId) |>
+      dplyr::count() |>
+      dplyr::filter(n == 4)
+  
+  tmp <- tmp |> 
+    dplyr::filter(subjectId %in% completecases$subjectId)
+
+  # Basenames
+  columns <- unique(tmp[[paste0("basename_", tissue)]])
+  columns <- columns[!is.na(columns)]
+  
+  # subset
+  beta <- beta_merged[,columns]
+
+  # sd
+  sd <- matrixStats::rowSds(beta)
+  names(sd) <- rownames(beta)
+  sd <- sd[order(sd, decreasing = T)]
+  sd_top <- sd[1:round(length(sd)*top_sites)]
+  beta_top <- beta[names(sd_top),]
+  
+  # pc
+  pc <- prcomp(t(beta_top), scale. = T, center = T)
+
+  # append info
+  dat <- cbind(tmp[match(rownames(pc$x), tmp[[paste0("basename_", tissue)]]),], 
+               pc$x[,1:10])
+  
+  return(list(dat = dat, 
+              pc = pc))
+}
+
+pc_blood <- topVarCpGs(data, beta_merged, 'blood', vars = features, top_sites)
+colnames(pc_blood$dat) <- gsub("Composite.methylation.scores..blood_", "", colnames(pc_blood$dat))
+
+pc_buccal <- topVarCpGs(data, beta, 'buccal')
+colnames(pc_buccal$dat) <- gsub("Composite.methylation.scores..buccal_", "", colnames(pc_buccal$dat))
+
+pc_cervical <- topVarCpGs(data, beta, 'cervical')
+colnames(pc_cervical$dat) <- gsub("Composite.methylation.scores..cervical_", "", colnames(pc_cervical$dat))
+
+pcHeatmap <- function(pc_dat){
+  
+  pc_dat <- pc_dat |> 
+    dplyr::mutate(mpstatrs = gsub("[*]", "", mpstatrs)) |> 
+    dplyr::select(-any_of(c("intactcurr", "pattern", "interventionId"))) 
+  
+  pcs <- pc_dat |> 
+    dplyr::select(PC1:PC10)
+  
+  tmp <- pc_dat |> 
+    dplyr::select(any_of(features), 'ic', 'hepidish_Neutro') |> 
+    dplyr::mutate_if(is.character, as.factor)
+
+  mat <- matrix(ncol = ncol(pcs),
+                nrow = ncol(tmp))
+  colnames(mat) <- colnames(pcs)
+  rownames(mat) <- colnames(tmp)
+  
+  for (i in colnames(mat)){
+    for (j in rownames(mat)){
+      
+      if(is.numeric(tmp[,j])){
+      mat[j,i] <- cor.test(pcs[,i], tmp[,j])$p.value
+      # pmat[j,i] <- cor.test(pcs[,i], tmp[,j])
+      } else {
+        mat[j,i] <- kruskal.test(pcs[,i], tmp[,j])$p.value
+      }
+
+    }
+  }
+  
+  return(mat)
+}
+
+pcHeatmap_blood <- pcHeatmap(pc_blood$dat)  
+pcHeatmap_buccal <- pcHeatmap(pc_buccal$dat)  
+pcHeatmap_cervical <- pcHeatmap(pc_cervical$dat)  
+
+combineHeatmaps <- function(pcHeatmap_cervical, pcHeatmap_buccal, pcHeatmap_blood){
+  
+  map <- cbind(pcHeatmap_cervical, pcHeatmap_buccal, pcHeatmap_blood)
+  groups <- rep(c("cervical", "buccal", "blood"), each = 10)
+  map <- apply(map, 2, function(t) ifelse(t < 0.05, t, NA))
+
+  labs = c('subjectId', 'visitId', 'time (linear)', 'compliance group', 'smoking pack years', "cigarettes p/d at baseline",
+           'menopausal status', 'age (at consent)', 'BMI (at consent)', 'current alcohol units/wk', 'dietary pattern', 'immune cell prop.','neutrophil prop.')
+           
+  p <- Heatmap(-log10(map),
+        row_labels = labs,
+             cluster_columns = F,
+             cluster_column_slices = F,
+             row_names_side = 'left',
+             cluster_rows = F,
+             column_split = c(rep(1, 10), rep(2, 10), rep(3, 10)),
+             column_title = NULL,
+             show_row_dend = F,
+             show_column_dend = F,
+             name = '-log10(p value)',
+             na_col = 'white',
+             col = circlize::colorRamp2(breaks = seq(40, 1.3, length.out = 5),
+                                        colors = rev(viridis::viridis(5)),
+                                        # colors = rev(color("batlow")(5)),
+                                        # colors = rev(cols[c(2,5,4, 6, 7)])
+             ),
+             row_names_gp = grid::gpar(fontsize = 9),
+             column_names_gp = grid::gpar(fontsize = 9),
+             border_gp = gpar(lwd = 0.5),
+             border = T,
+             top_annotation = HeatmapAnnotation(grp = anno_block(gp = gpar(fill = cols[c(6, 2, 1)],
+                                                                           lwd = 0.5),
+                                                                 labels = c("cervical sample", "buccal sample", "blood sample"),
+                                                                 labels_gp = gpar(col = "white",
+                                                                                  fontsize = 10,
+                                                                                  fontface = "bold"))
+             ))
+  
+  return(p)
+  }
+
+p <- combineHeatmaps(pcHeatmap_cervical, pcHeatmap_buccal, pcHeatmap_blood)
+save(p, file = here("out/pc-heatmap-epi.Rdata"))
+
+save(pc_blood, pc_buccal, pc_cervical,
+     file = here("out/pcs-epi.Rdata"))
+```
+
+```{r plot.pca, fig.width = 7.5, fig.height = 2.75, eval = F}
+load(here("out/pc-heatmap-epi.Rdata"))
+load(here("out/pcs-epi.Rdata"))
+
+draw(p)
+```
+
+```{r print.pca, eval = F}
+cairo_pdf(here("out/pdf/3a.pdf"),
+          width = 6.25, height = 2.75)
+draw(p)
+dev.off()
+```
+
+### b) ic changes
+
+```{r iccomp, fig.height = 4.55, fig.height = 3.25, eval = F}
+ic_tissues <- plot_tissue_comparison(dat_cerv = df_change_cerv,
+                       dat_buccal = df_change_buccal,
+                       dat_blood = df_change_blood,
+                       variable = 'ic',
+                       variable_blood = 'hepidish_Neutro',
+                       ylab = '∆ immune cell proportion*\nfrom baseline',
+                       filter_high = F)
+```
+
+```{r print.icchanges, eval = F}
+cairo_pdf(here("out/pdf/3b.pdf"), width = 3.75, height = 2.75)
+print(ic_tissues)
+dev.off()
+```
+
+### c) LME models (shared signatures)
+
+We are interested in exploring changes in major biomarkers across different tissues.
+
+First, we look at those that are more easily compared across tissues:
+
+```{r sharedheatmap}
+load(here("out/out_lmm_factor.Rdata"))
+
+vars <- 
+  rbind(
+    readxl::read_xlsx(here("src/indices.xlsx"), sheet = 1) |> 
+      dplyr::mutate(x = paste0('cervical_', x),
+                    assay2 = 'cervical'),
+    
+    readxl::read_xlsx(here("src/indices.xlsx"), sheet = 2) |> 
+      dplyr::mutate(x = paste0('buccal_', x),
+                    assay2 = 'buccal'),
+    
+    vars <- readxl::read_xlsx(here("src/indices.xlsx"), sheet = 3) |> 
+      dplyr::mutate(x = paste0('blood_', x),
+                    assay2 = 'blood')
+  )
+
+time <- out_lmm$`Basic model with packyears` |> 
+  dplyr::filter(grepl("Composite", x)) |> 
+  dplyr::mutate(x = gsub("Composite methylation scores: ", "", x))
+
+comp <- out_lmm$`Interaction model with packyears` |> 
+  dplyr::filter(grepl("Composite", x)) |> 
+  dplyr::mutate(x = gsub("Composite methylation scores: ", "", x))
+
+shared <- vars |> 
+  dplyr::group_by(label) |> 
+  dplyr::filter(all(c('cervical', 'buccal', 'blood') %in% assay2)) |> 
+  dplyr::arrange(label)
+
+labs1 <- shared |> 
+  dplyr::filter(assay2 == 'cervical') 
+
+cervical <- plot_lmm_heatmap_v3(lmm_data_time = time[match(labs1$x, time$x),],
+                                lmm_data_compliance = comp[match(labs1$x, comp$x),],
+                                relabel = vars,
+                              spy_cor = F,
+                                relabel_assay = T,
+                                age_cor = F,
+                                cluster = 'cluster',
+                                colour_assays = F)
+
+labs1 <- shared |> 
+  dplyr::filter(assay2 == 'buccal') 
+
+buccal <- plot_lmm_heatmap_v3(lmm_data_time = time[match(labs1$x, time$x),],
+                                lmm_data_compliance = comp[match(labs1$x, comp$x),],
+                                 relabel = vars,
+                              spy_cor = F,
+                                relabel_assay = T,
+                                age_cor = F,
+                                cluster = 'cluster',
+                                colour_assays = F)
+
+labs1 <- shared |> 
+  dplyr::filter(assay2 == 'blood') 
+
+blood <- plot_lmm_heatmap_v3(lmm_data_time = time[match(labs1$x, time$x),],
+                                lmm_data_compliance = comp[match(labs1$x, comp$x),],
+                                 relabel = vars,
+                             spy_cor = F,
+                                relabel_assay = T,
+                                age_cor = F,
+                                cluster = 'cluster',
+                                colour_assays = F)
+
+h <- (buccal + cervical + blood)
+p <- draw(h, ht_gap = unit(2.5, "cm"))
+```
+
+```{r print.sharedheatmap, eval = F}
+cairo_pdf(here("out/pdf/3c.pdf"), width = 9.5, height = 2.25)
+print(p)
+dev.off()
+```
+
+### d) Separate indices: buccal
+
+```{r}
+ids <- time[grepl('buccal', time$x) & !time$x %in% shared$x,]$x
+ids <- ids[c(1, 4, 3, 2, 5)]
+
+labs <- vars |> 
+  dplyr::group_by(label) |> 
+  dplyr::filter(!all(c('cervical', 'buccal', 'blood') %in% assay2)) |> 
+  dplyr::arrange(label)
+
+buccal_sep <- plot_lmm_heatmap_v3(lmm_data_time = time[match(ids, time$x),],
+                              lmm_data_compliance = comp[match(ids, time$x),],
+                              relabel = labs,
+                              relabel_assay = T,
+                              age_cor = F,
+                              spy_cor = F,
+                              cluster = F,
+                              colour_assays = F)
+buccal_sep
+```
+
+```{r print.sep.buccal}
+cairo_pdf(here("out/pdf/3d.pdf"), width = 4.8, height = 1.5)
+print(buccal_sep)
+dev.off()
+```
+
+### e) Separate indices: cervical
+
+```{r sep.cerv}
+ids <- time[grepl('cervical', time$x) & !time$x %in% shared$x,]$x
+ids <- ids[c(1, 9, 7, 2, 6, 3, 4, 5, 8)]
+
+labs <- vars |> 
+  dplyr::group_by(label) |> 
+  dplyr::filter(!all(c('cervical', 'buccal', 'blood') %in% assay2)) |> 
+  dplyr::arrange(label)
+
+cervical_sep <- plot_lmm_heatmap_v3(lmm_data_time = time[match(ids, time$x),],
+                              lmm_data_compliance = comp[match(ids, time$x),],
+                              relabel = labs,
+                              relabel_assay = T,
+                              age_cor = F,
+                              spy_cor = F,
+                              cluster = F,
+                              colour_assays = F)
+cervical_sep
+```
+
+```{r print.sep.cervical}
+cairo_pdf(here("out/pdf/3e.pdf"), width = 4.5, height = 1.9)
+print(cervical_sep)
+dev.off()
+```
+
+### f) Separate indices: blood
+
+```{r sep.blood}
+ids <- time[grepl('blood', time$x) & !time$x %in% shared$x,]$x
+
+labs <- vars |> 
+  dplyr::group_by(label) |> 
+  dplyr::filter(!all(c('cervical', 'buccal', 'blood') %in% assay2)) |> 
+  dplyr::arrange(label)
+
+blood_sep <- plot_lmm_heatmap_v3(lmm_data_time = time[match(ids, time$x),],
+                              lmm_data_compliance = comp[match(ids, time$x),],
+                              relabel = labs,
+                              relabel_assay = T,
+                              age_cor = F,
+                              spy_cor = F,
+                              cluster = F,
+                              colour_assays = F)
+blood_sep
+```
+
+```{r print.sep.bloodd}
+cairo_pdf(here("out/pdf/3f.pdf"), width = 3.6, height = 1.6)
+print(blood_sep)
+dev.off()
+```
+
+### g/h) Smoking cessation: WID epithelial hypoM
+
+```{r setup.figures.smk, eval = F}
+path = here("data/data_raw.Rdata")
+df <- as.data.frame(longFormat(get(load(path))[,,c("Composite methylation scores: buccal",
+                                                   "Composite methylation scores: blood",
+                                                   "Composite methylation scores: cervical")],
+                               colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py", "smoking_ever", "dailycig_longitudinal", "cig_before", "smkstop", "age_at_consent", "cessation_date"))) |> 
+  dplyr::mutate(dailycig_longitudinal = ifelse(visitId == "M0", cig_before,
+                                               dailycig_longitudinal)) |> 
+  dplyr::mutate(type = case_when(interventionId != 'S' & smoking_ever == 'no' & visitId == 'M0' ~ 'Never smoker (control)',
+                                 interventionId != 'S' & smoking_ever == 'yes' & visitId == 'M0'  ~ 'Former smoker (control)',
+                                 interventionId == 'S' & visitId == 'M0' ~ 'Smoker (baseline)',
+                                 interventionId == 'S' & visitId == 'M6' & compliance == 'higher compliance' ~ 'M6 (smoking cessation)',
+                                 interventionId == 'S' & visitId == 'M6' & compliance != 'higher compliance' ~ 'M6 (no smoking cessation)'),
+                rowname = paste0(gsub("Composite methylation scores: ", "", assay), "_", rowname),
+                sampletype = gsub("Composite methylation scores: ", "", assay))
+
+cotinine <- as.data.frame(wideFormat(data['cotinine',data@colData$interventionId=='S' & !data@colData$visitId %in% c("M12", "M18"),])) |> 
+  dplyr::rename(cotinine = Cotinine.LC.MS.Quantitation_cotinine) 
+
+df <- df |> 
+  dplyr::left_join(cotinine)
+
+indices <- c("buccal_WID_SMK_proximal_epithelial_hyperM_corr_z",
+             "buccal_WID_SMK_epithelial_hypoM_corr_z",
+             "buccal_WID_SMK_immune_hypoM_corr_z",
+             "buccal_WID_SMK_distal_epithelial_hyperM_corr_z",
+             "blood_WID_SMK_immune_hypoM_corr_z",
+             "blood_WID_SMK_proximal_epithelial_hyperM",
+             "blood_WID_SMK_epithelial_hypoM",
+             "blood_WID_SMK_distal_epithelial_hyperM",
+             "cervical_WID_SMK_epithelial_hypoM_corr_z",
+             "cervical_WID_SMK_immune_hypoM_corr_z",
+             "cervical_WID_SMK_distal_epithelial_hyperM_corr_z",
+             "cervical_WID_SMK_proximal_epithelial_hyperM_corr_z")
+```
+
+```{r epi_hypoM, fig.width = 8, fig.height = 6.5, eval = F}
+index = indices[2]
+ylab = '<b>WID-SMK, epithelial hypoM</b><br><b style="color:#48a0af">buccal</b><br>(scaled and corrected)'
+
+dat <- df |> 
+  dplyr::filter(rowname %in% index)
+lims = c(min(dat$value)*1.1, max(dat$value*1.1))
+
+med_former = dat |> 
+  dplyr::filter(type == 'Former smoker (control)' & !is.na(type) & visitId == 'M0') |> 
+  dplyr::pull(value) |> 
+  median()
+
+med_never = dat |> 
+  dplyr::filter(type == 'Never smoker (control)' & !is.na(type) & visitId == 'M0') |> 
+  dplyr::pull(value) |> 
+  median()
+
+d <- dat |> 
+  dplyr::filter(!is.na(type) & visitId == 'M0' | (visitId == 'M6' & interventionId == 'S')) |>
+  dplyr::mutate(type = factor(type, levels = c("Never smoker (control)",
+                                               "Former smoker (control)",
+                                               "Smoker (baseline)",
+                                               "M6 (no smoking cessation)",
+                                               "M6 (smoking cessation)")),
+                rowname = gsub("buccal_|cervical_|blood_|WID_SMK_|_corr_z", "", rowname),
+                rowname = gsub("_corr", "", rowname),
+                label = stringr::str_wrap(gsub("_", " ", rowname), 20)) |> 
+  ggplot(aes(x = type,
+             y = value,
+             fill = type)) +
+  theme_bw() +
+  theme(legend.position = 'top',
+        axis.text.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_markdown()) +
+  geom_hline(yintercept = med_former,
+             colour = cols[5],
+             linetype = 'dashed',alpha = 0.6) +
+  geom_hline(yintercept = med_never,
+             colour = cols[8],
+             linetype = 'dashed',alpha = 0.6) +
+  # ggdist::stat_pointinterval(.width = c(0.5, 0.75),
+  #                            aes(colour = type),
+  #                            position = position_nudge(x = -0.25)) +
+  # gghalves::geom_half_violin(aes(fill = type),
+  #                            alpha = 0.3)+
+  gghalves::geom_half_boxplot(aes(fill = type,
+                                  colour = type),
+                              alpha = 0.3,
+                              width = 0.5,
+                              outlier.shape = NA,errorbar.length = 0) +
+  gghalves::geom_half_point_panel(alpha = 0.6,
+                                  size = 1,
+                                  aes(colour = type)) +
+  # geom_boxplot() +
+  ylim(lims) +
+  scale_fill_manual(values = cols[c(8, 5, 6, 4, 1)],
+                    name = '',
+                    aesthetics = c('colour', 'fill')) +
+  labs(x = '',
+       y = ylab) +
+  guides(fill = guide_legend(nrow = 3),
+         colour = guide_legend(nrow = 3)) +
+  ggpubr::stat_compare_means(comparisons = list(c('Smoker (baseline)', 'M6 (no smoking cessation)'),
+                                                c('Smoker (baseline)', 'M6 (smoking cessation)')),
+                             label.y = c(3, 3.6),
+                             tip.length = 0.01,
+                             size = 3)
+
+e <- paired_longitudinal_compliance(df_change_buccal,
+                               variable = gsub("buccal_", "", index),
+                               p = 'p.signif',
+                               ylab = paste0("<b>∆</b> ", ylab)) +
+  theme(aspect.ratio = NULL)
+```
+
+```{r plot.smk.hypo, eval = F}
+p <- (d | e) + plot_layout(widths = c(0.9, 1.3))
+
+cairo_pdf(here("out/pdf/3gh.pdf"), width = 5.5, height = 4.25)
+print(p)
+dev.off()
+```
+
+
+### i/j buccal prox epithelial hyperM
+
+```{r fig.width = 8, fig.height = 6.5, eval = F}
+index = indices[1]
+ylab = '<b>WID-SMK, proximal epithelial hyperM</b><br><b style="color:#48a0af">buccal</b><br>(scaled and corrected)'
+
+dat <- df |> 
+  dplyr::filter(rowname %in% index)
+lims = c(min(dat$value)*1.1, max(dat$value*1.1))
+
+med_former = dat |> 
+  dplyr::filter(type == 'Former smoker (control)' & !is.na(type) & visitId == 'M0') |> 
+  dplyr::pull(value) |> 
+  median()
+
+med_never = dat |> 
+  dplyr::filter(type == 'Never smoker (control)' & !is.na(type) & visitId == 'M0') |> 
+  dplyr::pull(value) |> 
+  median()
+
+f <- dat |> 
+  dplyr::filter(!is.na(type) & visitId == 'M0' | (visitId == 'M6' & interventionId == 'S')) |>
+  dplyr::mutate(type = factor(type, levels = c("Never smoker (control)",
+                                               "Former smoker (control)",
+                                               "Smoker (baseline)",
+                                               "M6 (no smoking cessation)",
+                                               "M6 (smoking cessation)")),
+                rowname = gsub("buccal_|cervical_|blood_|WID_SMK_|_corr_z", "", rowname),
+                rowname = gsub("_corr", "", rowname),
+                label = stringr::str_wrap(gsub("_", " ", rowname), 20)) |> 
+  ggplot(aes(x = type,
+             y = value,
+             fill = type)) +
+  theme_bw() +
+  theme(legend.position = 'top',
+        axis.text.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_markdown()) +
+  geom_hline(yintercept = med_former,
+             colour = cols[5],
+             linetype = 'dashed',alpha = 0.6) +
+  geom_hline(yintercept = med_never,
+             colour = cols[8],
+             linetype = 'dashed',alpha = 0.6) +
+  # ggdist::stat_pointinterval(.width = c(0.5, 0.75),
+  #                            aes(colour = type),
+  #                            position = position_nudge(x = -0.25)) +
+  # gghalves::geom_half_violin(aes(fill = type),
+  #                            alpha = 0.3)+
+  gghalves::geom_half_boxplot(aes(fill = type,
+                                  colour = type),
+                              alpha = 0.3,
+                              width = 0.5,
+                              outlier.shape = NA,errorbar.length = 0) +
+  gghalves::geom_half_point_panel(alpha = 0.6,
+                                  size = 1,
+                                  aes(colour = type)) +
+  # geom_boxplot() +
+  ylim(lims) +
+  scale_fill_manual(values = cols[c(8, 5, 6, 4, 1)],
+                    name = '',
+                    aesthetics = c('colour', 'fill')) +
+  labs(x = '',
+       y = ylab) +
+  guides(fill = guide_legend(nrow = 3),
+         colour = guide_legend(nrow = 3)) +
+  ggpubr::stat_compare_means(comparisons = list(c('Smoker (baseline)', 'M6 (no smoking cessation)'),
+                                                c('Smoker (baseline)', 'M6 (smoking cessation)')),
+                             label.y = c(3.6, 4.1),
+                             tip.length = 0.01,
+                             size = 3)
+
+g <- paired_longitudinal_compliance(df_change_buccal,
+                               variable = gsub("buccal_", "", index),
+                               p = 'p.signif',
+                               ylab = paste0("<b>∆</b> ", ylab)) +
+  theme(aspect.ratio = NULL)
+```
+
+```{r plot.smk.proxhyperM, eval = F}
+p <- (f | g) + plot_layout(widths = c(0.9, 1.3))
+
+cairo_pdf(here("out/pdf/3fg.pdf"), width = 5.5, height = 4.25)
+print(p)
+dev.off()
+```
+
+### k/l) blood immune hypoM
+
+```{r fig.width = 8, fig.height = 6.5, eval = F}
+index = indices[5]
+ylab = '<b>WID-SMK, immune hypoM</b><br><b style="color:#1b69a1">blood</b><br>(scaled and corrected)'
+
+dat <- df |> 
+  dplyr::filter(rowname %in% index)
+lims = c(min(dat$value)*1.1, max(dat$value*1.1))
+
+med_former = dat |> 
+  dplyr::filter(type == 'Former smoker (control)' & !is.na(type) & visitId == 'M0') |> 
+  dplyr::pull(value) |> 
+  median()
+
+med_never = dat |> 
+  dplyr::filter(type == 'Never smoker (control)' & !is.na(type) & visitId == 'M0') |> 
+  dplyr::pull(value) |> 
+  median()
+
+h <- dat |> 
+  dplyr::filter(!is.na(type) & visitId == 'M0' | (visitId == 'M6' & interventionId == 'S')) |>
+  dplyr::mutate(type = factor(type, levels = c("Never smoker (control)",
+                                               "Former smoker (control)",
+                                               "Smoker (baseline)",
+                                               "M6 (no smoking cessation)",
+                                               "M6 (smoking cessation)")),
+                rowname = gsub("buccal_|cervical_|blood_|WID_SMK_|_corr_z", "", rowname),
+                rowname = gsub("_corr", "", rowname),
+                label = stringr::str_wrap(gsub("_", " ", rowname), 20)) |> 
+  ggplot(aes(x = type,
+             y = value,
+             fill = type)) +
+  theme_bw() +
+  theme(legend.position = 'top',
+        axis.text.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_markdown()) +
+  geom_hline(yintercept = med_former,
+             colour = cols[5],
+             linetype = 'dashed',alpha = 0.6) +
+  geom_hline(yintercept = med_never,
+             colour = cols[8],
+             linetype = 'dashed',alpha = 0.6) +
+  # ggdist::stat_pointinterval(.width = c(0.5, 0.75),
+  #                            aes(colour = type),
+  #                            position = position_nudge(x = -0.25)) +
+  # gghalves::geom_half_violin(aes(fill = type),
+  #                            alpha = 0.3)+
+  gghalves::geom_half_boxplot(aes(fill = type,
+                                  colour = type),
+                              alpha = 0.3,
+                              width = 0.5,
+                              outlier.shape = NA,errorbar.length = 0) +
+  gghalves::geom_half_point_panel(alpha = 0.6,
+                                  size = 1,
+                                  aes(colour = type)) +
+  # geom_boxplot() +
+  ylim(lims) +
+  scale_fill_manual(values = cols[c(8, 5, 6, 4, 1)],
+                    name = '',
+                    aesthetics = c('colour', 'fill')) +
+  labs(x = '',
+       y = ylab) +
+  guides(fill = guide_legend(nrow = 3),
+         colour = guide_legend(nrow = 3)) +
+  ggpubr::stat_compare_means(comparisons = list(c('Smoker (baseline)', 'M6 (no smoking cessation)'),
+                                                c('Smoker (baseline)', 'M6 (smoking cessation)')),
+                             label.y = c(3.4, 4.0),
+                             tip.length = 0.01,
+                             size = 3)
+
+i <- paired_longitudinal_compliance(df_change_blood,
+                               variable = gsub("blood_", "", index),
+                               p = 'p.signif',
+                               ylab = paste0("<b>∆</b> ", ylab)) +
+  theme(aspect.ratio = NULL)
+```
+
+```{r plot.smk.imm, eval = F}
+p <- (h | i) + plot_layout(widths = c(0.9, 1.3))
+
+cairo_pdf(here("out/pdf/3hi.pdf"), width = 5.5, height = 4.25)
+print(p)
+dev.off()
+```
+
+### m) AgeAccelGrimV2
+
+```{r grim, fig.width = 3, fig.height = 3.25, eval = F}
+grim <- longitudinal(df_change_blood,
+             variable = 'AgeAccelGrimV2',
+             p = 'p.signif',
+             ylab = '<b>∆ AgeAccelGrim</b> (<b style="color:#1b69a1">blood</b>)<br>')
+grim <- grim & theme(aspect.ratio = NULL)
+```
+
+```{r printgrim, eval = F}
+cairo_pdf(here("out/pdf/3m.pdf"),
+          width = 2.1, height = 2.4)
+print(grim)
+dev.off()
+```
+
+## Extended Data Figure 3
+
+### a) PCA scree plot
+
+```{r scree, eval = F}
+formatPCVar <- function(dat, tissuename){
+  tmp <- as.data.frame(t(summary(dat$pc)$importance)) |>
+    tibble::rownames_to_column('pc') |> dplyr::mutate(pc = factor(pc, levels = pc),
+                                                      tissue = tissuename) |> 
+    dplyr::slice(1:5) 
+  
+  return(tmp)
+}
+
+scree <- rbind(formatPCVar(pc_buccal, 'Buccal sample'),
+      formatPCVar(pc_blood, 'Blood sample'),
+      formatPCVar(pc_cervical, 'Cervical sample'))
+
+screeplot <- scree |> 
+  dplyr::mutate(tissue = factor(tissue, levels = c('Buccal sample', 'Cervical sample', 'Blood sample'))) |> 
+  ggplot(aes(x = pc,
+             y = `Proportion of Variance`)) +
+    geom_col(fill = cols[1]) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90,hjust = 1),
+        title = element_markdown(size = 8),
+        axis.ticks.x = element_blank(),
+        panel.grid = element_blank()) +
+  scale_y_continuous(expand = c(0, 0)) +
+  scale_x_discrete(expand = c(0, 0)) +
+  labs(y = "Proportion of variance (%)",
+       x = '') +
+  coord_cartesian(ylim = c(0, 1)) +
+  facet_wrap(~tissue)
+```
+
+```{r print.scree, eval = F}
+cairo_pdf(here("out/pdf/e3a.pdf"), width = 3.35, height = 2.5)
+print(screeplot)
+dev.off()
+```
+
+### b) PCA coloured by ic
+
+```{r suppl.pca.plots, fig.width = 9, fig.height = 3.75, eval = F}
+sizepcdot = 3
+sizeicdot = 0.7
+
+pc_ic <- rbind(dplyr::select(pc_buccal$dat, PC1, PC2, ic, hepidish_Neutro, visitId) |> dplyr::mutate(sample = 'buccal sample'),
+               dplyr::select(pc_cervical$dat, PC1, PC2, ic, hepidish_Neutro, visitId) |> dplyr::mutate(sample = 'cervical sample'),
+               dplyr::select(pc_blood$dat, PC1, PC2, ic, hepidish_Neutro, visitId) |> dplyr::mutate(sample = 'blood sample')) |> 
+  dplyr::mutate(ic = ifelse(grepl('blood', sample), hepidish_Neutro, ic))
+
+b <- pc_ic |> 
+  ggplot(aes(x = PC1,
+             y = PC2)) +
+  geom_point(aes(colour = ic),
+             size = sizeicdot,
+             alpha = 0.6) +
+  scico::scale_colour_scico(palette = 'batlow') +
+  ggnewscale::new_scale_color() +
+  stat_ellipse(aes(colour = visitId)) +
+  stat_ellipse(level = 0, geom = "point",
+               aes(colour = visitId),
+               size = sizepcdot,
+               shape = 17) +
+  scale_colour_manual(values = cols[c(2, 1, 4, 5)],
+                      name = 'Visit',
+                      aesthetics = c("colour", "fill"))  +
+  theme_bw() +
+  theme(aspect.ratio = 1,
+        axis.title.x = element_markdown(),
+        axis.title.y = element_markdown())  +
+  facet_wrap(~sample, scales = 'free')
+```
+
+
+```{r print.pcas, eval = F}
+cairo_pdf(here("out/pdf/e3b.pdf"), width = 6, height = 3)
+print(b)
+dev.off()
+```
+
+### c) Validation of smoking indices at baseline
+
+```{r baseline.smk, fig.width=9, fig.height = 9.5, eval = F}
+path = here("data/data_raw.Rdata")
+
+df <- as.data.frame(longFormat(get(load(path))[,,c("Composite methylation scores: buccal",
+                                                              "Composite methylation scores: blood",
+                                                              "Composite methylation scores: cervical")],
+                                          colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py", "smoking_ever", "dailycig_longitudinal", "cig_before", "smkstop", "age_at_consent"))) |> 
+  dplyr::mutate(dailycig_longitudinal = ifelse(visitId == "M0", cig_before,
+                                               dailycig_longitudinal)) |> 
+  dplyr::filter((visitId == 'M0' & interventionId != 'S') | interventionId == 'S') |> 
+  dplyr::mutate(type = case_when(interventionId != 'S' & smoking_ever == 'no' ~ 'Never smoker (control)',
+                                 interventionId != 'S' & smoking_ever == 'yes' ~ 'Former smoker (control)',
+                                 interventionId == 'S' & visitId == 'M0' ~ 'Current smoker',
+                                 interventionId == 'S' & smkstop == 'yes' & visitId == 'M2' ~ 'smoke stop (M2)',
+                                 interventionId == 'S' & smkstop == 'yes' & visitId == 'M4' ~ 'smoke stop (M4)',
+                                 interventionId == 'S' & smkstop == 'yes' & visitId == 'M6' ~ 'smoke stop (M6)',
+                                 interventionId == 'S' & smkstop == 'no' & visitId == 'M2' ~ 'smoking (M2)',
+                                 interventionId == 'S' & smkstop == 'no' & visitId == 'M4' ~ 'smoking (M4)',
+                                 interventionId == 'S' & smkstop == 'no' & visitId == 'M6' ~ 'smoking (M6)'),
+                rowname = paste0(gsub("Composite methylation scores: ", "", assay), "_", rowname),
+                sampletype = gsub("Composite methylation scores: ", "", assay))
+
+cotinine <- as.data.frame(wideFormat(data['cotinine',data@colData$interventionId=='S' & !data@colData$visitId %in% c("M12", "M18"),])) |> 
+  dplyr::rename(cotinine = Cotinine.LC.MS.Quantitation_cotinine) 
+
+df <- df |> 
+  dplyr::left_join(cotinine)
+
+indices <- c("buccal_WID_SMK_proximal_epithelial_hyperM_corr_z",
+             "buccal_WID_SMK_epithelial_hypoM_corr_z",
+             "buccal_WID_SMK_immune_hypoM_corr_z",
+             "buccal_WID_SMK_distal_epithelial_hyperM_corr_z",
+             "blood_WID_SMK_immune_hypoM_corr_z",
+             "blood_WID_SMK_proximal_epithelial_hyperM",
+             "blood_WID_SMK_epithelial_hypoM",
+             "blood_WID_SMK_distal_epithelial_hyperM",
+             "cervical_WID_SMK_epithelial_hypoM_corr_z",
+             "cervical_WID_SMK_immune_hypoM_corr_z",
+             "cervical_WID_SMK_distal_epithelial_hyperM_corr_z",
+             "cervical_WID_SMK_proximal_epithelial_hyperM_corr_z")
+
+smk.val <- df |>  
+  dplyr::filter(rowname %in% indices & !is.na(type) & visitId == 'M0') |>
+  # dplyr::filter(grepl("WID_SMK_", rowname) & grepl("corr_z", rowname) & !is.na(type) & visitId == 'M0') |>
+  dplyr::mutate(type = factor(type, levels = c("Never smoker (control)",
+                                               "Former smoker (control)",
+                                               "Current smoker")),
+                rowname = gsub("buccal_|cervical_|blood_|WID_SMK_|_corr_z", "", rowname),
+                rowname = gsub("_corr", "", rowname),
+                label = stringr::str_wrap(gsub("_", " ", rowname), 20)) |> 
+  ggplot(aes(x = type,
+             y = value)) +
+  # geom_boxplot() +
+  gghalves::geom_half_boxplot(aes(fill = type,
+                                  colour = type),
+                              alpha = 0.2,
+                              width = 0.6,
+                              outlier.shape = NA,errorbar.length = 0) +
+  gghalves::geom_half_point_panel(aes(colour = type),
+                                  alpha = 0.3,
+                                  size = 0.7) +
+  facet_grid(sampletype ~ label) +
+  ggpubr::stat_compare_means(comparisons = list(c("Never smoker (control)", "Former smoker (control)"),
+                                                c("Never smoker (control)", "Current smoker"),
+                                                c("Former smoker (control)", "Current smoker")),
+                             label = 'p.format',
+                             size = 2.75,
+                             hide.ns = T,
+                             label.y = c(2.75, 4, 5.25)
+  ) +
+  theme_bw() +
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        legend.position = 'top',
+        aspect.ratio = 1.7) +
+  labs(x = '',
+       y = 'Value (scaled*)') +
+  scale_colour_manual(values = cols[c(8, 5, 6)],
+                      aesthetics = c("colour", "fill"),
+                      name = '') +
+  coord_cartesian(clip = 'off')
+
+
+```
+
+```{r print.smk.val, eval = F}
+cairo_pdf(here("out/pdf/e3c.pdf"), width = 6, height = 6.5)
+print(smk.val)
+dev.off()
+```
+
+### d) Correlation with acute or more long-term indicators
+
+```{r baseline.smk.cor, fig.width = 5, fig.height = 4, eval = F}
+# Correlation heatmap?
+c <- df |>  
+  dplyr::filter(rowname %in% indices & !is.na(type) & visitId == 'M0') |>
+  dplyr::group_by(rowname, sampletype) |>
+  dplyr::filter(!is.na(value)) |> 
+  summarise(cotinine = cor(value, cotinine,use = 'complete.obs'),
+            spy = cor(value, smoking_py,use = 'complete.obs'),
+            cig = cor(value, cig_before, use = 'complete.obs'))
+
+p <- df |>  
+  dplyr::filter(rowname %in% indices & !is.na(type) & visitId == 'M0') |>
+  dplyr::group_by(rowname, sampletype) |>
+  dplyr::filter(!is.na(value)) |> 
+  summarise(cotinine.p = cor.test(value, cotinine)$p.value,
+            spy.p = cor.test(value, smoking_py)$p.value,
+            cig.p = cor.test(value, cig_before)$p.value) |> 
+  dplyr::mutate(across(ends_with(".p"), ~ gtools::stars.pval(.)))
+  
+m <- c |> 
+  dplyr::left_join(p) |> 
+  dplyr::mutate(label = gsub("buccal_|cervical_|blood_|WID_SMK_|corr_z", "", rowname),
+                label = gsub("_", " ", label))
+
+ha <-  rowAnnotation(sample = m$sampletype,
+                     col = list(sample = c("blood" = "#0d49a1",
+                                              "cervical" = "#bd647d",
+                                              "buccal" = "#48a0af")))
+
+hb <- columnAnnotation(indicator = ifelse(colnames(m[,3:5]) == 'spy', 'cumulative dose',
+                                                   'recent dose'),
+                       col = list(indicator = c('cumulative dose' = '#832c9b',
+                                                'recent dose' = '#ec6669')))
+
+cols2 = c("#1b69a1",
+         "#48a0af",
+         "#f39668",
+         "#ec6669")
+
+p <- Heatmap(as.matrix(m[,3:5]),
+             name = 'r',
+             
+             # Row details
+             row_labels = m$label,
+             row_names_side = 'left',
+             cluster_rows = T,
+             cluster_row_slices = F,
+             show_row_dend = F, 
+             row_title = NULL,
+             # 
+             # # Row annotation
+             left_annotation = ha,
+             bottom_annotation = hb,
+             
+             # Column details
+             # column_labels = col_labs,
+             # column_title_gp = grid::gpar(fontsize = 10),
+             # column_split = col_split,
+             # cluster_columns = F,
+             # show_column_dend = F,
+             
+             # Row side colours
+             
+             
+             # Annotation
+             cell_fun = function(j, i, x, y, width, height, fill) {
+               grid.text(as.matrix(m[,6:8])[i, j], x, y, gp = gpar(fontsize = 7), just = "centre")
+             },
+             
+             # # Colours
+             col = circlize::colorRamp2(breaks = seq(-1, 1,
+                                                     length.out = 30),
+                                        colors = colorRampPalette(c(cols2[c(1, 2)],
+                                                                    "grey95", cols2[c(3, 4)]))(30)
+             ),
+             
+             # Titles
+             row_names_gp = grid::gpar(fontsize = 8),
+             column_names_gp = grid::gpar(fontsize = 9),
+             
+             # Borders
+             border_gp = gpar(lwd = 0.5),
+             border = T)  
+```
+
+```{r print.dose.heatmap, eval = F}
+cairo_pdf(here("out/pdf/e3d.pdf"), width = 4.5, height = 4)
+print(p)
+dev.off()
+```
+
+### e) overall GrimAge modules
+
+```{r grim.components, eval = F}
+time <- out_lmm$`Basic model with packyears` |> 
+  dplyr::filter(grepl("Composite", x) & grepl("DNAm", x) & !grepl("DNAmTL|DNAmGrimAgeV2", x) & grepl("blood", x)) |> 
+  dplyr::mutate(x = gsub("Composite methylation scores: ", "", x))
+                
+comp <- out_lmm$`Interaction model with packyears` |> 
+  dplyr::filter(grepl("Composite", x) & grepl("DNAm", x) & !grepl("DNAmTL|DNAmGrimAgeV2", x) & grepl("blood", x))|> 
+  dplyr::mutate(x = gsub("Composite methylation scores: ", "", x))
+
+labels <- time |> 
+  dplyr::select(x = x) |> 
+  dplyr::mutate(label = gsub("blood_", "", x))
+
+heatmap <- plot_lmm_heatmap_v3(lmm_data_time = time,
+                               lmm_data_compliance = comp,
+                               age_cor = T,
+                               spy_cor = T,
+                               relabel = labels,
+                               relabel_assay = F,
+                               cluster = 'cluster',
+                               filter_relabel = F,
+                               colour_assays = NULL,
+                               mark_age_cor = F)
+
+```
+
+```{r print.grimmodules, eval = F}
+cairo_pdf(here("out/pdf/e3e.pdf"), width = 4.25, height = 3.75)
+draw(heatmap)
+dev.off()
+```
+
+
+### f) Timing
+
+```{r}
+metadata <- as.data.frame(data@metadata$`timing of collection`)
+
+c("blood" = "#0d49a1",
+                                              "cervical" = "#bd647d",
+                                              "buccal" = "#48a0af")
+
+a <- plotSMKReplacement_T(df_change_blood,
+                     "WID_SMK_immune_hypoM_corr_z", 
+                     metadata,
+                     ylab = '<b>∆ WID-SMK immune hypoM</b><br>(<span style="color:#0d49a1">blood samples</span>)')
+
+b <- plotSMKReplacement_T(df_change_buccal,
+                     "WID_SMK_epithelial_hypoM_corr_z", 
+                     metadata,
+                     ylab = '<b>∆ WID-SMK epithelial hypoM</b><br>(<span style="color:#48a0af">buccal samples</span>)')
+
+c <- plotSMKReplacement_T(df_change_buccal,
+                     "WID_SMK_proximal_epithelial_hyperM_corr_z", 
+                     metadata,
+                     ylab = '<b>∆ WID-SMK proximal epithelial hyperM</b><br>(<span style="color:#48a0af">buccal samples</span>)')
+```
+
+
+```{r print.timing, eval = F}
+cairo_pdf(here("out/pdf/e3f.pdf"), width = 9.5, height = 3)
+print((a|b|c) + plot_layout(guides = 'collect'))
+dev.off()
+
+```

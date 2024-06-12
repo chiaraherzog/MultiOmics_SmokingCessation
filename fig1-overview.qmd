@@ -1,0 +1,586 @@
+---
+title: "Overview (F1, E1)"
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-overflow: wrap
+    code-tools: true
+---
+
+# Figures
+
+::: {.panel-tabset} 
+
+## Main figure 1
+
+![](figures-png/figure1.png)
+
+## Extended Data Figure 1
+
+![](figures-png/e1.png)
+
+:::
+
+# Code
+
+## Setup
+
+```{r setup, include=T}
+knitr::opts_chunk$set(echo = T, message = F, warning = F, eval = F)
+```
+
+```{r libs, eval = F}
+library(here)
+library(fs)
+library(dplyr)
+library(ggplot2)
+library(patchwork)
+library(ComplexHeatmap)
+library(ggtext)
+library(MultiAssayExperiment)
+library(RColorBrewer)
+library(viridis)
+```
+
+```{r colors, eval = F}
+cols <- c("#1b69a1", "#48a0af", "#71b5a9", "#ec6669", "#f39668", "#bd647d", "#832c9b", "#5f70a8")
+```
+
+```{r functions}
+```
+
+```{r params, eval = F}
+alpha = 0.3
+fill = 'grey70'
+```
+
+```{r paths, eval = F}
+here::i_am("fig1-overview.qmd")
+db_path <- fs::path_expand("~/Dropbox/")
+```
+
+
+## Main figure
+
+### a) Appointments
+
+```{r appointments, fig.width = 7.25, fig.height = 2.25, eval = F}
+load(here(db_path, "data/tirolgesund/pheno/appointments.Rdata"))
+
+cess_date <- appointments |> 
+  dplyr::filter(interventionId == 'S' & visitType == 'cessation date') |> 
+  dplyr::select(visitId, t, subjectId) |> 
+  dplyr::rename(cessdate = t) |> 
+  dplyr::distinct()
+
+load(here("data/data_raw.Rdata"))
+
+compliance_main <- colData(data) |> as.data.frame()
+
+apt <- appointments |> 
+  dplyr::filter(interventionId == "S" & ! visitId %in% c("M12", "M18")) |> 
+  dplyr::left_join(dplyr::select(cess_date, subjectId, cessdate)) |> 
+  dplyr::left_join(dplyr::select(compliance_main, subjectId, compliance),
+                   relationship = 'many-to-many') |> 
+  dplyr::mutate(visitType = factor(visitType, levels = c("sample collection",
+                                                         "sports exam",
+                                                         "vascular exam",
+                                                         "dermatology exam", 
+                                                         "dropout",
+                                                         "cessation date"))) |> 
+  # dplyr::group_by(compliance) |> 
+  arrange(compliance, cessdate, subjectId) |> 
+  ggplot(aes(x = t,
+             y = forcats::fct_inorder(subjectId))) +
+  geom_ribbon(aes(xmin = 0,
+                  xmax = 10,
+                  group = as.factor(1)),
+              fill = fill,
+              alpha = alpha) +
+  geom_ribbon(aes(xmin = 49,
+                  xmax = 70,
+                  group = as.factor(1)),
+              fill = fill,
+              alpha = alpha) +
+  geom_ribbon(aes(xmin = 112,
+                  xmax = 133,
+                  group = as.factor(1)),
+              fill = fill,
+              alpha = alpha) +
+  geom_ribbon(aes(xmin = 175,
+                  xmax = 196,
+                  group = as.factor(1)),
+              fill = fill,
+              alpha = alpha) +
+  theme_bw()+
+  ggforce::geom_mark_rect(aes(fill = compliance,
+                              group = compliance,
+                              filter = compliance != 'lower compliance'),
+                          radius = 0,expand = 0.02,
+                          alpha = 0.1, fill = cols[1],
+                          colour = NA,
+                          show.legend = F) +
+  geom_line(aes(group = subjectId),
+            colour = 'grey60',
+            alpha = 0.1,
+            linewidth = 0.3) +
+  geom_point(aes(shape = visitType,
+             colour = visitType),
+             alpha = 0.8,
+             size = 0.7) + 
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        legend.position = 'right') +
+  labs(x = 'study days',
+       y = '') +
+  scale_colour_manual(values = cols[c(1, 2, 3, 5, 4, 7)],
+                      name = '') +
+  scale_shape_manual(values = c(16, 1, 15, 0, 4, 2),
+                     name = '')
+
+print(apt)
+```
+
+```{r print.apt, eval = F}
+cairo_pdf(here("out/pdf/1b.pdf"),
+          width = 5,
+          height = 2.5)
+plot(apt)
+dev.off()
+```
+
+### b) Cigarettes and cotinine (compliance)
+
+```{r cig.cotinine, fig.width = 4.5, fig.height = 2.5, eval = F}
+load(here(db_path, "data/tirolgesund/pheno/compliance.Rdata"))
+meta <- metadata(data) |> as.data.frame() |> 
+  dplyr::filter(grepl('Cotinine', timing.of.collection.assay)) |> 
+  dplyr::mutate(subjectId = substr(timing.of.collection.primary, 1, 4),
+                visitId = paste0("M", gsub(".*M", "", timing.of.collection.primary))) |> 
+  dplyr::rename(t = timing.of.collection.t)
+
+cotinine <- longFormat(data['cotinine',data@colData$interventionId=='S' & !data@colData$visitId %in% c("M12", "M18"),], colData = c('subjectId', 'visitId', 'compliance', 'dailycig_longitudinal', 'cig_before')) |> 
+  as.data.frame() |> 
+  dplyr::mutate(dailycig_longitudinal = ifelse(visitId == "M0", cig_before,
+                                               dailycig_longitudinal)) |> 
+  dplyr::left_join(dplyr::select(meta, t, visitId, subjectId))
+
+complete <- cotinine |> 
+  dplyr::group_by(subjectId) |> 
+  dplyr::count() |> 
+  dplyr::filter(n == 4)
+
+b <- cotinine |> 
+  dplyr::filter(subjectId %in% complete$subjectId) |> 
+  ggplot(aes(x = t,
+             y = value)) +
+  geom_smooth(se = F,
+              colour = 'grey60') +
+  geom_line(aes(group = subjectId),
+            alpha = 0.2,
+            colour = 'grey60') +
+  geom_point(aes(colour = dailycig_longitudinal,
+                 group = subjectId),
+             alpha = 0.7, size = 1.9) +
+  scico::scale_colour_scico(palette = 'managua',direction = -1,
+                            name = 'reported<br>daily<br>cigarettes') +
+  # scale_colour_viridis_c(option = 'turbo',
+  #                        name = 'daily reported cigarette') +
+  theme_bw() +
+  theme(panel.grid.major.x = element_blank(),
+        axis.title.y = element_markdown(),
+        legend.title = element_markdown()) +
+  facet_wrap(~compliance,
+             scales = 'free_x') +
+  labs(x = 'study day',
+       y = '<b>Urine cotinine</b><br>mmol/L')
+
+b
+```
+
+```{r print.cig.cotinine, eval=F}
+cairo_pdf(here("out/pdf/1b.pdf"),
+          width = 4.5,
+          height = 2.5)
+plot(b)
+dev.off()
+```
+
+
+### c) ICC
+
+```{r icc, eval = F}
+load(here("out/variance_partition_df_var.Rdata"))
+
+df.var.1 <- df.var |> 
+  
+  # Filter superfluous features
+  dplyr::filter(!grepl("_plaque_max|imt_max|_hba1c_ifcc|_ft4|_ft3", featureid)) |> 
+  
+  # Group clinical features as one + flow cytometry together as immune features
+  dplyr::mutate(assay = case_when(grepl("Flow cytometry", assay) ~ "Flow cytometry: immune cells", 
+                                  grepl("magnetic", assay) & grepl("Saliva", assay) ~ "Saliva metabolome",
+                                  grepl("magnetic", assay) & grepl("Urine", assay) ~ "Urine metabolome",
+                                  grepl("haemogram", assay) | (grepl("exam", assay) & !grepl("_fe|_fv|_sysbp|_diabp|_vo2max|_rel|_abs|_max", featureid)) ~ "Routine bloods",
+                                  (grepl("exam", assay) & grepl("_fe|_fv|_sysbp|_diabp|_vo2max|_rel|_abs|_max", featureid)) | (grepl("sono", assay) & grepl("pwv|imt|plaque", featureid)) ~ "Functional clinical features",
+                                  grepl("bmi|weight|scfat|vifat", featureid) ~ "Body composition",
+                                  TRUE ~ assay),
+                
+                # Formatting of text
+                assay = ifelse(grepl("bloods|metabolome|clinical|composition", assay), paste0("<b>", assay, "</b>"),
+                               paste0("<b>", gsub("[:]", "</b>:", assay)))) |> 
+  dplyr::mutate(assay = forcats::fct_reorder(assay, icc, .na_rm = T))
+
+iccplot <- df.var.1 |> 
+  ggplot(aes(y = assay,
+             x = icc)) +
+  geom_boxplot(outlier.shape = NA,
+               aes(fill = assay),
+               alpha = 0.4) +
+  ggbeeswarm::geom_beeswarm(aes(colour = assay),
+                            alpha = 0.5,
+                            size = 1.2) +
+  labs(x = 'ICC',
+       y = '') +
+  theme_bw() +
+  theme(legend.position = 'none',
+        axis.text.y = element_markdown()) +
+  scale_x_continuous(position = 'top')  +
+  scale_colour_manual(values = grDevices::colorRampPalette(cols[c(8, 1,2,3,5,4,6,7)])(11),
+                      aesthetics = c('colour', 'fill'))
+
+# # save colours for re-use elsewhere
+# levels <- levels(df.var.1$assay)
+# cols2 <- grDevices::colorRampPalette(cols[c(8, 1,2,3,5,4,6,7)])(11)
+# names(cols2) = gsub("<b>|</b>", "", levels)
+# cols_for_assays <- cols2
+# names(cols_for_assays) <- c("Saliva metabolome", "Urine metabolome", "Stool microbiome", "Saliva microbiome",
+#                             "Blood methylation", "Cervical methylation", "Buccal methylation",
+#                             "Routine bloods", "Flow cytometry: immune cells",
+#                             "Functional clinical features", "Body composition")
+# save(cols_for_assays, file = here("src/cols_for_assays.Rdata"))
+```
+
+```{r print.icc, eval=F}
+cairo_pdf(here("out/pdf/1c.pdf"),
+          width = 4.3,
+          height = 2.35)
+plot(iccplot)
+dev.off()
+```
+
+### d) Top variable features, barplot
+
+```{r topvar.bar, eval = F}
+n <- 0.3 # Prop of top cells
+
+load(here("out/variance_partition_df_var.Rdata"))
+
+exclude <- c("cells_single_cells_live_t_cells_freq_of_parent",
+             "cells_single_cells_live_t_cells_cd4_t_cells_freq_of_parent",
+             "cells_single_cells_live_t_cells_cd8_t_cells_freq_of_parent") # excluding duplicate flow cytometry families
+
+# features with max icc
+features <- df.var |>
+  tidyr::separate(featureid, "_", into = c(NA, 'rowname'), remove = F, extra = 'merge') |> 
+  dplyr::filter(!grepl("sports|sono", assay) & !rowname %in% exclude) |> 
+  
+  # Group clinical features as one + flow cytometry together as immune features
+  dplyr::mutate(assay = case_when(grepl("Flow cytometry", assay) ~ "Flow cytometry: immune cells", 
+                                  grepl("magnetic", assay) & grepl("Saliva", assay) ~ "Saliva metabolome",
+                                  grepl("magnetic", assay) & grepl("Urine", assay) ~ "Urine metabolome",
+                                  grepl("haemogram", assay) ~ "Routine bloods",
+                                  grepl("bmi|weight|scfat|vifat", featureid) ~ "Body composition",
+                                  TRUE ~ assay),
+                # Formatting of text
+                assay = ifelse(grepl("bloods|metabolome|clinical|composition", assay), paste0("<b>", assay, "</b>"),
+                               paste0("<b>", gsub("[:]", "</b>:", assay)))) |> 
+  dplyr::arrange(desc(icc)) |> 
+  dplyr::slice(1:(n()*n)) |> 
+  dplyr::select(featureid, assay)
+
+barplot <- features |> 
+  dplyr::group_by(assay) |> 
+  dplyr::count() |> 
+  dplyr::ungroup() |> 
+  dplyr::reframe(assay = assay,
+                 count = n,
+                 prop = n/sum(n)*100) |> 
+  dplyr::mutate(assay = factor(gsub("<b>|</b>", "", assay), levels = gsub("<b>|</b>", "", rev(levels)))) |>
+  ggplot(aes(x = 1,
+             fill = assay,
+             y = prop)) +
+  geom_col(width = 1,
+           just = 1) +
+  theme_minimal() +
+  theme(axis.text.x = element_blank(),
+        panel.grid = element_blank(),
+        legend.position = 'none') +
+  labs(x = '', y = paste0('Top ', n*100, '% most variable features\n(%)')) +
+  scale_fill_manual(values = rev(cols2),
+                    aesthetics = c("fill", "colour")) +
+  ggrepel::geom_text_repel(aes(color = assay,
+                               label = assay),
+    position = position_stack(vjust = 0.5),           # specify stacked position to follow bar layer's default position
+    size = 3,
+    direction = "y",
+    xlim = c(1.15, NA),
+    hjust = 0,
+    segment.size = 0.3,
+    box.padding = .25
+  ) +
+  coord_cartesian(clip = 'off',
+                  xlim = c(0, 5))
+```
+
+```{r print.bar, eval=F}
+cairo_pdf(here("out/pdf/1d.pdf"),
+          width = 2.5,
+          height = 2.5)
+plot(barplot)
+dev.off()
+```
+
+### e) Top variable features, PCA
+
+```{r, eval = F}
+# Get raw data for these features
+load("data/data_normalized.Rdata")
+omes <- c(1, 3, 5, 6, 9, 10, 13:16, 22, 28, 29)
+df <-  MultiAssayExperiment::longFormat(data[,data$interventionId == "S" & !data$visitId %in% c("M12", "M18"),omes], colDataCols=c("subjectId", "visitId", "age_at_consent", "compliance", "smoking_py", "cig_before")) |> 
+  as.data.frame() |> 
+  dplyr::mutate(featureid = paste0(assay, "_", rowname)) |> 
+  dplyr::filter(featureid %in% features$featureid) |> 
+  tidyr::pivot_wider(id_cols = subjectId:cig_before,
+                     names_from = featureid,
+                     values_from = value)
+
+mat <- as.matrix(df[,7:ncol(df)]) # matrix with data only
+rownames(mat) <- paste0(df$subjectId, df$visitId)
+
+pc <- FactoMineR::PCA(mat,graph = F)
+# factoextra::fviz_screeplot(pc)
+
+pcdat <- as.data.frame(pc$ind$coord)
+pcdat$subjectId <- df$subjectId
+pcdat$visitId <- df$visitId
+pcdat$compliance <- df$compliance
+pcdat$cig_before <- df$cig_before
+pcdat$smoking_py <- df$smoking_py
+pcdat$age_at_consent <- df$age_at_consent
+
+# Find the convex hull of the points being plotted
+hull <- pcdat |> 
+  dplyr::group_by(subjectId) |> 
+  dplyr::slice(chull(Dim.2, Dim.1))
+
+lab_x = paste0('<b>PC1</b> (', signif(pc$eig[1,2], 2), '% of variance)')
+lab_y = paste0('<b>PC2</b> (', signif(pc$eig[2,2], 2), '% of variance)')
+
+pcplot <- pcdat |> 
+  ggplot(aes(x = Dim.1,
+             y = Dim.2)) +
+  geom_point(aes(colour = subjectId,
+                 shape = visitId),
+             size = 1) +
+  geom_polygon(data = hull,
+               aes(fill = subjectId),
+               alpha = 0.3) +
+  theme_bw() +
+  theme(legend.position = 'inside',
+        legend.background = element_blank(),
+        legend.box.background = element_blank(),
+        legend.position.inside = c(0.17, 0.77),
+        panel.grid = element_blank(),
+        axis.title.x = element_markdown(),
+        axis.title.y = element_markdown(),
+        legend.box = 'vertical') +
+  scale_shape_manual(values = c(3, 2, 1, 19), name = '') +
+  scale_colour_manual(values = grDevices::colorRampPalette(cols[c(8, 1,2,3,5,4,6,7)])(42),
+                      aesthetics = c('colour', 'fill')) +
+  stat_ellipse(level = 0.0001, geom = "point", size = 3,
+               alpha = 0.05,
+               aes(shape = visitId)) +
+  stat_ellipse(aes(linetype = compliance)) +
+  scale_linetype_manual(values = c('dotted', 'dotdash'),
+                        name = '')  +
+  guides(colour = 'none', fill = 'none') +
+  labs(x = lab_x,
+       y = lab_y)
+```
+
+
+```{r print.pc, eval = F}
+cairo_pdf(here("out/pdf/1e.pdf"),
+          width = 3.75,
+          height = 3.75)
+plot(pcplot)
+dev.off()
+```
+
+### f) PCA contributions
+
+```{r pca.contrib, eval = F}
+contrib <- pc$var$contrib |> as.data.frame() |> 
+  tibble::rownames_to_column('x') |> 
+  tidyr::separate(x, "_", into = c('assay', 'feature'), extra = 'merge')
+
+load(here("src/populations_names_annotated.Rdata"))
+
+pc1 <- contrib |> 
+  dplyr::arrange(desc(Dim.1)) |> 
+  dplyr::slice(1:10) |> 
+  
+  dplyr::left_join(dplyr::select(populations, name, `second name`),by = c('feature' = 'name')) |> 
+  dplyr::mutate(feature = `second name`,
+                feature = gsub("[+]", "<sup>+</sup>", feature),
+                feature = gsub("[-]", "<sup>-</sup>", feature),
+                feature = gsub("TEM", "T<sub>em</sub>", feature),
+                feature = gsub("TN", "T<sub>n</sub>", feature),
+                feature = gsub("TREG", "T<sub>reg</sub>", feature),
+                assay = 'Flow cytometry: immune cells') |> 
+  
+  # Rename using populations
+  ggplot(aes(x = forcats::fct_reorder(feature, -Dim.1),
+             y = Dim.1,
+             fill = assay)) +
+  geom_col() +
+  theme_bw() +
+  theme(axis.text.x = element_markdown(angle = 60, hjust = 1),
+        axis.title.y = element_markdown(),
+        legend.position = 'none',
+        plot.subtitle = element_markdown(),
+        panel.grid = element_blank(),
+        axis.ticks.x = element_blank()) +
+  labs(subtitle = lab_x, x= '', y = 'Contribution (%)') +
+  coord_cartesian(ylim = c(0, 7)) +
+  scale_fill_manual(values = cols2)
+
+pc2 <- contrib |> 
+  dplyr::arrange(desc(Dim.2)) |> 
+  dplyr::slice(1:10) |> 
+  # 
+  dplyr::left_join(dplyr::select(populations, name, `population name`),by = c('feature' = 'name'))|>
+  dplyr::mutate(
+    feature = case_when(!is.na(`population name`) ~ gsub("[+]", "<sup>+</sup>", `population name`),
+                                    grepl("immune_hypoM", feature) & grepl("blood", assay) ~ "WID-SMK immune hypoM",
+                                    grepl("epithelial_hyperM", feature) ~ "WID-SMK proximal epithelial hyperM",
+                        grepl("AGE", feature) ~ "AGE index",
+                                    TRUE ~ feature),
+                assay = ifelse(grepl("cytom", assay), 'Flow cytometry: immune cells', assay)) |>
+  # 
+  # Rename using populations
+  ggplot(aes(x = forcats::fct_reorder(feature, -Dim.2),
+             y = Dim.2,
+             fill = assay)) +
+  geom_col(width = 0.9) +
+  theme_bw() +
+  theme(axis.text.x = element_markdown(angle = 60, hjust = 1),
+        axis.title.y = element_markdown(),
+        plot.subtitle = element_markdown(),
+        legend.position = 'none',
+        panel.grid = element_blank(),
+        axis.ticks.x = element_blank()) +
+  labs(subtitle = lab_y, x= '', y = '') +
+  coord_cartesian(ylim = c(0, 7)) +
+  scale_fill_manual(values = cols2)
+
+
+pc.contribs <- pc1|pc2
+```
+
+```{r print.pc.contribs, eval=F}
+cairo_pdf(here("out/pdf/1f.pdf"),
+          width = 4,
+          height = 3.8)
+plot(pc.contribs)
+dev.off()
+```
+
+## Extended Data Figure 1
+
+### a) PC and age
+
+```{r, eval = F}
+age <- pcdat |> 
+  ggplot(aes(x = Dim.1,
+             y = Dim.2,
+             colour = age_at_consent)) +
+  geom_point(size = 2.5,
+             alpha = 0.9) +
+  scico::scale_color_scico(palette = 'batlow',
+                           end = 0.85,
+                           name = 'age at consent')+
+  theme_bw() +
+  theme(legend.position = 'inside',
+        legend.background = element_blank(),
+        legend.box.background = element_blank(),
+        legend.key.width = unit(0.15, 'in'),
+        legend.key.height = unit(0.15, 'in'),
+        legend.position.inside = c(0.18, 0.76),
+        panel.grid = element_blank(),
+        axis.title.x = element_markdown(),
+        axis.title.y = element_markdown(),
+        legend.box = 'vertical') +
+  labs(x = lab_x,
+       y = lab_y)
+```
+
+
+### b) PC and smoking
+
+```{r, eval = F}
+smk <- pcdat |> 
+  ggplot(aes(x = Dim.1,
+             y = Dim.2,
+             colour = log(smoking_py))) +
+  geom_point(size = 2.5,
+             alpha = 0.9) +
+  scico::scale_color_scico(palette = 'lajolla',
+                           end = 0.85,
+                           name = 'log[smoking pack\nyears]')+
+  theme_bw() +
+  theme(legend.position = 'inside',
+        legend.background = element_blank(),
+        legend.box.background = element_blank(),
+        legend.key.width = unit(0.15, 'in'),
+        legend.key.height = unit(0.15, 'in'),
+        legend.position.inside = c(0.19, 0.76),
+        panel.grid = element_blank(),
+        axis.title.x = element_markdown(),
+        axis.title.y = element_markdown(),
+        legend.box = 'vertical') +
+  labs(x = lab_x,
+       y = lab_y)
+```
+
+### Print Extended Figure
+
+```{r}
+e1 <- (age|smk) + plot_annotation(tag_levels = 'a')
+
+cairo_pdf(here("out/pdf/e1a.pdf"),
+          width = 4,
+          height = 3.8)
+plot(age)
+dev.off()
+
+cairo_pdf(here("out/pdf/e1b.pdf"),
+          width = 4,
+          height = 3.8)
+plot(smk)
+dev.off()
+
+cairo_pdf(here("figures-pdf/e1.pdf"),
+          width = 7.75,
+          height = 3.8)
+plot(e1)
+dev.off()
+
+ggsave(here('figures-png/e1.png'),plot = e1,
+       width = 7.5, height = 3.5,units = 'in',
+       dpi = 600)
+```

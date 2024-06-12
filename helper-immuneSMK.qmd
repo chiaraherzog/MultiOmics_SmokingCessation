@@ -1,0 +1,157 @@
+---
+title: "ImmuneSMK development"
+format:
+  html:
+    toc: true
+--- 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, message = F, warning = F, eval = F)
+```
+
+```{r libs, eval = T}
+library(dplyr)
+library(glmnet)
+library(ggplot2)
+library(here)
+library(patchwork)
+library(MultiAssayExperiment)
+library(pROC)
+```
+
+```{r colors}
+cols <- c("#1b69a1", "#48a0af", "#71b5a9", "#ec6669", "#f39668", "#bd647d", "#832c9b", "#5f70a8")
+```
+
+```{r functions}
+here::i_am("helper-immuneSMK.qmd")
+source(here("src/smkPredictor.R"))
+source(here("src/trainSMK.R"))
+load(here("src/populations_names_annotated.Rdata"))
+
+# exclude some 'duplicate' populations from WB staining
+exclude <- c("cells_single_cells_live_t_cells_freq_of_parent",
+             "cells_single_cells_live_t_cells_cd4_t_cells_freq_of_parent",
+             "cells_single_cells_live_t_cells_cd8_t_cells_freq_of_parent")
+
+populations <- populations |> 
+  dplyr::filter(!name %in% exclude & main_analysis == 'yes' & !is.na(main_analysis))
+```
+
+Training and evaluating an 'ImmuneSMK' predictor, based on current smoking or smoking pack years.
+
+# Current smoking
+
+## Train
+
+```{r}
+load(here("data/data_raw.Rdata"))
+exp <- c("Flow cytometry: T cell staining", 'Flow cytometry: white blood cell staining')
+
+out <- trainSMK(data, exp, populations,
+                   mainOnly = T)
+save(out, file = here("out/immsmk-output.Rdata"))
+```
+
+```{r fig.width = 10, fig.height = 3.5, eval = T}
+load(here("out/immsmk-output.Rdata"))
+pROC::plot.roc(out$data[out$data$visitId=='M0',]$smoking_current, out$data[out$data$visitId=='M0',]$ImmuneSMK)
+```
+
+The AUC of the predictor to detect current smoking is `r round(pROC::roc(out$data[out$data$visitId=='M0',]$smoking_current, out$data[out$data$visitId=='M0',]$ImmuneSMK)$auc, 2)`. 
+
+```{r, eval = T}
+library(DT)
+out$coef
+```
+
+## Plots 
+
+::: {.panel-tabset}
+
+### Baseline associations
+
+```{r, fig.width = 10, fig.height = 4.5, eval = T}
+out$plots$smoking_current | out$plots$cig_curr_corr | out$plots$spy_corr | out$plots$boxplot_intervention
+```
+
+### Follow-up visits ∆ residuals 
+
+```{r, fig.width = 10, fig.height = 10, eval = T}
+out$plots$follow_paired
+```
+
+### Follow-up visits ('raw')
+
+```{r, fig.width = 10, fig.height = 10, eval = T}
+out$plots$follow_raw
+```
+
+:::
+
+## Save output for MAE
+
+```{r}
+immsmk <- out$data |> 
+  dplyr::select(primary, interventionId, subjectId, visitId, age_at_consent, ImmuneSMK, compliance)
+save(immsmk, file = here("out/immsmk.Rdata"))
+
+# coefficients are relevant for both if and smk paper, so saved to both
+ImmSMKcoef <- out$coef_raw |> 
+  dplyr::left_join(dplyr::select(populations, `second name`, name)) |> 
+  dplyr::rename(pop_name = `second name`)
+save(ImmSMKcoef, file = here("out/ImmSMKcoef.Rdata"))
+```
+
+# Smoking Pack Years
+
+## Train
+
+```{r}
+source(here("src/smkPredictor.R"))
+source(here("src/trainSMKSPY.R"))
+load(here("data/data_raw.Rdata"))
+exp <- c("Flow cytometry: T cell staining", 'Flow cytometry: white blood cell staining')
+
+out <- trainSMKSPY(data, exp, populations,
+                   mainOnly = T)
+save(out, file = here("out/immsmkspy-output.Rdata"))
+```
+
+```{r fig.width = 10, fig.height = 3.5, eval = T}
+load(here("out/immsmkspy-output.Rdata"))
+tmp <- out$data |> 
+  dplyr::filter(visitId == 'M0' & !is.na(smoking_py))
+```
+
+The AUC of the predictor to detect current smoking is `r round(cor(tmp$smoking_py, tmp$ImmuneSMKSPY), 2)`. 
+
+```{r, eval = T}
+out$coef
+```
+
+## Plots 
+
+::: {.panel-tabset}
+
+### Baseline associations
+
+```{r, fig.width = 10, fig.height = 4.5, eval = T}
+out$plots$smoking_current | out$plots$cig_curr_corr | out$plots$spy_corr | out$plots$boxplot_intervention
+```
+
+### Follow-up visits ∆ residuals 
+
+```{r, fig.width = 10, fig.height = 10, eval = T}
+out$plots$follow_paired
+```
+
+### Follow-up visits ('raw')
+
+```{r, fig.width = 10, fig.height = 10, eval = T}
+out$plots$follow_raw
+```
+
+:::
+
+ImmuneSMK SPY predictor does not work too well. Focus on current smoking only.

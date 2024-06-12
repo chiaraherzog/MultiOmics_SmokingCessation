@@ -1,0 +1,52 @@
+project:
+  type: website
+
+website:
+  title: 'TG repository: smoking cessation'
+  back-to-top-navigation: true
+  sidebar:
+    style: "floating"
+    search: true
+    contents:
+      - href: index.qmd
+        text: 'Home'
+      - section: "Helper functions and prep"
+        contents:
+          - helper-variance-decomposition.qmd
+          - helper-corr-age-at-baseline.qmd
+          - helper-corr-cig-at-baseline.qmd
+          - helper-corr-spy.qmd
+          - helper-wilcoxon-tests.qmd
+          - helper-lmm.qmd
+          - helper-immuneSMK.qmd
+          - metabolome-anno.qmd
+          - selbal.qmd
+          - mefisto.qmd
+      - section: "Figures"
+        contents:
+          - fig1-overview.qmd
+          - fig2-clin-imm.qmd
+          - fig3-epi.qmd
+          - fig4-metab.qmd
+          - fig5-microb.qmd
+          - fig6-integration.qmd
+      - section: "Tables"
+        contents:
+          - et1.qmd
+          - et2.qmd
+          - et3.qmd
+          - et4.qmd
+          - et5.qmd
+          - et6.qmd
+          - et7.qmd
+          - et9.qmd
+          - et10.qmd
+          
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+
