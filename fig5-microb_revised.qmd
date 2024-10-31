@@ -276,9 +276,9 @@ p
 
 ```
 
-```{r ext_5a, eval = F}
+```{r ext_5c, eval = F}
 
-cairo_pdf("out/pdf/ext5a.pdf", width = 4.5, height = 3.5)
+cairo_pdf("out/pdf/ext5c.pdf", width = 4.5, height = 3.5)
 print(p)
 dev.off()
 
@@ -361,9 +361,9 @@ p
 
 ```
 
-```{r ext_5b, eval = F}
+```{r ext_5d, eval = F}
 
-cairo_pdf("out/pdf/ext5b.pdf", width = 4.5, height = 3.5)
+cairo_pdf("out/pdf/ext5d.pdf", width = 4.5, height = 3.5)
 print(p)
 dev.off()
 
@@ -391,11 +391,11 @@ kable(table, format = "html", caption = "Aitchison distance - PERMANOVA") %>%
 
 ```{r ext_table, eval = F}
 
-table_print <- kable(table, format = "html", caption = "Extended Data Table 1. Overall and pair-wise permutational analysis of variance of the Aitchison distance for groups with different smoking status at baseline and months 2, 4 and 6 of the smoking cessation intervention.") %>%
+table_print <- kable(table, format = "html", caption = "Extended Data Table 8. Overall and pair-wise permutational analysis of variance of the Aitchison distance for groups with different smoking status at baseline and months 2, 4 and 6 of the smoking cessation intervention.") %>%
   kable_styling(bootstrap_options = "striped", full_width = FALSE) %>%
   column_spec(1, bold = TRUE)  # Make the first column bold
 
-kableExtra::save_kable(table_print, "figures-pdf/Extended_data_table2.pdf")
+kableExtra::save_kable(table_print, "figures-pdf/Extended_data_table8.pdf")
 
 ```
 
@@ -431,912 +431,11 @@ load("out/out_lmm_factor.Rdata")
 6. **Higher compliance only with packyears**: <br>
   * plotted **visitId term** from lmm ~ visitId + age_at_consent + smoking_py + (1|subjectId)
 
-## ASV-level
-
-* only rows with adjusted p-value < 0.05 are kept
-* top saliva, bottom stool
+## Family-level
+  
+* only rows with p-value < 0.01 are kept
 
 ::: {.panel-tabset}
-
-### Interaction model
-
-* no results after FDR correction for saliva
-
-```{r fig.width = 6, fig.height = 3.5, eval=F}
-
-dat_relab <- ASVtable_saliva %>%
-  mutate(label = paste0(Family,";",OTU)) %>%
-  dplyr::select(OTU,label)%>%
-  distinct() %>%
-  dplyr::rename(x=OTU)
-
-p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: ASVs",
-                              lmm_data_time = out_lmm$`Interaction model`,
-                              lmm_data_int = out_lmm$`Interaction model`,
-                              relabel = dat_relab,
-                              age_cor = T,
-                              spy_cor = T,
-                              FDR = T,
-                              cluster = 'cluster')
-
-p
-
-```
-
-```{r fig.width = 6, fig.height = 3.5}
-
-dat_relab <- ASVtable_stool %>%
-  mutate(label = paste0(Family,";",OTU)) %>%
-  dplyr::select(OTU,label)%>%
-  distinct() %>%
-  dplyr::rename(x=OTU)
-
-p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: ASVs",
-                              lmm_data_time = out_lmm$`Interaction model`,
-                              lmm_data_int = out_lmm$`Interaction model`,
-                              relabel = dat_relab,
-                              age_cor = T,
-                              spy_cor = T,
-                              FDR = T,
-                              cluster = 'cluster')
-
-p
-
-```
-
-### Interaction model with pack years
-
-* no results after FDR correction for saliva
-
-```{r fig.width = 6, fig.height = 3.5, eval = F}
-
-dat_relab <- ASVtable_saliva %>%
-  mutate(label = paste0(Family,";",OTU)) %>%
-  dplyr::select(OTU,label)%>%
-  distinct() %>%
-  dplyr::rename(x=OTU)
-
-p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: ASVs",
-                              lmm_data_time = out_lmm$`Interaction model with packyears`,
-                              lmm_data_int = out_lmm$`Interaction model with packyears`,
-                              relabel = dat_relab,
-                              age_cor = T,
-                              spy_cor = T,
-                              FDR = T,
-                              cluster = 'cluster')
-
-p
-
-```
-
-```{r fig.width = 6, fig.height = 1.5}
-
-dat_relab <- ASVtable_stool %>%
-  mutate(label = paste0(Family,";",OTU)) %>%
-  dplyr::select(OTU,label)%>%
-  distinct() %>%
-  dplyr::rename(x=OTU)
-
-p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: ASVs",
-                              lmm_data_time = out_lmm$`Interaction model with packyears`,
-                              lmm_data_int = out_lmm$`Interaction model with packyears`,
-                              relabel = dat_relab,
-                              age_cor = T,
-                              spy_cor = T,
-                              FDR = T,
-                              cluster = 'cluster')
-
-p
-
-```
-* This ASV is an outlier in the lower compliance group
-* Check relative abundance for significant features (adjusted pval < 0.05 for any estimate):
-  
-  ```{r, fig.width = 12, fig.height = 2}
-
-exp <- "Stool microbiome: ASVs"
-pval <- 0.05
-load("data/data_raw.Rdata")
-
-dat1 <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
-  filter(str_detect(x, exp))
-dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
-
-# FDR correct
-tmp_p <- dat1 %>%
-  dplyr::select(x,contains("p.value")) %>%
-  pivot_longer(cols = contains("p.value"),names_to = "estimate", values_to = "p_value") %>%
-  FDR_correct() %>%
-  pivot_wider(id_cols = x, names_from = estimate, values_from = p_value)
-
-dat1 <- dat1 %>%
-  dplyr::select(!contains("p.value")) %>%
-  left_join(tmp_p, by = "x") 
-
-rm(tmp_p);invisible(gc())
-
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
-dat2 <- dat2 %>%
-  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
-  dplyr::filter(!is.na(value))
-
-listPlots <- boxplot_wrap_interaction(dat1,dat2,exp,pval)
-
-for (i in seq_along(listPlots)) {
-  print(listPlots[[i]])
-}
-
-```
-
-
-### Combined model
-
-* no results after FDR correction for saliva or stool
-
-```{r fig.width = 6, fig.height = 3.5, eval=F}
-
-dat_relab <- ASVtable_saliva %>%
-  mutate(label = paste0(Family,";",OTU)) %>%
-  dplyr::select(OTU,label)%>%
-  distinct() %>%
-  dplyr::rename(x=OTU)
-
-p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: ASVs",
-                              lmm_data_time = out_lmm$`Basic model`,
-                              lmm_data_int = out_lmm$`Interaction model`,
-                              relabel = dat_relab,
-                              age_cor = T,
-                              spy_cor = T,
-                              FDR = T,
-                              cluster = 'cluster')
-
-p
-
-```
-
-```{r fig.width = 6, fig.height = 3.5, eval =F}
-
-dat_relab <- ASVtable_stool %>%
-  mutate(label = paste0(Family,";",OTU)) %>%
-  dplyr::select(OTU,label)%>%
-  distinct() %>%
-  dplyr::rename(x=OTU)
-
-p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: ASVs",
-                              lmm_data_time = out_lmm$`Basic model`,
-                              lmm_data_int = out_lmm$`Interaction model`,
-                              relabel = dat_relab,
-                              age_cor = T,
-                              spy_cor = T,
-                              FDR = T,
-                              cluster = 'cluster')
-
-p
-
-```
-
-### Combined model with pack years
-
-* no results after FDR correction for saliva or stool
-
-```{r fig.width = 6, fig.height = 3.5, eval =F}
-
-dat_relab <- ASVtable_saliva %>%
-  mutate(label = paste0(Family,";",OTU)) %>%
-  dplyr::select(OTU,label)%>%
-  distinct() %>%
-  dplyr::rename(x=OTU)
-
-p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: ASVs",
-                              lmm_data_time = out_lmm$`Basic model with packyears`,
-                              lmm_data_int = out_lmm$`Interaction model with packyears`,
-                              relabel = dat_relab,
-                              age_cor = T,
-                              spy_cor = T,
-                              FDR = T,
-                              cluster = 'cluster')
-
-p
-
-```
-
-```{r fig.width = 6, fig.height = 3.5, eval =F}
-
-dat_relab <- ASVtable_stool %>%
-  mutate(label = paste0(Family,";",OTU)) %>%
-  dplyr::select(OTU,label)%>%
-  distinct() %>%
-  dplyr::rename(x=OTU)
-
-p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: ASVs",
-                              lmm_data_time = out_lmm$`Basic model with packyears`,
-                              lmm_data_int = out_lmm$`Interaction model with packyears`,
-                              relabel = dat_relab,
-                              age_cor = T,
-                              spy_cor = T,
-                              FDR = T,
-                              cluster = 'cluster')
-
-p
-
-```
-
-### Higher compliance only
-
-* no results after FDR correction for saliva or stool
-
-```{r fig.width = 6, fig.height = 3.5, eval =F}
-
-dat_relab <- ASVtable_saliva %>%
-  mutate(label = paste0(Family,";",OTU)) %>%
-  dplyr::select(OTU,label)%>%
-  distinct() %>%
-  dplyr::rename(x=OTU)
-
-p <- plot_lmm_heatmap_time(exp = "Saliva microbiome: ASVs",
-                           lmm_data_time = out_lmm$`Higher compliance only`,
-                           relabel = dat_relab,
-                           age_cor = T,
-                           spy_cor = T,
-                           FDR = T,
-                           cluster = 'cluster')
-
-p
-
-```
-
-```{r fig.width = 6, fig.height = 1.5, eval =F}
-
-dat_relab <- ASVtable_stool %>%
-  mutate(label = paste0(Family,";",OTU)) %>%
-  dplyr::select(OTU,label)%>%
-  distinct() %>%
-  dplyr::rename(x=OTU)
-
-p <- plot_lmm_heatmap_time(exp = "Stool microbiome: ASVs",
-                           lmm_data_time = out_lmm$`Higher compliance only`,
-                           relabel = dat_relab,
-                           age_cor = T,
-                           spy_cor = T,
-                           FDR = T,
-                           cluster = 'cluster')
-
-p
-
-```
-
-### Higher compliance only with packyears
-
-* no results after FDR correction for saliva or stool
-
-```{r fig.width = 6, fig.height = 3.5, eval = F}
-
-dat_relab <- ASVtable_saliva %>%
-  mutate(label = paste0(Family,";",OTU)) %>%
-  dplyr::select(OTU,label)%>%
-  distinct() %>%
-  dplyr::rename(x=OTU)
-
-p <- plot_lmm_heatmap_time(exp = "Saliva microbiome: ASVs",
-                           lmm_data_time = out_lmm$`Higher compliance only with packyears`,
-                           relabel = dat_relab,
-                           age_cor = T,
-                           spy_cor = T,
-                           FDR = T,
-                           cluster = 'cluster')
-
-p
-
-```
-
-```{r fig.width = 6, fig.height = 1.5, eval = F}
-
-dat_relab <- ASVtable_stool %>%
-  mutate(label = paste0(Family,";",OTU)) %>%
-  dplyr::select(OTU,label)%>%
-  distinct() %>%
-  dplyr::rename(x=OTU)
-
-p <- plot_lmm_heatmap_time(exp = "Stool microbiome: ASVs",
-                           lmm_data_time = out_lmm$`Higher compliance only with packyears`,
-                           relabel = dat_relab,
-                           age_cor = T,
-                           spy_cor = T,
-                           FDR = T,
-                           cluster = 'cluster')
-
-p
-
-```
-
-:::
-  
-  ## Family-level
-  
-  * only rows with p-value < 0.01 are kept
-
-::: {.panel-tabset}
-
-### Interaction model
-
-#### Saliva
-
-```{r fig.width = 6, fig.height = 3.5}
-
-dat_relab <- ASVtable_saliva %>%
-  mutate(label = paste0(Phylum,";",Family)) %>%
-  dplyr::select(Family,label)%>%
-  distinct() %>%
-  dplyr::rename(x=Family)
-
-p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: families",
-                              lmm_data_time = out_lmm$`Interaction model`,
-                              lmm_data_int = out_lmm$`Interaction model`,
-                              relabel = dat_relab,
-                              age_cor = T,
-                              spy_cor = T,
-                              FDR = F,
-                              cluster = 'cluster')
-
-p
-
-```
-
-#### Stool
-
-```{r fig.width = 6, fig.height = 3.5}
-
-dat_relab <- ASVtable_stool %>%
-  mutate(label = paste0(Phylum,";",Family)) %>%
-  dplyr::select(Family,label)%>%
-  distinct() %>%
-  dplyr::rename(x=Family)
-
-p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: families",
-                              lmm_data_time = out_lmm$`Interaction model`,
-                              lmm_data_int = out_lmm$`Interaction model`,
-                              relabel = dat_relab,
-                              age_cor = T,
-                              spy_cor = T,
-                              FDR = F,
-                              cluster = 'cluster')
-
-p
-
-```
-
-### Interaction model with pack years
-
-#### Saliva
-
-```{r fig.width = 6, fig.height = 3.5}
-
-dat_relab <- ASVtable_saliva %>%
-  mutate(label = paste0(Phylum,";",Family)) %>%
-  dplyr::select(Family,label)%>%
-  distinct() %>%
-  dplyr::rename(x=Family)
-
-p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: families",
-                              lmm_data_time = out_lmm$`Interaction model with packyears`,
-                              lmm_data_int = out_lmm$`Interaction model with packyears`,
-                              relabel = dat_relab,
-                              age_cor = T,
-                              spy_cor = T,
-                              FDR = F,
-                              cluster = 'cluster')
-
-p
-
-```
-
-
-* Check relative abundance for significant features (pval < 0.01 for any estimate):
-  
-  ```{r, fig.width = 12, fig.height = 2}
-
-exp <- "Saliva microbiome: families"
-pval <- 0.01
-load("data/data_raw.Rdata")
-
-dat1 <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
-  filter(str_detect(x, exp))
-dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
-
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
-dat2 <- dat2 %>%
-  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
-  dplyr::filter(!is.na(value))
-
-listPlots <- boxplot_wrap_interaction(dat1,dat2,exp,pval)
-
-for (i in seq_along(listPlots)) {
-  print(listPlots[[i]])
-}
-
-```
-
-* Check changes from baseline for significant features (pval < 0.01 for any plotted estimate):
-  
-  ```{r, fig.width = 8, fig.height = 2}
-
-exp <- "Saliva microbiome: families"
-pval <- 0.01
-load("data/data_baseline_change.Rdata")
-
-dat1 <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
-  filter(str_detect(x, exp))
-dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
-
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
-dat2 <- dat2 %>%
-  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
-  dplyr::filter(!is.na(value))
-
-listPlots <- boxplot_wrap_interaction(dat1,dat2,exp,pval)
-
-for (i in seq_along(listPlots)) {
-  print(listPlots[[i]])
-}
-
-```
-
-* Check relative abundance for significant features M0/M6 compared to control group (pval < 0.01 for any estimate):
-  
-  ```{r}
-
-exp <- "Saliva microbiome: families"
-pval <- 0.01
-
-dat1 <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
-  filter(str_detect(x, exp))
-dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
-
-pheno <- pheno_saliva_extend %>%
-  dplyr::select(sampleId,group)
-
-dat2 <- amp_load(otutable=ASVtable_saliva_extend, metadata=pheno_saliva_extend)
-dat2 <- normaliseTo100(dat2)
-dat2 <- aggregate_abund(
-  dat2$abund,
-  dat2$tax,
-  tax_aggregate = "Family",
-  tax_add = NULL,
-  format = "abund",
-  calcSums = FALSE)
-dat2 <- dat2/100 #make proportions
-dat2 <- as.data.frame(t(dat2)) %>%
-  rownames_to_column(var = "sampleId") %>%
-  pivot_longer(cols=-sampleId,names_to="Family",values_to="rel.abund.") %>%
-  full_join(pheno)
-
-p <- boxplot_smokers_ctrl(dat1,dat2,exp,pval)
-
-p
-
-```
-
-
-
-#### Stool
-
-```{r fig.width = 6, fig.height = 3.5}
-
-dat_relab <- ASVtable_stool %>%
-  mutate(label = paste0(Phylum,";",Family)) %>%
-  dplyr::select(Family,label)%>%
-  distinct() %>%
-  dplyr::rename(x=Family)
-
-p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: families",
-                              lmm_data_time = out_lmm$`Interaction model with packyears`,
-                              lmm_data_int = out_lmm$`Interaction model with packyears`,
-                              relabel = dat_relab,
-                              age_cor = T,
-                              spy_cor = T,
-                              FDR = F,
-                              cluster = 'cluster')
-
-p
-
-```
-
-
-* Check relative abundance for significant features (pval < 0.01 for any estimate):
-  
-  ```{r, fig.width = 8, fig.height = 2}
-
-exp <- "Stool microbiome: families"
-pval <- 0.01
-load("data/data_raw.Rdata")
-
-dat1 <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
-  filter(str_detect(x, exp))
-dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
-
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
-dat2 <- dat2 |>
-  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
-  
-  dplyr::filter(!is.na(value))
-
-listPlots <- boxplot_wrap_interaction(dat1,dat2,exp,pval)
-#p <- wrap_plots(listPlots, ncol = 2)
-
-for (i in seq_along(listPlots)) {
-  print(listPlots[[i]])
-}
-
-```
-
-* Check changes from baseline for significant features (pval < 0.01 for any plotted estimate):
-  
-  ```{r, fig.width = 8, fig.height = 2}
-
-exp <- "Stool microbiome: families"
-pval <- 0.01
-load("data/data_baseline_change.Rdata")
-
-dat1 <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
-  filter(str_detect(x, exp))
-dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
-
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
-dat2 <- dat2 |>
-  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
-  
-  dplyr::filter(!is.na(value))
-
-listPlots <- boxplot_wrap_interaction(dat1,dat2,exp,pval)
-
-for (i in seq_along(listPlots)) {
-  print(listPlots[[i]])
-}
-
-```
-
-* Check relative abundance for significant features M0/M6 compared to control group (pval < 0.01 for any estimate):
-  
-  ```{r}
-
-exp <- "Stool microbiome: families"
-pval <- 0.01
-
-dat1 <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
-  filter(str_detect(x, exp))
-dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
-
-pheno <- pheno_stool_extend %>%
-  dplyr::select(sampleId,group)
-
-dat2 <- amp_load(otutable=ASVtable_stool_extend, metadata=pheno_stool_extend)
-dat2 <- normaliseTo100(dat2)
-dat2 <- aggregate_abund(
-  dat2$abund,
-  dat2$tax,
-  tax_aggregate = "Family",
-  tax_add = NULL,
-  format = "abund",
-  calcSums = FALSE)
-dat2 <- dat2/100 #make proportions
-dat2 <- as.data.frame(t(dat2)) %>%
-  rownames_to_column(var = "sampleId") %>%
-  pivot_longer(cols=-sampleId,names_to="Family",values_to="rel.abund.") %>%
-  full_join(pheno)
-
-p <- boxplot_smokers_ctrl(dat1,dat2,exp,pval)
-
-p
-
-```
-
-### Combined model
-
-#### Saliva
-
-```{r fig.width = 6, fig.height = 3.5}
-
-dat_relab <- ASVtable_saliva %>%
-  mutate(label = paste0(Phylum,";",Family)) %>%
-  dplyr::select(Family,label)%>%
-  distinct() %>%
-  dplyr::rename(x=Family)
-
-p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: families",
-                              lmm_data_time = out_lmm$`Basic model`,
-                              lmm_data_int = out_lmm$`Interaction model`,
-                              relabel = dat_relab,
-                              age_cor = T,
-                              spy_cor = T,
-                              FDR = F,
-                              cluster = 'cluster')
-
-p
-
-```
-
-#### Stool
-
-```{r fig.width = 6, fig.height = 3.5}
-
-dat_relab <- ASVtable_stool %>%
-  mutate(label = paste0(Phylum,";",Family)) %>%
-  dplyr::select(Family,label)%>%
-  distinct() %>%
-  dplyr::rename(x=Family)
-
-p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: families",
-                              lmm_data_time = out_lmm$`Basic model`,
-                              lmm_data_int = out_lmm$`Interaction model`,
-                              relabel = dat_relab,
-                              age_cor = T,
-                              spy_cor = T,
-                              FDR = F,
-                              cluster = 'cluster')
-
-p
-
-```
-
-### Combined model with pack years
-
-#### Saliva
-
-```{r fig.width = 6, fig.height = 3.5}
-
-dat_relab <- ASVtable_saliva %>%
-  mutate(label = paste0(Phylum,";",Family)) %>%
-  dplyr::select(Family,label)%>%
-  distinct() %>%
-  dplyr::rename(x=Family)
-
-p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: families",
-                              lmm_data_time = out_lmm$`Basic model with packyears`,
-                              lmm_data_int = out_lmm$`Interaction model with packyears`,
-                              relabel = dat_relab,
-                              age_cor = T,
-                              spy_cor = T,
-                              FDR = F,
-                              cluster = 'cluster')
-
-p
-
-```
-
-* Check relative abundance for significant features (pval < 0.01 for any estimate):
-  
-  ```{r, fig.width = 8, fig.height = 2}
-
-exp <- "Saliva microbiome: families"
-pval <- 0.01
-load("data/data_raw.Rdata")
-
-# get time from basic model, combine with interaction from interaction model
-dat1a <- as.data.frame(out_lmm$`Basic model with packyears`) %>%
-  filter(str_detect(x, exp)) %>%
-  dplyr::select(!contains(c("std.", "age_at_consent", "smoking_py"))) %>% 
-  dplyr::select(!ends_with(c("compliance")))
-
-dat1b <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
-  filter(str_detect(x, exp))  %>%
-  dplyr::select(!contains(c("std.", "age_at_consent", "smoking_py",
-                            "estimate_compliancehigher compliance", 
-                            "p.value_compliancehigher compliance"))) %>% 
-  dplyr::select(!ends_with(c("visitIdM2", "visitIdM4", "visitIdM6")))
-
-dat1 <- dplyr::full_join(dat1a,dat1b, by = "x")
-
-rm(dat1a,dat1b);invisible(gc)
-
-dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
-
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
-dat2 <- dat2 |>
-  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
-  
-  dplyr::filter(!is.na(value))
-
-listPlots <- boxplot_wrap_interaction(dat1,dat2,exp,pval)
-#p <- wrap_plots(listPlots, ncol = 2)
-
-for (i in seq_along(listPlots)) {
-  print(listPlots[[i]])
-}
-
-```
-
-* Check changes from baseline for significant features (pval < 0.01 for any estimate):
-  
-  ```{r, fig.width = 8, fig.height = 2}
-
-exp <- "Saliva microbiome: families"
-pval <- 0.01
-load("data/data_baseline_change.Rdata")
-
-# get time from basic model, combine with interaction from interaction model
-dat1a <- as.data.frame(out_lmm$`Basic model with packyears`) %>%
-  filter(str_detect(x, exp)) %>%
-  dplyr::select(!contains(c("std.", "age_at_consent", "smoking_py"))) %>% 
-  dplyr::select(!ends_with(c("compliance")))
-
-dat1b <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
-  filter(str_detect(x, exp))  %>%
-  dplyr::select(!contains(c("std.", "age_at_consent", "smoking_py",
-                            "estimate_compliancehigher compliance", 
-                            "p.value_compliancehigher compliance"))) %>% 
-  dplyr::select(!ends_with(c("visitIdM2", "visitIdM4", "visitIdM6")))
-
-dat1 <- dplyr::full_join(dat1a,dat1b, by = "x")
-
-rm(dat1a,dat1b);invisible(gc)
-
-dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
-
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
-dat2 <- dat2 |>
-  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
-  
-  dplyr::filter(!is.na(value))
-
-listPlots <- boxplot_wrap_interaction(dat1,dat2,exp,pval)
-#p <- wrap_plots(listPlots, ncol = 2)
-
-for (i in seq_along(listPlots)) {
-  print(listPlots[[i]])
-}
-
-```
-
-#### Stool
-
-```{r fig.width = 6, fig.height = 3.5}
-
-dat_relab <- ASVtable_stool %>%
-  mutate(label = paste0(Phylum,";",Family)) %>%
-  dplyr::select(Family,label)%>%
-  distinct() %>%
-  dplyr::rename(x=Family)
-
-p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: families",
-                              lmm_data_time = out_lmm$`Basic model with packyears`,
-                              lmm_data_int = out_lmm$`Interaction model with packyears`,
-                              relabel = dat_relab,
-                              age_cor = T,
-                              spy_cor = T,
-                              FDR = F,
-                              cluster = 'cluster')
-
-p
-
-```
-
-* Check relative abundance for significant features (pval < 0.01 for any estimate):
-  
-  ```{r, fig.width = 8, fig.height = 2}
-
-exp <- "Stool microbiome: families"
-pval <- 0.01
-load("data/data_raw.Rdata")
-
-# get time from basic model, combine with interaction from interaction model
-dat1a <- as.data.frame(out_lmm$`Basic model with packyears`) %>%
-  filter(str_detect(x, exp)) %>%
-  dplyr::select(!contains(c("std.", "age_at_consent", "smoking_py"))) %>% 
-  dplyr::select(!ends_with(c("compliance")))
-
-dat1b <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
-  filter(str_detect(x, exp))  %>%
-  dplyr::select(!contains(c("std.", "age_at_consent", "smoking_py",
-                            "estimate_compliancehigher compliance", 
-                            "p.value_compliancehigher compliance"))) %>% 
-  dplyr::select(!ends_with(c("visitIdM2", "visitIdM4", "visitIdM6")))
-
-dat1 <- dplyr::full_join(dat1a,dat1b, by = "x")
-
-rm(dat1a,dat1b);invisible(gc)
-
-dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
-
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
-dat2 <- dat2 |>
-  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
-  dplyr::filter(!is.na(value))
-
-listPlots <- boxplot_wrap_interaction(dat1,dat2,exp,pval)
-#p <- wrap_plots(listPlots, ncol = 2)
-
-for (i in seq_along(listPlots)) {
-  print(listPlots[[i]])
-}
-
-```
-
-* Check changes from baseline for significant features (pval < 0.01 for any estimate):
-  
-  ```{r, fig.width = 8, fig.height = 2}
-
-exp <- "Stool microbiome: families"
-pval <- 0.01
-load("data/data_baseline_change.Rdata")
-
-# get time from basic model, combine with interaction from interaction model
-dat1a <- as.data.frame(out_lmm$`Basic model with packyears`) %>%
-  filter(str_detect(x, exp)) %>%
-  dplyr::select(!contains(c("std.", "age_at_consent", "smoking_py"))) %>% 
-  dplyr::select(!ends_with(c("compliance")))
-
-dat1b <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
-  filter(str_detect(x, exp))  %>%
-  dplyr::select(!contains(c("std.", "age_at_consent", "smoking_py",
-                            "estimate_compliancehigher compliance", 
-                            "p.value_compliancehigher compliance"))) %>% 
-  dplyr::select(!ends_with(c("visitIdM2", "visitIdM4", "visitIdM6")))
-
-dat1 <- dplyr::full_join(dat1a,dat1b, by = "x")
-
-rm(dat1a,dat1b);invisible(gc)
-
-dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
-
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
-dat2 <- dat2 |>
-  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
-  dplyr::filter(!is.na(value))
-
-listPlots <- boxplot_wrap_interaction(dat1,dat2,exp,pval)
-#p <- wrap_plots(listPlots, ncol = 2)
-
-for (i in seq_along(listPlots)) {
-  print(listPlots[[i]])
-}
-
-```
-
-### Higher compliance only
-
-#### Saliva
-
-```{r fig.width = 6, fig.height = 3.5}
-
-dat_relab <- ASVtable_saliva %>%
-  mutate(label = paste0(Phylum,";",Family)) %>%
-  dplyr::select(Family,label)%>%
-  distinct() %>%
-  dplyr::rename(x=Family)
-
-p <- plot_lmm_heatmap_time(exp = "Saliva microbiome: families",
-                           lmm_data_time = out_lmm$`Higher compliance only`,
-                           relabel = dat_relab,
-                           age_cor = T,
-                           spy_cor = T,
-                           FDR = F,
-                           cluster = 'cluster')
-
-p
-
-```
-
-#### Stool
-
-```{r fig.width = 6, fig.height = 3.5}
-
-dat_relab <- ASVtable_stool %>%
-  mutate(label = paste0(Phylum,";",Family)) %>%
-  dplyr::select(Family,label)%>%
-  distinct() %>%
-  dplyr::rename(x=Family)
-
-p <- plot_lmm_heatmap_time(exp = "Stool microbiome: families",
-                           lmm_data_time = out_lmm$`Higher compliance only`,
-                           relabel = dat_relab,
-                           age_cor = T,
-                           spy_cor = T,
-                           FDR = F,
-                           cluster = 'cluster')
-
-p
-
-```
 
 ### Higher compliance only with packyears
 
@@ -1362,135 +461,10 @@ p
 
 ```
 
-
-```{r ext_5c, eval = F}
-
-cairo_pdf("out/pdf/ext5c.pdf", width = 4.5, height = 1.5)
-print(p)
-dev.off()
-
-```
-
-* Check relative abundance for significant features (pval < 0.01 for any estimate):
-  
-  ```{r, fig.width = 8, fig.height = 2}
-
-exp <- "Saliva microbiome: families"
-pval <- 0.01
-load("data/data_raw.Rdata")
-
-dat1 <- as.data.frame(out_lmm$`Higher compliance only with packyears`) %>%
-  filter(str_detect(x, exp))
-dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
-
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
-dat2 <- dat2 |>
-  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
-  
-  dplyr::filter(!is.na(value))
-
-listPlots <- boxplot_wrap_time(dat1,dat2,exp,pval)
-
-for (i in seq_along(listPlots)) {
-  print(listPlots[[i]])
-}
-
-```
-
-* Check changes from baseline for significant features (pval < 0.01 for any estimate):
-  
-  ```{r, fig.width = 8, fig.height = 2}
-
-exp <- "Saliva microbiome: families"
-pval <- 0.01
-load("data/data_baseline_change.Rdata")
-
-dat1 <- as.data.frame(out_lmm$`Higher compliance only with packyears`) %>%
-  filter(str_detect(x, exp))
-dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
-
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
-dat2 <- dat2 |>
-  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
-  
-  dplyr::filter(!is.na(value))
-
-listPlots <- boxplot_wrap_time(dat1,dat2,exp,pval)
-
-for (i in seq_along(listPlots)) {
-  print(listPlots[[i]])
-}
-
-```
-
-* Check relative abundance for significant features M0/M6 compared to control group (pval < 0.01 for any estimate):
-  
-  ```{r}
-
-exp <- "Saliva microbiome: families"
-pval <- 0.01
-
-dat1 <- as.data.frame(out_lmm$`Higher compliance only with packyears`) %>%
-  filter(str_detect(x, exp))
-dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
-
-pheno <- pheno_saliva_extend %>%
-  dplyr::select(sampleId,group)
-
-dat2 <- amp_load(otutable=ASVtable_saliva_extend, metadata=pheno_saliva_extend)
-dat2 <- normaliseTo100(dat2)
-dat2 <- aggregate_abund(
-  dat2$abund,
-  dat2$tax,
-  tax_aggregate = "Family",
-  tax_add = NULL,
-  format = "abund",
-  calcSums = FALSE)
-dat2 <- dat2/100 #make proportions
-dat2 <- as.data.frame(t(dat2)) %>%
-  rownames_to_column(var = "sampleId") %>%
-  pivot_longer(cols=-sampleId,names_to="Family",values_to="rel.abund.") %>%
-  full_join(pheno)
-
-p <- boxplot_smokers_ctrl(dat1,dat2,exp,pval)
-
-p
-
-```
 
 ```{r ext_5e, eval = F}
 
-cairo_pdf("out/pdf/ext5e.pdf", width = 6, height = 3.5)
-print(p)
-dev.off()
-
-```
-
-#### Stool
-
-```{r fig.width = 6, fig.height = 3.5}
-
-dat_relab <- ASVtable_stool %>%
-  mutate(label = paste0(Phylum,";",Family)) %>%
-  dplyr::select(Family,label)%>%
-  distinct() %>%
-  dplyr::rename(x=Family)
-
-p <- plot_lmm_heatmap_time(exp = "Stool microbiome: families",
-                           lmm_data_time = out_lmm$`Higher compliance only with packyears`,
-                           relabel = dat_relab,
-                           age_cor = T,
-                           spy_cor = T,
-                           FDR = F,
-                           cluster = 'cluster')
-
-p
-
-```
-
-```{r ext_5d, eval = F}
-
-cairo_pdf("out/pdf/ext5d.pdf", width = 4.5, height = 1.5)
+cairo_pdf("out/pdf/ext5e.pdf", width = 4.5, height = 1.5)
 print(p)
 dev.off()
 
@@ -1498,9 +472,9 @@ dev.off()
 
 * Check relative abundance for significant features (pval < 0.01 for any estimate):
   
-  ```{r, fig.width = 8, fig.height = 2}
+```{r, fig.width = 8, fig.height = 2}
 
-exp <- "Stool microbiome: families"
+exp <- "Saliva microbiome: families"
 pval <- 0.01
 load("data/data_raw.Rdata")
 
@@ -1524,9 +498,9 @@ for (i in seq_along(listPlots)) {
 
 * Check changes from baseline for significant features (pval < 0.01 for any estimate):
   
-  ```{r, fig.width = 8, fig.height = 2}
+```{r, fig.width = 8, fig.height = 2}
 
-exp <- "Stool microbiome: families"
+exp <- "Saliva microbiome: families"
 pval <- 0.01
 load("data/data_baseline_change.Rdata")
 
@@ -1550,19 +524,19 @@ for (i in seq_along(listPlots)) {
 
 * Check relative abundance for significant features M0/M6 compared to control group (pval < 0.01 for any estimate):
   
-  ```{r}
+```{r}
 
-exp <- "Stool microbiome: families"
+exp <- "Saliva microbiome: families"
 pval <- 0.01
 
 dat1 <- as.data.frame(out_lmm$`Higher compliance only with packyears`) %>%
   filter(str_detect(x, exp))
 dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
 
-pheno <- pheno_stool_extend %>%
+pheno <- pheno_saliva_extend %>%
   dplyr::select(sampleId,group)
 
-dat2 <- amp_load(otutable=ASVtable_stool_extend, metadata=pheno_stool_extend)
+dat2 <- amp_load(otutable=ASVtable_saliva_extend, metadata=pheno_saliva_extend)
 dat2 <- normaliseTo100(dat2)
 dat2 <- aggregate_abund(
   dat2$abund,
@@ -1578,6 +552,36 @@ dat2 <- as.data.frame(t(dat2)) %>%
   full_join(pheno)
 
 p <- boxplot_smokers_ctrl(dat1,dat2,exp,pval)
+
+p
+
+```
+
+```{r ext_5g, eval = F}
+
+cairo_pdf("out/pdf/ext5g.pdf", width = 6, height = 3.5)
+print(p)
+dev.off()
+
+```
+
+#### Stool
+
+```{r fig.width = 6, fig.height = 3.5}
+
+dat_relab <- ASVtable_stool %>%
+  mutate(label = paste0(Phylum,";",Family)) %>%
+  dplyr::select(Family,label)%>%
+  distinct() %>%
+  dplyr::rename(x=Family)
+
+p <- plot_lmm_heatmap_time(exp = "Stool microbiome: families",
+                           lmm_data_time = out_lmm$`Higher compliance only with packyears`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = F,
+                           cluster = 'cluster')
 
 p
 
@@ -1585,117 +589,75 @@ p
 
 ```{r ext_5f, eval = F}
 
-cairo_pdf("out/pdf/ext5f.pdf", width = 4, height = 2)
+cairo_pdf("out/pdf/ext5f.pdf", width = 4.5, height = 1.5)
 print(p)
 dev.off()
 
 ```
 
-
-:::
+* Check relative abundance for significant features (pval < 0.01 for any estimate):
   
-  
-  ### Summary Interaction/Higher compliance
-  
-  * Any significant feature pval < 0.01 in eigher Higher compliance model or interaction model (corrected packyears)
+```{r, fig.width = 8, fig.height = 2}
 
-#### Saliva
-
-```{r}
-
-exp <- "Saliva microbiome: families"
+exp <- "Stool microbiome: families"
 pval <- 0.01
+load("data/data_raw.Rdata")
 
-### gather significant families from interaction model
-dat1 <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
-  filter(str_detect(x, exp))
-dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
-
-toPlot1 = dat1 %>%
-  dplyr::filter(`p.value_visitIdM2:compliancehigher compliance` < pval | 
-                  `p.value_visitIdM4:compliancehigher compliance` < pval |
-                  `p.value_visitIdM6:compliancehigher compliance` < pval |
-                  `p.value_visitIdM2` < pval |
-                  `p.value_visitIdM4` < pval |
-                  `p.value_visitIdM6` < pval) %>%
-  pull(x)
-
-### gather significant families from high compliance model
 dat1 <- as.data.frame(out_lmm$`Higher compliance only with packyears`) %>%
   filter(str_detect(x, exp))
 dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
 
-toPlot2 = dat1 %>%
-  dplyr::filter(`p.value_visitIdM2` < pval |
-                  `p.value_visitIdM4` < pval |
-                  `p.value_visitIdM6` < pval) %>%
-  pull(x)
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 |>
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
+  
+  dplyr::filter(!is.na(value))
 
-### prep abundance table
-pheno <- pheno_saliva_extend %>%
-  dplyr::select(sampleId,group)
+listPlots <- boxplot_wrap_time(dat1,dat2,exp,pval)
 
-dat2 <- amp_load(otutable=ASVtable_saliva_extend, metadata=pheno_saliva_extend)
-dat2 <- normaliseTo100(dat2)
-dat2 <- aggregate_abund(
-  dat2$abund,
-  dat2$tax,
-  tax_aggregate = "Family",
-  tax_add = NULL,
-  format = "abund",
-  calcSums = FALSE)
-dat2 <- dat2/100 #make proportions
-dat2 <- as.data.frame(t(dat2)) %>%
-  rownames_to_column(var = "sampleId") %>%
-  pivot_longer(cols=-sampleId,names_to="Family",values_to="rel.abund.") %>%
-  full_join(pheno)
+for (i in seq_along(listPlots)) {
+  print(listPlots[[i]])
+}
 
-toPlot <- unique(c(toPlot1,toPlot2))
-rm(toPlot1,toPlot2); invisible(gc())
-
-p <- boxplot_smokers_ctrl(dat1=NULL,
-                          dat2=dat2,
-                          exp=NULL,
-                          pval=NULL,
-                          interaction_only=NULL, 
-                          taxa = toPlot)
-
-p
 ```
 
-#### Stool
+* Check changes from baseline for significant features (pval < 0.01 for any estimate):
+  
+```{r, fig.width = 8, fig.height = 2}
 
+exp <- "Stool microbiome: families"
+pval <- 0.01
+load("data/data_baseline_change.Rdata")
+
+dat1 <- as.data.frame(out_lmm$`Higher compliance only with packyears`) %>%
+  filter(str_detect(x, exp))
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 |>
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
+  
+  dplyr::filter(!is.na(value))
+
+listPlots <- boxplot_wrap_time(dat1,dat2,exp,pval)
+
+for (i in seq_along(listPlots)) {
+  print(listPlots[[i]])
+}
+
+```
+
+* Check relative abundance for significant features M0/M6 compared to control group (pval < 0.01 for any estimate):
+  
 ```{r}
 
 exp <- "Stool microbiome: families"
 pval <- 0.01
 
-### gather significant families from interaction model
-dat1 <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
-  filter(str_detect(x, exp))
-dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
-
-toPlot1 = dat1 %>%
-  dplyr::filter(`p.value_visitIdM2:compliancehigher compliance` < pval | 
-                  `p.value_visitIdM4:compliancehigher compliance` < pval |
-                  `p.value_visitIdM6:compliancehigher compliance` < pval |
-                  `p.value_visitIdM2` < pval |
-                  `p.value_visitIdM4` < pval |
-                  `p.value_visitIdM6` < pval) %>%
-  pull(x)
-
-### gather significant families from high compliance model
 dat1 <- as.data.frame(out_lmm$`Higher compliance only with packyears`) %>%
   filter(str_detect(x, exp))
 dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
 
-toPlot2 = dat1 %>%
-  dplyr::filter(`p.value_visitIdM2` < pval |
-                  `p.value_visitIdM4` < pval |
-                  `p.value_visitIdM6` < pval) %>%
-  pull(x)
-
-### prep abundance table
 pheno <- pheno_stool_extend %>%
   dplyr::select(sampleId,group)
 
@@ -1714,19 +676,22 @@ dat2 <- as.data.frame(t(dat2)) %>%
   pivot_longer(cols=-sampleId,names_to="Family",values_to="rel.abund.") %>%
   full_join(pheno)
 
-toPlot <- unique(c(toPlot1,toPlot2))
-rm(toPlot1,toPlot2); invisible(gc())
-
-p <- boxplot_smokers_ctrl(dat1=NULL,
-                          dat2=dat2,
-                          exp=NULL,
-                          pval=NULL,
-                          interaction_only=NULL, 
-                          taxa = toPlot)
+p <- boxplot_smokers_ctrl(dat1,dat2,exp,pval)
 
 p
+
 ```
 
+```{r ext_5h, eval = F}
+
+cairo_pdf("out/pdf/ext5h.pdf", width = 4, height = 2)
+print(p)
+dev.off()
+
+```
+
+
+:::
 
 ## Predicted MetaCyc
 
