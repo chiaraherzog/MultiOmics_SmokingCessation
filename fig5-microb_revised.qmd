@@ -1,0 +1,3877 @@
+---
+  title: "Microbiome (F5, E5)"
+format:
+  html:
+  toc: true
+---
+  
+# Figures
+  
+::: {.panel-tabset} 
+
+## Main figure 5
+
+![](figures-png/figure5.png)
+
+## Extended Data Figure 5
+
+![](figures-png/e5.png)
+
+
+:::
+  
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, message = F, warning = F, eval = F)
+```
+
+```{r libs}
+
+### package fixed, pull from own github repo
+#devtools::install_github(repo = "ChVav/selbal")
+
+suppressWarnings(suppressMessages({
+  library(tidyverse)
+  library(patchwork)
+  library(kableExtra)
+  library(ggpubr)
+  library(ggtext)
+  library(ggnewscale)
+  library(broom)
+  library(gghalves)
+  library(ComplexHeatmap)
+  library(ggh4x)
+  library(MultiAssayExperiment)
+  library(ampvis2)
+  library(vegan)
+  library(factoextra)
+  library(FactoMineR)
+  library(ecodist)
+  library(ape)
+  library(MiSPU)
+  library(Matrix)
+  library(selbal)
+  library(RColorBrewer)
+  library(viridis)
+  library(rcartocolor)
+  library(openxlsx)
+}))
+```
+
+```{r colors}
+
+cols <- c("#1b69a1", "#48a0af", "#71b5a9", "#ec6669", "#f39668", "#bd647d", "#832c9b", "#5f70a8")
+
+cols_comp <- cols[c(4, 1)]
+names(cols_comp) <- c("lower compliance", "higher compliance")
+
+cols_group <- cols[c(8, 6, 4, 1, 4, 1, 4, 1)]
+names(cols_group) <- c("Never smoker (control)","Smoker baseline",
+                       "M2 no smoking cessation","M2 smoking cessation",
+                       "M4 no smoking cessation","M4 smoking cessation",
+                       "M6 no smoking cessation","M6 smoking cessation")
+
+```
+
+```{r functions}
+
+### general helper functions (Chiara) ###----
+source("src/paired_longitudinal_compliance.R")
+
+### microbiome helper functions (Charlotte) ###----
+source("src/relabel_microbiomefeat.R")
+source("src/plot_taxa_heatmap.R")
+source("src/pc_microbiomes.R")
+source("src/pcoa_permanova.R")
+source("src/FBratio.R")
+source("src/lmm_boxplot_wrappers.R")
+source("src/FDR_correct.R")
+source("src/plot_lmm_heatmap_fragmented_v3_microbiome.R")
+source("src/plot_lmm_heatmap_time_microbiome.R")
+
+```
+
+```{r}
+
+# Load in ASV tables for the two sample types
+
+# S group only
+ASVtable_saliva <- readRDS("./out/ctrl_group_microbiome/1-output/ASVtable_saliva_S.Rds")
+pheno_saliva <- readRDS("./out/ctrl_group_microbiome/1-output/pheno_saliva_S.Rds")
+
+ASVtable_stool <- readRDS("./out/ctrl_group_microbiome/1-output/ASVtable_stool_S.Rds")
+pheno_stool <- readRDS("./out/ctrl_group_microbiome/1-output/pheno_stool_S.Rds")
+
+# including ctrl group
+ASVtable_saliva_extend <- readRDS("./out/ctrl_group_microbiome/1-output/ASVtable_saliva_S_ctrl.Rds")
+pheno_saliva_extend <- readRDS("./out/ctrl_group_microbiome/1-output/pheno_saliva_S_ctrl.Rds")
+
+ASVtable_stool_extend <- readRDS("./out/ctrl_group_microbiome/1-output/ASVtable_stool_S_ctrl.Rds")
+pheno_stool_extend <- readRDS("./out/ctrl_group_microbiome/1-output/pheno_stool_S_ctrl.Rds")
+
+```
+
+
+# Overview detected taxa
+
+* Note for stool, 2 subjects with incomplete sample set (n=22 instead of 24)
+* Control group M0 samples from IF study arm, 24 women with lowest bmi and who have never smoked.
+  
+::: {.panel-tabset}
+
+## Phyla
+
+a) saliva 
+
+```{r}
+
+plot_taxa_heatmap(ASVtable_saliva_extend, pheno_saliva_extend, "Phylum", NULL, 0, "SM", cols, ctrl=TRUE)
+
+```
+
+b) stool
+
+```{r}
+
+plot_taxa_heatmap(ASVtable_stool_extend, pheno_stool_extend, "Phylum", NULL, 0, "FM", cols, ctrl=TRUE)
+
+```
+
+## Families
+
+* Only those with minimum relative abundance of 10%
+
+a) saliva 
+
+```{r}
+
+p <- plot_taxa_heatmap(ASVtable_saliva_extend, pheno_saliva_extend, "Family", "Phylum", 10, "SM", cols, ctrl=TRUE)
+
+p
+
+```
+
+```{r ext_5a, eval = F}
+
+cairo_pdf("out/pdf/ext5a.pdf", width = 6, height = 2.5)
+print(p)
+dev.off()
+
+```
+
+b) stool
+
+```{r}
+
+p <- plot_taxa_heatmap(ASVtable_stool_extend, pheno_stool_extend, "Family", "Phylum", 10, "FM", cols, ctrl=TRUE)
+p
+
+```
+
+```{r ext_5b, eval = F}
+
+cairo_pdf("out/pdf/ext5b.pdf", width = 6, height = 2.5)
+print(p)
+dev.off()
+
+```
+
+:::
+
+# PCOA
+
+## Saliva
+
+Smoking cessation restores the oral microbiome?: <br>
+  
+  Overall results Permanova (9999 permutations): <br>
+  
+* Significant difference between M0 samples from smokers and control group (p-value < 0.05)
+* Significant differences between control group, and different time points smokers and ex-smokers (p-value < 0.05)
+
+Posteriori pairwise testing M2, M4, M6: <br> 
+  
+* Less difference between M2, M4, M6 samples from ex-smokers and the control group,
+than between M2, M4, M6 samples from smokers and ex-smokers or 
+than between M2, M4, M6 samples between smokers and the control group (adjusted p-value < 0.05)
+
+
+```{r}
+
+# table only Aitchison
+tree <- "./out/ctrl_group_microbiome/3-output/saliva_S_ctrl_ASV_rootedcpr_treeML.nwk"
+
+d <- amp_load(otutable=ASVtable_saliva_extend,
+              metadata=pheno_saliva_extend)
+
+table1 <- summarize_permanova_aitchison(d)
+
+
+```
+
+
+* main plot:
+  
+```{r}
+
+d0 <- amp_filter_samples(d,visitId %in% c("Never smoker (control)","M0"))
+d6 <- amp_filter_samples(d,visitId %in% c("Never smoker (control)","M6"))
+
+plotsM0 <- plotPcoa(d0, "M0", "Aitchison", "group", "", NULL, "Saliva - Aitchison PCoA \n control vs M0") 
+plotsM0[[1]]<- plotsM0[[1]] + theme(legend.position = "bottom", legend.justification = "top", title = element_text(size = 9))
+plotsM6 <- plotPcoa(d6, "M6", "Aitchison", "group", "", NULL, "  \n control vs M6") 
+plotsM6[[1]]<- plotsM6[[1]] + theme(legend.position = "bottom", legend.justification = "top", title = element_text(size = 9))
+
+p <- plotsM0[[1]] + plotsM6[[1]] 
+p
+
+```
+
+```{r main_5a, eval = F}
+
+cairo_pdf("out/pdf/5a.pdf", width = 4.5, height = 3.8)
+print(p)
+dev.off()
+
+```
+
+## Stool
+
+Smoking has no significant effect on the stool microbiome beta-diversity: <br>
+  
+  Overall results Permanova (9999 permutations): <br>
+  
+  * No significant difference between M0 samples from smokers and control group (p-value < 0.05)
+* No significant differences between control group, and different time points smokers and ex-smokers (p-value < 0.05)
+
+```{r}
+
+tree <- "./out/ctrl_group_microbiome/3-output/stool_S_ctrl_ASV_rootedarchaea_treeML.nwk"
+
+# table only only Aitchison:
+
+d <- amp_load(otutable=ASVtable_stool_extend,
+              metadata=pheno_stool_extend)
+
+table2 <- summarize_permanova_aitchison(d)
+
+
+```
+
+* main plot:
+  
+```{r}
+
+d0 <- amp_filter_samples(d,visitId %in% c("Never smoker (control)","M0"))
+d6 <- amp_filter_samples(d,visitId %in% c("Never smoker (control)","M6"))
+
+plotsM0 <- plotPcoa(d0, "M0", "Aitchison", "group", "", NULL, "Stool - Aitchison PCoA \n control vs M0") 
+plotsM0[[1]]<- plotsM0[[1]] + theme(legend.position = "bottom", legend.justification = "top", title = element_text(size = 9))
+plotsM6 <- plotPcoa(d6, "M6", "Aitchison", "group", "", NULL, "  \n control vs M6") 
+plotsM6[[1]]<- plotsM6[[1]] + theme(legend.position = "bottom", legend.justification = "top", title = element_text(size = 9))
+
+p <- plotsM0[[1]] + plotsM6[[1]]
+p
+
+```
+
+```{r main_5b, eval = F}
+
+cairo_pdf("out/pdf/5b.pdf", width = 4.5, height = 3.8)
+print(p)
+dev.off()
+
+```
+
+### Combined table Aitchison (ext data)
+
+```{r}
+
+table1 <- table1 %>% mutate(`Sample type` = "Saliva")
+table2 <- table2 %>% mutate(`Sample type` = "Stool")
+
+table <- bind_rows(table1,table2) %>%
+  dplyr::select(-Distance) %>%
+  dplyr::relocate(`Sample type`, .before = 1)
+
+kable(table, format = "html", caption = "Aitchison distance - PERMANOVA") %>%
+  kable_styling(bootstrap_options = "striped", full_width = FALSE) %>%
+  column_spec(1, bold = TRUE)  # Make the first column bold
+
+
+```
+
+
+```{r ext_table, eval = F}
+
+table_print <- kable(table, format = "html", caption = "Extended Data Table 1. Overall and pair-wise permutational analysis of variance of the Aitchison distance for groups with different smoking status at baseline and months 2, 4 and 6 of the smoking cessation intervention.") %>%
+  kable_styling(bootstrap_options = "striped", full_width = FALSE) %>%
+  column_spec(1, bold = TRUE)  # Make the first column bold
+
+kableExtra::save_kable(table_print, "figures-pdf/Extended_data_table2.pdf")
+
+```
+
+# Differential abundance lmm
+
+```{r}
+# results lmm
+load("out/out_lmm_factor.Rdata")
+```
+
+
+* Linear models considered:
+  
+  1. **Interaction model**: <br>
+  * plotted **visitId term** from lmm ~ visitId*compliance + age_at_consent + (1 | subjectId)
+* plotted **visitId:compliance** from lmm ~ visitId*compliance + age_at_consent + (1 | subjectId)
+
+2. **Interaction model with packyears**: <br>
+  * plotted **visitId term** from lmm ~ visitId*compliance + age_at_consent + smoking_py + (1 | subjectId)
+* plotted **visitId:compliance** from lmm ~ visitId*compliance + age_at_consent + smoking_py + (1 | subjectId)
+
+3. **Combined models**: <br>
+  * plotted **visitId term** from lmm ~ time + age_at_consent + (1|subjectId)
+* plotted **visitId:compliance** from lmm ~ visitId*compliance + age_at_consent + (1 | subjectId)
+
+4. **Combined models with packyears**: <br>
+  * plotted **visitId term** from lmm ~ time + age_at_consent + smoking_py + (1|subjectId)
+* plotted **visitId:compliance** from lmm ~ visitId*compliance + age_at_consent + smoking_py + (1 | subjectId)
+
+5. **Higher compliance only**: <br>
+  * plotted **visitId term** from lmm ~ visitId + age_at_consent + (1|subjectId)
+
+6. **Higher compliance only with packyears**: <br>
+  * plotted **visitId term** from lmm ~ visitId + age_at_consent + smoking_py + (1|subjectId)
+
+## ASV-level
+
+* only rows with adjusted p-value < 0.05 are kept
+* top saliva, bottom stool
+
+::: {.panel-tabset}
+
+### Interaction model
+
+* no results after FDR correction for saliva
+
+```{r fig.width = 6, fig.height = 3.5, eval=F}
+
+dat_relab <- ASVtable_saliva %>%
+  mutate(label = paste0(Family,";",OTU)) %>%
+  dplyr::select(OTU,label)%>%
+  distinct() %>%
+  dplyr::rename(x=OTU)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: ASVs",
+                              lmm_data_time = out_lmm$`Interaction model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+```{r fig.width = 6, fig.height = 3.5}
+
+dat_relab <- ASVtable_stool %>%
+  mutate(label = paste0(Family,";",OTU)) %>%
+  dplyr::select(OTU,label)%>%
+  distinct() %>%
+  dplyr::rename(x=OTU)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: ASVs",
+                              lmm_data_time = out_lmm$`Interaction model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+### Interaction model with pack years
+
+* no results after FDR correction for saliva
+
+```{r fig.width = 6, fig.height = 3.5, eval = F}
+
+dat_relab <- ASVtable_saliva %>%
+  mutate(label = paste0(Family,";",OTU)) %>%
+  dplyr::select(OTU,label)%>%
+  distinct() %>%
+  dplyr::rename(x=OTU)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: ASVs",
+                              lmm_data_time = out_lmm$`Interaction model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+```{r fig.width = 6, fig.height = 1.5}
+
+dat_relab <- ASVtable_stool %>%
+  mutate(label = paste0(Family,";",OTU)) %>%
+  dplyr::select(OTU,label)%>%
+  distinct() %>%
+  dplyr::rename(x=OTU)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: ASVs",
+                              lmm_data_time = out_lmm$`Interaction model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+* This ASV is an outlier in the lower compliance group
+* Check relative abundance for significant features (adjusted pval < 0.05 for any estimate):
+  
+  ```{r, fig.width = 12, fig.height = 2}
+
+exp <- "Stool microbiome: ASVs"
+pval <- 0.05
+load("data/data_raw.Rdata")
+
+dat1 <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
+  filter(str_detect(x, exp))
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+# FDR correct
+tmp_p <- dat1 %>%
+  dplyr::select(x,contains("p.value")) %>%
+  pivot_longer(cols = contains("p.value"),names_to = "estimate", values_to = "p_value") %>%
+  FDR_correct() %>%
+  pivot_wider(id_cols = x, names_from = estimate, values_from = p_value)
+
+dat1 <- dat1 %>%
+  dplyr::select(!contains("p.value")) %>%
+  left_join(tmp_p, by = "x") 
+
+rm(tmp_p);invisible(gc())
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 %>%
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
+  dplyr::filter(!is.na(value))
+
+listPlots <- boxplot_wrap_interaction(dat1,dat2,exp,pval)
+
+for (i in seq_along(listPlots)) {
+  print(listPlots[[i]])
+}
+
+```
+
+
+### Combined model
+
+* no results after FDR correction for saliva or stool
+
+```{r fig.width = 6, fig.height = 3.5, eval=F}
+
+dat_relab <- ASVtable_saliva %>%
+  mutate(label = paste0(Family,";",OTU)) %>%
+  dplyr::select(OTU,label)%>%
+  distinct() %>%
+  dplyr::rename(x=OTU)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: ASVs",
+                              lmm_data_time = out_lmm$`Basic model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+```{r fig.width = 6, fig.height = 3.5, eval =F}
+
+dat_relab <- ASVtable_stool %>%
+  mutate(label = paste0(Family,";",OTU)) %>%
+  dplyr::select(OTU,label)%>%
+  distinct() %>%
+  dplyr::rename(x=OTU)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: ASVs",
+                              lmm_data_time = out_lmm$`Basic model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+### Combined model with pack years
+
+* no results after FDR correction for saliva or stool
+
+```{r fig.width = 6, fig.height = 3.5, eval =F}
+
+dat_relab <- ASVtable_saliva %>%
+  mutate(label = paste0(Family,";",OTU)) %>%
+  dplyr::select(OTU,label)%>%
+  distinct() %>%
+  dplyr::rename(x=OTU)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: ASVs",
+                              lmm_data_time = out_lmm$`Basic model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+```{r fig.width = 6, fig.height = 3.5, eval =F}
+
+dat_relab <- ASVtable_stool %>%
+  mutate(label = paste0(Family,";",OTU)) %>%
+  dplyr::select(OTU,label)%>%
+  distinct() %>%
+  dplyr::rename(x=OTU)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: ASVs",
+                              lmm_data_time = out_lmm$`Basic model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+### Higher compliance only
+
+* no results after FDR correction for saliva or stool
+
+```{r fig.width = 6, fig.height = 3.5, eval =F}
+
+dat_relab <- ASVtable_saliva %>%
+  mutate(label = paste0(Family,";",OTU)) %>%
+  dplyr::select(OTU,label)%>%
+  distinct() %>%
+  dplyr::rename(x=OTU)
+
+p <- plot_lmm_heatmap_time(exp = "Saliva microbiome: ASVs",
+                           lmm_data_time = out_lmm$`Higher compliance only`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = T,
+                           cluster = 'cluster')
+
+p
+
+```
+
+```{r fig.width = 6, fig.height = 1.5, eval =F}
+
+dat_relab <- ASVtable_stool %>%
+  mutate(label = paste0(Family,";",OTU)) %>%
+  dplyr::select(OTU,label)%>%
+  distinct() %>%
+  dplyr::rename(x=OTU)
+
+p <- plot_lmm_heatmap_time(exp = "Stool microbiome: ASVs",
+                           lmm_data_time = out_lmm$`Higher compliance only`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = T,
+                           cluster = 'cluster')
+
+p
+
+```
+
+### Higher compliance only with packyears
+
+* no results after FDR correction for saliva or stool
+
+```{r fig.width = 6, fig.height = 3.5, eval = F}
+
+dat_relab <- ASVtable_saliva %>%
+  mutate(label = paste0(Family,";",OTU)) %>%
+  dplyr::select(OTU,label)%>%
+  distinct() %>%
+  dplyr::rename(x=OTU)
+
+p <- plot_lmm_heatmap_time(exp = "Saliva microbiome: ASVs",
+                           lmm_data_time = out_lmm$`Higher compliance only with packyears`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = T,
+                           cluster = 'cluster')
+
+p
+
+```
+
+```{r fig.width = 6, fig.height = 1.5, eval = F}
+
+dat_relab <- ASVtable_stool %>%
+  mutate(label = paste0(Family,";",OTU)) %>%
+  dplyr::select(OTU,label)%>%
+  distinct() %>%
+  dplyr::rename(x=OTU)
+
+p <- plot_lmm_heatmap_time(exp = "Stool microbiome: ASVs",
+                           lmm_data_time = out_lmm$`Higher compliance only with packyears`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = T,
+                           cluster = 'cluster')
+
+p
+
+```
+
+:::
+  
+  ## Family-level
+  
+  * only rows with p-value < 0.01 are kept
+
+::: {.panel-tabset}
+
+### Interaction model
+
+#### Saliva
+
+```{r fig.width = 6, fig.height = 3.5}
+
+dat_relab <- ASVtable_saliva %>%
+  mutate(label = paste0(Phylum,";",Family)) %>%
+  dplyr::select(Family,label)%>%
+  distinct() %>%
+  dplyr::rename(x=Family)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: families",
+                              lmm_data_time = out_lmm$`Interaction model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = F,
+                              cluster = 'cluster')
+
+p
+
+```
+
+#### Stool
+
+```{r fig.width = 6, fig.height = 3.5}
+
+dat_relab <- ASVtable_stool %>%
+  mutate(label = paste0(Phylum,";",Family)) %>%
+  dplyr::select(Family,label)%>%
+  distinct() %>%
+  dplyr::rename(x=Family)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: families",
+                              lmm_data_time = out_lmm$`Interaction model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = F,
+                              cluster = 'cluster')
+
+p
+
+```
+
+### Interaction model with pack years
+
+#### Saliva
+
+```{r fig.width = 6, fig.height = 3.5}
+
+dat_relab <- ASVtable_saliva %>%
+  mutate(label = paste0(Phylum,";",Family)) %>%
+  dplyr::select(Family,label)%>%
+  distinct() %>%
+  dplyr::rename(x=Family)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: families",
+                              lmm_data_time = out_lmm$`Interaction model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = F,
+                              cluster = 'cluster')
+
+p
+
+```
+
+
+* Check relative abundance for significant features (pval < 0.01 for any estimate):
+  
+  ```{r, fig.width = 12, fig.height = 2}
+
+exp <- "Saliva microbiome: families"
+pval <- 0.01
+load("data/data_raw.Rdata")
+
+dat1 <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
+  filter(str_detect(x, exp))
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 %>%
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
+  dplyr::filter(!is.na(value))
+
+listPlots <- boxplot_wrap_interaction(dat1,dat2,exp,pval)
+
+for (i in seq_along(listPlots)) {
+  print(listPlots[[i]])
+}
+
+```
+
+* Check changes from baseline for significant features (pval < 0.01 for any plotted estimate):
+  
+  ```{r, fig.width = 8, fig.height = 2}
+
+exp <- "Saliva microbiome: families"
+pval <- 0.01
+load("data/data_baseline_change.Rdata")
+
+dat1 <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
+  filter(str_detect(x, exp))
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 %>%
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
+  dplyr::filter(!is.na(value))
+
+listPlots <- boxplot_wrap_interaction(dat1,dat2,exp,pval)
+
+for (i in seq_along(listPlots)) {
+  print(listPlots[[i]])
+}
+
+```
+
+* Check relative abundance for significant features M0/M6 compared to control group (pval < 0.01 for any estimate):
+  
+  ```{r}
+
+exp <- "Saliva microbiome: families"
+pval <- 0.01
+
+dat1 <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
+  filter(str_detect(x, exp))
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+pheno <- pheno_saliva_extend %>%
+  dplyr::select(sampleId,group)
+
+dat2 <- amp_load(otutable=ASVtable_saliva_extend, metadata=pheno_saliva_extend)
+dat2 <- normaliseTo100(dat2)
+dat2 <- aggregate_abund(
+  dat2$abund,
+  dat2$tax,
+  tax_aggregate = "Family",
+  tax_add = NULL,
+  format = "abund",
+  calcSums = FALSE)
+dat2 <- dat2/100 #make proportions
+dat2 <- as.data.frame(t(dat2)) %>%
+  rownames_to_column(var = "sampleId") %>%
+  pivot_longer(cols=-sampleId,names_to="Family",values_to="rel.abund.") %>%
+  full_join(pheno)
+
+p <- boxplot_smokers_ctrl(dat1,dat2,exp,pval)
+
+p
+
+```
+
+
+
+#### Stool
+
+```{r fig.width = 6, fig.height = 3.5}
+
+dat_relab <- ASVtable_stool %>%
+  mutate(label = paste0(Phylum,";",Family)) %>%
+  dplyr::select(Family,label)%>%
+  distinct() %>%
+  dplyr::rename(x=Family)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: families",
+                              lmm_data_time = out_lmm$`Interaction model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = F,
+                              cluster = 'cluster')
+
+p
+
+```
+
+
+* Check relative abundance for significant features (pval < 0.01 for any estimate):
+  
+  ```{r, fig.width = 8, fig.height = 2}
+
+exp <- "Stool microbiome: families"
+pval <- 0.01
+load("data/data_raw.Rdata")
+
+dat1 <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
+  filter(str_detect(x, exp))
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 |>
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
+  
+  dplyr::filter(!is.na(value))
+
+listPlots <- boxplot_wrap_interaction(dat1,dat2,exp,pval)
+#p <- wrap_plots(listPlots, ncol = 2)
+
+for (i in seq_along(listPlots)) {
+  print(listPlots[[i]])
+}
+
+```
+
+* Check changes from baseline for significant features (pval < 0.01 for any plotted estimate):
+  
+  ```{r, fig.width = 8, fig.height = 2}
+
+exp <- "Stool microbiome: families"
+pval <- 0.01
+load("data/data_baseline_change.Rdata")
+
+dat1 <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
+  filter(str_detect(x, exp))
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 |>
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
+  
+  dplyr::filter(!is.na(value))
+
+listPlots <- boxplot_wrap_interaction(dat1,dat2,exp,pval)
+
+for (i in seq_along(listPlots)) {
+  print(listPlots[[i]])
+}
+
+```
+
+* Check relative abundance for significant features M0/M6 compared to control group (pval < 0.01 for any estimate):
+  
+  ```{r}
+
+exp <- "Stool microbiome: families"
+pval <- 0.01
+
+dat1 <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
+  filter(str_detect(x, exp))
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+pheno <- pheno_stool_extend %>%
+  dplyr::select(sampleId,group)
+
+dat2 <- amp_load(otutable=ASVtable_stool_extend, metadata=pheno_stool_extend)
+dat2 <- normaliseTo100(dat2)
+dat2 <- aggregate_abund(
+  dat2$abund,
+  dat2$tax,
+  tax_aggregate = "Family",
+  tax_add = NULL,
+  format = "abund",
+  calcSums = FALSE)
+dat2 <- dat2/100 #make proportions
+dat2 <- as.data.frame(t(dat2)) %>%
+  rownames_to_column(var = "sampleId") %>%
+  pivot_longer(cols=-sampleId,names_to="Family",values_to="rel.abund.") %>%
+  full_join(pheno)
+
+p <- boxplot_smokers_ctrl(dat1,dat2,exp,pval)
+
+p
+
+```
+
+### Combined model
+
+#### Saliva
+
+```{r fig.width = 6, fig.height = 3.5}
+
+dat_relab <- ASVtable_saliva %>%
+  mutate(label = paste0(Phylum,";",Family)) %>%
+  dplyr::select(Family,label)%>%
+  distinct() %>%
+  dplyr::rename(x=Family)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: families",
+                              lmm_data_time = out_lmm$`Basic model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = F,
+                              cluster = 'cluster')
+
+p
+
+```
+
+#### Stool
+
+```{r fig.width = 6, fig.height = 3.5}
+
+dat_relab <- ASVtable_stool %>%
+  mutate(label = paste0(Phylum,";",Family)) %>%
+  dplyr::select(Family,label)%>%
+  distinct() %>%
+  dplyr::rename(x=Family)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: families",
+                              lmm_data_time = out_lmm$`Basic model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = F,
+                              cluster = 'cluster')
+
+p
+
+```
+
+### Combined model with pack years
+
+#### Saliva
+
+```{r fig.width = 6, fig.height = 3.5}
+
+dat_relab <- ASVtable_saliva %>%
+  mutate(label = paste0(Phylum,";",Family)) %>%
+  dplyr::select(Family,label)%>%
+  distinct() %>%
+  dplyr::rename(x=Family)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: families",
+                              lmm_data_time = out_lmm$`Basic model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = F,
+                              cluster = 'cluster')
+
+p
+
+```
+
+* Check relative abundance for significant features (pval < 0.01 for any estimate):
+  
+  ```{r, fig.width = 8, fig.height = 2}
+
+exp <- "Saliva microbiome: families"
+pval <- 0.01
+load("data/data_raw.Rdata")
+
+# get time from basic model, combine with interaction from interaction model
+dat1a <- as.data.frame(out_lmm$`Basic model with packyears`) %>%
+  filter(str_detect(x, exp)) %>%
+  dplyr::select(!contains(c("std.", "age_at_consent", "smoking_py"))) %>% 
+  dplyr::select(!ends_with(c("compliance")))
+
+dat1b <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
+  filter(str_detect(x, exp))  %>%
+  dplyr::select(!contains(c("std.", "age_at_consent", "smoking_py",
+                            "estimate_compliancehigher compliance", 
+                            "p.value_compliancehigher compliance"))) %>% 
+  dplyr::select(!ends_with(c("visitIdM2", "visitIdM4", "visitIdM6")))
+
+dat1 <- dplyr::full_join(dat1a,dat1b, by = "x")
+
+rm(dat1a,dat1b);invisible(gc)
+
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 |>
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
+  
+  dplyr::filter(!is.na(value))
+
+listPlots <- boxplot_wrap_interaction(dat1,dat2,exp,pval)
+#p <- wrap_plots(listPlots, ncol = 2)
+
+for (i in seq_along(listPlots)) {
+  print(listPlots[[i]])
+}
+
+```
+
+* Check changes from baseline for significant features (pval < 0.01 for any estimate):
+  
+  ```{r, fig.width = 8, fig.height = 2}
+
+exp <- "Saliva microbiome: families"
+pval <- 0.01
+load("data/data_baseline_change.Rdata")
+
+# get time from basic model, combine with interaction from interaction model
+dat1a <- as.data.frame(out_lmm$`Basic model with packyears`) %>%
+  filter(str_detect(x, exp)) %>%
+  dplyr::select(!contains(c("std.", "age_at_consent", "smoking_py"))) %>% 
+  dplyr::select(!ends_with(c("compliance")))
+
+dat1b <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
+  filter(str_detect(x, exp))  %>%
+  dplyr::select(!contains(c("std.", "age_at_consent", "smoking_py",
+                            "estimate_compliancehigher compliance", 
+                            "p.value_compliancehigher compliance"))) %>% 
+  dplyr::select(!ends_with(c("visitIdM2", "visitIdM4", "visitIdM6")))
+
+dat1 <- dplyr::full_join(dat1a,dat1b, by = "x")
+
+rm(dat1a,dat1b);invisible(gc)
+
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 |>
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
+  
+  dplyr::filter(!is.na(value))
+
+listPlots <- boxplot_wrap_interaction(dat1,dat2,exp,pval)
+#p <- wrap_plots(listPlots, ncol = 2)
+
+for (i in seq_along(listPlots)) {
+  print(listPlots[[i]])
+}
+
+```
+
+#### Stool
+
+```{r fig.width = 6, fig.height = 3.5}
+
+dat_relab <- ASVtable_stool %>%
+  mutate(label = paste0(Phylum,";",Family)) %>%
+  dplyr::select(Family,label)%>%
+  distinct() %>%
+  dplyr::rename(x=Family)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: families",
+                              lmm_data_time = out_lmm$`Basic model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = F,
+                              cluster = 'cluster')
+
+p
+
+```
+
+* Check relative abundance for significant features (pval < 0.01 for any estimate):
+  
+  ```{r, fig.width = 8, fig.height = 2}
+
+exp <- "Stool microbiome: families"
+pval <- 0.01
+load("data/data_raw.Rdata")
+
+# get time from basic model, combine with interaction from interaction model
+dat1a <- as.data.frame(out_lmm$`Basic model with packyears`) %>%
+  filter(str_detect(x, exp)) %>%
+  dplyr::select(!contains(c("std.", "age_at_consent", "smoking_py"))) %>% 
+  dplyr::select(!ends_with(c("compliance")))
+
+dat1b <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
+  filter(str_detect(x, exp))  %>%
+  dplyr::select(!contains(c("std.", "age_at_consent", "smoking_py",
+                            "estimate_compliancehigher compliance", 
+                            "p.value_compliancehigher compliance"))) %>% 
+  dplyr::select(!ends_with(c("visitIdM2", "visitIdM4", "visitIdM6")))
+
+dat1 <- dplyr::full_join(dat1a,dat1b, by = "x")
+
+rm(dat1a,dat1b);invisible(gc)
+
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 |>
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
+  dplyr::filter(!is.na(value))
+
+listPlots <- boxplot_wrap_interaction(dat1,dat2,exp,pval)
+#p <- wrap_plots(listPlots, ncol = 2)
+
+for (i in seq_along(listPlots)) {
+  print(listPlots[[i]])
+}
+
+```
+
+* Check changes from baseline for significant features (pval < 0.01 for any estimate):
+  
+  ```{r, fig.width = 8, fig.height = 2}
+
+exp <- "Stool microbiome: families"
+pval <- 0.01
+load("data/data_baseline_change.Rdata")
+
+# get time from basic model, combine with interaction from interaction model
+dat1a <- as.data.frame(out_lmm$`Basic model with packyears`) %>%
+  filter(str_detect(x, exp)) %>%
+  dplyr::select(!contains(c("std.", "age_at_consent", "smoking_py"))) %>% 
+  dplyr::select(!ends_with(c("compliance")))
+
+dat1b <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
+  filter(str_detect(x, exp))  %>%
+  dplyr::select(!contains(c("std.", "age_at_consent", "smoking_py",
+                            "estimate_compliancehigher compliance", 
+                            "p.value_compliancehigher compliance"))) %>% 
+  dplyr::select(!ends_with(c("visitIdM2", "visitIdM4", "visitIdM6")))
+
+dat1 <- dplyr::full_join(dat1a,dat1b, by = "x")
+
+rm(dat1a,dat1b);invisible(gc)
+
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 |>
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
+  dplyr::filter(!is.na(value))
+
+listPlots <- boxplot_wrap_interaction(dat1,dat2,exp,pval)
+#p <- wrap_plots(listPlots, ncol = 2)
+
+for (i in seq_along(listPlots)) {
+  print(listPlots[[i]])
+}
+
+```
+
+### Higher compliance only
+
+#### Saliva
+
+```{r fig.width = 6, fig.height = 3.5}
+
+dat_relab <- ASVtable_saliva %>%
+  mutate(label = paste0(Phylum,";",Family)) %>%
+  dplyr::select(Family,label)%>%
+  distinct() %>%
+  dplyr::rename(x=Family)
+
+p <- plot_lmm_heatmap_time(exp = "Saliva microbiome: families",
+                           lmm_data_time = out_lmm$`Higher compliance only`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = F,
+                           cluster = 'cluster')
+
+p
+
+```
+
+#### Stool
+
+```{r fig.width = 6, fig.height = 3.5}
+
+dat_relab <- ASVtable_stool %>%
+  mutate(label = paste0(Phylum,";",Family)) %>%
+  dplyr::select(Family,label)%>%
+  distinct() %>%
+  dplyr::rename(x=Family)
+
+p <- plot_lmm_heatmap_time(exp = "Stool microbiome: families",
+                           lmm_data_time = out_lmm$`Higher compliance only`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = F,
+                           cluster = 'cluster')
+
+p
+
+```
+
+### Higher compliance only with packyears
+
+#### Saliva
+
+```{r fig.width = 6, fig.height = 3.5}
+
+dat_relab <- ASVtable_saliva %>%
+  mutate(label = paste0(Phylum,";",Family)) %>%
+  dplyr::select(Family,label)%>%
+  distinct() %>%
+  dplyr::rename(x=Family)
+
+p <- plot_lmm_heatmap_time(exp = "Saliva microbiome: families",
+                           lmm_data_time = out_lmm$`Higher compliance only with packyears`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = F,
+                           cluster = 'cluster')
+
+p
+
+```
+
+
+```{r ext_5c, eval = F}
+
+cairo_pdf("out/pdf/ext5c.pdf", width = 4.5, height = 1.5)
+print(p)
+dev.off()
+
+```
+
+* Check relative abundance for significant features (pval < 0.01 for any estimate):
+  
+  ```{r, fig.width = 8, fig.height = 2}
+
+exp <- "Saliva microbiome: families"
+pval <- 0.01
+load("data/data_raw.Rdata")
+
+dat1 <- as.data.frame(out_lmm$`Higher compliance only with packyears`) %>%
+  filter(str_detect(x, exp))
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 |>
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
+  
+  dplyr::filter(!is.na(value))
+
+listPlots <- boxplot_wrap_time(dat1,dat2,exp,pval)
+
+for (i in seq_along(listPlots)) {
+  print(listPlots[[i]])
+}
+
+```
+
+* Check changes from baseline for significant features (pval < 0.01 for any estimate):
+  
+  ```{r, fig.width = 8, fig.height = 2}
+
+exp <- "Saliva microbiome: families"
+pval <- 0.01
+load("data/data_baseline_change.Rdata")
+
+dat1 <- as.data.frame(out_lmm$`Higher compliance only with packyears`) %>%
+  filter(str_detect(x, exp))
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 |>
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
+  
+  dplyr::filter(!is.na(value))
+
+listPlots <- boxplot_wrap_time(dat1,dat2,exp,pval)
+
+for (i in seq_along(listPlots)) {
+  print(listPlots[[i]])
+}
+
+```
+
+* Check relative abundance for significant features M0/M6 compared to control group (pval < 0.01 for any estimate):
+  
+  ```{r}
+
+exp <- "Saliva microbiome: families"
+pval <- 0.01
+
+dat1 <- as.data.frame(out_lmm$`Higher compliance only with packyears`) %>%
+  filter(str_detect(x, exp))
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+pheno <- pheno_saliva_extend %>%
+  dplyr::select(sampleId,group)
+
+dat2 <- amp_load(otutable=ASVtable_saliva_extend, metadata=pheno_saliva_extend)
+dat2 <- normaliseTo100(dat2)
+dat2 <- aggregate_abund(
+  dat2$abund,
+  dat2$tax,
+  tax_aggregate = "Family",
+  tax_add = NULL,
+  format = "abund",
+  calcSums = FALSE)
+dat2 <- dat2/100 #make proportions
+dat2 <- as.data.frame(t(dat2)) %>%
+  rownames_to_column(var = "sampleId") %>%
+  pivot_longer(cols=-sampleId,names_to="Family",values_to="rel.abund.") %>%
+  full_join(pheno)
+
+p <- boxplot_smokers_ctrl(dat1,dat2,exp,pval)
+
+p
+
+```
+
+```{r ext_5e, eval = F}
+
+cairo_pdf("out/pdf/ext5e.pdf", width = 6, height = 3.5)
+print(p)
+dev.off()
+
+```
+
+#### Stool
+
+```{r fig.width = 6, fig.height = 3.5}
+
+dat_relab <- ASVtable_stool %>%
+  mutate(label = paste0(Phylum,";",Family)) %>%
+  dplyr::select(Family,label)%>%
+  distinct() %>%
+  dplyr::rename(x=Family)
+
+p <- plot_lmm_heatmap_time(exp = "Stool microbiome: families",
+                           lmm_data_time = out_lmm$`Higher compliance only with packyears`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = F,
+                           cluster = 'cluster')
+
+p
+
+```
+
+```{r ext_5d, eval = F}
+
+cairo_pdf("out/pdf/ext5d.pdf", width = 4.5, height = 1.5)
+print(p)
+dev.off()
+
+```
+
+* Check relative abundance for significant features (pval < 0.01 for any estimate):
+  
+  ```{r, fig.width = 8, fig.height = 2}
+
+exp <- "Stool microbiome: families"
+pval <- 0.01
+load("data/data_raw.Rdata")
+
+dat1 <- as.data.frame(out_lmm$`Higher compliance only with packyears`) %>%
+  filter(str_detect(x, exp))
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 |>
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
+  
+  dplyr::filter(!is.na(value))
+
+listPlots <- boxplot_wrap_time(dat1,dat2,exp,pval)
+
+for (i in seq_along(listPlots)) {
+  print(listPlots[[i]])
+}
+
+```
+
+* Check changes from baseline for significant features (pval < 0.01 for any estimate):
+  
+  ```{r, fig.width = 8, fig.height = 2}
+
+exp <- "Stool microbiome: families"
+pval <- 0.01
+load("data/data_baseline_change.Rdata")
+
+dat1 <- as.data.frame(out_lmm$`Higher compliance only with packyears`) %>%
+  filter(str_detect(x, exp))
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 |>
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
+  
+  dplyr::filter(!is.na(value))
+
+listPlots <- boxplot_wrap_time(dat1,dat2,exp,pval)
+
+for (i in seq_along(listPlots)) {
+  print(listPlots[[i]])
+}
+
+```
+
+* Check relative abundance for significant features M0/M6 compared to control group (pval < 0.01 for any estimate):
+  
+  ```{r}
+
+exp <- "Stool microbiome: families"
+pval <- 0.01
+
+dat1 <- as.data.frame(out_lmm$`Higher compliance only with packyears`) %>%
+  filter(str_detect(x, exp))
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+pheno <- pheno_stool_extend %>%
+  dplyr::select(sampleId,group)
+
+dat2 <- amp_load(otutable=ASVtable_stool_extend, metadata=pheno_stool_extend)
+dat2 <- normaliseTo100(dat2)
+dat2 <- aggregate_abund(
+  dat2$abund,
+  dat2$tax,
+  tax_aggregate = "Family",
+  tax_add = NULL,
+  format = "abund",
+  calcSums = FALSE)
+dat2 <- dat2/100 #make proportions
+dat2 <- as.data.frame(t(dat2)) %>%
+  rownames_to_column(var = "sampleId") %>%
+  pivot_longer(cols=-sampleId,names_to="Family",values_to="rel.abund.") %>%
+  full_join(pheno)
+
+p <- boxplot_smokers_ctrl(dat1,dat2,exp,pval)
+
+p
+
+```
+
+```{r ext_5f, eval = F}
+
+cairo_pdf("out/pdf/ext5f.pdf", width = 4, height = 2)
+print(p)
+dev.off()
+
+```
+
+
+:::
+  
+  
+  ### Summary Interaction/Higher compliance
+  
+  * Any significant feature pval < 0.01 in eigher Higher compliance model or interaction model (corrected packyears)
+
+#### Saliva
+
+```{r}
+
+exp <- "Saliva microbiome: families"
+pval <- 0.01
+
+### gather significant families from interaction model
+dat1 <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
+  filter(str_detect(x, exp))
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+toPlot1 = dat1 %>%
+  dplyr::filter(`p.value_visitIdM2:compliancehigher compliance` < pval | 
+                  `p.value_visitIdM4:compliancehigher compliance` < pval |
+                  `p.value_visitIdM6:compliancehigher compliance` < pval |
+                  `p.value_visitIdM2` < pval |
+                  `p.value_visitIdM4` < pval |
+                  `p.value_visitIdM6` < pval) %>%
+  pull(x)
+
+### gather significant families from high compliance model
+dat1 <- as.data.frame(out_lmm$`Higher compliance only with packyears`) %>%
+  filter(str_detect(x, exp))
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+toPlot2 = dat1 %>%
+  dplyr::filter(`p.value_visitIdM2` < pval |
+                  `p.value_visitIdM4` < pval |
+                  `p.value_visitIdM6` < pval) %>%
+  pull(x)
+
+### prep abundance table
+pheno <- pheno_saliva_extend %>%
+  dplyr::select(sampleId,group)
+
+dat2 <- amp_load(otutable=ASVtable_saliva_extend, metadata=pheno_saliva_extend)
+dat2 <- normaliseTo100(dat2)
+dat2 <- aggregate_abund(
+  dat2$abund,
+  dat2$tax,
+  tax_aggregate = "Family",
+  tax_add = NULL,
+  format = "abund",
+  calcSums = FALSE)
+dat2 <- dat2/100 #make proportions
+dat2 <- as.data.frame(t(dat2)) %>%
+  rownames_to_column(var = "sampleId") %>%
+  pivot_longer(cols=-sampleId,names_to="Family",values_to="rel.abund.") %>%
+  full_join(pheno)
+
+toPlot <- unique(c(toPlot1,toPlot2))
+rm(toPlot1,toPlot2); invisible(gc())
+
+p <- boxplot_smokers_ctrl(dat1=NULL,
+                          dat2=dat2,
+                          exp=NULL,
+                          pval=NULL,
+                          interaction_only=NULL, 
+                          taxa = toPlot)
+
+p
+```
+
+#### Stool
+
+```{r}
+
+exp <- "Stool microbiome: families"
+pval <- 0.01
+
+### gather significant families from interaction model
+dat1 <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
+  filter(str_detect(x, exp))
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+toPlot1 = dat1 %>%
+  dplyr::filter(`p.value_visitIdM2:compliancehigher compliance` < pval | 
+                  `p.value_visitIdM4:compliancehigher compliance` < pval |
+                  `p.value_visitIdM6:compliancehigher compliance` < pval |
+                  `p.value_visitIdM2` < pval |
+                  `p.value_visitIdM4` < pval |
+                  `p.value_visitIdM6` < pval) %>%
+  pull(x)
+
+### gather significant families from high compliance model
+dat1 <- as.data.frame(out_lmm$`Higher compliance only with packyears`) %>%
+  filter(str_detect(x, exp))
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+toPlot2 = dat1 %>%
+  dplyr::filter(`p.value_visitIdM2` < pval |
+                  `p.value_visitIdM4` < pval |
+                  `p.value_visitIdM6` < pval) %>%
+  pull(x)
+
+### prep abundance table
+pheno <- pheno_stool_extend %>%
+  dplyr::select(sampleId,group)
+
+dat2 <- amp_load(otutable=ASVtable_stool_extend, metadata=pheno_stool_extend)
+dat2 <- normaliseTo100(dat2)
+dat2 <- aggregate_abund(
+  dat2$abund,
+  dat2$tax,
+  tax_aggregate = "Family",
+  tax_add = NULL,
+  format = "abund",
+  calcSums = FALSE)
+dat2 <- dat2/100 #make proportions
+dat2 <- as.data.frame(t(dat2)) %>%
+  rownames_to_column(var = "sampleId") %>%
+  pivot_longer(cols=-sampleId,names_to="Family",values_to="rel.abund.") %>%
+  full_join(pheno)
+
+toPlot <- unique(c(toPlot1,toPlot2))
+rm(toPlot1,toPlot2); invisible(gc())
+
+p <- boxplot_smokers_ctrl(dat1=NULL,
+                          dat2=dat2,
+                          exp=NULL,
+                          pval=NULL,
+                          interaction_only=NULL, 
+                          taxa = toPlot)
+
+p
+```
+
+
+## Predicted MetaCyc
+
+```{r}
+# results lmm with functional predictions
+load("archive/lmm_out/out_lmm_factor_March_2024.Rdata")
+```
+
+* only rows with adjusted p-value < 0.05 are kept
+* top saliva, bottom stool
+
+::: {.panel-tabset}
+
+### Interaction model
+
+```{r fig.width = 6, fig.height = 12}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/MetaCyc_annot.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",description)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+exp = "Saliva microbiome: MetaCyc"
+lmm_data_time = out_lmm$`Interaction model`
+lmm_data_int = out_lmm$`Interaction model`
+relabel = dat_relab
+age_cor = T
+spy_cor = T
+FDR = T
+cluster = 'cluster'
+cols = c("#1b69a1",
+         "#48a0af",
+         "#f39668",
+         "#ec6669")
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: MetaCyc",
+                              lmm_data_time = out_lmm$`Interaction model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 3.5, eval=F}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/MetaCyc_annot.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",description)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: MetaCyc",
+                              lmm_data_time = out_lmm$`Interaction model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+### Interaction model with pack years
+
+```{r fig.width = 6, fig.height = 12}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/MetaCyc_annot.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",description)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: MetaCyc",
+                              lmm_data_time = out_lmm$`Interaction model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 1.5, eval = F}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/MetaCyc_annot.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",description)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: MetaCyc",
+                              lmm_data_time = out_lmm$`Interaction model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+### Combined model
+
+```{r fig.width = 6, fig.height = 12}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/MetaCyc_annot.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",description)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: MetaCyc",
+                              lmm_data_time = out_lmm$`Basic model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 3.5, eval =F}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/MetaCyc_annot.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",description)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: MetaCyc",
+                              lmm_data_time = out_lmm$`Basic model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+### Combined model with pack years
+
+```{r fig.width = 6, fig.height = 12}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/MetaCyc_annot.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",description)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: MetaCyc",
+                              lmm_data_time = out_lmm$`Basic model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 3.5, eval =F}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/MetaCyc_annot.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",description)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: MetaCyc",
+                              lmm_data_time = out_lmm$`Basic model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+### Higher compliance only
+
+```{r fig.width = 6, fig.height = 15}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/MetaCyc_annot.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",description)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_time(exp = "Saliva microbiome: MetaCyc",
+                           lmm_data_time = out_lmm$`Higher compliance only`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = T,
+                           cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 1.5, eval =F}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/MetaCyc_annot.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",description)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_time(exp = "Stool microbiome: MetaCyc",
+                           lmm_data_time = out_lmm$`Higher compliance only`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = T,
+                           cluster = 'cluster')
+
+p
+
+```
+
+### Higher compliance only with packyears
+
+```{r fig.width = 6, fig.height = 15}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/MetaCyc_annot.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",description)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_time(exp = "Saliva microbiome: MetaCyc",
+                           lmm_data_time = out_lmm$`Higher compliance only with packyears`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = T,
+                           cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 1.5, eval = F}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/MetaCyc_annot.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",description)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_time(exp = "Stool microbiome: MetaCyc",
+                           lmm_data_time = out_lmm$`Higher compliance only with packyears`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = T,
+                           cluster = 'cluster')
+
+p
+
+```
+
+:::
+  
+  ## Predicted EC
+  
+  * for the first four models only rows with adjusted p-value < 0.05 for the interaction term are kept
+* for the last two high compliance models only rows with adjust p-value < 0.05 (time terms) are kept
+* top saliva, bottom stool
+
+::: {.panel-tabset}
+
+### Interaction model
+
+* EC:1.8.98.1 dihydromethanophenazine:CoB-CoM heterodisulfide reductase (methanogens)
+
+```{r fig.width = 6, fig.height = 2}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/EC_annot.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",description)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: EC",
+                              lmm_data_time = out_lmm$`Interaction model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              interaction_only = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 3.5, eval=F}
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: EC",
+                              lmm_data_time = out_lmm$`Interaction model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = NULL,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+### Interaction model with pack years
+
+* EC 2.1.1.258 5-methyltetrahydrofolate---corrinoid/iron-sulfur protein Co-methyltransferase (Wood-Ljungdahl)
+* EC 1.8.98.1 dihydromethanophenazine:CoB-CoM heterodisulfide reductase (methanogens)
+* EC 4.4.1.19 phosphosulfolactate synthase (methanogens)
+* EC 2.1.1.245 5-methyltetrahydrosarcinapterin---corrinoid/iron-sulfur protein Co-methyltransferase (methanogens)
+* EC 1.8.99.5 dissimilatory sulfite reductase (S reducers/oxidizers)
+* EC 2.3.1.22 putrescine---2-oxoglutarate transaminase (arginine catabolism)
+
+```{r fig.width = 6, fig.height = 2}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/EC_annot.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",description)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: EC",
+                              lmm_data_time = out_lmm$`Interaction model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              interaction_only = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+* Check relative abundance for significant features (adjusted pval < 0.05 for interaction):
+  
+  ```{r, fig.width = 12, fig.height = 2}
+
+exp <- "Saliva microbiome: EC"
+pval <- 0.05
+load("data/data_raw.Rdata")
+
+dat1 <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
+  filter(str_detect(x, exp))
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+# FDR correct
+tmp_p <- dat1 %>%
+  dplyr::select(x,contains("p.value")) %>%
+  pivot_longer(cols = contains("p.value"),names_to = "estimate", values_to = "p_value") %>%
+  FDR_correct() %>%
+  pivot_wider(id_cols = x, names_from = estimate, values_from = p_value)
+
+dat1 <- dat1 %>%
+  dplyr::select(!contains("p.value")) %>%
+  left_join(tmp_p, by = "x") 
+
+rm(tmp_p);invisible(gc())
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 %>%
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
+  dplyr::filter(!is.na(value))
+
+listPlots <- boxplot_wrap_interaction(dat1,dat2,exp,pval,interaction_only = T)
+
+for (i in seq_along(listPlots)) {
+  print(listPlots[[i]])
+}
+
+```
+
+* Check changes from baseline for significant features (pval < 0.05 for interaction):
+  
+  ```{r, fig.width = 8, fig.height = 2}
+
+exp <- "Saliva microbiome: EC"
+pval <- 0.05
+load("data/data_baseline_change.Rdata")
+
+dat1 <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
+  filter(str_detect(x, exp))
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+# FDR correct
+tmp_p <- dat1 %>%
+  dplyr::select(x,contains("p.value")) %>%
+  pivot_longer(cols = contains("p.value"),names_to = "estimate", values_to = "p_value") %>%
+  FDR_correct() %>%
+  pivot_wider(id_cols = x, names_from = estimate, values_from = p_value)
+
+dat1 <- dat1 %>%
+  dplyr::select(!contains("p.value")) %>%
+  left_join(tmp_p, by = "x") 
+
+rm(tmp_p);invisible(gc())
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 %>%
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
+  dplyr::filter(!is.na(value))
+
+listPlots <- boxplot_wrap_interaction(dat1,dat2,exp,pval, interaction_only = T)
+
+for (i in seq_along(listPlots)) {
+  print(listPlots[[i]])
+}
+
+```
+
+* Check relative abundance for significant features M0/M6 compared to control group (pval < 0.05 for interaction):
+  
+  ```{r}
+
+exp <- "Saliva microbiome: EC"
+pval <- 0.05
+load("data/data_raw.Rdata")
+
+dat1 <- as.data.frame(out_lmm$`Interaction model with packyears`) %>%
+  filter(str_detect(x, exp))
+dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
+
+# FDR correct
+tmp_p <- dat1 %>%
+  dplyr::select(x,contains("p.value")) %>%
+  pivot_longer(cols = contains("p.value"),names_to = "estimate", values_to = "p_value") %>%
+  FDR_correct() %>%
+  pivot_wider(id_cols = x, names_from = estimate, values_from = p_value)
+
+dat1 <- dat1 %>%
+  dplyr::select(!contains("p.value")) %>%
+  left_join(tmp_p, by = "x") 
+
+rm(tmp_p);invisible(gc())
+
+pheno <- pheno_saliva_extend %>%
+  dplyr::select(sampleId,group)
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 %>%
+  mutate(sampleId = paste0(primary,"SM")) %>%
+  dplyr::filter(sampleId %in% c(pheno$sampleId)) %>%
+  dplyr::filter(!is.na(value)) %>%
+  full_join(pheno)
+
+p <- boxplot_smokers_ctrl2(dat1,dat2,exp,pval, interaction_only = T)
+
+p
+
+```
+
+* who is contributing?
+  
+  ```{r}
+
+filepath <- "~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/2-output/picrust2-saliva/EC_metagenome_out/pred_metagenome_contrib.tsv.gz"
+contrib <- data.table::fread(filepath, sep = "\t", header = TRUE) %>% 
+  dplyr::rename(enzyme=`function`)
+
+# retain only relevant enzymes/samples
+contrib <- contrib  %>%
+  dplyr::filter(enzyme %in% unique(p$data$rowname)) %>%
+  dplyr::filter(sample %in% unique(p$data$sampleId))
+
+# add groups
+contrib <- left_join(contrib,pheno, by = c("sample" = "sampleId"))
+
+# Watch out!!!! contribution is normalized per sample, 
+# but when a given taxon is not detected in a sample, there is no row for that sample
+# first fill missing contributions with 0
+all_combinations <- expand_grid(sample = unique(p$data$sampleId), 
+                                enzyme = unique(p$data$rowname), 
+                                taxon = unique(contrib$taxon))
+contrib <- left_join(all_combinations, contrib, by = c("sample", "enzyme", "taxon"))
+contrib <- contrib %>% 
+  mutate(cont = ifelse(is.na(norm_taxon_function_contrib), 0, norm_taxon_function_contrib))
+
+# helper function to calculate average contribution per ASV across one sample group
+avg_contrib <- function(dat){
+  
+  out <- list()
+  for (i in 1:length(unique(p$data$rowname))) {
+    result = dat %>%
+      filter(enzyme == unique(p$data$rowname)[i]) %>%
+      dplyr::select(sample,taxon,cont) %>%
+      group_by(taxon) %>%
+      summarise(avg_contrib = round(mean(cont), 6)) %>%
+      mutate(avg_contrib = avg_contrib / sum(avg_contrib)) %>% # does not exactly scale to 1?
+      mutate(enzyme = unique(p$data$rowname)[i])
+    out[[i]] <- result
+  }
+  out <- do.call(rbind, out)
+  out$avg_contrib <- out$avg_contrib * 100 
+  
+  return(out)
+  
+}
+
+# calculate average contribition per ASV across sample groups
+dat <- list()
+for (i in 1:length(unique(contrib$group))){
+  dat[[i]] = contrib %>% dplyr::filter(group == unique(contrib$group)[i]) %>%
+    avg_contrib(.)
+  dat[[i]]$group = unique(contrib$group)[i]
+}
+dat <- do.call(rbind, dat)
+
+# add taxonomy
+taxinfo <- ASVtable_saliva_extend %>% 
+  filter(OTU %in% c(contrib$taxon)) %>%
+  dplyr::select(!contains("SM"))
+dat <- left_join(dat,taxinfo, by = c("taxon" = "OTU")) 
+
+# add informative label
+dat <- dat %>%
+  mutate(label = case_when(
+    is.na(Species) ~ paste0(taxon, " (",Genus,")"),
+    !is.na(Species) ~ paste0(taxon," (",Genus," ",Species,")")
+  ))
+
+# Create a stacked bar chart
+plot <- ggplot(dat, aes(x = enzyme, y = avg_contrib, fill = label)) +
+  geom_bar(stat = "identity") +
+  labs(x = "",
+       y = "Average contribution to predicted function \n across sample groups \n [%]") +
+  scale_fill_carto_d(name = "", palette = "Geyser") +
+  theme_minimal() +
+  theme(legend.title=element_blank())+
+  coord_flip() +
+  guides(fill = guide_legend(ncol = 1)) +
+  facet_wrap(~group)
+
+plot
+
+
+```
+
+* Beside Peptococcus ASV, very low abundance and low prevelance!
+  
+  
+  * no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 1.5, eval=F}
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: EC",
+                              lmm_data_time = out_lmm$`Interaction model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = NULL,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+### Combined model
+
+```{r fig.width = 6, fig.height = 12}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/EC_annot.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",description)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: EC",
+                              lmm_data_time = out_lmm$`Basic model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 3.5, eval =F}
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: EC",
+                              lmm_data_time = out_lmm$`Basic model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+### Combined model with pack years
+
+```{r fig.width = 6, fig.height = 12}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/EC_annot.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",description)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: EC",
+                              lmm_data_time = out_lmm$`Basic model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 3.5, eval =F}
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: EC",
+                              lmm_data_time = out_lmm$`Basic model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = NULL,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+### Higher compliance only
+
+```{r fig.width = 6, fig.height = 15}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/EC_annot.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",description)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_time(exp = "Saliva microbiome: EC",
+                           lmm_data_time = out_lmm$`Higher compliance only`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = T,
+                           cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 1.5, eval =F}
+
+p <- plot_lmm_heatmap_time(exp = "Stool microbiome: EC",
+                           lmm_data_time = out_lmm$`Higher compliance only`,
+                           relabel = NULL,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = T,
+                           cluster = 'cluster')
+
+p
+
+```
+
+### Higher compliance only with packyears
+
+```{r fig.width = 6, fig.height = 15}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/EC_annot.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",description)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_time(exp = "Saliva microbiome: EC",
+                           lmm_data_time = out_lmm$`Higher compliance only with packyears`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = T,
+                           cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 1.5, eval = F}
+
+
+p <- plot_lmm_heatmap_time(exp = "Stool microbiome: EC",
+                           lmm_data_time = out_lmm$`Higher compliance only with packyears`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = T,
+                           cluster = 'cluster')
+
+p
+
+```
+
+:::
+  
+  
+  ## Predicted KEGG
+  
+  * many eukaryote/human pathways, not too usefull
+* only rows with adjusted p-value < 0.05 are kept
+* top saliva, bottom stool
+
+::: {.panel-tabset}
+
+### Interaction model
+
+```{r fig.width = 6, fig.height = 8}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/KEGG_annot2.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",name)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: KEGG",
+                              lmm_data_time = out_lmm$`Interaction model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 3.5, eval=F}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/KEGG_annot2.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",name)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: KEGG",
+                              lmm_data_time = out_lmm$`Interaction model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+### Interaction model with pack years
+
+```{r fig.width = 6, fig.height = 8}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/KEGG_annot2.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",name)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: KEGG",
+                              lmm_data_time = out_lmm$`Interaction model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 1.5, eval = F}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/KEGG_annot2.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",name)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: KEGG",
+                              lmm_data_time = out_lmm$`Interaction model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+### Combined model
+
+```{r fig.width = 6, fig.height = 12}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/KEGG_annot2.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",name)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: KEGG",
+                              lmm_data_time = out_lmm$`Basic model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 3.5, eval =F}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/KEGG_annot2.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",name)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: KEGG",
+                              lmm_data_time = out_lmm$`Basic model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+### Combined model with pack years
+
+```{r fig.width = 6, fig.height = 12}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/KEGG_annot2.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",name)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: KEGG",
+                              lmm_data_time = out_lmm$`Basic model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 3.5, eval =F}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/KEGG_annot2.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",name)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: KEGG",
+                              lmm_data_time = out_lmm$`Basic model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+### Higher compliance only
+
+```{r fig.width = 6, fig.height = 2}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/KEGG_annot2.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",name)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_time(exp = "Saliva microbiome: KEGG",
+                           lmm_data_time = out_lmm$`Higher compliance only`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = T,
+                           cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 1.5, eval =F}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/KEGG_annot2.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",name)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_time(exp = "Stool microbiome: KEGG",
+                           lmm_data_time = out_lmm$`Higher compliance only`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = T,
+                           cluster = 'cluster')
+
+p
+
+```
+
+### Higher compliance only with packyears
+
+```{r fig.width = 6, fig.height = 2}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/KEGG_annot2.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",name)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_time(exp = "Saliva microbiome: KEGG",
+                           lmm_data_time = out_lmm$`Higher compliance only with packyears`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = T,
+                           cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 1.5, eval = F}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/KEGG_annot2.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",name)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+p <- plot_lmm_heatmap_time(exp = "Stool microbiome: KEGG",
+                           lmm_data_time = out_lmm$`Higher compliance only with packyears`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = T,
+                           cluster = 'cluster')
+
+p
+
+```
+
+:::
+  
+  ## Predicted KO
+  
+  * for the first four models only rows with adjusted p-value < 0.05 for the interaction term are kept
+* for the last two high compliance models only rows with adjust p-value < 0.05 (time terms) are kept
+* top saliva, bottom stool
+
+::: {.panel-tabset}
+
+### Interaction model
+
+* again K03388-K03390 dihydromethanophenazine:CoB-CoM heterodisulfide reductase (methanogens)??
+  
+  ```{r fig.width = 6, fig.height = 8}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/KO_annot2.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",name)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+dat_relab$label <- gsub("\\[.*?\\]", "", dat_relab$label)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: KO",
+                              lmm_data_time = out_lmm$`Interaction model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              interaction_only = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 3.5, eval=F}
+
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/KO_annot2.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",name)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+dat_relab$label <- gsub("\\[.*?\\]", "", dat_relab$label)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: KO",
+                              lmm_data_time = out_lmm$`Interaction model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = NULL,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+### Interaction model with pack years
+
+```{r fig.width = 6, fig.height = 12}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/KO_annot2.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",name)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+dat_relab$label <- gsub("\\[.*?\\]", "", dat_relab$label)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: KO",
+                              lmm_data_time = out_lmm$`Interaction model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              interaction_only = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 1.5, eval=F}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/KO_annot2.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",name)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+dat_relab$label <- gsub("\\[.*?\\]", "", dat_relab$label)
+
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: KO",
+                              lmm_data_time = out_lmm$`Interaction model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = NULL,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+### Combined model
+
+```{r fig.width = 6, fig.height = 12}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/KO_annot2.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",name)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+dat_relab$label <- gsub("\\[.*?\\]", "", dat_relab$label)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: KO",
+                              lmm_data_time = out_lmm$`Basic model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              interaction_only = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 3.5, eval =F}
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: KO",
+                              lmm_data_time = out_lmm$`Basic model`,
+                              lmm_data_int = out_lmm$`Interaction model`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+### Combined model with pack years
+
+```{r fig.width = 6, fig.height = 12}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/KO_annot2.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",name)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+dat_relab$label <- gsub("\\[.*?\\]", "", dat_relab$label)
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Saliva microbiome: KO",
+                              lmm_data_time = out_lmm$`Basic model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = dat_relab,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              interaction_only = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 3.5, eval =F}
+
+p <- plot_lmm_heatmap_frag_v3(exp = "Stool microbiome: KO",
+                              lmm_data_time = out_lmm$`Basic model with packyears`,
+                              lmm_data_int = out_lmm$`Interaction model with packyears`,
+                              relabel = NULL,
+                              age_cor = T,
+                              spy_cor = T,
+                              FDR = T,
+                              cluster = 'cluster')
+
+p
+
+```
+
+### Higher compliance only
+
+```{r fig.width = 6, fig.height = 20}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/KO_annot2.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",name)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+dat_relab$label <- gsub("\\[.*?\\]", "", dat_relab$label)
+
+
+p <- plot_lmm_heatmap_time(exp = "Saliva microbiome: KO",
+                           lmm_data_time = out_lmm$`Higher compliance only`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = T,
+                           cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 1.5, eval =F}
+
+p <- plot_lmm_heatmap_time(exp = "Stool microbiome: KO",
+                           lmm_data_time = out_lmm$`Higher compliance only`,
+                           relabel = NULL,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = T,
+                           cluster = 'cluster')
+
+p
+
+```
+
+### Higher compliance only with packyears
+
+```{r fig.width = 6, fig.height = 20}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/KO_annot2.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",name)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+dat_relab$label <- gsub("\\[.*?\\]", "", dat_relab$label)
+
+
+p <- plot_lmm_heatmap_time(exp = "Saliva microbiome: KO",
+                           lmm_data_time = out_lmm$`Higher compliance only with packyears`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = T,
+                           cluster = 'cluster')
+
+p
+
+```
+
+* no results after FDR correction for stool
+
+```{r fig.width = 6, fig.height = 1.5, eval = F}
+
+dat_relab  <- readRDS("~/Dropbox/tg-data-prep/prep-scripts/11-preprocessed/2-microbiome/4-functional-predictions/3-output/KO_annot2.Rds") %>%
+  dplyr::mutate(label = paste0(entry,";",name)) %>%
+  dplyr::select(entry,label) %>%
+  dplyr::rename(x=entry)
+
+dat_relab$label <- gsub("\\[.*?\\]", "", dat_relab$label)
+
+
+p <- plot_lmm_heatmap_time(exp = "Stool microbiome: KO",
+                           lmm_data_time = out_lmm$`Higher compliance only with packyears`,
+                           relabel = dat_relab,
+                           age_cor = T,
+                           spy_cor = T,
+                           FDR = T,
+                           cluster = 'cluster')
+
+p
+
+```
+
+:::
+  
+  
+  # Selection of balances
+  
+  * Alternative method to pcoa/pca/lmm to discover features associated with smoking/smoking cessation
+* Selbal: forward selection algorithm for the identification of two groups of variables whose balance is most associated with the response variable
+* Note that zero's are replaced by a very small value
+
+## Taxa associated with smoking?
+
+* training balance on M0 smoker versus control group
+* evaluating balance on all groups
+
+### Saliva families
+
+```{r}
+
+CV.BAL.dic <- readRDS("out/selbal/salivaselbal2_family.Rds")
+# final score calculation, include all data
+x <- amp_load(otutable=ASVtable_saliva_extend,
+              metadata=pheno_saliva_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Family",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_saliva_extend %>%
+  dplyr::filter(!is.na(group)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId") %>%
+  na.omit()
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+out <- data.frame(sampleId = rownames(x),
+                  selbalScore_salivaSmok = bal.value(CV.BAL.dic$global.balance,log(cmultRepl2(x))))
+
+tmp <- pheno_saliva_extend %>%
+  #dplyr::filter(sampleId %in% c(out$sampleId)) %>%
+  dplyr::select(sampleId,group) %>%
+  dplyr::full_join(out)
+
+tmp$group <- factor(tmp$group, levels = rev(names(cols_group)))
+
+tmp <- tmp %>% 
+  filter(group %in% c("Never smoker (control)","Smoker baseline",
+                       "M6 no smoking cessation","M6 smoking cessation"))
+
+p1 <-  tmp %>%
+  ggplot(aes(y = selbalScore_salivaSmok, x = group)) +
+      # geom_boxplot(color = 'black', size = 1) +
+      # scale_fill_manual(values = cols_group) +
+      gghalves::geom_half_boxplot(aes(fill = group),
+                                  alpha = 0.3,
+                                  width = 0.5,
+                                  outlier.shape = NA,errorbar.length = 0) +
+      gghalves::geom_half_point_panel(alpha = 0.6,
+                                  size = 1,
+                                  aes(colour = group)) +
+      ggpubr::stat_compare_means(ref.group = "Never smoker (control)",
+                                label = 'p.signif',
+                                size = 2.7,
+                                method = "wilcox.test",
+                                paired = F,
+                                label.y.npc = 0.93) +
+      scale_fill_manual(values = cols_group, name = "", aesthetics = c('colour', 'fill')) +
+      theme_bw() +
+      ylab('Microbial smoking signature saliva') +
+      xlab('') +
+      theme(legend.position = 'none') +
+      coord_flip() 
+# plot <- plot +
+#   annotate(geom = "segment", x = 3, xend = 4, y = 3, yend = 3, color = "#36454F") +
+#   annotate(geom = "text", x = 3.5, y = 2.5, label = paste0("Training\nAUC = ", round(mean(CV.BAL.dic$cv.accuracy),2)), size = 3, color = "#36454F")
+
+p1 <- p1 +
+  annotate(geom = "curve", x = 3, xend = 4, y = 3, yend = 3, curvature = 0.1, color = "#36454F") +
+  annotate(geom = "text", x = 3.5, y = 2.5, label = paste0("Training\nAUC = ", round(mean(CV.BAL.dic$cv.accuracy), 2)), size = 3, color = "#36454F")
+
+p1
+
+# keep scores for cross-omic comparison
+df_saliva <- tmp %>%
+  mutate(primary = gsub("SM","",sampleId)) %>%
+  dplyr::select(-sampleId)
+
+
+
+```
+
+
+
+* relative abundance individual taxa contributing to balance:
+```{r}
+
+# plot taxa relative abundance contributing to the score ~ compliance
+exp <- "Saliva microbiome: families"
+load("data/data_raw.Rdata")
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 %>%
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
+  dplyr::filter(!is.na(value))
+
+balance <- data.frame(Balance = CV.BAL.dic$global.balance$Group,
+                      Taxa = CV.BAL.dic$global.balance$Taxa) %>%
+  mutate(case_when(Balance == "DEN" ~ "negative smoking association", TRUE ~ "positive smoking association"))
+
+listPlots <- boxplot_wrap_interaction(NULL,dat2,exp,pval,interaction_only = F, taxa = balance$Taxa)
+
+for (i in seq_along(listPlots)) {
+  print(listPlots[[i]])
+}
+
+```
+
+* relative abundance compared to baseline individual taxa contributing to balance:
+
+```{r}
+
+# plot taxa relative abundance contributing to the score ~ compliance
+exp <- "Saliva microbiome: families"
+load("data/data_baseline_change.Rdata")
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 %>%
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
+  dplyr::filter(!is.na(value)) 
+
+balance <- data.frame(Balance = CV.BAL.dic$global.balance$Group,
+                      Taxa = CV.BAL.dic$global.balance$Taxa) %>%
+  mutate(case_when(Balance == "DEN" ~ "negative smoking association", TRUE ~ "positive smoking association"))
+
+listPlots <- boxplot_wrap_interaction(NULL,dat2,exp,pval,interaction_only = F, taxa = balance$Taxa)
+
+for (i in seq_along(listPlots)) {
+  print(listPlots[[i]])
+}
+
+```
+
+* relative abundance numerator/denominator balance:
+```{r}
+
+exp <- "Saliva microbiome: families"
+load("data/data_raw.Rdata")
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 %>%
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
+  dplyr::filter(!is.na(value)) %>%
+  dplyr::select(-assay,-colname,-interventionId)
+
+balance <- data.frame(Balance = CV.BAL.dic$global.balance$Group,
+                      Taxa = CV.BAL.dic$global.balance$Taxa)
+
+gettax <- balance %>% filter(Balance == "NUM") %>% pull(Taxa)
+POS <- dat2 %>%
+  filter(rowname %in% gettax) %>%
+  pivot_wider(id_cols=primary,names_from = rowname,values_from = value) %>%
+  column_to_rownames(var="primary") %>%
+  rowSums()
+POS <- data.frame(primary = names(POS),
+                  value = unname(POS)) %>%
+  mutate(rowname = paste(c("**balance +**",gettax), collapse = "  \n"))
+gettax <- balance %>% filter(Balance == "DEN") %>% pull(Taxa)
+NEG <- dat2 %>%
+  filter(rowname %in% gettax) %>%
+  pivot_wider(id_cols=primary,names_from = rowname,values_from = value) %>%
+  column_to_rownames(var="primary") %>%
+  rowSums()
+NEG <- data.frame(primary = names(NEG),
+                  value = unname(NEG)) %>%
+  mutate(rowname = paste(c("**balance -**",gettax), collapse = "  \n"))
+
+dat2 <- dat2 %>%
+  dplyr::select(primary,subjectId,visitId,compliance) %>%
+  distinct()
+
+dat3 <- rbind(POS,NEG) %>%
+  left_join(dat2)
+
+listPlots <- boxplot_wrap_interaction(NULL,dat3,exp,pval,interaction_only = F, taxa = unique(dat3$rowname))
+
+listPlots[[1]]/listPlots[[2]]
+
+
+```
+
+* relative abundance compared to baseline individual taxa contributing to balance:
+
+```{r}
+
+exp <- "Saliva microbiome: families"
+load("data/data_baseline_change.Rdata")
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 %>%
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
+  dplyr::filter(!is.na(value)) %>%
+  dplyr::select(-assay,-colname,-interventionId)
+
+balance <- data.frame(Balance = CV.BAL.dic$global.balance$Group,
+                      Taxa = CV.BAL.dic$global.balance$Taxa)
+
+gettax <- balance %>% filter(Balance == "NUM") %>% pull(Taxa)
+POS <- dat2 %>%
+  filter(rowname %in% gettax) %>%
+  pivot_wider(id_cols=primary,names_from = rowname,values_from = value) %>%
+  column_to_rownames(var="primary") %>%
+  rowSums()
+POS <- data.frame(primary = names(POS),
+                  value = unname(POS)) %>%
+  mutate(rowname = paste(c("**balance +**",gettax), collapse = "  \n"))
+gettax <- balance %>% filter(Balance == "DEN") %>% pull(Taxa)
+NEG <- dat2 %>%
+  filter(rowname %in% gettax) %>%
+  pivot_wider(id_cols=primary,names_from = rowname,values_from = value) %>%
+  column_to_rownames(var="primary") %>%
+  rowSums()
+NEG <- data.frame(primary = names(NEG),
+                  value = unname(NEG)) %>%
+  mutate(rowname = paste(c("**balance -**",gettax), collapse = "  \n"))
+
+dat2 <- dat2 %>%
+  dplyr::select(primary,subjectId,visitId,compliance) %>%
+  distinct()
+
+dat3 <- rbind(POS,NEG) %>%
+  left_join(dat2)
+
+listPlots <- boxplot_wrap_interaction(NULL,dat3,exp,pval,interaction_only = F, taxa = unique(dat3$rowname))
+
+(listPlots[[1]] + ggtitle("Relative abundance compared to baseline")) /listPlots[[2]]
+
+
+```
+
+* relative abundance compared to baseline individual taxa contributing to balance (only higher compliance):
+
+```{r}
+
+exp <- "Saliva microbiome: families"
+load("data/data_baseline_change.Rdata")
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 %>%
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18") & compliance== "higher compliance") %>%
+  dplyr::filter(!is.na(value)) %>%
+  dplyr::select(-assay,-colname,-interventionId)
+
+balance <- data.frame(Balance = CV.BAL.dic$global.balance$Group,
+                      Taxa = CV.BAL.dic$global.balance$Taxa)
+
+gettax <- balance %>% filter(Balance == "NUM") %>% pull(Taxa)
+POS <- dat2 %>%
+  filter(rowname %in% gettax) %>%
+  pivot_wider(id_cols=primary,names_from = rowname,values_from = value) %>%
+  column_to_rownames(var="primary") %>%
+  rowSums()
+POS <- data.frame(primary = names(POS),
+                  value = unname(POS)) %>%
+  mutate(rowname = paste(c("**balance +**",gettax), collapse = "  \n"))
+gettax <- balance %>% filter(Balance == "DEN") %>% pull(Taxa)
+NEG <- dat2 %>%
+  filter(rowname %in% gettax) %>%
+  pivot_wider(id_cols=primary,names_from = rowname,values_from = value) %>%
+  column_to_rownames(var="primary") %>%
+  rowSums()
+NEG <- data.frame(primary = names(NEG),
+                  value = unname(NEG)) %>%
+  mutate(rowname = paste(c("**balance -**",gettax), collapse = "  \n"))
+
+dat2 <- dat2 %>%
+  dplyr::select(primary,subjectId,visitId) %>%
+  distinct()
+
+dat3 <- rbind(POS,NEG) %>%
+  left_join(dat2)
+
+complete1 <- dat3 |> 
+    dplyr::filter(rowname == unique(NEG$rowname)) |> 
+    dplyr::group_by(subjectId) |> 
+    dplyr::count() |> 
+    ungroup() |> 
+    dplyr::filter(n == 4)
+complete2 <- dat3 |> 
+    dplyr::filter(rowname == unique(POS$rowname)) |> 
+    dplyr::group_by(subjectId) |> 
+    dplyr::count() |> 
+    ungroup() |> 
+    dplyr::filter(n == 4)
+
+p2 <-  dat3 %>%
+    dplyr::filter(subjectId %in% complete1$subjectId & subjectId %in% complete2$subjectId) %>%
+    ggplot(aes(y = value, x = visitId)) +
+    geom_boxplot(alpha = 0.3,
+                 fill = cols[1]) +
+        geom_line(aes(group = subjectId),
+                  colour = cols[1],
+                  alpha = 0.3) +
+        ggpubr::stat_compare_means(ref.group = "M0",
+                                   label = "p.signif",
+                                   size = 2.7,
+                                   paired = T,
+                                   label.y.npc = 0.95) +
+    theme_bw() +
+    xlab('') +
+    ylab('Relative abundance\n(change from baseline)') +
+    facet_wrap(~rowname) +
+    theme(legend.position = 'none', 
+          strip.text = ggtext::element_markdown(),
+          strip.background = element_blank()) 
+    
+
+
+```
+
+```{r main_5c, eval = F}
+
+
+cairo_pdf("out/pdf/5c1.pdf", width = 4, height = 2)
+p1
+dev.off()
+
+cairo_pdf("out/pdf/5c2.pdf", width = 4, height = 2.5)
+p2
+dev.off()
+
+
+
+```
+
+
+### Gut families
+
+```{r}
+
+CV.BAL.dic <- readRDS("out/selbal/stoolselbal2_family.Rds")
+# final score calculation, include all data
+x <- amp_load(otutable=ASVtable_stool_extend,
+              metadata=pheno_stool_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Family",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_stool_extend %>%
+  dplyr::filter(!is.na(group)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+z <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId") %>%
+  na.omit()
+x <- as.matrix(z[,1:ncol(z)-1])
+y <- as.factor(z[,ncol(z)])
+out <- data.frame(sampleId = rownames(x),
+                  selbalScore_stoolSmok = bal.value(CV.BAL.dic$global.balance,log(cmultRepl2(x))))
+
+tmp <- pheno_stool_extend %>%
+  #dplyr::filter(sampleId %in% c(out$sampleId)) %>%
+  dplyr::select(sampleId,group) %>%
+  dplyr::full_join(out)
+
+tmp$group <- factor(tmp$group, levels = rev(names(cols_group)))
+
+tmp <- tmp %>% 
+  filter(group %in% c("Never smoker (control)","Smoker baseline",
+                       "M6 no smoking cessation","M6 smoking cessation"))
+
+p1 <-  tmp %>%
+  ggplot(aes(y = selbalScore_stoolSmok, x = group)) +
+      # geom_boxplot(color = 'black', size = 1) +
+      # scale_fill_manual(values = cols_group) +
+      gghalves::geom_half_boxplot(aes(fill = group),
+                                  alpha = 0.3,
+                                  width = 0.5,
+                                  outlier.shape = NA,errorbar.length = 0) +
+      gghalves::geom_half_point_panel(alpha = 0.6,
+                                  size = 1,
+                                  aes(colour = group)) +
+      ggpubr::stat_compare_means(ref.group = "Never smoker (control)",
+                                label = 'p.signif',
+                                size = 2.7,
+                                method = "wilcox.test",
+                                paired = F,
+                                label.y.npc = 0.93) +
+      scale_fill_manual(values = cols_group, name = "", aesthetics = c('colour', 'fill')) +
+      theme_bw() +
+      ylab('Microbial smoking signature stool') +
+      xlab('') +
+      theme(legend.position = 'none') +
+      coord_flip() 
+# plot <- plot +
+#   annotate(geom = "segment", x = 3, xend = 4, y = 3, yend = 3, color = "#36454F") +
+#   annotate(geom = "text", x = 3.5, y = 2.5, label = paste0("Training\nAUC = ", round(mean(CV.BAL.dic$cv.accuracy),2)), size = 3, color = "#36454F")
+
+p1 <- p1 +
+  annotate(geom = "curve", x = 3, xend = 4, y = 8, yend = 8, curvature = 0.1, color = "#36454F") +
+  annotate(geom = "text", x = 3.5, y = 7, label = paste0("Training\nAUC = ", round(mean(CV.BAL.dic$cv.accuracy), 2)), size = 3, color = "#36454F")
+
+p1
+
+# keep scores for cross-omic comparison
+df_stool <- tmp %>%
+  mutate(primary = gsub("FM","",sampleId)) %>%
+  dplyr::select(-sampleId)
+
+
+```
+
+* relative abundance individual taxa contributing to balance:
+```{r}
+
+# plot taxa relative abundance contributing to the score ~ compliance
+exp <- "Stool microbiome: families"
+load("data/data_raw.Rdata")
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 %>%
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
+  dplyr::filter(!is.na(value))
+
+balance <- data.frame(Balance = CV.BAL.dic$global.balance$Group,
+                      Taxa = CV.BAL.dic$global.balance$Taxa)
+
+listPlots <- boxplot_wrap_interaction(NULL,dat2,exp,pval,interaction_only = F, taxa = balance$Taxa)
+
+for (i in seq_along(listPlots)) {
+  print(listPlots[[i]])
+}
+
+```
+
+* relative abundance compared to baseline individual taxa contributing to balance:
+
+```{r}
+
+# plot taxa relative abundance contributing to the score ~ compliance
+exp <- "Stool microbiome: families"
+load("data/data_baseline_change.Rdata")
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 %>%
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
+  dplyr::filter(!is.na(value)) 
+
+balance <- data.frame(Balance = CV.BAL.dic$global.balance$Group,
+                      Taxa = CV.BAL.dic$global.balance$Taxa)
+
+listPlots <- boxplot_wrap_interaction(NULL,dat2,exp,pval,interaction_only = F, taxa = balance$Taxa)
+
+for (i in seq_along(listPlots)) {
+  print(listPlots[[i]])
+}
+
+```
+
+* relative abundance numerator/denominator balance:
+```{r}
+
+exp <- "Stool microbiome: families"
+load("data/data_raw.Rdata")
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 %>%
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
+  dplyr::filter(!is.na(value)) %>%
+  dplyr::select(-assay,-colname,-interventionId)
+
+balance <- data.frame(Balance = CV.BAL.dic$global.balance$Group,
+                      Taxa = CV.BAL.dic$global.balance$Taxa)
+
+gettax <- balance %>% filter(Balance == "NUM") %>% pull(Taxa)
+POS <- dat2 %>%
+  filter(rowname %in% gettax) %>%
+  pivot_wider(id_cols=primary,names_from = rowname,values_from = value) %>%
+  column_to_rownames(var="primary") %>%
+  rowSums()
+POS <- data.frame(primary = names(POS),
+                  value = unname(POS)) %>%
+  mutate(rowname = paste(c("**balance +**",gettax), collapse = "  \n"))
+gettax <- balance %>% filter(Balance == "DEN") %>% pull(Taxa)
+NEG <- dat2 %>%
+  filter(rowname %in% gettax) %>%
+  pivot_wider(id_cols=primary,names_from = rowname,values_from = value) %>%
+  column_to_rownames(var="primary") %>%
+  rowSums()
+NEG <- data.frame(primary = names(NEG),
+                  value = unname(NEG)) %>%
+  mutate(rowname = paste(c("**balance -**",gettax), collapse = "  \n"))
+
+dat2 <- dat2 %>%
+  dplyr::select(primary,subjectId,visitId,compliance) %>%
+  distinct()
+
+dat3 <- rbind(POS,NEG) %>%
+  left_join(dat2)
+
+listPlots <- boxplot_wrap_interaction(NULL,dat3,exp,pval,interaction_only = F, taxa = unique(dat3$rowname))
+
+listPlots[[1]]/listPlots[[2]]
+
+
+```
+
+* relative abundance compared to baseline individual taxa contributing to balance:
+
+```{r}
+
+exp <- "Stool microbiome: families"
+load("data/data_baseline_change.Rdata")
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 %>%
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
+  dplyr::filter(!is.na(value)) %>%
+  dplyr::select(-assay,-colname,-interventionId)
+
+balance <- data.frame(Balance = CV.BAL.dic$global.balance$Group,
+                      Taxa = CV.BAL.dic$global.balance$Taxa)
+
+gettax <- balance %>% filter(Balance == "NUM") %>% pull(Taxa)
+POS <- dat2 %>%
+  filter(rowname %in% gettax) %>%
+  pivot_wider(id_cols=primary,names_from = rowname,values_from = value) %>%
+  column_to_rownames(var="primary") %>%
+  rowSums()
+POS <- data.frame(primary = names(POS),
+                  value = unname(POS)) %>%
+  mutate(rowname = paste(c("**balance +**",gettax), collapse = "  \n"))
+gettax <- balance %>% filter(Balance == "DEN") %>% pull(Taxa)
+NEG <- dat2 %>%
+  filter(rowname %in% gettax) %>%
+  pivot_wider(id_cols=primary,names_from = rowname,values_from = value) %>%
+  column_to_rownames(var="primary") %>%
+  rowSums()
+NEG <- data.frame(primary = names(NEG),
+                  value = unname(NEG)) %>%
+  mutate(rowname = paste(c("**balance -**",gettax), collapse = "  \n"))
+
+dat2 <- dat2 %>%
+  dplyr::select(primary,subjectId,visitId,compliance) %>%
+  distinct()
+
+dat3 <- rbind(POS,NEG) %>%
+  left_join(dat2)
+
+listPlots <- boxplot_wrap_interaction(NULL,dat3,exp,pval,interaction_only = F, taxa = unique(dat3$rowname))
+
+(listPlots[[1]] + ggtitle("Relative abundance compared to baseline")) /listPlots[[2]]
+
+
+```
+
+
+* relative abundance compared to baseline individual taxa contributing to balance (only higher compliance):
+
+```{r}
+
+exp <- "Stool microbiome: families"
+load("data/data_baseline_change.Rdata")
+
+dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- dat2 %>%
+  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18") & compliance== "higher compliance") %>%
+  dplyr::filter(!is.na(value)) %>%
+  dplyr::select(-assay,-colname,-interventionId)
+
+balance <- data.frame(Balance = CV.BAL.dic$global.balance$Group,
+                      Taxa = CV.BAL.dic$global.balance$Taxa)
+
+gettax <- balance %>% filter(Balance == "NUM") %>% pull(Taxa)
+POS <- dat2 %>%
+  filter(rowname %in% gettax) %>%
+  pivot_wider(id_cols=primary,names_from = rowname,values_from = value) %>%
+  column_to_rownames(var="primary") %>%
+  rowSums()
+POS <- data.frame(primary = names(POS),
+                  value = unname(POS)) %>%
+  mutate(rowname = paste(c("**balance +**",gettax), collapse = "  \n"))
+gettax <- balance %>% filter(Balance == "DEN") %>% pull(Taxa)
+NEG <- dat2 %>%
+  filter(rowname %in% gettax) %>%
+  pivot_wider(id_cols=primary,names_from = rowname,values_from = value) %>%
+  column_to_rownames(var="primary") %>%
+  rowSums()
+NEG <- data.frame(primary = names(NEG),
+                  value = unname(NEG)) %>%
+  mutate(rowname = paste(c("**balance -**",gettax), collapse = "  \n"))
+
+dat2 <- dat2 %>%
+  dplyr::select(primary,subjectId,visitId) %>%
+  distinct()
+
+dat3 <- rbind(POS,NEG) %>%
+  left_join(dat2)
+
+complete1 <- dat3 |> 
+    dplyr::filter(rowname == unique(NEG$rowname)) |> 
+    dplyr::group_by(subjectId) |> 
+    dplyr::count() |> 
+    ungroup() |> 
+    dplyr::filter(n == 4)
+complete2 <- dat3 |> 
+    dplyr::filter(rowname == unique(POS$rowname)) |> 
+    dplyr::group_by(subjectId) |> 
+    dplyr::count() |> 
+    ungroup() |> 
+    dplyr::filter(n == 4)
+
+p2 <-  dat3 %>%
+    dplyr::filter(subjectId %in% complete1$subjectId & subjectId %in% complete2$subjectId) %>%
+    ggplot(aes(y = value, x = visitId)) +
+    geom_boxplot(alpha = 0.3,
+                 fill = cols[1]) +
+        geom_line(aes(group = subjectId),
+                  colour = cols[1],
+                  alpha = 0.3) +
+        ggpubr::stat_compare_means(ref.group = "M0",
+                                   label = "p.signif",
+                                   size = 2.7,
+                                   paired = T,
+                                   label.y.npc = 0.95) +
+    theme_bw() +
+    xlab('') +
+    ylab('Relative abundance\n(change from baseline)') +
+    facet_wrap(~rowname) +
+    theme(legend.position = 'none', 
+          strip.text = ggtext::element_markdown(),
+          strip.background = element_blank()) 
+    
+
+
+```
+
+```{r main_5d, eval = F}
+
+
+cairo_pdf("out/pdf/5d1.pdf", width = 4, height = 2)
+p1
+dev.off()
+
+cairo_pdf("out/pdf/5d2.pdf", width = 4, height = 2.5)
+p2
+dev.off()
+
+
+
+```
+
+### Association changes across omics
+
+* smoking-associated balances correlate significantly between oral and gut microbiomes for Smokers at baseline:
+
+```{r}
+
+df <- full_join(df_saliva,df_stool)
+
+df$group <- factor(df$group, levels = c("Never smoker (control)","Smoker baseline",
+                                        "M6 smoking cessation","M6 no smoking cessation"))
+
+plot <- df %>%
+  #dplyr::filter(group %in% c("Never smoker (control)","Smoker baseline")) %>%
+  ggplot(aes(x = selbalScore_salivaSmok, y=selbalScore_stoolSmok)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +
+  stat_cor(method = "pearson", label.x = 0.5, label.y = 0.9) +
+  theme_minimal()+
+  facet_wrap(~group)
+
+plot
+
+```
+
+* recovery of Tannerellaceae/Neisseriaceae reflects lack of score association between the omes?
+
+```{r}
+
+### data saliva ###----
+
+x <- amp_load(otutable=ASVtable_saliva_extend,
+              metadata=pheno_saliva_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Family",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  dplyr::select(matches("SM")) %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_saliva_extend %>%
+  dplyr::filter(sampleId %in% c(x$sampleId)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+df2_saliva <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId") %>%
+  filter(group %in% c("Never smoker (control)","Smoker baseline",
+                                        "M6 smoking cessation","M6 no smoking cessation"))
+
+df2_saliva <- as.matrix(df2_saliva[,1:ncol(df2_saliva)-1])
+# zero replacement and log transformation
+df2_saliva <- log(cmultRepl2(df2_saliva, zero.rep = "bayes"))
+
+# get abundance Neisseriaceae
+df2_saliva <- df2_saliva %>%
+  rownames_to_column(var = "sampleId")%>%
+  mutate(primary = gsub("SM","",sampleId)) %>%
+  left_join(y) %>%
+  dplyr::select(primary,group,Neisseriaceae) 
+
+### data stool ###----
+
+x <- amp_load(otutable=ASVtable_stool_extend,
+              metadata=pheno_stool_extend)
+
+# aggregate
+x <- aggregate_abund(
+    x$abund,
+    x$tax,
+    tax_aggregate = "Family",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+
+x <- x %>%
+  dplyr::select(matches("FM")) %>%
+  t() %>% 
+  as.data.frame() %>%
+  rownames_to_column(var="sampleId")
+
+y <- pheno_stool_extend %>%
+  dplyr::filter(sampleId %in% c(x$sampleId)) %>%
+  dplyr::select(sampleId,group)
+
+# Combine x,y run selbal
+df2_stool <- full_join(x,y) %>%
+  column_to_rownames(var="sampleId") %>%
+  filter(group %in% c("Never smoker (control)","Smoker baseline",
+                                        "M6 smoking cessation","M6 no smoking cessation"))
+
+df2_stool <- as.matrix(df2_stool[,1:ncol(df2_stool)-1])
+# zero replacement and log transformation
+df2_stool <- log(cmultRepl2(df2_stool, zero.rep = "bayes"))
+
+# get abundance Tannerellaceae
+df2_stool <- df2_stool %>%
+  rownames_to_column(var = "sampleId")%>%
+  mutate(primary = gsub("FM","",sampleId)) %>%
+  left_join(y) %>%
+  dplyr::select(primary,group,Tannerellaceae) 
+
+### combine and plot ###----
+  
+df <- full_join(df2_saliva,df2_stool)
+
+df$group <- factor(df$group, levels = c("Never smoker (control)","Smoker baseline",
+                                        "M6 smoking cessation","M6 no smoking cessation"))
+
+plot <- df %>%
+  #dplyr::filter(group %in% c("Never smoker (control)","Smoker baseline")) %>%
+  ggplot(aes(x = Neisseriaceae, y=Tannerellaceae)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +
+  stat_cor(method = "pearson", label.x = -8, label.y = 0.9) +
+  theme_minimal()+
+  facet_wrap(~group)
+
+plot
+
+
+```
+
+* Shannon diversity
+
+```{r}
+
+### data saliva ###----
+
+x <- amp_load(otutable=ASVtable_saliva_extend,
+              metadata=pheno_saliva_extend)
+y <- pheno_saliva_extend %>%
+  dplyr::filter(sampleId %in% c(x$metadata$sampleId)) %>%
+  dplyr::select(sampleId,group)
+
+dmin <- min(colSums(x$abund))
+
+# rarefy and calculate diversity
+
+x <- amp_alphadiv(x, measure = c("shannon"), rarefy = dmin, richness = TRUE)
+  
+df2_saliva <- x %>%
+    dplyr::select(sampleId, Shannon) %>%
+    dplyr::rename(Shannon_saliva=Shannon) %>%
+    mutate(primary = gsub("SM","",sampleId)) %>%
+    left_join(y) %>%
+    dplyr::select(-sampleId)
+
+### data stool ###----
+
+x <- amp_load(otutable=ASVtable_stool_extend,
+              metadata=pheno_stool_extend)
+y <- pheno_stool_extend %>%
+  dplyr::filter(sampleId %in% c(x$metadata$sampleId)) %>%
+  dplyr::select(sampleId,group)
+
+dmin <- min(colSums(x$abund))
+
+# rarefy and calculate diversity
+
+x <- amp_alphadiv(x, measure = c("shannon"), rarefy = dmin, richness = TRUE)
+  
+df2_stool <- x %>%
+    dplyr::select(sampleId, Shannon) %>%
+    dplyr::rename(Shannon_stool=Shannon) %>% 
+    mutate(primary = gsub("FM","",sampleId)) %>%
+    left_join(y) %>%
+    dplyr::select(-sampleId)
+
+### combine and plot ###----
+  
+df <- full_join(df2_saliva,df2_stool) %>%
+  dplyr::filter(group %in% c("Never smoker (control)","Smoker baseline",
+                                        "M6 smoking cessation","M6 no smoking cessation"))
+
+df$group <- factor(df$group, levels = c("Never smoker (control)","Smoker baseline",
+                                        "M6 smoking cessation","M6 no smoking cessation"))
+
+plot <- df %>%
+  #dplyr::filter(group %in% c("Never smoker (control)","Smoker baseline")) %>%
+  ggplot(aes(x = Shannon_saliva, y=Shannon_stool)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +
+  stat_cor(method = "pearson", label.x = -8, label.y = 0.9) +
+  theme_minimal()+
+  facet_wrap(~group)
+
+plot
+
+
+
+```
+
+
+* shifts in smoking-associated balances upon smoking cessation (recovery) are not significantly correlated for higher compliance group:
+
+```{r}
+
+# calculate baseline change
+
+df1 <- full_join(df_saliva,df_stool) %>%
+  dplyr::filter(!group == "Never smoker (control)") %>%
+  dplyr::select(primary,selbalScore_salivaSmok) %>%
+  dplyr::mutate(visitId = case_when(grepl("M0",primary) ~ "M0", TRUE ~ "M6"),
+                subjectId = substr(primary, 1, nchar(primary) - 2)) %>%
+  group_by(subjectId) %>%
+  summarize(selbalScore_salivaSmok_baseline_change = selbalScore_salivaSmok[visitId == "M6"] - selbalScore_salivaSmok[visitId == "M0"])
+df2 <- full_join(df_saliva,df_stool) %>%
+  dplyr::filter(!group == "Never smoker (control)") %>%
+  dplyr::select(primary,selbalScore_stoolSmok) %>%
+  dplyr::mutate(visitId = case_when(grepl("M0",primary) ~ "M0", TRUE ~ "M6"),
+                subjectId = substr(primary, 1, nchar(primary) - 2)) %>%
+  group_by(subjectId) %>%
+  summarize(selbalScore_stoolSmok_baseline_change = selbalScore_stoolSmok[visitId == "M6"] - selbalScore_stoolSmok[visitId == "M0"])
+
+df <- full_join(df1,df2)
+
+# add groups
+
+df_groups <- full_join(df_saliva,df_stool) %>%
+  dplyr::mutate(subjectId = substr(primary, 1, nchar(primary) - 2)) %>%
+  dplyr::filter(subjectId %in% c(df$subjectId)) %>%
+  dplyr::filter(!group == "Smoker baseline") %>%
+  dplyr::select(subjectId,group)
+
+df <- left_join(df,df_groups)
+  
+plot <- df %>%
+  ggplot(aes(x = selbalScore_salivaSmok_baseline_change, y=selbalScore_stoolSmok_baseline_change)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +
+  stat_cor(method = "pearson", label.x = -1, label.y = 0.9) +
+  theme_minimal()+
+  facet_wrap(~group)
+
+plot
+
+```
+
+# Smoking-associated, prevalent ASVs: recovery/no recovery with smoking cessation
+
+* Filtered ASVs based on prevalence in full data set (threshold saliva 90%, treshold stool 50%)
+* Tested association with smoking, Never smokers vs Smokers baseline (unpaired two-sample Wilcoxon test)
+* Plotted for this selected ASVs: <br>
+
+    - relative abundance never smokers
+    - relative abundance smokers baseline
+    - +/- smoking association (median-based)
+    - baseline change in relative abundance M6 smoking cessation
+    - baseline change in relative abundance M6 no smoking cessation
+    - significance change at M6 higher compliance individuals lmm model (corrected for smk_py)
+    
+## Saliva
+
+![](out/trees_microbiome/6-output/saliva_ggtree_edit.png)
