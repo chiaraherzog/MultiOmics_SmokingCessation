@@ -198,7 +198,6 @@ than between M2, M4, M6 samples between smokers and the control group (adjusted 
 ```{r}
 
 # table only Aitchison
-tree <- "./out/ctrl_group_microbiome/3-output/saliva_S_ctrl_ASV_rootedcpr_treeML.nwk"
 
 d <- amp_load(otutable=ASVtable_saliva_extend,
               metadata=pheno_saliva_extend)
@@ -216,12 +215,12 @@ table1 <- summarize_permanova_aitchison(d)
 d0 <- amp_filter_samples(d,visitId %in% c("Never smoker (control)","M0"))
 d6 <- amp_filter_samples(d,visitId %in% c("Never smoker (control)","M6"))
 
-plotsM0 <- plotPcoa(d0, "M0", "Aitchison", "group", "", NULL, "Saliva - Aitchison PCoA \n control vs M0") 
+plotsM0 <- plotPcoa(d0, "M0", "Aitchison", "group", "", NULL, "Saliva - Aitchison distance \n control vs M0") 
 plotsM0[[1]]<- plotsM0[[1]] + theme(legend.position = "bottom", legend.justification = "top", title = element_text(size = 9))
 plotsM6 <- plotPcoa(d6, "M6", "Aitchison", "group", "", NULL, "  \n control vs M6") 
 plotsM6[[1]]<- plotsM6[[1]] + theme(legend.position = "bottom", legend.justification = "top", title = element_text(size = 9))
 
-p <- plotsM0[[1]] + plotsM6[[1]] 
+p <- plotsM0[[1]] + plotsM6[[1]]
 p
 
 ```
@@ -229,6 +228,57 @@ p
 ```{r main_5a, eval = F}
 
 cairo_pdf("out/pdf/5a.pdf", width = 4.5, height = 3.8)
+print(p)
+dev.off()
+
+```
+
+* Reviewer asked also for boxplots of principal coordinates, showing first two only
+
+```{r}
+
+pb_M0 <- plotsM0[[1]]$data %>%
+  tidyr::pivot_longer(cols = c(pcoa1, pcoa2), names_to = "Principal_coordinate", values_to = "Value") %>%
+  ggplot(aes(x = Principal_coordinate, y = Value, fill = varname)) +
+  geom_boxplot() +
+  labs(fill = "", x = "", y = "", title = "Saliva - Aitchison distance \n control vs M0") +
+  theme_minimal() +
+  scale_fill_manual(values = cols_group) +
+  theme(legend.position = "bottom",
+        legend.direction = "vertical",
+        legend.justification = "top",
+        title = element_text(size = 9)) 
+
+# # Show first only
+# pb_M0 <- plotsM0[[1]]$data %>%
+#   ggplot(aes(x = pcoa1, y = varname, fill = varname)) +
+#   geom_boxplot() +
+#   labs(fill = "", y = "") +
+#   theme_minimal() +
+#   scale_fill_manual(values = cols_group) +
+#   theme(legend.position = "none",
+#         axis.text.y = element_blank())
+
+pb_M6 <- plotsM6[[1]]$data %>%
+  tidyr::pivot_longer(cols = c(pcoa1, pcoa2), names_to = "Principal_coordinate", values_to = "Value") %>%
+  ggplot(aes(x = Principal_coordinate, y = Value, fill = varname)) +
+  geom_boxplot() +
+  labs(fill = "", x = "", y = "", title = "  \n control vs M6") +
+  theme_minimal() +
+  scale_fill_manual(values = cols_group) +
+  theme(legend.position = "bottom",
+        legend.direction = "vertical",
+        legend.justification = "top",
+        title = element_text(size = 9))
+
+p <- pb_M0 + pb_M6
+p
+
+```
+
+```{r ext_5a, eval = F}
+
+cairo_pdf("out/pdf/ext5a.pdf", width = 4.5, height = 3.5)
 print(p)
 dev.off()
 
@@ -244,8 +294,6 @@ Smoking has no significant effect on the stool microbiome beta-diversity: <br>
 * No significant differences between control group, and different time points smokers and ex-smokers (p-value < 0.05)
 
 ```{r}
-
-tree <- "./out/ctrl_group_microbiome/3-output/stool_S_ctrl_ASV_rootedarchaea_treeML.nwk"
 
 # table only only Aitchison:
 
@@ -264,7 +312,7 @@ table2 <- summarize_permanova_aitchison(d)
 d0 <- amp_filter_samples(d,visitId %in% c("Never smoker (control)","M0"))
 d6 <- amp_filter_samples(d,visitId %in% c("Never smoker (control)","M6"))
 
-plotsM0 <- plotPcoa(d0, "M0", "Aitchison", "group", "", NULL, "Stool - Aitchison PCoA \n control vs M0") 
+plotsM0 <- plotPcoa(d0, "M0", "Aitchison", "group", "", NULL, "Stool - Aitchison distance \n control vs M0") 
 plotsM0[[1]]<- plotsM0[[1]] + theme(legend.position = "bottom", legend.justification = "top", title = element_text(size = 9))
 plotsM6 <- plotPcoa(d6, "M6", "Aitchison", "group", "", NULL, "  \n control vs M6") 
 plotsM6[[1]]<- plotsM6[[1]] + theme(legend.position = "bottom", legend.justification = "top", title = element_text(size = 9))
@@ -281,6 +329,46 @@ print(p)
 dev.off()
 
 ```
+
+```{r}
+
+pb_M0 <- plotsM0[[1]]$data %>%
+  tidyr::pivot_longer(cols = c(pcoa1, pcoa2), names_to = "Principal_coordinate", values_to = "Value") %>%
+  ggplot(aes(x = Principal_coordinate, y = Value, fill = varname)) +
+  geom_boxplot() +
+  labs(fill = "", x = "", y = "", title = "Stool - Aitchison distance \n control vs M0") +
+  theme_minimal() +
+  scale_fill_manual(values = cols_group) +
+  theme(legend.position = "bottom",
+        legend.direction = "vertical",
+        legend.justification = "top",
+        title = element_text(size = 9)) 
+
+pb_M6 <- plotsM6[[1]]$data %>%
+  tidyr::pivot_longer(cols = c(pcoa1, pcoa2), names_to = "Principal_coordinate", values_to = "Value") %>%
+  ggplot(aes(x = Principal_coordinate, y = Value, fill = varname)) +
+  geom_boxplot() +
+  labs(fill = "", x = "", y = "", title = "  \n control vs M6") +
+  theme_minimal() +
+  scale_fill_manual(values = cols_group) +
+  theme(legend.position = "bottom",
+        legend.direction = "vertical",
+        legend.justification = "top",
+        title = element_text(size = 9))
+
+p <- pb_M0 + pb_M6
+p
+
+```
+
+```{r ext_5b, eval = F}
+
+cairo_pdf("out/pdf/ext5b.pdf", width = 4.5, height = 3.5)
+print(p)
+dev.off()
+
+```
+
 
 ### Combined table Aitchison (ext data)
 
