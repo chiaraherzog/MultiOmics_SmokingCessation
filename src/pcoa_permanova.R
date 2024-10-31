@@ -78,8 +78,8 @@ plotPcoa <- function(data, visitId, type, var, varname, root_tr, my_title = NULL
                             color=varname,
                             shape=varname)) +
     geom_point() +
-    labs(x = "PC1",
-         y = "PC2", 
+    labs(x = "pcoa1",
+         y = "pcoa2", 
          title = my_title,
          color=varname) +
     stat_ellipse(aes(color = varname), type="norm", linetype=2) +
@@ -101,8 +101,8 @@ plotPcoa <- function(data, visitId, type, var, varname, root_tr, my_title = NULL
                             color=varname,
                             shape=varname)) +
     geom_point() +
-    labs(x = "PC1",
-         y = "PC3", 
+    labs(x = "pcoa1",
+         y = "pcoa3", 
          title = my_title,
          color=varname) +
     stat_ellipse(aes(color = varname), type="norm", linetype=2) +
