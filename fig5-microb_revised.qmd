@@ -2053,8 +2053,6 @@ tmp <- tmp %>%
 
 p1 <-  tmp %>%
   ggplot(aes(y = selbalScore_salivaSmok, x = group)) +
-      # geom_boxplot(color = 'black', size = 1) +
-      # scale_fill_manual(values = cols_group) +
       gghalves::geom_half_boxplot(aes(fill = group),
                                   alpha = 0.3,
                                   width = 0.5,
@@ -2070,13 +2068,11 @@ p1 <-  tmp %>%
                                 label.y.npc = 0.93) +
       scale_fill_manual(values = cols_group, name = "", aesthetics = c('colour', 'fill')) +
       theme_bw() +
-      ylab('Microbial smoking signature saliva') +
+      ylab('Microbiome smoking signature saliva') +
+      scale_y_continuous(position = "right") +
       xlab('') +
       theme(legend.position = 'none') +
       coord_flip() 
-# plot <- plot +
-#   annotate(geom = "segment", x = 3, xend = 4, y = 3, yend = 3, color = "#36454F") +
-#   annotate(geom = "text", x = 3.5, y = 2.5, label = paste0("Training\nAUC = ", round(mean(CV.BAL.dic$cv.accuracy),2)), size = 3, color = "#36454F")
 
 p1 <- p1 +
   annotate(geom = "curve", x = 3, xend = 4, y = 3, yend = 3, curvature = 0.1, color = "#36454F") +
@@ -2089,157 +2085,8 @@ df_saliva <- tmp %>%
   mutate(primary = gsub("SM","",sampleId)) %>%
   dplyr::select(-sampleId)
 
-
-
 ```
 
-
-
-* relative abundance individual taxa contributing to balance:
-```{r}
-
-# plot taxa relative abundance contributing to the score ~ compliance
-exp <- "Saliva microbiome: families"
-load("data/data_raw.Rdata")
-
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
-dat2 <- dat2 %>%
-  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
-  dplyr::filter(!is.na(value))
-
-balance <- data.frame(Balance = CV.BAL.dic$global.balance$Group,
-                      Taxa = CV.BAL.dic$global.balance$Taxa) %>%
-  mutate(case_when(Balance == "DEN" ~ "negative smoking association", TRUE ~ "positive smoking association"))
-
-listPlots <- boxplot_wrap_interaction(NULL,dat2,exp,pval,interaction_only = F, taxa = balance$Taxa)
-
-for (i in seq_along(listPlots)) {
-  print(listPlots[[i]])
-}
-
-```
-
-* relative abundance compared to baseline individual taxa contributing to balance:
-
-```{r}
-
-# plot taxa relative abundance contributing to the score ~ compliance
-exp <- "Saliva microbiome: families"
-load("data/data_baseline_change.Rdata")
-
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
-dat2 <- dat2 %>%
-  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
-  dplyr::filter(!is.na(value)) 
-
-balance <- data.frame(Balance = CV.BAL.dic$global.balance$Group,
-                      Taxa = CV.BAL.dic$global.balance$Taxa) %>%
-  mutate(case_when(Balance == "DEN" ~ "negative smoking association", TRUE ~ "positive smoking association"))
-
-listPlots <- boxplot_wrap_interaction(NULL,dat2,exp,pval,interaction_only = F, taxa = balance$Taxa)
-
-for (i in seq_along(listPlots)) {
-  print(listPlots[[i]])
-}
-
-```
-
-* relative abundance numerator/denominator balance:
-```{r}
-
-exp <- "Saliva microbiome: families"
-load("data/data_raw.Rdata")
-
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
-dat2 <- dat2 %>%
-  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
-  dplyr::filter(!is.na(value)) %>%
-  dplyr::select(-assay,-colname,-interventionId)
-
-balance <- data.frame(Balance = CV.BAL.dic$global.balance$Group,
-                      Taxa = CV.BAL.dic$global.balance$Taxa)
-
-gettax <- balance %>% filter(Balance == "NUM") %>% pull(Taxa)
-POS <- dat2 %>%
-  filter(rowname %in% gettax) %>%
-  pivot_wider(id_cols=primary,names_from = rowname,values_from = value) %>%
-  column_to_rownames(var="primary") %>%
-  rowSums()
-POS <- data.frame(primary = names(POS),
-                  value = unname(POS)) %>%
-  mutate(rowname = paste(c("**balance +**",gettax), collapse = "  \n"))
-gettax <- balance %>% filter(Balance == "DEN") %>% pull(Taxa)
-NEG <- dat2 %>%
-  filter(rowname %in% gettax) %>%
-  pivot_wider(id_cols=primary,names_from = rowname,values_from = value) %>%
-  column_to_rownames(var="primary") %>%
-  rowSums()
-NEG <- data.frame(primary = names(NEG),
-                  value = unname(NEG)) %>%
-  mutate(rowname = paste(c("**balance -**",gettax), collapse = "  \n"))
-
-dat2 <- dat2 %>%
-  dplyr::select(primary,subjectId,visitId,compliance) %>%
-  distinct()
-
-dat3 <- rbind(POS,NEG) %>%
-  left_join(dat2)
-
-listPlots <- boxplot_wrap_interaction(NULL,dat3,exp,pval,interaction_only = F, taxa = unique(dat3$rowname))
-
-listPlots[[1]]/listPlots[[2]]
-
-
-```
-
-* relative abundance compared to baseline individual taxa contributing to balance:
-
-```{r}
-
-exp <- "Saliva microbiome: families"
-load("data/data_baseline_change.Rdata")
-
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
-dat2 <- dat2 %>%
-  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
-  dplyr::filter(!is.na(value)) %>%
-  dplyr::select(-assay,-colname,-interventionId)
-
-balance <- data.frame(Balance = CV.BAL.dic$global.balance$Group,
-                      Taxa = CV.BAL.dic$global.balance$Taxa)
-
-gettax <- balance %>% filter(Balance == "NUM") %>% pull(Taxa)
-POS <- dat2 %>%
-  filter(rowname %in% gettax) %>%
-  pivot_wider(id_cols=primary,names_from = rowname,values_from = value) %>%
-  column_to_rownames(var="primary") %>%
-  rowSums()
-POS <- data.frame(primary = names(POS),
-                  value = unname(POS)) %>%
-  mutate(rowname = paste(c("**balance +**",gettax), collapse = "  \n"))
-gettax <- balance %>% filter(Balance == "DEN") %>% pull(Taxa)
-NEG <- dat2 %>%
-  filter(rowname %in% gettax) %>%
-  pivot_wider(id_cols=primary,names_from = rowname,values_from = value) %>%
-  column_to_rownames(var="primary") %>%
-  rowSums()
-NEG <- data.frame(primary = names(NEG),
-                  value = unname(NEG)) %>%
-  mutate(rowname = paste(c("**balance -**",gettax), collapse = "  \n"))
-
-dat2 <- dat2 %>%
-  dplyr::select(primary,subjectId,visitId,compliance) %>%
-  distinct()
-
-dat3 <- rbind(POS,NEG) %>%
-  left_join(dat2)
-
-listPlots <- boxplot_wrap_interaction(NULL,dat3,exp,pval,interaction_only = F, taxa = unique(dat3$rowname))
-
-(listPlots[[1]] + ggtitle("Relative abundance compared to baseline")) /listPlots[[2]]
-
-
-```
 
 * relative abundance compared to baseline individual taxa contributing to balance (only higher compliance):
 
@@ -2311,14 +2158,11 @@ p2 <-  dat3 %>%
                                    label.y.npc = 0.95) +
     theme_bw() +
     xlab('') +
-    ylab('Relative abundance\n(change from baseline)') +
+    ylab('Change in relative abundance\nupon smoking cessation\n(higher compliance group)') +
     facet_wrap(~rowname) +
     theme(legend.position = 'none', 
           strip.text = ggtext::element_markdown(),
           strip.background = element_blank()) 
-    
-
-
 ```
 
 ```{r main_5c, eval = F}
@@ -2335,7 +2179,6 @@ dev.off()
 
 
 ```
-
 
 ### Gut families
 
@@ -2386,8 +2229,6 @@ tmp <- tmp %>%
 
 p1 <-  tmp %>%
   ggplot(aes(y = selbalScore_stoolSmok, x = group)) +
-      # geom_boxplot(color = 'black', size = 1) +
-      # scale_fill_manual(values = cols_group) +
       gghalves::geom_half_boxplot(aes(fill = group),
                                   alpha = 0.3,
                                   width = 0.5,
@@ -2403,13 +2244,11 @@ p1 <-  tmp %>%
                                 label.y.npc = 0.93) +
       scale_fill_manual(values = cols_group, name = "", aesthetics = c('colour', 'fill')) +
       theme_bw() +
-      ylab('Microbial smoking signature stool') +
+      ylab('Microbiome smoking signature stool') +
+      scale_y_continuous(position = "right") +
       xlab('') +
       theme(legend.position = 'none') +
       coord_flip() 
-# plot <- plot +
-#   annotate(geom = "segment", x = 3, xend = 4, y = 3, yend = 3, color = "#36454F") +
-#   annotate(geom = "text", x = 3.5, y = 2.5, label = paste0("Training\nAUC = ", round(mean(CV.BAL.dic$cv.accuracy),2)), size = 3, color = "#36454F")
 
 p1 <- p1 +
   annotate(geom = "curve", x = 3, xend = 4, y = 8, yend = 8, curvature = 0.1, color = "#36454F") +
@@ -2424,151 +2263,6 @@ df_stool <- tmp %>%
 
 
 ```
-
-* relative abundance individual taxa contributing to balance:
-```{r}
-
-# plot taxa relative abundance contributing to the score ~ compliance
-exp <- "Stool microbiome: families"
-load("data/data_raw.Rdata")
-
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
-dat2 <- dat2 %>%
-  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
-  dplyr::filter(!is.na(value))
-
-balance <- data.frame(Balance = CV.BAL.dic$global.balance$Group,
-                      Taxa = CV.BAL.dic$global.balance$Taxa)
-
-listPlots <- boxplot_wrap_interaction(NULL,dat2,exp,pval,interaction_only = F, taxa = balance$Taxa)
-
-for (i in seq_along(listPlots)) {
-  print(listPlots[[i]])
-}
-
-```
-
-* relative abundance compared to baseline individual taxa contributing to balance:
-
-```{r}
-
-# plot taxa relative abundance contributing to the score ~ compliance
-exp <- "Stool microbiome: families"
-load("data/data_baseline_change.Rdata")
-
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
-dat2 <- dat2 %>%
-  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
-  dplyr::filter(!is.na(value)) 
-
-balance <- data.frame(Balance = CV.BAL.dic$global.balance$Group,
-                      Taxa = CV.BAL.dic$global.balance$Taxa)
-
-listPlots <- boxplot_wrap_interaction(NULL,dat2,exp,pval,interaction_only = F, taxa = balance$Taxa)
-
-for (i in seq_along(listPlots)) {
-  print(listPlots[[i]])
-}
-
-```
-
-* relative abundance numerator/denominator balance:
-```{r}
-
-exp <- "Stool microbiome: families"
-load("data/data_raw.Rdata")
-
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
-dat2 <- dat2 %>%
-  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
-  dplyr::filter(!is.na(value)) %>%
-  dplyr::select(-assay,-colname,-interventionId)
-
-balance <- data.frame(Balance = CV.BAL.dic$global.balance$Group,
-                      Taxa = CV.BAL.dic$global.balance$Taxa)
-
-gettax <- balance %>% filter(Balance == "NUM") %>% pull(Taxa)
-POS <- dat2 %>%
-  filter(rowname %in% gettax) %>%
-  pivot_wider(id_cols=primary,names_from = rowname,values_from = value) %>%
-  column_to_rownames(var="primary") %>%
-  rowSums()
-POS <- data.frame(primary = names(POS),
-                  value = unname(POS)) %>%
-  mutate(rowname = paste(c("**balance +**",gettax), collapse = "  \n"))
-gettax <- balance %>% filter(Balance == "DEN") %>% pull(Taxa)
-NEG <- dat2 %>%
-  filter(rowname %in% gettax) %>%
-  pivot_wider(id_cols=primary,names_from = rowname,values_from = value) %>%
-  column_to_rownames(var="primary") %>%
-  rowSums()
-NEG <- data.frame(primary = names(NEG),
-                  value = unname(NEG)) %>%
-  mutate(rowname = paste(c("**balance -**",gettax), collapse = "  \n"))
-
-dat2 <- dat2 %>%
-  dplyr::select(primary,subjectId,visitId,compliance) %>%
-  distinct()
-
-dat3 <- rbind(POS,NEG) %>%
-  left_join(dat2)
-
-listPlots <- boxplot_wrap_interaction(NULL,dat3,exp,pval,interaction_only = F, taxa = unique(dat3$rowname))
-
-listPlots[[1]]/listPlots[[2]]
-
-
-```
-
-* relative abundance compared to baseline individual taxa contributing to balance:
-
-```{r}
-
-exp <- "Stool microbiome: families"
-load("data/data_baseline_change.Rdata")
-
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
-dat2 <- dat2 %>%
-  dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) %>%
-  dplyr::filter(!is.na(value)) %>%
-  dplyr::select(-assay,-colname,-interventionId)
-
-balance <- data.frame(Balance = CV.BAL.dic$global.balance$Group,
-                      Taxa = CV.BAL.dic$global.balance$Taxa)
-
-gettax <- balance %>% filter(Balance == "NUM") %>% pull(Taxa)
-POS <- dat2 %>%
-  filter(rowname %in% gettax) %>%
-  pivot_wider(id_cols=primary,names_from = rowname,values_from = value) %>%
-  column_to_rownames(var="primary") %>%
-  rowSums()
-POS <- data.frame(primary = names(POS),
-                  value = unname(POS)) %>%
-  mutate(rowname = paste(c("**balance +**",gettax), collapse = "  \n"))
-gettax <- balance %>% filter(Balance == "DEN") %>% pull(Taxa)
-NEG <- dat2 %>%
-  filter(rowname %in% gettax) %>%
-  pivot_wider(id_cols=primary,names_from = rowname,values_from = value) %>%
-  column_to_rownames(var="primary") %>%
-  rowSums()
-NEG <- data.frame(primary = names(NEG),
-                  value = unname(NEG)) %>%
-  mutate(rowname = paste(c("**balance -**",gettax), collapse = "  \n"))
-
-dat2 <- dat2 %>%
-  dplyr::select(primary,subjectId,visitId,compliance) %>%
-  distinct()
-
-dat3 <- rbind(POS,NEG) %>%
-  left_join(dat2)
-
-listPlots <- boxplot_wrap_interaction(NULL,dat3,exp,pval,interaction_only = F, taxa = unique(dat3$rowname))
-
-(listPlots[[1]] + ggtitle("Relative abundance compared to baseline")) /listPlots[[2]]
-
-
-```
-
 
 * relative abundance compared to baseline individual taxa contributing to balance (only higher compliance):
 
@@ -2640,7 +2334,7 @@ p2 <-  dat3 %>%
                                    label.y.npc = 0.95) +
     theme_bw() +
     xlab('') +
-    ylab('Relative abundance\n(change from baseline)') +
+    ylab('Change in relative abundance\nupon smoking cessation\n(higher compliance group)') +
     facet_wrap(~rowname) +
     theme(legend.position = 'none', 
           strip.text = ggtext::element_markdown(),
@@ -2660,8 +2354,6 @@ dev.off()
 cairo_pdf("out/pdf/5d2.pdf", width = 4, height = 2.5)
 p2
 dev.off()
-
-
 
 ```
 
