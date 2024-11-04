@@ -551,7 +551,11 @@ dat2 <- as.data.frame(t(dat2)) %>%
   pivot_longer(cols=-sampleId,names_to="Family",values_to="rel.abund.") %>%
   full_join(pheno)
 
-p <- boxplot_smokers_ctrl(dat1,dat2,exp,pval)
+p <- boxplot_smokers_ctrl(dat1,dat2,exp,pval) + 
+  facet_wrap(~Family,ncol = 3) +
+  theme(legend.position = 'bottom',
+        legend.direction = 'vertical',
+        legend.title = element_blank())
 
 p
 
@@ -559,7 +563,7 @@ p
 
 ```{r ext_6a, eval = F}
 
-cairo_pdf("out/pdf/ext6a.pdf", width = 6, height = 3.5)
+cairo_pdf("out/pdf/ext6a.pdf", width = 6, height = 4)
 print(p)
 dev.off()
 
@@ -676,15 +680,17 @@ dat2 <- as.data.frame(t(dat2)) %>%
   pivot_longer(cols=-sampleId,names_to="Family",values_to="rel.abund.") %>%
   full_join(pheno)
 
-p <- boxplot_smokers_ctrl(dat1,dat2,exp,pval)
-
+p <- boxplot_smokers_ctrl(dat1,dat2,exp,pval) +
+  theme(legend.position = 'bottom',
+        legend.direction = 'vertical',
+        legend.title = element_blank())
 p
 
 ```
 
 ```{r ext_6b, eval = F}
 
-cairo_pdf("out/pdf/ext6b.pdf", width = 4, height = 2)
+cairo_pdf("out/pdf/ext6b.pdf", width = 4, height = 3.5)
 print(p)
 dev.off()
 
@@ -2676,7 +2682,9 @@ p <- dat2 %>%
                                label.y.npc = 0.93) +
     scale_fill_manual(values = cols_group, name = "", aesthetics = c('colour', 'fill')) +
     theme_bw() +
-    theme(legend.position = 'right',
+    theme(legend.position = 'bottom',
+          legend.direction = 'vertical',
+          legend.title = element_blank(),
           aspect.ratio = 0.6,
           axis.text.x = element_blank(),
           axis.title.y = ggtext::element_markdown(),
@@ -2684,13 +2692,13 @@ p <- dat2 %>%
           axis.ticks.x = element_blank(),
           strip.background = element_blank()) +
     labs(x = "") +
-    facet_wrap(~label, scales = "free", ncol=2)
+    facet_wrap(~label, scales = "free", ncol=3)
   
 ```
 
 ```{r ext_6c, eval = F}
 
-cairo_pdf("out/pdf/ext6c.pdf", width = 6, height = 6)
+cairo_pdf("out/pdf/ext6c.pdf", width = 6, height = 5.5)
 print(p)
 dev.off()
 
@@ -2749,9 +2757,10 @@ p <- dat2 %>%
                                label.y.npc = 0.93) +
     scale_fill_manual(values = cols_group, name = "", aesthetics = c('colour', 'fill')) +
     theme_bw() +
-    theme(legend.position = 'right',
+    theme(legend.position = 'bottom',
+          legend.direction = 'vertical',
           aspect.ratio = 0.6,
-          #axis.text.x = element_text(angle = 60, hjust = 1),
+          legend.title = element_blank(),
           axis.text.x = element_blank(),
           axis.title.y = ggtext::element_markdown(),
           strip.text.x = ggtext::element_markdown(),
@@ -2764,7 +2773,7 @@ p <- dat2 %>%
 
 ```{r ext_6d, eval = F}
 
-cairo_pdf("out/pdf/ext6d.pdf", width = 6, height = 2.5)
+cairo_pdf("out/pdf/ext6d.pdf", width = 4, height = 4)
 print(p)
 dev.off()
 
