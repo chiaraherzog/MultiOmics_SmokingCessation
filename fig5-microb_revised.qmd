@@ -557,9 +557,9 @@ p
 
 ```
 
-```{r ext_5g, eval = F}
+```{r ext_6a, eval = F}
 
-cairo_pdf("out/pdf/ext5g.pdf", width = 6, height = 3.5)
+cairo_pdf("out/pdf/ext6a.pdf", width = 6, height = 3.5)
 print(p)
 dev.off()
 
@@ -682,9 +682,9 @@ p
 
 ```
 
-```{r ext_5h, eval = F}
+```{r ext_6b, eval = F}
 
-cairo_pdf("out/pdf/ext5h.pdf", width = 4, height = 2)
+cairo_pdf("out/pdf/ext6b.pdf", width = 4, height = 2)
 print(p)
 dev.off()
 
@@ -2928,3 +2928,152 @@ plot
 ## Saliva
 
 ![](out/trees_microbiome/6-output/saliva_ggtree_edit.png)
+
+* Check relative abundance for smoking-associated ASVs discussed in the text
+  
+```{r}
+
+pheno <- pheno_saliva_extend %>%
+  dplyr::select(sampleId,group)
+
+dat2 <- amp_load(otutable=ASVtable_saliva_extend, metadata=pheno_saliva_extend)
+dat2 <- normaliseTo100(dat2)
+dat2 <- dat2$abund/100 #make proportions
+dat2 <- as.data.frame(t(dat2)) %>%
+  rownames_to_column(var = "sampleId") %>%
+  pivot_longer(cols=-sampleId,names_to="OTU",values_to="rel.abund.") %>% # relative abundance
+  full_join(pheno)
+
+taxlab <- readRDS("./out/trees_microbiome/4-output/list_saliva.Rds")[[1]]
+taxa <- c("ASV_9i4_15j_91n", "ASV_ivt_f41_sgz","ASV_e54_2dz_d7f", 
+          "ASV_7w6_t4q_x00", "ASV_qwa_h7y_hxz", "ASV_dvw_6oa_8gj", "ASV_pfp_n0y_4su",
+          "ASV_6wb_da0_3db", "ASV_1vt_h8b_4qs")
+taxlab <- taxlab %>%
+  mutate(label = case_when(
+    is.na(Species) ~ paste0(Genus," sp."),
+    grepl("/",Species) ~ paste0(Genus," sp."),
+    TRUE ~ paste0(Genus," <br>",Species)
+    )) %>%
+  dplyr::mutate(label = case_when(
+    Genus %in% c("Streptococcus", "Veillonella") ~ paste0(label," <br>",OTU),
+    TRUE ~ label
+  ))
+
+dat2 <- dat2 %>%
+    left_join(taxlab) %>%
+    dplyr::filter(!is.na(group) & OTU %in% taxa) %>%
+    dplyr::filter(group %in% c("Never smoker (control)", "Smoker baseline", "M6 smoking cessation", "M6 no smoking cessation")) 
+  
+dat2$group <- factor(dat2$group, levels = names(cols_group))
+  
+p <- dat2 %>%
+  ggplot(aes(x = group,
+               y = rel.abund.)) +
+    gghalves::geom_half_boxplot(aes(fill = group),
+                                alpha = 0.3,
+                                width = 0.5,
+                                outlier.shape = NA,errorbar.length = 0) +
+    gghalves::geom_half_point_panel(alpha = 0.6,
+                                    size = 1,
+                                    aes(colour = group)) +
+    ggpubr::stat_compare_means(ref.group = "Never smoker (control)",
+                               label = 'p.signif',
+                               size = 2.7,
+                               method = "wilcox.test",
+                               paired = F,
+                               label.y.npc = 0.93) +
+    scale_fill_manual(values = cols_group, name = "", aesthetics = c('colour', 'fill')) +
+    theme_bw() +
+    theme(legend.position = 'right',
+          aspect.ratio = 0.6,
+          axis.text.x = element_blank(),
+          axis.title.y = ggtext::element_markdown(),
+          strip.text.x = ggtext::element_markdown(),
+          axis.ticks.x = element_blank(),
+          strip.background = element_blank()) +
+    labs(x = "") +
+    facet_wrap(~label, scales = "free", ncol=2)
+  
+```
+
+```{r ext_6c, eval = F}
+
+cairo_pdf("out/pdf/ext6c.pdf", width = 6, height = 6)
+print(p)
+dev.off()
+
+```
+
+## Stool
+
+![](out/trees_microbiome/6-output/stool_ggtree_edit.png)
+
+* Check relative abundance for smoking-associated ASVs discussed in the text
+  
+```{r}
+
+pheno <- pheno_stool_extend %>%
+  dplyr::select(sampleId,group)
+
+dat2 <- amp_load(otutable=ASVtable_stool_extend, metadata=pheno_stool_extend)
+dat2 <- normaliseTo100(dat2)
+dat2 <- dat2$abund/100 #make proportions
+dat2 <- as.data.frame(t(dat2)) %>%
+  rownames_to_column(var = "sampleId") %>%
+  pivot_longer(cols=-sampleId,names_to="OTU",values_to="rel.abund.") %>% # relative abundance
+  full_join(pheno)
+
+taxlab <- readRDS("./out/trees_microbiome/4-output/list_stool.Rds")[[1]]
+taxa <- c("ASV_mbt_8vr", "ASV_jhl_q2w","ASV_tuz_nft")
+taxlab <- taxlab %>%
+  mutate(label = case_when(
+    is.na(Species) ~ paste0(Genus," sp."),
+    grepl("/",Species) ~ paste0(Genus," sp."),
+    TRUE ~ paste0(Genus," <br>",Species)
+    ))
+
+dat2 <- dat2 %>%
+    left_join(taxlab) %>%
+    dplyr::filter(!is.na(group) & OTU %in% taxa) %>%
+    dplyr::filter(group %in% c("Never smoker (control)", "Smoker baseline", "M6 smoking cessation", "M6 no smoking cessation")) 
+  
+dat2$group <- factor(dat2$group, levels = names(cols_group))
+  
+p <- dat2 %>%
+  ggplot(aes(x = group,
+               y = rel.abund.)) +
+    gghalves::geom_half_boxplot(aes(fill = group),
+                                alpha = 0.3,
+                                width = 0.5,
+                                outlier.shape = NA,errorbar.length = 0) +
+    gghalves::geom_half_point_panel(alpha = 0.6,
+                                    size = 1,
+                                    aes(colour = group)) +
+    ggpubr::stat_compare_means(ref.group = "Never smoker (control)",
+                               label = 'p.signif',
+                               size = 2.7,
+                               method = "wilcox.test",
+                               paired = F,
+                               label.y.npc = 0.93) +
+    scale_fill_manual(values = cols_group, name = "", aesthetics = c('colour', 'fill')) +
+    theme_bw() +
+    theme(legend.position = 'right',
+          aspect.ratio = 0.6,
+          #axis.text.x = element_text(angle = 60, hjust = 1),
+          axis.text.x = element_blank(),
+          axis.title.y = ggtext::element_markdown(),
+          strip.text.x = ggtext::element_markdown(),
+          axis.ticks.x = element_blank(),
+          strip.background = element_blank()) +
+    labs(x = "") +
+    facet_wrap(~label, scales = "free", ncol=2)
+
+```
+
+```{r ext_6d, eval = F}
+
+cairo_pdf("out/pdf/ext6d.pdf", width = 6, height = 2.5)
+print(p)
+dev.off()
+
+```
