@@ -107,7 +107,7 @@ saliva_heatmap <- plot_heatmap_Metab(time,
 
 
 ```{r}
-cairo_pdf(here("out/pdf/4a.pdf"), width = 5.5, height = 3)
+cairo_pdf(here("out/pdf/4a.pdf"), width = 5.75, height = 3)
 print(saliva_heatmap)
 dev.off()
 ```
@@ -117,7 +117,7 @@ dev.off()
 ```{r}
 load(here("data/data_normalized_baseline.Rdata"))
 
-df <- longFormat(data[,,28], colDataCols = c("interventionId", "subjectId", "visitId", "time", "compliance")) |>
+df <- longFormat(data[,,40], colDataCols = c("interventionId", "subjectId", "visitId", "time", "compliance")) |>
   as.data.frame() |>
   dplyr::filter(interventionId == 'S' & ! visitId %in% c("M12", "M18")) |>
   dplyr::mutate(compliance = factor(compliance, levels = c("lower compliance", "higher compliance"))) |>
@@ -152,25 +152,17 @@ longitudinal(df, variable = 'Thymine', p = 'p.signif',
 dev.off()
 ```
 
-### 4e) Ethanol
+### 4e) Lysine
 
 ```{r}
-cairo_pdf(here("out/pdf/4e.pdf"), width = 4.25, height = 3)
-paired_longitudinal_compliance(df, variable = 'Ethanol', p = 'p.signif',
-             ylab = '<b>∆ Ethanol</b><br>(saliva; normalized)')
+cairo_pdf(here("out/pdf/4e.pdf"), width = 2, height = 3)
+longitudinal(df, variable = 'Lysine', p = 'p.signif',
+             ylab = '<b>∆ Lysine</b><br>(saliva; normalized)')
 dev.off()
 ```
 
-### 4f) TMAO
 
-```{r}
-cairo_pdf(here("out/pdf/4f.pdf"), width = 4.25, height = 3)
-paired_longitudinal_compliance(df, variable = 'TMA..N.oxide', p = 'p.signif',
-             ylab = '<b>∆ Trimethylamine N-oxide</b><br>(saliva; normalized)')
-dev.off()
-```
-
-### g) Urine heatmap (t tests)
+### f) Urine heatmap (t tests)
 
 ```{r urine.heatmap}
 labels <- ref_urine |> 
@@ -209,7 +201,7 @@ dev.off()
 ```{r}
 load(here("data/data_normalized_baseline.Rdata"))
 
-df <- longFormat(data[,,29], colDataCols = c("interventionId", "subjectId", "visitId", "time", "compliance")) |>
+df <- longFormat(data[,,11], colDataCols = c("interventionId", "subjectId", "visitId", "time", "compliance")) |>
   as.data.frame() |>
   dplyr::filter(interventionId == 'S' & ! visitId %in% c("M12", "M18")) |>
   dplyr::mutate(compliance = factor(compliance, levels = c("lower compliance", "higher compliance"))) |>
@@ -219,7 +211,7 @@ df <- longFormat(data[,,29], colDataCols = c("interventionId", "subjectId", "vis
 
 ```{r}
 cairo_pdf(here("out/pdf/4h.pdf"), width = 5.5, height = 3)
-paired_longitudinal_compliance(df, variable = 'Lactate', p = 'p.signif',
+paired_longitudinal_compliance(df, variable = 'Hippuric acid', p = 'p.signif',
              ylab = '<b>∆ Lactate</b><br>(urine; normalized)')
 dev.off()
 ```
