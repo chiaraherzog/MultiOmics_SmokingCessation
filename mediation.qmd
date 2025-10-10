@@ -1,5 +1,5 @@
 ---
-title: "Oral omics mediation analysis"
+title: "Mediation analysis"
 format:
   html:
     toc: true
@@ -34,20 +34,11 @@ source(here("src/helper-hima.R"))
 
 ```
 
-```{r colors}
+# Oral omics
 
-cols <- c("#1b69a1", "#48a0af", "#71b5a9", "#ec6669", "#f39668", "#bd647d", "#832c9b", "#5f70a8")
+Smoking cessation -> saliva microbiome features -> saliva metabolites (significant wilcox)?
 
-cols_comp <- cols[c(4, 1)]
-names(cols_comp) <- c("lower compliance", "higher compliance")
-
-cols_group <- cols[c(8, 6, 4, 1, 4, 1, 4, 1)]
-names(cols_group) <- c("Never smoker (control)","Smoker baseline",
-                       "M2 no smoking cessation","M2 smoking cessation",
-                       "M4 no smoking cessation","M4 smoking cessation",
-                       "M6 no smoking cessation","M6 smoking cessation")
-
-```
+No significant mediators found.
 
 ```{r prep_pheno}
 
@@ -570,3 +561,365 @@ for (c in 1:length(list_conf)){
 }
 
 ```
+
+
+# gut-urine axis
+
+Smoking cessation -> gut microbiome features -> urine metabolites (significant wilcox).
+Test only genus/family level, ASV-level too personal.
+
+No significant mediators found.
+
+```{r prep_pheno2}
+
+pheno_stool <- readRDS("./out/ctrl_group_microbiome/1-output/pheno_stool_S.Rds") 
+pheno_dat <- pheno_stool %>%
+    mutate(X = case_when(smkstop == "yes" ~ 1, TRUE ~ 0)) # Main exposure
+
+```
+
+```{r prep_microbiome2}
+
+ASVtable_stool <- readRDS("./out/ctrl_group_microbiome/1-output/ASVtable_stool_S.Rds") # S group only
+
+# Note HIMA does ILR () transformation of the data, use fold changes (instead of simple delta) to avoid negative values
+
+# Prepare ASV level count data
+tax <- ASVtable_stool[,90:96]
+tax$ASV <- ASVtable_stool$OTU
+count_dat <- t(ASVtable_stool[,1:89] %>% tibble::column_to_rownames(var = "OTU"))
+list_micro_ASV <- prep_data_hima(count_dat, pheno_stool)
+
+# Prepare genus-level count data
+d <- amp_load(otutable=ASVtable_stool, metadata=pheno_stool)
+count_dat <- aggregate_abund(
+    d$abund,
+    d$tax,
+    tax_aggregate = "Genus",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+count_dat <- t(count_dat)
+colnames(count_dat) <- gsub("\\[Eubacterium\\]","Eubacterium",colnames(count_dat))
+list_micro_genus <- prep_data_hima(count_dat, pheno_stool)
+
+# Prepare family-level count data
+count_dat <- amp_load(otutable=ASVtable_stool, metadata=pheno_stool)
+count_dat <- aggregate_abund(
+    d$abund,
+    d$tax,
+    tax_aggregate = "Family",
+    tax_add = NULL,
+    format = "abund",
+    calcSums = FALSE)
+count_dat <- t(count_dat)
+list_micro_family <- prep_data_hima(count_dat, pheno_stool)
+
+```
+
+```{r prep_metabolome2}
+
+# Prepare metabolome data (only once)
+# Note that there is some missing data here, 
+# these subjects will be removed later also from pheno and microbiome data
+
+load(here("data/data_raw.Rdata"))
+
+df <- wideFormat(data[,,41], colDataCols = c("interventionId", "subjectId", "visitId", "time", "compliance")) |>
+  as.data.frame()
+colnames(df) <- gsub("Urine.nuclear.magnetic.resonance..normalized_","",colnames(df))
+
+# Keep only M0-M6 and subjects in microbiome data
+common_subj = Reduce(
+    intersect,
+    list(
+      rownames(list_micro_ASV[[1]]),
+      rownames(list_micro_ASV[[2]]),
+      rownames(list_micro_ASV[[3]])
+    )
+  )
+df <- df %>% 
+  dplyr::filter(subjectId %in% common_subj) %>%
+  dplyr::filter(visitId %in% c("M0", "M2", "M4", "M6")) # missing some observations for months M2 and M6
+
+# Subjects missing at least one visit
+subject_counts <- df %>%
+  group_by(subjectId) %>%
+  summarise(n_visits = n_distinct(visitId)) %>%
+  arrange(n_visits)
+
+missing_subjects <- subject_counts %>%
+  filter(n_visits < 4) %>%
+  pull(subjectId)
+
+missing_subjects
+
+# # median imputation 
+# for(i in 1:ncol(df)){
+#   df[is.na(df[,i]), i] <- median(df[,i], na.rm=TRUE)
+# }
+
+df <- df %>% dplyr::filter(!subjectId %in% missing_subjects)
+
+# Log-fold changes metabolome data (HIMA will center mean to 0)
+mtb <- df[,1:37] %>% tibble::column_to_rownames(var = "primary")
+mtb_rel <- sweep(mtb, 1, rowSums(mtb), FUN = "/")
+mtb_clr <- compositions::clr(mtb_rel + 1e-12) %>% as.data.frame()
+
+# Recreate subject id and month id
+mtb_clr$subjectId <- str_extract(rownames(mtb_clr), "^S\\d+")
+mtb_clr$visitId <- str_extract(rownames(mtb_clr), "M\\d")
+
+# Baseline changes
+mtb_m0 <- mtb_clr[mtb_clr$visitId == "M0", ]
+mtb_m2 <- mtb_clr[mtb_clr$visitId == "M2", ]
+mtb_m4 <- mtb_clr[mtb_clr$visitId == "M4", ]
+mtb_m6 <- mtb_clr[mtb_clr$visitId == "M6", ]
+
+common_subj <- Reduce(intersect, list(mtb_m0$subjectId, mtb_m2$subjectId, mtb_m4$subjectId, mtb_m6$subjectId)) #21 :)
+
+mtb_m2 <- mtb_m2[match(mtb_m0$subjectId, mtb_m2$subjectId), ]
+mtb_m4 <- mtb_m4[match(mtb_m0$subjectId, mtb_m4$subjectId), ]
+mtb_m6 <- mtb_m6[match(mtb_m0$subjectId, mtb_m6$subjectId), ]
+
+eps <- 1e-12
+delta_mtb_m2 <- mtb_m2[, -(37:38)] - mtb_m0[, -(37:38)] + eps # remove pheno columns
+delta_mtb_m4 <- mtb_m4[, -(37:38)] - mtb_m0[, -(37:38)] + eps
+delta_mtb_m6 <- mtb_m6[, -(37:38)] - mtb_m0[, -(37:38)] + eps
+
+rownames(delta_mtb_m2) <- mtb_m0$subjectId
+rownames(delta_mtb_m4) <- mtb_m0$subjectId
+rownames(delta_mtb_m6) <- mtb_m0$subjectId
+
+delta_mtb_m2 <- delta_mtb_m2 %>% tibble::rownames_to_column(var = "subjectId")
+delta_mtb_m4 <- delta_mtb_m4 %>% tibble::rownames_to_column(var = "subjectId")
+delta_mtb_m6 <- delta_mtb_m6 %>% tibble::rownames_to_column(var = "subjectId")
+
+rm(df,mtb, mtb_rel,mtb_clr,mtb_m0,mtb_m2,mtb_m4,mtb_m6); gc()
+
+```
+
+```{r missing2}
+
+# Filter also pheno for missing subjects
+pheno_dat <- pheno_dat %>% dplyr::filter(!subjectId %in% missing_subjects)
+
+# Filter also microbiome data for missing subjects in metabolome data
+list_micro_ASV <- map(list_micro_ASV, ~ filter(.x, !rownames(.x) %in% missing_subjects))
+
+```
+
+## Genus-level
+
+```{r}
+
+dir_out <- "~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/out/mediation/gut_urine"
+tax_level <- "genus"
+pheno_dat <- pheno_dat
+form_covar <- "~ X + age_at_consent + smoking_py"
+mtb_interest <- c(
+  "p.Methylhistidine",
+  "Trimethylamine",
+  "Fucose",
+  "Choline",
+  "X3.Hydroxyisobutyrate",
+  "t.Methylhistidine",
+  "X4.Hydroxyphenylacetate",
+  "Formate",
+  "Lactate",
+  "Arabinose",
+  "Betaine",
+  "Creatine.phosphate"
+)
+sigcut <- 1
+
+list_conf <- list(
+  # smoking cessation at M2 -> gut microbiome at M2 -> metabolites at M2
+  list(
+    time_label = "M2M2M2",
+    cessation_time = "M2",
+    microbiome_dat = list_micro_genus[[1]],
+    metabolites_dat = delta_mtb_m2
+  ),
+  # smoking cessation at M2 -> gut microbiome at M2 -> metabolites at M4
+  list(
+    time_label = "M2M2M4",
+    cessation_time = "M2",
+    microbiome_dat = list_micro_genus[[1]],
+    metabolites_dat = delta_mtb_m4
+  ),
+  # smoking cessation at M2 -> gut microbiome at M4 -> metabolites at M4
+  list(
+    time_label = "M2M4M4",
+    cessation_time = "M2",
+    microbiome_dat = list_micro_genus[[2]],
+    metabolites_dat = delta_mtb_m4
+  ),
+  # smoking cessation at M2 -> gut microbiome at M4 -> metabolites at M6
+  list(
+    time_label = "M2M4M6",
+    cessation_time = "M2",
+    microbiome_dat = list_micro_genus[[2]],
+    metabolites_dat = delta_mtb_m6
+  ),
+  # smoking cessation at M2 -> gut microbiome at M6 -> metabolites at M6
+  list(
+    time_label = "M2M6M6",
+    cessation_time = "M2",
+    microbiome_dat = list_micro_genus[[3]],
+    metabolites_dat = delta_mtb_m6
+  ),
+  # smoking cessation at M4 -> gut microbiome at M4 -> metabolites at M4
+  list(
+    time_label = "M4M4M4",
+    cessation_time = "M4",
+    microbiome_dat = list_micro_genus[[2]],
+    metabolites_dat = delta_mtb_m4
+  ),
+  # smoking cessation at M4 -> gut microbiome at M4 -> metabolites at M6
+  list(
+    time_label = "M4M4M6",
+    cessation_time = "M4",
+    microbiome_dat = list_micro_genus[[2]],
+    metabolites_dat = delta_mtb_m6
+  ),
+  # smoking cessation at M4 -> gut microbiome at M6 -> metabolites at M6
+  list(
+    time_label = "M4M6M6",
+    cessation_time = "M4",
+    microbiome_dat = list_micro_genus[[3]],
+    metabolites_dat = delta_mtb_m6
+  ),
+  # smoking cessation at M6 -> gut microbiome at M6 -> metabolites at M6
+  list(
+    time_label = "M6M6M6",
+    cessation_time = "M6",
+    microbiome_dat = list_micro_genus[[3]],
+    metabolites_dat = delta_mtb_m6
+  )
+)
+
+for (c in 1:length(list_conf)){
+  run_hima_microbiome(
+  dir_out,
+  time_label = list_conf[[c]][[1]],
+  tax_level,
+  cessation_time = list_conf[[c]][[2]],
+  microbiome_dat = list_conf[[c]][[3]],
+  metabolites_dat = list_conf[[c]][[4]],
+  mtb_interest,
+  pheno_dat,
+  form_covar,
+  sigcut
+)
+}
+
+```
+## Family-level
+
+```{r}
+
+dir_out <- "~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/out/mediation/gut_urine"
+tax_level <- "family"
+pheno_dat <- pheno_dat
+form_covar <- "~ X + age_at_consent + smoking_py"
+mtb_interest <- c(
+  "p.Methylhistidine",
+  "Trimethylamine",
+  "Fucose",
+  "Choline",
+  "X3.Hydroxyisobutyrate",
+  "t.Methylhistidine",
+  "X4.Hydroxyphenylacetate",
+  "Formate",
+  "Lactate",
+  "Arabinose",
+  "Betaine",
+  "Creatine.phosphate"
+)
+sigcut <- 1
+
+list_conf <- list(
+  # smoking cessation at M2 -> gut microbiome at M2 -> metabolites at M2
+  list(
+    time_label = "M2M2M2",
+    cessation_time = "M2",
+    microbiome_dat = list_micro_family[[1]],
+    metabolites_dat = delta_mtb_m2
+  ),
+  # smoking cessation at M2 -> gut microbiome at M2 -> metabolites at M4
+  list(
+    time_label = "M2M2M4",
+    cessation_time = "M2",
+    microbiome_dat = list_micro_family[[1]],
+    metabolites_dat = delta_mtb_m4
+  ),
+  # smoking cessation at M2 -> gut microbiome at M4 -> metabolites at M4
+  list(
+    time_label = "M2M4M4",
+    cessation_time = "M2",
+    microbiome_dat = list_micro_family[[2]],
+    metabolites_dat = delta_mtb_m4
+  ),
+  # smoking cessation at M2 -> gut microbiome at M4 -> metabolites at M6
+  list(
+    time_label = "M2M4M6",
+    cessation_time = "M2",
+    microbiome_dat = list_micro_family[[2]],
+    metabolites_dat = delta_mtb_m6
+  ),
+  # smoking cessation at M2 -> gut microbiome at M6 -> metabolites at M6
+  list(
+    time_label = "M2M6M6",
+    cessation_time = "M2",
+    microbiome_dat = list_micro_family[[3]],
+    metabolites_dat = delta_mtb_m6
+  ),
+  # smoking cessation at M4 -> gut microbiome at M4 -> metabolites at M4
+  list(
+    time_label = "M4M4M4",
+    cessation_time = "M4",
+    microbiome_dat = list_micro_family[[2]],
+    metabolites_dat = delta_mtb_m4
+  ),
+  # smoking cessation at M4 -> gut microbiome at M4 -> metabolites at M6
+  list(
+    time_label = "M4M4M6",
+    cessation_time = "M4",
+    microbiome_dat = list_micro_family[[2]],
+    metabolites_dat = delta_mtb_m6
+  ),
+  # smoking cessation at M4 -> gut microbiome at M6 -> metabolites at M6
+  list(
+    time_label = "M4M6M6",
+    cessation_time = "M4",
+    microbiome_dat = list_micro_family[[3]],
+    metabolites_dat = delta_mtb_m6
+  ),
+  # smoking cessation at M6 -> gut microbiome at M6 -> metabolites at M6
+  list(
+    time_label = "M6M6M6",
+    cessation_time = "M6",
+    microbiome_dat = list_micro_family[[3]],
+    metabolites_dat = delta_mtb_m6
+  )
+)
+
+for (c in 1:length(list_conf)){
+  run_hima_microbiome(
+  dir_out,
+  time_label = list_conf[[c]][[1]],
+  tax_level,
+  cessation_time = list_conf[[c]][[2]],
+  microbiome_dat = list_conf[[c]][[3]],
+  metabolites_dat = list_conf[[c]][[4]],
+  mtb_interest,
+  pheno_dat,
+  form_covar,
+  sigcut
+)
+}
+
+```
+
+
