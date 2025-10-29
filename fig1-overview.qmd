@@ -213,19 +213,19 @@ dev.off()
 ### c) ICC
 
 ```{r icc, eval = F}
-load(here("out/variance_partition_df_var.Rdata"))
+load(here("out/variance_partition_df_var_revised.Rdata"))
 
 df.var.1 <- df.var |> 
   
-  # Filter superfluous features
-  dplyr::filter(!grepl("_plaque_max|imt_max|_hba1c_ifcc|_ft4|_ft3", featureid)) |> 
+  # Filter superfluous features (this doesnt seem to be necessary anymore)
+  dplyr::filter(!grepl("_plaque_max|imt_max|_hba1c_ifcc|_ft4|_ft3", featureid)) |>
   
   # Group clinical features as one + flow cytometry together as immune features
   dplyr::mutate(assay = case_when(grepl("Flow cytometry", assay) ~ "Flow cytometry: immune cells", 
                                   grepl("magnetic", assay) & grepl("Saliva", assay) ~ "Saliva metabolome",
                                   grepl("magnetic", assay) & grepl("Urine", assay) ~ "Urine metabolome",
                                   grepl("haemogram", assay) | (grepl("exam", assay) & !grepl("_fe|_fv|_sysbp|_diabp|_vo2max|_rel|_abs|_max", featureid)) ~ "Routine bloods",
-                                  (grepl("exam", assay) & grepl("_fe|_fv|_sysbp|_diabp|_vo2max|_rel|_abs|_max", featureid)) | (grepl("sono", assay) & grepl("pwv|imt|plaque", featureid)) ~ "Functional clinical features",
+                                  (grepl("exam", assay) & grepl("_fe|_fv|_sysbp|_diabp|_vo2max|_rel|_abs|_max", featureid)) | (grepl("sono", assay) & grepl("pwv|imt|plaque", featureid)) | (grepl("Cotinine", assay)) ~ "Functional clinical features",
                                   grepl("bmi|weight|scfat|vifat", featureid) ~ "Body composition",
                                   TRUE ~ assay),
                 
@@ -240,8 +240,11 @@ iccplot <- df.var.1 |>
   geom_boxplot(outlier.shape = NA,
                aes(fill = assay),
                alpha = 0.4) +
-  ggbeeswarm::geom_beeswarm(aes(colour = assay),
-                            alpha = 0.5,
+  # ggbeeswarm::geom_beeswarm(aes(colour = assay),
+  #                           alpha = 0.5,
+  #                           size = 1.2) +
+  ggbeeswarm::geom_quasirandom(aes(colour = assay),
+                            alpha = 0.25,
                             size = 1.2) +
   labs(x = 'ICC',
        y = '') +
@@ -249,7 +252,7 @@ iccplot <- df.var.1 |>
   theme(legend.position = 'none',
         axis.text.y = element_markdown()) +
   scale_x_continuous(position = 'top')  +
-  scale_colour_manual(values = grDevices::colorRampPalette(cols[c(8, 1,2,3,5,4,6,7)])(11),
+  scale_colour_manual(values = grDevices::colorRampPalette(cols[c(8, 1,2,3,5,4,6,7)])(14),
                       aesthetics = c('colour', 'fill'))
 
 # # save colours for re-use elsewhere
@@ -266,8 +269,8 @@ iccplot <- df.var.1 |>
 
 ```{r print.icc, eval=F}
 cairo_pdf(here("out/pdf/1c.pdf"),
-          width = 4.3,
-          height = 2.35)
+          width = 4.75,
+          height = 3.5)
 plot(iccplot)
 dev.off()
 ```
@@ -277,7 +280,7 @@ dev.off()
 ```{r topvar.bar, eval = F}
 n <- 0.3 # Prop of top cells
 
-load(here("out/variance_partition_df_var.Rdata"))
+load(here("out/variance_partition_df_var_revised.Rdata"))
 
 exclude <- c("cells_single_cells_live_t_cells_freq_of_parent",
              "cells_single_cells_live_t_cells_cd4_t_cells_freq_of_parent",
@@ -293,6 +296,7 @@ features <- df.var |>
                                   grepl("magnetic", assay) & grepl("Saliva", assay) ~ "Saliva metabolome",
                                   grepl("magnetic", assay) & grepl("Urine", assay) ~ "Urine metabolome",
                                   grepl("haemogram", assay) ~ "Routine bloods",
+                                  (grepl("exam", assay) & grepl("_fe|_fv|_sysbp|_diabp|_vo2max|_rel|_abs|_max", featureid)) | (grepl("sono", assay) & grepl("pwv|imt|plaque", featureid)) | (grepl("Cotinine", assay)) ~ "Functional clinical features",
                                   grepl("bmi|weight|scfat|vifat", featureid) ~ "Body composition",
                                   TRUE ~ assay),
                 # Formatting of text
@@ -300,7 +304,11 @@ features <- df.var |>
                                paste0("<b>", gsub("[:]", "</b>:", assay)))) |> 
   dplyr::arrange(desc(icc)) |> 
   dplyr::slice(1:(n()*n)) |> 
-  dplyr::select(featureid, assay)
+  dplyr::select(featureid, assay) 
+
+levels <- levels(df.var.1$assay)
+cols2 <- grDevices::colorRampPalette(cols[c(8, 1,2,3,5,4,6,7)])(14)
+names(cols2) = gsub("<b>|</b>", "", levels)
 
 barplot <- features |> 
   dplyr::group_by(assay) |> 
@@ -339,7 +347,7 @@ barplot <- features |>
 ```{r print.bar, eval=F}
 cairo_pdf(here("out/pdf/1d.pdf"),
           width = 2.5,
-          height = 2.5)
+          height = 3.5)
 plot(barplot)
 dev.off()
 ```
