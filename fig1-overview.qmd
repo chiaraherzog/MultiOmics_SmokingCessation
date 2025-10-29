@@ -500,6 +500,127 @@ plot(pc.contribs)
 dev.off()
 ```
 
+### Updated panel availability matrix
+
+```{r}
+
+cols2 <- c("#1b69a1","#5f70a8", "#826c9b", "#bd647d", "#ec6669", "#f39668", "#71b5a9", "#5f70a8")
+names(cols2) <- c("blood", "buccal", "saliva", "cervical", "urine", "faecal", "skin", "clinical")
+
+load(here("data/data_raw.Rdata"))
+data_baseline_m6 <- data[,data$interventionId == "S" & !data$visitId %in% c("M12", "M18"),]
+
+# Helper keep code compact
+make_assay_df <- function(data, name, sampletype, assayname) {
+  data_subset <- wideFormat(data[, , name],
+                            colDataCols = c("subjectId", "interventionId", "visitId", "dropout_date")) |> 
+    as.data.frame() |> 
+    dplyr::mutate(dropout = ifelse(is.na(dropout_date), "no", "yes")) |> 
+    dplyr::relocate(c(subjectId, interventionId, visitId, dropout)) |> 
+    dplyr::select(1:5) |> 
+    tidyr::pivot_wider(
+      id_cols = c("subjectId", "interventionId", "dropout"),
+      names_from = "visitId",
+      values_from = "primary"
+    ) |> 
+    dplyr::mutate(across(c(M0:M6), ~ ifelse(is.na(.), 0, 1))) |> 
+    dplyr::mutate(
+      sampletype = sampletype,
+      assay = assayname,
+      comp = paste0(sampletype, "_", assay)
+    )
+  
+  return(data_subset)
+}
+
+# Make grid subsets
+meth_blood <- make_assay_df(data_baseline_m6, 'Composite methylation scores: blood', 'blood', 'methylation')
+meth_buccal <- make_assay_df(data_baseline_m6, 'Composite methylation scores: buccal', 'buccal', 'methylation')
+meth_cervical <- make_assay_df(data_baseline_m6, 'Composite methylation scores: cervical', 'cervical', 'methylation')
+blood_h <- make_assay_df(data_baseline_m6, 'Blood haemogram', 'blood', 'routine bloods')
+flow <- make_assay_df(data_baseline_m6, 'Flow cytometry: white blood cell staining', 'blood', 'immune profiling')
+saliva_nmr <- make_assay_df(data_baseline_m6, 'Saliva nuclear magnetic resonance', 'saliva', 'nmr')
+urine_nmr <- make_assay_df(data_baseline_m6, 'Urine nuclear magnetic resonance', 'urine', 'nmr')
+faecal_microb <- make_assay_df(data_baseline_m6, 'Stool microbiome: families', 'faecal', 'microbiome')
+saliva_microb <- make_assay_df(data_baseline_m6, 'Saliva microbiome: families', 'saliva', 'microbiome')
+skin <- make_assay_df(data_baseline_m6, 'Skin histology and transepidermal water loss assay', 'skin', 'biopsy')
+body <- make_assay_df(data_baseline_m6, 'Body composition', 'clinical', 'body composition')
+sport <- make_assay_df(data_baseline_m6, 'Functional sports exam', 'clinical', 'functional exam')
+vascular <- make_assay_df(data_baseline_m6, 'Vascular and body sonography', 'clinical', 'vascular exam')
+cotinine <- make_assay_df(data_baseline_m6, 'Cotinine LC/MS Quantitation', 'clinical', 'cotinine measurements')
+
+# Combine subsets
+tmp <- meth_blood |> dplyr::full_join(meth_buccal) |> dplyr::full_join(meth_cervical) |> 
+  dplyr::full_join(saliva_nmr) |> dplyr::full_join(urine_nmr) |>
+  dplyr::full_join(saliva_microb) |> dplyr::full_join(faecal_microb) |> 
+  dplyr::full_join(blood_h) |> dplyr::full_join(skin) |> dplyr::full_join(flow) |> 
+  dplyr::full_join(body) |> dplyr::full_join(sport) |> dplyr::full_join(vascular) |> dplyr::full_join(cotinine) |> 
+  tidyr::pivot_longer(cols = c(M0:M6),
+                      names_to = 'visitId',
+                      values_to = 'value') |> 
+  dplyr::mutate(assay = factor(assay, levels =
+                                 c("routine bloods",
+                                   "methylation",
+                                   "nmr",
+                                   "microbiome",
+                                   "immune profiling",
+                                   "biopsy",
+                                   "body composition",
+                                   "functional exam",
+                                   "vascular exam",
+                                   "cotinine measurements")),
+                sampletype = factor(sampletype, levels = c("blood", "buccal", "saliva", "cervical", "urine", "faecal", "skin", "clinical")))
+                
+# Plot matrix
+out_1 <- tmp |> 
+  dplyr::filter(value != 0) |>
+  dplyr::mutate(comp = factor(comp, levels = c(
+    "blood_routine bloods",
+    "blood_immune profiling",
+    "blood_methylation",
+    "buccal_methylation",
+    "cervical_methylation",
+    "saliva_microbiome",
+    "saliva_nmr",
+    "urine_nmr",
+    "faecal_microbiome",
+    "skin_biopsy",
+    "clinical_body composition",
+    "clinical_functional exam",
+    "clinical_vascular exam",
+    "clinical_cotinine measurements"
+  ))) |> 
+  dplyr::arrange(subjectId) |>
+  ggplot(aes(x = visitId,
+             y = forcats::fct_reorder(subjectId, -as.numeric(as.factor(dropout))),
+             fill = sampletype,
+             alpha = dropout)) +
+  geom_tile(colour = NA) +
+  facet_grid(~ comp,
+             scales = 'free') +
+  theme_bw() +
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        panel.grid = element_blank(),
+        axis.text.x = element_text(size = 7))  +
+  coord_cartesian(expand = 0) +
+  scale_fill_manual(values = cols2,
+                    aesthetics = c("colour", "fill"),na.value = 'grey90') +
+  scale_alpha_discrete(range = c(1, 0.6)) +
+  labs(x = '',
+      y = '')
+
+pdf(file = here('out/pdf/1grid.pdf'),
+    width = 10, height = 3.75)
+print(out_1)
+dev.off()
+
+
+```
+
+```
+
+
 ## Extended Data Figure 1
 
 ### a) PC and age
