@@ -627,36 +627,35 @@ dev.off()
 
 ```
 
-```
 
 
 ## Extended Data Figure 1
 
 ### a) PC and age
 
+
 ```{r, eval = F}
-age <- pcdat |> 
-  ggplot(aes(x = Dim.1,
-             y = Dim.2,
-             colour = age_at_consent)) +
-  geom_point(size = 2.5,
-             alpha = 0.9) +
+age <- pcdat |>
+  ggplot(aes(x = Dim.1, y = Dim.2, colour = age_at_consent)) +
+  geom_point(size = 2.5, alpha = 0.9) +
   scico::scale_color_scico(palette = 'batlow',
                            end = 0.85,
-                           name = 'age at consent')+
+                           name = 'age at consent') +
   theme_bw() +
-  theme(legend.position = 'inside',
-        legend.background = element_blank(),
-        legend.box.background = element_blank(),
-        legend.key.width = unit(0.15, 'in'),
-        legend.key.height = unit(0.15, 'in'),
-        legend.position.inside = c(0.18, 0.76),
-        panel.grid = element_blank(),
-        axis.title.x = element_markdown(),
-        axis.title.y = element_markdown(),
-        legend.box = 'vertical') +
-  labs(x = lab_x,
-       y = lab_y)
+  theme(
+    # legend.position = 'inside',
+    # legend.background = element_blank(),
+    # legend.box.background = element_blank(),
+    # legend.key.width = unit(0.15, 'in'),
+    # legend.key.height = unit(0.15, 'in'),
+    # legend.position.inside = c(0.18, 0.76),
+    # legend.box = "vertical",
+    panel.grid = element_blank(),
+    axis.title.x = element_markdown(),
+    axis.title.y = element_markdown(),
+    legend.position = "bottom"
+  ) +
+  labs(x = lab_x, y = lab_y)
 ```
 
 
@@ -673,16 +672,18 @@ smk <- pcdat |>
                            end = 0.85,
                            name = 'log[smoking pack\nyears]')+
   theme_bw() +
-  theme(legend.position = 'inside',
-        legend.background = element_blank(),
-        legend.box.background = element_blank(),
-        legend.key.width = unit(0.15, 'in'),
-        legend.key.height = unit(0.15, 'in'),
-        legend.position.inside = c(0.19, 0.76),
-        panel.grid = element_blank(),
-        axis.title.x = element_markdown(),
-        axis.title.y = element_markdown(),
-        legend.box = 'vertical') +
+  theme(
+    # legend.position = 'inside',
+    # legend.background = element_blank(),
+    # legend.box.background = element_blank(),
+    # legend.key.width = unit(0.15, 'in'),
+    # legend.key.height = unit(0.15, 'in'),
+    # legend.position.inside = c(0.18, 0.76),
+    # legend.box = "vertical",
+    panel.grid = element_blank(),
+    axis.title.x = element_markdown(),
+    axis.title.y = element_markdown(),
+    legend.position = "bottom") +
   labs(x = lab_x,
        y = lab_y)
 ```
