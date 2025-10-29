@@ -252,13 +252,13 @@ iccplot <- df.var.1 |>
   theme(legend.position = 'none',
         axis.text.y = element_markdown()) +
   scale_x_continuous(position = 'top')  +
-  scale_colour_manual(values = grDevices::colorRampPalette(cols[c(8, 1,2,3,5,4,6,7)])(14),
+  scale_colour_manual(values = grDevices::colorRampPalette(cols[c(8, 1,2,3,5,4,6,7)])(length(levels(df.var.1$assay))),
                       aesthetics = c('colour', 'fill'))
 
 # # save colours for re-use elsewhere
-# levels <- levels(df.var.1$assay)
-# cols2 <- grDevices::colorRampPalette(cols[c(8, 1,2,3,5,4,6,7)])(11)
-# names(cols2) = gsub("<b>|</b>", "", levels)
+levels <- levels(df.var.1$assay)
+cols2 <- grDevices::colorRampPalette(cols[c(8, 1,2,3,5,4,6,7)])(length(levels(df.var.1$assay)))
+names(cols2) = gsub("<b>|</b>", "", levels)
 # cols_for_assays <- cols2
 # names(cols_for_assays) <- c("Saliva metabolome", "Urine metabolome", "Stool microbiome", "Saliva microbiome",
 #                             "Blood methylation", "Cervical methylation", "Buccal methylation",
@@ -305,10 +305,6 @@ features <- df.var |>
   dplyr::arrange(desc(icc)) |> 
   dplyr::slice(1:(n()*n)) |> 
   dplyr::select(featureid, assay) 
-
-levels <- levels(df.var.1$assay)
-cols2 <- grDevices::colorRampPalette(cols[c(8, 1,2,3,5,4,6,7)])(14)
-names(cols2) = gsub("<b>|</b>", "", levels)
 
 barplot <- features |> 
   dplyr::group_by(assay) |> 
@@ -432,56 +428,60 @@ dev.off()
 ### f) PCA contributions
 
 ```{r pca.contrib, eval = F}
+
 contrib <- pc$var$contrib |> as.data.frame() |> 
   tibble::rownames_to_column('x') |> 
   tidyr::separate(x, "_", into = c('assay', 'feature'), extra = 'merge')
 
-load(here("src/populations_names_annotated.Rdata"))
+# Fix labels T-cells/white blood
+contrib$assay <- gsub("Flow cytometry: T cell staining", 'Flow cytometry: immune cells', contrib$assay)
+contrib$assay <- gsub("Flow cytometry: white blood cell staining", 'Flow cytometry: immune cells', contrib$assay)
 
-pc1 <- contrib |> 
+load(here("src/populations_names_annotated.Rdata"))
+contrib <- contrib %>% dplyr::left_join(dplyr::select(populations, name, `second name`),by = c('feature' = 'name'))
+contrib$`second name` <- gsub("[+]", "<sup>+</sup>", contrib$`second name`)
+contrib$`second name` <- gsub("[-]", "<sup>-</sup>", contrib$`second name`)
+contrib$`second name` <- gsub("TEM", "T<sub>em</sub>", contrib$`second name`)
+contrib$`second name` <- gsub("TN", "T<sub>n</sub>", contrib$`second name`)
+contrib$`second name` <- gsub("TREG", "T<sub>reg</sub>", contrib$`second name`)
+contrib <- contrib %>% dplyr::mutate(feature =
+                                       case_when(
+                                         assay == "Flow cytometry: immune cells" ~ `second name`,
+                                         TRUE ~ feature
+                                       ))
+
+# Fix labels meth scores
+contrib$feature <- gsub("WID_SMK_immune_hypoM_corr_z","WID-SMK immune hypoM",contrib$feature)
+contrib$feature <- gsub("WID_SMK_epithelial_hypoM_corr_z","WID-SMK proximal epithelial hypoM",contrib$feature)
+contrib$feature <- gsub("WID_SMK_proximal_epithelial_hyperM_corr_z","WID-SMK proximal epithelial hyperM",contrib$feature)
+
+pdat <- contrib |> 
   dplyr::arrange(desc(Dim.1)) |> 
   dplyr::slice(1:10) |> 
-  
-  dplyr::left_join(dplyr::select(populations, name, `second name`),by = c('feature' = 'name')) |> 
-  dplyr::mutate(feature = `second name`,
-                feature = gsub("[+]", "<sup>+</sup>", feature),
-                feature = gsub("[-]", "<sup>-</sup>", feature),
-                feature = gsub("TEM", "T<sub>em</sub>", feature),
-                feature = gsub("TN", "T<sub>n</sub>", feature),
-                feature = gsub("TREG", "T<sub>reg</sub>", feature),
-                assay = 'Flow cytometry: immune cells') |> 
-  
-  # Rename using populations
-  ggplot(aes(x = forcats::fct_reorder(feature, -Dim.1),
-             y = Dim.1,
-             fill = assay)) +
+  dplyr::mutate(comp = paste0(feature, "_", sub(".*:", "", assay)))
+
+pc1 <- ggplot(pdat, aes(x = forcats::fct_reorder(comp, -Dim.1),
+                            y = Dim.1,
+                            fill = assay)) +
   geom_col() +
   theme_bw() +
-  theme(axis.text.x = element_markdown(angle = 60, hjust = 1),
-        axis.title.y = element_markdown(),
+  theme(axis.text.x = ggtext::element_markdown(angle = 60, hjust = 1),
+        axis.title.y = ggtext::element_markdown(),
         legend.position = 'none',
-        plot.subtitle = element_markdown(),
+        plot.subtitle = ggtext::element_markdown(),
         panel.grid = element_blank(),
         axis.ticks.x = element_blank()) +
-  labs(subtitle = lab_x, x= '', y = 'Contribution (%)') +
+  labs(subtitle = lab_x, x = '', y = 'Contribution (%)') +
   coord_cartesian(ylim = c(0, 7)) +
-  scale_fill_manual(values = cols2)
+  scale_fill_manual(values = cols2) +
+  scale_x_discrete(labels = pdat$feature)
 
-pc2 <- contrib |> 
+pdat <- contrib |> 
   dplyr::arrange(desc(Dim.2)) |> 
   dplyr::slice(1:10) |> 
-  # 
-  dplyr::left_join(dplyr::select(populations, name, `population name`),by = c('feature' = 'name'))|>
-  dplyr::mutate(
-    feature = case_when(!is.na(`population name`) ~ gsub("[+]", "<sup>+</sup>", `population name`),
-                                    grepl("immune_hypoM", feature) & grepl("blood", assay) ~ "WID-SMK immune hypoM",
-                                    grepl("epithelial_hyperM", feature) ~ "WID-SMK proximal epithelial hyperM",
-                        grepl("AGE", feature) ~ "AGE index",
-                                    TRUE ~ feature),
-                assay = ifelse(grepl("cytom", assay), 'Flow cytometry: immune cells', assay)) |>
-  # 
-  # Rename using populations
-  ggplot(aes(x = forcats::fct_reorder(feature, -Dim.2),
+  dplyr::mutate(comp = paste0(feature, "_", sub(".*:", "", assay))) 
+
+pc2 <- pdat %>% ggplot(aes(x = forcats::fct_reorder(comp, -Dim.2),
              y = Dim.2,
              fill = assay)) +
   geom_col(width = 0.9) +
@@ -494,7 +494,8 @@ pc2 <- contrib |>
         axis.ticks.x = element_blank()) +
   labs(subtitle = lab_y, x= '', y = '') +
   coord_cartesian(ylim = c(0, 7)) +
-  scale_fill_manual(values = cols2)
+  scale_fill_manual(values = cols2) +
+  scale_x_discrete(labels = pdat$feature)
 
 
 pc.contribs <- pc1|pc2
