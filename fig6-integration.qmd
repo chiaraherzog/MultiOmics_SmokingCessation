@@ -116,81 +116,167 @@ dev.off()
 
 ### b) Repeated measures: interaction
 
-```{r prep.print.circ, eval = F}
-source(here("src/loadRMcorr.R"))
-corr <- loadRMcorr(filter_ASV = T)
-length(unique(c(corr$measure1, corr$measure2)))
+```{r}
+load("out/rmcorr_full.Rdata")
+corr <- corr |>
+  # dplyr::mutate(padj_v3 = p.adjust(p, method = 'fdr')) |>
+  # dplyr::filter(padj_v3 < 0.05)
+  dplyr::filter(padj_v2 < 0.1) |> 
+  dplyr::filter(!(grepl("Flow", assay_lab1) & grepl("Flow", assay_lab2))) |> 
+  dplyr::filter(!(grepl("Flow", assay_lab1) & grepl("Immune", assay_lab2))) |> 
+  dplyr::filter(!(grepl("Immune", assay_lab1) & grepl("Flow", assay_lab2)))
+
+# Relabel assays for this specific plot
+assaylabels <- c("Flow cytometry: white blood cell staining" = "Flow cytometry:\nimmune cells",
+                   "Flow cytometry: T cell staining" = "Flow cytometry:\nimmune cells",
+                   "Blood haemogram" = "Routine\nbloods",
+                 "Blood test" = "Routine\nbloods",
+                 "Cotinine LC/MS Quantitation" = "Urine\nmetabolome",
+                   "Body composition" = "Body\ncomposition",
+                   "Vascular and body sonography" = "Clinical\nmeasures",
+                 'Functional sports exam' = 'Clinical\nmeasures',
+                 'Functional exercise capacity' = "Clinical\nmeasures",
+                 'Spirometry' = "Clinical\nmeasures",
+                   "Composite methylation scores: buccal" = "Buccal\nmethylation",
+                   "Composite methylation scores: cervical" = "Cervical\nmethylation",
+                   "Composite methylation scores: blood" = "Blood\nmethylation",
+                   "Saliva metabolome" = "Saliva\nmetabolome",
+                   "Saliva nuclear magnetic resonance: normalized" = "Saliva\nmetabolome",
+                   "Urine metabolome" = "Urine\nmetabolome",
+                   "Urine nuclear magnetic resonance: normalized" = "Urine\nmetabolome",
+                   "Saliva microbiome: families" = "Saliva\nmicrobiome",
+                   "Stool microbiome: families" = "Stool\nmicrobiome",
+                   "Immune age: general" = "Immune\nage",
+                   "ImmuneSMK" = 'ImmuneSMK')
 
 # get into correct format for chord Diagram
 corrdiag <- corr |> 
-  dplyr::filter(!grepl("ASV", assay1) & !grepl("ASV", assay2)) |> 
-  dplyr::filter(!(grepl("metabolome", assay1) & !grepl("log", assay1)) & !(grepl("metabolome", assay2) & !grepl("log", assay2))) |> 
-  dplyr::select(assay1, assay2, rmcorr.r) |> 
-  dplyr::mutate(across(c(assay1,assay2), ~ stringr::str_replace(., "-log", ""))) |> 
-  dplyr::rename(cor = rmcorr.r)
+  dplyr::mutate(assay1_relab = recode(assay1, !!! assaylabels),
+                assay2_relab = recode(assay2, !!! assaylabels)) |> 
+  
+  dplyr::mutate(assay1 = assay1_relab, 
+                assay2 = assay2_relab) |> 
+  dplyr::select(assay1, assay2, r) |> 
+  dplyr::rename(cor = r)
 
 # Colour assignment
 col12 <- grDevices::colorRampPalette(cols[c(8, 1,2,3,5,4,6,7)])(13)
-grid.col = c("ImmuneSMK" = col12[1],
-             "Flow cytometry:\nimmune cells" = col12[13],
-             "Immune\nage" = col12[12],
-             "Routine\nbloods" = col12[11],
-             "Body\ncomposition" = col12[10],
-             "Functional\nclinical measures" = col12[9],
-             "Cervical\nmethylation" = col12[8],
-             "Buccal\nmethylation" = col12[7],
-             "Blood\nmethylation" = col12[6],
-             "Saliva\nmicrobiome" = col12[5],
-             "Stool\nmicrobiome" = col12[4],
-             "Urine\nmetabolome" = col12[3],
-             "Saliva\nmetabolome" = col12[2])
+
+grid.col = c("Flow cytometry:\nimmune cells" = col12[11],
+             "Immune\nage" = col12[10],
+             "Routine\nbloods" = col12[9],
+             "Body\ncomposition" = col12[8],
+             "Clinical\nmeasures" = col12[7],
+             "Cervical\nmethylation" = col12[6],
+             "Buccal\nmethylation" = col12[5],
+             "Blood\nmethylation" = col12[4],
+             "Saliva\nmicrobiome" = col12[3],
+             "Stool\nmicrobiome" = col12[2],
+             "Urine\nmetabolome" = col12[1],
+             "Saliva\nmetabolome" = col12[12],
+             "ImmuneSMK" = col12[13])
 
 # Gaps
 gaps = c("Flow cytometry:\nimmune cells" = 3,
          "Immune\nage" = 3,
-         "ImmuneSMK" = 3,
          "Routine\nbloods" = 12,
          "Body\ncomposition" = 3,
-         "Functional clinical measures" = 12,
+         "Clinical\nmeasures" = 12,
          "Cervical\nmethylation" = 3,
          "Buccal\nmethylation" = 3,
          "Blood\nmethylation" = 12,
          "Saliva\nmicrobiome" = 3,
          "Stool\nmicrobiome" = 12,
          "Urine\nmetabolome" = 3,
-         "Saliva\nmetabolome" = 12)
+         "Cotinine\nLC/MS" = 3,
+         "Saliva\nmetabolome" = 12,
+         "ImmuneSMK" = 3)
 
 # Order
 order = names(grid.col)
+# col12 <- grDevices::colorRampPalette(cols[c(8, 1,2,3,5,4,6,7)])(13)
+# grid.col = c("ImmuneSMK" = col12[1],
+#              "Flow cytometry:\nimmune cells" = col12[13],
+#              "Immune\nage" = col12[12],
+#              "Routine\nbloods" = col12[11],
+#              "Body\ncomposition" = col12[10],
+#              "Functional\nclinical measures" = col12[9],
+#              "Cervical\nmethylation" = col12[8],
+#              "Buccal\nmethylation" = col12[7],
+#              "Blood\nmethylation" = col12[6],
+#              "Saliva\nmicrobiome" = col12[5],
+#              "Stool\nmicrobiome" = col12[4],
+#              "Urine\nmetabolome" = col12[3],
+#              "Saliva\nmetabolome" = col12[2])
+
+
+
+# x <- corr2[grepl("methylation", corr2$assay1) & grepl("methylation", corr2$assay2),] # only one overlap for methylation
+circos.clear()
+
+circos.par(gap.after = gaps)
+  chordDiagram(corrdiag,
+               grid.col = grid.col,
+               order = order,
+               annotationTrack = "grid",
+               preAllocateTracks = list(track.height = max(strwidth(c(corrdiag$assay1, corrdiag$assay2)))))
+  # we go back to the first track and customize sector labels
+  circos.track(track.index = 1, panel.fun = function(x, y) {
+    circos.text(CELL_META$xcenter, CELL_META$ylim[1], CELL_META$sector.index, 
+                facing = "clockwise", niceFacing = TRUE, adj = c(0, 0.5),cex = 0.9)
+  }, bg.border = NA) # here set bg.border to NA is important
+  circos.clear()
 
 # Print
-cairo_pdf(here("out/pdf/6b.pdf"), width = 6, height = 6)
-circos.par(gap.after = gaps)
-chordDiagram(corrdiag,
-             grid.col = grid.col,
-             order = order,
-             annotationTrack = "grid",
-             preAllocateTracks = list(track.height = max(strwidth(c(corrdiag$assay1, corrdiag$assay2)))))
-# we go back to the first track and customize sector labels
-circos.track(track.index = 1, panel.fun = function(x, y) {
-  circos.text(CELL_META$xcenter, CELL_META$ylim[1], CELL_META$sector.index, 
-              facing = "clockwise", niceFacing = TRUE, adj = c(0, 0.5),cex = 0.9)
-}, bg.border = NA) # here set bg.border to NA is important
-circos.clear()
+cairo_pdf(here("out/pdf/6b.pdf"), width = 8, height = 8)
+  circos.par(gap.after = gaps)
+  chordDiagram(corrdiag,
+               grid.col = grid.col,
+               order = order,
+               annotationTrack = "grid",
+               preAllocateTracks = list(track.height = max(strwidth(c(corrdiag$assay1, corrdiag$assay2)))))
+  # we go back to the first track and customize sector labels
+  circos.track(track.index = 1, panel.fun = function(x, y) {
+    circos.text(CELL_META$xcenter, CELL_META$ylim[1], CELL_META$sector.index, 
+                facing = "clockwise", niceFacing = TRUE, adj = c(0, 0.5),cex = 0.9)
+  }, bg.border = NA) # here set bg.border to NA is important
+  circos.clear()
 dev.off()
 ```
+
 
 ### c) Network diagram (smoking indices)
 
 ```{r}
 source(here("src/multi_network_diagram.R"))
 
+corrObj <- corr |>
+  dplyr::mutate(assay1_relab = recode(assay1, !!! assaylabels),
+                assay2_relab = recode(assay2, !!! assaylabels)) |> 
+  dplyr::mutate(assay1 = assay1_relab,
+                                 assay2 = assay2_relab) |> 
+  dplyr::mutate(measure1 = case_when(assay1 == 'Blood\nmethylation' ~ paste0("blood_", measure1),
+                                     assay1 == 'Buccal\nmethylation' ~ paste0("buccal_", measure1),
+                                     assay1 == 'Cervical\nmethylation' ~ paste0("cervical", measure1),
+                                     TRUE ~ measure1),
+                measure2 = case_when(assay2 == 'Blood\nmethylation' ~ paste0("blood_", measure2),
+                                     assay2 == 'Buccal\nmethylation' ~ paste0("buccal_", measure2),
+                                     assay2 == 'Cervical\nmethylation' ~ paste0("cervical", measure2),
+                                     TRUE ~ measure2
+                                     ))
+
 features = 'buccal_WID_SMK_proximal|buccal_WID_SMK_epithelial_hypoM|blood_WID_SMK_immune_hypoM|cervical_WID_SMK_epithelial_hypoM|cervical_WID_SMK_distal_epithelial_hypoM|cervical_WID_SMK_immune|PhenoAge|DamAge|AdaptAge|AgeAccel|DunedinPACE|buccal_globalMethylation_line1'
 
 # Note: uses corr and grid.col from previous interaction plot, make sure these exist
+
 cairo_pdf(here("out/pdf/6c.pdf"), width = 11, height = 9)
 multi_network_diagram(features = features,
-                      seed = 3, legend = T)
+                      seed = 2,
+                      corrObj = corrObj,
+                      expand = T,
+                      # layout = layout.kamada.kawai,
+                      # layout = layout.spring,
+                      expand_r = 0.8)
 dev.off()
 ```
 
@@ -208,43 +294,85 @@ suppressWarnings(suppressMessages({
 }))
 
 source("src/mefisto_plots.R")
+
+reticulate::use_condaenv("mofa_win", required = TRUE)
+reticulate::py_config()
+
 ```
 
 Load MEFISTO results form all individuals grouped:
 
 ```{r}
-# load data
-load("data/data_normalized.Rdata")
-for (i in 1:length(experiments(data))){
-  experiments(data)[[i]] <- experiments(data)[[i]][apply(assay(data[[i]]), 1, function(x) var(x,na.rm = T) != 0), ]
-}# clean zero variance features
-model <- load_model("out/mefisto/mefisto_time_all.hdf5")
+# load data and clean
+load(here('data/data_normalized_centred.Rdata'))
+load("src/vars.Rdata")
+vars <- vars |> 
+  dplyr::filter(!assay %in% c("Body composition",
+                              "Flow cytometry: stimulated T cells",
+                              "Flow cytometry: unstimulated T cells",
+                              "Functional sports exam",
+                              "Immune age: general",
+                              "Saliva microbiome: ASVs",
+                              "Saliva microbiome: ASVs_clr",
+                              "Stool microbiome: ASVs",
+                              "Stool microbiome: ASVs_clr",
+                              "Skin histology and transepidermal water loss assay",
+                              "Saliva microbiome: families_clr",
+                              "Stool microbiome: families_clr",
+                              "Vascular and body sonography",
+                              "Cotinine LC/MS Quantitation",
+                              "ImmuneSMK"
+                              ))
 
-# reload the omes
-df_dat <- read.table(file="out/mefisto/mefisto_input_all.txt",sep="\t",header=T)
+varsList <- vars |> dplyr::group_by(assay) |> 
+  dplyr::summarise(features = list(x), .groups = 'drop') |> 
+  tibble::deframe()
 
-features <- c("subjectId", "visitId", "compliance", "compliance_smkgroup", "mpstatrs", "age_at_consent", "bmi_at_consent", "etohu_curr", "preg_ever", "ocp_curr")
+data <- subsetByAssay(data, varsList)
 
-metadat <- colData(data) |> 
+for (i in seq_along(experiments(data))) {
+  mat <- experiments(data)[[i]]
+  keep <- apply(mat, 1, function(x) var(x, na.rm = TRUE) != 0)
+  mat <- mat[keep, , drop = FALSE]
+  experiments(data)[[i]] <- SummarizedExperiment(list(counts = mat))
+}
+
+mae <- data
+mae <- mae[ , colData(mae)$visitId %in% c("M0", "M2", "M4", "M6") & colData(mae)$interventionId == 'S' ]
+mae$group <- mae$interventionId
+
+# load model
+model <- load_model("out/mefisto_revised/medium_n15.hdf5")
+
+fact <- as.data.frame(get_factors(model, scale = T, as.data.frame = T)) |> 
+  tidyr::pivot_wider(names_from = 'factor',
+                     values_from = 'value')
+
+features <- c("subjectId", "visitId", "compliance", "compliance_smkgroup", "mpstatrs", "age_at_consent", "bmi_at_consent", "etohu_curr", "preg_ever", "ocp_curr", "cotinine","ImmuneSMK")
+
+metadat <- colData(mae) |> 
   as.data.frame() |> 
-  dplyr::select(c("interventionId",features)) |>
-  filter(!visitId %in% c("M12","M18")) |>
-  rownames_to_column(var="sample") |>
+  dplyr::select(any_of(features)) |> 
+  rownames_to_column(var="sample") |> 
   distinct()
 
-metadat <- left_join(df_dat[,1, drop = FALSE],
-                     metadat, by = "sample") |> distinct()
-metadat$group <- metadat$interventionId
+metadat$group <- "S"
+
+pheno_factors <- metadat  |> 
+  dplyr::left_join(fact, by = "sample")
+save(pheno_factors, file = 'out/mefisto_revised/pheno_factors.Rdata')
 
 samples_metadata(model) <- metadat
-
-print(model)
+# print(model)
 
 # extract data on variance explained by each factor
 df1 <- plot_variance_explained(model,
                         x = 'factor',
                         y = 'view')
 df1 <- as.data.frame(df1$data)
+df1_sum <- df1 |> 
+  dplyr::group_by(factor) |> 
+  dplyr::reframe(ex = sum(value))
 
 # simplify view names
 df1$view <- gsub(": normalized","",df1$view)
@@ -284,7 +412,7 @@ dev.off()
 * factor variance and significance association with selected covariates:
 
 ```{r}
-feat <- features
+
 labs = c('subjectId', 'visitId', 'compliance', 'smoking group',
            'menopausal status', 'age (at consent)', 'BMI (at consent)', 
            'current alcohol units/wk', 'pregnancy (ever)', 
@@ -300,10 +428,17 @@ print(p)
 dev.off()
 ```
 
-* no significant association with time?
+* Factor 1 no significant association with time
 
 ```{r}
-p <- mefisto_factor_box(df2, metadat, "Factor3")
+p <- mefisto_factor_box(df2, metadat, "Factor1")
+p
+```
+
+* Factor 2 significant association with time
+
+```{r}
+p <- mefisto_factor_box(df2, metadat, "Factor2")
 p
 ```
 
@@ -313,12 +448,12 @@ print(p)
 dev.off()
 ```
 
-* top 30 features factor 3:
+* top 30 features factor 2:
 
 ```{r}
-w_f3 <- get_weights(model, factors = 3, as.data.frame = TRUE)
+w_f3 <- get_weights(model, factors = 2, as.data.frame = TRUE)
 
-p <- mefisto_plot_weights(w_f3, "Factor3", 30,
+p <- mefisto_plot_weights(w_f3, "Factor2", 30,
                           "out/mefisto/renamed_tcs_features_indiv.Rds",
                           "out/mefisto/renamed_wb_features_indiv.Rds")
 p
