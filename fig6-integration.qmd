@@ -16,9 +16,9 @@ format:
 
 ![](figures-png/figure6.png)
 
-## Extended Data Figure 6 (MEFISTO)
+## Extended Data Figure 7 (MEFISTO)
 
-![](figures-png/e6.png)
+![](figures-png/ext_figure_x_mefisto.png)
 
 ## Extended Data Figure 7 (rmcorr)
 
@@ -46,6 +46,7 @@ suppressMessages(suppressWarnings({
     library(RColorBrewer)
     library(viridis)
     library(circlize)
+    library(ggpubr)
 }))
 
 cols <- c("#1b69a1", "#48a0af", "#71b5a9", "#ec6669", "#f39668", "#bd647d", "#832c9b", "#5f70a8")
@@ -280,7 +281,7 @@ multi_network_diagram(features = features,
 dev.off()
 ```
 
-## Extended Data Figure 6 (MEFISTO)
+## Extended Data Figure 7 (MEFISTO)
 
 ```{r}
 suppressWarnings(suppressMessages({
@@ -388,12 +389,50 @@ df2 <- plot_factors_vs_cov(model, color_by = "visitId", legend = FALSE, return_d
 p <- plot_variance_explained(model,
                          x = 'factor',
                          y = 'view')
-p
+
+desired_order <- c(
+  "Blood haemogram",
+  "Composite methylation scores: cervical",
+  "Composite methylation scores: blood",
+  "Composite methylation scores: buccal",
+  "Flow cytometry: T cell staining",
+  "Flow cytometry: white blood cell staining",
+  "Saliva microbiome: families",
+  "Stool microbiome: families",
+  "Saliva nuclear magnetic resonance: normalized",
+  "Urine nuclear magnetic resonance: normalized"
+)
+
+p <- p + 
+  scale_y_discrete(
+    limits = rev(desired_order),
+    labels = c("Urine nuclear magnetic resonance: normalized" = "Urine metabolome",
+                              "Stool microbiome: families" = "Stool microbiome",
+                              "Saliva nuclear magnetic resonance: normalized" = "Saliva metabolome",
+                              "Saliva microbiome: families" = "Saliva microbiome",
+                              "Flow cytometry: white blood cell staining" = "Flow cytometry: white blood cells",
+                              "Flow cytometry: T cell staining" = "Flow cytometry: T cells",
+                              "Composite methylation scores: buccal" = "Composite methylation scores: buccal",
+                              "Composite methylation scores: cervical"  = "Composite methylation scores: cervical",
+                              "Composite methylation scores: blood" = "Composite methylation scores: blood",
+                              "Blood haemogram" = "Blood haemogram"
+                              )) +
+  scale_x_discrete(labels = ifelse(seq(1, 15) %% 2 == 1, as.character(seq(1, 15)), "")) +
+  xlab("Factor") +
+  theme(legend.position = "bottom")
 
 ```
 
+```{r, eval=F}
+cairo_pdf("out/pdf/extxa-mefisto.pdf", width = 4.5, height = 3.5)
+print(p)
+dev.off()
+```
+
+
+
 * PCA-like plot
-* Factor 1 and 2 strongly correlated
+
 
 ```{r}
 p1 <- mefisto_biplot_F12(df1,df2,"factor")
@@ -404,7 +443,7 @@ p <- p1 + p2 + plot_layout(guides="collect")
 ```
 
 ```{r, eval = F}
-cairo_pdf("out/pdf/extxa-mefisto.pdf", width = 7, height = 3.5)
+cairo_pdf("out/pdf/extxb-mefisto.pdf", width = 7, height = 3.5)
 print(p)
 dev.off()
 ```
@@ -417,23 +456,74 @@ labs = c('subjectId', 'visitId', 'compliance', 'smoking group',
            'menopausal status', 'age (at consent)', 'BMI (at consent)', 
            'current alcohol units/wk', 'pregnancy (ever)', 
            'current OCP use')
-p <- mefisto_factor_covcor(df1,df2,feat,labs)
+p <- mefisto_factor_covcor(metadat,df2,feat,labs)
 p
 
 ```
 
 ```{r, eval=F}
-cairo_pdf("out/pdf/extxb-mefisto.pdf", width = 4.5, height = 3.5)
+cairo_pdf("out/pdf/extxc-mefisto.pdf", width = 4.5, height = 3.5)
 print(p)
 dev.off()
 ```
 
-* Factor 1 no significant association with time
+* Factor 1 strong correlation with age and menopause (somewhat smoking group, but not compliance)
 
 ```{r}
 p <- mefisto_factor_box(df2, metadat, "Factor1")
 p
 ```
+
+```{r}
+
+pdat <- df2 %>%
+  dplyr::filter(factor == "Factor1") %>%
+  dplyr::left_join(metadat, by = c("sample", "group")) %>%
+  dplyr::select(subjectId,
+                visitId,
+                compliance_smkgroup,
+                value.factor,
+                age_at_consent,
+                mpstatrs)
+
+complete = pdat |>
+  dplyr::group_by(subjectId) |>
+  dplyr::count() |>
+  ungroup() |>
+  dplyr::filter(n == 4)
+
+p <- ggplot(pdat, aes(x = age_at_consent, y = value.factor)) +
+  geom_point(alpha = 0.7) +
+  geom_smooth(method = "lm", se = TRUE, color = "red") +
+  stat_cor(
+    aes(
+      label = after_stat(
+        paste("R^2 == ", round(r^2, 3))
+      )
+    ),
+    method = "pearson",
+    label.x.npc = "left",
+    label.y.npc = "top",
+    size = 4,
+    parse = TRUE    # now we *want* parsing for the R^2 math expression
+  ) +
+  facet_wrap(~visitId, scales = "free") +
+  labs(
+    x = "Age at Consent",
+    y = "Factor1 value"
+  ) +
+  theme_pubr()
+
+```
+
+```{r, eval=F}
+cairo_pdf("out/pdf/extxd-mefisto.pdf", width = 4.5, height = 3.5)
+print(p)
+dev.off()
+```
+
+
+
 
 * Factor 2 significant association with time
 
@@ -443,7 +533,7 @@ p
 ```
 
 ```{r, eval=F}
-cairo_pdf("out/pdf/extxc-mefisto.pdf", width = 4.5, height = 3)
+cairo_pdf("out/pdf/extxe-mefisto.pdf", width = 4.5, height = 3)
 print(p)
 dev.off()
 ```
@@ -461,7 +551,7 @@ p
 ```
 
 ```{r, eval=F}
-cairo_pdf("out/pdf/extxd-mefisto.pdf", width = 6.5, height = 5.5)
+cairo_pdf("out/pdf/extxf-mefisto.pdf", width = 6.5, height = 5.5)
 print(p)
 dev.off()
 
