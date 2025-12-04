@@ -1,6 +1,6 @@
 ## Tyrol Lifestyle Atlas: Smoking cessation study
 
-This repository contains the relevant code to reproduce figures and analyses for the manuscript ``Dynamics of tissue-dependent multi-molecular remodelling during smoking cessation`` by Herzog, Vavourakis, Theeuwes et al.
+This repository contains the relevant code to reproduce figures and analyses for the manuscript [``Dynamics of tissue-dependent multi-molecular remodelling during smoking cessation``](https://doi.org/10.1101/2025.08.29.673135) by Herzog, Vavourakis, Theeuwes et al.
 
 The repository is structured as follows:
 
