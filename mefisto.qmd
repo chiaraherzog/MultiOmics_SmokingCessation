@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "MEFISTO (curated variables)"
 format:
@@ -243,3 +244,250 @@ plot_factors_vs_cov(
 ```
 
 
+=======
+---
+title: "MEFISTO (curated variables)"
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-overflow: wrap
+    code-tools: true
+---
+
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = T, message = F, warning = F, eval = F)
+```
+
+
+```{r libs}
+suppressWarnings(suppressMessages({
+  library(tidyverse)
+  library(MultiAssayExperiment)
+  library(MOFA2)
+  library(ComplexHeatmap)
+  library(rcartocolor)
+  library(patchwork)
+  library(here)
+}))
+
+source("src/mefisto_plots.R")
+
+# This does not seem to work
+# if (!requireNamespace("basilisk", quietly = TRUE)) {
+#   BiocManager::install("basilisk")
+# }
+
+# # In Anaconda prompt
+# conda create -n mofa_win python=3.9 -y
+# conda activate mofa_win
+# pip install mofapy2==0.7.0
+# pip install h5py numpy scipy
+
+# # Still does not run without errors
+# # Downgrade SciPy in MOFA environment
+# conda activate mofa_win
+# pip install "scipy<1.11"
+
+reticulate::use_condaenv("mofa_win", required = TRUE)
+reticulate::py_config()
+
+```
+
+```{r here}
+here::i_am("mefisto.qmd")
+```
+
+```{r dirs}
+dir.create("out/mefisto_revised/")
+outDir <- here("out/mefisto_revised")
+```
+
+This script prepares data for MEFISTO (MOFA2+) analysis.
+
+# Data prep
+
+Load MultiAssayExperiment
+
+```{r getdat, eval = F}
+# load in data
+load(here('data/data_normalized_centred.Rdata'))
+```
+
+We filter variables:
+
+```{r}
+load("src/vars.Rdata")
+vars <- vars |> 
+  dplyr::filter(!assay %in% c("Body composition",
+                              "Flow cytometry: stimulated T cells",
+                              "Flow cytometry: unstimulated T cells",
+                              "Functional sports exam",
+                              "Immune age: general",
+                              "Saliva microbiome: ASVs",
+                              "Saliva microbiome: ASVs_clr",
+                              "Stool microbiome: ASVs",
+                              "Stool microbiome: ASVs_clr",
+                              "Skin histology and transepidermal water loss assay",
+                              "Saliva microbiome: families_clr",
+                              "Stool microbiome: families_clr",
+                              "Vascular and body sonography",
+                              "Cotinine LC/MS Quantitation",
+                              "ImmuneSMK" # correlate this later
+                              ))
+
+varsList <- vars |> dplyr::group_by(assay) |> 
+  dplyr::summarise(features = list(x), .groups = 'drop') |> 
+  tibble::deframe()
+
+data <- subsetByAssay(data, varsList)
+```
+
+We clean zero variance features.
+
+```{r clean.zerovar}
+
+for (i in seq_along(experiments(data))) {
+  mat <- experiments(data)[[i]]
+  keep <- apply(mat, 1, function(x) var(x, na.rm = TRUE) != 0)
+  mat <- mat[keep, , drop = FALSE]
+  experiments(data)[[i]] <- SummarizedExperiment(list(counts = mat))
+}
+
+```
+
+List all experiments:
+
+```{r}
+experiments(data)
+```
+
+Generate the mae: 
+
+```{r, eval = F}
+mae <- data
+mae <- mae[ , colData(mae)$visitId %in% c("M0", "M2", "M4", "M6") & colData(mae)$interventionId == 'S' ]
+mae$group <- mae$interventionId
+```
+
+# Mefisto pipeline - training and parameter selection.
+
+```{r}
+## 1.  Create the MOFA object
+mofa <- create_mofa_from_MultiAssayExperiment(
+  mae,
+  group = mae$group
+)
+
+c <- as.data.frame(colData(mae))
+
+### Fix labels
+x <- samples_metadata(mofa)
+# identical(x$sample, rownames(c))
+x$t <- c$time
+samples_metadata(mofa) <- x
+
+mofa <- set_covariates(mofa, covariates = c("t")) # day as covariate
+# mofa
+# get_covariates(mofa, 1)
+rm(x)
+
+## Preview
+gg_input <- plot_data_overview(mofa,
+                               show_covariate = TRUE,
+                               show_dimensions = TRUE,
+                               covariate = "t")
+gg_input
+
+
+# 3. Options: we will test a few - as we did for MOFA at baseline :)
+###  Modalities -> all continuous, hence gaussian approximation is good for all.
+### Scaling -> data and views already scaled, so not needed.
+data_opts   = get_default_data_options(mofa)
+
+mefisto_opts <- get_default_mefisto_options(mofa)
+mefisto_opts$model_groups <- FALSE
+mefisto_opts$warping      <- FALSE
+
+train_opts <- get_default_training_options(mofa)
+train_opts$maxiter <- 200
+
+model_opts <- get_default_model_options(mofa)
+model_opts$num_factors # default = 15
+
+model_opts_n10 <- model_opts
+model_opts_n10$num_factors <- 10
+
+## 3.  Attach options → prepare_mofa()
+mofa_n15 <- prepare_mofa(mofa,
+                         data_options   = data_opts,
+                         model_options  = model_opts,
+                         training_options = train_opts,
+                         mefisto_options  = mefisto_opts)
+
+mofa_n10 <- prepare_mofa(mofa,
+                         data_options   = data_opts,
+                         model_options  = model_opts_n10,
+                         training_options = train_opts,
+                         mefisto_options  = mefisto_opts)
+
+## 4.  Fit the models → run_mofa()
+# # This doesnt work
+# fast_n10 <- run_mofa(
+#   mofa_n10,
+#   outfile = here('out/mefisto2', "fast_n10.hdf5"),
+#   use_basilisk = T
+# )
+
+fast_n10 <- run_mofa(
+  mofa_n10,
+  outfile = here('out/mefisto_revised', "fast_n10.hdf5")
+)
+
+fast_n15 <- run_mofa(
+  mofa_n15,
+  outfile = here('out/mefisto_revised', "fast_n15.hdf5")
+)
+
+# Diagnostics: let's compare ELBO values.
+model.list <- list(fast_n10, fast_n15)
+elbo <- compare_elbo(model.list)
+elbo$data ## 15 factors best :)
+
+plot_variance_explained(fast_n10, x = 'factor',
+                        y = 'view')
+plot_variance_explained(fast_n15, x = 'factor',
+                        y = 'view')
+
+# Let's retrain final model using 15 factors
+train_opts$convergence_mode <- 'medium'
+train_opts$maxiter <- 1000
+train_opts
+
+mofa_n15_medium <- prepare_mofa(mofa,
+                                data_options   = data_opts,
+                                model_options  = model_opts,
+                                training_options = train_opts,
+                                mefisto_options  = mefisto_opts)
+
+mefisto_trained_overall <- run_mofa(
+  mofa_n15_medium,
+  outfile = here('out/mefisto_revised', "medium_n15.hdf5"),
+) # Final model
+
+
+## 5. Quick checks - Variance explained per view / factor
+plot_variance_explained(mefisto_trained_overall, x = 'factor',
+                        y = 'view')
+plot_factor_cor(mefisto_trained_overall)
+
+
+plot_factors_vs_cov(
+  mefisto_trained_overall,
+  covariate = "t"
+)
+
+```
+
+
+>>>>>>> 0e91628f457a5ba45cbff43513d9ac74be88a778
