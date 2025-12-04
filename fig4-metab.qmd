@@ -1,4 +1,4 @@
-w---
+---
 title: "Metabolome data (F4, S5)"
 format:
   html:
@@ -125,11 +125,7 @@ out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
 ```{r}
 load(here("data/data_normalized_baseline.Rdata"))
 
-<<<<<<< HEAD
 df <- longForm(data[,,40], colDataCols = c("interventionId", "subjectId", "visitId", "time", "compliance")) |>
-=======
-df <- longFormat(data[,,40], colDataCols = c("interventionId", "subjectId", "visitId", "time", "compliance")) |>
->>>>>>> 0e91628f457a5ba45cbff43513d9ac74be88a778
   as.data.frame() |>
   dplyr::filter(interventionId == 'S' & ! visitId %in% c("M12", "M18")) |>
   dplyr::mutate(compliance = factor(compliance, levels = c("lower compliance", "higher compliance"))) |>
@@ -181,7 +177,6 @@ cairo_pdf(here("out/pdf/4d.pdf"), width = 2, height = 3)
 dev.off()
 ```
 
-<<<<<<< HEAD
 ```{r sourcedata.thymine}
 out <-  thymine$data |> dplyr::select(visitId, subjectId, value) |> 
   dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
@@ -190,13 +185,10 @@ out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/4d.txt')
 ```
 
-=======
->>>>>>> 0e91628f457a5ba45cbff43513d9ac74be88a778
 ### 4e) Lysine
 
 ```{r}
 cairo_pdf(here("out/pdf/4e.pdf"), width = 2, height = 3)
-<<<<<<< HEAD
 (lysine <- longitudinal(df, variable = 'Lysine', p = 'p.signif',
              ylab = '<b>∆ Lysine</b><br>(saliva; normalized)'))
 dev.off()
@@ -210,15 +202,6 @@ out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/4e.txt')
 ```
 
-
-=======
-longitudinal(df, variable = 'Lysine', p = 'p.signif',
-             ylab = '<b>∆ Lysine</b><br>(saliva; normalized)')
-dev.off()
-```
-
-
->>>>>>> 0e91628f457a5ba45cbff43513d9ac74be88a778
 ### f) Urine heatmap (t tests)
 
 ```{r urine.heatmap}
@@ -264,11 +247,7 @@ out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
 ```{r}
 load(here("data/data_normalized_baseline.Rdata"))
 
-<<<<<<< HEAD
 df <- longForm(data[,,11], colDataCols = c("interventionId", "subjectId", "visitId", "time", "compliance")) |>
-=======
-df <- longFormat(data[,,11], colDataCols = c("interventionId", "subjectId", "visitId", "time", "compliance")) |>
->>>>>>> 0e91628f457a5ba45cbff43513d9ac74be88a778
   as.data.frame() |>
   dplyr::filter(interventionId == 'S' & ! visitId %in% c("M12", "M18")) |>
   dplyr::mutate(compliance = factor(compliance, levels = c("lower compliance", "higher compliance"))) |>
@@ -277,15 +256,9 @@ df <- longFormat(data[,,11], colDataCols = c("interventionId", "subjectId", "vis
 
 
 ```{r}
-<<<<<<< HEAD
 cairo_pdf(here("out/pdf/4g.pdf"), width = 5.5, height = 3)
 (lact <- longitudinal(df, variable = 'Lactate', p = 'p.signif',
              ylab = '<b>∆ Lactate</b><br>(urine; normalized)'))
-=======
-cairo_pdf(here("out/pdf/4h.pdf"), width = 5.5, height = 3)
-paired_longitudinal_compliance(df, variable = 'Hippuric acid', p = 'p.signif',
-             ylab = '<b>∆ Lactate</b><br>(urine; normalized)')
->>>>>>> 0e91628f457a5ba45cbff43513d9ac74be88a778
 dev.off()
 ```
 
