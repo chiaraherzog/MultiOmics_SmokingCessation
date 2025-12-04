@@ -680,10 +680,6 @@ pc2 <- pdat %>% ggplot(aes(x = forcats::fct_reorder(comp, -Dim.2),
   coord_cartesian(ylim = c(0, 7)) +
   scale_fill_manual(values = cols2) +
   scale_x_discrete(labels = pdat$feature)
-<<<<<<< HEAD
-=======
-
->>>>>>> 0e91628f457a5ba45cbff43513d9ac74be88a778
 
 pc.contribs <- pc1|pc2
 ```
@@ -696,7 +692,6 @@ plot(pc.contribs)
 dev.off()
 ```
 
-<<<<<<< HEAD
 ```{r sourcedata.pc.contribs, eval = F}
 out1 <- contrib |> 
   dplyr::arrange(desc(Dim.1)) |> 
@@ -721,7 +716,7 @@ out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
 ```
 
 ## Supplementary Figure 1
-=======
+
 ### Updated panel availability matrix
 
 ```{r}
