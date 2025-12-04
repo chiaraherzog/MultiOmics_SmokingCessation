@@ -77,6 +77,19 @@ plot_lmm_heatmap_time <- function(exp,
       dplyr::mutate(across(contains("p.value"), ~ gsub("[.]", "", .)))
   }
   
+  ## Column labels ##---- 
+  col_labs <- c("M2", "M4", "M6")
+  
+  # Filter
+  
+  if(!is.null(relabel)){
+    
+    tmp <- tmp |> 
+      # relabel
+      dplyr::filter(x %in% relabel$x)
+  }
+    
+  
   ## baseline correlations ##----
   
   if (age_cor == T & spy_cor == F) {
@@ -89,7 +102,7 @@ plot_lmm_heatmap_time <- function(exp,
     tmp <- tmp |> 
       dplyr::left_join(dplyr::select(corr, name, cor, p), by = c('x' = 'name'))
     
-    hr <- rowAnnotation('Correlation with age\n(baseline)' = anno_points(tmp$cor,
+    hr <- rowAnnotation('Correlation with age\n(baseline)' = anno_points(tmp$cor_age,
                                                                          pch = ifelse(tmp$p < 0.05, 19, 1),
                                                                          ylim = c(-1, 1),
                                                                          gp = gpar(col = ifelse(tmp$cor<0, cols[1], cols[4]))))
@@ -102,7 +115,7 @@ plot_lmm_heatmap_time <- function(exp,
     tmp <- tmp |> 
       dplyr::left_join(dplyr::select(corr, name, cor, p), by = c('x' = 'name'))
     
-    hr <- rowAnnotation('Correlation with spy\n(baseline)' = anno_points(tmp$cor,
+    hr <- rowAnnotation('Correlation with spy\n(baseline)' = anno_points(tmp$cor_spy,
                                                                          pch = ifelse(tmp$p < 0.05, 19, 1),
                                                                          ylim = c(-1, 1),
                                                                          gp = gpar(col = ifelse(tmp$cor<0, cols[1], cols[4]))))
@@ -140,18 +153,15 @@ plot_lmm_heatmap_time <- function(exp,
     hr = NULL
   }
   
-  ## Column labels ##---- 
-  col_labs <- c("M2", "M4", "M6")
-  
+  # relabel
   if(!is.null(relabel)){
     
     tmp <- tmp |> 
       # relabel
-      dplyr::filter(x %in% relabel$x) |> 
       dplyr::left_join(relabel) |> 
       dplyr::mutate(x = label)
-    
   }
+  
   
   ## Draw heatmap ##---- 
   
@@ -246,6 +256,9 @@ plot_lmm_heatmap_time <- function(exp,
                  border = T)  
   }
   
-  return(p)
+  
+  out <- list(plot = p,
+              full_df = tmp)
+  return(out)
   
 }

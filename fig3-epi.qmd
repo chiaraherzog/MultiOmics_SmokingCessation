@@ -1,5 +1,5 @@
 ---
-title: "Epigenetic data (F3, E3)"
+title: "Epigenetic data (F3, S4)"
 format:
   html:
     toc: true
@@ -13,7 +13,7 @@ format:
 
 ![](figures-png/figure3.png)
 
-## Extended Data Figure 3
+## Supplementary Figure 3
 
 ![](figures-png/e3.png)
 
@@ -42,7 +42,7 @@ suppressWarnings(suppressMessages({
   library(MultiAssayExperiment)
   library(RColorBrewer)
   library(viridis)
-})
+}))
 ```
 
 ```{r colors}
@@ -65,7 +65,7 @@ source(here("src/highlightIndivLongitudinal.R"))
 
 ```{r cerv.load, eval = F}
 path = here("data/data_raw.Rdata")
-df_raw_cerv <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: cervical"],
+df_raw_cerv <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: cervical"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_cervical", "age_at_consent",
                                                     "nic_replacement",
@@ -74,7 +74,7 @@ df_raw_cerv <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation
    filter_smk(age_norm = T, type_norm = T)
 
 path = here("data/data_baseline_change.Rdata")
-df_change_cerv <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: cervical"],
+df_change_cerv <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: cervical"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_cervical", "age_at_consent",
                                                     "nic_replacement",
@@ -84,7 +84,7 @@ df_change_cerv <- as.data.frame(longFormat(get(load(path))[,,"Composite methylat
 
 
 path = here("data/data_normalized.Rdata")
-df_scaled_cerv <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: cervical"],
+df_scaled_cerv <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: cervical"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_cervical", "age_at_consent", "bmi_at_consent",
                                                     "nic_replacement",
@@ -93,7 +93,7 @@ df_scaled_cerv <- as.data.frame(longFormat(get(load(path))[,,"Composite methylat
    filter_smk(age_norm = T, type_norm = T)
 
 path = here("data/data_normalized_baseline.Rdata")
-df_scaled_change_cerv <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: cervical"],
+df_scaled_change_cerv <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: cervical"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_cervical", "age_at_consent",
                                                     "nic_replacement",
@@ -104,7 +104,7 @@ df_scaled_change_cerv <- as.data.frame(longFormat(get(load(path))[,,"Composite m
 
 ```{r buc.load, eval = F}
 path = here("data/data_raw.Rdata")
-df_raw_buccal <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: buccal"],
+df_raw_buccal <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: buccal"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_buccal", "age_at_consent",
                                                     "nic_replacement",
@@ -113,7 +113,7 @@ df_raw_buccal <- as.data.frame(longFormat(get(load(path))[,,"Composite methylati
    filter_smk(age_norm = T, type_norm = T)
 
 path = here("data/data_baseline_change.Rdata")
-df_change_buccal <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: buccal"],
+df_change_buccal <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: buccal"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_buccal", "age_at_consent",
                                                     "nic_replacement",
@@ -123,7 +123,7 @@ df_change_buccal <- as.data.frame(longFormat(get(load(path))[,,"Composite methyl
 
 
 path = here("data/data_normalized.Rdata")
-df_scaled_buccal <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: buccal"],
+df_scaled_buccal <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: buccal"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_buccal", "age_at_consent",
                                                     "nic_replacement",
@@ -132,7 +132,7 @@ df_scaled_buccal <- as.data.frame(longFormat(get(load(path))[,,"Composite methyl
    filter_smk(age_norm = T, type_norm = T)
 
 path = here("data/data_normalized_baseline.Rdata")
-df_scaled_change_buccal <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: buccal"],
+df_scaled_change_buccal <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: buccal"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_buccal", "age_at_consent",
                                                     "nic_replacement",
@@ -143,7 +143,7 @@ df_scaled_change_buccal <- as.data.frame(longFormat(get(load(path))[,,"Composite
 
 ```{r blood.load, eval = F}
 path = here("data/data_raw.Rdata")
-df_raw_blood <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: blood"],
+df_raw_blood <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: blood"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_blood", "age_at_consent",
                                                     "nic_replacement",
@@ -152,7 +152,7 @@ df_raw_blood <- as.data.frame(longFormat(get(load(path))[,,"Composite methylatio
    filter_smk(age_norm = T, type_norm = T) 
 
 path = here("data/data_baseline_change.Rdata")
-df_change_blood <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: blood"],
+df_change_blood <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: blood"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_blood", "age_at_consent",
                                                     "nic_replacement",
@@ -162,7 +162,7 @@ df_change_blood <- as.data.frame(longFormat(get(load(path))[,,"Composite methyla
 
 
 path = here("data/data_normalized.Rdata")
-df_scaled_blood <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: blood"],
+df_scaled_blood <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: blood"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_blood", "age_at_consent", "bmi_at_consent",
                                                     "nic_replacement",
@@ -171,7 +171,7 @@ df_scaled_blood <- as.data.frame(longFormat(get(load(path))[,,"Composite methyla
    filter_smk(age_norm = T, type_norm = T) 
 
 path = here("data/data_normalized_baseline.Rdata")
-df_scaled_change_blood <- as.data.frame(longFormat(get(load(path))[,,"Composite methylation scores: blood"],
+df_scaled_change_blood <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: blood"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_blood", "age_at_consent",
                                                     "nic_replacement",
@@ -185,7 +185,7 @@ df_scaled_change_blood <- as.data.frame(longFormat(get(load(path))[,,"Composite 
 ### a) PCA Heatmap
 
 ```{r pca, eval = F}
-load(here("../../../../../data/tirolgesund/beta_merged.Rdata"))
+load("~/Dropbox/data/tirolgesund/beta_merged.Rdata")
 load(here("data/data_raw.Rdata"))
 
 features <-  c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py", "cig_curr", "mpstatrs", "age_at_consent", "bmi_at_consent", "etohu_curr", "diet")
@@ -231,7 +231,7 @@ topVarCpGs <- function(data, beta, tissue = c('buccal', 'cervical', 'blood'), to
               pc = pc))
 }
 
-pc_blood <- topVarCpGs(data, beta_merged, 'blood', vars = features, top_sites)
+pc_blood <- topVarCpGs(data, beta_merged, 'blood', vars = features)
 colnames(pc_blood$dat) <- gsub("Composite.methylation.scores..blood_", "", colnames(pc_blood$dat))
 
 pc_buccal <- topVarCpGs(data, beta, 'buccal')
@@ -252,6 +252,8 @@ pcHeatmap <- function(pc_dat){
   tmp <- pc_dat |> 
     dplyr::select(any_of(features), 'ic', 'hepidish_Neutro') |> 
     dplyr::mutate_if(is.character, as.factor)
+  
+  tmp$visitId <- as.numeric(sub("M","", tmp$visitId)) # set visitID as ordered numeric
 
   mat <- matrix(ncol = ncol(pcs),
                 nrow = ncol(tmp))
@@ -340,6 +342,14 @@ draw(p)
 dev.off()
 ```
 
+
+```{r sourcedata.pca}
+out <- p@matrix
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/3a.txt')
+```
+
 ### b) ic changes
 
 ```{r iccomp, fig.height = 4.55, fig.height = 3.25, eval = F}
@@ -356,6 +366,17 @@ ic_tissues <- plot_tissue_comparison(dat_cerv = df_change_cerv,
 cairo_pdf(here("out/pdf/3b.pdf"), width = 3.75, height = 2.75)
 print(ic_tissues)
 dev.off()
+```
+
+```{r}
+out <- ic_tissues$data |> 
+  dplyr::select(sampletype, rowname, value, subjectId, visitId) |> 
+  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> 
+  dplyr::ungroup() |> 
+  dplyr::select(-subjectId)
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/3b.txt')
 ```
 
 ### c) LME models (shared signatures)
@@ -431,21 +452,32 @@ blood <- plot_lmm_heatmap_v3(lmm_data_time = time[match(labs1$x, time$x),],
                                 cluster = 'cluster',
                                 colour_assays = F)
 
-h <- (buccal + cervical + blood)
+h <- (buccal$plot + cervical$plot + blood$plot)
 p <- draw(h, ht_gap = unit(2.5, "cm"))
 ```
 
 ```{r print.sharedheatmap, eval = F}
-cairo_pdf(here("out/pdf/3c.pdf"), width = 9.5, height = 2.25)
+cairo_pdf(here("out/pdf/3c.pdf"), width = 9.5, height = 2.5)
 print(p)
 dev.off()
+```
+
+```{r sourcedata.shared.heatmap}
+buccal$full_df |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/3c.buccal.txt')
+
+cervical$full_df |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/3c.cervical.txt')
+
+blood$full_df |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/3c.blood.txt')
 ```
 
 ### d) Separate indices: buccal
 
 ```{r}
 ids <- time[grepl('buccal', time$x) & !time$x %in% shared$x,]$x
-ids <- ids[c(1, 4, 3, 2, 5)]
+ids <- rev(ids[c(1, 4, 3, 2, 5)])
 
 labs <- vars |> 
   dplyr::group_by(label) |> 
@@ -453,20 +485,26 @@ labs <- vars |>
   dplyr::arrange(label)
 
 buccal_sep <- plot_lmm_heatmap_v3(lmm_data_time = time[match(ids, time$x),],
-                              lmm_data_compliance = comp[match(ids, time$x),],
+                              lmm_data_compliance = comp[match(ids, comp$x),],
                               relabel = labs,
                               relabel_assay = T,
+                              filter_relabel = FALSE,
                               age_cor = F,
                               spy_cor = F,
                               cluster = F,
                               colour_assays = F)
-buccal_sep
+buccal_sep$plot
 ```
 
 ```{r print.sep.buccal}
 cairo_pdf(here("out/pdf/3d.pdf"), width = 4.8, height = 1.5)
-print(buccal_sep)
+print(buccal_sep$plot)
 dev.off()
+```
+
+```{r sourcedata.buccal.heatmap}
+buccal_sep$full_df |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/3d.txt')
 ```
 
 ### e) Separate indices: cervical
@@ -484,17 +522,24 @@ cervical_sep <- plot_lmm_heatmap_v3(lmm_data_time = time[match(ids, time$x),],
                               lmm_data_compliance = comp[match(ids, time$x),],
                               relabel = labs,
                               relabel_assay = T,
+                              filter_relabel = F,
                               age_cor = F,
                               spy_cor = F,
                               cluster = F,
                               colour_assays = F)
-cervical_sep
+cervical_sep$plot
 ```
 
 ```{r print.sep.cervical}
 cairo_pdf(here("out/pdf/3e.pdf"), width = 4.5, height = 1.9)
-print(cervical_sep)
+print(cervical_sep$plot)
 dev.off()
+```
+
+
+```{r sourcedata.cervical.heatmap}
+cervical_sep$full_df |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/3e.txt')
 ```
 
 ### f) Separate indices: blood
@@ -511,11 +556,12 @@ blood_sep <- plot_lmm_heatmap_v3(lmm_data_time = time[match(ids, time$x),],
                               lmm_data_compliance = comp[match(ids, time$x),],
                               relabel = labs,
                               relabel_assay = T,
+                              filter_relabel = F,
                               age_cor = F,
                               spy_cor = F,
                               cluster = F,
                               colour_assays = F)
-blood_sep
+blood_sep$plot
 ```
 
 ```{r print.sep.bloodd}
@@ -524,11 +570,17 @@ print(blood_sep)
 dev.off()
 ```
 
+
+```{r sourcedata.blood.heatmap}
+blood_sep$full_df |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/3f.txt')
+```
+
 ### g/h) Smoking cessation: WID epithelial hypoM
 
 ```{r setup.figures.smk, eval = F}
 path = here("data/data_raw.Rdata")
-df <- as.data.frame(longFormat(get(load(path))[,,c("Composite methylation scores: buccal",
+df <- as.data.frame(longForm(get(load(path))[,,c("Composite methylation scores: buccal",
                                                    "Composite methylation scores: blood",
                                                    "Composite methylation scores: cervical")],
                                colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py", "smoking_ever", "dailycig_longitudinal", "cig_before", "smkstop", "age_at_consent", "cessation_date"))) |> 
@@ -548,6 +600,8 @@ cotinine <- as.data.frame(wideFormat(data['cotinine',data@colData$interventionId
 df <- df |> 
   dplyr::left_join(cotinine)
 
+table(df$rowname)
+
 indices <- c("buccal_WID_SMK_proximal_epithelial_hyperM_corr_z",
              "buccal_WID_SMK_epithelial_hypoM_corr_z",
              "buccal_WID_SMK_immune_hypoM_corr_z",
@@ -559,7 +613,8 @@ indices <- c("buccal_WID_SMK_proximal_epithelial_hyperM_corr_z",
              "cervical_WID_SMK_epithelial_hypoM_corr_z",
              "cervical_WID_SMK_immune_hypoM_corr_z",
              "cervical_WID_SMK_distal_epithelial_hyperM_corr_z",
-             "cervical_WID_SMK_proximal_epithelial_hyperM_corr_z")
+             "cervical_WID_SMK_proximal_epithelial_hyperM_corr_z",
+             "blood_smokingScore")
 ```
 
 ```{r epi_hypoM, fig.width = 8, fig.height = 6.5, eval = F}
@@ -649,6 +704,18 @@ dev.off()
 ```
 
 
+```{r sourcedata.smk}
+out <- d$data |> dplyr::select(type, value)
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/3g.txt')
+
+out <- e$data |> dplyr::select(compliance, visitId, subjectId, value) |> 
+  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/3h.txt')
+```
+
 ### i/j buccal prox epithelial hyperM
 
 ```{r fig.width = 8, fig.height = 6.5, eval = F}
@@ -737,7 +804,120 @@ print(p)
 dev.off()
 ```
 
-### k/l) blood immune hypoM
+```{r sourcedata.smk.prox}
+out <- f$data |> dplyr::select(type, value)
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/3i.txt')
+
+out <- g$data |> dplyr::select(compliance, visitId, subjectId, value) |> 
+  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/3j.txt')
+```
+
+### k/l) cervical distal immune hypoM
+
+```{r fig.width = 8, fig.height = 6.5, eval = F}
+index = indices[11]
+ylab = '<b>WID-SMK, distal epithelial hyperM</b><br><b style="color:#bd647d">cervical</b><br>(scaled and corrected)'
+
+dat <- df |> 
+  dplyr::filter(rowname %in% index)
+lims = c(min(dat$value)*1.01, max(dat$value*1.01))
+
+med_former = dat |> 
+  dplyr::filter(type == 'Former smoker (control)' & !is.na(type) & visitId == 'M0') |> 
+  dplyr::pull(value) |> 
+  median()
+
+med_never = dat |> 
+  dplyr::filter(type == 'Never smoker (control)' & !is.na(type) & visitId == 'M0') |> 
+  dplyr::pull(value) |> 
+  median()
+
+k <- dat |> 
+  dplyr::filter(!is.na(type) & visitId == 'M0' | (visitId == 'M6' & interventionId == 'S')) |>
+  dplyr::mutate(type = factor(type, levels = c("Never smoker (control)",
+                                               "Former smoker (control)",
+                                               "Smoker (baseline)",
+                                               "M6 (no smoking cessation)",
+                                               "M6 (smoking cessation)")),
+                rowname = gsub("buccal_|cervical_|blood_|WID_SMK_|_corr_z", "", rowname),
+                rowname = gsub("_corr", "", rowname),
+                label = stringr::str_wrap(gsub("_", " ", rowname), 20)) |> 
+  ggplot(aes(x = type,
+             y = value,
+             fill = type)) +
+  theme_bw() +
+  theme(legend.position = 'top',
+        axis.text.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_markdown()) +
+  geom_hline(yintercept = med_former,
+             colour = cols[5],
+             linetype = 'dashed',alpha = 0.6) +
+  geom_hline(yintercept = med_never,
+             colour = cols[8],
+             linetype = 'dashed',alpha = 0.6) +
+  # ggdist::stat_pointinterval(.width = c(0.5, 0.75),
+  #                            aes(colour = type),
+  #                            position = position_nudge(x = -0.25)) +
+  # gghalves::geom_half_violin(aes(fill = type),
+  #                            alpha = 0.3)+
+  gghalves::geom_half_boxplot(aes(fill = type,
+                                  colour = type),
+                              alpha = 0.3,
+                              width = 0.5,
+                              outlier.shape = NA,errorbar.length = 0) +
+  gghalves::geom_half_point_panel(alpha = 0.6,
+                                  size = 1,
+                                  aes(colour = type)) +
+  # geom_boxplot() +
+  ylim(lims) +
+  scale_fill_manual(values = cols[c(8, 5, 6, 4, 1)],
+                    name = '',
+                    aesthetics = c('colour', 'fill')) +
+  labs(x = '',
+       y = ylab) +
+  guides(fill = guide_legend(nrow = 3),
+         colour = guide_legend(nrow = 3))+
+  ggpubr::stat_compare_means(comparisons = list(c('Smoker (baseline)', 'M6 (no smoking cessation)'),
+                                                c('Smoker (baseline)', 'M6 (smoking cessation)')),
+                             label.y = c(3.4, 4.0),
+                             tip.length = 0.01,
+                             size = 3)
+
+k
+l <- paired_longitudinal_compliance(df_change_blood,
+                               variable = gsub("cervical_", "", index),
+                               p = 'p.signif',
+                               ylab = paste0("<b>∆</b> ", ylab)) +
+  theme(aspect.ratio = NULL)
+```
+
+```{r plot.smk.cerv, eval = F}
+p <- (k | l) + plot_layout(widths = c(0.9, 1.3))
+
+cairo_pdf(here("out/pdf/3kl.pdf"), width = 5.5, height = 4.25)
+print(p)
+dev.off()
+```
+
+```{r sourcedata.smk.cerv}
+out <- k$data |> dplyr::select(type, value)
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/3k.txt')
+
+out <- l$data |> dplyr::select(compliance, visitId, subjectId, value) |> 
+  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/3l.txt')
+```
+
+### m/n) blood immune hypoM
 
 ```{r fig.width = 8, fig.height = 6.5, eval = F}
 index = indices[5]
@@ -825,7 +1005,19 @@ print(p)
 dev.off()
 ```
 
-### m) AgeAccelGrimV2
+```{r sourcedata.smk.imm}
+out <- h$data |> dplyr::select(type, value)
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/3m.txt')
+
+out <- i$data |> dplyr::select(compliance, visitId, subjectId, value) |> 
+  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/3n.txt')
+```
+
+### m) AgeAccelGrimV2 (not shown after revision)
 
 ```{r grim, fig.width = 3, fig.height = 3.25, eval = F}
 grim <- longitudinal(df_change_blood,
@@ -842,7 +1034,15 @@ print(grim)
 dev.off()
 ```
 
-## Extended Data Figure 3
+```{r sourcedata.grim}
+out <- grim$data |> dplyr::select(visitId, subjectId, value) |> 
+  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+
+# out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+#                    file = 'srcdata/3m.txt')
+```
+
+## Supplementary Figure 4
 
 ### a) PCA scree plot
 
@@ -882,6 +1082,11 @@ screeplot <- scree |>
 cairo_pdf(here("out/pdf/e3a.pdf"), width = 3.35, height = 2.5)
 print(screeplot)
 dev.off()
+```
+
+```{r sourcedata.scree}
+scree |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s4a.txt')
 ```
 
 ### b) PCA coloured by ic
@@ -925,12 +1130,17 @@ print(b)
 dev.off()
 ```
 
+```{r sourcedata.pc.ic}
+pc_ic |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s4b.txt')
+```
+
 ### c) Validation of smoking indices at baseline
 
 ```{r baseline.smk, fig.width=9, fig.height = 9.5, eval = F}
 path = here("data/data_raw.Rdata")
 
-df <- as.data.frame(longFormat(get(load(path))[,,c("Composite methylation scores: buccal",
+df <- as.data.frame(longForm(get(load(path))[,,c("Composite methylation scores: buccal",
                                                               "Composite methylation scores: blood",
                                                               "Composite methylation scores: cervical")],
                                           colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py", "smoking_ever", "dailycig_longitudinal", "cig_before", "smkstop", "age_at_consent"))) |> 
@@ -1016,6 +1226,14 @@ smk.val <- df |>
 cairo_pdf(here("out/pdf/e3c.pdf"), width = 6, height = 6.5)
 print(smk.val)
 dev.off()
+```
+
+```{r sourcedata.smk.sigs}
+out <- smk.val$data |> 
+  dplyr::select(sampletype, type, rowname, value)
+
+out  |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s4c.txt')
 ```
 
 ### d) Correlation with acute or more long-term indicators
@@ -1111,15 +1329,21 @@ print(p)
 dev.off()
 ```
 
+```{r sourcedata.heatmap}
+m |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s4d.txt')
+```
+
 ### e) overall GrimAge modules
 
 ```{r grim.components, eval = F}
-time <- out_lmm$`Basic model with packyears` |> 
-  dplyr::filter(grepl("Composite", x) & grepl("DNAm", x) & !grepl("DNAmTL|DNAmGrimAgeV2", x) & grepl("blood", x)) |> 
-  dplyr::mutate(x = gsub("Composite methylation scores: ", "", x))
+time <- out_lmm$`Basic model with packyears`  |> 
+  dplyr::filter(grepl("Composite", x) & grepl("DNAm", x) & !grepl("DNAmTL|AgeAccelGrimV2", x) & grepl("blood", x)) |> #? these are not there?
+  dplyr::filter(grepl("Composite", x) & grepl("blood", x)) |> 
+  dplyr::mutate(x = gsub("Composite methylation scores: ", "", x)) 
                 
 comp <- out_lmm$`Interaction model with packyears` |> 
-  dplyr::filter(grepl("Composite", x) & grepl("DNAm", x) & !grepl("DNAmTL|DNAmGrimAgeV2", x) & grepl("blood", x))|> 
+  dplyr::filter(grepl("Composite", x) & grepl("DNAm", x) & !grepl("DNAmTL|AgeAccelGrimV2", x) & grepl("blood", x))|> 
   dplyr::mutate(x = gsub("Composite methylation scores: ", "", x))
 
 labels <- time |> 
@@ -1141,10 +1365,15 @@ heatmap <- plot_lmm_heatmap_v3(lmm_data_time = time,
 
 ```{r print.grimmodules, eval = F}
 cairo_pdf(here("out/pdf/e3e.pdf"), width = 4.25, height = 3.75)
-draw(heatmap)
+draw(heatmap$plot)
 dev.off()
 ```
 
+
+```{r sourcedata.grim}
+heatmap$full_df |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s4e.txt')
+```
 
 ### f) Timing
 
@@ -1176,5 +1405,22 @@ c <- plotSMKReplacement_T(df_change_buccal,
 cairo_pdf(here("out/pdf/e3f.pdf"), width = 9.5, height = 3)
 print((a|b|c) + plot_layout(guides = 'collect'))
 dev.off()
+```
+
+```{r sourcedata.relative}
+out <- a$data|> dplyr::select(rowname, subjectId, value, nic_replacement, t_relative) |> 
+  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s4f.blood.imm.hypoM.txt')
+
+out <- b$data|> dplyr::select(rowname, subjectId, value, nic_replacement, t_relative) |> 
+  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s4f.buccal.epi.hypoM.txt')
+
+out <- c$data|> dplyr::select(rowname, subjectId, value, nic_replacement, t_relative) |> 
+  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s4f.buccal.prox.epi.hyperM.txt')
 
 ```

@@ -1,5 +1,5 @@
 ---
-title: "Baseline characteristics (ET1)"
+title: "Baseline characteristics (ST1)"
 format:
   html:
     toc: true
@@ -15,7 +15,7 @@ library(gtsummary)
 library(gt)
 library(here)
 library(MultiAssayExperiment)
-here::i_am('et1.qmd')
+here::i_am('St1.qmd')
 ```
 
 
@@ -67,26 +67,27 @@ hist(df$Functional.sports.exam_cholesterol)
 et1 <- df |> 
   gtsummary::tbl_summary(by = 'compliance',
                          type = list(Functional.sports.exam_diabp ~ "continuous"),
-                         label = c(age_at_consent = 'Age at consent',
-                                   smoking_py = 'Smoking pack years',
-                                   cig_before = 'Cigarettes per day at baseline',
-                                   bmi_at_consent = 'BMI at consent (kg/m<sup>2</sup>)',
-                                   mpstatrs = 'Postmenopausal',
-                                   activity = "Weekly intense activity (min)",
-                                   Blood.haemogram_hemoglobin = "Haemoglobin (g/dL)",
-                                   Functional.sports.exam_vo2max = 'VO<sub>2</sub>peak (mL/kg/min)',
-                                   Blood.haemogram_erythrocytes = 'Erythocytes per mL',
-                                   Functional.sports.exam_sysbp = "Systolic blood pressure (mmHg)",
-                                   Functional.sports.exam_diabp = "Diastolic blood pressure (mmHg)",
-                                   Functional.sports.exam_cholesterol = "Total cholesterol (mg/dL)",
-                                   Functional.sports.exam_triglycerides = "Triglycerides (mg/dL)",
-                                   Functional.sports.exam_hba1c = "HbA1c (%)",
-                                   Functional.sports.exam_glucose = "Fasting glucose (mg/dL)"),
+                         label = c(age_at_consent ~ 'Age at consent',
+                                   smoking_py ~ 'Smoking pack years',
+                                   cig_before ~ 'Cigarettes per day at baseline',
+                                   bmi_at_consent ~ 'BMI at consent (kg/m\u00B2)',
+                                   mpstatrs ~ 'Postmenopausal',
+                                   activity ~ "Weekly intense activity (min)",
+                                   Blood.haemogram_hemoglobin ~ "Haemoglobin (g/dL)",
+                                   Functional.sports.exam_vo2max ~ 'VO\u2082peak (mL/kg/min)',
+                                   Blood.haemogram_erythrocytes ~ 'Erythocytes per mL',
+                                   Functional.sports.exam_sysbp ~ "Systolic blood pressure (mmHg)",
+                                   Functional.sports.exam_diabp ~ "Diastolic blood pressure (mmHg)",
+                                   Functional.sports.exam_cholesterol ~ "Total cholesterol (mg/dL)",
+                                   Functional.sports.exam_triglycerides ~ "Triglycerides (mg/dL)",
+                                   Functional.sports.exam_hba1c ~ "HbA1c (%)",
+                                   Functional.sports.exam_glucose ~ "Fasting glucose (mg/dL)"),
                          digits = all_continuous() ~ 1,
                          missing = "no",
                          statistic = list(all_continuous() ~ "{mean} ({sd})",
                                           Functional.sports.exam_triglycerides ~ "{median} ({IQR})",
-                                          smoking_py ~ "{median} ({IQR})")) |> 
+                                          smoking_py ~ "{median} ({IQR})")) |>
+  gtsummary::add_p() |> 
   gtsummary::add_overall() |> 
   gtsummary::bold_labels() |> 
   modify_header(update = all_stat_cols() ~"<b>{level}</b><br>n = {n}") |> 
@@ -97,7 +98,7 @@ et1 <- et1 |>
   gtsummary::as_gt() |> 
   # gt::opt_stylize(style = 5) |> 
   gt::tab_options(
-    table.width = px(650),
+    table.width = px(700),
     table.font.size = 12,
     column_labels.font.size = 13,
     table.font.names = "Helvetica"
@@ -117,3 +118,42 @@ pagedown::chrome_print(here("out/et1.html"),output =
 ```
 
 ![](out/et1.pdf)
+
+
+Sanity check: completers (p values):
+
+```{r}
+et1b <- df |> 
+  dplyr::filter(compliance != 'Dropout<br>') |> 
+  droplevels() |> 
+  gtsummary::tbl_summary(by = 'compliance',
+                         type = list(Functional.sports.exam_diabp ~ "continuous",
+                                     Functional.sports.exam_sysbp ~ "continuous"),
+                         label = c(age_at_consent ~ 'Age at consent',
+                                   smoking_py ~ 'Smoking pack years',
+                                   cig_before ~ 'Cigarettes per day at baseline',
+                                   bmi_at_consent ~ 'BMI at consent (kg/m\u00B2)',
+                                   mpstatrs ~ 'Postmenopausal',
+                                   activity ~ "Weekly intense activity (min)",
+                                   Blood.haemogram_hemoglobin ~ "Haemoglobin (g/dL)",
+                                   Functional.sports.exam_vo2max ~ 'VO\u2082peak (mL/kg/min)',
+                                   Blood.haemogram_erythrocytes ~ 'Erythocytes per mL',
+                                   Functional.sports.exam_sysbp ~ "Systolic blood pressure (mmHg)",
+                                   Functional.sports.exam_diabp ~ "Diastolic blood pressure (mmHg)",
+                                   Functional.sports.exam_cholesterol ~ "Total cholesterol (mg/dL)",
+                                   Functional.sports.exam_triglycerides ~ "Triglycerides (mg/dL)",
+                                   Functional.sports.exam_hba1c ~ "HbA1c (%)",
+                                   Functional.sports.exam_glucose ~ "Fasting glucose (mg/dL)"),
+                         digits = all_continuous() ~ 1,
+                         missing = "no",
+                         statistic = list(all_continuous() ~ "{mean} ({sd})",
+                                          Functional.sports.exam_triglycerides ~ "{median} ({IQR})",
+                                          smoking_py ~ "{median} ({IQR})")) |>
+  gtsummary::add_p() |> 
+  gtsummary::add_overall() |> 
+  gtsummary::bold_labels() |> 
+  modify_header(update = all_stat_cols() ~"<b>{level}</b><br>n = {n}") |> 
+  modify_header(update = stat_0 ~ "<b>{level}</b><br><br>n = {n}")
+
+et1b
+```

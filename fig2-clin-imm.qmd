@@ -1,5 +1,5 @@
 ---
-title: "Clinical and immune changes (F2, E2, S1)"
+title: "Clinical and immune changes (F2, S2, S3)"
 format:
   html:
     toc: true
@@ -16,7 +16,7 @@ format:
 
 ![](figures-png/figure2.png)
 
-## Extended Data Figure 2
+## Supplementary Figure 2
 
 ![](figures-png/e2-imm.png)
 
@@ -171,6 +171,17 @@ print(scree)
 dev.off()
 ```
 
+```{r sourcedata.scree, eval = F}
+out <- tmp |> 
+  dplyr::arrange(dplyr::desc(`percentage of variance`)) |> 
+  dplyr::slice(1:10) |> 
+  dplyr::select(pc, `percentage of variance`)
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/2a.txt')
+```
+
+
 ### b) Clinical PCA plot
 
 ```{r pcaplot, fig.width = 4.5, fig.height = 4, eval = F}
@@ -200,6 +211,23 @@ cairo_pdf("out/pdf/2b.pdf",
           height = 4)
 print(pc.clin)
 dev.off()
+```
+
+
+```{r sourcedata.pcbi, eval = F}
+out.coord <- pc.clin$data |> 
+  dplyr::select(Groups, name, x, y)
+
+out.contrib <- res.pca$var$contrib |> as.data.frame() |> dplyr::arrange(dplyr::desc(Dim.1)) |> dplyr::slice(1:5)
+out.contrib2 <- res.pca$var$contrib |> as.data.frame() |> dplyr::arrange(dplyr::desc(Dim.2)) |> dplyr::slice(1:5)
+
+out.coord |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/2b.coord.txt')
+
+out.contrib <- rbind(out.contrib, out.contrib2)
+
+out.contrib |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/2b.contrib.txt')
 ```
 
 ### c) Clinical PCA Contributions
@@ -323,6 +351,14 @@ print(plot)
 dev.off()
 ```
 
+```{r sourcedata.pcbi, eval = F}
+out <- rbind(pc1$data, pc2$data, pc3$data, pc4$data)
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/2c.txt')
+```
+
+
 ### d) Clinical LME
 
 ```{r fig.width = 7, fig.height = 8}
@@ -337,14 +373,23 @@ p <- plot_lmm_heatmap_v3(lmm_data_time = out_lmm$`Basic model with packyears`,
                          spy_cor = T,
                          mark_age_cor = F,
                          cluster = 'cluster')
+
+
 ```
 
 ```{r, eval = F}
 cairo_pdf("out/pdf/2d.pdf",
           width = 6,
           height = 7.5)
-print(p)
+print(p$plot)
 dev.off()
+```
+
+```{r sourcedata.2d}
+out <- p$full_df
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/2d.txt')
 ```
 
 ### e) Immune PCA plot (PC1/2) by visitId
@@ -369,6 +414,27 @@ print(pc$biplot)
 dev.off()
 ```
 
+```{r sourcedata.2e}
+out <- as.data.frame(pc$biplot$data) |> 
+  dplyr::select(name, `Col.`, x, y) |> 
+  dplyr::mutate(subjectId = substr(name, 1, 4)) |> 
+  dplyr::group_by(subjectId) |> 
+  dplyr::mutate(id = dplyr::cur_group_id()) |> 
+  dplyr::ungroup()  |> 
+  dplyr::select(-c(name, subjectId))
+
+out.contrib <- pc$pc.object$var$contrib |> as.data.frame() |> dplyr::arrange(dplyr::desc(Dim.1)) |> dplyr::slice(1:5)
+out.contrib2 <- pc$pc.object$var$contrib |> as.data.frame() |> dplyr::arrange(dplyr::desc(Dim.2)) |> dplyr::slice(1:5)
+
+out.coord |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/2e.coord.txt')
+out.contrib <- rbind(out.contrib, out.contrib2)
+
+out.contrib |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/2e.contrib.txt')
+```
+
+
 ### f) Immune PCA heatmap
 
 ```{r}
@@ -384,12 +450,19 @@ print(x)
 dev.off()
 ```
 
+```{r sourcedata.immheatmap}
+out <- pc$heatmap@matrix
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/2f.txt')
+```
+
 ### g) ImmuneAge
 
 ```{r}
 load(here("data/data_baseline_change.Rdata"))
 
-df <- longFormat(data[,,30], colDataCols = c("interventionId", "subjectId", "visitId", "time", "compliance")) |> 
+df <- longForm(data[,,44], colDataCols = c("interventionId", "subjectId", "visitId", "time", "compliance")) |> 
   as.data.frame() |> 
   dplyr::filter(interventionId == 'S' & ! visitId %in% c("M12", "M18")) |> 
   dplyr::mutate(compliance = factor(compliance, levels = c("lower compliance", "higher compliance"))) |> 
@@ -397,7 +470,7 @@ df <- longFormat(data[,,30], colDataCols = c("interventionId", "subjectId", "vis
 
 ylab <- '<b>∆ ImmuneAge</b>'
 
-immage_change <- paired_longitudinal_compliance(df,
+a <- paired_longitudinal_compliance(df,
                                variable = 'ImmAge_gen',
                                p = 'p.signif',
                                ylab = ylab,
@@ -413,12 +486,20 @@ print(immage_change)
 dev.off()
 ```
 
+```{r}
+out <- a$data |> dplyr::select(subjectId, visitId, value, compliance) |> 
+  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/2g.txt')
+```
+
 ### g) ImmuneSMK
 
 ```{r}
 load(here("data/data_baseline_change.Rdata"))
 
-df <- longFormat(data[,,31], colDataCols = c("interventionId", "subjectId", "visitId", "time", "compliance")) |> 
+df <- longForm(data[,,45], colDataCols = c("interventionId", "subjectId", "visitId", "time", "compliance")) |> 
   as.data.frame() |> 
   dplyr::filter(interventionId == 'S' & ! visitId %in% c("M12", "M18")) |> 
   dplyr::mutate(compliance = factor(compliance, levels = c("lower compliance", "higher compliance"))) |> 
@@ -442,7 +523,16 @@ print(immsmk_change)
 dev.off()
 ```
 
-## Extended Data Figure 2
+
+```{r}
+out <- immsmk_change$data |> dplyr::select(subjectId, visitId, value, compliance) |> 
+  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/2h.txt')
+```
+
+## Supplementary Figure 2
 
 ### a) Histogram of p values
 
@@ -475,6 +565,13 @@ cairo_pdf("out/pdf/e2a.pdf",
           height = 3)
 print(a)
 dev.off()
+```
+
+```{r sourcedata.hist}
+out <- corr |> dplyr::select(pop_name, cor, p)
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s2a.txt')
 ```
 
 ### b) Volcano plot (Correlations)
@@ -515,6 +612,15 @@ cairo_pdf("out/pdf/e2b.pdf",
           height = 3)
 print(b)
 dev.off()
+```
+
+```{r sourcedata.hist}
+out <- corr |> dplyr::select(pop_name, cor, p) |> 
+  dplyr::mutate(padj = p.adjust(p, method = 'holm'),
+                sig = ifelse(p<0.05, pop_name, NA)) |> dplyr::select(-padj)
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s2b.txt')
 ```
 
 ### c) Immune populations: WB Cell staining - tree + heatmap
@@ -666,8 +772,15 @@ wb_heat <- plot_lmm_heatmap_v3(lmm_data_time = time,
 ```{r print.imm.pop.heatmap}
 cairo_pdf(here("out/pdf/e2c2.pdf"),
           width = 5.2, height = 4.5)
-print(wb_heat)
+print(wb_heat$plot)
 dev.off()
+```
+
+```{r sourcedata.heat.wb}
+out <- wb_heat$full_df
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s2c.txt')
 ```
 
 
@@ -813,11 +926,18 @@ t_heat <- plot_lmm_heatmap_v3(lmm_data_time = time,
 ```{r print.t.pop.heatmap}
 cairo_pdf(here("out/pdf/e2d2.pdf"),
           width = 5.25, height = 4.75)
-print(t_heat)
+print(t_heat$plot)
 dev.off()
 ```
 
-## Supplementary Data Figure 1
+```{r sourcedata.heat.t}
+out <- t_heat$full_df
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s2d.txt')
+```
+
+## Supplementary Figure 3
 
 ### a) ImmuneSMK Coefficients
 
@@ -858,7 +978,13 @@ s1a <-tmp |>
   scale_x_continuous(expand = c(0.025, 0.025)) +
   scale_colour_manual(values = cols[c(5, 7)],
                       name = '')
+```
 
+```{r sourcedata.coef}
+out <-tmp |> dplyr::select(pop_name, s1)
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s3a.txt')
 ```
 
 ### b) ImmuneSMK current smoking (baseline)
@@ -866,7 +992,7 @@ s1a <-tmp |>
 ```{r}
 load(here("data/data_raw.Rdata"))
 
-df <- longFormat(data[,,31], colDataCols = c("interventionId", "subjectId", "visitId", "time", "compliance", "cig_curr", "smoking_py")) |> 
+df <- longForm(data[,,45], colDataCols = c("interventionId", "subjectId", "visitId", "time", "compliance", "cig_curr", "smoking_py")) |> 
   as.data.frame() |> 
   dplyr::filter(visitId == 'M0') |> 
   dplyr::mutate(compliance = factor(compliance, levels = c("lower compliance", "higher compliance"))) |> 
@@ -902,12 +1028,18 @@ s1b <- df |>
                              size = 3)
 ```
 
+```{r sourcedata}
+out <- s1b$data |> dplyr::select(value, smoking_current)
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s3b.txt')
+```
+
 ### c) AUC ImmuneSMK (baseline)
 
 ```{r}
 roc <- pROC::roc(df$smoking_current, df$value, direction = "<")
-ci <- ci(roc)
-coords <- coords(roc)
+ci <- pROC::ci(roc)
+coords <- pROC::coords(roc)
 anno <- paste0("<b>AUC=", round(roc$auc, 2), "</b><br>(", round(ci[1],2), "-", round(ci[2], 2), ")")
 
 s1c <- coords |> 
@@ -930,6 +1062,10 @@ s1c <- coords |>
            fill = NA,label.color = NA)
 ```
 
+```{r sourcedata.roc}
+coords  |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s3c.txt')
+```
 
 ### c) ImmuneSMK current cigarettes (baseline)
 
@@ -951,6 +1087,13 @@ s1d <- df |>
 
 ```
 
+```{r sourcedata.cor}
+out <- df |> dplyr::select(cig_curr, value)
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s3d.txt')
+```
+
+
 ### e) ImmuneSMK and smoking pack year (baseline)
 
 ```{r}
@@ -970,14 +1113,75 @@ s1e <- df |>
   ggpubr::stat_cor(method = 'spearman')
 ```
 
+
+```{r}
+out <- df |> dplyr::select(smoking_py, value)
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s3e.txt')
+```
+
+### f) ImmuneAge at baseline
+
+
+```{r}
+load(here("data/data_raw.Rdata"))
+
+df <- longForm(data[,,44], colDataCols = c("interventionId", "subjectId", "visitId", "time", "compliance", "cig_curr", "smoking_py")) |> 
+  as.data.frame() |> 
+  dplyr::filter(visitId == 'M0') |> 
+  dplyr::mutate(compliance = factor(compliance, levels = c("lower compliance", "higher compliance"))) |> 
+  dplyr::filter(!is.na(value)) |> 
+  dplyr::mutate(intervention = ifelse(interventionId == 'S', "S", "I"),
+                smoking_current = ifelse(interventionId == 'S', 'yes', 'no'))
+
+
+s1f <- df |> 
+  dplyr::filter(rowname == 'ImmAge_gen_adj') |> 
+  ggplot(aes(x = smoking_current,
+             y = value)) +
+  gghalves::geom_half_boxplot(aes(fill = smoking_current,
+                                  colour = smoking_current),
+                              alpha = 0.3,
+                              width = 0.5,
+                              outlier.shape = NA,
+                              errorbar.length = 0) +
+  gghalves::geom_half_point_panel(alpha = 0.6,
+                                  size = 1,
+                                  aes(colour = smoking_current)) +
+  scale_fill_manual(values = cols[c(8, 6)],
+                    name = '',
+                    aesthetics = c('colour', 'fill')) +
+  labs(x = 'Current smoking',
+       y = '<b>ImmuneAge</b><br>(arbitrary units;<br>adjusted for chronological age)') +
+  guides(fill = guide_legend(nrow = 3),
+         colour = guide_legend(nrow = 3)) +
+  theme_bw() +
+  theme(axis.title.y = element_markdown(),
+        legend.position = 'none') +
+  ggpubr::stat_compare_means(comparisons = list(c('no', 'yes')),
+                             tip.length = 0.01,
+                             size = 3)
+
+```
+
+
+```{r}
+out <- df |> 
+  dplyr::filter(rowname == 'ImmAge_gen_adj') |> 
+  dplyr::select(smoking_py, value) 
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s3f.txt')
+```
+
+
 ### Print supplementary figure
 
 ```{r}
 design <- '
-ABCC
-DDEE'
+AABCC
+DDEEF'
 
-plot <- (s1a+s1b+s1c+s1d+s1e) + plot_layout(design = design) +
+plot <- (s1a+s1b+s1c+s1d+s1e+s1f) + plot_layout(design = design) +
   plot_annotation(tag_levels = 'a')
 
 cairo_pdf(here("figures-pdf/s1.pdf"), width = 9, height = 6)

@@ -1,5 +1,5 @@
 ---
-title: "Association with cessation (ET9)"
+title: "Association with cessation (ST9)"
 format:
   html:
     toc: true
@@ -18,7 +18,7 @@ library(dplyr)
 library(ggplot2)
 library(here)
 library(MultiAssayExperiment)
-here::i_am("et9.qmd")
+here::i_am("st9.qmd")
 ```
 
 This script is to explore the association of baseline characteristics and smoking cessation success.
@@ -280,5 +280,5 @@ assoc_clean <- assoc |>
                                      variable == 'intactcurr' ~ 'Intense activity/week (at consent)',
                                      TRUE ~ variable))
 
-writexl::write_xlsx(assoc_clean, path = here("out/Extended-Data-Table-9.xlsx"))
+writexl::write_xlsx(assoc_clean, path = here("out/Supplementary-Table-9.xlsx"))
 ```
