@@ -25,12 +25,12 @@ mefisto_biplot_F12 <- function(df1, df2, time_type, time_unit = NULL) {
     xl = df1 %>%
       dplyr::filter(factor == "Factor1") %>%
       pull(value) %>%
-      mean() %>%
+      sum() %>%
       round(digits = 1)
     yl = df1 %>%
       dplyr::filter(factor == "Factor2") %>%
       pull(value) %>%
-      mean() %>%
+      sum() %>%
       round(digits = 1)
     
     if (length(unique(tmp$group)) == 1) {
@@ -44,8 +44,8 @@ mefisto_biplot_F12 <- function(df1, df2, time_type, time_unit = NULL) {
         stat_ellipse(type="norm", show.legend = FALSE) +
         scale_fill_manual(values = col_visitId) +
         scale_color_manual(values = col_visitId, guide = "none") +
-        xlab(paste0("Factor 1\n(",xl,"% mean variance explained)")) +
-        ylab(paste0("Factor 2\n(",yl,"% mean variance explained)")) +
+        xlab(paste0("Factor 1\n(",xl,"% overall variance explained)")) +
+        ylab(paste0("Factor 2\n(",yl,"% overall variance explained)")) +
         labs(fill="")
     } else {
       plot = tmp %>%
@@ -58,8 +58,8 @@ mefisto_biplot_F12 <- function(df1, df2, time_type, time_unit = NULL) {
         stat_ellipse(type="norm", show.legend = FALSE) +
         scale_fill_carto_d(palette = "Earth") +
         scale_color_carto_d(palette = "Earth", guide = "none") +
-        xlab(paste0("Factor 1\n",xl,"% mean variance explained")) +
-        ylab(paste0("Factor 2\n",yl,"% mean variance explained")) +
+        xlab(paste0("Factor 1\n",xl,"% overall variance explained")) +
+        ylab(paste0("Factor 2\n",yl,"% overall variance explained")) +
         labs(fill="") +
         facet_wrap(~group)
     }
@@ -92,8 +92,8 @@ mefisto_biplot_F12 <- function(df1, df2, time_type, time_unit = NULL) {
       geom_point(color = "black", shape = 21) + 
       theme_minimal() +
       scale_fill_carto_c(palette = "Earth") +
-      xlab(paste0("Factor 1\n",xl,"% mean variance explained")) +
-      ylab(paste0("Factor 2\n",yl,"% mean variance explained")) +
+      xlab(paste0("Factor 1\n",xl,"% overall variance explained")) +
+      ylab(paste0("Factor 2\n",yl,"% overall variance explained")) +
       labs(fill=paste0("time (",time_unit,")"))
   }
   
@@ -117,12 +117,12 @@ mefisto_biplot_F13 <- function(df1, df2, time_type, time_unit = NULL) {
     xl = df1 %>%
       dplyr::filter(factor == "Factor1") %>%
       pull(value) %>%
-      mean() %>%
+      sum() %>%
       round(digits = 1)
     yl = df1 %>%
       dplyr::filter(factor == "Factor3") %>%
       pull(value) %>%
-      mean() %>%
+      sum() %>%
       round(digits = 1)
     
     if (length(unique(tmp$group)) == 1) {
@@ -136,8 +136,8 @@ mefisto_biplot_F13 <- function(df1, df2, time_type, time_unit = NULL) {
         stat_ellipse(type="norm", show.legend = FALSE) +
         scale_fill_manual(values = col_visitId) +
         scale_color_manual(values = col_visitId, guide = "none") +
-        xlab(paste0("Factor 1\n(",xl,"% mean variance explained)")) +
-        ylab(paste0("Factor 3\n(",yl,"% mean variance explained)")) +
+        xlab(paste0("Factor 1\n(",xl,"% overall variance explained)")) +
+        ylab(paste0("Factor 3\n(",yl,"% overall variance explained)")) +
         labs(fill="")
     } else {
       plot = tmp %>%
@@ -150,8 +150,8 @@ mefisto_biplot_F13 <- function(df1, df2, time_type, time_unit = NULL) {
         stat_ellipse(type="norm", show.legend = FALSE) +
         scale_fill_carto_d(palette = "Earth") +
         scale_color_carto_d(palette = "Earth", guide = "none") +
-        xlab(paste0("Factor 1\n",xl,"% mean variance explained")) +
-        ylab(paste0("Factor 3\n",yl,"% mean variance explained")) +
+        xlab(paste0("Factor 1\n",xl,"% overall variance explained")) +
+        ylab(paste0("Factor 3\n",yl,"% overall variance explained")) +
         labs(fill="") +
         facet_wrap(~group)
     }
@@ -184,8 +184,8 @@ mefisto_biplot_F13 <- function(df1, df2, time_type, time_unit = NULL) {
       geom_point(color = "black", shape = 21) + 
       theme_minimal() +
       scale_fill_carto_c(palette = "Earth") +
-      xlab(paste0("Factor 1\n",xl,"% mean variance explained")) +
-      ylab(paste0("Factor 3\n",yl,"% mean variance explained")) +
+      xlab(paste0("Factor 1\n",xl,"% overall variance explained")) +
+      ylab(paste0("Factor 3\n",yl,"% overall variance explained")) +
       labs(fill=paste0("time (",time_unit,")"))
   }
   
@@ -195,7 +195,7 @@ mefisto_biplot_F13 <- function(df1, df2, time_type, time_unit = NULL) {
 
 # factor variance and significance association with selected covariates #----
 
-mefisto_factor_covcor <- function(df1, df2, feat, labs){
+mefisto_factor_covcor <- function(metadat, df2, feat, labs){
   
   library(tidyverse)
   library(ComplexHeatmap)

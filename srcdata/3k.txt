@@ -1,0 +1,171 @@
+type	value
+Never smoker (control)	-0.565984525425682
+Never smoker (control)	-0.576661232717596
+Never smoker (control)	-0.482580132791688
+Never smoker (control)	-0.598501680450361
+Never smoker (control)	-0.53607711298395
+Never smoker (control)	-0.33346205644785
+Never smoker (control)	-0.720385532397875
+Never smoker (control)	-0.71316003926293
+Never smoker (control)	-0.540485640358298
+Never smoker (control)	-0.239168083991036
+Never smoker (control)	-0.402999287649438
+Never smoker (control)	0.04306523907559
+Never smoker (control)	-1.0025240851764
+Never smoker (control)	0.0802506901191339
+Never smoker (control)	-1.02072451036408
+Never smoker (control)	-0.604000825469705
+Never smoker (control)	-1.38354967147128
+Never smoker (control)	-0.689096950712518
+Never smoker (control)	0.205310712787897
+Never smoker (control)	-0.717306600225953
+Never smoker (control)	-0.965604973574345
+Never smoker (control)	-2.26085276004524
+Never smoker (control)	-1.66573791481482
+Never smoker (control)	-1.84809792390835
+Never smoker (control)	-0.802565518588961
+Never smoker (control)	-0.101084288915896
+Never smoker (control)	0.264046135798885
+Never smoker (control)	0.104760803821633
+Never smoker (control)	-1.03400473556807
+Never smoker (control)	-0.461587494145647
+Never smoker (control)	-0.941238723718338
+Never smoker (control)	-0.846504310481053
+Never smoker (control)	1.35943835299042
+Never smoker (control)	0.0324677033212195
+Never smoker (control)	-0.470224616048051
+Never smoker (control)	-0.526995056163923
+Never smoker (control)	-0.182933122613741
+Never smoker (control)	-1.83213647947364
+Never smoker (control)	-0.596295463188484
+Never smoker (control)	0.0829640893065158
+Never smoker (control)	-0.0668135550669915
+Never smoker (control)	-0.337650141373939
+Never smoker (control)	-0.541818637509361
+Never smoker (control)	-0.197267568684805
+Never smoker (control)	-1.72770371131653
+Never smoker (control)	-0.567998383158765
+Never smoker (control)	0.124881318642971
+Never smoker (control)	-0.496615995645443
+Never smoker (control)	-0.816746273869978
+Never smoker (control)	0.155555901939543
+Never smoker (control)	-1.64119623129646
+Never smoker (control)	-0.233283301099767
+Never smoker (control)	-0.80736890316741
+Never smoker (control)	-0.541962689059867
+Never smoker (control)	-1.01665757848124
+Never smoker (control)	-0.501857101850909
+Never smoker (control)	-0.82419925083352
+Never smoker (control)	-0.392107656726795
+Never smoker (control)	-0.588372761383004
+Never smoker (control)	-1.05058500758528
+Never smoker (control)	-0.469871752335601
+Never smoker (control)	-1.03117335411288
+Never smoker (control)	-0.598798524506076
+Never smoker (control)	-0.61612631664575
+Never smoker (control)	-0.521136393007071
+Former smoker (control)	0.750071520770208
+Former smoker (control)	0.818922734305664
+Former smoker (control)	0.123016637086958
+Former smoker (control)	0.893568894178308
+Former smoker (control)	0.0644481766730829
+Former smoker (control)	-0.112311913726082
+Former smoker (control)	0.430175827392223
+Former smoker (control)	0.405722960437024
+Former smoker (control)	-0.0554899892276208
+Former smoker (control)	1.30311645190313
+Former smoker (control)	0.294362406021967
+Former smoker (control)	-0.279952242272623
+Former smoker (control)	-0.195872587328844
+Former smoker (control)	0.184070407262132
+Former smoker (control)	0.559071108021992
+Former smoker (control)	0.325426316794975
+Former smoker (control)	0.0228760235828993
+Former smoker (control)	0.662872208561458
+Former smoker (control)	0.887270050904796
+Former smoker (control)	0.453080545054369
+Former smoker (control)	0.427626929764121
+Former smoker (control)	0.560917989925666
+Former smoker (control)	0.640774867584149
+Former smoker (control)	1.02156581258356
+Former smoker (control)	-0.280627371009106
+Former smoker (control)	0.729280435575466
+Former smoker (control)	-0.236319406428913
+Former smoker (control)	0.752395111389458
+Former smoker (control)	1.12617927017038
+Former smoker (control)	0.819934178514074
+Former smoker (control)	0.393441092297516
+Former smoker (control)	0.140721968009263
+Former smoker (control)	1.17822461157126
+Former smoker (control)	2.01878135272948
+Former smoker (control)	0.637549267979396
+Former smoker (control)	-0.25011761312268
+Former smoker (control)	0.811718257457036
+Former smoker (control)	0.223399785175569
+Former smoker (control)	0.775307757346948
+Former smoker (control)	0.857482420848454
+Smoker (baseline)	0.500302433438082
+M6 (no smoking cessation)	0.801470135955153
+Smoker (baseline)	0.191360412347664
+M6 (smoking cessation)	-0.171899694655818
+Smoker (baseline)	-0.373720611983117
+M6 (smoking cessation)	0.0924237392999949
+Smoker (baseline)	-0.0999369019052588
+M6 (smoking cessation)	0.440683386073158
+Smoker (baseline)	0.848948322542996
+Smoker (baseline)	0.158930361400635
+Smoker (baseline)	1.03766719532698
+Smoker (baseline)	1.6129398226455
+M6 (smoking cessation)	0.226586548936078
+Smoker (baseline)	-0.486285696134273
+Smoker (baseline)	-0.879745385514274
+M6 (no smoking cessation)	-0.623750394947036
+Smoker (baseline)	-0.331870636255358
+M6 (smoking cessation)	-0.42564087600665
+Smoker (baseline)	0.424115141618517
+Smoker (baseline)	-0.255616537881977
+M6 (no smoking cessation)	-0.207360896464856
+Smoker (baseline)	0.828894951168464
+M6 (smoking cessation)	0.0323796382275576
+Smoker (baseline)	1.17930503696839
+Smoker (baseline)	-0.146160881506122
+M6 (no smoking cessation)	0.323080762931664
+Smoker (baseline)	1.97228321848606
+M6 (smoking cessation)	1.56553715411881
+Smoker (baseline)	0.941884311789458
+M6 (no smoking cessation)	-0.0808719454065581
+Smoker (baseline)	0.209387457642575
+Smoker (baseline)	0.602865933519511
+M6 (no smoking cessation)	1.50519350227187
+Smoker (baseline)	0.144986995242874
+Smoker (baseline)	-1.32422866163437
+Smoker (baseline)	0.921409775579789
+Smoker (baseline)	0.695927524963899
+M6 (smoking cessation)	-0.316120028313989
+Smoker (baseline)	-0.250731439514798
+Smoker (baseline)	-0.285482592880543
+Smoker (baseline)	0.842544591011984
+Smoker (baseline)	0.994476992925014
+Smoker (baseline)	0.177049197849883
+Smoker (baseline)	2.20258054036711
+Smoker (baseline)	0.263995797437532
+M6 (no smoking cessation)	-0.257510698134583
+Smoker (baseline)	-0.330096309240351
+M6 (smoking cessation)	-0.77348183021556
+Smoker (baseline)	-1.01979079056412
+Smoker (baseline)	0.61153726999487
+M6 (smoking cessation)	0.368851558165005
+Smoker (baseline)	6.67699280309276
+M6 (smoking cessation)	0.0668965506066777
+Smoker (baseline)	-0.345136007846981
+Smoker (baseline)	-0.310894572181865
+M6 (no smoking cessation)	-0.115984319929958
+M6 (smoking cessation)	-0.196833100351187
+Smoker (baseline)	0.368024257698244
+Smoker (baseline)	0.900936730386335
+M6 (smoking cessation)	0.99686227418017
+M6 (no smoking cessation)	0.436171732844289
+Smoker (baseline)	1.1006154250954
+Smoker (baseline)	2.89207855209939
+M6 (smoking cessation)	-0.110160705872778
+Smoker (baseline)	0.612774734975348

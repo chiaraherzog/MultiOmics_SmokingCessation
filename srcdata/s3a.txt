@@ -1,0 +1,18 @@
+pop_name	s1
+Plasma cells	-0.14996959234134
+CD94<sup>+</sup> CD4<sup>+</sup> T cells	-0.0135487209265043
+NK T cells	-0.0112983948010048
+CD4<sup>+</sup> T<sub>EM</sup> cells	-0.00937174387704828
+regulatory NK cells	-0.00675954644949593
+KiR<sup>+</sup> cytotoxic NK cells	0.00606084984119287
+CD57<sup>-</sup>KLRG1<sup>+</sup> CD8<sup>+</sup> T cells	-0.00471831256969094
+CD94<sup>+</sup> cytotoxic NK cells	0.00410986041784213
+B cells	-0.00313393568981435
+memory B cells	0.00286841676414638
+naïve B cells	-0.00265474109729565
+CD94<sup>+</sup> regulatory NK cells	-0.00215119582155332
+T cells	0.00208030920819916
+CD25<sup>+</sup> CD4<sup>+</sup> T cells	0.00204332559680523
+intermediate Monocytes	-0.00167139919262472
+CD94<sup>+</sup> defective NK cells	-0.00140222720906514
+KiR<sup>+</sup> CD8<sup>+</sup> T cells	-0.000588471895280272

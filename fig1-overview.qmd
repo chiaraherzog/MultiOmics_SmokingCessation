@@ -1,5 +1,5 @@
 ---
-title: "Overview (F1, E1)"
+title: "Overview (F1, S1)"
 format:
   html:
     toc: true
@@ -16,7 +16,7 @@ format:
 
 ![](figures-png/figure1.png)
 
-## Extended Data Figure 1
+## Supplementary Figure 1
 
 ![](figures-png/e1.png)
 
@@ -58,6 +58,15 @@ fill = 'grey70'
 ```{r paths, eval = F}
 here::i_am("fig1-overview.qmd")
 db_path <- fs::path_expand("~/Dropbox/")
+```
+
+```{r}
+# Number of former and never smokers.
+path = here("data/data_raw.Rdata")
+x <- as.data.frame(colData(data))
+
+x <- x[x$visitId=='M0',]
+table(x$smoking_ever, x$smoking_curr, useNA = 'always')
 ```
 
 
@@ -152,7 +161,146 @@ plot(apt)
 dev.off()
 ```
 
-### b) Cigarettes and cotinine (compliance)
+```{r sourcedata.apt, eval = F}
+out <- appointments |>
+  dplyr::filter(interventionId == "S" & ! visitId %in% c("M12", "M18")) |> 
+  dplyr::select(subjectId, visitId, t, visitType, dropout) |> 
+  dplyr::group_by(subjectId) |> dplyr::mutate(id = cur_group_id())|> 
+  dplyr::select(-subjectId)
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/1a.txt')
+```
+
+### b) Panel matrix
+
+### Updated panel availability matrix
+
+```{r}
+cols2 <- c("#1b69a1","#5f70a8", "#826c9b", "#bd647d", "#ec6669", "#f39668", "#71b5a9", "#5f70a8")
+names(cols2) <- c("blood", "buccal", "saliva", "cervical", "urine", "faecal", "skin", "clinical")
+
+load(here("data/data_raw.Rdata"))
+data_baseline_m6 <- data[,data$interventionId == "S" & !data$visitId %in% c("M12", "M18"),]
+
+# Helper keep code compact
+make_assay_df <- function(data, name, sampletype, assayname) {
+  data_subset <- wideFormat(data[, , name],
+                            colDataCols = c("subjectId", "interventionId", "visitId", "dropout_date")) |> 
+    as.data.frame() |> 
+    dplyr::mutate(dropout = ifelse(is.na(dropout_date), "no", "yes")) |> 
+    dplyr::relocate(c(subjectId, interventionId, visitId, dropout)) |> 
+    dplyr::select(1:5) |> 
+    tidyr::pivot_wider(
+      id_cols = c("subjectId", "interventionId", "dropout"),
+      names_from = "visitId",
+      values_from = "primary"
+    ) |> 
+    dplyr::mutate(across(c(M0:M6), ~ ifelse(is.na(.), 0, 1))) |> 
+    dplyr::mutate(
+      sampletype = sampletype,
+      assay = assayname,
+      comp = paste0(sampletype, "_", assay)
+    )
+  
+  return(data_subset)
+}
+
+# Make grid subsets
+meth_blood <- make_assay_df(data_baseline_m6, 'Composite methylation scores: blood', 'blood', 'methylation')
+meth_buccal <- make_assay_df(data_baseline_m6, 'Composite methylation scores: buccal', 'buccal', 'methylation')
+meth_cervical <- make_assay_df(data_baseline_m6, 'Composite methylation scores: cervical', 'cervical', 'methylation')
+blood_h <- make_assay_df(data_baseline_m6, 'Blood haemogram', 'blood', 'routine bloods')
+flow <- make_assay_df(data_baseline_m6, 'Flow cytometry: white blood cell staining', 'blood', 'immune profiling')
+saliva_nmr <- make_assay_df(data_baseline_m6, 'Saliva nuclear magnetic resonance', 'saliva', 'nmr')
+urine_nmr <- make_assay_df(data_baseline_m6, 'Urine nuclear magnetic resonance', 'urine', 'nmr')
+faecal_microb <- make_assay_df(data_baseline_m6, 'Stool microbiome: families', 'faecal', 'microbiome')
+saliva_microb <- make_assay_df(data_baseline_m6, 'Saliva microbiome: families', 'saliva', 'microbiome')
+skin <- make_assay_df(data_baseline_m6, 'Skin histology and transepidermal water loss assay', 'skin', 'biopsy')
+body <- make_assay_df(data_baseline_m6, 'Body composition', 'clinical', 'body composition')
+sport <- make_assay_df(data_baseline_m6, 'Functional sports exam', 'clinical', 'functional exam')
+vascular <- make_assay_df(data_baseline_m6, 'Vascular and body sonography', 'clinical', 'vascular exam')
+cotinine <- make_assay_df(data_baseline_m6, 'Cotinine LC/MS Quantitation', 'clinical', 'cotinine measurements')
+
+# Combine subsets
+tmp <- meth_blood |> dplyr::full_join(meth_buccal) |> dplyr::full_join(meth_cervical) |> 
+  dplyr::full_join(saliva_nmr) |> dplyr::full_join(urine_nmr) |>
+  dplyr::full_join(saliva_microb) |> dplyr::full_join(faecal_microb) |> 
+  dplyr::full_join(blood_h) |> dplyr::full_join(skin) |> dplyr::full_join(flow) |> 
+  dplyr::full_join(body) |> dplyr::full_join(sport) |> dplyr::full_join(vascular) |> dplyr::full_join(cotinine) |> 
+  tidyr::pivot_longer(cols = c(M0:M6),
+                      names_to = 'visitId',
+                      values_to = 'value') |> 
+  dplyr::mutate(assay = factor(assay, levels =
+                                 c("routine bloods",
+                                   "methylation",
+                                   "nmr",
+                                   "microbiome",
+                                   "immune profiling",
+                                   "biopsy",
+                                   "body composition",
+                                   "functional exam",
+                                   "vascular exam",
+                                   "cotinine measurements")),
+                sampletype = factor(sampletype, levels = c("blood", "buccal", "saliva", "cervical", "urine", "faecal", "skin", "clinical")))
+                
+# Plot matrix
+out_1 <- tmp |> 
+  dplyr::filter(value != 0) |>
+  dplyr::mutate(comp = factor(comp, levels = c(
+    "blood_routine bloods",
+    "blood_immune profiling",
+    "blood_methylation",
+    "buccal_methylation",
+    "cervical_methylation",
+    "saliva_microbiome",
+    "saliva_nmr",
+    "urine_nmr",
+    "faecal_microbiome",
+    "skin_biopsy",
+    "clinical_body composition",
+    "clinical_functional exam",
+    "clinical_vascular exam",
+    "clinical_cotinine measurements"
+  ))) |> 
+  dplyr::arrange(subjectId) |>
+  ggplot(aes(x = visitId,
+             y = forcats::fct_reorder(subjectId, -as.numeric(as.factor(dropout))),
+             fill = sampletype,
+             alpha = dropout)) +
+  geom_tile(colour = NA) +
+  facet_grid(~ comp,
+             scales = 'free') +
+  theme_bw() +
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        panel.grid = element_blank(),
+        axis.text.x = element_text(size = 7))  +
+  coord_cartesian(expand = 0) +
+  scale_fill_manual(values = cols2,
+                    aesthetics = c("colour", "fill"),na.value = 'grey90') +
+  scale_alpha_discrete(range = c(1, 0.6)) +
+  labs(x = '',
+      y = '')
+
+pdf(file = here('out/pdf/1b.pdf'),
+    width = 10, height = 3.75)
+print(out_1)
+dev.off()
+```
+
+```{r sourcedata.grid}
+out <- tmp |> 
+  dplyr::group_by(subjectId) |>
+  dplyr::mutate(id = cur_group_id())|> 
+  dplyr::ungroup() |> 
+  dplyr::select(-subjectId)
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/1b.txt')
+```
+
+### c) Cigarettes and cotinine (compliance)
 
 ```{r cig.cotinine, fig.width = 4.5, fig.height = 2.5, eval = F}
 load(here(db_path, "data/tirolgesund/pheno/compliance.Rdata"))
@@ -162,7 +310,7 @@ meta <- metadata(data) |> as.data.frame() |>
                 visitId = paste0("M", gsub(".*M", "", timing.of.collection.primary))) |> 
   dplyr::rename(t = timing.of.collection.t)
 
-cotinine <- longFormat(data['cotinine',data@colData$interventionId=='S' & !data@colData$visitId %in% c("M12", "M18"),], colData = c('subjectId', 'visitId', 'compliance', 'dailycig_longitudinal', 'cig_before')) |> 
+cotinine <- longForm(data['cotinine',data@colData$interventionId=='S' & !data@colData$visitId %in% c("M12", "M18"),], colData = c('subjectId', 'visitId', 'compliance', 'dailycig_longitudinal', 'cig_before')) |> 
   as.data.frame() |> 
   dplyr::mutate(dailycig_longitudinal = ifelse(visitId == "M0", cig_before,
                                                dailycig_longitudinal)) |> 
@@ -209,23 +357,33 @@ plot(b)
 dev.off()
 ```
 
+```{r sourcedata.cotinine, eval = F}
+out <- cotinine |>
+  dplyr::filter(subjectId %in% complete$subjectId) |> 
+  dplyr::select(subjectId, visitId, t, dailycig_longitudinal, value) |> 
+  dplyr::group_by(subjectId) |> dplyr::mutate(id = cur_group_id()) |> 
+  dplyr::select(-subjectId)
 
-### c) ICC
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/1c.txt')
+```
+
+### d) ICC
 
 ```{r icc, eval = F}
-load(here("out/variance_partition_df_var.Rdata"))
+load(here("out/variance_partition_df_var_revised.Rdata"))
 
 df.var.1 <- df.var |> 
   
-  # Filter superfluous features
-  dplyr::filter(!grepl("_plaque_max|imt_max|_hba1c_ifcc|_ft4|_ft3", featureid)) |> 
+  # Filter superfluous features (this doesnt seem to be necessary anymore)
+  dplyr::filter(!grepl("_plaque_max|imt_max|_hba1c_ifcc|_ft4|_ft3", featureid)) |>
   
   # Group clinical features as one + flow cytometry together as immune features
   dplyr::mutate(assay = case_when(grepl("Flow cytometry", assay) ~ "Flow cytometry: immune cells", 
                                   grepl("magnetic", assay) & grepl("Saliva", assay) ~ "Saliva metabolome",
                                   grepl("magnetic", assay) & grepl("Urine", assay) ~ "Urine metabolome",
                                   grepl("haemogram", assay) | (grepl("exam", assay) & !grepl("_fe|_fv|_sysbp|_diabp|_vo2max|_rel|_abs|_max", featureid)) ~ "Routine bloods",
-                                  (grepl("exam", assay) & grepl("_fe|_fv|_sysbp|_diabp|_vo2max|_rel|_abs|_max", featureid)) | (grepl("sono", assay) & grepl("pwv|imt|plaque", featureid)) ~ "Functional clinical features",
+                                  (grepl("exam", assay) & grepl("_fe|_fv|_sysbp|_diabp|_vo2max|_rel|_abs|_max", featureid)) | (grepl("sono", assay) & grepl("pwv|imt|plaque", featureid)) | (grepl("Cotinine", assay)) ~ "Functional clinical features",
                                   grepl("bmi|weight|scfat|vifat", featureid) ~ "Body composition",
                                   TRUE ~ assay),
                 
@@ -240,8 +398,11 @@ iccplot <- df.var.1 |>
   geom_boxplot(outlier.shape = NA,
                aes(fill = assay),
                alpha = 0.4) +
-  ggbeeswarm::geom_beeswarm(aes(colour = assay),
-                            alpha = 0.5,
+  # ggbeeswarm::geom_beeswarm(aes(colour = assay),
+  #                           alpha = 0.5,
+  #                           size = 1.2) +
+  ggbeeswarm::geom_quasirandom(aes(colour = assay),
+                            alpha = 0.25,
                             size = 1.2) +
   labs(x = 'ICC',
        y = '') +
@@ -249,13 +410,13 @@ iccplot <- df.var.1 |>
   theme(legend.position = 'none',
         axis.text.y = element_markdown()) +
   scale_x_continuous(position = 'top')  +
-  scale_colour_manual(values = grDevices::colorRampPalette(cols[c(8, 1,2,3,5,4,6,7)])(11),
+  scale_colour_manual(values = grDevices::colorRampPalette(cols[c(8, 1,2,3,5,4,6,7)])(length(levels(df.var.1$assay))),
                       aesthetics = c('colour', 'fill'))
 
 # # save colours for re-use elsewhere
-# levels <- levels(df.var.1$assay)
-# cols2 <- grDevices::colorRampPalette(cols[c(8, 1,2,3,5,4,6,7)])(11)
-# names(cols2) = gsub("<b>|</b>", "", levels)
+levels <- levels(df.var.1$assay)
+cols2 <- grDevices::colorRampPalette(cols[c(8, 1,2,3,5,4,6,7)])(length(levels(df.var.1$assay)))
+names(cols2) = gsub("<b>|</b>", "", levels)
 # cols_for_assays <- cols2
 # names(cols_for_assays) <- c("Saliva metabolome", "Urine metabolome", "Stool microbiome", "Saliva microbiome",
 #                             "Blood methylation", "Cervical methylation", "Buccal methylation",
@@ -266,18 +427,24 @@ iccplot <- df.var.1 |>
 
 ```{r print.icc, eval=F}
 cairo_pdf(here("out/pdf/1c.pdf"),
-          width = 4.3,
-          height = 2.35)
+          width = 4.75,
+          height = 3.5)
 plot(iccplot)
 dev.off()
 ```
 
-### d) Top variable features, barplot
+```{r sourcedata.icc, eval = F}
+out <- df.var.1 
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/1d.txt')
+```
+
+### e) Top variable features, barplot
 
 ```{r topvar.bar, eval = F}
 n <- 0.3 # Prop of top cells
 
-load(here("out/variance_partition_df_var.Rdata"))
+load(here("out/variance_partition_df_var_revised.Rdata"))
 
 exclude <- c("cells_single_cells_live_t_cells_freq_of_parent",
              "cells_single_cells_live_t_cells_cd4_t_cells_freq_of_parent",
@@ -286,21 +453,23 @@ exclude <- c("cells_single_cells_live_t_cells_freq_of_parent",
 # features with max icc
 features <- df.var |>
   tidyr::separate(featureid, "_", into = c(NA, 'rowname'), remove = F, extra = 'merge') |> 
-  dplyr::filter(!grepl("sports|sono", assay) & !rowname %in% exclude) |> 
+  # dplyr::filter(!grepl("sports|sono", assay) & !rowname %in% exclude) |> 
   
   # Group clinical features as one + flow cytometry together as immune features
   dplyr::mutate(assay = case_when(grepl("Flow cytometry", assay) ~ "Flow cytometry: immune cells", 
                                   grepl("magnetic", assay) & grepl("Saliva", assay) ~ "Saliva metabolome",
                                   grepl("magnetic", assay) & grepl("Urine", assay) ~ "Urine metabolome",
                                   grepl("haemogram", assay) ~ "Routine bloods",
+                                  (grepl("exam", assay) & grepl("_fe|_fv|_sysbp|_diabp|_vo2max|_rel|_abs|_max", featureid)) | (grepl("sono", assay) & grepl("pwv|imt|plaque", featureid)) | (grepl("Cotinine", assay)) ~ "Functional clinical features",
                                   grepl("bmi|weight|scfat|vifat", featureid) ~ "Body composition",
                                   TRUE ~ assay),
                 # Formatting of text
                 assay = ifelse(grepl("bloods|metabolome|clinical|composition", assay), paste0("<b>", assay, "</b>"),
-                               paste0("<b>", gsub("[:]", "</b>:", assay)))) |> 
+                               paste0("<b>", gsub("[:]", "</b>:", assay))),
+                assay = ifelse(assay == '<b>Functional sports exam', "<b>Functional clinical features</b>", assay)) |> 
   dplyr::arrange(desc(icc)) |> 
   dplyr::slice(1:(n()*n)) |> 
-  dplyr::select(featureid, assay)
+  dplyr::select(featureid, assay) 
 
 barplot <- features |> 
   dplyr::group_by(assay) |> 
@@ -308,7 +477,7 @@ barplot <- features |>
   dplyr::ungroup() |> 
   dplyr::reframe(assay = assay,
                  count = n,
-                 prop = n/sum(n)*100) |> 
+                 prop = n/sum(n)*100)  |> 
   dplyr::mutate(assay = factor(gsub("<b>|</b>", "", assay), levels = gsub("<b>|</b>", "", rev(levels)))) |>
   ggplot(aes(x = 1,
              fill = assay,
@@ -339,18 +508,27 @@ barplot <- features |>
 ```{r print.bar, eval=F}
 cairo_pdf(here("out/pdf/1d.pdf"),
           width = 2.5,
-          height = 2.5)
+          height = 3.5)
 plot(barplot)
 dev.off()
 ```
 
-### e) Top variable features, PCA
+```{r sourcedata.topfeatures}
+out <- features |>  
+  dplyr::group_by(assay) |> 
+  dplyr::count()
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/1e.txt')
+```
+
+### f) Top variable features, PCA
 
 ```{r, eval = F}
 # Get raw data for these features
 load("data/data_normalized.Rdata")
 omes <- c(1, 3, 5, 6, 9, 10, 13:16, 22, 28, 29)
-df <-  MultiAssayExperiment::longFormat(data[,data$interventionId == "S" & !data$visitId %in% c("M12", "M18"),omes], colDataCols=c("subjectId", "visitId", "age_at_consent", "compliance", "smoking_py", "cig_before")) |> 
+df <-  MultiAssayExperiment::longForm(data[,data$interventionId == "S" & !data$visitId %in% c("M12", "M18"),omes], colDataCols=c("subjectId", "visitId", "age_at_consent", "compliance", "smoking_py", "cig_before")) |> 
   as.data.frame() |> 
   dplyr::mutate(featureid = paste0(assay, "_", rowname)) |> 
   dplyr::filter(featureid %in% features$featureid) |> 
@@ -412,7 +590,6 @@ pcplot <- pcdat |>
        y = lab_y)
 ```
 
-
 ```{r print.pc, eval = F}
 cairo_pdf(here("out/pdf/1e.pdf"),
           width = 3.75,
@@ -421,59 +598,73 @@ plot(pcplot)
 dev.off()
 ```
 
-### f) PCA contributions
+```{r sourcedata.topfeatures.pca}
+out <- pcdat
+rownames(out) <- NULL
+out <- out |> 
+  dplyr::group_by(subjectId) |>
+  dplyr::mutate(id = cur_group_id())|> dplyr::ungroup() |> 
+  dplyr::select(-subjectId)
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/1f.txt')
+```
+
+### g) PCA contributions
 
 ```{r pca.contrib, eval = F}
 contrib <- pc$var$contrib |> as.data.frame() |> 
   tibble::rownames_to_column('x') |> 
   tidyr::separate(x, "_", into = c('assay', 'feature'), extra = 'merge')
 
-load(here("src/populations_names_annotated.Rdata"))
+# Fix labels T-cells/white blood
+contrib$assay <- gsub("Flow cytometry: T cell staining", 'Flow cytometry: immune cells', contrib$assay)
+contrib$assay <- gsub("Flow cytometry: white blood cell staining", 'Flow cytometry: immune cells', contrib$assay)
 
-pc1 <- contrib |> 
+load(here("src/populations_names_annotated.Rdata"))
+contrib <- contrib %>% dplyr::left_join(dplyr::select(populations, name, `second name`),by = c('feature' = 'name'))
+contrib$`second name` <- gsub("[+]", "<sup>+</sup>", contrib$`second name`)
+contrib$`second name` <- gsub("[-]", "<sup>-</sup>", contrib$`second name`)
+contrib$`second name` <- gsub("TEM", "T<sub>em</sub>", contrib$`second name`)
+contrib$`second name` <- gsub("TN", "T<sub>n</sub>", contrib$`second name`)
+contrib$`second name` <- gsub("TREG", "T<sub>reg</sub>", contrib$`second name`)
+contrib <- contrib %>% dplyr::mutate(feature =
+                                       case_when(
+                                         assay == "Flow cytometry: immune cells" ~ `second name`,
+                                         TRUE ~ feature
+                                       ))
+
+# Fix labels meth scores
+contrib$feature <- gsub("WID_SMK_immune_hypoM_corr_z","WID-SMK immune hypoM",contrib$feature)
+contrib$feature <- gsub("WID_SMK_epithelial_hypoM_corr_z","WID-SMK proximal epithelial hypoM",contrib$feature)
+contrib$feature <- gsub("WID_SMK_proximal_epithelial_hyperM_corr_z","WID-SMK proximal epithelial hyperM",contrib$feature)
+
+pdat <- contrib |> 
   dplyr::arrange(desc(Dim.1)) |> 
   dplyr::slice(1:10) |> 
-  
-  dplyr::left_join(dplyr::select(populations, name, `second name`),by = c('feature' = 'name')) |> 
-  dplyr::mutate(feature = `second name`,
-                feature = gsub("[+]", "<sup>+</sup>", feature),
-                feature = gsub("[-]", "<sup>-</sup>", feature),
-                feature = gsub("TEM", "T<sub>em</sub>", feature),
-                feature = gsub("TN", "T<sub>n</sub>", feature),
-                feature = gsub("TREG", "T<sub>reg</sub>", feature),
-                assay = 'Flow cytometry: immune cells') |> 
-  
-  # Rename using populations
-  ggplot(aes(x = forcats::fct_reorder(feature, -Dim.1),
-             y = Dim.1,
-             fill = assay)) +
+  dplyr::mutate(comp = paste0(feature, "_", sub(".*:", "", assay)))
+
+pc1 <- ggplot(pdat, aes(x = forcats::fct_reorder(comp, -Dim.1),
+                            y = Dim.1,
+                            fill = assay)) +
   geom_col() +
   theme_bw() +
-  theme(axis.text.x = element_markdown(angle = 60, hjust = 1),
-        axis.title.y = element_markdown(),
+  theme(axis.text.x = ggtext::element_markdown(angle = 60, hjust = 1),
+        axis.title.y = ggtext::element_markdown(),
         legend.position = 'none',
-        plot.subtitle = element_markdown(),
+        plot.subtitle = ggtext::element_markdown(),
         panel.grid = element_blank(),
         axis.ticks.x = element_blank()) +
-  labs(subtitle = lab_x, x= '', y = 'Contribution (%)') +
+  labs(subtitle = lab_x, x = '', y = 'Contribution (%)') +
   coord_cartesian(ylim = c(0, 7)) +
-  scale_fill_manual(values = cols2)
+  scale_fill_manual(values = cols2) +
+  scale_x_discrete(labels = pdat$feature)
 
-pc2 <- contrib |> 
+pdat <- contrib |> 
   dplyr::arrange(desc(Dim.2)) |> 
   dplyr::slice(1:10) |> 
-  # 
-  dplyr::left_join(dplyr::select(populations, name, `population name`),by = c('feature' = 'name'))|>
-  dplyr::mutate(
-    feature = case_when(!is.na(`population name`) ~ gsub("[+]", "<sup>+</sup>", `population name`),
-                                    grepl("immune_hypoM", feature) & grepl("blood", assay) ~ "WID-SMK immune hypoM",
-                                    grepl("epithelial_hyperM", feature) ~ "WID-SMK proximal epithelial hyperM",
-                        grepl("AGE", feature) ~ "AGE index",
-                                    TRUE ~ feature),
-                assay = ifelse(grepl("cytom", assay), 'Flow cytometry: immune cells', assay)) |>
-  # 
-  # Rename using populations
-  ggplot(aes(x = forcats::fct_reorder(feature, -Dim.2),
+  dplyr::mutate(comp = paste0(feature, "_", sub(".*:", "", assay))) 
+
+pc2 <- pdat %>% ggplot(aes(x = forcats::fct_reorder(comp, -Dim.2),
              y = Dim.2,
              fill = assay)) +
   geom_col(width = 0.9) +
@@ -486,8 +677,8 @@ pc2 <- contrib |>
         axis.ticks.x = element_blank()) +
   labs(subtitle = lab_y, x= '', y = '') +
   coord_cartesian(ylim = c(0, 7)) +
-  scale_fill_manual(values = cols2)
-
+  scale_fill_manual(values = cols2) +
+  scale_x_discrete(labels = pdat$feature)
 
 pc.contribs <- pc1|pc2
 ```
@@ -500,35 +691,56 @@ plot(pc.contribs)
 dev.off()
 ```
 
-## Extended Data Figure 1
+```{r sourcedata.pc.contribs, eval = F}
+out1 <- contrib |> 
+  dplyr::arrange(desc(Dim.1)) |> 
+  dplyr::slice(1:10) |> 
+  dplyr::mutate(comp = paste0(feature, "_", sub(".*:", "", assay))) |> 
+  dplyr::mutate(dim = 'PC1') |> 
+  dplyr::rename(value = Dim.1) |> 
+  dplyr::select(dim, feature, assay, value)
+out2 <- contrib |> 
+  dplyr::arrange(desc(Dim.2)) |> 
+  dplyr::slice(1:10) |> 
+  dplyr::mutate(comp = paste0(feature, "_", sub(".*:", "", assay)))|> 
+  dplyr::mutate(dim = 'PC2') |> 
+  dplyr::rename(value = Dim.2) |> 
+  dplyr::select(dim, feature, assay, value)
+
+out <- rbind(out1, out2)
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/1g.txt')
+
+```
+
+## Supplementary Figure 1
 
 ### a) PC and age
 
 ```{r, eval = F}
-age <- pcdat |> 
-  ggplot(aes(x = Dim.1,
-             y = Dim.2,
-             colour = age_at_consent)) +
-  geom_point(size = 2.5,
-             alpha = 0.9) +
+age <- pcdat |>
+  ggplot(aes(x = Dim.1, y = Dim.2, colour = age_at_consent)) +
+  geom_point(size = 2.5, alpha = 0.9) +
   scico::scale_color_scico(palette = 'batlow',
                            end = 0.85,
-                           name = 'age at consent')+
+                           name = 'age at consent') +
   theme_bw() +
-  theme(legend.position = 'inside',
-        legend.background = element_blank(),
-        legend.box.background = element_blank(),
-        legend.key.width = unit(0.15, 'in'),
-        legend.key.height = unit(0.15, 'in'),
-        legend.position.inside = c(0.18, 0.76),
-        panel.grid = element_blank(),
-        axis.title.x = element_markdown(),
-        axis.title.y = element_markdown(),
-        legend.box = 'vertical') +
-  labs(x = lab_x,
-       y = lab_y)
+  theme(
+    # legend.position = 'inside',
+    # legend.background = element_blank(),
+    # legend.box.background = element_blank(),
+    # legend.key.width = unit(0.15, 'in'),
+    # legend.key.height = unit(0.15, 'in'),
+    # legend.position.inside = c(0.18, 0.76),
+    # legend.box = "vertical",
+    panel.grid = element_blank(),
+    axis.title.x = element_markdown(),
+    axis.title.y = element_markdown(),
+    legend.position = "bottom"
+  ) +
+  labs(x = lab_x, y = lab_y)
 ```
-
 
 ### b) PC and smoking
 
@@ -543,18 +755,33 @@ smk <- pcdat |>
                            end = 0.85,
                            name = 'log[smoking pack\nyears]')+
   theme_bw() +
-  theme(legend.position = 'inside',
-        legend.background = element_blank(),
-        legend.box.background = element_blank(),
-        legend.key.width = unit(0.15, 'in'),
-        legend.key.height = unit(0.15, 'in'),
-        legend.position.inside = c(0.19, 0.76),
-        panel.grid = element_blank(),
-        axis.title.x = element_markdown(),
-        axis.title.y = element_markdown(),
-        legend.box = 'vertical') +
+  theme(
+    # legend.position = 'inside',
+    # legend.background = element_blank(),
+    # legend.box.background = element_blank(),
+    # legend.key.width = unit(0.15, 'in'),
+    # legend.key.height = unit(0.15, 'in'),
+    # legend.position.inside = c(0.18, 0.76),
+    # legend.box = "vertical",
+    panel.grid = element_blank(),
+    axis.title.x = element_markdown(),
+    axis.title.y = element_markdown(),
+    legend.position = "bottom") +
   labs(x = lab_x,
        y = lab_y)
+```
+
+```{r sourcedata.s1ab}
+out <- pcdat |> dplyr::filter(!visitId %in% c("M12", "M18")) |> 
+  dplyr::mutate(log_smoking_py = log(smoking_py)) |> 
+  dplyr::select(Dim.1, Dim.2, visitId, log_smoking_py, subjectId, age_at_consent) |> 
+  dplyr::group_by(subjectId) |> 
+  dplyr::mutate(id = cur_group_id()) |>
+  dplyr::ungroup() |> 
+  dplyr::select(-subjectId)
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s1ab.txt')
 ```
 
 ### Print Extended Figure

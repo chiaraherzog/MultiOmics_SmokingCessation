@@ -36,7 +36,13 @@ Normalized data are loaded to run trajectories. To avoid any duplicates for vari
 load("data/data_normalized.Rdata")
 
 # extract all data in long format plus basic anno
-df <- as.data.frame(longFormat(data, colData = c("age_at_consent", "interventionId", "subjectId", "visitId", "time", 'compliance', 'smoking_py'))) |> 
+df <- as.data.frame(longForm(data, colData = c("age_at_consent",
+                                                 "interventionId",
+                                                 "subjectId",
+                                                 "visitId", 
+                                                 "time",
+                                                 'compliance',
+                                                 'smoking_py'))) |> 
   dplyr::filter(!is.na(value))
 
 # Filter variables: (see t-tests.qmd for how this was generated:)
@@ -49,7 +55,7 @@ df <- df |>
   dplyr::select(-c(label, assay2)) |>
   dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
   dplyr::mutate(compliance = factor(compliance, levels = c("lower compliance", "higher compliance"))) |> 
-  dplyr::mutate(rowname = paste0(assay, "_", rowname))
+  dplyr::mutate(rowname = paste0(assay, "_", rowname)) 
 
 # remove full data
 rm(data);gc()
@@ -107,11 +113,11 @@ for (x in c("Basic model with packyears", "Interaction model with packyears", "H
                    x == 'Higher compliance only with packyears' ~ '7')
   
   writexl::write_xlsx(as.data.frame(out_lmm[[x]]),
-                      path = paste0("out/Extended-Data-Table-",
+                      path = paste0("out/Supplementary-Table-",
                                     file,
                                     ".xlsx")
     )
 }
 ```
 
-See also extended data table pages ([ET3](et3.qmd), [ET5](et5.qmd), [ET7](et7.qmd)) and data portal.
+See also extended data table pages ([ST3](st3.qmd), [ST5](st5.qmd), [ST7](st7.qmd)) and data portal.

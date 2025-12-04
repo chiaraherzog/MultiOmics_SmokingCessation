@@ -1,0 +1,31 @@
+feature	factor	value	view	label
+leukocytes_leukocytes	Factor2	0.287954777479172	Blood haemogram	leukocytes
+AdaptAge_AdaptAge	Factor2	-0.298097044229507	Composite methylation scores: blood	AdaptAge
+AgeAccelGrim (V2)_AgeAccelGrimV2	Factor2	0.615349173545837	Composite methylation scores: blood	AgeAccelGrimV2
+CausAge_CausAge	Factor2	-0.378902971744537	Composite methylation scores: blood	CausAge
+DunedinPACE_DunedinPACE	Factor2	0.383693695068359	Composite methylation scores: blood	DunedinPACE
+Horvath clock_horvath	Factor2	-0.308429688215256	Composite methylation scores: blood	horvath
+index_general_age	Factor2	-0.282047957181931	Composite methylation scores: blood	age
+mCigarette_Composite methylation scores: blood	Factor2	0.566961228847504	Composite methylation scores: blood	Composite methylation scores: blood
+PhenoAge_PhenoAge	Factor2	-0.345827579498291	Composite methylation scores: blood	PhenoAge
+WID-SMK (immune hypoM)_Composite methylation scores: blood	Factor2	0.626389384269714	Composite methylation scores: blood	Composite methylation scores: blood
+mCigarette_Composite methylation scores: buccal	Factor2	0.470669537782669	Composite methylation scores: buccal	Composite methylation scores: buccal
+WID_buccal_BC_adj	Factor2	0.353795677423477	Composite methylation scores: buccal	adj
+WID-SMK (epithelial hypoM)_Composite methylation scores: buccal	Factor2	0.425261288881302	Composite methylation scores: buccal	Composite methylation scores: buccal
+WID-SMK (immune hypoM)_Composite methylation scores: buccal	Factor2	0.291670501232147	Composite methylation scores: buccal	Composite methylation scores: buccal
+WID_SMK_proximal_epithelial_hyperM_corr_z	Factor2	0.499403119087219	Composite methylation scores: buccal	z
+mCigarette_Composite methylation scores: cervical	Factor2	0.432852029800415	Composite methylation scores: cervical	Composite methylation scores: cervical
+WID-SMK (immune hypoM)_Composite methylation scores: cervical	Factor2	0.348749399185181	Composite methylation scores: cervical	Composite methylation scores: cervical
+Absconditabacteriales_unk1	Factor2	-0.313956409692764	Saliva microbiome: families	unk1
+Atopobiaceae_Saliva microbiome: families	Factor2	0.43385124206543	Saliva microbiome: families	Saliva microbiome: families
+Bifidobacteriaceae_Saliva microbiome: families	Factor2	0.705780029296875	Saliva microbiome: families	Saliva microbiome: families
+Clostridia UCG-014_unk1_Saliva microbiome: families	Factor2	-0.281515926122665	Saliva microbiome: families	Saliva microbiome: families
+Fusobacteriaceae_Saliva microbiome: families	Factor2	-0.424572378396988	Saliva microbiome: families	Saliva microbiome: families
+Gemellaceae_Saliva microbiome: families	Factor2	-0.319794118404388	Saliva microbiome: families	Saliva microbiome: families
+Lactobacillaceae_Saliva microbiome: families	Factor2	0.522704064846039	Saliva microbiome: families	Saliva microbiome: families
+Neisseriaceae_Neisseriaceae	Factor2	-0.443752497434616	Saliva microbiome: families	Neisseriaceae
+Peptococcaceae_Saliva microbiome: families	Factor2	-0.307910591363907	Saliva microbiome: families	Saliva microbiome: families
+Porphyromonadaceae_Saliva microbiome: families	Factor2	-0.306641608476639	Saliva microbiome: families	Saliva microbiome: families
+RF39_unk1_Saliva microbiome: families	Factor2	-0.300428032875061	Saliva microbiome: families	Saliva microbiome: families
+Streptococcaceae_Saliva microbiome: families	Factor2	0.537715256214142	Saliva microbiome: families	Saliva microbiome: families
+Veillonellaceae_Saliva microbiome: families	Factor2	0.633544564247131	Saliva microbiome: families	Saliva microbiome: families

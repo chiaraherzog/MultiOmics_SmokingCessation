@@ -1,0 +1,69 @@
+group	selbalScore_stoolSmok
+Never smoker (control)	5.05070996968362
+Never smoker (control)	4.24908819605858
+Never smoker (control)	1.64490881708552
+Never smoker (control)	4.33393567123187
+Never smoker (control)	4.03657249559288
+Never smoker (control)	3.85610431622535
+Never smoker (control)	3.68185922375008
+Never smoker (control)	2.11124842746588
+Never smoker (control)	3.88639562262388
+Never smoker (control)	4.79338052734628
+Never smoker (control)	4.4686132071433
+Never smoker (control)	5.36739147904843
+Never smoker (control)	3.7159471752902
+Never smoker (control)	5.06189145297765
+Never smoker (control)	6.79074694063314
+Never smoker (control)	4.50715535364473
+Never smoker (control)	2.89089291273883
+Never smoker (control)	4.24051142672864
+Never smoker (control)	4.0031100059105
+Never smoker (control)	2.52709398293657
+Never smoker (control)	4.79589008045457
+Never smoker (control)	4.50449972255455
+Never smoker (control)	3.28281034350665
+Never smoker (control)	5.13841911103935
+Smoker baseline	6.35950055565797
+M6 no smoking cessation	6.56285789115946
+Smoker baseline	4.74085146374014
+M6 smoking cessation	4.65268175405187
+Smoker baseline	5.35411228161015
+M6 smoking cessation	4.62094374631699
+Smoker baseline	6.40176732002741
+M6 smoking cessation	5.79098789584902
+Smoker baseline	7.42749597838315
+M6 smoking cessation	3.14962558065051
+Smoker baseline	4.04468106590057
+M6 no smoking cessation	3.80203062696727
+Smoker baseline	5.48483231512215
+M6 smoking cessation	4.40028523113098
+Smoker baseline	5.77341468751964
+M6 no smoking cessation	4.63972136046469
+Smoker baseline	5.08429732518096
+M6 no smoking cessation	6.2107376111173
+Smoker baseline	5.13737436614967
+M6 smoking cessation	4.43923755737483
+Smoker baseline	4.89413591628629
+M6 no smoking cessation	3.42157694377553
+Smoker baseline	5.45126896239917
+M6 no smoking cessation	5.58561994451826
+Smoker baseline	4.67938300318659
+M6 smoking cessation	5.27222382085406
+Smoker baseline	5.67494437014162
+M6 no smoking cessation	5.30270648506737
+Smoker baseline	4.50664247093745
+M6 no smoking cessation	5.9681703985281
+Smoker baseline	7.52585641874209
+M6 smoking cessation	3.88122347777816
+Smoker baseline	5.26826104149428
+M6 smoking cessation	1.87500989570188
+Smoker baseline	5.74337672636494
+M6 smoking cessation	5.28376584527731
+Smoker baseline	5.12641768778671
+M6 no smoking cessation	5.60511690542744
+Smoker baseline	5.59154144659457
+M6 smoking cessation	4.26127335154967
+Smoker baseline	5.17730700184816
+M6 no smoking cessation	4.42845661671382
+Smoker baseline	5.67404671980444
+M6 smoking cessation	4.46952232033046

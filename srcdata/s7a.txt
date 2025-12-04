@@ -1,0 +1,361 @@
+Family	rel.abund.	group
+Atopobiaceae	0.00322037619849228	Never smoker (control)
+Comamonadaceae	0	Never smoker (control)
+Neisseriaceae	0.0315450486715948	Never smoker (control)
+Peptococcaceae	0	Never smoker (control)
+Streptococcaceae	0.192417477859914	Never smoker (control)
+Atopobiaceae	0.0166869671132765	Never smoker (control)
+Comamonadaceae	0.00170523751522533	Never smoker (control)
+Neisseriaceae	0.0331303288672351	Never smoker (control)
+Peptococcaceae	0.000121802679658953	Never smoker (control)
+Streptococcaceae	0.146163215590743	Never smoker (control)
+Atopobiaceae	0	Never smoker (control)
+Comamonadaceae	0	Never smoker (control)
+Neisseriaceae	0	Never smoker (control)
+Peptococcaceae	0	Never smoker (control)
+Streptococcaceae	0.517786561264822	Never smoker (control)
+Atopobiaceae	0.00481772924361651	Never smoker (control)
+Comamonadaceae	0	Never smoker (control)
+Neisseriaceae	0.0692147101332905	Never smoker (control)
+Peptococcaceae	0.000321181949574434	Never smoker (control)
+Streptococcaceae	0.243937690701783	Never smoker (control)
+Atopobiaceae	0.00631151852130137	Never smoker (control)
+Comamonadaceae	0	Never smoker (control)
+Neisseriaceae	0.0655947103463821	Never smoker (control)
+Peptococcaceae	0	Never smoker (control)
+Streptococcaceae	0.222556165001127	Never smoker (control)
+Atopobiaceae	0.0270865551337926	Never smoker (control)
+Comamonadaceae	0.000328037864942125	Never smoker (control)
+Neisseriaceae	0.0182763953324898	Never smoker (control)
+Peptococcaceae	0	Never smoker (control)
+Streptococcaceae	0.247762313135573	Never smoker (control)
+Atopobiaceae	0.00352195351021367	Never smoker (control)
+Comamonadaceae	0	Never smoker (control)
+Neisseriaceae	0.0543320028175628	Never smoker (control)
+Peptococcaceae	0.000375675041089458	Never smoker (control)
+Streptococcaceae	0.260483681615403	Never smoker (control)
+Atopobiaceae	0.0260403916768666	Never smoker (control)
+Comamonadaceae	0.0000611995104039168	Never smoker (control)
+Neisseriaceae	0.0337515299877601	Never smoker (control)
+Peptococcaceae	0	Never smoker (control)
+Streptococcaceae	0.156731946144431	Never smoker (control)
+Atopobiaceae	0.0272949959174151	Never smoker (control)
+Comamonadaceae	0	Never smoker (control)
+Neisseriaceae	0.0352851977137525	Never smoker (control)
+Peptococcaceae	0.000174967922547533	Never smoker (control)
+Streptococcaceae	0.224017263501691	Never smoker (control)
+Atopobiaceae	0.0427767354596623	Never smoker (control)
+Comamonadaceae	0	Never smoker (control)
+Neisseriaceae	0.032145090681676	Never smoker (control)
+Peptococcaceae	0	Never smoker (control)
+Streptococcaceae	0.211757348342714	Never smoker (control)
+Atopobiaceae	0.0149648455137715	Never smoker (control)
+Comamonadaceae	0	Never smoker (control)
+Neisseriaceae	0.0354770044507515	Never smoker (control)
+Peptococcaceae	0.000838547377926853	Never smoker (control)
+Streptococcaceae	0.16377475327356	Never smoker (control)
+Atopobiaceae	0.0641347477528545	Never smoker (control)
+Comamonadaceae	0	Never smoker (control)
+Neisseriaceae	0.0068831484330715	Never smoker (control)
+Peptococcaceae	0	Never smoker (control)
+Streptococcaceae	0.250870515831241	Never smoker (control)
+Atopobiaceae	0.0175262894341512	Never smoker (control)
+Comamonadaceae	0	Never smoker (control)
+Neisseriaceae	0.0872308462694041	Never smoker (control)
+Peptococcaceae	0	Never smoker (control)
+Streptococcaceae	0.170956434651978	Never smoker (control)
+Atopobiaceae	0.0278765070736637	Never smoker (control)
+Comamonadaceae	0.0000696912676841592	Never smoker (control)
+Neisseriaceae	0.060422329082166	Never smoker (control)
+Peptococcaceae	0.000209073803052478	Never smoker (control)
+Streptococcaceae	0.189908704439334	Never smoker (control)
+Atopobiaceae	0.00727272727272727	Never smoker (control)
+Comamonadaceae	0	Never smoker (control)
+Neisseriaceae	0.0334545454545455	Never smoker (control)
+Peptococcaceae	0	Never smoker (control)
+Streptococcaceae	0.2624	Never smoker (control)
+Atopobiaceae	0.0178465199286139	Never smoker (control)
+Comamonadaceae	0	Never smoker (control)
+Neisseriaceae	0.0233326723511138	Never smoker (control)
+Peptococcaceae	0.00152025910503007	Never smoker (control)
+Streptococcaceae	0.215942891136228	Never smoker (control)
+Atopobiaceae	0.0338250633288631	Never smoker (control)
+Comamonadaceae	0	Never smoker (control)
+Neisseriaceae	0.0134604877564198	Never smoker (control)
+Peptococcaceae	0	Never smoker (control)
+Streptococcaceae	0.121442407986887	Never smoker (control)
+Atopobiaceae	0.00493879422866617	Never smoker (control)
+Comamonadaceae	0.0000705542032666596	Never smoker (control)
+Neisseriaceae	0.0810315024517586	Never smoker (control)
+Peptococcaceae	0.000141108406533319	Never smoker (control)
+Streptococcaceae	0.227819522348044	Never smoker (control)
+Atopobiaceae	0.0095954356846473	Never smoker (control)
+Comamonadaceae	0.000129668049792531	Never smoker (control)
+Neisseriaceae	0.0523858921161826	Never smoker (control)
+Peptococcaceae	0.000648340248962655	Never smoker (control)
+Streptococcaceae	0.156509336099585	Never smoker (control)
+Atopobiaceae	0.00187139366845142	Never smoker (control)
+Comamonadaceae	0.0000519831574569839	Never smoker (control)
+Neisseriaceae	0.0531267869210376	Never smoker (control)
+Peptococcaceae	0.000623797889483807	Never smoker (control)
+Streptococcaceae	0.232260747517804	Never smoker (control)
+Atopobiaceae	0.0112555928411633	Never smoker (control)
+Comamonadaceae	0	Never smoker (control)
+Neisseriaceae	0.0235947986577181	Never smoker (control)
+Peptococcaceae	0.000978747203579418	Never smoker (control)
+Streptococcaceae	0.19505033557047	Never smoker (control)
+Atopobiaceae	0.00431853515287614	Never smoker (control)
+Comamonadaceae	0.0000575804687050153	Never smoker (control)
+Neisseriaceae	0.0613231991708413	Never smoker (control)
+Peptococcaceae	0	Never smoker (control)
+Streptococcaceae	0.166004491276559	Never smoker (control)
+Atopobiaceae	0.00409961184526146	Never smoker (control)
+Comamonadaceae	0.0000436128919708666	Never smoker (control)
+Neisseriaceae	0.0629770160059314	Never smoker (control)
+Peptococcaceae	0.000828644947446465	Never smoker (control)
+Streptococcaceae	0.154084347333072	Never smoker (control)
+Atopobiaceae	0.034319908480244	Never smoker (control)
+Comamonadaceae	0.0000879997653339591	Never smoker (control)
+Neisseriaceae	0.0195066146490276	Never smoker (control)
+Peptococcaceae	0	Never smoker (control)
+Streptococcaceae	0.238244698014139	Never smoker (control)
+Atopobiaceae	0.0414916148744835	Smoker baseline
+Comamonadaceae	0.000034721016631367	Smoker baseline
+Neisseriaceae	0.00635394604354016	Smoker baseline
+Peptococcaceae	0	Smoker baseline
+Streptococcaceae	0.219853477309816	Smoker baseline
+Atopobiaceae	0.044641889695525	M6 no smoking cessation
+Comamonadaceae	0	M6 no smoking cessation
+Neisseriaceae	0.00628453786975837	M6 no smoking cessation
+Peptococcaceae	0	M6 no smoking cessation
+Streptococcaceae	0.279336872900639	M6 no smoking cessation
+Atopobiaceae	0.0111820319623746	Smoker baseline
+Comamonadaceae	0.0000479915534865864	Smoker baseline
+Neisseriaceae	0.0236118443154005	Smoker baseline
+Peptococcaceae	0	Smoker baseline
+Streptococcaceae	0.294476172193694	Smoker baseline
+Atopobiaceae	0.00806654902949332	M6 smoking cessation
+Comamonadaceae	0.000126039828585833	M6 smoking cessation
+Neisseriaceae	0.0650365515502899	M6 smoking cessation
+Peptococcaceae	0.000126039828585833	M6 smoking cessation
+Streptococcaceae	0.215276027224603	M6 smoking cessation
+Atopobiaceae	0.00444420059256008	Smoker baseline
+Comamonadaceae	0	Smoker baseline
+Neisseriaceae	0.0582135410951388	Smoker baseline
+Peptococcaceae	0.000658400087786678	Smoker baseline
+Streptococcaceae	0.246022166136289	Smoker baseline
+Atopobiaceae	0.00537313432835821	M6 smoking cessation
+Comamonadaceae	0.0000542740841248304	M6 smoking cessation
+Neisseriaceae	0.0907462686567164	M6 smoking cessation
+Peptococcaceae	0.00135685210312076	M6 smoking cessation
+Streptococcaceae	0.155495251017639	M6 smoking cessation
+Atopobiaceae	0.078318219291014	Smoker baseline
+Comamonadaceae	0	Smoker baseline
+Neisseriaceae	0.0351744984885958	Smoker baseline
+Peptococcaceae	0	Smoker baseline
+Streptococcaceae	0.190162132453971	Smoker baseline
+Atopobiaceae	0.04636372015854	M6 smoking cessation
+Comamonadaceae	0	M6 smoking cessation
+Neisseriaceae	0.0458567609917965	M6 smoking cessation
+Peptococcaceae	0	M6 smoking cessation
+Streptococcaceae	0.221495068669923	M6 smoking cessation
+Atopobiaceae	0.0316729323308271	Smoker baseline
+Comamonadaceae	0	Smoker baseline
+Neisseriaceae	0.00422932330827068	Smoker baseline
+Peptococcaceae	0.000281954887218045	Smoker baseline
+Streptococcaceae	0.172744360902256	Smoker baseline
+Atopobiaceae	0.0345569907092681	M6 smoking cessation
+Comamonadaceae	0	M6 smoking cessation
+Neisseriaceae	0.00583503285746658	M6 smoking cessation
+Peptococcaceae	0.000113301608882846	M6 smoking cessation
+Streptococcaceae	0.191139814185361	M6 smoking cessation
+Atopobiaceae	0.0330396475770925	Smoker baseline
+Comamonadaceae	0	Smoker baseline
+Neisseriaceae	0.0102265575833858	Smoker baseline
+Peptococcaceae	0	Smoker baseline
+Streptococcaceae	0.21334172435494	Smoker baseline
+Atopobiaceae	0.0268211229388437	M6 no smoking cessation
+Comamonadaceae	0.00010436234606554	M6 no smoking cessation
+Neisseriaceae	0.0161761636401586	M6 no smoking cessation
+Peptococcaceae	0	M6 no smoking cessation
+Streptococcaceae	0.218117303276978	M6 no smoking cessation
+Atopobiaceae	0.0311149997265817	Smoker baseline
+Comamonadaceae	0	Smoker baseline
+Neisseriaceae	0.0118116694919888	Smoker baseline
+Peptococcaceae	0.0000546836550555039	Smoker baseline
+Streptococcaceae	0.176300103898945	Smoker baseline
+Atopobiaceae	0.0285311277809835	M6 smoking cessation
+Comamonadaceae	0	M6 smoking cessation
+Neisseriaceae	0.0107713021734949	M6 smoking cessation
+Peptococcaceae	0.000128229787779701	M6 smoking cessation
+Streptococcaceae	0.179393473103802	M6 smoking cessation
+Atopobiaceae	0.0154449472096531	Smoker baseline
+Comamonadaceae	0	Smoker baseline
+Neisseriaceae	0.0131523378582202	Smoker baseline
+Peptococcaceae	0.000120663650075415	Smoker baseline
+Streptococcaceae	0.265641025641026	Smoker baseline
+Atopobiaceae	0.0178233034571063	M6 smoking cessation
+Comamonadaceae	0	M6 smoking cessation
+Neisseriaceae	0.0608450704225352	M6 smoking cessation
+Peptococcaceae	0.000204865556978233	M6 smoking cessation
+Streptococcaceae	0.181254801536492	M6 smoking cessation
+Atopobiaceae	0.0585994726047466	Smoker baseline
+Comamonadaceae	0	Smoker baseline
+Neisseriaceae	0.000292997363023733	Smoker baseline
+Peptococcaceae	0	Smoker baseline
+Streptococcaceae	0.389393495458541	Smoker baseline
+Atopobiaceae	0.0215532811559302	M6 no smoking cessation
+Comamonadaceae	0	M6 no smoking cessation
+Neisseriaceae	0.00433473810957255	M6 no smoking cessation
+Peptococcaceae	0	M6 no smoking cessation
+Streptococcaceae	0.37796508127634	M6 no smoking cessation
+Atopobiaceae	0.0509305174727262	Smoker baseline
+Comamonadaceae	0.0000583396534624584	Smoker baseline
+Neisseriaceae	0.00618400326702059	Smoker baseline
+Peptococcaceae	0	Smoker baseline
+Streptococcaceae	0.226882912315501	Smoker baseline
+Atopobiaceae	0.0708688245315162	M6 no smoking cessation
+Comamonadaceae	0	M6 no smoking cessation
+Neisseriaceae	0.00931289040318001	M6 no smoking cessation
+Peptococcaceae	0	M6 no smoking cessation
+Streptococcaceae	0.20885860306644	M6 no smoking cessation
+Atopobiaceae	0.0379355054581957	Smoker baseline
+Comamonadaceae	0	Smoker baseline
+Neisseriaceae	0.0191559663724957	Smoker baseline
+Peptococcaceae	0.000125475762265256	Smoker baseline
+Streptococcaceae	0.208247940106236	Smoker baseline
+Atopobiaceae	0.0256977689458947	M6 smoking cessation
+Comamonadaceae	0.00018065215427694	M6 smoking cessation
+Neisseriaceae	0.101074880317948	M6 smoking cessation
+Peptococcaceae	0.00117423900280011	M6 smoking cessation
+Streptococcaceae	0.112817270345949	M6 smoking cessation
+Atopobiaceae	0.0650657968732426	Smoker baseline
+Comamonadaceae	0	Smoker baseline
+Neisseriaceae	0.0176020695084917	Smoker baseline
+Peptococcaceae	0.0000562366437970982	Smoker baseline
+Streptococcaceae	0.18895512315825	Smoker baseline
+Atopobiaceae	0.0329576986239311	M6 no smoking cessation
+Comamonadaceae	0	M6 no smoking cessation
+Neisseriaceae	0.0191403816750665	M6 no smoking cessation
+Peptococcaceae	0.0000566283481510844	M6 no smoking cessation
+Streptococcaceae	0.276855994110652	M6 no smoking cessation
+Atopobiaceae	0.0388385426299242	Smoker baseline
+Comamonadaceae	0	Smoker baseline
+Neisseriaceae	0.00462363602737193	Smoker baseline
+Peptococcaceae	0	Smoker baseline
+Streptococcaceae	0.286480488255965	Smoker baseline
+Atopobiaceae	0.00770496060947104	M6 no smoking cessation
+Comamonadaceae	0	M6 no smoking cessation
+Neisseriaceae	0.00372262141805904	M6 no smoking cessation
+Peptococcaceae	0.0000865725911176522	M6 no smoking cessation
+Streptococcaceae	0.37866851354861	M6 no smoking cessation
+Atopobiaceae	0.0319939776042157	Smoker baseline
+Comamonadaceae	0	Smoker baseline
+Neisseriaceae	0.00658699538910323	Smoker baseline
+Peptococcaceae	0.0000940999341300461	Smoker baseline
+Streptococcaceae	0.270631410558013	Smoker baseline
+Atopobiaceae	0.0232583065380493	M6 smoking cessation
+Comamonadaceae	0	M6 smoking cessation
+Neisseriaceae	0.0372454448017149	M6 smoking cessation
+Peptococcaceae	0.000267952840300107	M6 smoking cessation
+Streptococcaceae	0.248231511254019	M6 smoking cessation
+Atopobiaceae	0.0423895899053628	Smoker baseline
+Comamonadaceae	0	Smoker baseline
+Neisseriaceae	0.000788643533123028	Smoker baseline
+Peptococcaceae	0	Smoker baseline
+Streptococcaceae	0.297121451104101	Smoker baseline
+Atopobiaceae	0.0537910981883248	M6 no smoking cessation
+Comamonadaceae	0	M6 no smoking cessation
+Neisseriaceae	0.00794005815253858	M6 no smoking cessation
+Peptococcaceae	0	M6 no smoking cessation
+Streptococcaceae	0.347629165734735	M6 no smoking cessation
+Atopobiaceae	0.00756630579144364	Smoker baseline
+Comamonadaceae	0	Smoker baseline
+Neisseriaceae	0.0540910371473417	Smoker baseline
+Peptococcaceae	0.000684187225822031	Smoker baseline
+Streptococcaceae	0.207912424035095	Smoker baseline
+Atopobiaceae	0.00388167581314416	M6 no smoking cessation
+Comamonadaceae	0	M6 no smoking cessation
+Neisseriaceae	0.0321911390710748	M6 no smoking cessation
+Peptococcaceae	0.000468478115379467	M6 no smoking cessation
+Streptococcaceae	0.151050729487351	M6 no smoking cessation
+Atopobiaceae	0.0702295306611853	Smoker baseline
+Comamonadaceae	0	Smoker baseline
+Neisseriaceae	0.000599520383693046	Smoker baseline
+Peptococcaceae	0	Smoker baseline
+Streptococcaceae	0.261819116135663	Smoker baseline
+Atopobiaceae	0.0262769619897422	M6 smoking cessation
+Comamonadaceae	0	M6 smoking cessation
+Neisseriaceae	0.0077285182322771	M6 smoking cessation
+Peptococcaceae	0	M6 smoking cessation
+Streptococcaceae	0.268671397456615	M6 smoking cessation
+Atopobiaceae	0.0233810015768582	Smoker baseline
+Comamonadaceae	0	Smoker baseline
+Neisseriaceae	0.0154967103474526	Smoker baseline
+Peptococcaceae	0	Smoker baseline
+Streptococcaceae	0.213310858572128	Smoker baseline
+Atopobiaceae	0.0148818751162646	M6 smoking cessation
+Comamonadaceae	0.000062007812984436	M6 smoking cessation
+Neisseriaceae	0.0439635394059651	M6 smoking cessation
+Peptococcaceae	0.000372046877906616	M6 smoking cessation
+Streptococcaceae	0.241024369070503	M6 smoking cessation
+Atopobiaceae	0.0215976331360947	Smoker baseline
+Comamonadaceae	0	Smoker baseline
+Neisseriaceae	0.00897435897435897	Smoker baseline
+Peptococcaceae	0	Smoker baseline
+Streptococcaceae	0.268047337278106	Smoker baseline
+Atopobiaceae	0.00744866895524322	M6 smoking cessation
+Comamonadaceae	0	M6 smoking cessation
+Neisseriaceae	0.0790854329943649	M6 smoking cessation
+Peptococcaceae	0.000712481378327612	M6 smoking cessation
+Streptococcaceae	0.202020856273075	M6 smoking cessation
+Atopobiaceae	0.0127206930584494	Smoker baseline
+Comamonadaceae	0	Smoker baseline
+Neisseriaceae	0.0321307160872903	Smoker baseline
+Peptococcaceae	0	Smoker baseline
+Streptococcaceae	0.224750520890449	Smoker baseline
+Atopobiaceae	0.0128298737874205	M6 no smoking cessation
+Comamonadaceae	0	M6 no smoking cessation
+Neisseriaceae	0.0108480233649734	M6 no smoking cessation
+Peptococcaceae	0.000104307916970898	M6 no smoking cessation
+Streptococcaceae	0.279023677897152	M6 no smoking cessation
+Atopobiaceae	0.00931275329826679	Smoker baseline
+Comamonadaceae	0	Smoker baseline
+Neisseriaceae	0.0298784168319393	Smoker baseline
+Peptococcaceae	0.00086229197206174	Smoker baseline
+Streptococcaceae	0.123868241786669	Smoker baseline
+Atopobiaceae	0.0136545761282159	M6 smoking cessation
+Comamonadaceae	0.0000527203711514129	M6 smoking cessation
+Neisseriaceae	0.0151307465204555	M6 smoking cessation
+Peptococcaceae	0.000843525938422607	M6 smoking cessation
+Streptococcaceae	0.122100379586672	M6 smoking cessation
+Atopobiaceae	0.0714550624304611	Smoker baseline
+Comamonadaceae	0	Smoker baseline
+Neisseriaceae	0.00445048831746817	Smoker baseline
+Peptococcaceae	0.000123624675485227	Smoker baseline
+Streptococcaceae	0.22186508427082	Smoker baseline
+Atopobiaceae	0.0299553005537394	M6 smoking cessation
+Comamonadaceae	0.0000667155914337181	M6 smoking cessation
+Neisseriaceae	0.00440322903462539	M6 smoking cessation
+Peptococcaceae	0.000133431182867436	M6 smoking cessation
+Streptococcaceae	0.141303622656615	M6 smoking cessation
+Atopobiaceae	0.0110296207857183	Smoker baseline
+Comamonadaceae	0	Smoker baseline
+Neisseriaceae	0.00460515094661436	Smoker baseline
+Peptococcaceae	0	Smoker baseline
+Streptococcaceae	0.270680538973222	Smoker baseline
+Atopobiaceae	0.0124499777678968	M6 no smoking cessation
+Comamonadaceae	0	M6 no smoking cessation
+Neisseriaceae	0.00279489296830337	M6 no smoking cessation
+Peptococcaceae	0	M6 no smoking cessation
+Streptococcaceae	0.409451819856444	M6 no smoking cessation
+Atopobiaceae	0.00977496106128149	Smoker baseline
+Comamonadaceae	0	Smoker baseline
+Neisseriaceae	0.0158440302916376	Smoker baseline
+Peptococcaceae	0.000161125731779365	Smoker baseline
+Streptococcaceae	0.220420001074172	Smoker baseline
+Atopobiaceae	0.00973323720259553	M6 smoking cessation
+Comamonadaceae	0	M6 smoking cessation
+Neisseriaceae	0.0110550348473925	M6 smoking cessation
+Peptococcaceae	0.000480653689017063	M6 smoking cessation
+Streptococcaceae	0.291155972122086	M6 smoking cessation

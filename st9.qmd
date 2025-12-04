@@ -1,0 +1,284 @@
+---
+title: "Association with cessation (ST9)"
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-overflow: wrap
+    code-tools: true
+---
+
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = T, message = F, warning = F, eval = F)
+```
+
+
+```{r libs, eval = T}
+library(dplyr)
+library(ggplot2)
+library(here)
+library(MultiAssayExperiment)
+here::i_am("st9.qmd")
+```
+
+This script is to explore the association of baseline characteristics and smoking cessation success.
+
+# Three outcomes (success, lower compliance, dropout)
+
+## Load data
+
+Raw data are loaded.
+
+```{r getdata, eval = F}
+load("data/data_normalized.Rdata")
+load("src/vars.Rdata")
+
+df <- longFormat(data[,data@colData$interventionId == 'S' & data@colData$visitId=='M0',], 
+                 colDataCols = c('interventionId', 'visitId', 'subjectId', 'compliance', 'smoking_py',
+                                 'dropout_date',
+                                 'cig_curr', 'mpstatrs',
+                                 'etoh_curr', 'etohu_curr',
+                                 'age_at_consent', 'intactcurr')) |> 
+  as.data.frame() |> 
+  dplyr::inner_join(dplyr::select(vars, x, assay), by = c("rowname" = "x",
+                                                          "assay" = "assay")) |> 
+  dplyr::mutate(mpstatrs = gsub("[*]", "", mpstatrs),
+                compliance = ifelse(is.na(dropout_date), compliance, 'dropout'),
+                x = paste0(assay, "_", rowname)) |> 
+  tidyr::pivot_wider(names_from = x,
+                     values_from = value,
+                     id_cols = c(interventionId, visitId, subjectId, compliance, smoking_py, cig_curr, dropout_date, mpstatrs, etoh_curr, age_at_consent, intactcurr))
+
+outcome <- df |> 
+  dplyr::select(subjectId, compliance)
+
+features <- df |> 
+  dplyr::select(-c(compliance, subjectId, interventionId, visitId, dropout_date))
+```
+
+## Compute correlation
+
+```{r}
+pb <- txtProgressBar(min = 0, max = ncol(features), style = 3,
+                     width = 50)
+
+assoc <- lapply(1:ncol(features), function(j){
+  
+  setTxtProgressBar(pb, j)
+  
+  a <- features[,j][!is.na(features[,j])]
+  b <- as.factor(outcome$compliance)[!is.na(features[,j])]
+  
+  tryCatch(if(is.numeric(a)){
+    kruskal.test(b, a)$p.value
+  } else {
+    chisq.test(b, a)$p.value
+  }, error = function(e) {"NA"})
+  
+  
+})
+
+names(assoc) <- colnames(features)
+
+assoc_main <- as.data.frame(t(as.data.frame(assoc))) |> 
+  dplyr::filter(!is.na(V1) & V1 != 'NA')
+```
+
+## Plot
+
+```{r}
+assoc_main |> 
+  ggplot(aes(x = as.numeric(V1))) +
+  geom_histogram()
+```
+
+* Very strange p value distributions
+* Only current cigarettes significant, but nothing survives p value adjustment
+
+
+## Compute correlation: 2 groups
+
+```{r}
+outcome <- outcome |> 
+  dplyr::mutate(compliance = ifelse(compliance == 'dropout', 'lower compliance', compliance))
+
+pb <- txtProgressBar(min = 0, max = ncol(features), style = 3,
+                     width = 50)
+
+assoc <- lapply(1:ncol(features), function(j){
+  
+  setTxtProgressBar(pb, j)
+  
+  a <- features[,j][!is.na(features[,j])]
+  b <- as.factor(outcome$compliance)[!is.na(features[,j])]
+  
+  tryCatch(if(is.numeric(a)){
+    kruskal.test(b, a)$p.value
+  } else {
+    chisq.test(b, a)$p.value
+  }, error = function(e) {"NA"})
+  
+  
+})
+
+names(assoc) <- colnames(features)
+
+assoc_main2 <- as.data.frame(t(as.data.frame(assoc))) |> 
+  tibble::rownames_to_column('x') |> 
+  dplyr::filter(!is.na(V1) & V1 != 'NA')
+```
+
+## Plot
+
+```{r}
+assoc_main2 |> 
+  ggplot(aes(x = as.numeric(V1))) +
+  geom_histogram()
+```
+
+* Still looks weird.
+
+# Association with WID-SMK-proximal epithelial hyperM
+
+```{r}
+load("data/data_baseline_change.Rdata")
+
+outcome2 <- wideFormat(data['WID_SMK_proximal_epithelial_hyperM_corr_z',data@colData$interventionId == 'S' & data@colData$visitId=='M6','Composite methylation scores: buccal'],
+                       colDataCols = 'subjectId') |> 
+  as.data.frame() |> 
+  dplyr::rename(change = Composite.methylation.scores..buccal_WID_SMK_proximal_epithelial_hyperM_corr_z) |> 
+  dplyr::select(subjectId, change)
+
+# prediction of WID_smk change
+ids_complete <- outcome2$subjectId
+df2 <- features[match(ids_complete, df$subjectId),]
+
+pb <- txtProgressBar(min = 0, max = ncol(features), style = 3,
+                      width = 50)
+ 
+assoc <- lapply(1:ncol(df2), function(j){
+   
+   setTxtProgressBar(pb, j)
+   
+   a <- df2[,j][!is.na(df2[,j])]
+   b <- outcome2$change[!is.na(df2[,j])]
+   
+ tryCatch(if(is.numeric(a)){
+     cor.test(b, a, method = 'spearman')$p.value
+   } else {
+     kruskal.test(b, a)$p.value
+   }, error = function(e){"NA"})
+ })
+
+names(assoc) <- colnames(df2)
+ 
+assoc_cor <- as.data.frame(t(as.data.frame(assoc))) |> 
+   dplyr::filter(!is.na(V1) & V1 != 'NA')
+```
+
+```{r}
+assoc_cor |> 
+  ggplot(aes(x = V1)) +
+  geom_histogram()
+```
+
+# Association with WID-SMK epithelial hypoM
+
+```{r}
+outcome2 <- wideFormat(data['WID_SMK_epithelial_hypoM_corr_z',data@colData$interventionId == 'S' & data@colData$visitId=='M6','Composite methylation scores: buccal'],
+                       colDataCols = 'subjectId') |> 
+  as.data.frame() |> 
+  dplyr::rename(change = Composite.methylation.scores..buccal_WID_SMK_epithelial_hypoM_corr_z) |> 
+  dplyr::select(subjectId, change)
+
+# prediction of WID_smk change
+ids_complete <- outcome2$subjectId
+df2 <- features[match(ids_complete, df$subjectId),]
+
+pb <- txtProgressBar(min = 0, max = ncol(features), style = 3,
+                      width = 50)
+ 
+assoc <- lapply(1:ncol(df2), function(j){
+   
+   setTxtProgressBar(pb, j)
+   
+   a <- df2[,j][!is.na(df2[,j])]
+   b <- outcome2$change[!is.na(df2[,j])]
+   
+ tryCatch(if(is.numeric(a)){
+     cor.test(b, a, method = 'spearman')$p.value
+   } else {
+     kruskal.test(b, a)$p.value
+   }, error = function(e){"NA"})
+ })
+
+names(assoc) <- colnames(df2)
+assoc <- assoc[!grepl("ASV", names(assoc))]
+ 
+assoc_cor2 <- as.data.frame(t(as.data.frame(assoc))) |> 
+   dplyr::filter(!is.na(V1) & V1 != 'NA') |> 
+  dplyr::mutate(padj = p.adjust(V1))
+```
+
+```{r}
+assoc_cor2 |> 
+  ggplot(aes(x = V1)) +
+  geom_histogram()
+```
+
+
+# Extended Data Table
+
+```{r}
+assoc_main <- assoc_main |> tibble::rownames_to_column('feature') |> 
+  dplyr::filter(!grepl("ASV", feature)) |> 
+  dplyr::rename(p_Success = V1) |> 
+  dplyr::mutate(padj_Success = p.adjust(p_Success, method = 'bonferroni'))
+
+
+assoc_cor <- assoc_cor |> tibble::rownames_to_column('feature') |> 
+  dplyr::filter(!grepl("ASV", feature)) |> 
+  dplyr::rename(p_prox_epi_hyperM = V1) |> 
+  dplyr::mutate(padj_prox_epi_hyperM = p.adjust(p_prox_epi_hyperM, method = 'bonferroni'))
+
+assoc_cor2 <- assoc_cor2 |> tibble::rownames_to_column('feature') |> 
+  dplyr::filter(!grepl("ASV", feature)) |> 
+  dplyr::rename(p_epi_hypoM = V1) |> 
+  dplyr::mutate(padj_epi_hypoM = p.adjust(p_epi_hypoM, method = 'bonferroni'))
+
+
+assoc <- assoc_main |> 
+  dplyr::full_join(assoc_cor) |> 
+  dplyr::full_join(assoc_cor2)
+
+save(assoc, file = here("out/assoc.Rdata"))
+
+# Rename variables:
+load(here("src/vars.Rdata"))
+vars <- vars |> 
+    dplyr::mutate(label = ifelse(!is.na(`second name`), `second name`, label))
+  
+
+assoc_clean <- assoc |> 
+  dplyr::mutate(feature = ifelse(grepl("smoking_py|cig_curr|mpstatrs|etoh_curr|age_at_consent|intactcurr", feature), paste0("Basic characteristics_", feature), feature)) |> 
+  tidyr::separate(feature, "_", into = c("assay", "x"),
+                  extra = 'merge') |> 
+  dplyr::select(-padj) |> 
+  dplyr::mutate(assay = gsub("[.][.]", ": ", assay),
+                assay = gsub("[.]", " ", assay)) |>
+  dplyr::left_join(dplyr::select(vars, x, assay, assay2, label), by = c('x' = 'x',
+                                        'assay' = 'assay')) |>
+          dplyr::mutate(variable = ifelse(!is.na(label), label, x),
+                        assay = ifelse(!is.na(assay2), assay2, assay)) |>
+          dplyr::select(-any_of(c("x", "label", "assay2"))) |> 
+  dplyr::relocate(assay, variable) |> 
+  dplyr::mutate(variable = case_when(variable == 'smoking_py' ~ 'Smoking pack years (at consent)',
+                                     variable == 'mpstatrs' ~ 'Menopause status (at consent)',
+                                     variable == 'age_at_consent' ~ 'Age (at consent)',
+                                     variable == 'cig_curr' ~ 'Cigarettes/d (at consent)',
+                                     variable == 'etoh_curr' ~ 'Alcohol use (y/n, at consent)',
+                                     variable == 'intactcurr' ~ 'Intense activity/week (at consent)',
+                                     TRUE ~ variable))
+
+writexl::write_xlsx(assoc_clean, path = here("out/Supplementary-Table-9.xlsx"))
+```

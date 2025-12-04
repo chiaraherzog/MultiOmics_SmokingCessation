@@ -1,0 +1,73 @@
+group	selbalScore_salivaSmok
+Never smoker (control)	-1.32936492120954
+Never smoker (control)	-0.779158323185565
+Never smoker (control)	-0.537973770044811
+Never smoker (control)	-0.865020915706717
+Never smoker (control)	-1.46861733000291
+Never smoker (control)	0.0637951034536484
+Never smoker (control)	-1.03443612129794
+Never smoker (control)	-0.675781090036257
+Never smoker (control)	-1.21686354184616
+Never smoker (control)	-1.02583129540771
+Never smoker (control)	-1.29336208170713
+Never smoker (control)	-0.406717305933448
+Never smoker (control)	-1.54791715065562
+Never smoker (control)	-0.941110310101886
+Never smoker (control)	-0.783204363831731
+Never smoker (control)	0.133992883012371
+Never smoker (control)	-0.141204775896143
+Never smoker (control)	-1.11661275374703
+Never smoker (control)	-0.836957984830071
+Never smoker (control)	-0.461484257359586
+Never smoker (control)	-0.398675338582929
+Never smoker (control)	-0.937824141126593
+Never smoker (control)	-1.41030736595655
+Never smoker (control)	-0.689864321686362
+Smoker baseline	0.95463360549711
+M6 no smoking cessation	0.620213303425976
+Smoker baseline	0.155903253148472
+M6 smoking cessation	-1.52063488302437
+Smoker baseline	-1.22076353407524
+M6 smoking cessation	-1.04628062841072
+Smoker baseline	-0.50099431815297
+M6 smoking cessation	-0.629990273863112
+Smoker baseline	1.47954540924286
+M6 smoking cessation	0.808056290787779
+Smoker baseline	0.775149629955115
+M6 no smoking cessation	-0.878746712794457
+Smoker baseline	0.362472628765366
+M6 smoking cessation	0.47284331772458
+Smoker baseline	0.858578244179945
+M6 smoking cessation	-0.696351859233168
+Smoker baseline	2.04431317925527
+M6 no smoking cessation	-0.595180586363695
+Smoker baseline	0.167034995316779
+M6 no smoking cessation	0.197190788945271
+Smoker baseline	0.636749292515115
+M6 smoking cessation	-1.27086641464882
+Smoker baseline	-0.165767270741357
+M6 no smoking cessation	-0.583110852285261
+Smoker baseline	0.445144420389352
+M6 no smoking cessation	1.36175764700158
+Smoker baseline	1.0606246836432
+M6 smoking cessation	-0.0945111112723717
+Smoker baseline	1.14390330643736
+M6 no smoking cessation	-0.278969947874031
+Smoker baseline	-0.516905629470668
+M6 no smoking cessation	0.23506060241997
+Smoker baseline	2.17473153152091
+M6 smoking cessation	0.273711150694858
+Smoker baseline	0.389412975862227
+M6 smoking cessation	-0.705467603209706
+Smoker baseline	1.00493656588231
+M6 smoking cessation	-1.31963709956446
+Smoker baseline	0.0679774839408472
+M6 no smoking cessation	0.574492788416952
+Smoker baseline	-0.307934791603535
+M6 smoking cessation	-0.00552225322001411
+Smoker baseline	1.15650178377827
+M6 smoking cessation	0.499844593170629
+Smoker baseline	0.0763627454275365
+M6 no smoking cessation	1.12137907533713
+Smoker baseline	-0.311774035427149
+M6 smoking cessation	-0.26139940966894

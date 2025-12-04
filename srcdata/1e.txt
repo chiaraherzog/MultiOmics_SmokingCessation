@@ -1,0 +1,13 @@
+assay	n
+<b>Body composition</b>	4
+<b>Composite methylation scores</b>: blood	6
+<b>Composite methylation scores</b>: buccal	7
+<b>Composite methylation scores</b>: cervical	5
+<b>Flow cytometry</b>: immune cells	48
+<b>Functional clinical features</b>	30
+<b>Routine bloods</b>	9
+<b>Saliva microbiome</b>: ASVs.clr	302
+<b>Saliva microbiome</b>: families	10
+<b>Stool microbiome</b>: ASVs.clr	252
+<b>Stool microbiome</b>: families	9
+<b>Urine metabolome</b>	2

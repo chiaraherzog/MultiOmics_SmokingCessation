@@ -1,0 +1,553 @@
+sampletype	rowname	value	visitId	id
+blood
+sample	hepidish_Neutro	0	M0	1
+blood
+sample	hepidish_Neutro	-0.114607280634824	M2	1
+blood
+sample	hepidish_Neutro	-0.0930681189614129	M4	1
+blood
+sample	hepidish_Neutro	-0.136247737841299	M6	1
+blood
+sample	hepidish_Neutro	0.0073208835991192	M4	2
+blood
+sample	hepidish_Neutro	-0.0300642554919843	M2	2
+blood
+sample	hepidish_Neutro	0	M0	2
+blood
+sample	hepidish_Neutro	0.0305078771474887	M6	2
+blood
+sample	hepidish_Neutro	-0.0505509468128325	M6	3
+blood
+sample	hepidish_Neutro	0.0418564883561361	M4	3
+blood
+sample	hepidish_Neutro	-0.0588857417723793	M2	3
+blood
+sample	hepidish_Neutro	0	M0	3
+blood
+sample	hepidish_Neutro	0.0436239125058996	M6	4
+blood
+sample	hepidish_Neutro	0	M0	4
+blood
+sample	hepidish_Neutro	0.0644099294311937	M2	4
+blood
+sample	hepidish_Neutro	0.130329974028049	M4	4
+blood
+sample	hepidish_Neutro	-0.143178898099667	M6	5
+blood
+sample	hepidish_Neutro	0	M0	5
+blood
+sample	hepidish_Neutro	-0.166032757539237	M4	5
+blood
+sample	hepidish_Neutro	-0.166843833881105	M2	5
+blood
+sample	hepidish_Neutro	-0.0306848204860345	M4	6
+blood
+sample	hepidish_Neutro	0	M0	6
+blood
+sample	hepidish_Neutro	-0.0198315610416646	M6	6
+blood
+sample	hepidish_Neutro	0.0689235947287654	M2	6
+blood
+sample	hepidish_Neutro	-0.0923182261915939	M4	7
+blood
+sample	hepidish_Neutro	0.102636900276973	M6	7
+blood
+sample	hepidish_Neutro	0.0355412202667672	M2	7
+blood
+sample	hepidish_Neutro	0	M0	7
+blood
+sample	hepidish_Neutro	0.0858639676572306	M2	8
+blood
+sample	hepidish_Neutro	0	M0	8
+blood
+sample	hepidish_Neutro	0.0856738541788463	M4	8
+blood
+sample	hepidish_Neutro	0.0939657962627348	M6	8
+blood
+sample	hepidish_Neutro	0	M0	9
+blood
+sample	hepidish_Neutro	0.0314405674651848	M4	9
+blood
+sample	hepidish_Neutro	-0.0710856327503533	M2	9
+blood
+sample	hepidish_Neutro	-0.0221717790673884	M6	9
+blood
+sample	hepidish_Neutro	0	M0	10
+blood
+sample	hepidish_Neutro	-0.0322813245356417	M4	10
+blood
+sample	hepidish_Neutro	-0.000707642997520241	M2	10
+blood
+sample	hepidish_Neutro	0.0186803923525224	M6	10
+blood
+sample	hepidish_Neutro	0.0762342024572515	M2	11
+blood
+sample	hepidish_Neutro	0	M0	11
+blood
+sample	hepidish_Neutro	-0.0506077929238566	M6	11
+blood
+sample	hepidish_Neutro	-0.164294614364133	M4	11
+blood
+sample	hepidish_Neutro	-0.145907158954528	M4	13
+blood
+sample	hepidish_Neutro	-0.189162194838662	M2	13
+blood
+sample	hepidish_Neutro	0	M0	13
+blood
+sample	hepidish_Neutro	-0.199348913491904	M6	13
+blood
+sample	hepidish_Neutro	0	M0	14
+blood
+sample	hepidish_Neutro	0.0480571492053289	M4	14
+blood
+sample	hepidish_Neutro	0.0620419193334739	M2	14
+blood
+sample	hepidish_Neutro	0.0137916277968714	M6	14
+blood
+sample	hepidish_Neutro	0.0138684278161744	M2	15
+blood
+sample	hepidish_Neutro	0.150956652899905	M6	15
+blood
+sample	hepidish_Neutro	-0.0780878612293631	M4	15
+blood
+sample	hepidish_Neutro	0	M0	15
+blood
+sample	hepidish_Neutro	0.167852729972555	M4	16
+blood
+sample	hepidish_Neutro	-0.0492779464116203	M6	16
+blood
+sample	hepidish_Neutro	0.020741908075232	M2	16
+blood
+sample	hepidish_Neutro	0	M0	16
+blood
+sample	hepidish_Neutro	0	M0	17
+blood
+sample	hepidish_Neutro	-0.0453186550324212	M6	17
+blood
+sample	hepidish_Neutro	-0.0173251414145692	M4	17
+blood
+sample	hepidish_Neutro	-0.00952654398059832	M2	17
+blood
+sample	hepidish_Neutro	0	M0	18
+blood
+sample	hepidish_Neutro	0.0893194171139362	M2	18
+blood
+sample	hepidish_Neutro	0.015391078824083	M6	18
+blood
+sample	hepidish_Neutro	0.00455429730414714	M4	18
+blood
+sample	hepidish_Neutro	0	M0	19
+blood
+sample	hepidish_Neutro	-0.03000385756402	M6	19
+blood
+sample	hepidish_Neutro	-0.00256461883252534	M4	19
+blood
+sample	hepidish_Neutro	0.0184353855754945	M2	19
+blood
+sample	hepidish_Neutro	0	M0	20
+blood
+sample	hepidish_Neutro	-0.0292210822994809	M4	20
+blood
+sample	hepidish_Neutro	-0.0780046595199099	M2	20
+blood
+sample	hepidish_Neutro	0.029599134925779	M6	20
+blood
+sample	hepidish_Neutro	-0.00248054543786524	M4	21
+blood
+sample	hepidish_Neutro	0.0602824647095883	M2	21
+blood
+sample	hepidish_Neutro	0	M0	21
+blood
+sample	hepidish_Neutro	-0.0330070852617561	M6	21
+blood
+sample	hepidish_Neutro	0	M0	22
+blood
+sample	hepidish_Neutro	0.0994846554584299	M2	22
+blood
+sample	hepidish_Neutro	0.0600127695958026	M4	22
+blood
+sample	hepidish_Neutro	-0.00250427331242653	M6	22
+blood
+sample	hepidish_Neutro	0.0349441822193332	M2	23
+blood
+sample	hepidish_Neutro	-0.0474244307222901	M6	23
+blood
+sample	hepidish_Neutro	0.0279203233148618	M4	23
+blood
+sample	hepidish_Neutro	0	M0	23
+blood
+sample	hepidish_Neutro	0.077363592092949	M6	24
+blood
+sample	hepidish_Neutro	0	M0	24
+blood
+sample	hepidish_Neutro	0.028708908438386	M4	24
+blood
+sample	hepidish_Neutro	0.093560036702502	M2	24
+buccal
+sample	ic	0	M0	1
+buccal
+sample	ic	-0.0460724112714521	M6	1
+buccal
+sample	ic	-0.0919797368094233	M4	1
+buccal
+sample	ic	-0.0655827880129003	M2	1
+buccal
+sample	ic	-0.0419811103202194	M6	2
+buccal
+sample	ic	0.159551671367604	M4	2
+buccal
+sample	ic	0	M0	2
+buccal
+sample	ic	-0.0117293327216308	M2	2
+buccal
+sample	ic	-0.27843203080186	M2	3
+buccal
+sample	ic	0	M0	3
+buccal
+sample	ic	-0.127967529540895	M4	3
+buccal
+sample	ic	-0.262562790862698	M6	3
+buccal
+sample	ic	0.147825840229283	M2	4
+buccal
+sample	ic	0.201357858963326	M6	4
+buccal
+sample	ic	0	M0	4
+buccal
+sample	ic	0.100701186387412	M4	4
+buccal
+sample	ic	0.0955264953978384	M2	6
+buccal
+sample	ic	0	M0	6
+buccal
+sample	ic	-0.0359786160075846	M6	6
+buccal
+sample	ic	-0.0289023751349209	M4	6
+buccal
+sample	ic	-0.0820866750058854	M2	7
+buccal
+sample	ic	-0.214662520903753	M6	7
+buccal
+sample	ic	0.0123486521329444	M4	7
+buccal
+sample	ic	0	M0	7
+buccal
+sample	ic	-0.0643331961724594	M2	8
+buccal
+sample	ic	-0.00015776164679987	M4	8
+buccal
+sample	ic	-0.0146805539579762	M6	8
+buccal
+sample	ic	0	M0	8
+buccal
+sample	ic	0.201149642552266	M4	9
+buccal
+sample	ic	0	M0	9
+buccal
+sample	ic	0.207899193773551	M6	9
+buccal
+sample	ic	0.10703725327903	M2	9
+buccal
+sample	ic	-0.0451772885418458	M2	10
+buccal
+sample	ic	-0.0397768822803072	M4	10
+buccal
+sample	ic	0.0493283604165996	M6	10
+buccal
+sample	ic	0	M0	10
+buccal
+sample	ic	0.225472457383905	M4	11
+buccal
+sample	ic	0.182546217691709	M2	11
+buccal
+sample	ic	0.146820730208556	M6	11
+buccal
+sample	ic	0	M0	11
+buccal
+sample	ic	0.113913097280955	M6	12
+buccal
+sample	ic	0.150806295719126	M4	12
+buccal
+sample	ic	0.140709431256018	M2	12
+buccal
+sample	ic	0	M0	12
+buccal
+sample	ic	0	M0	13
+buccal
+sample	ic	-0.138164118410191	M2	13
+buccal
+sample	ic	-0.0184073112910608	M4	13
+buccal
+sample	ic	0.0207943382155533	M6	13
+buccal
+sample	ic	0.0859736307276683	M6	14
+buccal
+sample	ic	-0.210014796134106	M2	14
+buccal
+sample	ic	0.096396535963783	M4	14
+buccal
+sample	ic	0	M0	14
+buccal
+sample	ic	0.000655589319566864	M4	15
+buccal
+sample	ic	0	M0	15
+buccal
+sample	ic	-0.000644301623353304	M6	15
+buccal
+sample	ic	-0.00818263793618137	M2	15
+buccal
+sample	ic	-0.061534025226268	M4	16
+buccal
+sample	ic	-0.0139635781451603	M6	16
+buccal
+sample	ic	0	M0	16
+buccal
+sample	ic	-0.086819856833877	M2	16
+buccal
+sample	ic	0	M0	17
+buccal
+sample	ic	0.251294762441914	M6	17
+buccal
+sample	ic	0.340240448611786	M2	17
+buccal
+sample	ic	0.439842442380661	M4	17
+buccal
+sample	ic	0.00680621543000308	M2	18
+buccal
+sample	ic	0	M0	18
+buccal
+sample	ic	-0.0716888185250193	M6	18
+buccal
+sample	ic	0.0622477793795976	M4	18
+buccal
+sample	ic	0.138964671700058	M4	19
+buccal
+sample	ic	0.164877027401718	M6	19
+buccal
+sample	ic	0	M0	19
+buccal
+sample	ic	-0.0316816950004038	M2	19
+buccal
+sample	ic	0.0930459309507369	M6	20
+buccal
+sample	ic	0.199988173812401	M2	20
+buccal
+sample	ic	0	M0	20
+buccal
+sample	ic	0.117996894237522	M4	20
+buccal
+sample	ic	0.148013248647049	M4	21
+buccal
+sample	ic	0	M0	21
+buccal
+sample	ic	-0.0840061898904738	M2	21
+buccal
+sample	ic	-0.196470151326781	M6	21
+buccal
+sample	ic	0	M0	22
+buccal
+sample	ic	-0.320196821826093	M6	22
+buccal
+sample	ic	0.183886442510332	M4	22
+buccal
+sample	ic	-0.225707635440816	M2	22
+buccal
+sample	ic	0	M0	23
+buccal
+sample	ic	0.067659188889639	M4	23
+buccal
+sample	ic	-0.0449565204395842	M2	23
+buccal
+sample	ic	0.175149534089397	M6	23
+buccal
+sample	ic	0	M0	24
+buccal
+sample	ic	0.0892410925651987	M2	24
+buccal
+sample	ic	-0.14959562737059	M6	24
+buccal
+sample	ic	-0.118087903603751	M4	24
+cervical
+sample	ic	-0.278622219293316	M4	1
+cervical
+sample	ic	-0.21288053398915	M2	1
+cervical
+sample	ic	0	M0	1
+cervical
+sample	ic	-0.58682026589446	M6	1
+cervical
+sample	ic	0	M0	2
+cervical
+sample	ic	-0.105687883311384	M4	2
+cervical
+sample	ic	-0.102096527536081	M6	2
+cervical
+sample	ic	-0.0376288648248992	M2	2
+cervical
+sample	ic	-0.216818880842648	M2	3
+cervical
+sample	ic	0.226297363041185	M4	3
+cervical
+sample	ic	0	M0	3
+cervical
+sample	ic	-0.149665428568101	M6	3
+cervical
+sample	ic	0.271342610315577	M4	4
+cervical
+sample	ic	0.0301905505837328	M6	4
+cervical
+sample	ic	0	M0	4
+cervical
+sample	ic	0.611004203167661	M2	4
+cervical
+sample	ic	0.195544724053536	M6	5
+cervical
+sample	ic	0.272630160201113	M4	5
+cervical
+sample	ic	0	M0	5
+cervical
+sample	ic	0.0644006415449604	M2	5
+cervical
+sample	ic	0.0073732814430667	M2	6
+cervical
+sample	ic	0	M0	6
+cervical
+sample	ic	0	M6	6
+cervical
+sample	ic	0.0554246228485396	M4	6
+cervical
+sample	ic	-0.294631102721518	M4	7
+cervical
+sample	ic	-0.0686515278512054	M2	7
+cervical
+sample	ic	0	M0	7
+cervical
+sample	ic	-0.176759879385843	M6	7
+cervical
+sample	ic	0	M0	8
+cervical
+sample	ic	-0.311886223039287	M4	8
+cervical
+sample	ic	0.198420395350571	M2	8
+cervical
+sample	ic	0.239964768447855	M6	8
+cervical
+sample	ic	-0.102540815206336	M6	9
+cervical
+sample	ic	0	M0	9
+cervical
+sample	ic	-0.134511590215619	M2	9
+cervical
+sample	ic	0.0779066385797451	M4	9
+cervical
+sample	ic	0.158730740507184	M4	10
+cervical
+sample	ic	0.150504721779278	M2	10
+cervical
+sample	ic	0	M0	10
+cervical
+sample	ic	0.318546333748119	M6	10
+cervical
+sample	ic	0.872264322864916	M2	11
+cervical
+sample	ic	0.0598808502370069	M6	11
+cervical
+sample	ic	0	M0	11
+cervical
+sample	ic	0.0569762114270743	M4	11
+cervical
+sample	ic	-0.0840476016974793	M6	12
+cervical
+sample	ic	0.0286185487413638	M4	12
+cervical
+sample	ic	0.0377028233029133	M2	12
+cervical
+sample	ic	0	M0	12
+cervical
+sample	ic	-0.30685074783539	M4	13
+cervical
+sample	ic	-0.146258867869161	M2	13
+cervical
+sample	ic	0	M0	13
+cervical
+sample	ic	-0.495674143833227	M6	13
+cervical
+sample	ic	-0.0648443723893289	M4	14
+cervical
+sample	ic	-0.300449116178465	M2	14
+cervical
+sample	ic	-0.12917526547907	M6	14
+cervical
+sample	ic	0	M0	14
+cervical
+sample	ic	-0.104476143628793	M4	16
+cervical
+sample	ic	0	M0	16
+cervical
+sample	ic	-0.224831977984239	M2	16
+cervical
+sample	ic	-0.194945154134744	M6	16
+cervical
+sample	ic	0.0485035428935025	M6	17
+cervical
+sample	ic	0	M0	17
+cervical
+sample	ic	0.00100427568832623	M4	17
+cervical
+sample	ic	-0.186017565968128	M2	17
+cervical
+sample	ic	-0.0653864514983524	M2	18
+cervical
+sample	ic	0	M0	18
+cervical
+sample	ic	-0.204354130703087	M4	18
+cervical
+sample	ic	-0.136338669851412	M6	18
+cervical
+sample	ic	-0.0572167229347759	M2	19
+cervical
+sample	ic	0.0565922758479999	M6	19
+cervical
+sample	ic	0	M0	19
+cervical
+sample	ic	0.0629344145363432	M4	19
+cervical
+sample	ic	0	M0	20
+cervical
+sample	ic	-0.227557390152171	M6	20
+cervical
+sample	ic	-0.0886202976430909	M2	20
+cervical
+sample	ic	-0.195811877124149	M4	20
+cervical
+sample	ic	-0.0700309359664338	M2	21
+cervical
+sample	ic	-0.148503397939606	M6	21
+cervical
+sample	ic	-0.147919218002097	M4	21
+cervical
+sample	ic	0	M0	21
+cervical
+sample	ic	0	M0	22
+cervical
+sample	ic	-0.0774408306999985	M6	22
+cervical
+sample	ic	-0.41529356258445	M2	22
+cervical
+sample	ic	-0.0123505912866159	M4	22
+cervical
+sample	ic	-0.660457694173058	M2	23
+cervical
+sample	ic	-0.281300184709419	M6	23
+cervical
+sample	ic	0	M0	23
+cervical
+sample	ic	-0.125765715654066	M4	23
+cervical
+sample	ic	0.00814026023096531	M6	24
+cervical
+sample	ic	0.143475125213829	M2	24
+cervical
+sample	ic	0.0728423158209026	M4	24
+cervical
+sample	ic	0	M0	24

@@ -1,0 +1,2 @@
+x	estimate_visitIdM2	estimate_visitIdM4	estimate_visitIdM6	p.value_visitIdM2	p.value_visitIdM4	p.value_visitIdM6	corr_age	p_age	corr_spy	p_spy
+Bacteroidota;Tannerellaceae	-0.187483748723909	-0.370026258044381	-0.542870153107308	 	*	**	0.258128002349116	0.0988447158821009	-0.0649062007897798	0.682996899687812

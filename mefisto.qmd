@@ -25,6 +25,26 @@ suppressWarnings(suppressMessages({
 }))
 
 source("src/mefisto_plots.R")
+
+# This does not seem to work
+# if (!requireNamespace("basilisk", quietly = TRUE)) {
+#   BiocManager::install("basilisk")
+# }
+
+# # In Anaconda prompt
+# conda create -n mofa_win python=3.9 -y
+# conda activate mofa_win
+# pip install mofapy2==0.7.0
+# pip install h5py numpy scipy
+
+# # Still does not run without errors
+# # Downgrade SciPy in MOFA environment
+# conda activate mofa_win
+# pip install "scipy<1.11"
+
+reticulate::use_condaenv("mofa_win", required = TRUE)
+reticulate::py_config()
+
 ```
 
 ```{r here}
@@ -32,386 +52,194 @@ here::i_am("mefisto.qmd")
 ```
 
 ```{r dirs}
-# dir.create("out/mefisto/")
-outDir <- here("out/mefisto")
+dir.create("out/mefisto_revised/")
+outDir <- here("out/mefisto_revised")
 ```
 
 This script prepares data for MEFISTO (MOFA2+) analysis.
 
-# Load MultiAssayExperiment
+# Data prep
 
-```{r getat, eval = F}
+Load MultiAssayExperiment
+
+```{r getdat, eval = F}
 # load in data
-load(here("data/data_normalized.Rdata"))
+load(here('data/data_normalized_centred.Rdata'))
+```
+
+We filter variables:
+
+```{r}
+load("src/vars.Rdata")
+vars <- vars |> 
+  dplyr::filter(!assay %in% c("Body composition",
+                              "Flow cytometry: stimulated T cells",
+                              "Flow cytometry: unstimulated T cells",
+                              "Functional sports exam",
+                              "Immune age: general",
+                              "Saliva microbiome: ASVs",
+                              "Saliva microbiome: ASVs_clr",
+                              "Stool microbiome: ASVs",
+                              "Stool microbiome: ASVs_clr",
+                              "Skin histology and transepidermal water loss assay",
+                              "Saliva microbiome: families_clr",
+                              "Stool microbiome: families_clr",
+                              "Vascular and body sonography",
+                              "Cotinine LC/MS Quantitation",
+                              "ImmuneSMK" # correlate this later
+                              ))
+
+varsList <- vars |> dplyr::group_by(assay) |> 
+  dplyr::summarise(features = list(x), .groups = 'drop') |> 
+  tibble::deframe()
+
+data <- subsetByAssay(data, varsList)
 ```
 
 We clean zero variance features.
 
 ```{r clean.zerovar}
-for (i in 1:length(experiments(data))){
-  experiments(data)[[i]] <- experiments(data)[[i]][apply(assay(data[[i]]), 1, function(x) var(x,na.rm = T) != 0), ]
+
+for (i in seq_along(experiments(data))) {
+  mat <- experiments(data)[[i]]
+  keep <- apply(mat, 1, function(x) var(x, na.rm = TRUE) != 0)
+  mat <- mat[keep, , drop = FALSE]
+  experiments(data)[[i]] <- SummarizedExperiment(list(counts = mat))
 }
+
 ```
 
 List all experiments:
 
-```{r, eval = F}
+```{r}
 experiments(data)
 ```
 
-We set up list of features to be included: (separate by interventionId)
+Generate the mae: 
 
 ```{r, eval = F}
-exp <- list("A" = 'Blood haemogram',
-            'B' = 'Flow cytometry: T cell staining',
-            'C' = 'Flow cytometry: white blood cell staining',
-            'D' = 'Urine nuclear magnetic resonance: normalized',
-            'E' = 'Saliva nuclear magnetic resonance: normalized',
-            'F' = 'Composite methylation scores: blood',
-            'G' = 'Composite methylation scores: buccal',
-            'H' = 'Composite methylation scores: cervical',
-            'I' = 'Stool microbiome: families',
-            'J' = 'Saliva microbiome: families')
+mae <- data
+mae <- mae[ , colData(mae)$visitId %in% c("M0", "M2", "M4", "M6") & colData(mae)$interventionId == 'S' ]
+mae$group <- mae$interventionId
+```
 
-df <- as.data.frame(longFormat(data[,,as.character(exp)],
-                              colData = c('subjectId', 'visitId', 'interventionId', 'compliance'))) |> 
-  dplyr::filter(interventionId == 'S' & !visitId %in% c('M12', 'M18')) |> 
-  dplyr::rename(sample = primary,
-                feature = rowname,
-                view = assay) |> 
-  dplyr::mutate(group = interventionId) |> 
-  dplyr::select(sample, feature, view, group, value, subjectId, visitId, compliance, interventionId) |>
-  dplyr::mutate(time = as.numeric(gsub("M", "", visitId))) |> 
-  dplyr::filter(!is.na(value))
+# Mefisto pipeline - training and parameter selection.
 
-# Filtering: ----------
-# For methylation, keep only those that are relevant indices
-indices_cerv <- readxl::read_xlsx(here("src/indices.xlsx"), sheet = 1)
-indices_buccal <- readxl::read_xlsx(here("src/indices.xlsx"), sheet = 2)
-indices_bl <- readxl::read_xlsx(here("src/indices.xlsx"), sheet = 3)
-
-df <- df |> 
-  dplyr::filter(!grepl("Composite", view) | (grepl("Composite", view) & grepl('cervical', view) & feature %in% indices_cerv$x) |
-                  (grepl("Composite", view) & grepl('buccal', view) & feature %in% indices_buccal$x) |
-                  (grepl("Composite", view) & grepl('blood', view) & feature %in% indices_bl$x))
-
-# For immune cells, keep only 'main' populations
-load(here("src/populations_names_annotated.Rdata"))
-populations <- populations |> 
-  dplyr::filter(staining != 't cell stimulation' & main_analysis == 'yes')
-
-df <- df |> 
-  dplyr::filter(!grepl("Flow cytometry", view) | (grepl("Flow cytometry", view) & feature %in% populations$name))
-
-df_dat <- df 
-
-# check whether any dataset has features with more than 48 characters
-check <- df_dat[nchar(df_dat$feature) > 48, ] %>% select(view) %>% distinct() 
-
-# Need new feature names for Flow cytometry: T cell staining
-map_tcs <- df_dat %>% 
-  filter(view == "Flow cytometry: T cell staining") %>%
-  select(feature) %>%
-  distinct()
-
-map_tcs <- map_tcs %>%
-  mutate(featureId_mefisto = paste0("tcs_feat_",seq(1:nrow(map_tcs))))
-
-# Need new feature names for Flow cytometry: white blood cell staining
-map_wb <- df_dat %>% 
-  filter(view == "Flow cytometry: white blood cell staining") %>%
-  select(feature) %>%
-  distinct()
-
-map_wb <- map_wb %>%
-  mutate(featureId_mefisto = paste0("wb_feat_",seq(1:nrow(map_wb))))
-
-saveRDS(map_tcs, "out/mefisto/renamed_tcs_features_indiv.Rds")
-saveRDS(map_wb, "out/mefisto/renamed_wb_features_indiv.Rds")
-
-df_dat <- full_join(df_dat, rbind(map_tcs,map_wb)) |> 
-  mutate(feature = case_when(
-    !is.na(featureId_mefisto) ~ featureId_mefisto, TRUE ~ feature
-  )) %>%
-  select(-featureId_mefisto)
-
-# check again length
-check <- df_dat[nchar(df_dat$feature) > 48, ] %>% select(view) %>% distinct() # all good
-
-# add suffix to avoid possible duplicate feature names across views
-relab <- data.frame(
-  view = unname(unlist(exp)),
-  label = names(unlist(exp))
+```{r}
+## 1.  Create the MOFA object
+mofa <- create_mofa_from_MultiAssayExperiment(
+  mae,
+  group = mae$group
 )
 
-df_dat <- full_join(df_dat,relab) |> 
-  mutate(feature = paste0(df_dat$feature,"_",label)) |> 
-  select(-label)
+c <- as.data.frame(colData(mae))
 
-# check again length
-check <- df_dat[nchar(df_dat$feature) > 50, ] |>  select(view) |> distinct() # all good
+### Fix labels
+x <- samples_metadata(mofa)
+# identical(x$sample, rownames(c))
+x$t <- c$time
+samples_metadata(mofa) <- x
 
-# add clinical features instead? This file was not needed for training and can be added later
-df_cov <- df |>
-  dplyr::select(sample, visitId, compliance, subjectId, interventionId) |>
-  dplyr::mutate(visitId = as.numeric(gsub("M", "", visitId))) |>
-  tidyr::pivot_longer(cols = visitId,
-                      names_to = 'covariate',
-                      values_to = 'value')
+mofa <- set_covariates(mofa, covariates = c("t")) # day as covariate
+# mofa
+# get_covariates(mofa, 1)
+rm(x)
 
-write.table(df_dat, file="out/mefisto/mefisto_input_all.txt",
-            sep="\t", quote=F, row.names = F)
-```
-
-High compliance only:
-
-```{r, eval=F}
-tmp <- as.data.frame(colData(data)) |> 
-  dplyr::filter(interventionId == 'S' & compliance == 'higher compliance') |> 
-  dplyr::pull(subjectId) |> 
-  unique()
-
-df_dat <- df_dat |> 
-  dplyr::filter(subjectId %in% tmp)
-
-write.table(df_dat, file="out/mefisto/mefisto_input_high.txt",
-            sep="\t", quote=F, row.names = F)
-```
+## Preview
+gg_input <- plot_data_overview(mofa,
+                               show_covariate = TRUE,
+                               show_dimensions = TRUE,
+                               covariate = "t")
+gg_input
 
 
-# Create MEFISTO object and train:
+# 3. Options: we will test a few - as we did for MOFA at baseline :)
+###  Modalities -> all continuous, hence gaussian approximation is good for all.
+### Scaling -> data and views already scaled, so not needed.
+data_opts   = get_default_data_options(mofa)
 
-* train-mefisto*.py: using time as a covariate (continuous)
-
-
-```{r create.mofa, eval = F}
-
-# some issues with R ...
-mofa <- create_mofa(df_dat)
-plot_data_overview(mofa)
-
-cov <- set_covariates(mofa, df_cov)
-```
-
-
-```{r optsmefisto, eval = F}
-data_opts <- get_default_data_options(mofa)
-
-model_opts <- get_default_model_options(mofa)
-model_opts$num_factors <- 10
+mefisto_opts <- get_default_mefisto_options(mofa)
+mefisto_opts$model_groups <- FALSE
+mefisto_opts$warping      <- FALSE
 
 train_opts <- get_default_training_options(mofa)
 train_opts$maxiter <- 200
 
-mefisto_opts <- get_default_mefisto_options(mofa)
+model_opts <- get_default_model_options(mofa)
+model_opts$num_factors # default = 15
 
-mofa <- prepare_mofa(cov, model_options = model_opts,
-                   mefisto_options = mefisto_opts,
-                   training_options = train_opts,
-                   data_options = data_opts)
+model_opts_n10 <- model_opts
+model_opts_n10$num_factors <- 10
 
-mofa2 <- run_mofa(mofa)
+## 3.  Attach options → prepare_mofa()
+mofa_n15 <- prepare_mofa(mofa,
+                         data_options   = data_opts,
+                         model_options  = model_opts,
+                         training_options = train_opts,
+                         mefisto_options  = mefisto_opts)
 
-```
+mofa_n10 <- prepare_mofa(mofa,
+                         data_options   = data_opts,
+                         model_options  = model_opts_n10,
+                         training_options = train_opts,
+                         mefisto_options  = mefisto_opts)
 
+## 4.  Fit the models → run_mofa()
+# # This doesnt work
+# fast_n10 <- run_mofa(
+#   mofa_n10,
+#   outfile = here('out/mefisto2', "fast_n10.hdf5"),
+#   use_basilisk = T
+# )
 
-# Analysis
+fast_n10 <- run_mofa(
+  mofa_n10,
+  outfile = here('out/mefisto_revised', "fast_n10.hdf5")
+)
 
-## all IF individuals grouped
+fast_n15 <- run_mofa(
+  mofa_n15,
+  outfile = here('out/mefisto_revised', "fast_n15.hdf5")
+)
 
-```{r}
+# Diagnostics: let's compare ELBO values.
+model.list <- list(fast_n10, fast_n15)
+elbo <- compare_elbo(model.list)
+elbo$data ## 15 factors best :)
 
-# Reload the model
-model <- load_model("out/mefisto/mefisto_time_all.hdf5")
-
-# reload the omes
-df_dat <- read.table(file="out/mefisto/mefisto_input_all.txt",sep="\t",header=T)
-
-features <- c("subjectId", "visitId", "compliance", "compliance_smkgroup", "mpstatrs", "age_at_consent", "bmi_at_consent", "etohu_curr", "preg_ever", "ocp_curr")
-
-metadat <- colData(data) %>% 
-  as.data.frame %>% 
-  dplyr::select(c("interventionId",features)) %>%
-  filter(!visitId %in% c("M12","M18")) %>%
-  rownames_to_column(var="sample") %>%
-  distinct()
-
-metadat <- left_join(df_dat[,1, drop = FALSE],
-                     metadat, by = "sample") %>% distinct()
-metadat$group <- metadat$interventionId
-
-samples_metadata(model) <- metadat
-
-print(model)
-
-# extract data on variance explained by each factor
-df1 <- plot_variance_explained(model,
-                        x = 'factor',
+plot_variance_explained(fast_n10, x = 'factor',
                         y = 'view')
-df1 <- as.data.frame(df1$data)
-
-# simplify view names
-df1$view <- gsub(": normalized","",df1$view)
-
-# extract factor values
-df2 <- plot_factors_vs_cov(model, color_by = "visitId", legend = FALSE, return_data = TRUE)
-
-```
-
-* variance explained by each factor:
-
-```{r}
-p <- plot_variance_explained(model,
-                         x = 'factor',
-                         y = 'view')
-p
-
-```
-
-* PCA-like plot
-* Factor 1 and 2 strongly correlated
-
-```{r}
-
-p <- mefisto_biplot_F12(df1,df2,"factor")
-p
-
-# p <- mefisto_biplot_F12(df1,df2,"continuous","months")
-# p
-
-```
-
-```{r}
-
-p <- mefisto_biplot_F13(df1,df2,"factor")
-p
-
-
-```
-
-* factor variance and significance association with selected covariates:
-
-```{r}
-
-feat <- features
-labs = c('subjectId', 'visitId', 'compliance', 'smoking group',
-           'menopausal status', 'age (at consent)', 'BMI (at consent)', 
-           'current alcohol units/wk', 'pregnancy (ever)', 
-           'current OCP use')
-  
-
-p <- mefisto_factor_covcor(df1,df2,feat,labs)
-p
-
-```
-
-* no significant association with time?
-
-```{r}
-
-p <- mefisto_factor_box(df2, metadat, "Factor3")
-p
-
-```
-
-* top 30 features factor 3:
-
-```{r}
-
-w_f3 <- get_weights(model, factors = 3, as.data.frame = TRUE)
-
-p <- mefisto_plot_weights(w_f3, "Factor3", 30,
-                          "out/mefisto/renamed_tcs_features_indiv.Rds",
-                          "out/mefisto/renamed_wb_features_indiv.Rds")
-p
-
-
-```
-
-## all high compliance individuals grouped
-
-```{r}
-
-# Reload the model
-model <- load_model("out/mefisto/mefisto_time_high.hdf5")
-
-# reload the omes
-df_dat <- read.table(file="out/mefisto/mefisto_input_high.txt",sep="\t",header=T)
-
-features <- c("subjectId", "visitId", "mpstatrs", "age_at_consent", "bmi_at_consent", "etohu_curr", "preg_ever", "ocp_curr")
-
-metadat <- colData(data) %>% 
-  as.data.frame %>% 
-  dplyr::select(c("interventionId",features)) %>%
-  filter(!visitId %in% c("M12","M18")) %>%
-  rownames_to_column(var="sample") %>%
-  distinct()
-
-metadat <- left_join(df_dat[,1, drop = FALSE],
-                     metadat, by = "sample") %>% distinct()
-metadat$group <- metadat$interventionId
-
-samples_metadata(model) <- metadat
-
-print(model)
-
-# extract data on variance explained by each factor
-df1 <- plot_variance_explained(model,
-                        x = 'factor',
+plot_variance_explained(fast_n15, x = 'factor',
                         y = 'view')
-df1 <- as.data.frame(df1$data)
 
-# simplify view names
-df1$view <- gsub(": normalized","",df1$view)
+# Let's retrain final model using 15 factors
+train_opts$convergence_mode <- 'medium'
+train_opts$maxiter <- 1000
+train_opts
 
-# extract factor values
-df2 <- plot_factors_vs_cov(model, color_by = "visitId", legend = FALSE, return_data = TRUE)
+mofa_n15_medium <- prepare_mofa(mofa,
+                                data_options   = data_opts,
+                                model_options  = model_opts,
+                                training_options = train_opts,
+                                mefisto_options  = mefisto_opts)
 
-```
-
-* variance explained by each factor:
-
-```{r}
-p <- plot_variance_explained(model,
-                         x = 'factor',
-                         y = 'view')
-p
-
-```
-
-* PCA-like plot
-
-```{r}
-
-p <- mefisto_biplot_F12(df1,df2,"factor")
-p
-
-# p <- mefisto_biplot_F12(df1,df2,"continuous","months")
-# p
-
-```
+mefisto_trained_overall <- run_mofa(
+  mofa_n15_medium,
+  outfile = here('out/mefisto_revised', "medium_n15.hdf5"),
+) # Final model
 
 
-* factor variance and significance association with selected covariates:
+## 5. Quick checks - Variance explained per view / factor
+plot_variance_explained(mefisto_trained_overall, x = 'factor',
+                        y = 'view')
+plot_factor_cor(mefisto_trained_overall)
 
-```{r}
 
-feat <- features
-labs = c('subjectId', 'visitId','menopausal status', 'age (at consent)', 'BMI (at consent)', 
-           'current alcohol units/wk', 'pregnancy (ever)', 
-           'current OCP use')
-  
-
-p <- mefisto_factor_covcor(df1,df2,feat,labs)
-p
+plot_factors_vs_cov(
+  mefisto_trained_overall,
+  covariate = "t"
+)
 
 ```
 
-
-```{r}
-
-p <- mefisto_factor_box(df2, metadat, "Factor1",high_only = T)
-p
-
-```
 

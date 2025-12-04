@@ -1,0 +1,1761 @@
+sampletype	type	rowname	value
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.252898407011201
+buccal	Never smoker (control)	epithelial_hypoM	-0.973293189168631
+buccal	Never smoker (control)	immune_hypoM	0.459400148250671
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-1.25236050237461
+buccal	Never smoker (control)	distal_epithelial_hyperM	0.606776714351963
+buccal	Never smoker (control)	epithelial_hypoM	-0.746471550808011
+buccal	Never smoker (control)	immune_hypoM	-0.403337767210243
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.390047957239123
+buccal	Never smoker (control)	distal_epithelial_hyperM	0.471102457883099
+buccal	Never smoker (control)	epithelial_hypoM	-0.977247250343365
+buccal	Never smoker (control)	immune_hypoM	-0.240041360705818
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.14104222222937
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.974127593079332
+buccal	Never smoker (control)	epithelial_hypoM	-0.564939175064331
+buccal	Never smoker (control)	immune_hypoM	0.00496918558861851
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.943963097643353
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.919654241789524
+buccal	Never smoker (control)	epithelial_hypoM	-0.505255786277151
+buccal	Never smoker (control)	immune_hypoM	0.284042720339064
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.499885033172956
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.790536464534447
+buccal	Never smoker (control)	epithelial_hypoM	0.525438919323794
+buccal	Never smoker (control)	immune_hypoM	-0.225419270004866
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.726788383184818
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.283431157544553
+buccal	Never smoker (control)	epithelial_hypoM	-1.32500230164359
+buccal	Never smoker (control)	immune_hypoM	-1.07430601100891
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.947023283404213
+buccal	Never smoker (control)	distal_epithelial_hyperM	0.416988957784356
+buccal	Never smoker (control)	epithelial_hypoM	-0.871893291340853
+buccal	Never smoker (control)	immune_hypoM	-0.713767964782326
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.926591342270358
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.718139227474283
+buccal	Never smoker (control)	epithelial_hypoM	-0.265743666036569
+buccal	Never smoker (control)	immune_hypoM	-0.961483581013739
+buccal	Never smoker (control)	proximal_epithelial_hyperM	0.119387709915006
+buccal	Never smoker (control)	distal_epithelial_hyperM	-1.48421115271964
+buccal	Never smoker (control)	epithelial_hypoM	-0.204420846562764
+buccal	Never smoker (control)	immune_hypoM	0.343884739768046
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-1.1405300919793
+buccal	Never smoker (control)	distal_epithelial_hyperM	-1.47667655890195
+buccal	Never smoker (control)	epithelial_hypoM	-0.5548549059226
+buccal	Never smoker (control)	immune_hypoM	-0.40765815095282
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.438560899288548
+buccal	Never smoker (control)	distal_epithelial_hyperM	-1.20915894719429
+buccal	Never smoker (control)	epithelial_hypoM	-0.24223775316409
+buccal	Never smoker (control)	immune_hypoM	-0.178203671161664
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-1.10321014054564
+buccal	Never smoker (control)	distal_epithelial_hyperM	0.14935353139348
+buccal	Never smoker (control)	epithelial_hypoM	-0.722017760878106
+buccal	Never smoker (control)	immune_hypoM	-1.64053424956085
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.540951252594741
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.542213662646044
+buccal	Never smoker (control)	epithelial_hypoM	-0.629886479242963
+buccal	Never smoker (control)	immune_hypoM	-1.19666291012391
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.273929701588725
+buccal	Never smoker (control)	distal_epithelial_hyperM	0.318774625616685
+buccal	Never smoker (control)	epithelial_hypoM	-0.559845180700675
+buccal	Never smoker (control)	immune_hypoM	-1.03303240078699
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.236645893035262
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.655104981151169
+buccal	Never smoker (control)	epithelial_hypoM	-0.401838407251561
+buccal	Never smoker (control)	immune_hypoM	0.20047177408038
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.258710594221614
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.591238870434543
+buccal	Never smoker (control)	epithelial_hypoM	-0.242503834898248
+buccal	Never smoker (control)	immune_hypoM	-0.0610227964346368
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-1.16621097722895
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.532490697631929
+buccal	Never smoker (control)	epithelial_hypoM	-0.0520257358779607
+buccal	Never smoker (control)	immune_hypoM	-0.0964349904180888
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.626744543221936
+buccal	Never smoker (control)	distal_epithelial_hyperM	2.24600486097986
+buccal	Never smoker (control)	epithelial_hypoM	-0.918598709298778
+buccal	Never smoker (control)	immune_hypoM	-0.694002362339953
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.507319079797025
+buccal	Never smoker (control)	distal_epithelial_hyperM	-1.39658919301106
+buccal	Never smoker (control)	epithelial_hypoM	-0.240761027155886
+buccal	Never smoker (control)	immune_hypoM	-0.697825998810407
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.480532447607403
+buccal	Never smoker (control)	distal_epithelial_hyperM	0.221863142700098
+buccal	Never smoker (control)	epithelial_hypoM	-0.289112701153045
+buccal	Never smoker (control)	immune_hypoM	-0.0511837899510136
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.588648072175849
+buccal	Never smoker (control)	distal_epithelial_hyperM	-2.76103961386618
+buccal	Never smoker (control)	epithelial_hypoM	-0.0544653353952392
+buccal	Never smoker (control)	immune_hypoM	1.09906361044144
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-1.4033519221457
+buccal	Never smoker (control)	distal_epithelial_hyperM	0.188073951006452
+buccal	Never smoker (control)	epithelial_hypoM	-0.715074484614412
+buccal	Never smoker (control)	immune_hypoM	-0.937145251634577
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.303990888364135
+buccal	Never smoker (control)	distal_epithelial_hyperM	-2.87142196027143
+buccal	Never smoker (control)	epithelial_hypoM	-0.462149777553253
+buccal	Never smoker (control)	immune_hypoM	1.56612642697464
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-2.85004726483242
+buccal	Never smoker (control)	distal_epithelial_hyperM	1.05583610574673
+buccal	Never smoker (control)	epithelial_hypoM	-0.904063539505887
+buccal	Never smoker (control)	immune_hypoM	-1.76169915367926
+buccal	Never smoker (control)	proximal_epithelial_hyperM	0.565572388946142
+buccal	Never smoker (control)	distal_epithelial_hyperM	0.655186632557988
+buccal	Never smoker (control)	epithelial_hypoM	-0.787643149597388
+buccal	Never smoker (control)	immune_hypoM	-1.74100248818893
+buccal	Never smoker (control)	proximal_epithelial_hyperM	0.684691640150824
+buccal	Never smoker (control)	distal_epithelial_hyperM	0.0911989183318308
+buccal	Never smoker (control)	epithelial_hypoM	-0.332933127095929
+buccal	Never smoker (control)	immune_hypoM	-0.663769186079549
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.333057326981638
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.417287928328547
+buccal	Never smoker (control)	epithelial_hypoM	-0.53427498576861
+buccal	Never smoker (control)	immune_hypoM	-0.978080412576742
+buccal	Never smoker (control)	proximal_epithelial_hyperM	0.364507066094912
+buccal	Never smoker (control)	distal_epithelial_hyperM	0.318013125761863
+buccal	Never smoker (control)	epithelial_hypoM	-0.952700092017634
+buccal	Never smoker (control)	immune_hypoM	-0.959739781636481
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.105800704589883
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.147879273057944
+buccal	Never smoker (control)	epithelial_hypoM	-0.525685706343472
+buccal	Never smoker (control)	immune_hypoM	-1.21446527853832
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.231931067464822
+buccal	Never smoker (control)	distal_epithelial_hyperM	0.20485167335578
+buccal	Never smoker (control)	epithelial_hypoM	-0.805234724065347
+buccal	Never smoker (control)	immune_hypoM	-0.871488679079245
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.827796399306326
+buccal	Never smoker (control)	distal_epithelial_hyperM	-1.22312475653591
+buccal	Never smoker (control)	epithelial_hypoM	0.400659098968025
+buccal	Never smoker (control)	immune_hypoM	0.380420120931631
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.694857897789519
+buccal	Never smoker (control)	distal_epithelial_hyperM	0.025229234679649
+buccal	Never smoker (control)	epithelial_hypoM	-0.555795615189546
+buccal	Never smoker (control)	immune_hypoM	-0.439080264654733
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.401109066744982
+buccal	Never smoker (control)	distal_epithelial_hyperM	0.423810533764175
+buccal	Never smoker (control)	epithelial_hypoM	-0.317514256141639
+buccal	Never smoker (control)	immune_hypoM	-0.952835985627882
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.164639167206526
+buccal	Never smoker (control)	distal_epithelial_hyperM	-1.5917412683146
+buccal	Never smoker (control)	epithelial_hypoM	-0.798577420657031
+buccal	Never smoker (control)	immune_hypoM	-0.731838102704611
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-1.27443726930703
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.122042451332464
+buccal	Never smoker (control)	epithelial_hypoM	-0.879757865953125
+buccal	Never smoker (control)	immune_hypoM	-1.12193437113201
+buccal	Never smoker (control)	proximal_epithelial_hyperM	0.22203666730527
+buccal	Never smoker (control)	distal_epithelial_hyperM	-1.29465389916734
+buccal	Never smoker (control)	epithelial_hypoM	0.0274548841990974
+buccal	Never smoker (control)	immune_hypoM	-0.517748014286013
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.386548833111343
+buccal	Never smoker (control)	distal_epithelial_hyperM	0.785631404280069
+buccal	Never smoker (control)	epithelial_hypoM	-0.666594312123298
+buccal	Never smoker (control)	immune_hypoM	-0.788167917744956
+buccal	Never smoker (control)	proximal_epithelial_hyperM	0.471786882714581
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.0519831401969936
+buccal	Never smoker (control)	epithelial_hypoM	-1.35824482094027
+buccal	Never smoker (control)	immune_hypoM	-0.940124753771032
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.348156462661286
+buccal	Never smoker (control)	distal_epithelial_hyperM	-1.08571667847279
+buccal	Never smoker (control)	epithelial_hypoM	-0.530187333066786
+buccal	Never smoker (control)	immune_hypoM	0.411814654686093
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-1.70318223187647
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.323510939455514
+buccal	Never smoker (control)	epithelial_hypoM	-0.604224458220678
+buccal	Never smoker (control)	immune_hypoM	-1.07330999642243
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.101374702522022
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.301289317472947
+buccal	Never smoker (control)	epithelial_hypoM	-0.541942360747585
+buccal	Never smoker (control)	immune_hypoM	-0.247436392112764
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.866400975171115
+buccal	Never smoker (control)	distal_epithelial_hyperM	-1.84770154754095
+buccal	Never smoker (control)	epithelial_hypoM	0.166061723342414
+buccal	Never smoker (control)	immune_hypoM	0.388889286933109
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-1.43236257325154
+buccal	Never smoker (control)	distal_epithelial_hyperM	0.298631198661793
+buccal	Never smoker (control)	epithelial_hypoM	-0.542964772137889
+buccal	Never smoker (control)	immune_hypoM	-1.17836374586082
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.339234704526872
+buccal	Never smoker (control)	distal_epithelial_hyperM	0.527530793941743
+buccal	Never smoker (control)	epithelial_hypoM	-0.925962685011897
+buccal	Never smoker (control)	immune_hypoM	-1.39101651689103
+buccal	Never smoker (control)	proximal_epithelial_hyperM	0.238885848562834
+buccal	Never smoker (control)	distal_epithelial_hyperM	0.736852063445073
+buccal	Never smoker (control)	epithelial_hypoM	-0.622304978155927
+buccal	Never smoker (control)	immune_hypoM	-0.929976904439168
+buccal	Never smoker (control)	proximal_epithelial_hyperM	0.306350107969352
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.086117915429333
+buccal	Never smoker (control)	epithelial_hypoM	-1.09456102078796
+buccal	Never smoker (control)	immune_hypoM	-1.04981635940434
+buccal	Never smoker (control)	proximal_epithelial_hyperM	0.471991949828082
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.785183950114278
+buccal	Never smoker (control)	epithelial_hypoM	-0.274062635831309
+buccal	Never smoker (control)	immune_hypoM	-0.422383147908145
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.771471921439999
+buccal	Never smoker (control)	distal_epithelial_hyperM	0.668187291858299
+buccal	Never smoker (control)	epithelial_hypoM	-1.12508288624768
+buccal	Never smoker (control)	immune_hypoM	-1.37705240073677
+buccal	Never smoker (control)	proximal_epithelial_hyperM	0.130403053809167
+buccal	Never smoker (control)	distal_epithelial_hyperM	0.0669678022663966
+buccal	Never smoker (control)	epithelial_hypoM	-0.807646742057034
+buccal	Never smoker (control)	immune_hypoM	-1.45594170184256
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.368327564718862
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.621741420676291
+buccal	Never smoker (control)	epithelial_hypoM	-0.572185712880782
+buccal	Never smoker (control)	immune_hypoM	-0.644882935752732
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-1.08870438702432
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.136811062109344
+buccal	Never smoker (control)	epithelial_hypoM	1.84636177777903
+buccal	Never smoker (control)	immune_hypoM	0.923718027649292
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.531421059735831
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.509410223790939
+buccal	Never smoker (control)	epithelial_hypoM	-0.347977373268969
+buccal	Never smoker (control)	immune_hypoM	-0.797801790919521
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.51565672439112
+buccal	Never smoker (control)	distal_epithelial_hyperM	-1.88593354090675
+buccal	Never smoker (control)	epithelial_hypoM	-0.166378767115558
+buccal	Never smoker (control)	immune_hypoM	-0.416471173025247
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-1.26591560058698
+buccal	Never smoker (control)	distal_epithelial_hyperM	1.27938271303286
+buccal	Never smoker (control)	epithelial_hypoM	-0.892391457337328
+buccal	Never smoker (control)	immune_hypoM	-2.06595232324576
+buccal	Never smoker (control)	proximal_epithelial_hyperM	0.469003871596628
+buccal	Never smoker (control)	distal_epithelial_hyperM	0.379683888832583
+buccal	Never smoker (control)	epithelial_hypoM	-1.02328836258641
+buccal	Never smoker (control)	immune_hypoM	0.690041154091022
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-1.0600827562821
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.0426058743910184
+buccal	Never smoker (control)	epithelial_hypoM	-0.419645433554281
+buccal	Never smoker (control)	immune_hypoM	-1.14509643828625
+buccal	Never smoker (control)	proximal_epithelial_hyperM	0.506339067539491
+buccal	Never smoker (control)	distal_epithelial_hyperM	-1.19934216029515
+buccal	Never smoker (control)	epithelial_hypoM	-0.593098452217586
+buccal	Never smoker (control)	immune_hypoM	-0.226852254052336
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.501085632807112
+buccal	Never smoker (control)	distal_epithelial_hyperM	0.675857958969596
+buccal	Never smoker (control)	epithelial_hypoM	-0.937119631453514
+buccal	Never smoker (control)	immune_hypoM	-1.80045868123118
+buccal	Never smoker (control)	proximal_epithelial_hyperM	0.542856363725617
+buccal	Never smoker (control)	distal_epithelial_hyperM	-1.17803756483604
+buccal	Never smoker (control)	epithelial_hypoM	-0.699200246052328
+buccal	Never smoker (control)	immune_hypoM	0.181099845287695
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-1.62343055386031
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.615754263483897
+buccal	Never smoker (control)	epithelial_hypoM	-0.0815313239388816
+buccal	Never smoker (control)	immune_hypoM	-0.621265544284664
+buccal	Never smoker (control)	proximal_epithelial_hyperM	0.408244649987771
+buccal	Never smoker (control)	distal_epithelial_hyperM	-1.1099425789184
+buccal	Never smoker (control)	epithelial_hypoM	-0.225716856310022
+buccal	Never smoker (control)	immune_hypoM	0.3258448680696
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.185625488270604
+buccal	Never smoker (control)	distal_epithelial_hyperM	2.26751484278333
+buccal	Never smoker (control)	epithelial_hypoM	-0.857233251696687
+buccal	Never smoker (control)	immune_hypoM	-1.42067103475878
+buccal	Never smoker (control)	proximal_epithelial_hyperM	1.16408110853676
+buccal	Never smoker (control)	distal_epithelial_hyperM	-0.791758066567536
+buccal	Never smoker (control)	epithelial_hypoM	-1.17481758034444
+buccal	Never smoker (control)	immune_hypoM	-0.413736524226223
+buccal	Never smoker (control)	proximal_epithelial_hyperM	-0.984697597482016
+buccal	Former smoker (control)	distal_epithelial_hyperM	-0.745008268437109
+buccal	Former smoker (control)	epithelial_hypoM	-0.588824396499594
+buccal	Former smoker (control)	immune_hypoM	0.117131206045715
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-1.06493023460995
+buccal	Former smoker (control)	distal_epithelial_hyperM	-0.914684193339327
+buccal	Former smoker (control)	epithelial_hypoM	-0.674072258382567
+buccal	Former smoker (control)	immune_hypoM	0.213429233523193
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-0.409097135347507
+buccal	Former smoker (control)	distal_epithelial_hyperM	0.907205087222751
+buccal	Former smoker (control)	epithelial_hypoM	-0.704790243738636
+buccal	Former smoker (control)	immune_hypoM	0.314480055926876
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-0.753884065009622
+buccal	Former smoker (control)	distal_epithelial_hyperM	-1.71136390480222
+buccal	Former smoker (control)	epithelial_hypoM	0.279172355938147
+buccal	Former smoker (control)	immune_hypoM	1.68533519900888
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-0.372563527792906
+buccal	Former smoker (control)	distal_epithelial_hyperM	-0.222188464043637
+buccal	Former smoker (control)	epithelial_hypoM	0.188986291392541
+buccal	Former smoker (control)	immune_hypoM	0.366638350527932
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-0.368146609192943
+buccal	Former smoker (control)	distal_epithelial_hyperM	-1.39454717900359
+buccal	Former smoker (control)	epithelial_hypoM	-0.729583728221707
+buccal	Former smoker (control)	immune_hypoM	-0.281075590788795
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-1.25157090948826
+buccal	Former smoker (control)	distal_epithelial_hyperM	1.06656422705518
+buccal	Former smoker (control)	epithelial_hypoM	-0.523649128856156
+buccal	Former smoker (control)	immune_hypoM	-0.737575595113729
+buccal	Former smoker (control)	proximal_epithelial_hyperM	1.35273921358032
+buccal	Former smoker (control)	distal_epithelial_hyperM	0.551812989309506
+buccal	Former smoker (control)	epithelial_hypoM	-0.302247815346916
+buccal	Former smoker (control)	immune_hypoM	-0.579311824682094
+buccal	Former smoker (control)	proximal_epithelial_hyperM	0.143224513668753
+buccal	Former smoker (control)	distal_epithelial_hyperM	0.723316552728073
+buccal	Former smoker (control)	epithelial_hypoM	-0.538954948352264
+buccal	Former smoker (control)	immune_hypoM	-0.381514540806337
+buccal	Former smoker (control)	proximal_epithelial_hyperM	0.585749039879319
+buccal	Former smoker (control)	distal_epithelial_hyperM	-2.08748391462552
+buccal	Former smoker (control)	epithelial_hypoM	0.0944695480659191
+buccal	Former smoker (control)	immune_hypoM	0.715546841942369
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-1.59372956786515
+buccal	Former smoker (control)	distal_epithelial_hyperM	1.40072717956575
+buccal	Former smoker (control)	epithelial_hypoM	-1.05567683852908
+buccal	Former smoker (control)	immune_hypoM	-0.592118037744203
+buccal	Former smoker (control)	proximal_epithelial_hyperM	0.164841133588904
+buccal	Former smoker (control)	distal_epithelial_hyperM	-0.354623945865952
+buccal	Former smoker (control)	epithelial_hypoM	-0.693055953100341
+buccal	Former smoker (control)	immune_hypoM	-0.5251366168694
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-0.121211268881385
+buccal	Former smoker (control)	distal_epithelial_hyperM	0.191411331167591
+buccal	Former smoker (control)	epithelial_hypoM	0.00943879667787759
+buccal	Former smoker (control)	immune_hypoM	-0.228154294907269
+buccal	Former smoker (control)	proximal_epithelial_hyperM	0.552958278064211
+buccal	Former smoker (control)	distal_epithelial_hyperM	-0.820032556074474
+buccal	Former smoker (control)	epithelial_hypoM	-0.369253719836486
+buccal	Former smoker (control)	immune_hypoM	-0.105816123543247
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-0.353766827598061
+buccal	Former smoker (control)	distal_epithelial_hyperM	0.301948297722295
+buccal	Former smoker (control)	epithelial_hypoM	-0.64237927527099
+buccal	Former smoker (control)	immune_hypoM	-0.67294218072193
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-0.294598868077365
+buccal	Former smoker (control)	distal_epithelial_hyperM	-1.93844967526787
+buccal	Former smoker (control)	epithelial_hypoM	-0.493526959994287
+buccal	Former smoker (control)	immune_hypoM	-0.00391437143828101
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-1.44564527431026
+buccal	Former smoker (control)	distal_epithelial_hyperM	0.630511886477674
+buccal	Former smoker (control)	epithelial_hypoM	-0.565857114831671
+buccal	Former smoker (control)	immune_hypoM	-0.372643570687279
+buccal	Former smoker (control)	proximal_epithelial_hyperM	0.0585029658557689
+buccal	Former smoker (control)	distal_epithelial_hyperM	-0.910218605594879
+buccal	Former smoker (control)	epithelial_hypoM	-0.645579018507357
+buccal	Former smoker (control)	immune_hypoM	-0.229246589278948
+buccal	Former smoker (control)	proximal_epithelial_hyperM	0.00596302924691435
+buccal	Former smoker (control)	distal_epithelial_hyperM	1.29165390918304
+buccal	Former smoker (control)	epithelial_hypoM	0.098309975698802
+buccal	Former smoker (control)	immune_hypoM	-0.0943468195212336
+buccal	Former smoker (control)	proximal_epithelial_hyperM	0.714931971251966
+buccal	Former smoker (control)	distal_epithelial_hyperM	-0.251745829057107
+buccal	Former smoker (control)	epithelial_hypoM	-0.604963728920882
+buccal	Former smoker (control)	immune_hypoM	-0.167957281539082
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-0.456550821933591
+buccal	Former smoker (control)	distal_epithelial_hyperM	-0.10166196096745
+buccal	Former smoker (control)	epithelial_hypoM	-0.628273088493464
+buccal	Former smoker (control)	immune_hypoM	-0.441837544162964
+buccal	Former smoker (control)	proximal_epithelial_hyperM	0.317018730225832
+buccal	Former smoker (control)	distal_epithelial_hyperM	-1.01357758104305
+buccal	Former smoker (control)	epithelial_hypoM	-0.72872931168978
+buccal	Former smoker (control)	immune_hypoM	-0.721536371870524
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-0.532468056186463
+buccal	Former smoker (control)	distal_epithelial_hyperM	0.489619833788445
+buccal	Former smoker (control)	epithelial_hypoM	-0.470911936195902
+buccal	Former smoker (control)	immune_hypoM	1.35180889380552
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-0.694588350486159
+buccal	Former smoker (control)	distal_epithelial_hyperM	1.2406122574133
+buccal	Former smoker (control)	epithelial_hypoM	-0.703026559561168
+buccal	Former smoker (control)	immune_hypoM	-0.45797454932446
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-0.284609442154652
+buccal	Former smoker (control)	distal_epithelial_hyperM	-0.443231392481726
+buccal	Former smoker (control)	epithelial_hypoM	0.155006666950534
+buccal	Former smoker (control)	immune_hypoM	-0.290395246513076
+buccal	Former smoker (control)	proximal_epithelial_hyperM	0.0758567320848419
+buccal	Former smoker (control)	distal_epithelial_hyperM	0.877231636689118
+buccal	Former smoker (control)	epithelial_hypoM	-1.21753110231138
+buccal	Former smoker (control)	immune_hypoM	-1.20479303405311
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-0.27298459194148
+buccal	Former smoker (control)	distal_epithelial_hyperM	0.799372780145097
+buccal	Former smoker (control)	epithelial_hypoM	-0.917900767419799
+buccal	Former smoker (control)	immune_hypoM	0.0828131725890315
+buccal	Former smoker (control)	proximal_epithelial_hyperM	0.0446230575459151
+buccal	Former smoker (control)	distal_epithelial_hyperM	-0.652184391185098
+buccal	Former smoker (control)	epithelial_hypoM	-0.212037085953319
+buccal	Former smoker (control)	immune_hypoM	0.547907653998827
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-0.496826259952462
+buccal	Former smoker (control)	distal_epithelial_hyperM	-0.0862149143693965
+buccal	Former smoker (control)	epithelial_hypoM	-0.394652824670587
+buccal	Former smoker (control)	immune_hypoM	-0.134415986063775
+buccal	Former smoker (control)	proximal_epithelial_hyperM	0.275418420982526
+buccal	Former smoker (control)	distal_epithelial_hyperM	0.112152393957867
+buccal	Former smoker (control)	epithelial_hypoM	0.77318507061657
+buccal	Former smoker (control)	immune_hypoM	0.709712135746802
+buccal	Former smoker (control)	proximal_epithelial_hyperM	0.324926115661905
+buccal	Former smoker (control)	distal_epithelial_hyperM	0.496523504153807
+buccal	Former smoker (control)	epithelial_hypoM	-0.984964329961968
+buccal	Former smoker (control)	immune_hypoM	-0.100323323680571
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-0.502369495897623
+buccal	Former smoker (control)	distal_epithelial_hyperM	-0.480944370205051
+buccal	Former smoker (control)	epithelial_hypoM	0.286973782981393
+buccal	Former smoker (control)	immune_hypoM	1.73975977205116
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-1.42468326729995
+buccal	Former smoker (control)	distal_epithelial_hyperM	0.60884745752813
+buccal	Former smoker (control)	epithelial_hypoM	-0.501227079730361
+buccal	Former smoker (control)	immune_hypoM	-1.08091571570445
+buccal	Former smoker (control)	proximal_epithelial_hyperM	0.694671749798111
+buccal	Former smoker (control)	distal_epithelial_hyperM	0.229414860425147
+buccal	Former smoker (control)	epithelial_hypoM	-0.902354119968176
+buccal	Former smoker (control)	immune_hypoM	-0.393081110820244
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-1.05645644683124
+buccal	Former smoker (control)	distal_epithelial_hyperM	0.925793874390023
+buccal	Former smoker (control)	epithelial_hypoM	-1.04763797116534
+buccal	Former smoker (control)	immune_hypoM	-1.0923937229302
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-0.478125439470898
+buccal	Former smoker (control)	distal_epithelial_hyperM	0.426612977362873
+buccal	Former smoker (control)	epithelial_hypoM	-1.17030987406471
+buccal	Former smoker (control)	immune_hypoM	0.595075283092069
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-1.18316588263954
+buccal	Former smoker (control)	distal_epithelial_hyperM	-0.497366145969875
+buccal	Former smoker (control)	epithelial_hypoM	-0.761406602585069
+buccal	Former smoker (control)	immune_hypoM	-0.976557349426035
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-0.556680409359583
+buccal	Former smoker (control)	distal_epithelial_hyperM	-1.52998826498159
+buccal	Former smoker (control)	epithelial_hypoM	-0.590107757856871
+buccal	Former smoker (control)	immune_hypoM	0.357621390277168
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-1.38781093783926
+buccal	Former smoker (control)	distal_epithelial_hyperM	0.817398191811876
+buccal	Former smoker (control)	epithelial_hypoM	-0.256513072273899
+buccal	Former smoker (control)	immune_hypoM	-0.977706079393078
+buccal	Former smoker (control)	proximal_epithelial_hyperM	0.664551008919608
+buccal	Former smoker (control)	distal_epithelial_hyperM	-0.774353249163147
+buccal	Former smoker (control)	epithelial_hypoM	-0.013497023173421
+buccal	Former smoker (control)	immune_hypoM	0.483698104748644
+buccal	Former smoker (control)	proximal_epithelial_hyperM	-0.664570858768213
+buccal	Former smoker (control)	distal_epithelial_hyperM	0.579992990296604
+buccal	Former smoker (control)	epithelial_hypoM	-0.361391054901866
+buccal	Former smoker (control)	immune_hypoM	-0.958117015609762
+buccal	Former smoker (control)	proximal_epithelial_hyperM	0.368324119433181
+buccal	Current smoker	distal_epithelial_hyperM	-0.0508724661833712
+buccal	Current smoker	epithelial_hypoM	1.61493889397439
+buccal	Current smoker	immune_hypoM	1.49402938879869
+buccal	Current smoker	proximal_epithelial_hyperM	0.554155584564885
+buccal	Current smoker	distal_epithelial_hyperM	0.299105063567186
+buccal	Current smoker	epithelial_hypoM	0.820801380716238
+buccal	Current smoker	immune_hypoM	0.673639421136509
+buccal	Current smoker	proximal_epithelial_hyperM	0.218479862029812
+buccal	Current smoker	distal_epithelial_hyperM	-1.63009020469308
+buccal	Current smoker	epithelial_hypoM	1.22607749091891
+buccal	Current smoker	immune_hypoM	1.44588275937518
+buccal	Current smoker	proximal_epithelial_hyperM	-0.398764390783927
+buccal	Current smoker	distal_epithelial_hyperM	1.55342292800548
+buccal	Current smoker	epithelial_hypoM	1.09731991194204
+buccal	Current smoker	immune_hypoM	0.941135616390875
+buccal	Current smoker	proximal_epithelial_hyperM	1.2633017954417
+buccal	Current smoker	distal_epithelial_hyperM	-0.454429517017475
+buccal	Current smoker	epithelial_hypoM	2.15302993065518
+buccal	Current smoker	immune_hypoM	1.48146084132593
+buccal	Current smoker	proximal_epithelial_hyperM	0.888679884292088
+buccal	Current smoker	distal_epithelial_hyperM	1.67411002907347
+buccal	Current smoker	epithelial_hypoM	0.378945653910945
+buccal	Current smoker	immune_hypoM	0.932219003636289
+buccal	Current smoker	proximal_epithelial_hyperM	0.422977978009183
+buccal	Current smoker	distal_epithelial_hyperM	-0.0987647043250851
+buccal	Current smoker	epithelial_hypoM	1.16726785283329
+buccal	Current smoker	immune_hypoM	1.38654588109885
+buccal	Current smoker	proximal_epithelial_hyperM	0.601976393473733
+buccal	Current smoker	distal_epithelial_hyperM	1.49299717174316
+buccal	Current smoker	epithelial_hypoM	2.39299651449377
+buccal	Current smoker	immune_hypoM	2.52600998192692
+buccal	Current smoker	proximal_epithelial_hyperM	0.18746803529427
+buccal	Current smoker	distal_epithelial_hyperM	0.270984160409213
+buccal	Current smoker	epithelial_hypoM	1.34690061890213
+buccal	Current smoker	immune_hypoM	1.20874725458046
+buccal	Current smoker	proximal_epithelial_hyperM	0.151978599252149
+buccal	Current smoker	distal_epithelial_hyperM	-0.44027509904109
+buccal	Current smoker	epithelial_hypoM	1.62228751115482
+buccal	Current smoker	immune_hypoM	1.16882635334459
+buccal	Current smoker	proximal_epithelial_hyperM	-0.0495335596430051
+buccal	Current smoker	distal_epithelial_hyperM	3.13253887820616
+buccal	Current smoker	epithelial_hypoM	0.802565792617341
+buccal	Current smoker	immune_hypoM	-0.184765763140494
+buccal	Current smoker	proximal_epithelial_hyperM	1.12073895203343
+buccal	Current smoker	distal_epithelial_hyperM	0.455676110405965
+buccal	Current smoker	epithelial_hypoM	1.25939615991326
+buccal	Current smoker	immune_hypoM	0.342839485399536
+buccal	Current smoker	proximal_epithelial_hyperM	0.888095138706609
+buccal	Current smoker	distal_epithelial_hyperM	0.743440514937764
+buccal	Current smoker	epithelial_hypoM	1.00403017450721
+buccal	Current smoker	immune_hypoM	0.426987454758785
+buccal	Current smoker	proximal_epithelial_hyperM	1.14264096868011
+buccal	Current smoker	distal_epithelial_hyperM	1.9250199019965
+buccal	Current smoker	epithelial_hypoM	1.89185904172802
+buccal	Current smoker	immune_hypoM	0.645347327906256
+buccal	Current smoker	proximal_epithelial_hyperM	3.07921698767564
+buccal	Current smoker	distal_epithelial_hyperM	0.199673330334355
+buccal	Current smoker	epithelial_hypoM	2.77199250827382
+buccal	Current smoker	immune_hypoM	1.78992230752352
+buccal	Current smoker	proximal_epithelial_hyperM	1.96757845088818
+buccal	Current smoker	distal_epithelial_hyperM	1.47553394319141
+buccal	Current smoker	epithelial_hypoM	0.417995661440127
+buccal	Current smoker	immune_hypoM	0.74080491390141
+buccal	Current smoker	proximal_epithelial_hyperM	0.285421573572542
+buccal	Current smoker	distal_epithelial_hyperM	1.05034861959906
+buccal	Current smoker	epithelial_hypoM	1.3361546985998
+buccal	Current smoker	immune_hypoM	1.14850697926067
+buccal	Current smoker	proximal_epithelial_hyperM	1.01142600706365
+buccal	Current smoker	distal_epithelial_hyperM	0.988004699894185
+buccal	Current smoker	epithelial_hypoM	1.26841691305406
+buccal	Current smoker	immune_hypoM	0.568950329498055
+buccal	Current smoker	proximal_epithelial_hyperM	1.43495869165589
+buccal	Current smoker	distal_epithelial_hyperM	-0.276348585439474
+buccal	Current smoker	epithelial_hypoM	0.324316424376774
+buccal	Current smoker	immune_hypoM	1.56461285162818
+buccal	Current smoker	proximal_epithelial_hyperM	-0.949865153989235
+buccal	Current smoker	distal_epithelial_hyperM	1.15406481179181
+buccal	Current smoker	epithelial_hypoM	0.431450296542287
+buccal	Current smoker	immune_hypoM	0.689486366346431
+buccal	Current smoker	proximal_epithelial_hyperM	0.929123375254242
+buccal	Current smoker	distal_epithelial_hyperM	0.705992537987196
+buccal	Current smoker	epithelial_hypoM	0.774072647560264
+buccal	Current smoker	immune_hypoM	0.466706374099765
+buccal	Current smoker	proximal_epithelial_hyperM	1.62900320968225
+buccal	Current smoker	distal_epithelial_hyperM	-1.46137747617811
+buccal	Current smoker	epithelial_hypoM	2.05914491449078
+buccal	Current smoker	immune_hypoM	2.89316444592196
+buccal	Current smoker	proximal_epithelial_hyperM	0.799233063838709
+buccal	Current smoker	distal_epithelial_hyperM	0.175183758068344
+buccal	Current smoker	epithelial_hypoM	0.334703968982505
+buccal	Current smoker	immune_hypoM	0.852261588528349
+buccal	Current smoker	proximal_epithelial_hyperM	-0.187783267450226
+buccal	Current smoker	distal_epithelial_hyperM	-0.32802843131849
+buccal	Current smoker	epithelial_hypoM	0.870091437985767
+buccal	Current smoker	immune_hypoM	1.37497410735103
+buccal	Current smoker	proximal_epithelial_hyperM	-0.279948397573738
+buccal	Current smoker	distal_epithelial_hyperM	-0.456792553604885
+buccal	Current smoker	epithelial_hypoM	1.44404293301596
+buccal	Current smoker	immune_hypoM	0.967411093838091
+buccal	Current smoker	proximal_epithelial_hyperM	0.96652643798179
+buccal	Current smoker	distal_epithelial_hyperM	-0.585880688009777
+buccal	Current smoker	epithelial_hypoM	1.520518456209
+buccal	Current smoker	immune_hypoM	1.55703119651085
+buccal	Current smoker	proximal_epithelial_hyperM	0.526339469462231
+buccal	Current smoker	distal_epithelial_hyperM	0.294912602675498
+buccal	Current smoker	epithelial_hypoM	2.21681715595787
+buccal	Current smoker	immune_hypoM	2.29287336266462
+buccal	Current smoker	proximal_epithelial_hyperM	0.606752248727802
+buccal	Current smoker	distal_epithelial_hyperM	-0.201118460952848
+buccal	Current smoker	epithelial_hypoM	1.6090239386472
+buccal	Current smoker	immune_hypoM	1.36022673052154
+buccal	Current smoker	proximal_epithelial_hyperM	0.656243919109298
+buccal	Current smoker	distal_epithelial_hyperM	-0.451025611574284
+buccal	Current smoker	epithelial_hypoM	2.2166457619019
+buccal	Current smoker	immune_hypoM	1.61302865150543
+buccal	Current smoker	proximal_epithelial_hyperM	0.744333319532311
+buccal	Current smoker	distal_epithelial_hyperM	2.17071946962153
+buccal	Current smoker	epithelial_hypoM	3.51050294869511
+buccal	Current smoker	immune_hypoM	1.32307157983438
+buccal	Current smoker	proximal_epithelial_hyperM	3.74210562581431
+buccal	Current smoker	distal_epithelial_hyperM	1.98864467325575
+buccal	Current smoker	epithelial_hypoM	0.765949558596864
+buccal	Current smoker	immune_hypoM	-0.16218034809844
+buccal	Current smoker	proximal_epithelial_hyperM	1.55601050974489
+buccal	Current smoker	distal_epithelial_hyperM	-0.361920012834761
+buccal	Current smoker	epithelial_hypoM	0.744938923000752
+buccal	Current smoker	immune_hypoM	0.0932269691282272
+buccal	Current smoker	proximal_epithelial_hyperM	1.05318537328511
+buccal	Current smoker	distal_epithelial_hyperM	0.819229672035189
+buccal	Current smoker	epithelial_hypoM	2.44790955140285
+buccal	Current smoker	immune_hypoM	1.4912484938496
+buccal	Current smoker	proximal_epithelial_hyperM	3.15384469542248
+buccal	Current smoker	distal_epithelial_hyperM	0.0517042870088492
+buccal	Current smoker	epithelial_hypoM	0.0394047320862153
+buccal	Current smoker	immune_hypoM	0.804387036886998
+buccal	Current smoker	proximal_epithelial_hyperM	-0.662099219292374
+buccal	Current smoker	distal_epithelial_hyperM	0.517524154938741
+buccal	Current smoker	epithelial_hypoM	2.37230240999575
+buccal	Current smoker	immune_hypoM	3.32499573852607
+buccal	Current smoker	proximal_epithelial_hyperM	1.7231193582377
+buccal	Current smoker	distal_epithelial_hyperM	0.384250966462436
+buccal	Current smoker	epithelial_hypoM	1.27286905179176
+buccal	Current smoker	immune_hypoM	0.646117301288468
+buccal	Current smoker	proximal_epithelial_hyperM	1.27373595923999
+buccal	Current smoker	distal_epithelial_hyperM	0.631888532946154
+buccal	Current smoker	epithelial_hypoM	1.57932693598911
+buccal	Current smoker	immune_hypoM	0.208908444788742
+buccal	Current smoker	proximal_epithelial_hyperM	2.35791633837746
+buccal	Current smoker	distal_epithelial_hyperM	0.17549353970428
+buccal	Current smoker	epithelial_hypoM	0.349432279867384
+buccal	Current smoker	immune_hypoM	-0.0428878388397349
+buccal	Current smoker	proximal_epithelial_hyperM	-0.00868682309384291
+buccal	Current smoker	distal_epithelial_hyperM	1.1712205721435
+buccal	Current smoker	epithelial_hypoM	1.49195062169902
+buccal	Current smoker	immune_hypoM	1.26625870737458
+buccal	Current smoker	proximal_epithelial_hyperM	1.14106161969003
+buccal	Current smoker	distal_epithelial_hyperM	1.33042412483654
+buccal	Current smoker	epithelial_hypoM	1.66739452456886
+buccal	Current smoker	immune_hypoM	1.35746363427486
+buccal	Current smoker	proximal_epithelial_hyperM	2.22156914812572
+buccal	Current smoker	distal_epithelial_hyperM	0.242061613782013
+buccal	Current smoker	epithelial_hypoM	1.63000538741822
+buccal	Current smoker	immune_hypoM	0.895130010911429
+buccal	Current smoker	proximal_epithelial_hyperM	2.45382791835933
+buccal	Current smoker	distal_epithelial_hyperM	1.5338889892858
+buccal	Current smoker	epithelial_hypoM	1.12796039938033
+buccal	Current smoker	immune_hypoM	-0.452164046634905
+buccal	Current smoker	proximal_epithelial_hyperM	1.92871143782983
+blood	Never smoker (control)	distal_epithelial_hyperM	0.494705263371964
+blood	Never smoker (control)	epithelial_hypoM	0.811181918929603
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.372057961628878
+blood	Never smoker (control)	immune_hypoM	-2.18302514820483
+blood	Never smoker (control)	distal_epithelial_hyperM	0.499848927339394
+blood	Never smoker (control)	epithelial_hypoM	0.809723523289166
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.369190067150259
+blood	Never smoker (control)	immune_hypoM	-1.21758649090694
+blood	Never smoker (control)	distal_epithelial_hyperM	0.496823064447001
+blood	Never smoker (control)	epithelial_hypoM	0.805070081677554
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.390982928248694
+blood	Never smoker (control)	immune_hypoM	-3.03623780100983
+blood	Never smoker (control)	distal_epithelial_hyperM	0.499712865048505
+blood	Never smoker (control)	epithelial_hypoM	0.813781952069957
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.377194321303085
+blood	Never smoker (control)	immune_hypoM	-2.11549173686185
+blood	Never smoker (control)	distal_epithelial_hyperM	0.504276139553077
+blood	Never smoker (control)	epithelial_hypoM	0.820869029053427
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.38030183140539
+blood	Never smoker (control)	immune_hypoM	-0.997877545929796
+blood	Never smoker (control)	distal_epithelial_hyperM	0.503605628080564
+blood	Never smoker (control)	epithelial_hypoM	0.803777778942215
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.372593180723513
+blood	Never smoker (control)	immune_hypoM	-0.951453698125696
+blood	Never smoker (control)	distal_epithelial_hyperM	0.496385338742925
+blood	Never smoker (control)	epithelial_hypoM	0.812669860715174
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.375968448638706
+blood	Never smoker (control)	immune_hypoM	-2.38156039405904
+blood	Never smoker (control)	distal_epithelial_hyperM	0.506025835462469
+blood	Never smoker (control)	epithelial_hypoM	0.819558207230662
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.362780715787193
+blood	Never smoker (control)	immune_hypoM	-1.66179967348638
+blood	Never smoker (control)	distal_epithelial_hyperM	0.502913569626997
+blood	Never smoker (control)	epithelial_hypoM	0.801103120017997
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.339530805954368
+blood	Never smoker (control)	immune_hypoM	-1.14800547492578
+blood	Never smoker (control)	distal_epithelial_hyperM	0.499888117140818
+blood	Never smoker (control)	epithelial_hypoM	0.818021169430548
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.377134341049235
+blood	Never smoker (control)	immune_hypoM	-2.14898270039894
+blood	Never smoker (control)	distal_epithelial_hyperM	0.501683788085781
+blood	Never smoker (control)	epithelial_hypoM	0.818113054809226
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.38121838891562
+blood	Never smoker (control)	immune_hypoM	-2.11129158181379
+blood	Never smoker (control)	distal_epithelial_hyperM	0.515497627643909
+blood	Never smoker (control)	epithelial_hypoM	0.825865531666531
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.384191062481211
+blood	Never smoker (control)	immune_hypoM	-2.13809945805474
+blood	Never smoker (control)	distal_epithelial_hyperM	0.497006789499691
+blood	Never smoker (control)	epithelial_hypoM	0.809784824928358
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.365616263333055
+blood	Never smoker (control)	immune_hypoM	-2.16625622880159
+blood	Never smoker (control)	distal_epithelial_hyperM	0.500662655243498
+blood	Never smoker (control)	epithelial_hypoM	0.813307420026057
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.379307451212622
+blood	Never smoker (control)	immune_hypoM	-2.77645515947729
+blood	Never smoker (control)	distal_epithelial_hyperM	0.501865130739194
+blood	Never smoker (control)	epithelial_hypoM	0.806501806046566
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.365752308896338
+blood	Never smoker (control)	immune_hypoM	-1.01973776368927
+blood	Never smoker (control)	distal_epithelial_hyperM	0.501012669934837
+blood	Never smoker (control)	epithelial_hypoM	0.819110965836039
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.380793552838893
+blood	Never smoker (control)	immune_hypoM	-1.73935374186691
+blood	Never smoker (control)	distal_epithelial_hyperM	0.488012419779357
+blood	Never smoker (control)	epithelial_hypoM	0.80548526638168
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.363517751325692
+blood	Never smoker (control)	immune_hypoM	-1.05816582201879
+blood	Never smoker (control)	distal_epithelial_hyperM	0.50053769048343
+blood	Never smoker (control)	epithelial_hypoM	0.818847048594596
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.385756651412434
+blood	Never smoker (control)	immune_hypoM	-2.50671818363755
+blood	Never smoker (control)	distal_epithelial_hyperM	0.503098781258429
+blood	Never smoker (control)	epithelial_hypoM	0.8107966965629
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.375549394017737
+blood	Never smoker (control)	immune_hypoM	-2.06729868022937
+blood	Never smoker (control)	distal_epithelial_hyperM	0.494117036563311
+blood	Never smoker (control)	epithelial_hypoM	0.808058666617302
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.374364037312428
+blood	Never smoker (control)	immune_hypoM	-1.5394391867801
+blood	Never smoker (control)	distal_epithelial_hyperM	0.490282938607765
+blood	Never smoker (control)	epithelial_hypoM	0.805010505884653
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.37824115091225
+blood	Never smoker (control)	immune_hypoM	-1.0362084491998
+blood	Never smoker (control)	distal_epithelial_hyperM	0.498226423073119
+blood	Never smoker (control)	epithelial_hypoM	0.815637717636471
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.380833315366882
+blood	Never smoker (control)	immune_hypoM	-2.50374070593094
+blood	Never smoker (control)	distal_epithelial_hyperM	0.495149148475111
+blood	Never smoker (control)	epithelial_hypoM	0.811978011762581
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.364530244530844
+blood	Never smoker (control)	immune_hypoM	-0.943304671181441
+blood	Never smoker (control)	distal_epithelial_hyperM	0.49933546994645
+blood	Never smoker (control)	epithelial_hypoM	0.811216100135845
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.378227103398217
+blood	Never smoker (control)	immune_hypoM	-2.43169588975611
+blood	Never smoker (control)	distal_epithelial_hyperM	0.509423679023586
+blood	Never smoker (control)	epithelial_hypoM	0.823819937979533
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.380523951754136
+blood	Never smoker (control)	immune_hypoM	-1.76754678252993
+blood	Never smoker (control)	distal_epithelial_hyperM	0.503507022355957
+blood	Never smoker (control)	epithelial_hypoM	0.808696241820738
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.376685265842205
+blood	Never smoker (control)	immune_hypoM	-2.64900181958537
+blood	Never smoker (control)	distal_epithelial_hyperM	0.503873986138531
+blood	Never smoker (control)	epithelial_hypoM	0.820872057025388
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.379527810274376
+blood	Never smoker (control)	immune_hypoM	-1.24872125772224
+blood	Never smoker (control)	distal_epithelial_hyperM	0.501272535928414
+blood	Never smoker (control)	epithelial_hypoM	0.809622714039868
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.373516959101105
+blood	Never smoker (control)	immune_hypoM	-2.09093465998668
+blood	Never smoker (control)	distal_epithelial_hyperM	0.500613204877835
+blood	Never smoker (control)	epithelial_hypoM	0.812695376739708
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.375995293910992
+blood	Never smoker (control)	immune_hypoM	-2.4969009633075
+blood	Never smoker (control)	distal_epithelial_hyperM	0.49075171537395
+blood	Never smoker (control)	epithelial_hypoM	0.827263436278495
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.399802159112791
+blood	Never smoker (control)	immune_hypoM	-3.21942545282612
+blood	Never smoker (control)	distal_epithelial_hyperM	0.501027014940874
+blood	Never smoker (control)	epithelial_hypoM	0.822189297479867
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.386739985558442
+blood	Never smoker (control)	immune_hypoM	-3.28037087376735
+blood	Never smoker (control)	distal_epithelial_hyperM	0.496445513457445
+blood	Never smoker (control)	epithelial_hypoM	0.813743093675933
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.382737739479894
+blood	Never smoker (control)	immune_hypoM	-1.95683423251419
+blood	Never smoker (control)	distal_epithelial_hyperM	0.499175931878592
+blood	Never smoker (control)	epithelial_hypoM	0.814620446742043
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.401089490124214
+blood	Never smoker (control)	immune_hypoM	-2.13782417753273
+blood	Never smoker (control)	distal_epithelial_hyperM	0.505788507968106
+blood	Never smoker (control)	epithelial_hypoM	0.826078397420597
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.37758562218555
+blood	Never smoker (control)	immune_hypoM	-2.11208100755411
+blood	Never smoker (control)	distal_epithelial_hyperM	0.502442434260212
+blood	Never smoker (control)	epithelial_hypoM	0.815158880049629
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.384234221317187
+blood	Never smoker (control)	immune_hypoM	-2.45321800646528
+blood	Never smoker (control)	distal_epithelial_hyperM	0.505677412724928
+blood	Never smoker (control)	epithelial_hypoM	0.8202457649909
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.38031195290338
+blood	Never smoker (control)	immune_hypoM	-2.60252768300505
+blood	Never smoker (control)	distal_epithelial_hyperM	0.496654654724818
+blood	Never smoker (control)	epithelial_hypoM	0.811044720636565
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.387833750851466
+blood	Never smoker (control)	immune_hypoM	-2.55230274103342
+blood	Never smoker (control)	distal_epithelial_hyperM	0.495125089852772
+blood	Never smoker (control)	epithelial_hypoM	0.815680124576205
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.365379695601432
+blood	Never smoker (control)	immune_hypoM	-1.42105594149383
+blood	Never smoker (control)	distal_epithelial_hyperM	0.494287793050674
+blood	Never smoker (control)	epithelial_hypoM	0.806407012761533
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.378554003197496
+blood	Never smoker (control)	immune_hypoM	-1.25537594997707
+blood	Never smoker (control)	distal_epithelial_hyperM	0.532149932949524
+blood	Never smoker (control)	epithelial_hypoM	0.820079158684863
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.365941119618483
+blood	Never smoker (control)	immune_hypoM	-3.17936393332333
+blood	Never smoker (control)	distal_epithelial_hyperM	0.49872648176626
+blood	Never smoker (control)	epithelial_hypoM	0.820121735542818
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.37931162339202
+blood	Never smoker (control)	immune_hypoM	-2.30973519849499
+blood	Never smoker (control)	distal_epithelial_hyperM	0.508942345287712
+blood	Never smoker (control)	epithelial_hypoM	0.825399512035335
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.393308296169737
+blood	Never smoker (control)	immune_hypoM	-2.87577247745107
+blood	Never smoker (control)	distal_epithelial_hyperM	0.499982621119198
+blood	Never smoker (control)	epithelial_hypoM	0.811513352721603
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.372838189216014
+blood	Never smoker (control)	immune_hypoM	-1.93129623635247
+blood	Never smoker (control)	distal_epithelial_hyperM	0.499935211112249
+blood	Never smoker (control)	epithelial_hypoM	0.825603112155684
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.396257314733086
+blood	Never smoker (control)	immune_hypoM	-3.27011484752179
+blood	Never smoker (control)	distal_epithelial_hyperM	0.500615814155134
+blood	Never smoker (control)	epithelial_hypoM	0.816242591426616
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.383935176780884
+blood	Never smoker (control)	immune_hypoM	-2.42897436103126
+blood	Never smoker (control)	distal_epithelial_hyperM	0.502660231245871
+blood	Never smoker (control)	epithelial_hypoM	0.821748772615436
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.391258495287739
+blood	Never smoker (control)	immune_hypoM	-2.4552125784023
+blood	Never smoker (control)	distal_epithelial_hyperM	0.500676372402688
+blood	Never smoker (control)	epithelial_hypoM	0.813186534746923
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.382895009699444
+blood	Never smoker (control)	immune_hypoM	-1.94198581682518
+blood	Never smoker (control)	distal_epithelial_hyperM	0.498083579606801
+blood	Never smoker (control)	epithelial_hypoM	0.805341009389009
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.362282140809566
+blood	Never smoker (control)	immune_hypoM	-0.0375010529458281
+blood	Never smoker (control)	distal_epithelial_hyperM	0.497509881077158
+blood	Never smoker (control)	epithelial_hypoM	0.80548511458482
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.359096725687634
+blood	Never smoker (control)	immune_hypoM	-0.0423939203658539
+blood	Never smoker (control)	distal_epithelial_hyperM	0.507303822747073
+blood	Never smoker (control)	epithelial_hypoM	0.821495922193369
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.379277275960358
+blood	Never smoker (control)	immune_hypoM	-2.86472702851281
+blood	Never smoker (control)	distal_epithelial_hyperM	0.505786591227902
+blood	Never smoker (control)	epithelial_hypoM	0.832066836474462
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.393471294745208
+blood	Never smoker (control)	immune_hypoM	-2.77762653340812
+blood	Never smoker (control)	distal_epithelial_hyperM	0.508998821965545
+blood	Never smoker (control)	epithelial_hypoM	0.81234430331144
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.361584764445515
+blood	Never smoker (control)	immune_hypoM	-2.04296184111547
+blood	Never smoker (control)	distal_epithelial_hyperM	0.495895415712212
+blood	Never smoker (control)	epithelial_hypoM	0.816224314615845
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.352991920706543
+blood	Never smoker (control)	immune_hypoM	0.154512133725359
+blood	Never smoker (control)	distal_epithelial_hyperM	0.516655080881538
+blood	Never smoker (control)	epithelial_hypoM	0.800147263520805
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.366572107949799
+blood	Never smoker (control)	immune_hypoM	-2.15338124779274
+blood	Never smoker (control)	distal_epithelial_hyperM	0.50182219045796
+blood	Never smoker (control)	epithelial_hypoM	0.805751503134753
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.367885817572518
+blood	Never smoker (control)	immune_hypoM	-1.54880365172449
+blood	Never smoker (control)	distal_epithelial_hyperM	0.505413529025258
+blood	Never smoker (control)	epithelial_hypoM	0.812529479872485
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.377067664308862
+blood	Never smoker (control)	immune_hypoM	-3.08408065458011
+blood	Never smoker (control)	distal_epithelial_hyperM	0.494146654628734
+blood	Never smoker (control)	epithelial_hypoM	0.800629263285524
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.358189601954101
+blood	Never smoker (control)	immune_hypoM	-1.27299710754586
+blood	Never smoker (control)	distal_epithelial_hyperM	0.510045634579591
+blood	Never smoker (control)	epithelial_hypoM	0.817775539119877
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.379965003076582
+blood	Never smoker (control)	immune_hypoM	-3.57950448498028
+blood	Never smoker (control)	distal_epithelial_hyperM	0.504886662804413
+blood	Never smoker (control)	epithelial_hypoM	0.81208252056658
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.373321825826958
+blood	Never smoker (control)	immune_hypoM	-2.07706788410892
+blood	Never smoker (control)	distal_epithelial_hyperM	0.50141047333261
+blood	Never smoker (control)	epithelial_hypoM	0.818692809478316
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.368279542308645
+blood	Never smoker (control)	immune_hypoM	-1.46560589359539
+blood	Never smoker (control)	distal_epithelial_hyperM	0.498774667955183
+blood	Never smoker (control)	epithelial_hypoM	0.807872158460542
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.369958247816965
+blood	Never smoker (control)	immune_hypoM	-1.88544000591733
+blood	Never smoker (control)	distal_epithelial_hyperM	0.497086018133061
+blood	Never smoker (control)	epithelial_hypoM	0.807864873523375
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.372388581315432
+blood	Never smoker (control)	immune_hypoM	-1.63554537401046
+blood	Never smoker (control)	distal_epithelial_hyperM	0.499226820574732
+blood	Never smoker (control)	epithelial_hypoM	0.804038741132884
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.357550611299347
+blood	Never smoker (control)	immune_hypoM	-0.503424355223711
+blood	Never smoker (control)	distal_epithelial_hyperM	0.501132154204202
+blood	Never smoker (control)	epithelial_hypoM	0.824142971669917
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.392883605643195
+blood	Never smoker (control)	immune_hypoM	-2.24179929944553
+blood	Never smoker (control)	distal_epithelial_hyperM	0.501728234518873
+blood	Never smoker (control)	epithelial_hypoM	0.819062414925696
+blood	Never smoker (control)	proximal_epithelial_hyperM	0.383265765911724
+blood	Never smoker (control)	immune_hypoM	-2.38885720938053
+blood	Former smoker (control)	distal_epithelial_hyperM	0.531397729471434
+blood	Former smoker (control)	epithelial_hypoM	0.831901905103063
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.365076040787597
+blood	Former smoker (control)	immune_hypoM	-1.14004367927292
+blood	Former smoker (control)	distal_epithelial_hyperM	0.503261637007475
+blood	Former smoker (control)	epithelial_hypoM	0.81267211673566
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.366268327449889
+blood	Former smoker (control)	immune_hypoM	-1.92654440442036
+blood	Former smoker (control)	distal_epithelial_hyperM	0.501236404997704
+blood	Former smoker (control)	epithelial_hypoM	0.818900598838475
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.385513040328235
+blood	Former smoker (control)	immune_hypoM	-2.28514880616559
+blood	Former smoker (control)	distal_epithelial_hyperM	0.506403779199819
+blood	Former smoker (control)	epithelial_hypoM	0.81439403069974
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.386486914580153
+blood	Former smoker (control)	immune_hypoM	0.355398979496621
+blood	Former smoker (control)	distal_epithelial_hyperM	0.494487113929885
+blood	Former smoker (control)	epithelial_hypoM	0.809429707762462
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.368652392762139
+blood	Former smoker (control)	immune_hypoM	0.00618192366167707
+blood	Former smoker (control)	distal_epithelial_hyperM	0.498899069877693
+blood	Former smoker (control)	epithelial_hypoM	0.810048908339216
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.369393853663285
+blood	Former smoker (control)	immune_hypoM	-1.74427599194733
+blood	Former smoker (control)	distal_epithelial_hyperM	0.499128305952172
+blood	Former smoker (control)	epithelial_hypoM	0.819240491694042
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.382070706082535
+blood	Former smoker (control)	immune_hypoM	-1.55395814020681
+blood	Former smoker (control)	distal_epithelial_hyperM	0.505155774604986
+blood	Former smoker (control)	epithelial_hypoM	0.813861921961273
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.369433243945375
+blood	Former smoker (control)	immune_hypoM	-0.850378521274727
+blood	Former smoker (control)	distal_epithelial_hyperM	0.513599095625254
+blood	Former smoker (control)	epithelial_hypoM	0.821230209128149
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.372092703123219
+blood	Former smoker (control)	immune_hypoM	-2.2567415861179
+blood	Former smoker (control)	distal_epithelial_hyperM	0.500981706377296
+blood	Former smoker (control)	epithelial_hypoM	0.810382753821475
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.386415953709293
+blood	Former smoker (control)	immune_hypoM	-2.25095672318973
+blood	Former smoker (control)	distal_epithelial_hyperM	0.50038464841475
+blood	Former smoker (control)	epithelial_hypoM	0.807169460194357
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.3703812869726
+blood	Former smoker (control)	immune_hypoM	-1.91802661530695
+blood	Former smoker (control)	distal_epithelial_hyperM	0.494066862957356
+blood	Former smoker (control)	epithelial_hypoM	0.809366899996985
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.379925510647638
+blood	Former smoker (control)	immune_hypoM	-1.72468641993376
+blood	Former smoker (control)	distal_epithelial_hyperM	0.498011764648778
+blood	Former smoker (control)	epithelial_hypoM	0.809407683456761
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.366678308845948
+blood	Former smoker (control)	immune_hypoM	-1.09440029389384
+blood	Former smoker (control)	distal_epithelial_hyperM	0.502143329759226
+blood	Former smoker (control)	epithelial_hypoM	0.816525797529085
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.383600093748624
+blood	Former smoker (control)	immune_hypoM	-2.47530424906184
+blood	Former smoker (control)	distal_epithelial_hyperM	0.494498828767205
+blood	Former smoker (control)	epithelial_hypoM	0.81592331811134
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.383720716825747
+blood	Former smoker (control)	immune_hypoM	-2.48047932948714
+blood	Former smoker (control)	distal_epithelial_hyperM	0.506629450325804
+blood	Former smoker (control)	epithelial_hypoM	0.817516427674881
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.380469199540818
+blood	Former smoker (control)	immune_hypoM	-1.84029285958777
+blood	Former smoker (control)	distal_epithelial_hyperM	0.50367099263643
+blood	Former smoker (control)	epithelial_hypoM	0.809369726193314
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.376107571885986
+blood	Former smoker (control)	immune_hypoM	-2.17327445659571
+blood	Former smoker (control)	distal_epithelial_hyperM	0.505425879499589
+blood	Former smoker (control)	epithelial_hypoM	0.809090887786139
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.383216683405494
+blood	Former smoker (control)	immune_hypoM	-1.59795084310765
+blood	Former smoker (control)	distal_epithelial_hyperM	0.494561359693739
+blood	Former smoker (control)	epithelial_hypoM	0.812607776515159
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.379166118354481
+blood	Former smoker (control)	immune_hypoM	-1.49911958668534
+blood	Former smoker (control)	distal_epithelial_hyperM	0.493546088108246
+blood	Former smoker (control)	epithelial_hypoM	0.81227954018067
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.379103405511895
+blood	Former smoker (control)	immune_hypoM	-1.90968149266807
+blood	Former smoker (control)	distal_epithelial_hyperM	0.497674892962156
+blood	Former smoker (control)	epithelial_hypoM	0.812762680650754
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.366275629317256
+blood	Former smoker (control)	immune_hypoM	-2.07801668383703
+blood	Former smoker (control)	distal_epithelial_hyperM	0.500708111272481
+blood	Former smoker (control)	epithelial_hypoM	0.809002224575844
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.367529453808855
+blood	Former smoker (control)	immune_hypoM	-0.14663958737311
+blood	Former smoker (control)	distal_epithelial_hyperM	0.501248594794924
+blood	Former smoker (control)	epithelial_hypoM	0.808012272743376
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.366941609693874
+blood	Former smoker (control)	immune_hypoM	-0.578401159827376
+blood	Former smoker (control)	distal_epithelial_hyperM	0.51024450241661
+blood	Former smoker (control)	epithelial_hypoM	0.816700688411393
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.37722548304456
+blood	Former smoker (control)	immune_hypoM	-1.38756238976596
+blood	Former smoker (control)	distal_epithelial_hyperM	0.518031034567889
+blood	Former smoker (control)	epithelial_hypoM	0.834484765246766
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.388963422045952
+blood	Former smoker (control)	immune_hypoM	-3.37242156527375
+blood	Former smoker (control)	distal_epithelial_hyperM	0.50318885292669
+blood	Former smoker (control)	epithelial_hypoM	0.824406695300089
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.392041677692442
+blood	Former smoker (control)	immune_hypoM	-2.75279868856459
+blood	Former smoker (control)	distal_epithelial_hyperM	0.497494650034805
+blood	Former smoker (control)	epithelial_hypoM	0.816467507065158
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.376963492289987
+blood	Former smoker (control)	immune_hypoM	-1.08239108440117
+blood	Former smoker (control)	distal_epithelial_hyperM	0.505487079389149
+blood	Former smoker (control)	epithelial_hypoM	0.813382397124706
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.377469398011337
+blood	Former smoker (control)	immune_hypoM	-1.49217046058714
+blood	Former smoker (control)	distal_epithelial_hyperM	0.504577325235468
+blood	Former smoker (control)	epithelial_hypoM	0.807072710071761
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.379044196534147
+blood	Former smoker (control)	immune_hypoM	-0.435915997371248
+blood	Former smoker (control)	distal_epithelial_hyperM	0.501342351684006
+blood	Former smoker (control)	epithelial_hypoM	0.807830712382556
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.371106433314313
+blood	Former smoker (control)	immune_hypoM	-1.43793336565012
+blood	Former smoker (control)	distal_epithelial_hyperM	0.490880881006308
+blood	Former smoker (control)	epithelial_hypoM	0.804115133090151
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.368395783879819
+blood	Former smoker (control)	immune_hypoM	-1.27851871349178
+blood	Former smoker (control)	distal_epithelial_hyperM	0.498338681600665
+blood	Former smoker (control)	epithelial_hypoM	0.811347450237948
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.363733346283843
+blood	Former smoker (control)	immune_hypoM	-1.51939531228791
+blood	Former smoker (control)	distal_epithelial_hyperM	0.498509661538679
+blood	Former smoker (control)	epithelial_hypoM	0.811338240246061
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.378935935303571
+blood	Former smoker (control)	immune_hypoM	-2.80603041926286
+blood	Former smoker (control)	distal_epithelial_hyperM	0.503249953917938
+blood	Former smoker (control)	epithelial_hypoM	0.813533092360536
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.373070993758308
+blood	Former smoker (control)	immune_hypoM	-2.4095965267541
+blood	Former smoker (control)	distal_epithelial_hyperM	0.498397843295341
+blood	Former smoker (control)	epithelial_hypoM	0.804882969271461
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.365453640983187
+blood	Former smoker (control)	immune_hypoM	-2.19857483927757
+blood	Former smoker (control)	distal_epithelial_hyperM	0.494892277481164
+blood	Former smoker (control)	epithelial_hypoM	0.812712716355882
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.395679473304903
+blood	Former smoker (control)	immune_hypoM	-2.74135210296347
+blood	Former smoker (control)	distal_epithelial_hyperM	0.498228568508028
+blood	Former smoker (control)	epithelial_hypoM	0.81110143684326
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.363127139883761
+blood	Former smoker (control)	immune_hypoM	-1.1852094090944
+blood	Former smoker (control)	distal_epithelial_hyperM	0.5083092149327
+blood	Former smoker (control)	epithelial_hypoM	0.818154517590754
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.374340691154619
+blood	Former smoker (control)	immune_hypoM	-2.04131340583495
+blood	Former smoker (control)	distal_epithelial_hyperM	0.499071207797489
+blood	Former smoker (control)	epithelial_hypoM	0.801385537997104
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.352581892737422
+blood	Former smoker (control)	immune_hypoM	-0.423141723839712
+blood	Former smoker (control)	distal_epithelial_hyperM	0.502938807711591
+blood	Former smoker (control)	epithelial_hypoM	0.813305706474242
+blood	Former smoker (control)	proximal_epithelial_hyperM	0.386108386004807
+blood	Former smoker (control)	immune_hypoM	-1.97580947228117
+blood	Current smoker	distal_epithelial_hyperM	0.497769273635788
+blood	Current smoker	epithelial_hypoM	0.80229353120927
+blood	Current smoker	proximal_epithelial_hyperM	0.355136520791949
+blood	Current smoker	immune_hypoM	2.01657371163724
+blood	Current smoker	distal_epithelial_hyperM	0.499527483668235
+blood	Current smoker	epithelial_hypoM	0.810713391909247
+blood	Current smoker	proximal_epithelial_hyperM	0.373313163909146
+blood	Current smoker	immune_hypoM	-0.481912003160459
+blood	Current smoker	distal_epithelial_hyperM	0.504841239966673
+blood	Current smoker	epithelial_hypoM	0.818649090709357
+blood	Current smoker	proximal_epithelial_hyperM	0.387368882270445
+blood	Current smoker	immune_hypoM	-0.513438111853543
+blood	Current smoker	distal_epithelial_hyperM	0.511895959957392
+blood	Current smoker	epithelial_hypoM	0.81707525136709
+blood	Current smoker	proximal_epithelial_hyperM	0.388442002036464
+blood	Current smoker	immune_hypoM	0.400667138268094
+blood	Current smoker	distal_epithelial_hyperM	0.508821266596744
+blood	Current smoker	epithelial_hypoM	0.814974062184091
+blood	Current smoker	proximal_epithelial_hyperM	0.381351081411602
+blood	Current smoker	immune_hypoM	-0.478403328519113
+blood	Current smoker	distal_epithelial_hyperM	0.507150356753548
+blood	Current smoker	epithelial_hypoM	0.804586121235608
+blood	Current smoker	proximal_epithelial_hyperM	0.362011149130464
+blood	Current smoker	immune_hypoM	0.541469145655091
+blood	Current smoker	distal_epithelial_hyperM	0.502981657422603
+blood	Current smoker	epithelial_hypoM	0.816108761315088
+blood	Current smoker	proximal_epithelial_hyperM	0.385847306598145
+blood	Current smoker	immune_hypoM	-0.276919899246168
+blood	Current smoker	distal_epithelial_hyperM	0.518136509088546
+blood	Current smoker	epithelial_hypoM	0.820499425805239
+blood	Current smoker	proximal_epithelial_hyperM	0.376538221334927
+blood	Current smoker	immune_hypoM	1.98054737954086
+blood	Current smoker	distal_epithelial_hyperM	0.506894115295249
+blood	Current smoker	epithelial_hypoM	0.812816029678857
+blood	Current smoker	proximal_epithelial_hyperM	0.374401720262245
+blood	Current smoker	immune_hypoM	-1.21062893844078
+blood	Current smoker	distal_epithelial_hyperM	0.503577178732988
+blood	Current smoker	epithelial_hypoM	0.807105087750976
+blood	Current smoker	proximal_epithelial_hyperM	0.368034835344426
+blood	Current smoker	immune_hypoM	0.410509288489837
+blood	Current smoker	distal_epithelial_hyperM	0.505521306824431
+blood	Current smoker	epithelial_hypoM	0.817591300063402
+blood	Current smoker	proximal_epithelial_hyperM	0.369160509419782
+blood	Current smoker	immune_hypoM	-1.00706118149734
+blood	Current smoker	distal_epithelial_hyperM	0.505893858157974
+blood	Current smoker	epithelial_hypoM	0.813822033230916
+blood	Current smoker	proximal_epithelial_hyperM	0.379948936142338
+blood	Current smoker	immune_hypoM	-1.09474111696921
+blood	Current smoker	distal_epithelial_hyperM	0.499815335201738
+blood	Current smoker	epithelial_hypoM	0.806373840614808
+blood	Current smoker	proximal_epithelial_hyperM	0.380828147276575
+blood	Current smoker	immune_hypoM	-0.125389476586263
+blood	Current smoker	distal_epithelial_hyperM	0.518955676421889
+blood	Current smoker	epithelial_hypoM	0.811574410392054
+blood	Current smoker	proximal_epithelial_hyperM	0.38194102515839
+blood	Current smoker	immune_hypoM	2.4215339562635
+blood	Current smoker	distal_epithelial_hyperM	0.50682653626563
+blood	Current smoker	epithelial_hypoM	0.812194364212408
+blood	Current smoker	proximal_epithelial_hyperM	0.365177070377164
+blood	Current smoker	immune_hypoM	4.43187818674129
+blood	Current smoker	distal_epithelial_hyperM	0.510167946299496
+blood	Current smoker	epithelial_hypoM	0.817507832436102
+blood	Current smoker	proximal_epithelial_hyperM	0.37476831220736
+blood	Current smoker	immune_hypoM	-0.835340070934828
+blood	Current smoker	distal_epithelial_hyperM	0.507761246511588
+blood	Current smoker	epithelial_hypoM	0.81118041568126
+blood	Current smoker	proximal_epithelial_hyperM	0.371815006048712
+blood	Current smoker	immune_hypoM	1.72620560553616
+blood	Current smoker	distal_epithelial_hyperM	0.502755764763048
+blood	Current smoker	epithelial_hypoM	0.806424720140255
+blood	Current smoker	proximal_epithelial_hyperM	0.360014676082222
+blood	Current smoker	immune_hypoM	-0.253627541823017
+blood	Current smoker	distal_epithelial_hyperM	0.508692745370161
+blood	Current smoker	epithelial_hypoM	0.804918790940735
+blood	Current smoker	proximal_epithelial_hyperM	0.361690869606848
+blood	Current smoker	immune_hypoM	-0.193967185385555
+blood	Current smoker	distal_epithelial_hyperM	0.508371531065509
+blood	Current smoker	epithelial_hypoM	0.817706061412855
+blood	Current smoker	proximal_epithelial_hyperM	0.383523336576278
+blood	Current smoker	immune_hypoM	-0.333364082911426
+blood	Current smoker	distal_epithelial_hyperM	0.501363032654534
+blood	Current smoker	epithelial_hypoM	0.815219394069337
+blood	Current smoker	proximal_epithelial_hyperM	0.388039200375514
+blood	Current smoker	immune_hypoM	0.823799258881969
+blood	Current smoker	distal_epithelial_hyperM	0.519455625192199
+blood	Current smoker	epithelial_hypoM	0.810031685128219
+blood	Current smoker	proximal_epithelial_hyperM	0.384937717360641
+blood	Current smoker	immune_hypoM	-0.688562160501583
+blood	Current smoker	distal_epithelial_hyperM	0.509360070489611
+blood	Current smoker	epithelial_hypoM	0.823114651292274
+blood	Current smoker	proximal_epithelial_hyperM	0.385618929854648
+blood	Current smoker	immune_hypoM	-0.217679276682964
+blood	Current smoker	distal_epithelial_hyperM	0.498286265793284
+blood	Current smoker	epithelial_hypoM	0.808186488053122
+blood	Current smoker	proximal_epithelial_hyperM	0.371989080530677
+blood	Current smoker	immune_hypoM	0.594328711973004
+blood	Current smoker	distal_epithelial_hyperM	0.502412519754938
+blood	Current smoker	epithelial_hypoM	0.809307401389535
+blood	Current smoker	proximal_epithelial_hyperM	0.372866990674878
+blood	Current smoker	immune_hypoM	1.66747732106536
+blood	Current smoker	distal_epithelial_hyperM	0.51680785471278
+blood	Current smoker	epithelial_hypoM	0.81641772163339
+blood	Current smoker	proximal_epithelial_hyperM	0.38137072503459
+blood	Current smoker	immune_hypoM	-0.00663883509790878
+blood	Current smoker	distal_epithelial_hyperM	0.508974260108342
+blood	Current smoker	epithelial_hypoM	0.826569730697175
+blood	Current smoker	proximal_epithelial_hyperM	0.379550920381183
+blood	Current smoker	immune_hypoM	-1.06162384752019
+blood	Current smoker	distal_epithelial_hyperM	0.501147284872655
+blood	Current smoker	epithelial_hypoM	0.808920715430603
+blood	Current smoker	proximal_epithelial_hyperM	0.375522523357754
+blood	Current smoker	immune_hypoM	-0.11091698227814
+blood	Current smoker	distal_epithelial_hyperM	0.500575273087027
+blood	Current smoker	epithelial_hypoM	0.812715835708268
+blood	Current smoker	proximal_epithelial_hyperM	0.373087502934338
+blood	Current smoker	immune_hypoM	2.5842753202185
+blood	Current smoker	distal_epithelial_hyperM	0.502086145809514
+blood	Current smoker	epithelial_hypoM	0.815558921248722
+blood	Current smoker	proximal_epithelial_hyperM	0.381226570093149
+blood	Current smoker	immune_hypoM	-0.32287728972591
+blood	Current smoker	distal_epithelial_hyperM	0.49458616128823
+blood	Current smoker	epithelial_hypoM	0.805069683802401
+blood	Current smoker	proximal_epithelial_hyperM	0.369476160879937
+blood	Current smoker	immune_hypoM	-1.14415433549015
+blood	Current smoker	distal_epithelial_hyperM	0.502133459084497
+blood	Current smoker	epithelial_hypoM	0.809611959160282
+blood	Current smoker	proximal_epithelial_hyperM	0.387655737877023
+blood	Current smoker	immune_hypoM	1.07526765474443
+blood	Current smoker	distal_epithelial_hyperM	0.504466436036311
+blood	Current smoker	epithelial_hypoM	0.805909075579425
+blood	Current smoker	proximal_epithelial_hyperM	0.378004148359935
+blood	Current smoker	immune_hypoM	-1.31383537784098
+blood	Current smoker	distal_epithelial_hyperM	0.510576991294278
+blood	Current smoker	epithelial_hypoM	0.813464205974378
+blood	Current smoker	proximal_epithelial_hyperM	0.377403729535797
+blood	Current smoker	immune_hypoM	1.91754333594824
+blood	Current smoker	distal_epithelial_hyperM	0.508620390274329
+blood	Current smoker	epithelial_hypoM	0.80761563948702
+blood	Current smoker	proximal_epithelial_hyperM	0.371179735318923
+blood	Current smoker	immune_hypoM	-1.65825600470725
+blood	Current smoker	distal_epithelial_hyperM	0.503121087861332
+blood	Current smoker	epithelial_hypoM	0.809067430236964
+blood	Current smoker	proximal_epithelial_hyperM	0.380459486499869
+blood	Current smoker	immune_hypoM	0.282328020006895
+blood	Current smoker	distal_epithelial_hyperM	0.500605789026233
+blood	Current smoker	epithelial_hypoM	0.816520845915176
+blood	Current smoker	proximal_epithelial_hyperM	0.370217931734576
+blood	Current smoker	immune_hypoM	-2.01421204593245
+blood	Current smoker	distal_epithelial_hyperM	0.508157632728575
+blood	Current smoker	epithelial_hypoM	0.81878349521436
+blood	Current smoker	proximal_epithelial_hyperM	0.37549096276669
+blood	Current smoker	immune_hypoM	0.420640824403494
+blood	Current smoker	distal_epithelial_hyperM	0.510378225499336
+blood	Current smoker	epithelial_hypoM	0.816040419317464
+blood	Current smoker	proximal_epithelial_hyperM	0.379187043154184
+blood	Current smoker	immune_hypoM	2.64063327009291
+blood	Current smoker	distal_epithelial_hyperM	0.499594790980871
+blood	Current smoker	epithelial_hypoM	0.806526701397765
+blood	Current smoker	proximal_epithelial_hyperM	0.380014493853518
+blood	Current smoker	immune_hypoM	3.39153369898397
+blood	Current smoker	distal_epithelial_hyperM	0.50651859177126
+blood	Current smoker	epithelial_hypoM	0.81746447151714
+blood	Current smoker	proximal_epithelial_hyperM	0.385554179340404
+blood	Current smoker	immune_hypoM	-2.24165761526691
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.565984525425682
+cervical	Never smoker (control)	epithelial_hypoM	0.697246324210363
+cervical	Never smoker (control)	immune_hypoM	-0.42816983475159
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-1.501831597181
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.576661232717596
+cervical	Never smoker (control)	epithelial_hypoM	0.178383397629184
+cervical	Never smoker (control)	immune_hypoM	0.329413260033955
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.477884892214539
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.482580132791688
+cervical	Never smoker (control)	epithelial_hypoM	-0.8227147935
+cervical	Never smoker (control)	immune_hypoM	-1.21865907270776
+cervical	Never smoker (control)	proximal_epithelial_hyperM	0.0164815278726144
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.598501680450361
+cervical	Never smoker (control)	epithelial_hypoM	-0.359374257043139
+cervical	Never smoker (control)	immune_hypoM	-0.210246631498699
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.149683470170699
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.53607711298395
+cervical	Never smoker (control)	epithelial_hypoM	-0.760862523512754
+cervical	Never smoker (control)	immune_hypoM	0.10082797286073
+cervical	Never smoker (control)	proximal_epithelial_hyperM	0.355918492408756
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.33346205644785
+cervical	Never smoker (control)	epithelial_hypoM	0.143583604735663
+cervical	Never smoker (control)	immune_hypoM	0.31588721939735
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.430089287566057
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.720385532397875
+cervical	Never smoker (control)	epithelial_hypoM	-0.739057333216336
+cervical	Never smoker (control)	immune_hypoM	-1.01969176603088
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.416724885357501
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.71316003926293
+cervical	Never smoker (control)	epithelial_hypoM	0.0176301662592142
+cervical	Never smoker (control)	immune_hypoM	-0.738451326591825
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-1.28414303938601
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.540485640358298
+cervical	Never smoker (control)	epithelial_hypoM	-0.853291951863628
+cervical	Never smoker (control)	immune_hypoM	-1.03003797332182
+cervical	Never smoker (control)	proximal_epithelial_hyperM	0.668373687710768
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.239168083991036
+cervical	Never smoker (control)	epithelial_hypoM	-0.717354934875261
+cervical	Never smoker (control)	immune_hypoM	-0.830103412759535
+cervical	Never smoker (control)	proximal_epithelial_hyperM	0.262231478718087
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.402999287649438
+cervical	Never smoker (control)	epithelial_hypoM	-0.335494840828523
+cervical	Never smoker (control)	immune_hypoM	-0.208761190501078
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.232370350468676
+cervical	Never smoker (control)	distal_epithelial_hyperM	0.04306523907559
+cervical	Never smoker (control)	epithelial_hypoM	-0.859504989853172
+cervical	Never smoker (control)	immune_hypoM	-0.580329349528289
+cervical	Never smoker (control)	proximal_epithelial_hyperM	0.376532228111312
+cervical	Never smoker (control)	distal_epithelial_hyperM	-1.0025240851764
+cervical	Never smoker (control)	epithelial_hypoM	-0.286813625409593
+cervical	Never smoker (control)	immune_hypoM	-0.153605559914039
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-1.70043369143899
+cervical	Never smoker (control)	distal_epithelial_hyperM	0.0802506901191339
+cervical	Never smoker (control)	epithelial_hypoM	0.0636608554976624
+cervical	Never smoker (control)	immune_hypoM	-1.1061754676906
+cervical	Never smoker (control)	proximal_epithelial_hyperM	0.497113348831139
+cervical	Never smoker (control)	distal_epithelial_hyperM	-1.02072451036408
+cervical	Never smoker (control)	epithelial_hypoM	-1.37953362250797
+cervical	Never smoker (control)	immune_hypoM	-0.302110251647481
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-1.59524644419282
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.604000825469705
+cervical	Never smoker (control)	epithelial_hypoM	-0.175547376297831
+cervical	Never smoker (control)	immune_hypoM	0.200645257984964
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.607581255619149
+cervical	Never smoker (control)	distal_epithelial_hyperM	-1.38354967147128
+cervical	Never smoker (control)	epithelial_hypoM	-0.417780628496422
+cervical	Never smoker (control)	immune_hypoM	-0.169293252356572
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.883968933950532
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.689096950712518
+cervical	Never smoker (control)	epithelial_hypoM	-0.0731084952763031
+cervical	Never smoker (control)	immune_hypoM	-0.181343814170846
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-1.19425193341705
+cervical	Never smoker (control)	distal_epithelial_hyperM	0.205310712787897
+cervical	Never smoker (control)	epithelial_hypoM	-0.683822648261009
+cervical	Never smoker (control)	immune_hypoM	-1.07357126884576
+cervical	Never smoker (control)	proximal_epithelial_hyperM	0.213672874042399
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.717306600225953
+cervical	Never smoker (control)	epithelial_hypoM	-1.60217786526744
+cervical	Never smoker (control)	immune_hypoM	-0.981221228180184
+cervical	Never smoker (control)	proximal_epithelial_hyperM	2.26352764199902
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.965604973574345
+cervical	Never smoker (control)	epithelial_hypoM	0.797012689032461
+cervical	Never smoker (control)	immune_hypoM	-0.198740552511525
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.97825488701213
+cervical	Never smoker (control)	distal_epithelial_hyperM	-2.26085276004524
+cervical	Never smoker (control)	epithelial_hypoM	-1.15435309040832
+cervical	Never smoker (control)	immune_hypoM	-0.568152728878011
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.162064498712042
+cervical	Never smoker (control)	distal_epithelial_hyperM	-1.66573791481482
+cervical	Never smoker (control)	epithelial_hypoM	-2.64628810839341
+cervical	Never smoker (control)	immune_hypoM	-0.459083103607119
+cervical	Never smoker (control)	proximal_epithelial_hyperM	0.255853260492346
+cervical	Never smoker (control)	distal_epithelial_hyperM	-1.84809792390835
+cervical	Never smoker (control)	epithelial_hypoM	-0.475092346569844
+cervical	Never smoker (control)	immune_hypoM	-0.500256017659554
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.337008725136616
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.802565518588961
+cervical	Never smoker (control)	epithelial_hypoM	-0.0219432719555507
+cervical	Never smoker (control)	immune_hypoM	0.416296714356714
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-1.6567753406542
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.101084288915896
+cervical	Never smoker (control)	epithelial_hypoM	-1.04512243718303
+cervical	Never smoker (control)	immune_hypoM	-1.66312596610684
+cervical	Never smoker (control)	proximal_epithelial_hyperM	1.39882178108055
+cervical	Never smoker (control)	distal_epithelial_hyperM	0.264046135798885
+cervical	Never smoker (control)	epithelial_hypoM	-0.609467090560334
+cervical	Never smoker (control)	immune_hypoM	-0.415540632437368
+cervical	Never smoker (control)	proximal_epithelial_hyperM	1.00063975112428
+cervical	Never smoker (control)	distal_epithelial_hyperM	0.104760803821633
+cervical	Never smoker (control)	epithelial_hypoM	-1.10057381153179
+cervical	Never smoker (control)	immune_hypoM	-0.382778896527898
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.33328631542655
+cervical	Never smoker (control)	distal_epithelial_hyperM	-1.03400473556807
+cervical	Never smoker (control)	epithelial_hypoM	0.052627050645834
+cervical	Never smoker (control)	immune_hypoM	-0.715645613677568
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.790304829645974
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.461587494145647
+cervical	Never smoker (control)	epithelial_hypoM	-0.512880422297333
+cervical	Never smoker (control)	immune_hypoM	-0.387996576897619
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.0725373721661861
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.941238723718338
+cervical	Never smoker (control)	epithelial_hypoM	-1.05060858843028
+cervical	Never smoker (control)	immune_hypoM	-1.43898055105933
+cervical	Never smoker (control)	proximal_epithelial_hyperM	0.356697655425184
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.846504310481053
+cervical	Never smoker (control)	epithelial_hypoM	-2.70166122238233
+cervical	Never smoker (control)	immune_hypoM	-0.845195143943285
+cervical	Never smoker (control)	proximal_epithelial_hyperM	5.64658838225742
+cervical	Never smoker (control)	distal_epithelial_hyperM	1.35943835299042
+cervical	Never smoker (control)	epithelial_hypoM	-2.02368509262914
+cervical	Never smoker (control)	immune_hypoM	-0.96139235814369
+cervical	Never smoker (control)	proximal_epithelial_hyperM	1.02422555633581
+cervical	Never smoker (control)	distal_epithelial_hyperM	0.0324677033212195
+cervical	Never smoker (control)	epithelial_hypoM	-1.66965966982874
+cervical	Never smoker (control)	immune_hypoM	-1.51800632736715
+cervical	Never smoker (control)	proximal_epithelial_hyperM	3.12624652764586
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.470224616048051
+cervical	Never smoker (control)	epithelial_hypoM	-1.08865497708172
+cervical	Never smoker (control)	immune_hypoM	-0.995670380526126
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.157956825906171
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.526995056163923
+cervical	Never smoker (control)	epithelial_hypoM	-0.738033723097565
+cervical	Never smoker (control)	immune_hypoM	-0.623527158359637
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.518893340255792
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.182933122613741
+cervical	Never smoker (control)	epithelial_hypoM	-0.432477978345906
+cervical	Never smoker (control)	immune_hypoM	-0.999452133493361
+cervical	Never smoker (control)	proximal_epithelial_hyperM	1.67993105013645
+cervical	Never smoker (control)	distal_epithelial_hyperM	-1.83213647947364
+cervical	Never smoker (control)	epithelial_hypoM	-1.21425681897998
+cervical	Never smoker (control)	immune_hypoM	-1.31387040676011
+cervical	Never smoker (control)	proximal_epithelial_hyperM	1.66255468706011
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.596295463188484
+cervical	Never smoker (control)	epithelial_hypoM	-0.727745802182628
+cervical	Never smoker (control)	immune_hypoM	-0.845245801485926
+cervical	Never smoker (control)	proximal_epithelial_hyperM	0.109078971613385
+cervical	Never smoker (control)	distal_epithelial_hyperM	0.0829640893065158
+cervical	Never smoker (control)	epithelial_hypoM	-1.01244217600417
+cervical	Never smoker (control)	immune_hypoM	-0.942190428657546
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.185151173722608
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.0668135550669915
+cervical	Never smoker (control)	epithelial_hypoM	0.172853102385537
+cervical	Never smoker (control)	immune_hypoM	-0.299863020457423
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.593975873785448
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.337650141373939
+cervical	Never smoker (control)	epithelial_hypoM	-0.91294925340159
+cervical	Never smoker (control)	immune_hypoM	-0.647317156757863
+cervical	Never smoker (control)	proximal_epithelial_hyperM	0.969362024951585
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.541818637509361
+cervical	Never smoker (control)	epithelial_hypoM	-0.947359194800509
+cervical	Never smoker (control)	immune_hypoM	-0.923065872106167
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.330954797568288
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.197267568684805
+cervical	Never smoker (control)	epithelial_hypoM	-0.667265304111738
+cervical	Never smoker (control)	immune_hypoM	-1.03214538921733
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.142224645065861
+cervical	Never smoker (control)	distal_epithelial_hyperM	-1.72770371131653
+cervical	Never smoker (control)	epithelial_hypoM	-1.03485596725488
+cervical	Never smoker (control)	immune_hypoM	-0.524686295732584
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.770887006344558
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.567998383158765
+cervical	Never smoker (control)	epithelial_hypoM	-0.890755174531157
+cervical	Never smoker (control)	immune_hypoM	-0.72139548157799
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.0585683892644808
+cervical	Never smoker (control)	distal_epithelial_hyperM	0.124881318642971
+cervical	Never smoker (control)	epithelial_hypoM	-1.1011725461744
+cervical	Never smoker (control)	immune_hypoM	-0.745317398029779
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.00833398468129497
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.496615995645443
+cervical	Never smoker (control)	epithelial_hypoM	-1.19680691230356
+cervical	Never smoker (control)	immune_hypoM	0.69599960715795
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-1.43569662086558
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.816746273869978
+cervical	Never smoker (control)	epithelial_hypoM	-0.289966915292622
+cervical	Never smoker (control)	immune_hypoM	0.46325869451748
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.464836357687916
+cervical	Never smoker (control)	distal_epithelial_hyperM	0.155555901939543
+cervical	Never smoker (control)	epithelial_hypoM	-1.07472516650625
+cervical	Never smoker (control)	immune_hypoM	-1.33610882840914
+cervical	Never smoker (control)	proximal_epithelial_hyperM	0.434427703082186
+cervical	Never smoker (control)	distal_epithelial_hyperM	-1.64119623129646
+cervical	Never smoker (control)	epithelial_hypoM	-1.22891826209605
+cervical	Never smoker (control)	immune_hypoM	-0.680244790867363
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.476298535948914
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.233283301099767
+cervical	Never smoker (control)	epithelial_hypoM	-0.624939743978291
+cervical	Never smoker (control)	immune_hypoM	-0.751199559097369
+cervical	Never smoker (control)	proximal_epithelial_hyperM	0.367617720343989
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.80736890316741
+cervical	Never smoker (control)	epithelial_hypoM	0.527073292911116
+cervical	Never smoker (control)	immune_hypoM	0.696339532338639
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.831187829321931
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.541962689059867
+cervical	Never smoker (control)	epithelial_hypoM	-0.513712553027122
+cervical	Never smoker (control)	immune_hypoM	-0.596388298832062
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.312403897939066
+cervical	Never smoker (control)	distal_epithelial_hyperM	-1.01665757848124
+cervical	Never smoker (control)	epithelial_hypoM	-0.389237410279202
+cervical	Never smoker (control)	immune_hypoM	-0.292516373849948
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-1.63621244731431
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.501857101850909
+cervical	Never smoker (control)	epithelial_hypoM	-1.15894280954536
+cervical	Never smoker (control)	immune_hypoM	-1.55544448997656
+cervical	Never smoker (control)	proximal_epithelial_hyperM	0.602057664260195
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.82419925083352
+cervical	Never smoker (control)	epithelial_hypoM	-0.225723844478415
+cervical	Never smoker (control)	immune_hypoM	-0.0719305411495905
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.749207744558319
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.392107656726795
+cervical	Never smoker (control)	epithelial_hypoM	-0.737631806249042
+cervical	Never smoker (control)	immune_hypoM	-0.969835257709636
+cervical	Never smoker (control)	proximal_epithelial_hyperM	1.31755010057048
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.588372761383004
+cervical	Never smoker (control)	epithelial_hypoM	-0.833600795659262
+cervical	Never smoker (control)	immune_hypoM	-0.546854061341835
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.711693203202381
+cervical	Never smoker (control)	distal_epithelial_hyperM	-1.05058500758528
+cervical	Never smoker (control)	epithelial_hypoM	-0.35226300173863
+cervical	Never smoker (control)	immune_hypoM	-0.741417562641147
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.329475915239503
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.469871752335601
+cervical	Never smoker (control)	epithelial_hypoM	-0.15890601539479
+cervical	Never smoker (control)	immune_hypoM	-0.538537555750489
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.0625972460480765
+cervical	Never smoker (control)	distal_epithelial_hyperM	-1.03117335411288
+cervical	Never smoker (control)	epithelial_hypoM	-0.533585978101646
+cervical	Never smoker (control)	immune_hypoM	-0.46362247245483
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.383697005785901
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.598798524506076
+cervical	Never smoker (control)	epithelial_hypoM	-0.993103087106004
+cervical	Never smoker (control)	immune_hypoM	-0.729082888295731
+cervical	Never smoker (control)	proximal_epithelial_hyperM	0.143010826767062
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.61612631664575
+cervical	Never smoker (control)	epithelial_hypoM	-1.19758804060771
+cervical	Never smoker (control)	immune_hypoM	-0.711997001943069
+cervical	Never smoker (control)	proximal_epithelial_hyperM	0.332371109128333
+cervical	Never smoker (control)	distal_epithelial_hyperM	-0.521136393007071
+cervical	Never smoker (control)	epithelial_hypoM	-0.290293812511423
+cervical	Never smoker (control)	immune_hypoM	-0.461373231904199
+cervical	Never smoker (control)	proximal_epithelial_hyperM	-0.0527045763475967
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.750071520770208
+cervical	Former smoker (control)	epithelial_hypoM	1.00422852998481
+cervical	Former smoker (control)	immune_hypoM	-0.325836993439986
+cervical	Former smoker (control)	proximal_epithelial_hyperM	1.2947948103865
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.818922734305664
+cervical	Former smoker (control)	epithelial_hypoM	-0.444455636292452
+cervical	Former smoker (control)	immune_hypoM	-0.639083077510072
+cervical	Former smoker (control)	proximal_epithelial_hyperM	0.37078992619062
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.123016637086958
+cervical	Former smoker (control)	epithelial_hypoM	-0.287030086453854
+cervical	Former smoker (control)	immune_hypoM	-0.43996723946046
+cervical	Former smoker (control)	proximal_epithelial_hyperM	-0.132158305585209
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.893568894178308
+cervical	Former smoker (control)	epithelial_hypoM	-1.41326619008382
+cervical	Former smoker (control)	immune_hypoM	-0.507939572848791
+cervical	Former smoker (control)	proximal_epithelial_hyperM	0.0168019489932562
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.0644481766730829
+cervical	Former smoker (control)	epithelial_hypoM	0.637298134491574
+cervical	Former smoker (control)	immune_hypoM	0.299540413001695
+cervical	Former smoker (control)	proximal_epithelial_hyperM	-0.77175087789908
+cervical	Former smoker (control)	distal_epithelial_hyperM	-0.112311913726082
+cervical	Former smoker (control)	epithelial_hypoM	0.189735112619918
+cervical	Former smoker (control)	immune_hypoM	-0.263174904546505
+cervical	Former smoker (control)	proximal_epithelial_hyperM	-0.636658822114559
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.430175827392223
+cervical	Former smoker (control)	epithelial_hypoM	0.164674202612938
+cervical	Former smoker (control)	immune_hypoM	-0.286401996607425
+cervical	Former smoker (control)	proximal_epithelial_hyperM	-0.0881655577442825
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.405722960437024
+cervical	Former smoker (control)	epithelial_hypoM	-0.317557834323737
+cervical	Former smoker (control)	immune_hypoM	-0.316694292282821
+cervical	Former smoker (control)	proximal_epithelial_hyperM	0.507403007881701
+cervical	Former smoker (control)	distal_epithelial_hyperM	-0.0554899892276208
+cervical	Former smoker (control)	epithelial_hypoM	0.0757467324959537
+cervical	Former smoker (control)	immune_hypoM	0.392463215606778
+cervical	Former smoker (control)	proximal_epithelial_hyperM	-0.710458517399982
+cervical	Former smoker (control)	distal_epithelial_hyperM	1.30311645190313
+cervical	Former smoker (control)	epithelial_hypoM	-0.189863374615851
+cervical	Former smoker (control)	immune_hypoM	-0.61479252036473
+cervical	Former smoker (control)	proximal_epithelial_hyperM	0.268289279464407
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.294362406021967
+cervical	Former smoker (control)	epithelial_hypoM	-0.0246906706222661
+cervical	Former smoker (control)	immune_hypoM	-0.540737769515121
+cervical	Former smoker (control)	proximal_epithelial_hyperM	-0.332827752074728
+cervical	Former smoker (control)	distal_epithelial_hyperM	-0.279952242272623
+cervical	Former smoker (control)	epithelial_hypoM	0.686254683407362
+cervical	Former smoker (control)	immune_hypoM	-0.433676329420917
+cervical	Former smoker (control)	proximal_epithelial_hyperM	-0.697474351493319
+cervical	Former smoker (control)	distal_epithelial_hyperM	-0.195872587328844
+cervical	Former smoker (control)	epithelial_hypoM	-0.559328773927193
+cervical	Former smoker (control)	immune_hypoM	-0.0702256089749392
+cervical	Former smoker (control)	proximal_epithelial_hyperM	-0.523333866602745
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.184070407262132
+cervical	Former smoker (control)	epithelial_hypoM	0.48166275649235
+cervical	Former smoker (control)	immune_hypoM	0.274348344044731
+cervical	Former smoker (control)	proximal_epithelial_hyperM	-0.0818842164532916
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.559071108021992
+cervical	Former smoker (control)	epithelial_hypoM	0.11855805824016
+cervical	Former smoker (control)	immune_hypoM	-0.656139103619755
+cervical	Former smoker (control)	proximal_epithelial_hyperM	0.240837797869531
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.325426316794975
+cervical	Former smoker (control)	epithelial_hypoM	0.196492699700662
+cervical	Former smoker (control)	immune_hypoM	-0.828417059209152
+cervical	Former smoker (control)	proximal_epithelial_hyperM	0.714956999175954
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.0228760235828993
+cervical	Former smoker (control)	epithelial_hypoM	0.332381742330927
+cervical	Former smoker (control)	immune_hypoM	-0.640674177663232
+cervical	Former smoker (control)	proximal_epithelial_hyperM	-0.313545618085858
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.662872208561458
+cervical	Former smoker (control)	epithelial_hypoM	0.292249139177372
+cervical	Former smoker (control)	immune_hypoM	-1.14686137778073
+cervical	Former smoker (control)	proximal_epithelial_hyperM	0.480565227027968
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.887270050904796
+cervical	Former smoker (control)	epithelial_hypoM	0.294278932348657
+cervical	Former smoker (control)	immune_hypoM	-0.572555778600839
+cervical	Former smoker (control)	proximal_epithelial_hyperM	0.509601639850342
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.453080545054369
+cervical	Former smoker (control)	epithelial_hypoM	-0.792795971874945
+cervical	Former smoker (control)	immune_hypoM	-0.56512998069754
+cervical	Former smoker (control)	proximal_epithelial_hyperM	0.300601058120754
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.427626929764121
+cervical	Former smoker (control)	epithelial_hypoM	0.11262472376156
+cervical	Former smoker (control)	immune_hypoM	0.00490327927331725
+cervical	Former smoker (control)	proximal_epithelial_hyperM	-0.485592352313867
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.560917989925666
+cervical	Former smoker (control)	epithelial_hypoM	-0.294978536969365
+cervical	Former smoker (control)	immune_hypoM	-0.359299096968726
+cervical	Former smoker (control)	proximal_epithelial_hyperM	-1.02096084653224
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.640774867584149
+cervical	Former smoker (control)	epithelial_hypoM	1.69890493870444
+cervical	Former smoker (control)	immune_hypoM	-0.207668864438292
+cervical	Former smoker (control)	proximal_epithelial_hyperM	-0.619299695779019
+cervical	Former smoker (control)	distal_epithelial_hyperM	1.02156581258356
+cervical	Former smoker (control)	epithelial_hypoM	0.282210845374237
+cervical	Former smoker (control)	immune_hypoM	-0.491414022625168
+cervical	Former smoker (control)	proximal_epithelial_hyperM	1.15422763025572
+cervical	Former smoker (control)	distal_epithelial_hyperM	-0.280627371009106
+cervical	Former smoker (control)	epithelial_hypoM	-0.178561271085271
+cervical	Former smoker (control)	immune_hypoM	-0.473185438947841
+cervical	Former smoker (control)	proximal_epithelial_hyperM	0.0611900015304015
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.729280435575466
+cervical	Former smoker (control)	epithelial_hypoM	0.0756679505550164
+cervical	Former smoker (control)	immune_hypoM	-0.396493651785847
+cervical	Former smoker (control)	proximal_epithelial_hyperM	1.03069222975647
+cervical	Former smoker (control)	distal_epithelial_hyperM	-0.236319406428913
+cervical	Former smoker (control)	epithelial_hypoM	0.214601702237663
+cervical	Former smoker (control)	immune_hypoM	0.480922543403957
+cervical	Former smoker (control)	proximal_epithelial_hyperM	-1.10483536899323
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.752395111389458
+cervical	Former smoker (control)	epithelial_hypoM	0.516796011977987
+cervical	Former smoker (control)	immune_hypoM	-0.0367124037489867
+cervical	Former smoker (control)	proximal_epithelial_hyperM	-0.453881596474528
+cervical	Former smoker (control)	distal_epithelial_hyperM	1.12617927017038
+cervical	Former smoker (control)	epithelial_hypoM	0.275271534437419
+cervical	Former smoker (control)	immune_hypoM	0.757178834046379
+cervical	Former smoker (control)	proximal_epithelial_hyperM	0.381263617464236
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.819934178514074
+cervical	Former smoker (control)	epithelial_hypoM	-0.372292254210348
+cervical	Former smoker (control)	immune_hypoM	-0.48861732583588
+cervical	Former smoker (control)	proximal_epithelial_hyperM	0.246552819558139
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.393441092297516
+cervical	Former smoker (control)	epithelial_hypoM	-0.18027426187625
+cervical	Former smoker (control)	immune_hypoM	-0.322866447927561
+cervical	Former smoker (control)	proximal_epithelial_hyperM	-0.214098995616786
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.140721968009263
+cervical	Former smoker (control)	epithelial_hypoM	1.32022409572565
+cervical	Former smoker (control)	immune_hypoM	-0.383775582950664
+cervical	Former smoker (control)	proximal_epithelial_hyperM	-0.69178363209853
+cervical	Former smoker (control)	distal_epithelial_hyperM	1.17822461157126
+cervical	Former smoker (control)	epithelial_hypoM	0.226356611643794
+cervical	Former smoker (control)	immune_hypoM	-0.839547518608734
+cervical	Former smoker (control)	proximal_epithelial_hyperM	0.160430057973668
+cervical	Former smoker (control)	distal_epithelial_hyperM	2.01878135272948
+cervical	Former smoker (control)	epithelial_hypoM	-1.27238643281397
+cervical	Former smoker (control)	immune_hypoM	-1.22800058841157
+cervical	Former smoker (control)	proximal_epithelial_hyperM	1.63915192716263
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.637549267979396
+cervical	Former smoker (control)	epithelial_hypoM	0.367510505742568
+cervical	Former smoker (control)	immune_hypoM	-0.679131528868088
+cervical	Former smoker (control)	proximal_epithelial_hyperM	0.475517403382637
+cervical	Former smoker (control)	distal_epithelial_hyperM	-0.25011761312268
+cervical	Former smoker (control)	epithelial_hypoM	0.203957296919982
+cervical	Former smoker (control)	immune_hypoM	-0.537301834213373
+cervical	Former smoker (control)	proximal_epithelial_hyperM	0.262372838373697
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.811718257457036
+cervical	Former smoker (control)	epithelial_hypoM	-0.37278116649176
+cervical	Former smoker (control)	immune_hypoM	-0.405606867465942
+cervical	Former smoker (control)	proximal_epithelial_hyperM	0.720212712547644
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.223399785175569
+cervical	Former smoker (control)	epithelial_hypoM	0.436323071976186
+cervical	Former smoker (control)	immune_hypoM	-0.308847916995567
+cervical	Former smoker (control)	proximal_epithelial_hyperM	-0.534480053005546
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.775307757346948
+cervical	Former smoker (control)	epithelial_hypoM	-0.0974897448519149
+cervical	Former smoker (control)	immune_hypoM	-0.368012345058123
+cervical	Former smoker (control)	proximal_epithelial_hyperM	-0.59093342717304
+cervical	Former smoker (control)	distal_epithelial_hyperM	0.857482420848454
+cervical	Former smoker (control)	epithelial_hypoM	0.0290745364213573
+cervical	Former smoker (control)	immune_hypoM	-0.531606962682746
+cervical	Former smoker (control)	proximal_epithelial_hyperM	0.419127878922511
+cervical	Current smoker	distal_epithelial_hyperM	0.500302433438082
+cervical	Current smoker	epithelial_hypoM	1.67973702965422
+cervical	Current smoker	immune_hypoM	1.97532721746113
+cervical	Current smoker	proximal_epithelial_hyperM	-0.353490369434029
+cervical	Current smoker	distal_epithelial_hyperM	0.191360412347664
+cervical	Current smoker	epithelial_hypoM	1.19628617431818
+cervical	Current smoker	immune_hypoM	0.85351776644815
+cervical	Current smoker	proximal_epithelial_hyperM	-0.207705460616387
+cervical	Current smoker	distal_epithelial_hyperM	-0.373720611983117
+cervical	Current smoker	epithelial_hypoM	0.712734591558112
+cervical	Current smoker	immune_hypoM	1.50677391448255
+cervical	Current smoker	proximal_epithelial_hyperM	-0.829651972782048
+cervical	Current smoker	distal_epithelial_hyperM	-0.0999369019052588
+cervical	Current smoker	epithelial_hypoM	2.3453708905975
+cervical	Current smoker	immune_hypoM	1.8377052251991
+cervical	Current smoker	proximal_epithelial_hyperM	-1.37527372368044
+cervical	Current smoker	distal_epithelial_hyperM	0.848948322542996
+cervical	Current smoker	epithelial_hypoM	0.441148352870523
+cervical	Current smoker	immune_hypoM	1.17337090272429
+cervical	Current smoker	proximal_epithelial_hyperM	1.2616852221015
+cervical	Current smoker	distal_epithelial_hyperM	0.158930361400635
+cervical	Current smoker	epithelial_hypoM	0.975330411191861
+cervical	Current smoker	immune_hypoM	0.887704635261188
+cervical	Current smoker	proximal_epithelial_hyperM	-0.282160392944812
+cervical	Current smoker	distal_epithelial_hyperM	1.03766719532698
+cervical	Current smoker	epithelial_hypoM	1.69439359867826
+cervical	Current smoker	immune_hypoM	1.32129802578468
+cervical	Current smoker	proximal_epithelial_hyperM	0.701236609337698
+cervical	Current smoker	distal_epithelial_hyperM	1.6129398226455
+cervical	Current smoker	epithelial_hypoM	1.94599296471609
+cervical	Current smoker	immune_hypoM	1.29790953564985
+cervical	Current smoker	proximal_epithelial_hyperM	0.777788692142943
+cervical	Current smoker	distal_epithelial_hyperM	-0.486285696134273
+cervical	Current smoker	epithelial_hypoM	1.29733340016054
+cervical	Current smoker	immune_hypoM	1.30056051942959
+cervical	Current smoker	proximal_epithelial_hyperM	-1.34404751785278
+cervical	Current smoker	distal_epithelial_hyperM	-0.879745385514274
+cervical	Current smoker	epithelial_hypoM	1.65000596283519
+cervical	Current smoker	immune_hypoM	1.61256443438831
+cervical	Current smoker	proximal_epithelial_hyperM	-1.67538963763583
+cervical	Current smoker	distal_epithelial_hyperM	-0.331870636255358
+cervical	Current smoker	epithelial_hypoM	-1.29150364839966
+cervical	Current smoker	immune_hypoM	0.755493809990155
+cervical	Current smoker	proximal_epithelial_hyperM	3.62340262428742
+cervical	Current smoker	distal_epithelial_hyperM	0.424115141618517
+cervical	Current smoker	epithelial_hypoM	1.4113191014521
+cervical	Current smoker	immune_hypoM	0.79660931868797
+cervical	Current smoker	proximal_epithelial_hyperM	-0.233485808788321
+cervical	Current smoker	distal_epithelial_hyperM	-0.255616537881977
+cervical	Current smoker	epithelial_hypoM	2.13634321077046
+cervical	Current smoker	immune_hypoM	1.94785764163543
+cervical	Current smoker	proximal_epithelial_hyperM	-1.47497364214643
+cervical	Current smoker	distal_epithelial_hyperM	0.828894951168464
+cervical	Current smoker	epithelial_hypoM	1.23573995153438
+cervical	Current smoker	immune_hypoM	2.56209894792781
+cervical	Current smoker	proximal_epithelial_hyperM	0.583358801507973
+cervical	Current smoker	distal_epithelial_hyperM	1.17930503696839
+cervical	Current smoker	epithelial_hypoM	1.69172223556524
+cervical	Current smoker	immune_hypoM	1.50753858514587
+cervical	Current smoker	proximal_epithelial_hyperM	0.426581958408274
+cervical	Current smoker	distal_epithelial_hyperM	-0.146160881506122
+cervical	Current smoker	epithelial_hypoM	0.82524652565775
+cervical	Current smoker	immune_hypoM	1.19318396556598
+cervical	Current smoker	proximal_epithelial_hyperM	0.0943686925003615
+cervical	Current smoker	distal_epithelial_hyperM	1.97228321848606
+cervical	Current smoker	epithelial_hypoM	1.13006009988266
+cervical	Current smoker	immune_hypoM	1.94276045148999
+cervical	Current smoker	proximal_epithelial_hyperM	0.473953884955218
+cervical	Current smoker	distal_epithelial_hyperM	0.941884311789458
+cervical	Current smoker	epithelial_hypoM	1.18046094918018
+cervical	Current smoker	immune_hypoM	1.43947537627305
+cervical	Current smoker	proximal_epithelial_hyperM	-0.00825804254270189
+cervical	Current smoker	distal_epithelial_hyperM	0.209387457642575
+cervical	Current smoker	epithelial_hypoM	1.17944441462626
+cervical	Current smoker	immune_hypoM	0.237995939231331
+cervical	Current smoker	proximal_epithelial_hyperM	-0.948766967350995
+cervical	Current smoker	distal_epithelial_hyperM	0.602865933519511
+cervical	Current smoker	epithelial_hypoM	0.852824831548234
+cervical	Current smoker	immune_hypoM	0.777340491628991
+cervical	Current smoker	proximal_epithelial_hyperM	0.584371388316148
+cervical	Current smoker	distal_epithelial_hyperM	0.144986995242874
+cervical	Current smoker	epithelial_hypoM	1.87228725271983
+cervical	Current smoker	immune_hypoM	1.5115455672115
+cervical	Current smoker	proximal_epithelial_hyperM	-0.714707440747891
+cervical	Current smoker	distal_epithelial_hyperM	-1.32422866163437
+cervical	Current smoker	epithelial_hypoM	-0.103140691188405
+cervical	Current smoker	immune_hypoM	1.20620392409234
+cervical	Current smoker	proximal_epithelial_hyperM	-0.293932006639135
+cervical	Current smoker	distal_epithelial_hyperM	0.921409775579789
+cervical	Current smoker	epithelial_hypoM	0.253747350739275
+cervical	Current smoker	immune_hypoM	0.832334147691907
+cervical	Current smoker	proximal_epithelial_hyperM	1.19418757384731
+cervical	Current smoker	distal_epithelial_hyperM	0.695927524963899
+cervical	Current smoker	epithelial_hypoM	1.25377812337755
+cervical	Current smoker	immune_hypoM	1.09428059507575
+cervical	Current smoker	proximal_epithelial_hyperM	0.362708974358567
+cervical	Current smoker	distal_epithelial_hyperM	-0.250731439514798
+cervical	Current smoker	epithelial_hypoM	1.95992560523423
+cervical	Current smoker	immune_hypoM	1.9087127041093
+cervical	Current smoker	proximal_epithelial_hyperM	-1.11605433867991
+cervical	Current smoker	distal_epithelial_hyperM	-0.285482592880543
+cervical	Current smoker	epithelial_hypoM	1.05006218209789
+cervical	Current smoker	immune_hypoM	2.00814374972109
+cervical	Current smoker	proximal_epithelial_hyperM	0.176352920049452
+cervical	Current smoker	distal_epithelial_hyperM	0.842544591011984
+cervical	Current smoker	epithelial_hypoM	1.46413222843742
+cervical	Current smoker	immune_hypoM	1.8360295201846
+cervical	Current smoker	proximal_epithelial_hyperM	0.462490135216537
+cervical	Current smoker	distal_epithelial_hyperM	0.994476992925014
+cervical	Current smoker	epithelial_hypoM	1.04544899014337
+cervical	Current smoker	immune_hypoM	0.210866848448629
+cervical	Current smoker	proximal_epithelial_hyperM	0.532420997328056
+cervical	Current smoker	distal_epithelial_hyperM	0.177049197849883
+cervical	Current smoker	epithelial_hypoM	1.38715403006457
+cervical	Current smoker	immune_hypoM	1.00293292885021
+cervical	Current smoker	proximal_epithelial_hyperM	-0.950083601474401
+cervical	Current smoker	distal_epithelial_hyperM	2.20258054036711
+cervical	Current smoker	epithelial_hypoM	1.30470976855009
+cervical	Current smoker	immune_hypoM	2.57366725171284
+cervical	Current smoker	proximal_epithelial_hyperM	0.532640842580305
+cervical	Current smoker	distal_epithelial_hyperM	0.263995797437532
+cervical	Current smoker	epithelial_hypoM	0.920613761331913
+cervical	Current smoker	immune_hypoM	1.39690990495821
+cervical	Current smoker	proximal_epithelial_hyperM	-0.195330224023377
+cervical	Current smoker	distal_epithelial_hyperM	-0.330096309240351
+cervical	Current smoker	epithelial_hypoM	1.43652876259229
+cervical	Current smoker	immune_hypoM	0.686021146682475
+cervical	Current smoker	proximal_epithelial_hyperM	-0.527632397066358
+cervical	Current smoker	distal_epithelial_hyperM	-1.01979079056412
+cervical	Current smoker	epithelial_hypoM	1.44298272855826
+cervical	Current smoker	immune_hypoM	2.03354460167498
+cervical	Current smoker	proximal_epithelial_hyperM	0.349989490587069
+cervical	Current smoker	distal_epithelial_hyperM	0.61153726999487
+cervical	Current smoker	epithelial_hypoM	1.2683934661276
+cervical	Current smoker	immune_hypoM	0.184364379379979
+cervical	Current smoker	proximal_epithelial_hyperM	-0.53181361327011
+cervical	Current smoker	distal_epithelial_hyperM	6.67699280309276
+cervical	Current smoker	epithelial_hypoM	1.01940809979144
+cervical	Current smoker	immune_hypoM	1.28222334836328
+cervical	Current smoker	proximal_epithelial_hyperM	1.21968583012847
+cervical	Current smoker	distal_epithelial_hyperM	-0.345136007846981
+cervical	Current smoker	epithelial_hypoM	0.864794469634843
+cervical	Current smoker	immune_hypoM	0.59104284661512
+cervical	Current smoker	proximal_epithelial_hyperM	-1.35322149076348
+cervical	Current smoker	distal_epithelial_hyperM	-0.310894572181865
+cervical	Current smoker	epithelial_hypoM	1.13801494013582
+cervical	Current smoker	immune_hypoM	1.13578270394557
+cervical	Current smoker	proximal_epithelial_hyperM	-0.471576144929345
+cervical	Current smoker	distal_epithelial_hyperM	0.368024257698244
+cervical	Current smoker	epithelial_hypoM	0.567342765486373
+cervical	Current smoker	immune_hypoM	-0.638025404989859
+cervical	Current smoker	proximal_epithelial_hyperM	0.354342089897014
+cervical	Current smoker	distal_epithelial_hyperM	0.900936730386335
+cervical	Current smoker	epithelial_hypoM	1.60045954282383
+cervical	Current smoker	immune_hypoM	1.60796021211321
+cervical	Current smoker	proximal_epithelial_hyperM	0.403089038265768
+cervical	Current smoker	distal_epithelial_hyperM	1.1006154250954
+cervical	Current smoker	epithelial_hypoM	1.29389501689049
+cervical	Current smoker	immune_hypoM	2.51666609105862
+cervical	Current smoker	proximal_epithelial_hyperM	0.51887492048275
+cervical	Current smoker	distal_epithelial_hyperM	2.89207855209939
+cervical	Current smoker	epithelial_hypoM	0.573333100003827
+cervical	Current smoker	immune_hypoM	3.54283022576094
+cervical	Current smoker	proximal_epithelial_hyperM	0.926037084075999
+cervical	Current smoker	distal_epithelial_hyperM	0.612774734975348
+cervical	Current smoker	epithelial_hypoM	0.521851659924611
+cervical	Current smoker	immune_hypoM	0.445189436565132
+cervical	Current smoker	proximal_epithelial_hyperM	0.568179580859678

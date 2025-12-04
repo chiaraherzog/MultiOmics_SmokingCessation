@@ -1,0 +1,21 @@
+dim	feature	assay	value
+PC1	relmaxcap	Functional sports exam	4.08795275472695
+PC1	vo2max	Functional sports exam	4.02582689498477
+PC1	relpower80hf	Functional sports exam	3.30272056562949
+PC1	AgeAccelGrimV2	Composite methylation scores: blood	2.68734983999362
+PC1	mCigarette	Composite methylation scores: blood	2.59536983298044
+PC1	weight	Body composition	2.46367955283431
+PC1	mCigarette	Composite methylation scores: cervical	2.43125968199384
+PC1	PD<sup>-</sup>1<sup>+</sup> CD4<sup>+</sup> T cells	Flow cytometry: immune cells	2.43063096531009
+PC1	bmi	Body composition	2.42361083329305
+PC1	WID-SMK proximal epithelial hyperM	Composite methylation scores: buccal	2.37442195760079
+PC2	CD57<sup>-</sup>KLRG1<sup>-</sup> CD8<sup>+</sup> T cells	Flow cytometry: immune cells	5.81196546284816
+PC2	CD8<sup>+</sup> T<sub>n</sub> cells	Flow cytometry: immune cells	5.40952497649851
+PC2	CD57<sup>+</sup>CD28<sup>-</sup> CD8<sup>+</sup> T cells	Flow cytometry: immune cells	4.76880079706272
+PC2	CD57<sup>+</sup>KLRG1<sup>+</sup> CD8<sup>+</sup> T cells	Flow cytometry: immune cells	4.60442799019004
+PC2	CD57<sup>-</sup>CD28<sup>+</sup> CD8<sup>+</sup> T cells	Flow cytometry: immune cells	4.27136573472214
+PC2	CD8<sup>+</sup> T<sub>reg</sub>	Flow cytometry: immune cells	3.98367701543156
+PC2	NK T cells	Flow cytometry: immune cells	3.81231312322809
+PC2	CD8<sup>+</sup> T<sub>em</sub> cells	Flow cytometry: immune cells	3.71265432117091
+PC2	KiR<sup>+</sup> CD8<sup>+</sup> T cells	Flow cytometry: immune cells	3.48112684744045
+PC2	CD94<sup>+</sup> CD8<sup>+</sup> T cells	Flow cytometry: immune cells	3.46355531376514

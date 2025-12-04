@@ -1,0 +1,13 @@
+rowname	sampletype	cotinine	spy	cig	cotinine.p	spy.p	cig.p	label
+blood_WID_SMK_distal_epithelial_hyperM	blood	0.150542645390069	-0.353210496079341	0.0208166787857493	 	*	 	distal epithelial hyperM
+blood_WID_SMK_epithelial_hypoM	blood	0.0582039508692864	-0.266585133500097	-0.212620229844946	 	.	 	epithelial hypoM
+blood_WID_SMK_immune_hypoM_corr_z	blood	0.491058555189215	0.405746411880029	0.522208592131871	**	**	***	immune hypoM 
+blood_WID_SMK_proximal_epithelial_hyperM	blood	0.170793780127785	0.220899733202737	0.114942515932158	 	 	 	proximal epithelial hyperM
+buccal_WID_SMK_distal_epithelial_hyperM_corr_z	buccal	-0.214725872616917	-0.172395868559748	-0.0211339226696246	 	 	 	distal epithelial hyperM 
+buccal_WID_SMK_epithelial_hypoM_corr_z	buccal	0.64473878157717	0.318347834813222	0.338144895417956	***	*	*	epithelial hypoM 
+buccal_WID_SMK_immune_hypoM_corr_z	buccal	0.576639910487792	0.133803792166385	0.190361195334821	***	 	 	immune hypoM 
+buccal_WID_SMK_proximal_epithelial_hyperM_corr_z	buccal	0.218755554902847	0.392504786372322	0.424030341666324	 	*	**	proximal epithelial hyperM 
+cervical_WID_SMK_distal_epithelial_hyperM_corr_z	cervical	0.0724108722452864	0.176114165389	0.322399799371552	 	 	*	distal epithelial hyperM 
+cervical_WID_SMK_epithelial_hypoM_corr_z	cervical	0.0974634418309107	-0.0159951052246141	0.0404491980538574	 	 	 	epithelial hypoM 
+cervical_WID_SMK_immune_hypoM_corr_z	cervical	0.328388828894787	0.473191767268715	0.466370879562345	*	**	**	immune hypoM 
+cervical_WID_SMK_proximal_epithelial_hyperM_corr_z	cervical	0.0967927275639069	0.0228518884515031	0.126792868637513	 	 	 	proximal epithelial hyperM 

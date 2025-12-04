@@ -1,0 +1,337 @@
+value	rowname	visitId	id
+0.00128936446985683	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M4	7
+0	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M0	12
+-0.0419269806405754	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M2	1
+0	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M0	9
+0	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M0	1
+0.00670628433546126	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M4	5
+0.00877428079773016	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M2	7
+0	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M0	5
+0.0230501468832341	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M2	10
+-0.00414346467023828	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M2	2
+0.108271316013575	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M6	5
+0.0306788501271859	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M2	14
+0	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M0	6
+0	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M0	2
+0.0503687650700631	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M4	10
+-0.0205705307511032	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M4	6
+0	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M0	8
+-0.0219657134779639	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M4	13
+0	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M0	13
+0.0146551966840711	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M2	12
+-0.010019508695207	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M6	14
+0.00407716149940562	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M6	6
+0.0787729598497648	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M2	13
+0	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M0	11
+0	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M0	10
+0.00527570695135048	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M4	2
+0.0298510563462944	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M2	9
+0.0298050682261208	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M4	4
+0.0130451238347296	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M2	3
+0.0579723881980529	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M2	5
+-0.125408527010863	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M6	11
+0.069363288664669	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M6	9
+-0.0426502823075612	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M6	1
+0.0609990079591973	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M6	13
+0	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M0	3
+-0.0283639013701231	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M4	11
+0.101636210444473	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M4	9
+0.0171246436962563	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M6	4
+0.0415519691344147	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M6	8
+0.118255398405295	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M2	8
+-0.0376308087611144	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M2	4
+0.0430902361218974	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M4	1
+0.00996974616230648	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M4	14
+0	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M0	4
+0.00443098196755019	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M6	2
+-0.0343416036622869	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M4	3
+0	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M0	7
+0	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M0	14
+0.0377903366346399	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M6	12
+-0.112453293165273	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M6	7
+0.0260644136636003	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M4	12
+0.0073340574882173	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M2	6
+0.117922844895206	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M4	8
+-0.102385297372003	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M6	10
+0.080863754872749	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M6	3
+0.0160979800521903	**balance +**  
+Prevotellaceae  
+Family XI  
+Corynebacteriaceae	M2	11
+0.000907027112424685	**balance -**  
+Neisseriaceae	M4	7
+0	**balance -**  
+Neisseriaceae	M0	12
+-0.00313976426040087	**balance -**  
+Neisseriaceae	M2	1
+0	**balance -**  
+Neisseriaceae	M0	9
+0	**balance -**  
+Neisseriaceae	M0	1
+-0.00728811174319317	**balance -**  
+Neisseriaceae	M4	5
+0.00916486919258195	**balance -**  
+Neisseriaceae	M2	7
+0	**balance -**  
+Neisseriaceae	M0	5
+0.0448910062420139	**balance -**  
+Neisseriaceae	M2	10
+0.0624192868547623	**balance -**  
+Neisseriaceae	M2	2
+-0.00104036731849394	**balance -**  
+Neisseriaceae	M6	5
+-0.00838947245924599	**balance -**  
+Neisseriaceae	M2	14
+0	**balance -**  
+Neisseriaceae	M0	6
+0	**balance -**  
+Neisseriaceae	M0	2
+0.00321008103115663	**balance -**  
+Neisseriaceae	M4	10
+0.00398979897353817	**balance -**  
+Neisseriaceae	M4	6
+0	**balance -**  
+Neisseriaceae	M0	8
+-0.00110190030541325	**balance -**  
+Neisseriaceae	M4	13
+0	**balance -**  
+Neisseriaceae	M0	13
+0.00986125381198143	**balance -**  
+Neisseriaceae	M2	12
+-0.00478899544424512	**balance -**  
+Neisseriaceae	M6	14
+0.00404174074654881	**balance -**  
+Neisseriaceae	M6	6
+-0.00163205027764637	**balance -**  
+Neisseriaceae	M2	13
+0	**balance -**  
+Neisseriaceae	M0	11
+0	**balance -**  
+Neisseriaceae	M0	10
+0.0725608025406206	**balance -**  
+Neisseriaceae	M4	2
+0.00162404945661421	**balance -**  
+Neisseriaceae	M2	9
+0.0079344193817878	**balance -**  
+Neisseriaceae	M4	4
+-0.00127034160418753	**balance -**  
+Neisseriaceae	M2	3
+-0.000253606150161397	**balance -**  
+Neisseriaceae	M2	5
+0.070111074020006	**balance -**  
+Neisseriaceae	M6	11
+0.00712899784858406	**balance -**  
+Neisseriaceae	M6	9
+0.0414247072348894	**balance -**  
+Neisseriaceae	M6	1
+-0.0000472592828427753	**balance -**  
+Neisseriaceae	M6	13
+0	**balance -**  
+Neisseriaceae	M0	3
+0.0176800527903469	**balance -**  
+Neisseriaceae	M4	11
+0.00418720443281584	**balance -**  
+Neisseriaceae	M4	9
+0.0016057095491959	**balance -**  
+Neisseriaceae	M6	4
+0.0306584494126117	**balance -**  
+Neisseriaceae	M6	8
+-0.000644341994362475	**balance -**  
+Neisseriaceae	M2	8
+0.0143895197081064	**balance -**  
+Neisseriaceae	M2	4
+0.0136427189367444	**balance -**  
+Neisseriaceae	M4	1
+0.00951138521473792	**balance -**  
+Neisseriaceae	M4	14
+0	**balance -**  
+Neisseriaceae	M0	4
+0.0325327275615776	**balance -**  
+Neisseriaceae	M6	2
+0.0383597843865284	**balance -**  
+Neisseriaceae	M4	3
+0	**balance -**  
+Neisseriaceae	M0	7
+0	**balance -**  
+Neisseriaceae	M0	14
+-0.0147476703114838	**balance -**  
+Neisseriaceae	M6	12
+0.0819189139454521	**balance -**  
+Neisseriaceae	M6	7
+-0.00935678318859113	**balance -**  
+Neisseriaceae	M4	12
+0.00368745308288749	**balance -**  
+Neisseriaceae	M2	6
+0.0020551999066915	**balance -**  
+Neisseriaceae	M4	8
+0.0284668290585126	**balance -**  
+Neisseriaceae	M6	10
+0.0106822625032007	**balance -**  
+Neisseriaceae	M6	3
+0.00227076662643907	**balance -**  
+Neisseriaceae	M2	11

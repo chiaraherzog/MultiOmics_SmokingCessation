@@ -28,19 +28,19 @@ website:
           - fig2-clin-imm.qmd
           - fig3-epi.qmd
           - fig4-metab.qmd
-          - fig5-microb.qmd
+          - fig5-microb-revised.qmd
           - fig6-integration.qmd
       - section: "Tables"
         contents:
-          - et1.qmd
-          - et2.qmd
-          - et3.qmd
-          - et4.qmd
-          - et5.qmd
-          - et6.qmd
-          - et7.qmd
-          - et9.qmd
-          - et10.qmd
+          - st1.qmd
+          - st2.qmd
+          - st3.qmd
+          - st4.qmd
+          - st5.qmd
+          - st6.qmd
+          - st7.qmd
+          - st9.qmd
+          - st10.qmd
           
 format:
   html:

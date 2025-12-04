@@ -1,0 +1,649 @@
+OTU	rel.abund.	group	Phylum	Family	Genus	Species	label
+ASV_1vt_h8b_4qs	0.00131742662665593	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00512332577032862	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0198345897679865	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0275195784234795	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0100270804362146	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00658713313327966	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0193954475591012	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00790455975993559	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0187367342457733	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00450669914738124	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00889159561510353	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0224116930572473	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0235079171741778	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0176613885505481	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.010353227771011	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0263093788063337	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0118148599269184	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0444579780755177	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0496087763168509	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.177784947971283	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.237718802936194	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.000802954873936085	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00674482094106311	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0390236068732937	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0656817086879717	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0104384133611691	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0239280552432953	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0194315079492533	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00979604946202023	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.024409828167657	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0073634382748516	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0024795251333684	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0195356525659328	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0614621684574348	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00593583289503344	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0317830039822676	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0270493650912916	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00360658201217221	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0713802689909084	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00702938282018839	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0091381976662449	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.020197759970008	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00299920333661371	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.030460658887483	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00192136463751816	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.00412390458784385	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00463939266132434	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0210881484605652	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00145574078422165	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0026297252876262	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0120685606949988	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0190185489551538	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00779525710260625	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0223996243249589	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0294904907255224	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00436722235266494	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0150739610237145	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0153610771113831	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0116279069767442	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0309669522643819	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00514075887392901	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00593635250917993	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0135250917992656	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0421358629130967	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00422276621787026	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0402386780905753	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00769858859209145	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0169718884871107	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0366849410941327	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0298028694739298	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.028228158171002	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0112562696838913	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0208795054240056	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.015747113029278	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0566312842645515	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00650406504065041	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0100062539086929	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0442776735459662	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0203252032520325	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0190118824265166	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0172607879924953	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0195121951219512	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0223264540337711	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0758599124452783	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00561181706766432	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00793394826807715	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0461201057859769	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0323163258724118	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00432174417854609	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0147068309359479	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0388311939624589	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00915951751273947	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0361220408953106	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00259130293950927	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0173293384079683	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.071746700137663	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00493967122843955	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0353065025508138	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00631630091505385	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0191918373957405	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.026074985828812	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.116203741193619	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0121181772658988	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00240360540811217	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0297446169253881	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.085628442663996	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00340510766149224	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.028943415122684	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.042363545317977	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00310465698547822	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0605908863294942	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0087114084605199	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0049480800055753	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0226496619973517	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0175621994564081	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0108718377587288	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0301763189072409	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0311519966548191	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00216042929820893	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0585406648546937	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00509090909090909	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00101818181818182	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0676363636363636	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0203636363636364	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00392727272727273	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0215272727272727	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0290909090909091	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00276363636363636	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0616727272727273	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00370150042963844	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00264392887831317	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0244563421243969	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.021283627470421	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.000859276885451781	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0229360830193668	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.049573666468372	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0113688941767466	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0163923590455417	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00278150300501664	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0263249391546218	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.02125863010977	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00596036358217851	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0215069785923608	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00690408781602344	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0207122634480703	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0151492574380371	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0124670938260567	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.000705542032666596	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.000811373337566586	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0259286697004974	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0340776801777966	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00451546900906622	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0402511729636293	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0408508836913959	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00158746957349984	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0207429357603979	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00246369294605809	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00116701244813278	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0285269709543568	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.043957468879668	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.000129668049792531	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0307313278008299	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0697614107883817	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00324170124481328	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0626296680497925	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.000103966314913968	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0207412798253366	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0345687997088943	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.000311898944741904	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0362842439049748	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0337370691895826	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00103966314913968	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.00285907366013412	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00422958612975391	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0016428970917226	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.00978747203579418	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0213926174496644	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00297119686800895	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0141568791946309	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0628495525727069	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.000908836689038031	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.00734060402684564	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00500950077733633	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00115160937410031	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.030344907007543	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.049058559336673	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00161225312374043	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0266597570104221	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0484251741809178	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00236079921690563	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0551045085506996	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00279122508613546	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00274761219416459	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0252954773431026	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0521610187971564	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00850451393431899	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0133455449430852	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0204980592263073	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.011775480832134	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.056565920886214	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0014959960106773	Never smoker (control)	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00891730955384119	Never smoker (control)	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0369012349300402	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0149012935965504	Never smoker (control)	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0693731483382711	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00366665688891496	Never smoker (control)	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.00988530697251474	Never smoker (control)	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0137572966472089	Never smoker (control)	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.140594291748555	Never smoker (control)	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0183326967813618	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0151730842679074	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0720461095100865	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.000104163049894101	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.11836394569633	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.000486094232839138	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.00187493489809382	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0116662615881393	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.120169438561161	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0148445118647741	M6 no smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0159280528768014	M6 no smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0543937588037707	M6 no smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00162531151804096	M6 no smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0301224401343591	M6 no smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00108354101202731	M6 no smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0088850362986239	M6 no smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0109437642214758	M6 no smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.140318561057536	M6 no smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00475116379517205	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00273551854873542	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0392570907520276	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0136296011901905	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00791860632528675	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0268272783990018	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0239477851898066	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00782262321831358	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0298987378221433	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.01361230148727	M6 smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.000630199142929166	M6 smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0178976556591883	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0126039828585833	M6 smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00441139400050416	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0284850012603983	M6 smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.00819258885807915	M6 smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.002268716914545	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0122258633728258	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0014265335235378	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.000603533413804455	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0347854713047295	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0522879403050587	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00888840118512016	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.030231537364205	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0346757379567651	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00625480083397345	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.072753209700428	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00271370420624152	M6 smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.000759837177747626	M6 smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0223609226594301	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0786431478968792	M6 smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00206241519674355	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.043853459972863	M6 smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0450474898236092	M6 smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00797829036635007	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0155766621438263	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0179994503984611	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0137400384721077	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0556471558120363	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0283044792525419	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00247320692497939	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00948062654575433	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0222588623248145	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0140148392415499	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0424567188788129	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00285740621255415	M6 smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00742003871324546	M6 smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0394045534150613	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0438289243248226	M6 smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00705134113743202	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0173287860632316	M6 smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0252096967462439	M6 smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0196331459120656	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0977970319845147	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0119360902255639	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0181390977443609	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0418233082706767	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00394736842105263	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0257518796992481	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00357142857142857	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.00921052631578947	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0152255639097744	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0794172932330827	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0110469068660775	M6 smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.01472920915477	M6 smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0482664853840925	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00430546113754815	M6 smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0222637661454793	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00379560389757535	M6 smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0134828914570587	M6 smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0267391796963517	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0535350101971448	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.012586532410321	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0228130899937067	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0575833857772184	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00943989930774072	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0229704216488357	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00975456261799874	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.013215859030837	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0217117684078037	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0665512901195721	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0235858902108119	M6 no smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0155499895637654	M6 no smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0540596952619495	M6 no smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0144020037570445	M6 no smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0325610519724483	M6 no smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00511375495721144	M6 no smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0293258192444166	M6 no smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0118973074514715	M6 no smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0859945731580046	M6 no smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00448405971455132	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0152567397604856	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.04937934051512	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0185924427188713	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00388253950894078	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0120850877672664	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0325367747580248	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0447859134904577	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00333397448227223	M6 smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0231454766942361	M6 smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0341732384432904	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0049368468295185	M6 smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0462909533884721	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00429569789061999	M6 smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.00525742129896775	M6 smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.022760787330897	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0653330768737578	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00597285067873303	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00549019607843137	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0339064856711916	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00796380090497738	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.012790346907994	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00820512820512821	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0116440422322775	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.017315233785822	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0702865761689291	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0024583866837388	M6 smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00865556978233035	M6 smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0436875800256082	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0551088348271447	M6 smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00174135723431498	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0269910371318822	M6 smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0311395646606914	M6 smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0174647887323944	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0409731113956466	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0372106651040141	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0158218576032816	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0920011719894521	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.135950776443012	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00439496044535599	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.240843832405508	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0107164358819988	M6 no smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0102347983142685	M6 no smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0674292594822396	M6 no smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.000240818783865141	M6 no smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0767007826610476	M6 no smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0	M6 no smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0	M6 no smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00806742925948224	M6 no smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.193738711619506	M6 no smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0108511755440173	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0153433288606266	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0406627384633335	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00390875678198472	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0499387433638644	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0000583396534624584	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0123096668805787	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0326118662855143	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.100402543608891	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00658716638273708	M6 no smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0138557637705849	M6 no smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0471323111868257	M6 no smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00386144236229415	M6 no smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0357751277683135	M6 no smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00397501419647927	M6 no smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.00885860306643952	M6 no smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0261215218625781	M6 no smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0323679727427598	M6 no smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00807227403906479	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0182776360366389	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0172320046844285	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00167301016353674	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0239240453385754	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00627378811326279	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.00614831235099753	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0141787611359739	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0360115437701284	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0200975521633095	M6 smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00808418390389305	M6 smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0245235299430946	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0892873272513775	M6 smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00438081474121579	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0231686387860175	M6 smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0415951585222654	M6 smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00307108662270798	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.018065215427694	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.01434034416826	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0129344280733326	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0494882465414464	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00236193903947812	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.024069283545158	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0194016421099989	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0102350691710719	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.026318749297042	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0705207513215611	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00537969307435302	M6 no smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00877739396341809	M6 no smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0541367008324367	M6 no smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00526643637805085	M6 no smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.013420918511807	M6 no smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0168752477490232	M6 no smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0186307265417068	M6 no smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0226513392604338	M6 no smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0644430601959341	M6 no smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00832254484926946	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0114666173478824	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0852598483447383	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00314407249861291	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00351396338080266	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00110967264656926	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0201590530793416	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0153504716108748	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0332901793970779	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00709895247164748	M6 no smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00328975846247078	M6 no smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0626785559691802	M6 no smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.000519435546705913	M6 no smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0018180244134707	M6 no smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00666608951605921	M6 no smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0115141546186477	M6 no smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0061466539693533	M6 no smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0161025019478833	M6 no smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0112449421285405	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00851604403876917	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.065258304319187	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.000329349769455161	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0595652583043192	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00409334713465701	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.000423449703585208	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0271007810294533	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0629999059000659	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0030010718113612	M6 smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00439442658092176	M6 smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.029957127545552	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0236870310825295	M6 smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0445873526259378	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0128617363344051	M6 smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0148445873526259	M6 smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0184351554126474	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0459807073954984	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0154771293375394	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00739353312302839	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0733438485804416	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0760055205047319	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0000985804416403785	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.00069006309148265	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.030461356466877	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.162164826498423	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0065980764929546	M6 no smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00777231044509058	M6 no smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0854394989935137	M6 no smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00424960858868262	M6 no smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0284052784611944	M6 no smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.000503243122343995	M6 no smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0088906284947439	M6 no smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0327667188548423	M6 no smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.17428986803847	M6 no smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.000965911377631102	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.000321970459210367	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0411317261641244	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0449148790598463	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00603694611019439	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0387974403348493	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0255161588924216	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00229403952187387	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0493017265665875	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.000936956230758934	M6 no smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.000803105340650515	M6 no smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0171998393789319	M6 no smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0284433141480391	M6 no smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00234239057689734	M6 no smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0511310400214161	M6 no smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0175344666042029	M6 no smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00381475036808995	M6 no smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0131173872306251	M6 no smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0247516272696129	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0198698184309695	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0582391229873244	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0807639602603631	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.00111339499828708	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0191846522781775	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.129838985954094	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00295088877959671	M6 smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0133492587648423	M6 smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0453874798004637	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00667462938242113	M6 smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0860675894049041	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0	M6 smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0	M6 smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0387831096746996	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.130752476638797	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00424120493719754	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00723179816214453	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0496982219563917	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.012179870588875	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0244684900222935	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0145179707465608	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0143548474797455	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00641618182806808	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0617693437007232	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0104793203943697	M6 smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00514664847770819	M6 smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0504743597693309	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00570471879456812	M6 smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.03298815650772	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0084330625658833	M6 smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0430954300241831	M6 smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0053326719166615	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.094995969492156	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0157790927021696	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0113412228796844	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0617357001972387	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00532544378698225	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.042603550295858	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0019723865877712	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0143984220907298	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0316568047337278	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.112919132149901	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00978042619340631	M6 smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.000582939309540773	M6 smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0541485847528985	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0704708854200402	M6 smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00421011723557225	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0277220027203834	M6 smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0654187447373535	M6 smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00246129930694993	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0584882440572576	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00663449939686369	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00800526373505867	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0190262090141463	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0159008663230617	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00948568922030925	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0205614650729247	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0115692510143656	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0140914573966444	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.048305735277991	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0107437154480025	M6 no smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0218003546469177	M6 no smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0170021904662564	M6 no smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00114738708667988	M6 no smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0110566391989152	M6 no smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00271200584124335	M6 no smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0278502138312298	M6 no smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00907478877646813	M6 no smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0640450610201314	M6 no smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00392342847288092	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0129343795809261	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.026774165732517	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0258256445632491	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0126325773907045	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.016857808053807	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0873070621712512	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0114684832284211	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0143140467362249	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00627372416701814	M6 smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0185048502741459	M6 smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0244095318431042	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0111767186840995	M6 smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0118620835090679	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0224588781105019	M6 smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0602066638549135	M6 smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0156579502319696	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0512442007591733	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0140932130053159	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0157003337866238	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0418675567643302	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.000123624675485227	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0274446779577204	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00230766060905757	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.00226645238389583	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0310297935467919	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0934190464416698	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0277536860364267	M6 smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.0290212822736674	M6 smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0765227833744746	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00340249516311962	M6 smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.020348255387284	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.000667155914337181	M6 smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0489692441123491	M6 smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0309560344252452	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0403629328173994	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00176246517709932	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00466200466200466	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0703848996531923	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.0000568537153903008	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.00102336687702541	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0176246517709932	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00818693501620331	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0458240946045824	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.0048910626945309	M6 no smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00336657562091088	M6 no smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0983929365432256	M6 no smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.000444642063139173	M6 no smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.000952804421012514	M6 no smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.000381121768405005	M6 no smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.00279489296830337	M6 no smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00317601473670838	M6 no smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0609159626500667	M6 no smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00177238304957302	Smoker baseline	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00451152048982222	Smoker baseline	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0380256726999302	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.0133197271604275	Smoker baseline	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00698211504377249	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0134808528922069	Smoker baseline	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0397443471722434	Smoker baseline	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.0046189376443418	Smoker baseline	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0237391911488265	Smoker baseline	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz
+ASV_1vt_h8b_4qs	0.00132179764479692	M6 smoking cessation	Actinobacteriota	Actinomycetaceae	Actinomyces	graevenitzii	Actinomyces <br>graevenitzii
+ASV_6wb_da0_3db	0.00228310502283105	M6 smoking cessation	Firmicutes	Veillonellaceae	Megasphaera	micronuciformis	Megasphaera <br>micronuciformis
+ASV_7w6_t4q_x00	0.0442201393895698	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	australis/mitis/oralis/parasanguinis/pneumoniae/rubneri/sanguinis	Streptococcus sp. <br>ASV_7w6_t4q_x00
+ASV_9i4_15j_91n	0.00841143955779861	M6 smoking cessation	Proteobacteria	Neisseriaceae	Neisseria	cinerea/flavescens/lactamica/meningitidis/mucosa/perflava/sicca/subflava	Neisseria sp.
+ASV_dvw_6oa_8gj	0.00264359528959385	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	histicola	Prevotella_7 <br>histicola
+ASV_e54_2dz_d7f	0.0211487623167508	M6 smoking cessation	Bacteroidota	Porphyromonadaceae	Porphyromonas	pasteri	Porphyromonas <br>pasteri
+ASV_ivt_f41_sgz	0.0364095169430425	M6 smoking cessation	Fusobacteriota	Fusobacteriaceae	Fusobacterium	periodonticum	Fusobacterium <br>periodonticum
+ASV_pfp_n0y_4su	0.00336457582311944	M6 smoking cessation	Bacteroidota	Prevotellaceae	Prevotella_7	salivae	Prevotella_7 <br>salivae
+ASV_qwa_h7y_hxz	0.0206681086277337	M6 smoking cessation	Firmicutes	Streptococcaceae	Streptococcus	NA	Streptococcus sp. <br>ASV_qwa_h7y_hxz

@@ -1,0 +1,193 @@
+varname	Principal_coordinate	Value	plot
+Never smoker (control)	pcoa1	-7.17602290288571	control vs M0
+Never smoker (control)	pcoa2	5.51004657025217	control vs M0
+Never smoker (control)	pcoa1	0.636927519664781	control vs M0
+Never smoker (control)	pcoa2	1.14298267084996	control vs M0
+Never smoker (control)	pcoa1	1.34845836729104	control vs M0
+Never smoker (control)	pcoa2	-1.20661862314071	control vs M0
+Never smoker (control)	pcoa1	-2.08225752967642	control vs M0
+Never smoker (control)	pcoa2	2.53640689185925	control vs M0
+Never smoker (control)	pcoa1	-6.45337103081678	control vs M0
+Never smoker (control)	pcoa2	1.6059368853279	control vs M0
+Never smoker (control)	pcoa1	6.67511613986528	control vs M0
+Never smoker (control)	pcoa2	-6.4319099361014	control vs M0
+Never smoker (control)	pcoa1	-9.64694862834147	control vs M0
+Never smoker (control)	pcoa2	-8.11739540705193	control vs M0
+Never smoker (control)	pcoa1	-1.23345015276455	control vs M0
+Never smoker (control)	pcoa2	1.91953742061771	control vs M0
+Never smoker (control)	pcoa1	-0.95223071883889	control vs M0
+Never smoker (control)	pcoa2	5.07909670768689	control vs M0
+Never smoker (control)	pcoa1	2.26140379552107	control vs M0
+Never smoker (control)	pcoa2	1.69655512539205	control vs M0
+Never smoker (control)	pcoa1	-3.97793489941007	control vs M0
+Never smoker (control)	pcoa2	6.19160787173579	control vs M0
+Never smoker (control)	pcoa1	3.75899759811751	control vs M0
+Never smoker (control)	pcoa2	8.23033300424392	control vs M0
+Never smoker (control)	pcoa1	-5.51550582387235	control vs M0
+Never smoker (control)	pcoa2	7.78423468342841	control vs M0
+Never smoker (control)	pcoa1	-3.69374569102126	control vs M0
+Never smoker (control)	pcoa2	-0.548664207590145	control vs M0
+Never smoker (control)	pcoa1	-3.15096461640873	control vs M0
+Never smoker (control)	pcoa2	-3.34920671041809	control vs M0
+Never smoker (control)	pcoa1	-2.95512581735044	control vs M0
+Never smoker (control)	pcoa2	-2.99634669025369	control vs M0
+Never smoker (control)	pcoa1	-0.747310127660358	control vs M0
+Never smoker (control)	pcoa2	7.31974365442266	control vs M0
+Never smoker (control)	pcoa1	-8.28803741508138	control vs M0
+Never smoker (control)	pcoa2	-14.4791823345444	control vs M0
+Never smoker (control)	pcoa1	-9.25149357872618	control vs M0
+Never smoker (control)	pcoa2	0.604152862532977	control vs M0
+Never smoker (control)	pcoa1	-12.0985466162745	control vs M0
+Never smoker (control)	pcoa2	-13.0822407962235	control vs M0
+Never smoker (control)	pcoa1	-14.9077490466199	control vs M0
+Never smoker (control)	pcoa2	4.17688309739747	control vs M0
+Never smoker (control)	pcoa1	-7.6620890499964	control vs M0
+Never smoker (control)	pcoa2	-1.98225029181222	control vs M0
+Never smoker (control)	pcoa1	-6.5605499191485	control vs M0
+Never smoker (control)	pcoa2	2.81835961650878	control vs M0
+Never smoker (control)	pcoa1	2.99633525673043	control vs M0
+Never smoker (control)	pcoa2	1.90230256075363	control vs M0
+Smoker baseline	pcoa1	17.5614868209314	control vs M0
+Smoker baseline	pcoa2	-7.69178587289273	control vs M0
+Smoker baseline	pcoa1	-3.13470307530058	control vs M0
+Smoker baseline	pcoa2	-5.78970907103735	control vs M0
+Smoker baseline	pcoa1	-7.87086827250762	control vs M0
+Smoker baseline	pcoa2	3.08814906734079	control vs M0
+Smoker baseline	pcoa1	-0.206251530254707	control vs M0
+Smoker baseline	pcoa2	7.42645588112406	control vs M0
+Smoker baseline	pcoa1	3.46093880722981	control vs M0
+Smoker baseline	pcoa2	9.48446206720011	control vs M0
+Smoker baseline	pcoa1	5.28812819003345	control vs M0
+Smoker baseline	pcoa2	4.05007200821758	control vs M0
+Smoker baseline	pcoa1	7.5557485123281	control vs M0
+Smoker baseline	pcoa2	3.29810010259946	control vs M0
+Smoker baseline	pcoa1	3.66826865536979	control vs M0
+Smoker baseline	pcoa2	-6.82507065773443	control vs M0
+Smoker baseline	pcoa1	6.86364462601974	control vs M0
+Smoker baseline	pcoa2	7.60931437928232	control vs M0
+Smoker baseline	pcoa1	3.46137600121693	control vs M0
+Smoker baseline	pcoa2	6.71396521616523	control vs M0
+Smoker baseline	pcoa1	2.71464563210015	control vs M0
+Smoker baseline	pcoa2	-8.84018067269045	control vs M0
+Smoker baseline	pcoa1	2.12785637434186	control vs M0
+Smoker baseline	pcoa2	4.03215469893025	control vs M0
+Smoker baseline	pcoa1	3.49711738854194	control vs M0
+Smoker baseline	pcoa2	6.46067955774131	control vs M0
+Smoker baseline	pcoa1	12.5681129803564	control vs M0
+Smoker baseline	pcoa2	-9.58108678946599	control vs M0
+Smoker baseline	pcoa1	11.0511341639325	control vs M0
+Smoker baseline	pcoa2	5.27138040460055	control vs M0
+Smoker baseline	pcoa1	-4.44395509487584	control vs M0
+Smoker baseline	pcoa2	-11.7822295021324	control vs M0
+Smoker baseline	pcoa1	13.2164711639112	control vs M0
+Smoker baseline	pcoa2	2.65206179036181	control vs M0
+Smoker baseline	pcoa1	1.41181908161199	control vs M0
+Smoker baseline	pcoa2	-3.41864544519661	control vs M0
+Smoker baseline	pcoa1	7.32131774673822	control vs M0
+Smoker baseline	pcoa2	-4.38850082643692	control vs M0
+Smoker baseline	pcoa1	0.978641177040481	control vs M0
+Smoker baseline	pcoa2	-7.17171601761353	control vs M0
+Smoker baseline	pcoa1	-11.5756573985344	control vs M0
+Smoker baseline	pcoa2	9.34038592574347	control vs M0
+Smoker baseline	pcoa1	13.4662863748353	control vs M0
+Smoker baseline	pcoa2	-3.17219889265613	control vs M0
+Smoker baseline	pcoa1	2.48061430781868	control vs M0
+Smoker baseline	pcoa2	-2.33014789998887	control vs M0
+Smoker baseline	pcoa1	-2.78607774518115	control vs M0
+Smoker baseline	pcoa2	-4.76027407733503	control vs M0
+Never smoker (control)	pcoa1	4.20083474436847	control vs M6
+Never smoker (control)	pcoa2	-0.108658261098127	control vs M6
+Never smoker (control)	pcoa1	-0.754987852082633	control vs M6
+Never smoker (control)	pcoa2	1.72626642277636	control vs M6
+Never smoker (control)	pcoa1	-0.72561258942316	control vs M6
+Never smoker (control)	pcoa2	-1.35621616039664	control vs M6
+Never smoker (control)	pcoa1	-1.11822411040306	control vs M6
+Never smoker (control)	pcoa2	-0.243558565018565	control vs M6
+Never smoker (control)	pcoa1	5.77152715800631	control vs M6
+Never smoker (control)	pcoa2	-1.03587809794974	control vs M6
+Never smoker (control)	pcoa1	-10.6092031512114	control vs M6
+Never smoker (control)	pcoa2	-8.92547660905461	control vs M6
+Never smoker (control)	pcoa1	6.59527869224513	control vs M6
+Never smoker (control)	pcoa2	-8.96978177216991	control vs M6
+Never smoker (control)	pcoa1	2.61474112408503	control vs M6
+Never smoker (control)	pcoa2	6.74874187710504	control vs M6
+Never smoker (control)	pcoa1	-0.000839841577109063	control vs M6
+Never smoker (control)	pcoa2	7.16153368107377	control vs M6
+Never smoker (control)	pcoa1	-2.97749155964849	control vs M6
+Never smoker (control)	pcoa2	3.42042759664937	control vs M6
+Never smoker (control)	pcoa1	5.0498148164586	control vs M6
+Never smoker (control)	pcoa2	7.474087427875	control vs M6
+Never smoker (control)	pcoa1	-5.1480114563426	control vs M6
+Never smoker (control)	pcoa2	8.00091527909449	control vs M6
+Never smoker (control)	pcoa1	4.93060227600314	control vs M6
+Never smoker (control)	pcoa2	5.79401541169715	control vs M6
+Never smoker (control)	pcoa1	2.35628292445641	control vs M6
+Never smoker (control)	pcoa2	-1.57466031662551	control vs M6
+Never smoker (control)	pcoa1	1.37247111392713	control vs M6
+Never smoker (control)	pcoa2	-4.84734050153802	control vs M6
+Never smoker (control)	pcoa1	5.42950472267351	control vs M6
+Never smoker (control)	pcoa2	1.00062698672389	control vs M6
+Never smoker (control)	pcoa1	-1.72037423067484	control vs M6
+Never smoker (control)	pcoa2	6.02921034736835	control vs M6
+Never smoker (control)	pcoa1	7.67554080993972	control vs M6
+Never smoker (control)	pcoa2	-14.5356783938309	control vs M6
+Never smoker (control)	pcoa1	8.10780797569041	control vs M6
+Never smoker (control)	pcoa2	-0.661289463240486	control vs M6
+Never smoker (control)	pcoa1	11.2609683961781	control vs M6
+Never smoker (control)	pcoa2	-15.2581102125566	control vs M6
+Never smoker (control)	pcoa1	14.018581582806	control vs M6
+Never smoker (control)	pcoa2	3.23721490683964	control vs M6
+Never smoker (control)	pcoa1	7.55669270611785	control vs M6
+Never smoker (control)	pcoa2	0.390049693935343	control vs M6
+Never smoker (control)	pcoa1	6.42312308523685	control vs M6
+Never smoker (control)	pcoa2	6.84781822751412	control vs M6
+Never smoker (control)	pcoa1	-3.26646492325653	control vs M6
+Never smoker (control)	pcoa2	4.53068879540968	control vs M6
+M6 no smoking cessation	pcoa1	-11.4677788400073	control vs M6
+M6 no smoking cessation	pcoa2	1.35301871124699	control vs M6
+M6 smoking cessation	pcoa1	4.5621570243958	control vs M6
+M6 smoking cessation	pcoa2	-6.27022803069975	control vs M6
+M6 smoking cessation	pcoa1	9.44900863486181	control vs M6
+M6 smoking cessation	pcoa2	1.25017551908857	control vs M6
+M6 smoking cessation	pcoa1	2.04117243904212	control vs M6
+M6 smoking cessation	pcoa2	6.99098470282801	control vs M6
+M6 smoking cessation	pcoa1	-3.34796288927906	control vs M6
+M6 smoking cessation	pcoa2	6.50064059941973	control vs M6
+M6 no smoking cessation	pcoa1	-6.0661114020995	control vs M6
+M6 no smoking cessation	pcoa2	5.54905084760046	control vs M6
+M6 smoking cessation	pcoa1	-5.07008738280137	control vs M6
+M6 smoking cessation	pcoa2	6.11078085422332	control vs M6
+M6 smoking cessation	pcoa1	2.7476064106537	control vs M6
+M6 smoking cessation	pcoa2	2.87309613255126	control vs M6
+M6 no smoking cessation	pcoa1	-13.8465179678631	control vs M6
+M6 no smoking cessation	pcoa2	-3.68044427859329	control vs M6
+M6 no smoking cessation	pcoa1	-4.35723455443959	control vs M6
+M6 no smoking cessation	pcoa2	2.8503154193463	control vs M6
+M6 smoking cessation	pcoa1	9.74169401461319	control vs M6
+M6 smoking cessation	pcoa2	1.82892459849266	control vs M6
+M6 no smoking cessation	pcoa1	-1.72815534162418	control vs M6
+M6 no smoking cessation	pcoa2	4.59536826198371	control vs M6
+M6 no smoking cessation	pcoa1	-6.56890379356044	control vs M6
+M6 no smoking cessation	pcoa2	-7.34981569032854	control vs M6
+M6 smoking cessation	pcoa1	-5.29430061111111	control vs M6
+M6 smoking cessation	pcoa2	-10.3629458425581	control vs M6
+M6 no smoking cessation	pcoa1	-15.0607287939473	control vs M6
+M6 no smoking cessation	pcoa2	-3.15974016497324	control vs M6
+M6 no smoking cessation	pcoa1	4.42030013528143	control vs M6
+M6 no smoking cessation	pcoa2	-8.13397045545469	control vs M6
+M6 smoking cessation	pcoa1	-10.7894983429706	control vs M6
+M6 smoking cessation	pcoa2	1.17426704214699	control vs M6
+M6 smoking cessation	pcoa1	-1.00591402946668	control vs M6
+M6 smoking cessation	pcoa2	-4.25987070595768	control vs M6
+M6 smoking cessation	pcoa1	2.02639864413037	control vs M6
+M6 smoking cessation	pcoa2	-9.41649909916882	control vs M6
+M6 no smoking cessation	pcoa1	-4.04106589890069	control vs M6
+M6 no smoking cessation	pcoa2	0.878710266624027	control vs M6
+M6 smoking cessation	pcoa1	7.81143637581243	control vs M6
+M6 smoking cessation	pcoa2	10.5460051318923	control vs M6
+M6 smoking cessation	pcoa1	-9.16809287592885	control vs M6
+M6 smoking cessation	pcoa2	8.32470121438056	control vs M6
+M6 no smoking cessation	pcoa1	-10.910722996489	control vs M6
+M6 no smoking cessation	pcoa2	-11.0948762192732	control vs M6
+M6 smoking cessation	pcoa1	-1.11926037187501	control vs M6
+M6 smoking cessation	pcoa2	-1.94259711540057	control vs M6

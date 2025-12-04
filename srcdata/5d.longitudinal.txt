@@ -1,0 +1,417 @@
+value	rowname	visitId	id
+0.00429556647708918	**balance +**  
+Tannerellaceae	M4	2
+-0.0220418339903976	**balance +**  
+Tannerellaceae	M2	8
+0.0100241928433758	**balance +**  
+Tannerellaceae	M2	1
+-0.0310656869515613	**balance +**  
+Tannerellaceae	M2	12
+0	**balance +**  
+Tannerellaceae	M0	4
+-0.0287163407734913	**balance +**  
+Tannerellaceae	M4	12
+0	**balance +**  
+Tannerellaceae	M0	3
+-0.0147408349287288	**balance +**  
+Tannerellaceae	M4	10
+0.0260900117049203	**balance +**  
+Tannerellaceae	M2	5
+0.0140309578367517	**balance +**  
+Tannerellaceae	M2	9
+0.0247460687942694	**balance +**  
+Tannerellaceae	M4	7
+0	**balance +**  
+Tannerellaceae	M0	11
+0	**balance +**  
+Tannerellaceae	M0	9
+0	**balance +**  
+Tannerellaceae	M0	1
+-0.0256626522397536	**balance +**  
+Tannerellaceae	M6	12
+-0.0283814497734299	**balance +**  
+Tannerellaceae	M2	11
+-0.0234465783058271	**balance +**  
+Tannerellaceae	M4	13
+-0.00126584951224978	**balance +**  
+Tannerellaceae	M6	13
+-0.0273001758851441	**balance +**  
+Tannerellaceae	M4	6
+-0.00832038574763209	**balance +**  
+Tannerellaceae	M2	13
+-0.027539809795078	**balance +**  
+Tannerellaceae	M2	4
+-0.00824199328085125	**balance +**  
+Tannerellaceae	M2	6
+0.0100741585591528	**balance +**  
+Tannerellaceae	M2	7
+0	**balance +**  
+Tannerellaceae	M0	5
+0.00534101782473734	**balance +**  
+Tannerellaceae	M2	10
+0	**balance +**  
+Tannerellaceae	M0	2
+-0.0124976287072225	**balance +**  
+Tannerellaceae	M4	4
+-0.014248257123849	**balance +**  
+Tannerellaceae	M4	3
+-0.00148549199434954	**balance +**  
+Tannerellaceae	M6	7
+0.013767288327752	**balance +**  
+Tannerellaceae	M6	2
+-0.0233897229703173	**balance +**  
+Tannerellaceae	M2	3
+0	**balance +**  
+Tannerellaceae	M0	10
+-0.0102768536171609	**balance +**  
+Tannerellaceae	M6	5
+0	**balance +**  
+Tannerellaceae	M0	6
+0	**balance +**  
+Tannerellaceae	M0	7
+0.0045858401737502	**balance +**  
+Tannerellaceae	M6	1
+0	**balance +**  
+Tannerellaceae	M0	8
+0	**balance +**  
+Tannerellaceae	M0	13
+-0.0329012272820851	**balance +**  
+Tannerellaceae	M6	11
+0	**balance +**  
+Tannerellaceae	M0	12
+-0.0376873930033605	**balance +**  
+Tannerellaceae	M4	8
+-0.113475389080427	**balance +**  
+Tannerellaceae	M6	4
+0.00155105221629997	**balance +**  
+Tannerellaceae	M6	6
+-0.0283796115807828	**balance +**  
+Tannerellaceae	M6	8
+-0.0508863800798914	**balance +**  
+Tannerellaceae	M4	9
+0.00358250073914909	**balance +**  
+Tannerellaceae	M4	5
+-0.018894997729005	**balance +**  
+Tannerellaceae	M6	10
+-0.0275615332943375	**balance +**  
+Tannerellaceae	M4	11
+-0.0517657083096413	**balance +**  
+Tannerellaceae	M6	9
+-0.00904638063868372	**balance +**  
+Tannerellaceae	M2	2
+0.00603109116699071	**balance +**  
+Tannerellaceae	M4	1
+-0.0124365281166666	**balance +**  
+Tannerellaceae	M6	3
+-0.00465864872469176	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M4	2
+-0.0056980118997171	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M2	8
+0.0098085025590369	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M2	1
+-0.0557121674656111	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M2	12
+0	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M0	4
+-0.054051207680685	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M4	12
+0	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M0	3
+0.000997469502793683	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M4	10
+0.0047538704488773	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M2	5
+-0.000854762680161403	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M2	9
+0.00843408770775448	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M4	7
+0	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M0	11
+0	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M0	9
+0	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M0	1
+-0.0519470612457286	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M6	12
+0.0214542747627052	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M2	11
+-0.000603659843319786	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M4	13
+0.0104769029138153	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M6	13
+-0.0101066267533814	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M4	6
+0.00721889433600794	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M2	13
+-0.00544509477627536	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M2	4
+-0.00474888694506382	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M2	6
+0.00367459643762385	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M2	7
+0	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M0	5
+-0.00048899482875064	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M2	10
+0	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M0	2
+-0.00509862146397485	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M4	4
+0.000286239804104634	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M4	3
+0.0198883050731136	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M6	7
+-0.00478801121421155	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M6	2
+0.00269464861676113	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M2	3
+0	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M0	10
+0.00905094255726446	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M6	5
+0	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M0	6
+0	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M0	7
+0.00339491948926446	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M6	1
+0	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M0	8
+0	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M0	13
+-0.000549739137054695	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M6	11
+0	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M0	12
+-0.0116889870766852	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M4	8
+0.00567726177063423	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M6	4
+0.00252835786426513	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M6	6
+-0.00716034047108846	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M6	8
+-0.0000857623339286981	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M4	9
+-0.00455149030940146	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M4	5
+0.030898638737351	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M6	10
+0.0161185781878977	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M4	11
+0.00676978935532586	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M6	9
+-0.00919574873000549	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M2	2
+-0.00663945587144974	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M4	1
+0.00278242298350162	**balance -**  
+Pasteurellaceae  
+Anaerovoracaceae  
+Bifidobacteriaceae  
+vadinBE97  
+Gemellaceae	M6	3

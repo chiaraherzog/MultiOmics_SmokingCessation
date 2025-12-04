@@ -1,0 +1,331 @@
+assay_lab1	label1	assay_lab2	label2	r	p	df	ci_lo	ci_hi	ci_lvl	padj	padj_v2	assay1	measure1	assay2	measure2	r.change	p.change	df.change	ci_lo.change	ci_hi.change	ci_lvl.change	padj.change	padj_v2.change	assay1_relab	assay2_relab
+Blood haemogram	CRP	Composite methylation scores: blood	AgeAccelGrim (V2)	0.29968027505048	0.0035193115299435	91	0.102211759332237	0.474426091681384	0.95	0.172446264967232	0.20060075720678	Routine
+bloods	crp	Blood
+methylation	blood_AgeAccelGrimV2	0.29968027505048	0.0035193115299435	91	0.102211759332237	0.474426091681384	0.95	0.172446264967232	0.20060075720678	Routine
+bloods	Blood
+methylation
+Blood haemogram	CRP	Composite methylation scores: blood	PhenoAge	0.276050652340873	0.00739775396526601	91	0.0766528612413386	0.45421659910672	0.95	0.281936623342916	0.316253982015122	Routine
+bloods	crp	Blood
+methylation	blood_PhenoAge	0.276050652340873	0.00739775396526601	91	0.0766528612413386	0.45421659910672	0.95	0.281936623342916	0.316253982015122	Routine
+bloods	Blood
+methylation
+Blood haemogram	red cell distribution	Composite methylation scores: buccal	WID-SMK (epithelial hypoM)	0.270892865707029	0.00827019883696274	92	0.072241030016379	0.448872353345182	0.95	0.393267725218385	0.435690191204042	Routine
+bloods	distrwidth	Buccal
+methylation	buccal_WID_SMK_epithelial_hypoM_corr_z	0.270892865707029	0.00827019883696274	92	0.072241030016379	0.448872353345182	0.95	0.393267725218385	0.435690191204042	Routine
+bloods	Buccal
+methylation
+Blood haemogram	immature granulocytes	Composite methylation scores: blood	AdaptAge	0.286191944749718	0.00541867282626125	91	0.0875901483177917	0.46291256911394	0.95	0.364492371943163	0.436115654359983	Routine
+bloods	granim	Blood
+methylation	blood_AdaptAge	0.286191944749718	0.00541867282626125	91	0.0875901483177917	0.46291256911394	0.95	0.364492371943163	0.436115654359983	Routine
+bloods	Blood
+methylation
+Blood haemogram	leukocytes	Composite methylation scores: blood	DunedinPACE	0.289275099658822	0.00491837810471122	91	0.0909248201016216	0.465549591483737	0.95	0.129769514608919	0.14017377598427	Routine
+bloods	leukocytes	Blood
+methylation	blood_DunedinPACE	0.289275099658822	0.00491837810471122	91	0.0909248201016216	0.465549591483737	0.95	0.129769514608919	0.14017377598427	Routine
+bloods	Blood
+methylation
+Blood haemogram	leukocytes	Composite methylation scores: blood	WID-SMK (immune hypoM)	0.314225795848613	0.002159355252812	91	0.11807558787851	0.486775384506016	0.95	0.0739831687868266	0.0811442218589043	Routine
+bloods	leukocytes	Blood
+methylation	blood_WID_SMK_immune_hypoM_corr_z	0.314225795848613	0.002159355252812	91	0.11807558787851	0.486775384506016	0.95	0.0739831687868266	0.0811442218589043	Routine
+bloods	Blood
+methylation
+Blood haemogram	MCH	Composite methylation scores: blood	CausAge	0.279126026859845	0.00673920648171504	91	0.0799645613862666	0.456857267228588	0.95	0.210140711202569	0.230480861674654	Routine
+bloods	mch	Blood
+methylation	blood_CausAge	0.279126026859845	0.00673920648171504	91	0.0799645613862666	0.456857267228588	0.95	0.210140711202569	0.230480861674654	Routine
+bloods	Blood
+methylation
+Blood haemogram	neutrophils	Composite methylation scores: blood	AgeAccelGrim (V2)	0.5532848748161	0.00000000884259000351512	91	0.393981778467477	0.680315650848491	0.95	0.0000010110027904019	0.00000151208289060109	Routine
+bloods	neutrophils	Blood
+methylation	blood_AgeAccelGrimV2	0.5532848748161	0.00000000884259000351512	91	0.393981778467477	0.680315650848491	0.95	0.0000010110027904019	0.00000151208289060109	Routine
+bloods	Blood
+methylation
+Blood haemogram	neutrophils	Composite methylation scores: blood	DunedinPACE	0.448806173575458	0.00000642079061980547	91	0.26976093749747	0.597855216176942	0.95	0.000367055197098879	0.000439182078394694	Routine
+bloods	neutrophils	Blood
+methylation	blood_DunedinPACE	0.448806173575458	0.00000642079061980547	91	0.26976093749747	0.597855216176942	0.95	0.000367055197098879	0.000439182078394694	Routine
+bloods	Blood
+methylation
+Blood haemogram	neutrophils	Composite methylation scores: blood	PhenoAge	0.362589284272976	0.000354606203684048	91	0.17155228089835	0.527346462379773	0.95	0.0121629927863628	0.0134750357399938	Routine
+bloods	neutrophils	Blood
+methylation	blood_PhenoAge	0.362589284272976	0.000354606203684048	91	0.17155228089835	0.527346462379773	0.95	0.0121629927863628	0.0134750357399938	Routine
+bloods	Blood
+methylation
+Blood haemogram	neutrophils	Composite methylation scores: blood	WID-SMK (immune hypoM)	0.455008355481817	0.00000460211274967175	91	0.27697236475802	0.602840010947107	0.95	0.000315704934627482	0.000393480640096935	Routine
+bloods	neutrophils	Blood
+methylation	blood_WID_SMK_immune_hypoM_corr_z	0.455008355481817	0.00000460211274967175	91	0.27697236475802	0.602840010947107	0.95	0.000315704934627482	0.000393480640096935	Routine
+bloods	Blood
+methylation
+Body weight and composition	BMI	Composite methylation scores: blood	WID-SMK (immune hypoM)	-0.313044859518295	0.00281757617956413	87	-0.489396053890358	-0.112096084103956	0.95	0.322142876530165	0.404752876741187	Body
+composition	bmi	Blood
+methylation	blood_WID_SMK_immune_hypoM_corr_z	-0.313044859518295	0.00281757617956413	87	-0.489396053890358	-0.112096084103956	0.95	0.322142876530165	0.404752876741187	Body
+composition	Blood
+methylation
+Body weight and composition	weight	Composite methylation scores: blood	WID-SMK (immune hypoM)	-0.381397177028539	0.000246111798910506	86	-0.547133994304914	-0.186883286431416	0.95	0.0146535461235739	0.0175329892977105	Body
+composition	weight	Blood
+methylation	blood_WID_SMK_immune_hypoM_corr_z	-0.381397177028539	0.000246111798910506	86	-0.547133994304914	-0.186883286431416	0.95	0.0146535461235739	0.0175329892977105	Body
+composition	Blood
+methylation
+Composite methylation scores: blood	AdaptAge	Composite methylation scores: buccal	WID-SMK (immune hypoM)	0.270154629804456	0.0096023038819812	89	0.0679926876495825	0.451006831565936	0.95	0.173346854290503	0.182443773757643	Blood
+methylation	blood_AdaptAge	Buccal
+methylation	buccal_WID_SMK_immune_hypoM_corr_z	0.270154629804456	0.0096023038819812	89	0.0679926876495825	0.451006831565936	0.95	0.173346854290503	0.182443773757643	Blood
+methylation	Buccal
+methylation
+Composite methylation scores: blood	AdaptAge	Flow cytometry: white blood cell staining	CD94+ cytotoxic T cells	-0.278101319943987	0.00695263457277034	91	-0.455977751217759	-0.0788606227420349	0.95	0.140279626968249	0.148612563992966	Blood
+methylation	blood_AdaptAge	Flow cytometry:
+immune cells	cells_single_cells_live_t_cells_cd8_t_cells_cd94_freq_of_parent	-0.278101319943987	0.00695263457277034	91	-0.455977751217759	-0.0788606227420349	0.95	0.140279626968249	0.148612563992966	Blood
+methylation	Flow cytometry:
+immune cells
+Composite methylation scores: blood	AdaptAge	Blood test	vitamin B12	-0.592297444296759	0.0075397481200705	17	-0.824652849072261	-0.188910066179719	0.95	0.143674089176899	0.151681991592007	Blood
+methylation	blood_AdaptAge	Clinical
+measures	vitb12	-0.592297444296759	0.0075397481200705	17	-0.824652849072261	-0.188910066179719	0.95	0.143674089176899	0.151681991592007	Blood
+methylation	Clinical
+measures
+Composite methylation scores: blood	AdaptAge	Saliva microbiome: families	Cardiobacteriaceae	0.286678267030132	0.00533687437062506	91	0.0881158481742131	0.46332872845251	0.95	0.119350940091886	0.126936510045248	Blood
+methylation	blood_AdaptAge	Saliva
+microbiome	Cardiobacteriaceae	0.286678267030132	0.00533687437062506	91	0.0881158481742131	0.46332872845251	0.95	0.119350940091886	0.126936510045248	Blood
+methylation	Saliva
+microbiome
+Composite methylation scores: blood	AdaptAge	Urine metabolome	Acetoacetic acid	-0.386097837179389	0.000144002704368296	90	-0.547610449579061	-0.196847007254182	0.95	0.00617411594979068	0.00703556069913673	Blood
+methylation	blood_AdaptAge	Urine
+metabolome	Acetoacetate	-0.386097837179389	0.000144002704368296	90	-0.547610449579061	-0.196847007254182	0.95	0.00617411594979068	0.00703556069913673	Blood
+methylation	Urine
+metabolome
+Composite methylation scores: blood	AdaptAge	Urine metabolome	cis-Aconitic acid	-0.311103610985386	0.00254043456682723	90	-0.485016065799903	-0.113519612438604	0.95	0.0792153687656127	0.0868828621854913	Blood
+methylation	blood_AdaptAge	Urine
+metabolome	cis.Aconitate	-0.311103610985386	0.00254043456682723	90	-0.485016065799903	-0.113519612438604	0.95	0.0792153687656127	0.0868828621854913	Blood
+methylation	Urine
+metabolome
+Composite methylation scores: blood	AgeAccelGrim (V2)	Flow cytometry: white blood cell staining	KiR+ defective NK cells	0.266191917881981	0.00990712906140133	91	0.0660661127104423	0.445730247109434	0.95	0.22654301787071	0.242017009928518	Blood
+methylation	blood_AgeAccelGrimV2	Flow cytometry:
+immune cells	cells_single_cells_live_cd3neg_defective_ki_rs_freq_of_parent	0.266191917881981	0.00990712906140133	91	0.0660661127104423	0.445730247109434	0.95	0.22654301787071	0.242017009928518	Blood
+methylation	Flow cytometry:
+immune cells
+Composite methylation scores: blood	AgeAccelGrim (V2)	Saliva microbiome: families	Campylobacteraceae	-0.275281062544531	0.00757117843343293	91	-0.453555301285586	-0.0758248203643914	0.95	0.199762630974423	0.215778585352838	Blood
+methylation	blood_AgeAccelGrimV2	Saliva
+microbiome	Campylobacteraceae	-0.275281062544531	0.00757117843343293	91	-0.453555301285586	-0.0758248203643914	0.95	0.199762630974423	0.215778585352838	Blood
+methylation	Saliva
+microbiome
+Composite methylation scores: blood	AgeAccelGrim (V2)	Vascular features	intima media thickness	-0.609472062706332	0.00724948269904695	16	-0.837917512207835	-0.199316299292733	0.95	0.199762630974423	0.215778585352838	Blood
+methylation	blood_AgeAccelGrimV2	Clinical
+measures	imt_mean	-0.609472062706332	0.00724948269904695	16	-0.837917512207835	-0.199316299292733	0.95	0.199762630974423	0.215778585352838	Blood
+methylation	Clinical
+measures
+Composite methylation scores: blood	AgeAccelGrim (V2)	Body weight and composition	visceral fat	-0.622838163061514	0.00439338805411102	17	-0.839541968800189	-0.235153552814548	0.95	0.146711468747876	0.16091211237012	Blood
+methylation	blood_AgeAccelGrimV2	Clinical
+measures	vifat	-0.622838163061514	0.00439338805411102	17	-0.839541968800189	-0.235153552814548	0.95	0.146711468747876	0.16091211237012	Blood
+methylation	Clinical
+measures
+Composite methylation scores: blood	CausAge	Urine metabolome	Trimethylamine	-0.28066503983242	0.00672963221500983	90	-0.459091528366414	-0.0804736716807206	0.95	0.385257970538045	0.46096172334931	Blood
+methylation	blood_CausAge	Urine
+metabolome	Trimethylamine	-0.28066503983242	0.00672963221500983	90	-0.459091528366414	-0.0804736716807206	0.95	0.385257970538045	0.46096172334931	Blood
+methylation	Urine
+metabolome
+Composite methylation scores: blood	DamAge	Flow cytometry: white blood cell staining	CD94+ T helper cells	0.29723921490655	0.00381094245702815	91	0.0995592641295284	0.472346845179546	0.95	0.0768913683976857	0.0814588950189768	Blood
+methylation	blood_DamAge	Flow cytometry:
+immune cells	cells_single_cells_live_t_cells_cd4_t_cells_cd94_freq_of_parent	0.29723921490655	0.00381094245702815	91	0.0995592641295284	0.472346845179546	0.95	0.0768913683976857	0.0814588950189768	Blood
+methylation	Flow cytometry:
+immune cells
+Composite methylation scores: blood	DamAge	Flow cytometry: white blood cell staining	CD56+ cytotoxic T cells	0.273422871183799	0.00800476985802002	91	0.0738266309595291	0.451957773633392	0.95	0.144507161121098	0.15209062730238	Blood
+methylation	blood_DamAge	Flow cytometry:
+immune cells	cells_single_cells_live_t_cells_cd8_t_cells_cd56_freq_of_parent	0.273422871183799	0.00800476985802002	91	0.0738266309595291	0.451957773633392	0.95	0.144507161121098	0.15209062730238	Blood
+methylation	Flow cytometry:
+immune cells
+Composite methylation scores: blood	DamAge	Flow cytometry: white blood cell staining	CD94+ cytotoxic T cells	0.341762161729208	0.000799936060871755	91	0.148384376436364	0.509966667567975	0.95	0.022864839073251	0.0248707393471036	Blood
+methylation	blood_DamAge	Flow cytometry:
+immune cells	cells_single_cells_live_t_cells_cd8_t_cells_cd94_freq_of_parent	0.341762161729208	0.000799936060871755	91	0.148384376436364	0.509966667567975	0.95	0.022864839073251	0.0248707393471036	Blood
+methylation	Flow cytometry:
+immune cells
+Composite methylation scores: blood	DamAge	Blood test	cholesterol	0.691296959006455	0.00104538874675702	17	0.345605576723681	0.871774667656377	0.95	0.0275821800105891	0.0297935792825751	Blood
+methylation	blood_DamAge	Clinical
+measures	cholesterol	0.691296959006455	0.00104538874675702	17	0.345605576723681	0.871774667656377	0.95	0.0275821800105891	0.0297935792825751	Blood
+methylation	Clinical
+measures
+Composite methylation scores: blood	DamAge	Blood test	non-HDL	0.685351427488109	0.00120165290289379	17	0.335617519962525	0.869035927762899	0.95	0.029440496120898	0.0316127148299752	Blood
+methylation	blood_DamAge	Clinical
+measures	nhdl	0.685351427488109	0.00120165290289379	17	0.335617519962525	0.869035927762899	0.95	0.029440496120898	0.0316127148299752	Blood
+methylation	Clinical
+measures
+Composite methylation scores: blood	DamAge	Saliva microbiome: families	Cardiobacteriaceae	-0.284210261647525	0.00576361308187539	91	-0.461215982529862	-0.0854491512379557	0.95	0.109828849282403	0.115950333764787	Blood
+methylation	blood_DamAge	Saliva
+microbiome	Cardiobacteriaceae	-0.284210261647525	0.00576361308187539	91	-0.461215982529862	-0.0854491512379557	0.95	0.109828849282403	0.115950333764787	Blood
+methylation	Saliva
+microbiome
+Composite methylation scores: blood	DamAge	Saliva microbiome: families	Paludibacteraceae	-0.357141310454688	0.000441063439536319	91	-0.522813519798865	-0.165471527991183	0.95	0.0137531599782689	0.0150843696321421	Blood
+methylation	blood_DamAge	Saliva
+microbiome	Paludibacteraceae	-0.357141310454688	0.000441063439536319	91	-0.522813519798865	-0.165471527991183	0.95	0.0137531599782689	0.0150843696321421	Blood
+methylation	Saliva
+microbiome
+Composite methylation scores: blood	DamAge	Stool microbiome: families	Clostridia vadinBB60 group_unk1	0.312609537985211	0.0027017109601533	88	0.112822393302785	0.488101609893374	0.95	0.0617791239555056	0.0659989391694593	Blood
+methylation	blood_DamAge	Stool
+microbiome	Clostridia vadinBB60 group_unk1	0.312609537985211	0.0027017109601533	88	0.112822393302785	0.488101609893374	0.95	0.0617791239555056	0.0659989391694593	Blood
+methylation	Stool
+microbiome
+Composite methylation scores: blood	DunedinPACE	Saliva microbiome: families	Campylobacteraceae	-0.26979485418347	0.00891475126415947	91	-0.448835384020629	-0.0699298890999463	0.95	0.382219960450837	0.435549276048934	Blood
+methylation	blood_DunedinPACE	Saliva
+microbiome	Campylobacteraceae	-0.26979485418347	0.00891475126415947	91	-0.448835384020629	-0.0699298890999463	0.95	0.382219960450837	0.435549276048934	Blood
+methylation	Saliva
+microbiome
+Composite methylation scores: blood	WID-general-clock	Composite methylation scores: cervical	WID-CIN	0.281214017725472	0.00661836914778766	90	0.0810658033715909	0.459561799453135	0.95	0.283762577211396	0.323354606934768	Blood
+methylation	blood_index_general_age	Cervical
+methylation	cervicalindex_CIN_adj	0.281214017725472	0.00661836914778766	90	0.0810658033715909	0.459561799453135	0.95	0.283762577211396	0.323354606934768	Blood
+methylation	Cervical
+methylation
+Composite methylation scores: blood	PhenoAge	Flow cytometry: white blood cell staining	intermediate Monocytes	0.308999754186465	0.00258081690788671	91	0.112364345623295	0.482346347352988	0.95	0.147536699900857	0.176527876499451	Blood
+methylation	blood_PhenoAge	Flow cytometry:
+immune cells	cells_single_cells_live_monocytes_intermediate_freq_of_parent	0.308999754186465	0.00258081690788671	91	0.112364345623295	0.482346347352988	0.95	0.147536699900857	0.176527876499451	Blood
+methylation	Flow cytometry:
+immune cells
+Composite methylation scores: blood	PhenoAge	Saliva microbiome: families	Actinomycetaceae	-0.343263643934397	0.000755760194264461	91	-0.511224233073582	-0.150047542059274	0.95	0.0518451493265421	0.0646174966096115	Blood
+methylation	blood_PhenoAge	Saliva
+microbiome	Actinomycetaceae	-0.343263643934397	0.000755760194264461	91	-0.511224233073582	-0.150047542059274	0.95	0.0518451493265421	0.0646174966096115	Blood
+methylation	Saliva
+microbiome
+Composite methylation scores: blood	WID-SMK (immune hypoM)	Composite methylation scores: buccal	WID-SMK (proximal epithelial hyperM)	0.316463994105653	0.00224240195180495	89	0.118224312522548	0.490444546085068	0.95	0.0404812562878473	0.0426056370842941	Blood
+methylation	blood_WID_SMK_immune_hypoM_corr_z	Buccal
+methylation	buccal_WID_SMK_proximal_epithelial_hyperM_corr_z	0.316463994105653	0.00224240195180495	89	0.118224312522548	0.490444546085068	0.95	0.0404812562878473	0.0426056370842941	Blood
+methylation	Buccal
+methylation
+Composite methylation scores: blood	WID-SMK (immune hypoM)	Flow cytometry: white blood cell staining	KiR+ defective NK cells	0.325799649038803	0.00143841651822145	91	0.130770353958674	0.496552672541355	0.95	0.0308360541093723	0.0327958966154491	Blood
+methylation	blood_WID_SMK_immune_hypoM_corr_z	Flow cytometry:
+immune cells	cells_single_cells_live_cd3neg_defective_ki_rs_freq_of_parent	0.325799649038803	0.00143841651822145	91	0.130770353958674	0.496552672541355	0.95	0.0308360541093723	0.0327958966154491	Blood
+methylation	Flow cytometry:
+immune cells
+Composite methylation scores: blood	WID-SMK (immune hypoM)	Flow cytometry: white blood cell staining	KiR+ T helper cells	0.335745616101819	0.00100160260742273	91	0.141730909663679	0.504920290094403	0.95	0.0229033129563997	0.0244677208384695	Blood
+methylation	blood_WID_SMK_immune_hypoM_corr_z	Flow cytometry:
+immune cells	cells_single_cells_live_t_cells_cd4_t_cells_ki_rs_freq_of_parent	0.335745616101819	0.00100160260742273	91	0.141730909663679	0.504920290094403	0.95	0.0229033129563997	0.0244677208384695	Blood
+methylation	Flow cytometry:
+immune cells
+Composite methylation scores: blood	WID-SMK (immune hypoM)	Functional exercise capacity	relative power (peak HR)	0.718929930540051	0.000523433098936005	17	0.393078241081566	0.884357127595247	0.95	0.0138105809950038	0.0149178433196761	Blood
+methylation	blood_WID_SMK_immune_hypoM_corr_z	Clinical
+measures	relmaxcap	0.718929930540051	0.000523433098936005	17	0.393078241081566	0.884357127595247	0.95	0.0138105809950038	0.0149178433196761	Blood
+methylation	Clinical
+measures
+Composite methylation scores: blood	WID-SMK (immune hypoM)	Functional exercise capacity	relative power (60% peak HR)	0.733034363613469	0.000356405453445877	17	0.4179979035566	0.890688132175409	0.95	0.0101872558776613	0.01108096955259	Blood
+methylation	blood_WID_SMK_immune_hypoM_corr_z	Clinical
+measures	relpower60hf	0.733034363613469	0.000356405453445877	17	0.4179979035566	0.890688132175409	0.95	0.0101872558776613	0.01108096955259	Blood
+methylation	Clinical
+measures
+Composite methylation scores: blood	WID-SMK (immune hypoM)	Stool microbiome: families	Streptococcaceae	0.29728474824223	0.00443417200823539	88	0.0961106908115829	0.475124791217176	0.95	0.0673470344387611	0.0702029913722893	Blood
+methylation	blood_WID_SMK_immune_hypoM_corr_z	Stool
+microbiome	Streptococcaceae	0.29728474824223	0.00443417200823539	88	0.0961106908115829	0.475124791217176	0.95	0.0673470344387611	0.0702029913722893	Blood
+methylation	Stool
+microbiome
+Composite methylation scores: buccal	Global Methylation (LINE1)	Flow cytometry: T cell staining	T cells	0.5558033807589	0.00000000732864462505349	91	0.397049777191912	0.682264477728891	0.95	0.000000418954184398891	0.000000501279292353659	Buccal
+methylation	buccal_globalMethylation_line1_adj	Flow cytometry:
+immune cells	lymphocytes_single_cells_live_t_cells	0.5558033807589	0.00000000732864462505349	91	0.397049777191912	0.682264477728891	0.95	0.000000418954184398891	0.000000501279292353659	Buccal
+methylation	Flow cytometry:
+immune cells
+Composite methylation scores: buccal	Global Methylation (LINE1)	Saliva microbiome: families	Veillonellaceae	-0.42196486557092	0.0000227586417947104	92	-0.575387764204805	-0.239854826794307	0.95	0.000867357126176183	0.000972931936723868	Buccal
+methylation	buccal_globalMethylation_line1_adj	Saliva
+microbiome	Veillonellaceae	-0.42196486557092	0.0000227586417947104	92	-0.575387764204805	-0.239854826794307	0.95	0.000867357126176183	0.000972931936723868	Buccal
+methylation	Saliva
+microbiome
+Composite methylation scores: buccal	Global Methylation (LINE1)	Stool microbiome: families	Desulfovibrionaceae	0.443165669436558	0.0000108666295596141	89	0.261045874250054	0.594822448844593	0.95	0.000465906742368453	0.000530912472769716	Buccal
+methylation	buccal_globalMethylation_line1_adj	Stool
+microbiome	Desulfovibrionaceae	0.443165669436558	0.0000108666295596141	89	0.261045874250054	0.594822448844593	0.95	0.000465906742368453	0.000530912472769716	Buccal
+methylation	Stool
+microbiome
+Composite methylation scores: buccal	Global Methylation (LINE1)	Stool microbiome: families	Peptostreptococcaceae	-0.32635412605847	0.00159347259156831	89	-0.498775779792069	-0.129085218116564	0.95	0.0496873726279937	0.0544967626316363	Buccal
+methylation	buccal_globalMethylation_line1_adj	Stool
+microbiome	Peptostreptococcaceae	-0.32635412605847	0.00159347259156831	89	-0.498775779792069	-0.129085218116564	0.95	0.0496873726279937	0.0544967626316363	Buccal
+methylation	Stool
+microbiome
+Composite methylation scores: buccal	WID-SMK (epithelial hypoM)	Cotinine LC/MS Quantitation	cotinine	0.410775007221608	0.0000637594292153003	87	0.221463758480657	0.570248855386987	0.95	0.010934742110424	0.0218057247916327	Buccal
+methylation	buccal_WID_SMK_epithelial_hypoM_corr_z	Urine
+metabolome	cotinine	0.410775007221608	0.0000637594292153003	87	0.221463758480657	0.570248855386987	0.95	0.010934742110424	0.0218057247916327	Buccal
+methylation	Urine
+metabolome
+Composite methylation scores: buccal	WID-SMK (epithelial hypoM)	Flow cytometry: white blood cell staining	KiR+ T helper cells	0.334600230976082	0.000979963810200609	92	0.141581908678574	0.503108603996145	0.95	0.094044794188877	0.125027481487253	Buccal
+methylation	buccal_WID_SMK_epithelial_hypoM_corr_z	Flow cytometry:
+immune cells	cells_single_cells_live_t_cells_cd4_t_cells_ki_rs_freq_of_parent	0.334600230976082	0.000979963810200609	92	0.141581908678574	0.503108603996145	0.95	0.094044794188877	0.125027481487253	Buccal
+methylation	Flow cytometry:
+immune cells
+Composite methylation scores: buccal	WID-SMK (epithelial hypoM)	Functional exercise capacity	relative power (60% peak HR)	0.581361406665875	0.00903556075188987	17	0.172775059128532	0.819241885790486	0.95	0.192540477595563	0.203977831038739	Buccal
+methylation	buccal_WID_SMK_epithelial_hypoM_corr_z	Clinical
+measures	relpower60hf	0.581361406665875	0.00903556075188987	17	0.172775059128532	0.819241885790486	0.95	0.192540477595563	0.203977831038739	Buccal
+methylation	Clinical
+measures
+Composite methylation scores: buccal	WID-SMK (epithelial hypoM)	Saliva microbiome: families	Actinomycetaceae	0.287989047382931	0.00488240901376356	92	0.0906623648204058	0.463556793166645	0.95	0.192540477595563	0.203977831038739	Buccal
+methylation	buccal_WID_SMK_epithelial_hypoM_corr_z	Saliva
+microbiome	Actinomycetaceae	0.287989047382931	0.00488240901376356	92	0.0906623648204058	0.463556793166645	0.95	0.192540477595563	0.203977831038739	Buccal
+methylation	Saliva
+microbiome
+Composite methylation scores: buccal	WID-SMK (epithelial hypoM)	Saliva microbiome: families	Atopobiaceae	0.267302332105696	0.00920107988369112	92	0.0683893329859622	0.445776070381666	0.95	0.192540477595563	0.203977831038739	Buccal
+methylation	buccal_WID_SMK_epithelial_hypoM_corr_z	Saliva
+microbiome	Atopobiaceae	0.267302332105696	0.00920107988369112	92	0.0683893329859622	0.445776070381666	0.95	0.192540477595563	0.203977831038739	Buccal
+methylation	Saliva
+microbiome
+Composite methylation scores: buccal	WID-SMK (epithelial hypoM)	Saliva microbiome: families	Neisseriaceae	-0.271800334930797	0.00804847228440472	92	-0.449654230001176	-0.0732154444271511	0.95	0.192540477595563	0.203977831038739	Buccal
+methylation	buccal_WID_SMK_epithelial_hypoM_corr_z	Saliva
+microbiome	Neisseriaceae	-0.271800334930797	0.00804847228440472	92	-0.449654230001176	-0.0732154444271511	0.95	0.192540477595563	0.203977831038739	Buccal
+methylation	Saliva
+microbiome
+Composite methylation scores: buccal	WID-SMK (epithelial hypoM)	Saliva metabolome	Acetoin	0.294054871556905	0.0049061226706514	88	0.0926029178536875	0.472379870520784	0.95	0.192540477595563	0.203977831038739	Buccal
+methylation	buccal_WID_SMK_epithelial_hypoM_corr_z	Saliva
+metabolome	Acetoin	0.294054871556905	0.0049061226706514	88	0.0926029178536875	0.472379870520784	0.95	0.192540477595563	0.203977831038739	Buccal
+methylation	Saliva
+metabolome
+Composite methylation scores: buccal	WID-SMK (epithelial hypoM)	Stool microbiome: families	Streptococcaceae	0.277611707345299	0.00771665102541554	89	0.0760127111407647	0.457405450524454	0.95	0.192540477595563	0.203977831038739	Buccal
+methylation	buccal_WID_SMK_epithelial_hypoM_corr_z	Stool
+microbiome	Streptococcaceae	0.277611707345299	0.00771665102541554	89	0.0760127111407647	0.457405450524454	0.95	0.192540477595563	0.203977831038739	Buccal
+methylation	Stool
+microbiome
+Composite methylation scores: buccal	WID-SMK (epithelial hypoM)	Urine metabolome	Arabinose	0.333283081352706	0.00109673229374784	91	0.139012733363997	0.502851498387715	0.95	0.094044794188877	0.125027481487253	Buccal
+methylation	buccal_WID_SMK_epithelial_hypoM_corr_z	Urine
+metabolome	Arabinose	0.333283081352706	0.00109673229374784	91	0.139012733363997	0.502851498387715	0.95	0.094044794188877	0.125027481487253	Buccal
+methylation	Urine
+metabolome
+Composite methylation scores: buccal	WID-SMK (epithelial hypoM)	Urine metabolome	Betaine	0.283914426643792	0.00581674393478306	91	0.0851296904812782	0.460962596997541	0.95	0.192540477595563	0.203977831038739	Buccal
+methylation	buccal_WID_SMK_epithelial_hypoM_corr_z	Urine
+metabolome	Betaine	0.283914426643792	0.00581674393478306	91	0.0851296904812782	0.460962596997541	0.95	0.192540477595563	0.203977831038739	Buccal
+methylation	Urine
+metabolome
+Composite methylation scores: buccal	WID-SMK (epithelial hypoM)	Urine metabolome	Dimethylamine	0.279056003038175	0.00675360465787328	91	0.0798891076725166	0.456797176154426	0.95	0.192540477595563	0.203977831038739	Buccal
+methylation	buccal_WID_SMK_epithelial_hypoM_corr_z	Urine
+metabolome	Dimethylamine	0.279056003038175	0.00675360465787328	91	0.0798891076725166	0.456797176154426	0.95	0.192540477595563	0.203977831038739	Buccal
+methylation	Urine
+metabolome
+Composite methylation scores: buccal	WID-SMK (epithelial hypoM)	Urine metabolome	Urea	-0.282486114058013	0.00607942012188759	91	-0.459738827206485	-0.0835878858640067	0.95	0.192540477595563	0.203977831038739	Buccal
+methylation	buccal_WID_SMK_epithelial_hypoM_corr_z	Urine
+metabolome	Urea	-0.282486114058013	0.00607942012188759	91	-0.459738827206485	-0.0835878858640067	0.95	0.192540477595563	0.203977831038739	Buccal
+methylation	Urine
+metabolome
+Composite methylation scores: buccal	WID-SMK (epithelial hypoM)	Urine metabolome	1-Methyl nicotinamide	0.267476179284257	0.00954282250473635	91	0.0674426621802375	0.446837564418614	0.95	0.192540477595563	0.203977831038739	Buccal
+methylation	buccal_WID_SMK_epithelial_hypoM_corr_z	Urine
+metabolome	X1.Methylnicotinamide	0.267476179284257	0.00954282250473635	91	0.0674426621802375	0.446837564418614	0.95	0.192540477595563	0.203977831038739	Buccal
+methylation	Urine
+metabolome
+Composite methylation scores: buccal	WID-SMK (proximal epithelial hyperM)	Saliva microbiome: families	Eggerthellaceae	-0.281746732077102	0.00594039764959215	92	-0.458206229849098	-0.0839205098121689	0.95	0.141654303831825	0.151329983060654	Buccal
+methylation	buccal_WID_SMK_proximal_epithelial_hyperM_corr_z	Saliva
+microbiome	Eggerthellaceae	-0.281746732077102	0.00594039764959215	92	-0.458206229849098	-0.0839205098121689	0.95	0.141654303831825	0.151329983060654	Buccal
+methylation	Saliva
+microbiome
+Composite methylation scores: buccal	WID-SMK (proximal epithelial hyperM)	Saliva metabolome	Acetone	0.353612134246175	0.000628678019917482	88	0.158098566386262	0.522444662565959	0.95	0.0239596178701885	0.0268759853514724	Buccal
+methylation	buccal_WID_SMK_proximal_epithelial_hyperM_corr_z	Saliva
+metabolome	Acetone	0.353612134246175	0.000628678019917482	88	0.158098566386262	0.522444662565959	0.95	0.0239596178701885	0.0268759853514724	Buccal
+methylation	Saliva
+metabolome
+Composite methylation scores: buccal	WID-SMK (proximal epithelial hyperM)	Saliva metabolome	3-Methylhistidine	-0.286466403626453	0.00619479462821393	88	-0.46591714829518	-0.0843811718629551	0.95	0.141654303831825	0.151329983060654	Buccal
+methylation	buccal_WID_SMK_proximal_epithelial_hyperM_corr_z	Saliva
+metabolome	p.Methylhistidine	-0.286466403626453	0.00619479462821393	88	-0.46591714829518	-0.0843811718629551	0.95	0.141654303831825	0.151329983060654	Buccal
+methylation	Saliva
+metabolome
+Composite methylation scores: buccal	WID-SMK (proximal epithelial hyperM)	Stool microbiome: families	Butyricicoccaceae	-0.286126809054895	0.00596903710910356	89	-0.464689221169899	-0.0852026408239926	0.95	0.141654303831825	0.151329983060654	Buccal
+methylation	buccal_WID_SMK_proximal_epithelial_hyperM_corr_z	Stool
+microbiome	Butyricicoccaceae	-0.286126809054895	0.00596903710910356	89	-0.464689221169899	-0.0852026408239926	0.95	0.141654303831825	0.151329983060654	Buccal
+methylation	Stool
+microbiome
+Composite methylation scores: cervical	WID-CIN	Flow cytometry: white blood cell staining	Plasma cells	0.428829515211467	0.0000804466492913864	77	0.229477902032748	0.593650745066653	0.95	0.00307489235156477	0.00344916860718526	Cervical
+methylation	cervicalindex_CIN_adj	Flow cytometry:
+immune cells	cells_single_cells_live_cd19pos_plasma_cells_freq_of_live	0.428829515211467	0.0000804466492913864	77	0.229477902032748	0.593650745066653	0.95	0.00307489235156477	0.00344916860718526	Cervical
+methylation	Flow cytometry:
+immune cells
+Composite methylation scores: cervical	WID-CIN	Flow cytometry: white blood cell staining	KiR+cytotoxic T cells	0.384522027825964	0.000119447505766192	93	0.19835075341833	0.543913013051933	0.95	0.00372459040707307	0.00408510469720376	Cervical
+methylation	cervicalindex_CIN_adj	Flow cytometry:
+immune cells	cells_single_cells_live_t_cells_cd8_t_cells_ki_rs_freq_of_parent	0.384522027825964	0.000119447505766192	93	0.19835075341833	0.543913013051933	0.95	0.00372459040707307	0.00408510469720376	Cervical
+methylation	Flow cytometry:
+immune cells
+Composite methylation scores: cervical	WID-CIN	Stool microbiome: families	Akkermansiaceae	0.308327205508961	0.00278844689766327	90	0.110487151038966	0.482664002335282	0.95	0.0735720989152692	0.0794707365834031	Cervical
+methylation	cervicalindex_CIN_adj	Stool
+microbiome	Akkermansiaceae	0.308327205508961	0.00278844689766327	90	0.110487151038966	0.482664002335282	0.95	0.0735720989152692	0.0794707365834031	Cervical
+methylation	Stool
+microbiome

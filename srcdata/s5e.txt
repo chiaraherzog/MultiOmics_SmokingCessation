@@ -1,0 +1,50 @@
+assay	x	cor	p	label	assay2
+Saliva nuclear magnetic resonance: normalized	Acetate.mM.	-0.0145712978291725	0.927025603725004	Acetic acid	Fatty Acyls
+Saliva nuclear magnetic resonance: normalized	Acetoin	-0.0743341418834689	0.639891691180632	Acetoin	Fatty Acyls
+Saliva nuclear magnetic resonance: normalized	Acetone	-0.0880434756157045	0.579273652673914	Acetone	Organic oxygen compounds
+Saliva nuclear magnetic resonance: normalized	Alanine	-0.0589829717761153	0.710607147439437	Alanine	Organic acids
+Saliva nuclear magnetic resonance: normalized	Arginine	0.1053648493732	0.506634398820466	Arginine	Organic acids
+Saliva nuclear magnetic resonance: normalized	Aspartate	-0.0682593472955322	0.667542961726953	Aspartic acid	Organic acids
+Saliva nuclear magnetic resonance: normalized	Butyrate	0.0202356333233297	0.898784379908279	Butyric acid	Fatty Acyls
+Saliva nuclear magnetic resonance: normalized	Choline	-0.00504864685348795	0.974685993416464	Choline	Organic nitrogen compounds
+Saliva nuclear magnetic resonance: normalized	Creatinine	-0.0437138934875176	0.783408256918076	Creatinine	Organoheterocyclic compounds
+Saliva nuclear magnetic resonance: normalized	Desaminotyrosine	-0.123096682224474	0.437369397766264	Desaminotyrosine	Organic acids
+Saliva nuclear magnetic resonance: normalized	Dimethylamine	0.0790133755525553	0.618913615763311	Dimethylamine	Organic nitrogen compounds
+Saliva nuclear magnetic resonance: normalized	Ethanol	-0.240323799407902	0.125266058258093	Ethanol	Organic oxygen compounds
+Saliva nuclear magnetic resonance: normalized	Formate	0.162664938864819	0.303362004319586	Formic acid	Organic acids
+Saliva nuclear magnetic resonance: normalized	Fucose	-0.453105793623199	0.00258434897246524	Fucose	Carbohydrates
+Saliva nuclear magnetic resonance: normalized	Galactose	-0.136641832319198	0.388207103643333	Galactose	Carbohydrates
+Saliva nuclear magnetic resonance: normalized	Glutamate	-0.00348890229712582	0.982505105532613	Glutamic acid	Organic acids
+Saliva nuclear magnetic resonance: normalized	Glutamine	0.0795059264650907	0.616722293723139	Glutamine	Organic acids
+Saliva nuclear magnetic resonance: normalized	Glycine	-0.035012160699392	0.825774229101194	Glycine	Organic acids
+Saliva nuclear magnetic resonance: normalized	Hydroxyacetone	-0.0204819087795974	0.897559040887138	Hydroxyacetone	Organic oxygen compounds
+Saliva nuclear magnetic resonance: normalized	Isobutyrate	0.0509379735380369	0.748694365424968	Isobutyric acid	Fatty Acyls
+Saliva nuclear magnetic resonance: normalized	Isoleucine	-0.0401839452810138	0.800527441444935	Isoleucine	Organic acids
+Saliva nuclear magnetic resonance: normalized	Isopropanol	-0.294586491605553	0.0582532023123662	Isopropanol	Organic oxygen compounds
+Saliva nuclear magnetic resonance: normalized	Isovalerate	-0.146739126026174	0.353764491070057	Isovaleric acid	Fatty Acyls
+Saliva nuclear magnetic resonance: normalized	Leucine	-0.172515957115527	0.274610268567272	Leucine	Organic acids
+Saliva nuclear magnetic resonance: normalized	Lysine	0.0211386433296447	0.894292626353453	Lysine	Organic acids
+Saliva nuclear magnetic resonance: normalized	Malonate	0.278742770585664	0.073847084353848	Malonic acid	Fatty Acyls
+Saliva nuclear magnetic resonance: normalized	Methanol	-0.0740878664272012	0.641003698670882	Methanol	Organic oxygen compounds
+Saliva nuclear magnetic resonance: normalized	Methylamine	-0.0580799617698004	0.714849728263224	Methylamine	Organic nitrogen compounds
+Saliva nuclear magnetic resonance: normalized	Phenylacetate	-0.0835284255841299	0.598950625428138	Phenyl acetate	Benzenoids
+Saliva nuclear magnetic resonance: normalized	Phenylalanine	-0.0839388846779094	0.59714981744645	Phenylalanine	Organic acids
+Saliva nuclear magnetic resonance: normalized	Proline	0.07170720368328	0.651792778153611	Proline	Organic acids
+Saliva nuclear magnetic resonance: normalized	Propionate	0.125723620424663	0.427574773043688	Propionic acid	Fatty Acyls
+Saliva nuclear magnetic resonance: normalized	Propylene.glycol	-0.141895708719576	0.370047281567953	Propylene glycol	Organic oxygen compounds
+Saliva nuclear magnetic resonance: normalized	Putrescine	0.0773715391774372	0.626241503518015	Putrescine	Fatty Acyls
+Saliva nuclear magnetic resonance: normalized	Sarcosine	0.0582441454073122	0.714077714864646	Sarcosine	Organic acids
+Saliva nuclear magnetic resonance: normalized	Serine	0.038377925268384	0.809322413402543	Serine	Organic acids
+Saliva nuclear magnetic resonance: normalized	TMA..N.oxide	0.150515349688946	0.341376804139298	Trimethylamine N-oxide	Organic nitrogen compounds
+Saliva nuclear magnetic resonance: normalized	Taurine	-0.0912450565471846	0.565500385325724	Taurine	Organic acids
+Saliva nuclear magnetic resonance: normalized	Threonine	-0.0269671624613137	0.865384758383033	Threonine	Organic acids
+Saliva nuclear magnetic resonance: normalized	Thymine	-0.0640726645389812	0.686858711200075	Thymine	Nucleic acids
+Saliva nuclear magnetic resonance: normalized	Trimethylamine	-0.0185937969482117	0.906959105319541	Trimethylamine	Organic nitrogen compounds
+Saliva nuclear magnetic resonance: normalized	Tryptophan	-0.175553354409496	0.266119040195106	Tryptophan	Organic acids
+Saliva nuclear magnetic resonance: normalized	Tyrosine	-0.182859526278771	0.246412738575335	Tyrosine	Organic acids
+Saliva nuclear magnetic resonance: normalized	Valine	-0.0585725126823358	0.712534533085854	Valine	Organic acids
+Saliva nuclear magnetic resonance: normalized	X3.Methyl.2.oxovalerate	-0.229241403875855	0.144194695734153	3-Methyl-2-oxovaleric acid	Organic acids
+Saliva nuclear magnetic resonance: normalized	X5.Aminopentanoate	-0.0754013355272956	0.635082004028727	5-Aminopentanoic acid	Fatty Acyls
+Saliva nuclear magnetic resonance: normalized	Xanthine	-0.0107950741664011	0.945904494480775	Xanthine	Nucleic acids
+Saliva nuclear magnetic resonance: normalized	Xylose	-0.132373057743891	0.403339160681573	Xylose	Carbohydrates
+Saliva nuclear magnetic resonance: normalized	p.Methylhistidine	-0.0314822124928883	0.84310787583034	3-Methylhistidine	Organic acids

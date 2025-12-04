@@ -1,0 +1,205 @@
+OTU	rel.abund.	group	Phylum	Family	Genus	Species	label
+ASV_jhl_q2w	0	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.00662307888256772	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00292943873652034	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.00295686456400742	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.013682745825603	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00318877551020408	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.000818718490110743	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0000430904468479338	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.00706133508498235	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.00706133508498235	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.0113309795549717	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.00209098090237442	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.000604061149574834	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.000604061149574834	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.000753366607025143	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.0000470854129390715	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0194142017535408	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.00263421316052895	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.0012644223170539	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.00681842022448337	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00325186195321515	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.00605786618444846	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0124773960216998	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00027124773960217	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.011214953271028	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0169392523364486	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00116822429906542	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.00575638959244762	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.00455906055721851	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.0151047662905825	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0300575570240887	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.000980601151140482	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.0131219955826946	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0118227880992595	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0431223505335477	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.00114025085518814	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0721208665906499	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.0035377358490566	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0652213352685051	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.000494773950151525	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.000817661488143908	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.0000511038430089943	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.007733066017471	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00218221494817239	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.0078015427769986	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00880960729312763	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.0151890638740107	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.013830042369494	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.0123910784235351	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.00507531106745252	Never smoker (control)	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.010150622134905	Never smoker (control)	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.0000818598559266536	Never smoker (control)	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.00818779875999811	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0678214775900421	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00359695205641535	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.0231233625697688	M6 no smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0734138284542659	M6 no smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00284770474997152	M6 no smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0000534673581778324	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00144361867080148	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.00298679522112765	M6 smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0000785998742402012	M6 smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00115279815552295	M6 smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0222211670860833	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.0246901856512036	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	M6 smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0202141693179173	M6 smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.0127648017381858	M6 smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.00564652738565782	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0000941087897609637	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00244682853378506	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.0201437153963953	M6 smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.000117799505242078	M6 smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00223819059959948	M6 smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.0151162160697838	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.00422603890122989	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.000921059760524462	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.0103456495828367	M6 smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.019642431466031	M6 smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.000476758045292014	M6 smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.000712105798575788	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.00198372329603255	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.0000344044588178628	M6 no smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.00278676116424689	M6 no smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0	M6 no smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.00957141337870892	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.00558332447091354	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.000319047112623631	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.0017067086779572	M6 smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0	M6 smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00879611395562557	M6 smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.0211848900093523	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.000894563493677063	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.000691253608750457	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	M6 no smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0	M6 no smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.0126442634080109	M6 no smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0108018903308079	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00397569574675568	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	M6 no smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0219190337732051	M6 no smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0	M6 no smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.00640327847858103	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.00589101620029455	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.000832426202215535	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.0236806857755157	M6 smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0325207607822127	M6 smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00546477364050362	M6 smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.00165095962027929	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.0000687899841783036	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.0200357515268881	M6 no smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.00148964695367198	M6 no smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00297929390734396	M6 no smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.00256322624743677	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.00529733424470267	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.0093984962406015	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.0120673229596697	M6 no smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.000190536678310575	M6 no smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00222292791362337	M6 no smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.0161073350325687	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0302322288303597	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.0265859529878221	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.00360760371860691	M6 smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0273345358679062	M6 smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.000138753989177189	M6 smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.0172534227437832	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00251466890192791	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.000184416781927155	M6 no smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.000829875518672199	M6 no smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.000553250345781466	M6 no smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.0148058982846825	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.00138429130303942	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00541679205537165	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.00311481694460418	M6 no smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0133697527314549	M6 no smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00800268353459843	M6 no smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.0257946613139998	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00832858983193026	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.00451477359080953	M6 smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0304411961914979	M6 smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.000804613115193778	M6 smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.00353991125292915	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00189460038889166	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.00392874077084603	M6 smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0143602248865407	M6 smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0	M6 smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0000742611020347542	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.000371305510173771	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	M6 smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.000764785859959211	M6 smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00144459551325629	M6 smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.0113893604980192	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00615449915110357	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.0047808764940239	M6 no smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0	M6 no smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.0114451285766027	M6 no smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.0328572433687469	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00126644621121508	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	M6 smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0212461006660484	M6 smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00472135570356631	M6 smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0000874992708394097	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.0183165140290498	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0	M6 no smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0	M6 no smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.032823454429573	M6 no smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.00119774823332136	Smoker baseline	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.00778536351658881	Smoker baseline	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.000798498822214237	Smoker baseline	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii
+ASV_jhl_q2w	0.00195656427313637	M6 smoking cessation	Firmicutes	Ruminococcaceae	Ruminococcus	bromii	Ruminococcus <br>bromii
+ASV_mbt_8vr	0.0343703123980956	M6 smoking cessation	Firmicutes	Lachnospiraceae	Agathobacter	NA	Agathobacter sp.
+ASV_tuz_nft	0.00123915737298637	M6 smoking cessation	Bacteroidota	Rikenellaceae	Alistipes	finegoldii	Alistipes <br>finegoldii

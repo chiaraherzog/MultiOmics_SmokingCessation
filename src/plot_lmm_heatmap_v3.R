@@ -351,6 +351,36 @@ plot_lmm_heatmap_v3 <- function(lmm_data_time,
     
   }
   
-  return(p)
+  if(!is.null(tmp$cor.c)){
+    spy <- tmp$cor.c
+    spy_sig = ifelse(tmp$p.c < 0.05, 1, 0)
+    opposite_direction = ifelse(sign(tmp$cor.c) != sign(tmp$`estimate_visitIdM6:compliancehigher compliance`) & tmp$`p.value_visitIdM6:compliancehigher compliance`!= " ",
+                                "←", "")
+    
+    full_df <- cbind(tmp$x,
+                     tmp[,ind_est], tmp[,ind_p], spy, spy_sig, opposite_direction)
+    
+    
+    out <- list(val = tmp[,ind_est],
+                pval = tmp[,ind_p],
+                plot = p,
+                spy = spy,
+                opposite_direction = opposite_direction,
+                full_df = full_df)
+    
+  } else {
+    
+    full_df <- cbind(tmp$x,
+                     tmp[,ind_est], tmp[,ind_p])
+    
+    
+    out <- list(val = tmp[,ind_est],
+                pval = tmp[,ind_p],
+                plot = p,
+                full_df = full_df)
+  }
+
+  
+  return(out)
   
 }

@@ -1,0 +1,2249 @@
+interventionId	dropout	sampletype	assay	comp	visitId	value	id
+S	no	blood	methylation	blood_methylation	M0	1	1
+S	no	blood	methylation	blood_methylation	M2	1	1
+S	no	blood	methylation	blood_methylation	M4	1	1
+S	no	blood	methylation	blood_methylation	M6	1	1
+S	no	blood	methylation	blood_methylation	M0	1	2
+S	no	blood	methylation	blood_methylation	M2	1	2
+S	no	blood	methylation	blood_methylation	M4	1	2
+S	no	blood	methylation	blood_methylation	M6	1	2
+S	no	blood	methylation	blood_methylation	M0	1	3
+S	no	blood	methylation	blood_methylation	M2	1	3
+S	no	blood	methylation	blood_methylation	M4	1	3
+S	no	blood	methylation	blood_methylation	M6	1	3
+S	yes	blood	methylation	blood_methylation	M0	1	4
+S	yes	blood	methylation	blood_methylation	M2	1	4
+S	yes	blood	methylation	blood_methylation	M4	0	4
+S	yes	blood	methylation	blood_methylation	M6	0	4
+S	no	blood	methylation	blood_methylation	M0	1	5
+S	no	blood	methylation	blood_methylation	M2	1	5
+S	no	blood	methylation	blood_methylation	M4	1	5
+S	no	blood	methylation	blood_methylation	M6	1	5
+S	yes	blood	methylation	blood_methylation	M0	1	6
+S	yes	blood	methylation	blood_methylation	M2	1	6
+S	yes	blood	methylation	blood_methylation	M4	1	6
+S	yes	blood	methylation	blood_methylation	M6	0	6
+S	yes	blood	methylation	blood_methylation	M0	1	7
+S	yes	blood	methylation	blood_methylation	M2	1	7
+S	yes	blood	methylation	blood_methylation	M4	0	7
+S	yes	blood	methylation	blood_methylation	M6	0	7
+S	yes	blood	methylation	blood_methylation	M0	1	8
+S	yes	blood	methylation	blood_methylation	M2	1	8
+S	yes	blood	methylation	blood_methylation	M4	1	8
+S	yes	blood	methylation	blood_methylation	M6	0	8
+S	no	blood	methylation	blood_methylation	M0	1	9
+S	no	blood	methylation	blood_methylation	M2	1	9
+S	no	blood	methylation	blood_methylation	M4	1	9
+S	no	blood	methylation	blood_methylation	M6	1	9
+S	no	blood	methylation	blood_methylation	M0	1	10
+S	no	blood	methylation	blood_methylation	M2	1	10
+S	no	blood	methylation	blood_methylation	M4	1	10
+S	no	blood	methylation	blood_methylation	M6	1	10
+S	no	blood	methylation	blood_methylation	M0	1	11
+S	no	blood	methylation	blood_methylation	M2	1	11
+S	no	blood	methylation	blood_methylation	M4	1	11
+S	no	blood	methylation	blood_methylation	M6	1	11
+S	yes	blood	methylation	blood_methylation	M0	1	12
+S	yes	blood	methylation	blood_methylation	M2	1	12
+S	yes	blood	methylation	blood_methylation	M4	0	12
+S	yes	blood	methylation	blood_methylation	M6	0	12
+S	no	blood	methylation	blood_methylation	M0	1	13
+S	no	blood	methylation	blood_methylation	M2	1	13
+S	no	blood	methylation	blood_methylation	M4	1	13
+S	no	blood	methylation	blood_methylation	M6	1	13
+S	yes	blood	methylation	blood_methylation	M0	1	14
+S	yes	blood	methylation	blood_methylation	M2	1	14
+S	yes	blood	methylation	blood_methylation	M4	1	14
+S	yes	blood	methylation	blood_methylation	M6	0	14
+S	no	blood	methylation	blood_methylation	M0	1	15
+S	no	blood	methylation	blood_methylation	M2	1	15
+S	no	blood	methylation	blood_methylation	M4	1	15
+S	no	blood	methylation	blood_methylation	M6	1	15
+S	no	blood	methylation	blood_methylation	M0	1	16
+S	no	blood	methylation	blood_methylation	M2	1	16
+S	no	blood	methylation	blood_methylation	M4	1	16
+S	no	blood	methylation	blood_methylation	M6	1	16
+S	yes	blood	methylation	blood_methylation	M0	1	17
+S	yes	blood	methylation	blood_methylation	M2	1	17
+S	yes	blood	methylation	blood_methylation	M4	1	17
+S	yes	blood	methylation	blood_methylation	M6	0	17
+S	no	blood	methylation	blood_methylation	M0	1	18
+S	no	blood	methylation	blood_methylation	M2	1	18
+S	no	blood	methylation	blood_methylation	M4	1	18
+S	no	blood	methylation	blood_methylation	M6	1	18
+S	no	blood	methylation	blood_methylation	M0	0	19
+S	no	blood	methylation	blood_methylation	M2	1	19
+S	no	blood	methylation	blood_methylation	M4	1	19
+S	no	blood	methylation	blood_methylation	M6	1	19
+S	no	blood	methylation	blood_methylation	M0	1	20
+S	no	blood	methylation	blood_methylation	M2	1	20
+S	no	blood	methylation	blood_methylation	M4	1	20
+S	no	blood	methylation	blood_methylation	M6	1	20
+S	yes	blood	methylation	blood_methylation	M0	1	21
+S	yes	blood	methylation	blood_methylation	M2	1	21
+S	yes	blood	methylation	blood_methylation	M4	0	21
+S	yes	blood	methylation	blood_methylation	M6	0	21
+S	yes	blood	methylation	blood_methylation	M0	1	22
+S	yes	blood	methylation	blood_methylation	M2	1	22
+S	yes	blood	methylation	blood_methylation	M4	1	22
+S	yes	blood	methylation	blood_methylation	M6	0	22
+S	yes	blood	methylation	blood_methylation	M0	1	23
+S	yes	blood	methylation	blood_methylation	M2	1	23
+S	yes	blood	methylation	blood_methylation	M4	0	23
+S	yes	blood	methylation	blood_methylation	M6	0	23
+S	yes	blood	methylation	blood_methylation	M0	1	24
+S	yes	blood	methylation	blood_methylation	M2	1	24
+S	yes	blood	methylation	blood_methylation	M4	0	24
+S	yes	blood	methylation	blood_methylation	M6	0	24
+S	no	blood	methylation	blood_methylation	M0	1	25
+S	no	blood	methylation	blood_methylation	M2	1	25
+S	no	blood	methylation	blood_methylation	M4	1	25
+S	no	blood	methylation	blood_methylation	M6	1	25
+S	yes	blood	methylation	blood_methylation	M0	1	26
+S	yes	blood	methylation	blood_methylation	M2	1	26
+S	yes	blood	methylation	blood_methylation	M4	1	26
+S	yes	blood	methylation	blood_methylation	M6	0	26
+S	yes	blood	methylation	blood_methylation	M0	1	27
+S	yes	blood	methylation	blood_methylation	M2	1	27
+S	yes	blood	methylation	blood_methylation	M4	0	27
+S	yes	blood	methylation	blood_methylation	M6	0	27
+S	yes	blood	methylation	blood_methylation	M0	1	28
+S	yes	blood	methylation	blood_methylation	M2	1	28
+S	yes	blood	methylation	blood_methylation	M4	0	28
+S	yes	blood	methylation	blood_methylation	M6	0	28
+S	yes	blood	methylation	blood_methylation	M0	1	29
+S	yes	blood	methylation	blood_methylation	M2	1	29
+S	yes	blood	methylation	blood_methylation	M4	1	29
+S	yes	blood	methylation	blood_methylation	M6	0	29
+S	no	blood	methylation	blood_methylation	M0	1	30
+S	no	blood	methylation	blood_methylation	M2	1	30
+S	no	blood	methylation	blood_methylation	M4	1	30
+S	no	blood	methylation	blood_methylation	M6	1	30
+S	no	blood	methylation	blood_methylation	M0	1	31
+S	no	blood	methylation	blood_methylation	M2	1	31
+S	no	blood	methylation	blood_methylation	M4	1	31
+S	no	blood	methylation	blood_methylation	M6	1	31
+S	yes	blood	methylation	blood_methylation	M0	1	32
+S	yes	blood	methylation	blood_methylation	M2	0	32
+S	yes	blood	methylation	blood_methylation	M4	0	32
+S	yes	blood	methylation	blood_methylation	M6	0	32
+S	no	blood	methylation	blood_methylation	M0	1	33
+S	no	blood	methylation	blood_methylation	M2	1	33
+S	no	blood	methylation	blood_methylation	M4	1	33
+S	no	blood	methylation	blood_methylation	M6	1	33
+S	no	blood	methylation	blood_methylation	M0	1	34
+S	no	blood	methylation	blood_methylation	M2	1	34
+S	no	blood	methylation	blood_methylation	M4	1	34
+S	no	blood	methylation	blood_methylation	M6	1	34
+S	yes	blood	methylation	blood_methylation	M0	1	35
+S	yes	blood	methylation	blood_methylation	M2	1	35
+S	yes	blood	methylation	blood_methylation	M4	0	35
+S	yes	blood	methylation	blood_methylation	M6	0	35
+S	no	blood	methylation	blood_methylation	M0	1	36
+S	no	blood	methylation	blood_methylation	M2	1	36
+S	no	blood	methylation	blood_methylation	M4	1	36
+S	no	blood	methylation	blood_methylation	M6	1	36
+S	no	blood	methylation	blood_methylation	M0	1	37
+S	no	blood	methylation	blood_methylation	M2	1	37
+S	no	blood	methylation	blood_methylation	M4	1	37
+S	no	blood	methylation	blood_methylation	M6	1	37
+S	no	blood	methylation	blood_methylation	M0	1	38
+S	no	blood	methylation	blood_methylation	M2	1	38
+S	no	blood	methylation	blood_methylation	M4	1	38
+S	no	blood	methylation	blood_methylation	M6	1	38
+S	no	blood	methylation	blood_methylation	M0	1	39
+S	no	blood	methylation	blood_methylation	M2	1	39
+S	no	blood	methylation	blood_methylation	M4	1	39
+S	no	blood	methylation	blood_methylation	M6	1	39
+S	no	blood	methylation	blood_methylation	M0	1	40
+S	no	blood	methylation	blood_methylation	M2	1	40
+S	no	blood	methylation	blood_methylation	M4	1	40
+S	no	blood	methylation	blood_methylation	M6	1	40
+S	yes	blood	methylation	blood_methylation	M0	1	41
+S	yes	blood	methylation	blood_methylation	M2	0	41
+S	yes	blood	methylation	blood_methylation	M4	0	41
+S	yes	blood	methylation	blood_methylation	M6	0	41
+S	no	blood	methylation	blood_methylation	M0	1	42
+S	no	blood	methylation	blood_methylation	M2	1	42
+S	no	blood	methylation	blood_methylation	M4	1	42
+S	no	blood	methylation	blood_methylation	M6	1	42
+S	no	buccal	methylation	buccal_methylation	M0	1	1
+S	no	buccal	methylation	buccal_methylation	M2	1	1
+S	no	buccal	methylation	buccal_methylation	M4	1	1
+S	no	buccal	methylation	buccal_methylation	M6	1	1
+S	no	buccal	methylation	buccal_methylation	M0	1	2
+S	no	buccal	methylation	buccal_methylation	M2	1	2
+S	no	buccal	methylation	buccal_methylation	M4	1	2
+S	no	buccal	methylation	buccal_methylation	M6	1	2
+S	no	buccal	methylation	buccal_methylation	M0	1	3
+S	no	buccal	methylation	buccal_methylation	M2	1	3
+S	no	buccal	methylation	buccal_methylation	M4	1	3
+S	no	buccal	methylation	buccal_methylation	M6	1	3
+S	yes	buccal	methylation	buccal_methylation	M0	1	4
+S	yes	buccal	methylation	buccal_methylation	M2	1	4
+S	yes	buccal	methylation	buccal_methylation	M4	0	4
+S	yes	buccal	methylation	buccal_methylation	M6	0	4
+S	no	buccal	methylation	buccal_methylation	M0	1	5
+S	no	buccal	methylation	buccal_methylation	M2	1	5
+S	no	buccal	methylation	buccal_methylation	M4	1	5
+S	no	buccal	methylation	buccal_methylation	M6	1	5
+S	yes	buccal	methylation	buccal_methylation	M0	1	6
+S	yes	buccal	methylation	buccal_methylation	M2	1	6
+S	yes	buccal	methylation	buccal_methylation	M4	1	6
+S	yes	buccal	methylation	buccal_methylation	M6	0	6
+S	yes	buccal	methylation	buccal_methylation	M0	1	7
+S	yes	buccal	methylation	buccal_methylation	M2	1	7
+S	yes	buccal	methylation	buccal_methylation	M4	0	7
+S	yes	buccal	methylation	buccal_methylation	M6	0	7
+S	yes	buccal	methylation	buccal_methylation	M0	1	8
+S	yes	buccal	methylation	buccal_methylation	M2	1	8
+S	yes	buccal	methylation	buccal_methylation	M4	1	8
+S	yes	buccal	methylation	buccal_methylation	M6	0	8
+S	no	buccal	methylation	buccal_methylation	M0	1	9
+S	no	buccal	methylation	buccal_methylation	M2	1	9
+S	no	buccal	methylation	buccal_methylation	M4	0	9
+S	no	buccal	methylation	buccal_methylation	M6	0	9
+S	no	buccal	methylation	buccal_methylation	M0	1	10
+S	no	buccal	methylation	buccal_methylation	M2	1	10
+S	no	buccal	methylation	buccal_methylation	M4	1	10
+S	no	buccal	methylation	buccal_methylation	M6	1	10
+S	no	buccal	methylation	buccal_methylation	M0	1	11
+S	no	buccal	methylation	buccal_methylation	M2	1	11
+S	no	buccal	methylation	buccal_methylation	M4	1	11
+S	no	buccal	methylation	buccal_methylation	M6	1	11
+S	yes	buccal	methylation	buccal_methylation	M0	1	12
+S	yes	buccal	methylation	buccal_methylation	M2	1	12
+S	yes	buccal	methylation	buccal_methylation	M4	0	12
+S	yes	buccal	methylation	buccal_methylation	M6	0	12
+S	no	buccal	methylation	buccal_methylation	M0	1	13
+S	no	buccal	methylation	buccal_methylation	M2	1	13
+S	no	buccal	methylation	buccal_methylation	M4	1	13
+S	no	buccal	methylation	buccal_methylation	M6	1	13
+S	yes	buccal	methylation	buccal_methylation	M0	1	14
+S	yes	buccal	methylation	buccal_methylation	M2	1	14
+S	yes	buccal	methylation	buccal_methylation	M4	1	14
+S	yes	buccal	methylation	buccal_methylation	M6	0	14
+S	no	buccal	methylation	buccal_methylation	M0	1	15
+S	no	buccal	methylation	buccal_methylation	M2	1	15
+S	no	buccal	methylation	buccal_methylation	M4	1	15
+S	no	buccal	methylation	buccal_methylation	M6	1	15
+S	no	buccal	methylation	buccal_methylation	M0	1	16
+S	no	buccal	methylation	buccal_methylation	M2	1	16
+S	no	buccal	methylation	buccal_methylation	M4	1	16
+S	no	buccal	methylation	buccal_methylation	M6	1	16
+S	yes	buccal	methylation	buccal_methylation	M0	1	17
+S	yes	buccal	methylation	buccal_methylation	M2	1	17
+S	yes	buccal	methylation	buccal_methylation	M4	1	17
+S	yes	buccal	methylation	buccal_methylation	M6	0	17
+S	no	buccal	methylation	buccal_methylation	M0	1	18
+S	no	buccal	methylation	buccal_methylation	M2	1	18
+S	no	buccal	methylation	buccal_methylation	M4	1	18
+S	no	buccal	methylation	buccal_methylation	M6	1	18
+S	no	buccal	methylation	buccal_methylation	M0	1	19
+S	no	buccal	methylation	buccal_methylation	M2	1	19
+S	no	buccal	methylation	buccal_methylation	M4	1	19
+S	no	buccal	methylation	buccal_methylation	M6	1	19
+S	no	buccal	methylation	buccal_methylation	M0	1	20
+S	no	buccal	methylation	buccal_methylation	M2	1	20
+S	no	buccal	methylation	buccal_methylation	M4	1	20
+S	no	buccal	methylation	buccal_methylation	M6	1	20
+S	yes	buccal	methylation	buccal_methylation	M0	1	21
+S	yes	buccal	methylation	buccal_methylation	M2	1	21
+S	yes	buccal	methylation	buccal_methylation	M4	0	21
+S	yes	buccal	methylation	buccal_methylation	M6	0	21
+S	yes	buccal	methylation	buccal_methylation	M0	1	22
+S	yes	buccal	methylation	buccal_methylation	M2	1	22
+S	yes	buccal	methylation	buccal_methylation	M4	1	22
+S	yes	buccal	methylation	buccal_methylation	M6	0	22
+S	yes	buccal	methylation	buccal_methylation	M0	1	23
+S	yes	buccal	methylation	buccal_methylation	M2	1	23
+S	yes	buccal	methylation	buccal_methylation	M4	0	23
+S	yes	buccal	methylation	buccal_methylation	M6	0	23
+S	yes	buccal	methylation	buccal_methylation	M0	1	24
+S	yes	buccal	methylation	buccal_methylation	M2	1	24
+S	yes	buccal	methylation	buccal_methylation	M4	0	24
+S	yes	buccal	methylation	buccal_methylation	M6	0	24
+S	no	buccal	methylation	buccal_methylation	M0	1	25
+S	no	buccal	methylation	buccal_methylation	M2	1	25
+S	no	buccal	methylation	buccal_methylation	M4	1	25
+S	no	buccal	methylation	buccal_methylation	M6	1	25
+S	yes	buccal	methylation	buccal_methylation	M0	1	26
+S	yes	buccal	methylation	buccal_methylation	M2	1	26
+S	yes	buccal	methylation	buccal_methylation	M4	1	26
+S	yes	buccal	methylation	buccal_methylation	M6	0	26
+S	yes	buccal	methylation	buccal_methylation	M0	1	27
+S	yes	buccal	methylation	buccal_methylation	M2	1	27
+S	yes	buccal	methylation	buccal_methylation	M4	0	27
+S	yes	buccal	methylation	buccal_methylation	M6	0	27
+S	yes	buccal	methylation	buccal_methylation	M0	1	28
+S	yes	buccal	methylation	buccal_methylation	M2	1	28
+S	yes	buccal	methylation	buccal_methylation	M4	0	28
+S	yes	buccal	methylation	buccal_methylation	M6	0	28
+S	yes	buccal	methylation	buccal_methylation	M0	1	29
+S	yes	buccal	methylation	buccal_methylation	M2	1	29
+S	yes	buccal	methylation	buccal_methylation	M4	1	29
+S	yes	buccal	methylation	buccal_methylation	M6	0	29
+S	no	buccal	methylation	buccal_methylation	M0	1	30
+S	no	buccal	methylation	buccal_methylation	M2	1	30
+S	no	buccal	methylation	buccal_methylation	M4	1	30
+S	no	buccal	methylation	buccal_methylation	M6	1	30
+S	no	buccal	methylation	buccal_methylation	M0	1	31
+S	no	buccal	methylation	buccal_methylation	M2	1	31
+S	no	buccal	methylation	buccal_methylation	M4	1	31
+S	no	buccal	methylation	buccal_methylation	M6	1	31
+S	yes	buccal	methylation	buccal_methylation	M0	1	32
+S	yes	buccal	methylation	buccal_methylation	M2	0	32
+S	yes	buccal	methylation	buccal_methylation	M4	0	32
+S	yes	buccal	methylation	buccal_methylation	M6	0	32
+S	no	buccal	methylation	buccal_methylation	M0	1	33
+S	no	buccal	methylation	buccal_methylation	M2	1	33
+S	no	buccal	methylation	buccal_methylation	M4	1	33
+S	no	buccal	methylation	buccal_methylation	M6	1	33
+S	no	buccal	methylation	buccal_methylation	M0	1	34
+S	no	buccal	methylation	buccal_methylation	M2	1	34
+S	no	buccal	methylation	buccal_methylation	M4	1	34
+S	no	buccal	methylation	buccal_methylation	M6	1	34
+S	yes	buccal	methylation	buccal_methylation	M0	1	35
+S	yes	buccal	methylation	buccal_methylation	M2	1	35
+S	yes	buccal	methylation	buccal_methylation	M4	0	35
+S	yes	buccal	methylation	buccal_methylation	M6	0	35
+S	no	buccal	methylation	buccal_methylation	M0	1	36
+S	no	buccal	methylation	buccal_methylation	M2	1	36
+S	no	buccal	methylation	buccal_methylation	M4	1	36
+S	no	buccal	methylation	buccal_methylation	M6	1	36
+S	no	buccal	methylation	buccal_methylation	M0	1	37
+S	no	buccal	methylation	buccal_methylation	M2	1	37
+S	no	buccal	methylation	buccal_methylation	M4	1	37
+S	no	buccal	methylation	buccal_methylation	M6	1	37
+S	no	buccal	methylation	buccal_methylation	M0	1	38
+S	no	buccal	methylation	buccal_methylation	M2	1	38
+S	no	buccal	methylation	buccal_methylation	M4	1	38
+S	no	buccal	methylation	buccal_methylation	M6	1	38
+S	no	buccal	methylation	buccal_methylation	M0	1	39
+S	no	buccal	methylation	buccal_methylation	M2	1	39
+S	no	buccal	methylation	buccal_methylation	M4	1	39
+S	no	buccal	methylation	buccal_methylation	M6	1	39
+S	no	buccal	methylation	buccal_methylation	M0	1	40
+S	no	buccal	methylation	buccal_methylation	M2	1	40
+S	no	buccal	methylation	buccal_methylation	M4	1	40
+S	no	buccal	methylation	buccal_methylation	M6	1	40
+S	yes	buccal	methylation	buccal_methylation	M0	1	41
+S	yes	buccal	methylation	buccal_methylation	M2	0	41
+S	yes	buccal	methylation	buccal_methylation	M4	0	41
+S	yes	buccal	methylation	buccal_methylation	M6	0	41
+S	no	buccal	methylation	buccal_methylation	M0	1	42
+S	no	buccal	methylation	buccal_methylation	M2	1	42
+S	no	buccal	methylation	buccal_methylation	M4	1	42
+S	no	buccal	methylation	buccal_methylation	M6	1	42
+S	no	cervical	methylation	cervical_methylation	M0	1	1
+S	no	cervical	methylation	cervical_methylation	M2	1	1
+S	no	cervical	methylation	cervical_methylation	M4	1	1
+S	no	cervical	methylation	cervical_methylation	M6	1	1
+S	no	cervical	methylation	cervical_methylation	M0	1	2
+S	no	cervical	methylation	cervical_methylation	M2	1	2
+S	no	cervical	methylation	cervical_methylation	M4	1	2
+S	no	cervical	methylation	cervical_methylation	M6	1	2
+S	no	cervical	methylation	cervical_methylation	M0	1	3
+S	no	cervical	methylation	cervical_methylation	M2	1	3
+S	no	cervical	methylation	cervical_methylation	M4	1	3
+S	no	cervical	methylation	cervical_methylation	M6	1	3
+S	yes	cervical	methylation	cervical_methylation	M0	1	4
+S	yes	cervical	methylation	cervical_methylation	M2	1	4
+S	yes	cervical	methylation	cervical_methylation	M4	0	4
+S	yes	cervical	methylation	cervical_methylation	M6	0	4
+S	no	cervical	methylation	cervical_methylation	M0	1	5
+S	no	cervical	methylation	cervical_methylation	M2	1	5
+S	no	cervical	methylation	cervical_methylation	M4	1	5
+S	no	cervical	methylation	cervical_methylation	M6	1	5
+S	yes	cervical	methylation	cervical_methylation	M0	1	6
+S	yes	cervical	methylation	cervical_methylation	M2	1	6
+S	yes	cervical	methylation	cervical_methylation	M4	1	6
+S	yes	cervical	methylation	cervical_methylation	M6	0	6
+S	yes	cervical	methylation	cervical_methylation	M0	1	7
+S	yes	cervical	methylation	cervical_methylation	M2	1	7
+S	yes	cervical	methylation	cervical_methylation	M4	0	7
+S	yes	cervical	methylation	cervical_methylation	M6	0	7
+S	yes	cervical	methylation	cervical_methylation	M0	1	8
+S	yes	cervical	methylation	cervical_methylation	M2	1	8
+S	yes	cervical	methylation	cervical_methylation	M4	1	8
+S	yes	cervical	methylation	cervical_methylation	M6	0	8
+S	no	cervical	methylation	cervical_methylation	M0	1	9
+S	no	cervical	methylation	cervical_methylation	M2	1	9
+S	no	cervical	methylation	cervical_methylation	M4	1	9
+S	no	cervical	methylation	cervical_methylation	M6	1	9
+S	no	cervical	methylation	cervical_methylation	M0	1	10
+S	no	cervical	methylation	cervical_methylation	M2	1	10
+S	no	cervical	methylation	cervical_methylation	M4	1	10
+S	no	cervical	methylation	cervical_methylation	M6	1	10
+S	no	cervical	methylation	cervical_methylation	M0	1	11
+S	no	cervical	methylation	cervical_methylation	M2	1	11
+S	no	cervical	methylation	cervical_methylation	M4	1	11
+S	no	cervical	methylation	cervical_methylation	M6	1	11
+S	yes	cervical	methylation	cervical_methylation	M0	1	12
+S	yes	cervical	methylation	cervical_methylation	M2	1	12
+S	yes	cervical	methylation	cervical_methylation	M4	0	12
+S	yes	cervical	methylation	cervical_methylation	M6	0	12
+S	no	cervical	methylation	cervical_methylation	M0	1	13
+S	no	cervical	methylation	cervical_methylation	M2	1	13
+S	no	cervical	methylation	cervical_methylation	M4	1	13
+S	no	cervical	methylation	cervical_methylation	M6	1	13
+S	yes	cervical	methylation	cervical_methylation	M0	1	14
+S	yes	cervical	methylation	cervical_methylation	M2	1	14
+S	yes	cervical	methylation	cervical_methylation	M4	1	14
+S	yes	cervical	methylation	cervical_methylation	M6	0	14
+S	no	cervical	methylation	cervical_methylation	M0	1	15
+S	no	cervical	methylation	cervical_methylation	M2	1	15
+S	no	cervical	methylation	cervical_methylation	M4	1	15
+S	no	cervical	methylation	cervical_methylation	M6	1	15
+S	no	cervical	methylation	cervical_methylation	M0	1	16
+S	no	cervical	methylation	cervical_methylation	M2	1	16
+S	no	cervical	methylation	cervical_methylation	M4	1	16
+S	no	cervical	methylation	cervical_methylation	M6	1	16
+S	yes	cervical	methylation	cervical_methylation	M0	1	17
+S	yes	cervical	methylation	cervical_methylation	M2	1	17
+S	yes	cervical	methylation	cervical_methylation	M4	1	17
+S	yes	cervical	methylation	cervical_methylation	M6	0	17
+S	no	cervical	methylation	cervical_methylation	M0	1	18
+S	no	cervical	methylation	cervical_methylation	M2	1	18
+S	no	cervical	methylation	cervical_methylation	M4	1	18
+S	no	cervical	methylation	cervical_methylation	M6	1	18
+S	no	cervical	methylation	cervical_methylation	M0	1	19
+S	no	cervical	methylation	cervical_methylation	M2	1	19
+S	no	cervical	methylation	cervical_methylation	M4	1	19
+S	no	cervical	methylation	cervical_methylation	M6	1	19
+S	no	cervical	methylation	cervical_methylation	M0	1	20
+S	no	cervical	methylation	cervical_methylation	M2	1	20
+S	no	cervical	methylation	cervical_methylation	M4	1	20
+S	no	cervical	methylation	cervical_methylation	M6	1	20
+S	yes	cervical	methylation	cervical_methylation	M0	1	21
+S	yes	cervical	methylation	cervical_methylation	M2	1	21
+S	yes	cervical	methylation	cervical_methylation	M4	0	21
+S	yes	cervical	methylation	cervical_methylation	M6	0	21
+S	yes	cervical	methylation	cervical_methylation	M0	1	22
+S	yes	cervical	methylation	cervical_methylation	M2	1	22
+S	yes	cervical	methylation	cervical_methylation	M4	1	22
+S	yes	cervical	methylation	cervical_methylation	M6	0	22
+S	yes	cervical	methylation	cervical_methylation	M0	1	23
+S	yes	cervical	methylation	cervical_methylation	M2	1	23
+S	yes	cervical	methylation	cervical_methylation	M4	0	23
+S	yes	cervical	methylation	cervical_methylation	M6	0	23
+S	yes	cervical	methylation	cervical_methylation	M0	1	24
+S	yes	cervical	methylation	cervical_methylation	M2	1	24
+S	yes	cervical	methylation	cervical_methylation	M4	0	24
+S	yes	cervical	methylation	cervical_methylation	M6	0	24
+S	no	cervical	methylation	cervical_methylation	M0	1	25
+S	no	cervical	methylation	cervical_methylation	M2	1	25
+S	no	cervical	methylation	cervical_methylation	M4	1	25
+S	no	cervical	methylation	cervical_methylation	M6	1	25
+S	yes	cervical	methylation	cervical_methylation	M0	1	26
+S	yes	cervical	methylation	cervical_methylation	M2	1	26
+S	yes	cervical	methylation	cervical_methylation	M4	1	26
+S	yes	cervical	methylation	cervical_methylation	M6	0	26
+S	yes	cervical	methylation	cervical_methylation	M0	1	27
+S	yes	cervical	methylation	cervical_methylation	M2	1	27
+S	yes	cervical	methylation	cervical_methylation	M4	0	27
+S	yes	cervical	methylation	cervical_methylation	M6	0	27
+S	yes	cervical	methylation	cervical_methylation	M0	1	28
+S	yes	cervical	methylation	cervical_methylation	M2	1	28
+S	yes	cervical	methylation	cervical_methylation	M4	0	28
+S	yes	cervical	methylation	cervical_methylation	M6	0	28
+S	yes	cervical	methylation	cervical_methylation	M0	1	29
+S	yes	cervical	methylation	cervical_methylation	M2	1	29
+S	yes	cervical	methylation	cervical_methylation	M4	1	29
+S	yes	cervical	methylation	cervical_methylation	M6	0	29
+S	no	cervical	methylation	cervical_methylation	M0	1	30
+S	no	cervical	methylation	cervical_methylation	M2	1	30
+S	no	cervical	methylation	cervical_methylation	M4	1	30
+S	no	cervical	methylation	cervical_methylation	M6	0	30
+S	no	cervical	methylation	cervical_methylation	M0	1	31
+S	no	cervical	methylation	cervical_methylation	M2	1	31
+S	no	cervical	methylation	cervical_methylation	M4	1	31
+S	no	cervical	methylation	cervical_methylation	M6	1	31
+S	yes	cervical	methylation	cervical_methylation	M0	1	32
+S	yes	cervical	methylation	cervical_methylation	M2	0	32
+S	yes	cervical	methylation	cervical_methylation	M4	0	32
+S	yes	cervical	methylation	cervical_methylation	M6	0	32
+S	no	cervical	methylation	cervical_methylation	M0	1	33
+S	no	cervical	methylation	cervical_methylation	M2	1	33
+S	no	cervical	methylation	cervical_methylation	M4	1	33
+S	no	cervical	methylation	cervical_methylation	M6	1	33
+S	no	cervical	methylation	cervical_methylation	M0	1	34
+S	no	cervical	methylation	cervical_methylation	M2	1	34
+S	no	cervical	methylation	cervical_methylation	M4	1	34
+S	no	cervical	methylation	cervical_methylation	M6	1	34
+S	yes	cervical	methylation	cervical_methylation	M0	1	35
+S	yes	cervical	methylation	cervical_methylation	M2	1	35
+S	yes	cervical	methylation	cervical_methylation	M4	0	35
+S	yes	cervical	methylation	cervical_methylation	M6	0	35
+S	no	cervical	methylation	cervical_methylation	M0	1	36
+S	no	cervical	methylation	cervical_methylation	M2	1	36
+S	no	cervical	methylation	cervical_methylation	M4	1	36
+S	no	cervical	methylation	cervical_methylation	M6	1	36
+S	no	cervical	methylation	cervical_methylation	M0	1	37
+S	no	cervical	methylation	cervical_methylation	M2	1	37
+S	no	cervical	methylation	cervical_methylation	M4	1	37
+S	no	cervical	methylation	cervical_methylation	M6	1	37
+S	no	cervical	methylation	cervical_methylation	M0	1	38
+S	no	cervical	methylation	cervical_methylation	M2	1	38
+S	no	cervical	methylation	cervical_methylation	M4	1	38
+S	no	cervical	methylation	cervical_methylation	M6	1	38
+S	no	cervical	methylation	cervical_methylation	M0	1	39
+S	no	cervical	methylation	cervical_methylation	M2	1	39
+S	no	cervical	methylation	cervical_methylation	M4	1	39
+S	no	cervical	methylation	cervical_methylation	M6	1	39
+S	no	cervical	methylation	cervical_methylation	M0	1	40
+S	no	cervical	methylation	cervical_methylation	M2	1	40
+S	no	cervical	methylation	cervical_methylation	M4	1	40
+S	no	cervical	methylation	cervical_methylation	M6	1	40
+S	yes	cervical	methylation	cervical_methylation	M0	1	41
+S	yes	cervical	methylation	cervical_methylation	M2	0	41
+S	yes	cervical	methylation	cervical_methylation	M4	0	41
+S	yes	cervical	methylation	cervical_methylation	M6	0	41
+S	no	cervical	methylation	cervical_methylation	M0	1	42
+S	no	cervical	methylation	cervical_methylation	M2	1	42
+S	no	cervical	methylation	cervical_methylation	M4	1	42
+S	no	cervical	methylation	cervical_methylation	M6	1	42
+S	no	saliva	nmr	saliva_nmr	M0	1	1
+S	no	saliva	nmr	saliva_nmr	M2	1	1
+S	no	saliva	nmr	saliva_nmr	M4	1	1
+S	no	saliva	nmr	saliva_nmr	M6	1	1
+S	no	saliva	nmr	saliva_nmr	M0	1	2
+S	no	saliva	nmr	saliva_nmr	M2	1	2
+S	no	saliva	nmr	saliva_nmr	M4	1	2
+S	no	saliva	nmr	saliva_nmr	M6	1	2
+S	no	saliva	nmr	saliva_nmr	M0	1	3
+S	no	saliva	nmr	saliva_nmr	M2	1	3
+S	no	saliva	nmr	saliva_nmr	M4	1	3
+S	no	saliva	nmr	saliva_nmr	M6	1	3
+S	yes	saliva	nmr	saliva_nmr	M0	1	4
+S	yes	saliva	nmr	saliva_nmr	M2	1	4
+S	yes	saliva	nmr	saliva_nmr	M4	0	4
+S	yes	saliva	nmr	saliva_nmr	M6	0	4
+S	no	saliva	nmr	saliva_nmr	M0	1	5
+S	no	saliva	nmr	saliva_nmr	M2	1	5
+S	no	saliva	nmr	saliva_nmr	M4	1	5
+S	no	saliva	nmr	saliva_nmr	M6	1	5
+S	yes	saliva	nmr	saliva_nmr	M0	1	6
+S	yes	saliva	nmr	saliva_nmr	M2	1	6
+S	yes	saliva	nmr	saliva_nmr	M4	1	6
+S	yes	saliva	nmr	saliva_nmr	M6	0	6
+S	yes	saliva	nmr	saliva_nmr	M0	1	7
+S	yes	saliva	nmr	saliva_nmr	M2	1	7
+S	yes	saliva	nmr	saliva_nmr	M4	0	7
+S	yes	saliva	nmr	saliva_nmr	M6	0	7
+S	yes	saliva	nmr	saliva_nmr	M0	1	8
+S	yes	saliva	nmr	saliva_nmr	M2	0	8
+S	yes	saliva	nmr	saliva_nmr	M4	1	8
+S	yes	saliva	nmr	saliva_nmr	M6	0	8
+S	no	saliva	nmr	saliva_nmr	M0	1	9
+S	no	saliva	nmr	saliva_nmr	M2	1	9
+S	no	saliva	nmr	saliva_nmr	M4	1	9
+S	no	saliva	nmr	saliva_nmr	M6	1	9
+S	no	saliva	nmr	saliva_nmr	M0	1	10
+S	no	saliva	nmr	saliva_nmr	M2	1	10
+S	no	saliva	nmr	saliva_nmr	M4	1	10
+S	no	saliva	nmr	saliva_nmr	M6	1	10
+S	no	saliva	nmr	saliva_nmr	M0	1	11
+S	no	saliva	nmr	saliva_nmr	M2	1	11
+S	no	saliva	nmr	saliva_nmr	M4	1	11
+S	no	saliva	nmr	saliva_nmr	M6	1	11
+S	yes	saliva	nmr	saliva_nmr	M0	1	12
+S	yes	saliva	nmr	saliva_nmr	M2	1	12
+S	yes	saliva	nmr	saliva_nmr	M4	0	12
+S	yes	saliva	nmr	saliva_nmr	M6	0	12
+S	no	saliva	nmr	saliva_nmr	M0	1	13
+S	no	saliva	nmr	saliva_nmr	M2	1	13
+S	no	saliva	nmr	saliva_nmr	M4	1	13
+S	no	saliva	nmr	saliva_nmr	M6	0	13
+S	yes	saliva	nmr	saliva_nmr	M0	1	14
+S	yes	saliva	nmr	saliva_nmr	M2	1	14
+S	yes	saliva	nmr	saliva_nmr	M4	1	14
+S	yes	saliva	nmr	saliva_nmr	M6	0	14
+S	no	saliva	nmr	saliva_nmr	M0	1	15
+S	no	saliva	nmr	saliva_nmr	M2	1	15
+S	no	saliva	nmr	saliva_nmr	M4	1	15
+S	no	saliva	nmr	saliva_nmr	M6	1	15
+S	no	saliva	nmr	saliva_nmr	M0	1	16
+S	no	saliva	nmr	saliva_nmr	M2	1	16
+S	no	saliva	nmr	saliva_nmr	M4	1	16
+S	no	saliva	nmr	saliva_nmr	M6	1	16
+S	yes	saliva	nmr	saliva_nmr	M0	1	17
+S	yes	saliva	nmr	saliva_nmr	M2	1	17
+S	yes	saliva	nmr	saliva_nmr	M4	1	17
+S	yes	saliva	nmr	saliva_nmr	M6	0	17
+S	no	saliva	nmr	saliva_nmr	M0	1	18
+S	no	saliva	nmr	saliva_nmr	M2	1	18
+S	no	saliva	nmr	saliva_nmr	M4	1	18
+S	no	saliva	nmr	saliva_nmr	M6	0	18
+S	no	saliva	nmr	saliva_nmr	M0	1	19
+S	no	saliva	nmr	saliva_nmr	M2	1	19
+S	no	saliva	nmr	saliva_nmr	M4	1	19
+S	no	saliva	nmr	saliva_nmr	M6	1	19
+S	no	saliva	nmr	saliva_nmr	M0	1	20
+S	no	saliva	nmr	saliva_nmr	M2	1	20
+S	no	saliva	nmr	saliva_nmr	M4	1	20
+S	no	saliva	nmr	saliva_nmr	M6	1	20
+S	yes	saliva	nmr	saliva_nmr	M0	1	21
+S	yes	saliva	nmr	saliva_nmr	M2	1	21
+S	yes	saliva	nmr	saliva_nmr	M4	0	21
+S	yes	saliva	nmr	saliva_nmr	M6	0	21
+S	yes	saliva	nmr	saliva_nmr	M0	1	22
+S	yes	saliva	nmr	saliva_nmr	M2	1	22
+S	yes	saliva	nmr	saliva_nmr	M4	1	22
+S	yes	saliva	nmr	saliva_nmr	M6	0	22
+S	yes	saliva	nmr	saliva_nmr	M0	1	23
+S	yes	saliva	nmr	saliva_nmr	M2	1	23
+S	yes	saliva	nmr	saliva_nmr	M4	0	23
+S	yes	saliva	nmr	saliva_nmr	M6	0	23
+S	yes	saliva	nmr	saliva_nmr	M0	1	24
+S	yes	saliva	nmr	saliva_nmr	M2	1	24
+S	yes	saliva	nmr	saliva_nmr	M4	0	24
+S	yes	saliva	nmr	saliva_nmr	M6	0	24
+S	no	saliva	nmr	saliva_nmr	M0	1	25
+S	no	saliva	nmr	saliva_nmr	M2	1	25
+S	no	saliva	nmr	saliva_nmr	M4	1	25
+S	no	saliva	nmr	saliva_nmr	M6	1	25
+S	yes	saliva	nmr	saliva_nmr	M0	1	26
+S	yes	saliva	nmr	saliva_nmr	M2	1	26
+S	yes	saliva	nmr	saliva_nmr	M4	1	26
+S	yes	saliva	nmr	saliva_nmr	M6	0	26
+S	yes	saliva	nmr	saliva_nmr	M0	1	27
+S	yes	saliva	nmr	saliva_nmr	M2	1	27
+S	yes	saliva	nmr	saliva_nmr	M4	0	27
+S	yes	saliva	nmr	saliva_nmr	M6	0	27
+S	yes	saliva	nmr	saliva_nmr	M0	1	28
+S	yes	saliva	nmr	saliva_nmr	M2	1	28
+S	yes	saliva	nmr	saliva_nmr	M4	0	28
+S	yes	saliva	nmr	saliva_nmr	M6	0	28
+S	yes	saliva	nmr	saliva_nmr	M0	1	29
+S	yes	saliva	nmr	saliva_nmr	M2	1	29
+S	yes	saliva	nmr	saliva_nmr	M4	1	29
+S	yes	saliva	nmr	saliva_nmr	M6	0	29
+S	no	saliva	nmr	saliva_nmr	M0	1	30
+S	no	saliva	nmr	saliva_nmr	M2	1	30
+S	no	saliva	nmr	saliva_nmr	M4	1	30
+S	no	saliva	nmr	saliva_nmr	M6	1	30
+S	no	saliva	nmr	saliva_nmr	M0	1	31
+S	no	saliva	nmr	saliva_nmr	M2	1	31
+S	no	saliva	nmr	saliva_nmr	M4	1	31
+S	no	saliva	nmr	saliva_nmr	M6	1	31
+S	yes	saliva	nmr	saliva_nmr	M0	1	32
+S	yes	saliva	nmr	saliva_nmr	M2	0	32
+S	yes	saliva	nmr	saliva_nmr	M4	0	32
+S	yes	saliva	nmr	saliva_nmr	M6	0	32
+S	no	saliva	nmr	saliva_nmr	M0	1	33
+S	no	saliva	nmr	saliva_nmr	M2	1	33
+S	no	saliva	nmr	saliva_nmr	M4	1	33
+S	no	saliva	nmr	saliva_nmr	M6	1	33
+S	no	saliva	nmr	saliva_nmr	M0	1	34
+S	no	saliva	nmr	saliva_nmr	M2	0	34
+S	no	saliva	nmr	saliva_nmr	M4	1	34
+S	no	saliva	nmr	saliva_nmr	M6	1	34
+S	yes	saliva	nmr	saliva_nmr	M0	1	35
+S	yes	saliva	nmr	saliva_nmr	M2	1	35
+S	yes	saliva	nmr	saliva_nmr	M4	0	35
+S	yes	saliva	nmr	saliva_nmr	M6	0	35
+S	no	saliva	nmr	saliva_nmr	M0	1	36
+S	no	saliva	nmr	saliva_nmr	M2	1	36
+S	no	saliva	nmr	saliva_nmr	M4	1	36
+S	no	saliva	nmr	saliva_nmr	M6	1	36
+S	no	saliva	nmr	saliva_nmr	M0	1	37
+S	no	saliva	nmr	saliva_nmr	M2	1	37
+S	no	saliva	nmr	saliva_nmr	M4	1	37
+S	no	saliva	nmr	saliva_nmr	M6	1	37
+S	no	saliva	nmr	saliva_nmr	M0	1	38
+S	no	saliva	nmr	saliva_nmr	M2	1	38
+S	no	saliva	nmr	saliva_nmr	M4	1	38
+S	no	saliva	nmr	saliva_nmr	M6	1	38
+S	no	saliva	nmr	saliva_nmr	M0	1	39
+S	no	saliva	nmr	saliva_nmr	M2	1	39
+S	no	saliva	nmr	saliva_nmr	M4	1	39
+S	no	saliva	nmr	saliva_nmr	M6	1	39
+S	no	saliva	nmr	saliva_nmr	M0	1	40
+S	no	saliva	nmr	saliva_nmr	M2	1	40
+S	no	saliva	nmr	saliva_nmr	M4	1	40
+S	no	saliva	nmr	saliva_nmr	M6	1	40
+S	yes	saliva	nmr	saliva_nmr	M0	1	41
+S	yes	saliva	nmr	saliva_nmr	M2	0	41
+S	yes	saliva	nmr	saliva_nmr	M4	0	41
+S	yes	saliva	nmr	saliva_nmr	M6	0	41
+S	no	saliva	nmr	saliva_nmr	M0	1	42
+S	no	saliva	nmr	saliva_nmr	M2	1	42
+S	no	saliva	nmr	saliva_nmr	M4	1	42
+S	no	saliva	nmr	saliva_nmr	M6	1	42
+S	no	urine	nmr	urine_nmr	M0	1	1
+S	no	urine	nmr	urine_nmr	M2	1	1
+S	no	urine	nmr	urine_nmr	M4	1	1
+S	no	urine	nmr	urine_nmr	M6	1	1
+S	no	urine	nmr	urine_nmr	M0	1	2
+S	no	urine	nmr	urine_nmr	M2	1	2
+S	no	urine	nmr	urine_nmr	M4	1	2
+S	no	urine	nmr	urine_nmr	M6	1	2
+S	no	urine	nmr	urine_nmr	M0	1	3
+S	no	urine	nmr	urine_nmr	M2	1	3
+S	no	urine	nmr	urine_nmr	M4	1	3
+S	no	urine	nmr	urine_nmr	M6	1	3
+S	yes	urine	nmr	urine_nmr	M0	1	4
+S	yes	urine	nmr	urine_nmr	M2	1	4
+S	yes	urine	nmr	urine_nmr	M4	0	4
+S	yes	urine	nmr	urine_nmr	M6	0	4
+S	no	urine	nmr	urine_nmr	M0	1	5
+S	no	urine	nmr	urine_nmr	M2	1	5
+S	no	urine	nmr	urine_nmr	M4	1	5
+S	no	urine	nmr	urine_nmr	M6	1	5
+S	yes	urine	nmr	urine_nmr	M0	1	6
+S	yes	urine	nmr	urine_nmr	M2	1	6
+S	yes	urine	nmr	urine_nmr	M4	1	6
+S	yes	urine	nmr	urine_nmr	M6	0	6
+S	yes	urine	nmr	urine_nmr	M0	1	7
+S	yes	urine	nmr	urine_nmr	M2	1	7
+S	yes	urine	nmr	urine_nmr	M4	0	7
+S	yes	urine	nmr	urine_nmr	M6	0	7
+S	yes	urine	nmr	urine_nmr	M0	1	8
+S	yes	urine	nmr	urine_nmr	M2	1	8
+S	yes	urine	nmr	urine_nmr	M4	1	8
+S	yes	urine	nmr	urine_nmr	M6	0	8
+S	no	urine	nmr	urine_nmr	M0	1	9
+S	no	urine	nmr	urine_nmr	M2	1	9
+S	no	urine	nmr	urine_nmr	M4	1	9
+S	no	urine	nmr	urine_nmr	M6	1	9
+S	no	urine	nmr	urine_nmr	M0	1	10
+S	no	urine	nmr	urine_nmr	M2	1	10
+S	no	urine	nmr	urine_nmr	M4	1	10
+S	no	urine	nmr	urine_nmr	M6	1	10
+S	no	urine	nmr	urine_nmr	M0	1	11
+S	no	urine	nmr	urine_nmr	M2	1	11
+S	no	urine	nmr	urine_nmr	M4	1	11
+S	no	urine	nmr	urine_nmr	M6	1	11
+S	yes	urine	nmr	urine_nmr	M0	1	12
+S	yes	urine	nmr	urine_nmr	M2	1	12
+S	yes	urine	nmr	urine_nmr	M4	0	12
+S	yes	urine	nmr	urine_nmr	M6	0	12
+S	no	urine	nmr	urine_nmr	M0	1	13
+S	no	urine	nmr	urine_nmr	M2	1	13
+S	no	urine	nmr	urine_nmr	M4	1	13
+S	no	urine	nmr	urine_nmr	M6	1	13
+S	yes	urine	nmr	urine_nmr	M0	1	14
+S	yes	urine	nmr	urine_nmr	M2	1	14
+S	yes	urine	nmr	urine_nmr	M4	1	14
+S	yes	urine	nmr	urine_nmr	M6	0	14
+S	no	urine	nmr	urine_nmr	M0	1	15
+S	no	urine	nmr	urine_nmr	M2	1	15
+S	no	urine	nmr	urine_nmr	M4	1	15
+S	no	urine	nmr	urine_nmr	M6	1	15
+S	no	urine	nmr	urine_nmr	M0	1	16
+S	no	urine	nmr	urine_nmr	M2	1	16
+S	no	urine	nmr	urine_nmr	M4	1	16
+S	no	urine	nmr	urine_nmr	M6	1	16
+S	yes	urine	nmr	urine_nmr	M0	1	17
+S	yes	urine	nmr	urine_nmr	M2	1	17
+S	yes	urine	nmr	urine_nmr	M4	1	17
+S	yes	urine	nmr	urine_nmr	M6	0	17
+S	no	urine	nmr	urine_nmr	M0	1	18
+S	no	urine	nmr	urine_nmr	M2	1	18
+S	no	urine	nmr	urine_nmr	M4	1	18
+S	no	urine	nmr	urine_nmr	M6	1	18
+S	no	urine	nmr	urine_nmr	M0	1	19
+S	no	urine	nmr	urine_nmr	M2	1	19
+S	no	urine	nmr	urine_nmr	M4	1	19
+S	no	urine	nmr	urine_nmr	M6	1	19
+S	no	urine	nmr	urine_nmr	M0	1	20
+S	no	urine	nmr	urine_nmr	M2	1	20
+S	no	urine	nmr	urine_nmr	M4	1	20
+S	no	urine	nmr	urine_nmr	M6	1	20
+S	yes	urine	nmr	urine_nmr	M0	1	21
+S	yes	urine	nmr	urine_nmr	M2	1	21
+S	yes	urine	nmr	urine_nmr	M4	0	21
+S	yes	urine	nmr	urine_nmr	M6	0	21
+S	yes	urine	nmr	urine_nmr	M0	1	22
+S	yes	urine	nmr	urine_nmr	M2	1	22
+S	yes	urine	nmr	urine_nmr	M4	1	22
+S	yes	urine	nmr	urine_nmr	M6	0	22
+S	yes	urine	nmr	urine_nmr	M0	1	23
+S	yes	urine	nmr	urine_nmr	M2	1	23
+S	yes	urine	nmr	urine_nmr	M4	0	23
+S	yes	urine	nmr	urine_nmr	M6	0	23
+S	yes	urine	nmr	urine_nmr	M0	1	24
+S	yes	urine	nmr	urine_nmr	M2	1	24
+S	yes	urine	nmr	urine_nmr	M4	0	24
+S	yes	urine	nmr	urine_nmr	M6	0	24
+S	no	urine	nmr	urine_nmr	M0	1	25
+S	no	urine	nmr	urine_nmr	M2	1	25
+S	no	urine	nmr	urine_nmr	M4	1	25
+S	no	urine	nmr	urine_nmr	M6	1	25
+S	yes	urine	nmr	urine_nmr	M0	1	26
+S	yes	urine	nmr	urine_nmr	M2	1	26
+S	yes	urine	nmr	urine_nmr	M4	1	26
+S	yes	urine	nmr	urine_nmr	M6	0	26
+S	yes	urine	nmr	urine_nmr	M0	1	27
+S	yes	urine	nmr	urine_nmr	M2	1	27
+S	yes	urine	nmr	urine_nmr	M4	0	27
+S	yes	urine	nmr	urine_nmr	M6	0	27
+S	yes	urine	nmr	urine_nmr	M0	1	28
+S	yes	urine	nmr	urine_nmr	M2	1	28
+S	yes	urine	nmr	urine_nmr	M4	0	28
+S	yes	urine	nmr	urine_nmr	M6	0	28
+S	yes	urine	nmr	urine_nmr	M0	1	29
+S	yes	urine	nmr	urine_nmr	M2	1	29
+S	yes	urine	nmr	urine_nmr	M4	1	29
+S	yes	urine	nmr	urine_nmr	M6	0	29
+S	no	urine	nmr	urine_nmr	M0	1	30
+S	no	urine	nmr	urine_nmr	M2	0	30
+S	no	urine	nmr	urine_nmr	M4	1	30
+S	no	urine	nmr	urine_nmr	M6	1	30
+S	no	urine	nmr	urine_nmr	M0	1	31
+S	no	urine	nmr	urine_nmr	M2	1	31
+S	no	urine	nmr	urine_nmr	M4	1	31
+S	no	urine	nmr	urine_nmr	M6	1	31
+S	yes	urine	nmr	urine_nmr	M0	1	32
+S	yes	urine	nmr	urine_nmr	M2	0	32
+S	yes	urine	nmr	urine_nmr	M4	0	32
+S	yes	urine	nmr	urine_nmr	M6	0	32
+S	no	urine	nmr	urine_nmr	M0	1	33
+S	no	urine	nmr	urine_nmr	M2	1	33
+S	no	urine	nmr	urine_nmr	M4	1	33
+S	no	urine	nmr	urine_nmr	M6	1	33
+S	no	urine	nmr	urine_nmr	M0	1	34
+S	no	urine	nmr	urine_nmr	M2	1	34
+S	no	urine	nmr	urine_nmr	M4	1	34
+S	no	urine	nmr	urine_nmr	M6	1	34
+S	yes	urine	nmr	urine_nmr	M0	1	35
+S	yes	urine	nmr	urine_nmr	M2	1	35
+S	yes	urine	nmr	urine_nmr	M4	0	35
+S	yes	urine	nmr	urine_nmr	M6	0	35
+S	no	urine	nmr	urine_nmr	M0	1	36
+S	no	urine	nmr	urine_nmr	M2	1	36
+S	no	urine	nmr	urine_nmr	M4	1	36
+S	no	urine	nmr	urine_nmr	M6	1	36
+S	no	urine	nmr	urine_nmr	M0	1	37
+S	no	urine	nmr	urine_nmr	M2	1	37
+S	no	urine	nmr	urine_nmr	M4	1	37
+S	no	urine	nmr	urine_nmr	M6	1	37
+S	no	urine	nmr	urine_nmr	M0	1	38
+S	no	urine	nmr	urine_nmr	M2	1	38
+S	no	urine	nmr	urine_nmr	M4	1	38
+S	no	urine	nmr	urine_nmr	M6	1	38
+S	no	urine	nmr	urine_nmr	M0	1	39
+S	no	urine	nmr	urine_nmr	M2	1	39
+S	no	urine	nmr	urine_nmr	M4	1	39
+S	no	urine	nmr	urine_nmr	M6	1	39
+S	no	urine	nmr	urine_nmr	M0	1	40
+S	no	urine	nmr	urine_nmr	M2	1	40
+S	no	urine	nmr	urine_nmr	M4	1	40
+S	no	urine	nmr	urine_nmr	M6	1	40
+S	yes	urine	nmr	urine_nmr	M0	1	41
+S	yes	urine	nmr	urine_nmr	M2	0	41
+S	yes	urine	nmr	urine_nmr	M4	0	41
+S	yes	urine	nmr	urine_nmr	M6	0	41
+S	no	urine	nmr	urine_nmr	M0	1	42
+S	no	urine	nmr	urine_nmr	M2	1	42
+S	no	urine	nmr	urine_nmr	M4	1	42
+S	no	urine	nmr	urine_nmr	M6	1	42
+S	no	saliva	microbiome	saliva_microbiome	M0	1	1
+S	no	saliva	microbiome	saliva_microbiome	M2	1	1
+S	no	saliva	microbiome	saliva_microbiome	M4	1	1
+S	no	saliva	microbiome	saliva_microbiome	M6	1	1
+S	no	saliva	microbiome	saliva_microbiome	M0	1	2
+S	no	saliva	microbiome	saliva_microbiome	M2	1	2
+S	no	saliva	microbiome	saliva_microbiome	M4	1	2
+S	no	saliva	microbiome	saliva_microbiome	M6	1	2
+S	no	saliva	microbiome	saliva_microbiome	M0	1	3
+S	no	saliva	microbiome	saliva_microbiome	M2	1	3
+S	no	saliva	microbiome	saliva_microbiome	M4	1	3
+S	no	saliva	microbiome	saliva_microbiome	M6	1	3
+S	yes	saliva	microbiome	saliva_microbiome	M0	1	4
+S	yes	saliva	microbiome	saliva_microbiome	M2	1	4
+S	yes	saliva	microbiome	saliva_microbiome	M4	0	4
+S	yes	saliva	microbiome	saliva_microbiome	M6	0	4
+S	no	saliva	microbiome	saliva_microbiome	M0	1	5
+S	no	saliva	microbiome	saliva_microbiome	M2	1	5
+S	no	saliva	microbiome	saliva_microbiome	M4	1	5
+S	no	saliva	microbiome	saliva_microbiome	M6	1	5
+S	yes	saliva	microbiome	saliva_microbiome	M0	1	6
+S	yes	saliva	microbiome	saliva_microbiome	M2	1	6
+S	yes	saliva	microbiome	saliva_microbiome	M4	1	6
+S	yes	saliva	microbiome	saliva_microbiome	M6	0	6
+S	yes	saliva	microbiome	saliva_microbiome	M0	1	7
+S	yes	saliva	microbiome	saliva_microbiome	M2	1	7
+S	yes	saliva	microbiome	saliva_microbiome	M4	0	7
+S	yes	saliva	microbiome	saliva_microbiome	M6	0	7
+S	yes	saliva	microbiome	saliva_microbiome	M0	1	8
+S	yes	saliva	microbiome	saliva_microbiome	M2	1	8
+S	yes	saliva	microbiome	saliva_microbiome	M4	1	8
+S	yes	saliva	microbiome	saliva_microbiome	M6	0	8
+S	no	saliva	microbiome	saliva_microbiome	M0	1	9
+S	no	saliva	microbiome	saliva_microbiome	M2	1	9
+S	no	saliva	microbiome	saliva_microbiome	M4	1	9
+S	no	saliva	microbiome	saliva_microbiome	M6	1	9
+S	no	saliva	microbiome	saliva_microbiome	M0	1	10
+S	no	saliva	microbiome	saliva_microbiome	M2	1	10
+S	no	saliva	microbiome	saliva_microbiome	M4	1	10
+S	no	saliva	microbiome	saliva_microbiome	M6	1	10
+S	no	saliva	microbiome	saliva_microbiome	M0	1	11
+S	no	saliva	microbiome	saliva_microbiome	M2	1	11
+S	no	saliva	microbiome	saliva_microbiome	M4	1	11
+S	no	saliva	microbiome	saliva_microbiome	M6	1	11
+S	yes	saliva	microbiome	saliva_microbiome	M0	1	12
+S	yes	saliva	microbiome	saliva_microbiome	M2	1	12
+S	yes	saliva	microbiome	saliva_microbiome	M4	0	12
+S	yes	saliva	microbiome	saliva_microbiome	M6	0	12
+S	no	saliva	microbiome	saliva_microbiome	M0	1	13
+S	no	saliva	microbiome	saliva_microbiome	M2	1	13
+S	no	saliva	microbiome	saliva_microbiome	M4	1	13
+S	no	saliva	microbiome	saliva_microbiome	M6	1	13
+S	yes	saliva	microbiome	saliva_microbiome	M0	1	14
+S	yes	saliva	microbiome	saliva_microbiome	M2	1	14
+S	yes	saliva	microbiome	saliva_microbiome	M4	1	14
+S	yes	saliva	microbiome	saliva_microbiome	M6	0	14
+S	no	saliva	microbiome	saliva_microbiome	M0	1	15
+S	no	saliva	microbiome	saliva_microbiome	M2	1	15
+S	no	saliva	microbiome	saliva_microbiome	M4	1	15
+S	no	saliva	microbiome	saliva_microbiome	M6	1	15
+S	no	saliva	microbiome	saliva_microbiome	M0	1	16
+S	no	saliva	microbiome	saliva_microbiome	M2	1	16
+S	no	saliva	microbiome	saliva_microbiome	M4	1	16
+S	no	saliva	microbiome	saliva_microbiome	M6	1	16
+S	yes	saliva	microbiome	saliva_microbiome	M0	1	17
+S	yes	saliva	microbiome	saliva_microbiome	M2	1	17
+S	yes	saliva	microbiome	saliva_microbiome	M4	1	17
+S	yes	saliva	microbiome	saliva_microbiome	M6	0	17
+S	no	saliva	microbiome	saliva_microbiome	M0	1	18
+S	no	saliva	microbiome	saliva_microbiome	M2	1	18
+S	no	saliva	microbiome	saliva_microbiome	M4	1	18
+S	no	saliva	microbiome	saliva_microbiome	M6	1	18
+S	no	saliva	microbiome	saliva_microbiome	M0	1	19
+S	no	saliva	microbiome	saliva_microbiome	M2	1	19
+S	no	saliva	microbiome	saliva_microbiome	M4	1	19
+S	no	saliva	microbiome	saliva_microbiome	M6	1	19
+S	no	saliva	microbiome	saliva_microbiome	M0	1	20
+S	no	saliva	microbiome	saliva_microbiome	M2	1	20
+S	no	saliva	microbiome	saliva_microbiome	M4	1	20
+S	no	saliva	microbiome	saliva_microbiome	M6	1	20
+S	yes	saliva	microbiome	saliva_microbiome	M0	1	21
+S	yes	saliva	microbiome	saliva_microbiome	M2	1	21
+S	yes	saliva	microbiome	saliva_microbiome	M4	0	21
+S	yes	saliva	microbiome	saliva_microbiome	M6	0	21
+S	yes	saliva	microbiome	saliva_microbiome	M0	1	22
+S	yes	saliva	microbiome	saliva_microbiome	M2	1	22
+S	yes	saliva	microbiome	saliva_microbiome	M4	1	22
+S	yes	saliva	microbiome	saliva_microbiome	M6	0	22
+S	yes	saliva	microbiome	saliva_microbiome	M0	1	23
+S	yes	saliva	microbiome	saliva_microbiome	M2	1	23
+S	yes	saliva	microbiome	saliva_microbiome	M4	0	23
+S	yes	saliva	microbiome	saliva_microbiome	M6	0	23
+S	yes	saliva	microbiome	saliva_microbiome	M0	1	24
+S	yes	saliva	microbiome	saliva_microbiome	M2	1	24
+S	yes	saliva	microbiome	saliva_microbiome	M4	0	24
+S	yes	saliva	microbiome	saliva_microbiome	M6	0	24
+S	no	saliva	microbiome	saliva_microbiome	M0	1	25
+S	no	saliva	microbiome	saliva_microbiome	M2	1	25
+S	no	saliva	microbiome	saliva_microbiome	M4	1	25
+S	no	saliva	microbiome	saliva_microbiome	M6	1	25
+S	yes	saliva	microbiome	saliva_microbiome	M0	1	26
+S	yes	saliva	microbiome	saliva_microbiome	M2	1	26
+S	yes	saliva	microbiome	saliva_microbiome	M4	1	26
+S	yes	saliva	microbiome	saliva_microbiome	M6	0	26
+S	yes	saliva	microbiome	saliva_microbiome	M0	1	27
+S	yes	saliva	microbiome	saliva_microbiome	M2	1	27
+S	yes	saliva	microbiome	saliva_microbiome	M4	0	27
+S	yes	saliva	microbiome	saliva_microbiome	M6	0	27
+S	yes	saliva	microbiome	saliva_microbiome	M0	1	28
+S	yes	saliva	microbiome	saliva_microbiome	M2	1	28
+S	yes	saliva	microbiome	saliva_microbiome	M4	0	28
+S	yes	saliva	microbiome	saliva_microbiome	M6	0	28
+S	yes	saliva	microbiome	saliva_microbiome	M0	1	29
+S	yes	saliva	microbiome	saliva_microbiome	M2	1	29
+S	yes	saliva	microbiome	saliva_microbiome	M4	1	29
+S	yes	saliva	microbiome	saliva_microbiome	M6	0	29
+S	no	saliva	microbiome	saliva_microbiome	M0	1	30
+S	no	saliva	microbiome	saliva_microbiome	M2	1	30
+S	no	saliva	microbiome	saliva_microbiome	M4	1	30
+S	no	saliva	microbiome	saliva_microbiome	M6	1	30
+S	no	saliva	microbiome	saliva_microbiome	M0	1	31
+S	no	saliva	microbiome	saliva_microbiome	M2	1	31
+S	no	saliva	microbiome	saliva_microbiome	M4	1	31
+S	no	saliva	microbiome	saliva_microbiome	M6	1	31
+S	yes	saliva	microbiome	saliva_microbiome	M0	1	32
+S	yes	saliva	microbiome	saliva_microbiome	M2	0	32
+S	yes	saliva	microbiome	saliva_microbiome	M4	0	32
+S	yes	saliva	microbiome	saliva_microbiome	M6	0	32
+S	no	saliva	microbiome	saliva_microbiome	M0	1	33
+S	no	saliva	microbiome	saliva_microbiome	M2	1	33
+S	no	saliva	microbiome	saliva_microbiome	M4	1	33
+S	no	saliva	microbiome	saliva_microbiome	M6	1	33
+S	no	saliva	microbiome	saliva_microbiome	M0	1	34
+S	no	saliva	microbiome	saliva_microbiome	M2	1	34
+S	no	saliva	microbiome	saliva_microbiome	M4	1	34
+S	no	saliva	microbiome	saliva_microbiome	M6	1	34
+S	yes	saliva	microbiome	saliva_microbiome	M0	1	35
+S	yes	saliva	microbiome	saliva_microbiome	M2	1	35
+S	yes	saliva	microbiome	saliva_microbiome	M4	0	35
+S	yes	saliva	microbiome	saliva_microbiome	M6	0	35
+S	no	saliva	microbiome	saliva_microbiome	M0	1	36
+S	no	saliva	microbiome	saliva_microbiome	M2	1	36
+S	no	saliva	microbiome	saliva_microbiome	M4	1	36
+S	no	saliva	microbiome	saliva_microbiome	M6	1	36
+S	no	saliva	microbiome	saliva_microbiome	M0	1	37
+S	no	saliva	microbiome	saliva_microbiome	M2	1	37
+S	no	saliva	microbiome	saliva_microbiome	M4	1	37
+S	no	saliva	microbiome	saliva_microbiome	M6	1	37
+S	no	saliva	microbiome	saliva_microbiome	M0	1	38
+S	no	saliva	microbiome	saliva_microbiome	M2	1	38
+S	no	saliva	microbiome	saliva_microbiome	M4	1	38
+S	no	saliva	microbiome	saliva_microbiome	M6	1	38
+S	no	saliva	microbiome	saliva_microbiome	M0	1	39
+S	no	saliva	microbiome	saliva_microbiome	M2	1	39
+S	no	saliva	microbiome	saliva_microbiome	M4	1	39
+S	no	saliva	microbiome	saliva_microbiome	M6	1	39
+S	no	saliva	microbiome	saliva_microbiome	M0	1	40
+S	no	saliva	microbiome	saliva_microbiome	M2	1	40
+S	no	saliva	microbiome	saliva_microbiome	M4	1	40
+S	no	saliva	microbiome	saliva_microbiome	M6	1	40
+S	yes	saliva	microbiome	saliva_microbiome	M0	1	41
+S	yes	saliva	microbiome	saliva_microbiome	M2	0	41
+S	yes	saliva	microbiome	saliva_microbiome	M4	0	41
+S	yes	saliva	microbiome	saliva_microbiome	M6	0	41
+S	no	saliva	microbiome	saliva_microbiome	M0	1	42
+S	no	saliva	microbiome	saliva_microbiome	M2	1	42
+S	no	saliva	microbiome	saliva_microbiome	M4	1	42
+S	no	saliva	microbiome	saliva_microbiome	M6	1	42
+S	no	faecal	microbiome	faecal_microbiome	M0	1	1
+S	no	faecal	microbiome	faecal_microbiome	M2	1	1
+S	no	faecal	microbiome	faecal_microbiome	M4	1	1
+S	no	faecal	microbiome	faecal_microbiome	M6	1	1
+S	no	faecal	microbiome	faecal_microbiome	M0	1	2
+S	no	faecal	microbiome	faecal_microbiome	M2	1	2
+S	no	faecal	microbiome	faecal_microbiome	M4	1	2
+S	no	faecal	microbiome	faecal_microbiome	M6	1	2
+S	no	faecal	microbiome	faecal_microbiome	M0	1	3
+S	no	faecal	microbiome	faecal_microbiome	M2	1	3
+S	no	faecal	microbiome	faecal_microbiome	M4	1	3
+S	no	faecal	microbiome	faecal_microbiome	M6	1	3
+S	yes	faecal	microbiome	faecal_microbiome	M0	1	4
+S	yes	faecal	microbiome	faecal_microbiome	M2	1	4
+S	yes	faecal	microbiome	faecal_microbiome	M4	0	4
+S	yes	faecal	microbiome	faecal_microbiome	M6	0	4
+S	no	faecal	microbiome	faecal_microbiome	M0	1	5
+S	no	faecal	microbiome	faecal_microbiome	M2	1	5
+S	no	faecal	microbiome	faecal_microbiome	M4	1	5
+S	no	faecal	microbiome	faecal_microbiome	M6	1	5
+S	yes	faecal	microbiome	faecal_microbiome	M0	1	6
+S	yes	faecal	microbiome	faecal_microbiome	M2	1	6
+S	yes	faecal	microbiome	faecal_microbiome	M4	1	6
+S	yes	faecal	microbiome	faecal_microbiome	M6	0	6
+S	yes	faecal	microbiome	faecal_microbiome	M0	1	7
+S	yes	faecal	microbiome	faecal_microbiome	M2	1	7
+S	yes	faecal	microbiome	faecal_microbiome	M4	0	7
+S	yes	faecal	microbiome	faecal_microbiome	M6	0	7
+S	yes	faecal	microbiome	faecal_microbiome	M0	1	8
+S	yes	faecal	microbiome	faecal_microbiome	M2	1	8
+S	yes	faecal	microbiome	faecal_microbiome	M4	1	8
+S	yes	faecal	microbiome	faecal_microbiome	M6	0	8
+S	no	faecal	microbiome	faecal_microbiome	M0	1	9
+S	no	faecal	microbiome	faecal_microbiome	M2	1	9
+S	no	faecal	microbiome	faecal_microbiome	M4	1	9
+S	no	faecal	microbiome	faecal_microbiome	M6	1	9
+S	no	faecal	microbiome	faecal_microbiome	M0	1	10
+S	no	faecal	microbiome	faecal_microbiome	M2	1	10
+S	no	faecal	microbiome	faecal_microbiome	M4	1	10
+S	no	faecal	microbiome	faecal_microbiome	M6	1	10
+S	no	faecal	microbiome	faecal_microbiome	M0	1	11
+S	no	faecal	microbiome	faecal_microbiome	M2	1	11
+S	no	faecal	microbiome	faecal_microbiome	M4	1	11
+S	no	faecal	microbiome	faecal_microbiome	M6	1	11
+S	yes	faecal	microbiome	faecal_microbiome	M0	1	12
+S	yes	faecal	microbiome	faecal_microbiome	M2	1	12
+S	yes	faecal	microbiome	faecal_microbiome	M4	0	12
+S	yes	faecal	microbiome	faecal_microbiome	M6	0	12
+S	no	faecal	microbiome	faecal_microbiome	M0	1	13
+S	no	faecal	microbiome	faecal_microbiome	M2	1	13
+S	no	faecal	microbiome	faecal_microbiome	M4	0	13
+S	no	faecal	microbiome	faecal_microbiome	M6	1	13
+S	yes	faecal	microbiome	faecal_microbiome	M0	1	14
+S	yes	faecal	microbiome	faecal_microbiome	M2	1	14
+S	yes	faecal	microbiome	faecal_microbiome	M4	1	14
+S	yes	faecal	microbiome	faecal_microbiome	M6	0	14
+S	no	faecal	microbiome	faecal_microbiome	M0	1	15
+S	no	faecal	microbiome	faecal_microbiome	M2	1	15
+S	no	faecal	microbiome	faecal_microbiome	M4	1	15
+S	no	faecal	microbiome	faecal_microbiome	M6	1	15
+S	no	faecal	microbiome	faecal_microbiome	M0	1	16
+S	no	faecal	microbiome	faecal_microbiome	M2	1	16
+S	no	faecal	microbiome	faecal_microbiome	M4	1	16
+S	no	faecal	microbiome	faecal_microbiome	M6	1	16
+S	yes	faecal	microbiome	faecal_microbiome	M0	1	17
+S	yes	faecal	microbiome	faecal_microbiome	M2	1	17
+S	yes	faecal	microbiome	faecal_microbiome	M4	1	17
+S	yes	faecal	microbiome	faecal_microbiome	M6	0	17
+S	no	faecal	microbiome	faecal_microbiome	M0	1	18
+S	no	faecal	microbiome	faecal_microbiome	M2	1	18
+S	no	faecal	microbiome	faecal_microbiome	M4	1	18
+S	no	faecal	microbiome	faecal_microbiome	M6	1	18
+S	no	faecal	microbiome	faecal_microbiome	M0	1	19
+S	no	faecal	microbiome	faecal_microbiome	M2	1	19
+S	no	faecal	microbiome	faecal_microbiome	M4	1	19
+S	no	faecal	microbiome	faecal_microbiome	M6	1	19
+S	no	faecal	microbiome	faecal_microbiome	M0	1	20
+S	no	faecal	microbiome	faecal_microbiome	M2	1	20
+S	no	faecal	microbiome	faecal_microbiome	M4	1	20
+S	no	faecal	microbiome	faecal_microbiome	M6	1	20
+S	yes	faecal	microbiome	faecal_microbiome	M0	1	21
+S	yes	faecal	microbiome	faecal_microbiome	M2	1	21
+S	yes	faecal	microbiome	faecal_microbiome	M4	0	21
+S	yes	faecal	microbiome	faecal_microbiome	M6	0	21
+S	yes	faecal	microbiome	faecal_microbiome	M0	1	22
+S	yes	faecal	microbiome	faecal_microbiome	M2	1	22
+S	yes	faecal	microbiome	faecal_microbiome	M4	1	22
+S	yes	faecal	microbiome	faecal_microbiome	M6	0	22
+S	yes	faecal	microbiome	faecal_microbiome	M0	1	23
+S	yes	faecal	microbiome	faecal_microbiome	M2	1	23
+S	yes	faecal	microbiome	faecal_microbiome	M4	0	23
+S	yes	faecal	microbiome	faecal_microbiome	M6	0	23
+S	yes	faecal	microbiome	faecal_microbiome	M0	1	24
+S	yes	faecal	microbiome	faecal_microbiome	M2	1	24
+S	yes	faecal	microbiome	faecal_microbiome	M4	0	24
+S	yes	faecal	microbiome	faecal_microbiome	M6	0	24
+S	no	faecal	microbiome	faecal_microbiome	M0	1	25
+S	no	faecal	microbiome	faecal_microbiome	M2	1	25
+S	no	faecal	microbiome	faecal_microbiome	M4	1	25
+S	no	faecal	microbiome	faecal_microbiome	M6	1	25
+S	yes	faecal	microbiome	faecal_microbiome	M0	1	26
+S	yes	faecal	microbiome	faecal_microbiome	M2	1	26
+S	yes	faecal	microbiome	faecal_microbiome	M4	1	26
+S	yes	faecal	microbiome	faecal_microbiome	M6	0	26
+S	yes	faecal	microbiome	faecal_microbiome	M0	1	27
+S	yes	faecal	microbiome	faecal_microbiome	M2	1	27
+S	yes	faecal	microbiome	faecal_microbiome	M4	0	27
+S	yes	faecal	microbiome	faecal_microbiome	M6	0	27
+S	yes	faecal	microbiome	faecal_microbiome	M0	1	28
+S	yes	faecal	microbiome	faecal_microbiome	M2	1	28
+S	yes	faecal	microbiome	faecal_microbiome	M4	0	28
+S	yes	faecal	microbiome	faecal_microbiome	M6	0	28
+S	yes	faecal	microbiome	faecal_microbiome	M0	1	29
+S	yes	faecal	microbiome	faecal_microbiome	M2	1	29
+S	yes	faecal	microbiome	faecal_microbiome	M4	1	29
+S	yes	faecal	microbiome	faecal_microbiome	M6	0	29
+S	no	faecal	microbiome	faecal_microbiome	M0	1	30
+S	no	faecal	microbiome	faecal_microbiome	M2	1	30
+S	no	faecal	microbiome	faecal_microbiome	M4	1	30
+S	no	faecal	microbiome	faecal_microbiome	M6	1	30
+S	no	faecal	microbiome	faecal_microbiome	M0	1	31
+S	no	faecal	microbiome	faecal_microbiome	M2	1	31
+S	no	faecal	microbiome	faecal_microbiome	M4	1	31
+S	no	faecal	microbiome	faecal_microbiome	M6	1	31
+S	yes	faecal	microbiome	faecal_microbiome	M0	1	32
+S	yes	faecal	microbiome	faecal_microbiome	M2	0	32
+S	yes	faecal	microbiome	faecal_microbiome	M4	0	32
+S	yes	faecal	microbiome	faecal_microbiome	M6	0	32
+S	no	faecal	microbiome	faecal_microbiome	M0	1	33
+S	no	faecal	microbiome	faecal_microbiome	M2	1	33
+S	no	faecal	microbiome	faecal_microbiome	M4	1	33
+S	no	faecal	microbiome	faecal_microbiome	M6	1	33
+S	no	faecal	microbiome	faecal_microbiome	M0	1	34
+S	no	faecal	microbiome	faecal_microbiome	M2	1	34
+S	no	faecal	microbiome	faecal_microbiome	M4	1	34
+S	no	faecal	microbiome	faecal_microbiome	M6	1	34
+S	yes	faecal	microbiome	faecal_microbiome	M0	0	35
+S	yes	faecal	microbiome	faecal_microbiome	M2	1	35
+S	yes	faecal	microbiome	faecal_microbiome	M4	0	35
+S	yes	faecal	microbiome	faecal_microbiome	M6	0	35
+S	no	faecal	microbiome	faecal_microbiome	M0	1	36
+S	no	faecal	microbiome	faecal_microbiome	M2	1	36
+S	no	faecal	microbiome	faecal_microbiome	M4	1	36
+S	no	faecal	microbiome	faecal_microbiome	M6	1	36
+S	no	faecal	microbiome	faecal_microbiome	M0	1	37
+S	no	faecal	microbiome	faecal_microbiome	M2	1	37
+S	no	faecal	microbiome	faecal_microbiome	M4	1	37
+S	no	faecal	microbiome	faecal_microbiome	M6	1	37
+S	no	faecal	microbiome	faecal_microbiome	M0	1	38
+S	no	faecal	microbiome	faecal_microbiome	M2	1	38
+S	no	faecal	microbiome	faecal_microbiome	M4	1	38
+S	no	faecal	microbiome	faecal_microbiome	M6	1	38
+S	no	faecal	microbiome	faecal_microbiome	M0	1	39
+S	no	faecal	microbiome	faecal_microbiome	M2	1	39
+S	no	faecal	microbiome	faecal_microbiome	M4	1	39
+S	no	faecal	microbiome	faecal_microbiome	M6	0	39
+S	no	faecal	microbiome	faecal_microbiome	M0	1	40
+S	no	faecal	microbiome	faecal_microbiome	M2	1	40
+S	no	faecal	microbiome	faecal_microbiome	M4	1	40
+S	no	faecal	microbiome	faecal_microbiome	M6	1	40
+S	yes	faecal	microbiome	faecal_microbiome	M0	1	41
+S	yes	faecal	microbiome	faecal_microbiome	M2	0	41
+S	yes	faecal	microbiome	faecal_microbiome	M4	0	41
+S	yes	faecal	microbiome	faecal_microbiome	M6	0	41
+S	no	faecal	microbiome	faecal_microbiome	M0	1	42
+S	no	faecal	microbiome	faecal_microbiome	M2	1	42
+S	no	faecal	microbiome	faecal_microbiome	M4	1	42
+S	no	faecal	microbiome	faecal_microbiome	M6	1	42
+S	no	blood	routine bloods	blood_routine bloods	M0	1	1
+S	no	blood	routine bloods	blood_routine bloods	M2	1	1
+S	no	blood	routine bloods	blood_routine bloods	M4	1	1
+S	no	blood	routine bloods	blood_routine bloods	M6	1	1
+S	no	blood	routine bloods	blood_routine bloods	M0	1	2
+S	no	blood	routine bloods	blood_routine bloods	M2	1	2
+S	no	blood	routine bloods	blood_routine bloods	M4	1	2
+S	no	blood	routine bloods	blood_routine bloods	M6	1	2
+S	no	blood	routine bloods	blood_routine bloods	M0	1	3
+S	no	blood	routine bloods	blood_routine bloods	M2	1	3
+S	no	blood	routine bloods	blood_routine bloods	M4	1	3
+S	no	blood	routine bloods	blood_routine bloods	M6	1	3
+S	yes	blood	routine bloods	blood_routine bloods	M0	1	4
+S	yes	blood	routine bloods	blood_routine bloods	M2	1	4
+S	yes	blood	routine bloods	blood_routine bloods	M4	0	4
+S	yes	blood	routine bloods	blood_routine bloods	M6	0	4
+S	no	blood	routine bloods	blood_routine bloods	M0	1	5
+S	no	blood	routine bloods	blood_routine bloods	M2	1	5
+S	no	blood	routine bloods	blood_routine bloods	M4	1	5
+S	no	blood	routine bloods	blood_routine bloods	M6	1	5
+S	yes	blood	routine bloods	blood_routine bloods	M0	1	6
+S	yes	blood	routine bloods	blood_routine bloods	M2	1	6
+S	yes	blood	routine bloods	blood_routine bloods	M4	1	6
+S	yes	blood	routine bloods	blood_routine bloods	M6	0	6
+S	yes	blood	routine bloods	blood_routine bloods	M0	1	7
+S	yes	blood	routine bloods	blood_routine bloods	M2	1	7
+S	yes	blood	routine bloods	blood_routine bloods	M4	0	7
+S	yes	blood	routine bloods	blood_routine bloods	M6	0	7
+S	yes	blood	routine bloods	blood_routine bloods	M0	1	8
+S	yes	blood	routine bloods	blood_routine bloods	M2	1	8
+S	yes	blood	routine bloods	blood_routine bloods	M4	1	8
+S	yes	blood	routine bloods	blood_routine bloods	M6	0	8
+S	no	blood	routine bloods	blood_routine bloods	M0	1	9
+S	no	blood	routine bloods	blood_routine bloods	M2	1	9
+S	no	blood	routine bloods	blood_routine bloods	M4	1	9
+S	no	blood	routine bloods	blood_routine bloods	M6	1	9
+S	no	blood	routine bloods	blood_routine bloods	M0	1	10
+S	no	blood	routine bloods	blood_routine bloods	M2	1	10
+S	no	blood	routine bloods	blood_routine bloods	M4	1	10
+S	no	blood	routine bloods	blood_routine bloods	M6	1	10
+S	no	blood	routine bloods	blood_routine bloods	M0	1	11
+S	no	blood	routine bloods	blood_routine bloods	M2	1	11
+S	no	blood	routine bloods	blood_routine bloods	M4	1	11
+S	no	blood	routine bloods	blood_routine bloods	M6	1	11
+S	yes	blood	routine bloods	blood_routine bloods	M0	1	12
+S	yes	blood	routine bloods	blood_routine bloods	M2	1	12
+S	yes	blood	routine bloods	blood_routine bloods	M4	0	12
+S	yes	blood	routine bloods	blood_routine bloods	M6	0	12
+S	no	blood	routine bloods	blood_routine bloods	M0	1	13
+S	no	blood	routine bloods	blood_routine bloods	M2	1	13
+S	no	blood	routine bloods	blood_routine bloods	M4	1	13
+S	no	blood	routine bloods	blood_routine bloods	M6	1	13
+S	yes	blood	routine bloods	blood_routine bloods	M0	1	14
+S	yes	blood	routine bloods	blood_routine bloods	M2	1	14
+S	yes	blood	routine bloods	blood_routine bloods	M4	1	14
+S	yes	blood	routine bloods	blood_routine bloods	M6	0	14
+S	no	blood	routine bloods	blood_routine bloods	M0	1	15
+S	no	blood	routine bloods	blood_routine bloods	M2	1	15
+S	no	blood	routine bloods	blood_routine bloods	M4	1	15
+S	no	blood	routine bloods	blood_routine bloods	M6	1	15
+S	no	blood	routine bloods	blood_routine bloods	M0	1	16
+S	no	blood	routine bloods	blood_routine bloods	M2	1	16
+S	no	blood	routine bloods	blood_routine bloods	M4	1	16
+S	no	blood	routine bloods	blood_routine bloods	M6	1	16
+S	yes	blood	routine bloods	blood_routine bloods	M0	1	17
+S	yes	blood	routine bloods	blood_routine bloods	M2	1	17
+S	yes	blood	routine bloods	blood_routine bloods	M4	1	17
+S	yes	blood	routine bloods	blood_routine bloods	M6	0	17
+S	no	blood	routine bloods	blood_routine bloods	M0	1	18
+S	no	blood	routine bloods	blood_routine bloods	M2	1	18
+S	no	blood	routine bloods	blood_routine bloods	M4	1	18
+S	no	blood	routine bloods	blood_routine bloods	M6	1	18
+S	no	blood	routine bloods	blood_routine bloods	M0	1	19
+S	no	blood	routine bloods	blood_routine bloods	M2	1	19
+S	no	blood	routine bloods	blood_routine bloods	M4	1	19
+S	no	blood	routine bloods	blood_routine bloods	M6	1	19
+S	no	blood	routine bloods	blood_routine bloods	M0	1	20
+S	no	blood	routine bloods	blood_routine bloods	M2	1	20
+S	no	blood	routine bloods	blood_routine bloods	M4	1	20
+S	no	blood	routine bloods	blood_routine bloods	M6	1	20
+S	yes	blood	routine bloods	blood_routine bloods	M0	1	21
+S	yes	blood	routine bloods	blood_routine bloods	M2	1	21
+S	yes	blood	routine bloods	blood_routine bloods	M4	0	21
+S	yes	blood	routine bloods	blood_routine bloods	M6	0	21
+S	yes	blood	routine bloods	blood_routine bloods	M0	1	22
+S	yes	blood	routine bloods	blood_routine bloods	M2	1	22
+S	yes	blood	routine bloods	blood_routine bloods	M4	1	22
+S	yes	blood	routine bloods	blood_routine bloods	M6	0	22
+S	yes	blood	routine bloods	blood_routine bloods	M0	1	23
+S	yes	blood	routine bloods	blood_routine bloods	M2	1	23
+S	yes	blood	routine bloods	blood_routine bloods	M4	0	23
+S	yes	blood	routine bloods	blood_routine bloods	M6	0	23
+S	yes	blood	routine bloods	blood_routine bloods	M0	1	24
+S	yes	blood	routine bloods	blood_routine bloods	M2	1	24
+S	yes	blood	routine bloods	blood_routine bloods	M4	0	24
+S	yes	blood	routine bloods	blood_routine bloods	M6	0	24
+S	no	blood	routine bloods	blood_routine bloods	M0	1	25
+S	no	blood	routine bloods	blood_routine bloods	M2	1	25
+S	no	blood	routine bloods	blood_routine bloods	M4	1	25
+S	no	blood	routine bloods	blood_routine bloods	M6	1	25
+S	yes	blood	routine bloods	blood_routine bloods	M0	1	26
+S	yes	blood	routine bloods	blood_routine bloods	M2	1	26
+S	yes	blood	routine bloods	blood_routine bloods	M4	1	26
+S	yes	blood	routine bloods	blood_routine bloods	M6	0	26
+S	yes	blood	routine bloods	blood_routine bloods	M0	1	27
+S	yes	blood	routine bloods	blood_routine bloods	M2	1	27
+S	yes	blood	routine bloods	blood_routine bloods	M4	0	27
+S	yes	blood	routine bloods	blood_routine bloods	M6	0	27
+S	yes	blood	routine bloods	blood_routine bloods	M0	1	28
+S	yes	blood	routine bloods	blood_routine bloods	M2	1	28
+S	yes	blood	routine bloods	blood_routine bloods	M4	0	28
+S	yes	blood	routine bloods	blood_routine bloods	M6	0	28
+S	yes	blood	routine bloods	blood_routine bloods	M0	1	29
+S	yes	blood	routine bloods	blood_routine bloods	M2	1	29
+S	yes	blood	routine bloods	blood_routine bloods	M4	1	29
+S	yes	blood	routine bloods	blood_routine bloods	M6	0	29
+S	no	blood	routine bloods	blood_routine bloods	M0	1	30
+S	no	blood	routine bloods	blood_routine bloods	M2	1	30
+S	no	blood	routine bloods	blood_routine bloods	M4	1	30
+S	no	blood	routine bloods	blood_routine bloods	M6	1	30
+S	no	blood	routine bloods	blood_routine bloods	M0	1	31
+S	no	blood	routine bloods	blood_routine bloods	M2	1	31
+S	no	blood	routine bloods	blood_routine bloods	M4	1	31
+S	no	blood	routine bloods	blood_routine bloods	M6	1	31
+S	yes	blood	routine bloods	blood_routine bloods	M0	1	32
+S	yes	blood	routine bloods	blood_routine bloods	M2	0	32
+S	yes	blood	routine bloods	blood_routine bloods	M4	0	32
+S	yes	blood	routine bloods	blood_routine bloods	M6	0	32
+S	no	blood	routine bloods	blood_routine bloods	M0	1	33
+S	no	blood	routine bloods	blood_routine bloods	M2	1	33
+S	no	blood	routine bloods	blood_routine bloods	M4	1	33
+S	no	blood	routine bloods	blood_routine bloods	M6	1	33
+S	no	blood	routine bloods	blood_routine bloods	M0	1	34
+S	no	blood	routine bloods	blood_routine bloods	M2	1	34
+S	no	blood	routine bloods	blood_routine bloods	M4	1	34
+S	no	blood	routine bloods	blood_routine bloods	M6	1	34
+S	yes	blood	routine bloods	blood_routine bloods	M0	1	35
+S	yes	blood	routine bloods	blood_routine bloods	M2	1	35
+S	yes	blood	routine bloods	blood_routine bloods	M4	0	35
+S	yes	blood	routine bloods	blood_routine bloods	M6	0	35
+S	no	blood	routine bloods	blood_routine bloods	M0	1	36
+S	no	blood	routine bloods	blood_routine bloods	M2	1	36
+S	no	blood	routine bloods	blood_routine bloods	M4	1	36
+S	no	blood	routine bloods	blood_routine bloods	M6	1	36
+S	no	blood	routine bloods	blood_routine bloods	M0	1	37
+S	no	blood	routine bloods	blood_routine bloods	M2	1	37
+S	no	blood	routine bloods	blood_routine bloods	M4	1	37
+S	no	blood	routine bloods	blood_routine bloods	M6	1	37
+S	no	blood	routine bloods	blood_routine bloods	M0	1	38
+S	no	blood	routine bloods	blood_routine bloods	M2	1	38
+S	no	blood	routine bloods	blood_routine bloods	M4	1	38
+S	no	blood	routine bloods	blood_routine bloods	M6	1	38
+S	no	blood	routine bloods	blood_routine bloods	M0	1	39
+S	no	blood	routine bloods	blood_routine bloods	M2	1	39
+S	no	blood	routine bloods	blood_routine bloods	M4	1	39
+S	no	blood	routine bloods	blood_routine bloods	M6	1	39
+S	no	blood	routine bloods	blood_routine bloods	M0	1	40
+S	no	blood	routine bloods	blood_routine bloods	M2	1	40
+S	no	blood	routine bloods	blood_routine bloods	M4	1	40
+S	no	blood	routine bloods	blood_routine bloods	M6	1	40
+S	yes	blood	routine bloods	blood_routine bloods	M0	1	41
+S	yes	blood	routine bloods	blood_routine bloods	M2	0	41
+S	yes	blood	routine bloods	blood_routine bloods	M4	0	41
+S	yes	blood	routine bloods	blood_routine bloods	M6	0	41
+S	no	blood	routine bloods	blood_routine bloods	M0	1	42
+S	no	blood	routine bloods	blood_routine bloods	M2	1	42
+S	no	blood	routine bloods	blood_routine bloods	M4	1	42
+S	no	blood	routine bloods	blood_routine bloods	M6	1	42
+S	yes	skin	biopsy	skin_biopsy	M0	1	4
+S	yes	skin	biopsy	skin_biopsy	M2	NA	4
+S	yes	skin	biopsy	skin_biopsy	M4	NA	4
+S	yes	skin	biopsy	skin_biopsy	M6	0	4
+S	yes	skin	biopsy	skin_biopsy	M0	1	7
+S	yes	skin	biopsy	skin_biopsy	M2	NA	7
+S	yes	skin	biopsy	skin_biopsy	M4	NA	7
+S	yes	skin	biopsy	skin_biopsy	M6	0	7
+S	yes	skin	biopsy	skin_biopsy	M0	1	8
+S	yes	skin	biopsy	skin_biopsy	M2	NA	8
+S	yes	skin	biopsy	skin_biopsy	M4	NA	8
+S	yes	skin	biopsy	skin_biopsy	M6	0	8
+S	no	skin	biopsy	skin_biopsy	M0	1	9
+S	no	skin	biopsy	skin_biopsy	M2	NA	9
+S	no	skin	biopsy	skin_biopsy	M4	NA	9
+S	no	skin	biopsy	skin_biopsy	M6	0	9
+S	no	skin	biopsy	skin_biopsy	M0	1	11
+S	no	skin	biopsy	skin_biopsy	M2	NA	11
+S	no	skin	biopsy	skin_biopsy	M4	NA	11
+S	no	skin	biopsy	skin_biopsy	M6	1	11
+S	yes	skin	biopsy	skin_biopsy	M0	1	12
+S	yes	skin	biopsy	skin_biopsy	M2	NA	12
+S	yes	skin	biopsy	skin_biopsy	M4	NA	12
+S	yes	skin	biopsy	skin_biopsy	M6	0	12
+S	no	skin	biopsy	skin_biopsy	M0	1	15
+S	no	skin	biopsy	skin_biopsy	M2	NA	15
+S	no	skin	biopsy	skin_biopsy	M4	NA	15
+S	no	skin	biopsy	skin_biopsy	M6	0	15
+S	yes	skin	biopsy	skin_biopsy	M0	1	17
+S	yes	skin	biopsy	skin_biopsy	M2	NA	17
+S	yes	skin	biopsy	skin_biopsy	M4	NA	17
+S	yes	skin	biopsy	skin_biopsy	M6	0	17
+S	no	skin	biopsy	skin_biopsy	M0	1	18
+S	no	skin	biopsy	skin_biopsy	M2	NA	18
+S	no	skin	biopsy	skin_biopsy	M4	NA	18
+S	no	skin	biopsy	skin_biopsy	M6	1	18
+S	no	skin	biopsy	skin_biopsy	M0	1	20
+S	no	skin	biopsy	skin_biopsy	M2	NA	20
+S	no	skin	biopsy	skin_biopsy	M4	NA	20
+S	no	skin	biopsy	skin_biopsy	M6	0	20
+S	yes	skin	biopsy	skin_biopsy	M0	1	22
+S	yes	skin	biopsy	skin_biopsy	M2	NA	22
+S	yes	skin	biopsy	skin_biopsy	M4	NA	22
+S	yes	skin	biopsy	skin_biopsy	M6	0	22
+S	no	skin	biopsy	skin_biopsy	M0	1	25
+S	no	skin	biopsy	skin_biopsy	M2	NA	25
+S	no	skin	biopsy	skin_biopsy	M4	NA	25
+S	no	skin	biopsy	skin_biopsy	M6	0	25
+S	no	skin	biopsy	skin_biopsy	M0	1	30
+S	no	skin	biopsy	skin_biopsy	M2	NA	30
+S	no	skin	biopsy	skin_biopsy	M4	NA	30
+S	no	skin	biopsy	skin_biopsy	M6	1	30
+S	no	skin	biopsy	skin_biopsy	M0	1	31
+S	no	skin	biopsy	skin_biopsy	M2	NA	31
+S	no	skin	biopsy	skin_biopsy	M4	NA	31
+S	no	skin	biopsy	skin_biopsy	M6	0	31
+S	yes	skin	biopsy	skin_biopsy	M0	1	32
+S	yes	skin	biopsy	skin_biopsy	M2	NA	32
+S	yes	skin	biopsy	skin_biopsy	M4	NA	32
+S	yes	skin	biopsy	skin_biopsy	M6	0	32
+S	no	skin	biopsy	skin_biopsy	M0	1	34
+S	no	skin	biopsy	skin_biopsy	M2	NA	34
+S	no	skin	biopsy	skin_biopsy	M4	NA	34
+S	no	skin	biopsy	skin_biopsy	M6	0	34
+S	no	skin	biopsy	skin_biopsy	M0	1	36
+S	no	skin	biopsy	skin_biopsy	M2	NA	36
+S	no	skin	biopsy	skin_biopsy	M4	NA	36
+S	no	skin	biopsy	skin_biopsy	M6	1	36
+S	no	skin	biopsy	skin_biopsy	M0	1	39
+S	no	skin	biopsy	skin_biopsy	M2	NA	39
+S	no	skin	biopsy	skin_biopsy	M4	NA	39
+S	no	skin	biopsy	skin_biopsy	M6	0	39
+S	no	blood	immune profiling	blood_immune profiling	M0	1	1
+S	no	blood	immune profiling	blood_immune profiling	M2	1	1
+S	no	blood	immune profiling	blood_immune profiling	M4	1	1
+S	no	blood	immune profiling	blood_immune profiling	M6	1	1
+S	no	blood	immune profiling	blood_immune profiling	M0	1	2
+S	no	blood	immune profiling	blood_immune profiling	M2	1	2
+S	no	blood	immune profiling	blood_immune profiling	M4	1	2
+S	no	blood	immune profiling	blood_immune profiling	M6	1	2
+S	no	blood	immune profiling	blood_immune profiling	M0	1	3
+S	no	blood	immune profiling	blood_immune profiling	M2	1	3
+S	no	blood	immune profiling	blood_immune profiling	M4	1	3
+S	no	blood	immune profiling	blood_immune profiling	M6	1	3
+S	yes	blood	immune profiling	blood_immune profiling	M0	1	4
+S	yes	blood	immune profiling	blood_immune profiling	M2	1	4
+S	yes	blood	immune profiling	blood_immune profiling	M4	0	4
+S	yes	blood	immune profiling	blood_immune profiling	M6	0	4
+S	no	blood	immune profiling	blood_immune profiling	M0	1	5
+S	no	blood	immune profiling	blood_immune profiling	M2	1	5
+S	no	blood	immune profiling	blood_immune profiling	M4	1	5
+S	no	blood	immune profiling	blood_immune profiling	M6	1	5
+S	yes	blood	immune profiling	blood_immune profiling	M0	1	6
+S	yes	blood	immune profiling	blood_immune profiling	M2	1	6
+S	yes	blood	immune profiling	blood_immune profiling	M4	1	6
+S	yes	blood	immune profiling	blood_immune profiling	M6	0	6
+S	yes	blood	immune profiling	blood_immune profiling	M0	1	7
+S	yes	blood	immune profiling	blood_immune profiling	M2	1	7
+S	yes	blood	immune profiling	blood_immune profiling	M4	0	7
+S	yes	blood	immune profiling	blood_immune profiling	M6	0	7
+S	yes	blood	immune profiling	blood_immune profiling	M0	1	8
+S	yes	blood	immune profiling	blood_immune profiling	M2	1	8
+S	yes	blood	immune profiling	blood_immune profiling	M4	1	8
+S	yes	blood	immune profiling	blood_immune profiling	M6	0	8
+S	no	blood	immune profiling	blood_immune profiling	M0	1	9
+S	no	blood	immune profiling	blood_immune profiling	M2	1	9
+S	no	blood	immune profiling	blood_immune profiling	M4	1	9
+S	no	blood	immune profiling	blood_immune profiling	M6	1	9
+S	no	blood	immune profiling	blood_immune profiling	M0	1	10
+S	no	blood	immune profiling	blood_immune profiling	M2	1	10
+S	no	blood	immune profiling	blood_immune profiling	M4	1	10
+S	no	blood	immune profiling	blood_immune profiling	M6	1	10
+S	no	blood	immune profiling	blood_immune profiling	M0	1	11
+S	no	blood	immune profiling	blood_immune profiling	M2	1	11
+S	no	blood	immune profiling	blood_immune profiling	M4	1	11
+S	no	blood	immune profiling	blood_immune profiling	M6	1	11
+S	yes	blood	immune profiling	blood_immune profiling	M0	1	12
+S	yes	blood	immune profiling	blood_immune profiling	M2	1	12
+S	yes	blood	immune profiling	blood_immune profiling	M4	0	12
+S	yes	blood	immune profiling	blood_immune profiling	M6	0	12
+S	no	blood	immune profiling	blood_immune profiling	M0	1	13
+S	no	blood	immune profiling	blood_immune profiling	M2	1	13
+S	no	blood	immune profiling	blood_immune profiling	M4	1	13
+S	no	blood	immune profiling	blood_immune profiling	M6	1	13
+S	yes	blood	immune profiling	blood_immune profiling	M0	1	14
+S	yes	blood	immune profiling	blood_immune profiling	M2	1	14
+S	yes	blood	immune profiling	blood_immune profiling	M4	1	14
+S	yes	blood	immune profiling	blood_immune profiling	M6	0	14
+S	no	blood	immune profiling	blood_immune profiling	M0	1	15
+S	no	blood	immune profiling	blood_immune profiling	M2	1	15
+S	no	blood	immune profiling	blood_immune profiling	M4	1	15
+S	no	blood	immune profiling	blood_immune profiling	M6	1	15
+S	no	blood	immune profiling	blood_immune profiling	M0	1	16
+S	no	blood	immune profiling	blood_immune profiling	M2	1	16
+S	no	blood	immune profiling	blood_immune profiling	M4	1	16
+S	no	blood	immune profiling	blood_immune profiling	M6	1	16
+S	yes	blood	immune profiling	blood_immune profiling	M0	1	17
+S	yes	blood	immune profiling	blood_immune profiling	M2	1	17
+S	yes	blood	immune profiling	blood_immune profiling	M4	1	17
+S	yes	blood	immune profiling	blood_immune profiling	M6	0	17
+S	no	blood	immune profiling	blood_immune profiling	M0	1	18
+S	no	blood	immune profiling	blood_immune profiling	M2	1	18
+S	no	blood	immune profiling	blood_immune profiling	M4	1	18
+S	no	blood	immune profiling	blood_immune profiling	M6	1	18
+S	no	blood	immune profiling	blood_immune profiling	M0	1	19
+S	no	blood	immune profiling	blood_immune profiling	M2	1	19
+S	no	blood	immune profiling	blood_immune profiling	M4	1	19
+S	no	blood	immune profiling	blood_immune profiling	M6	1	19
+S	no	blood	immune profiling	blood_immune profiling	M0	1	20
+S	no	blood	immune profiling	blood_immune profiling	M2	1	20
+S	no	blood	immune profiling	blood_immune profiling	M4	1	20
+S	no	blood	immune profiling	blood_immune profiling	M6	1	20
+S	yes	blood	immune profiling	blood_immune profiling	M0	1	21
+S	yes	blood	immune profiling	blood_immune profiling	M2	1	21
+S	yes	blood	immune profiling	blood_immune profiling	M4	0	21
+S	yes	blood	immune profiling	blood_immune profiling	M6	0	21
+S	yes	blood	immune profiling	blood_immune profiling	M0	1	22
+S	yes	blood	immune profiling	blood_immune profiling	M2	1	22
+S	yes	blood	immune profiling	blood_immune profiling	M4	1	22
+S	yes	blood	immune profiling	blood_immune profiling	M6	0	22
+S	yes	blood	immune profiling	blood_immune profiling	M0	1	23
+S	yes	blood	immune profiling	blood_immune profiling	M2	1	23
+S	yes	blood	immune profiling	blood_immune profiling	M4	0	23
+S	yes	blood	immune profiling	blood_immune profiling	M6	0	23
+S	yes	blood	immune profiling	blood_immune profiling	M0	1	24
+S	yes	blood	immune profiling	blood_immune profiling	M2	1	24
+S	yes	blood	immune profiling	blood_immune profiling	M4	0	24
+S	yes	blood	immune profiling	blood_immune profiling	M6	0	24
+S	no	blood	immune profiling	blood_immune profiling	M0	1	25
+S	no	blood	immune profiling	blood_immune profiling	M2	1	25
+S	no	blood	immune profiling	blood_immune profiling	M4	1	25
+S	no	blood	immune profiling	blood_immune profiling	M6	1	25
+S	yes	blood	immune profiling	blood_immune profiling	M0	1	26
+S	yes	blood	immune profiling	blood_immune profiling	M2	1	26
+S	yes	blood	immune profiling	blood_immune profiling	M4	1	26
+S	yes	blood	immune profiling	blood_immune profiling	M6	0	26
+S	yes	blood	immune profiling	blood_immune profiling	M0	1	27
+S	yes	blood	immune profiling	blood_immune profiling	M2	1	27
+S	yes	blood	immune profiling	blood_immune profiling	M4	0	27
+S	yes	blood	immune profiling	blood_immune profiling	M6	0	27
+S	yes	blood	immune profiling	blood_immune profiling	M0	1	28
+S	yes	blood	immune profiling	blood_immune profiling	M2	1	28
+S	yes	blood	immune profiling	blood_immune profiling	M4	0	28
+S	yes	blood	immune profiling	blood_immune profiling	M6	0	28
+S	yes	blood	immune profiling	blood_immune profiling	M0	1	29
+S	yes	blood	immune profiling	blood_immune profiling	M2	1	29
+S	yes	blood	immune profiling	blood_immune profiling	M4	1	29
+S	yes	blood	immune profiling	blood_immune profiling	M6	0	29
+S	no	blood	immune profiling	blood_immune profiling	M0	1	30
+S	no	blood	immune profiling	blood_immune profiling	M2	1	30
+S	no	blood	immune profiling	blood_immune profiling	M4	1	30
+S	no	blood	immune profiling	blood_immune profiling	M6	1	30
+S	no	blood	immune profiling	blood_immune profiling	M0	1	31
+S	no	blood	immune profiling	blood_immune profiling	M2	1	31
+S	no	blood	immune profiling	blood_immune profiling	M4	1	31
+S	no	blood	immune profiling	blood_immune profiling	M6	1	31
+S	yes	blood	immune profiling	blood_immune profiling	M0	1	32
+S	yes	blood	immune profiling	blood_immune profiling	M2	0	32
+S	yes	blood	immune profiling	blood_immune profiling	M4	0	32
+S	yes	blood	immune profiling	blood_immune profiling	M6	0	32
+S	no	blood	immune profiling	blood_immune profiling	M0	1	33
+S	no	blood	immune profiling	blood_immune profiling	M2	1	33
+S	no	blood	immune profiling	blood_immune profiling	M4	1	33
+S	no	blood	immune profiling	blood_immune profiling	M6	1	33
+S	no	blood	immune profiling	blood_immune profiling	M0	1	34
+S	no	blood	immune profiling	blood_immune profiling	M2	1	34
+S	no	blood	immune profiling	blood_immune profiling	M4	1	34
+S	no	blood	immune profiling	blood_immune profiling	M6	1	34
+S	yes	blood	immune profiling	blood_immune profiling	M0	1	35
+S	yes	blood	immune profiling	blood_immune profiling	M2	1	35
+S	yes	blood	immune profiling	blood_immune profiling	M4	0	35
+S	yes	blood	immune profiling	blood_immune profiling	M6	0	35
+S	no	blood	immune profiling	blood_immune profiling	M0	1	36
+S	no	blood	immune profiling	blood_immune profiling	M2	1	36
+S	no	blood	immune profiling	blood_immune profiling	M4	1	36
+S	no	blood	immune profiling	blood_immune profiling	M6	1	36
+S	no	blood	immune profiling	blood_immune profiling	M0	1	37
+S	no	blood	immune profiling	blood_immune profiling	M2	1	37
+S	no	blood	immune profiling	blood_immune profiling	M4	1	37
+S	no	blood	immune profiling	blood_immune profiling	M6	1	37
+S	no	blood	immune profiling	blood_immune profiling	M0	1	38
+S	no	blood	immune profiling	blood_immune profiling	M2	1	38
+S	no	blood	immune profiling	blood_immune profiling	M4	1	38
+S	no	blood	immune profiling	blood_immune profiling	M6	1	38
+S	no	blood	immune profiling	blood_immune profiling	M0	1	39
+S	no	blood	immune profiling	blood_immune profiling	M2	1	39
+S	no	blood	immune profiling	blood_immune profiling	M4	1	39
+S	no	blood	immune profiling	blood_immune profiling	M6	1	39
+S	no	blood	immune profiling	blood_immune profiling	M0	1	40
+S	no	blood	immune profiling	blood_immune profiling	M2	1	40
+S	no	blood	immune profiling	blood_immune profiling	M4	1	40
+S	no	blood	immune profiling	blood_immune profiling	M6	1	40
+S	yes	blood	immune profiling	blood_immune profiling	M0	1	41
+S	yes	blood	immune profiling	blood_immune profiling	M2	0	41
+S	yes	blood	immune profiling	blood_immune profiling	M4	0	41
+S	yes	blood	immune profiling	blood_immune profiling	M6	0	41
+S	no	blood	immune profiling	blood_immune profiling	M0	1	42
+S	no	blood	immune profiling	blood_immune profiling	M2	1	42
+S	no	blood	immune profiling	blood_immune profiling	M4	1	42
+S	no	blood	immune profiling	blood_immune profiling	M6	1	42
+S	no	clinical	body composition	clinical_body composition	M0	1	1
+S	no	clinical	body composition	clinical_body composition	M2	1	1
+S	no	clinical	body composition	clinical_body composition	M4	1	1
+S	no	clinical	body composition	clinical_body composition	M6	1	1
+S	no	clinical	body composition	clinical_body composition	M0	1	2
+S	no	clinical	body composition	clinical_body composition	M2	1	2
+S	no	clinical	body composition	clinical_body composition	M4	1	2
+S	no	clinical	body composition	clinical_body composition	M6	1	2
+S	no	clinical	body composition	clinical_body composition	M0	1	3
+S	no	clinical	body composition	clinical_body composition	M2	1	3
+S	no	clinical	body composition	clinical_body composition	M4	1	3
+S	no	clinical	body composition	clinical_body composition	M6	1	3
+S	yes	clinical	body composition	clinical_body composition	M0	1	4
+S	yes	clinical	body composition	clinical_body composition	M2	1	4
+S	yes	clinical	body composition	clinical_body composition	M4	0	4
+S	yes	clinical	body composition	clinical_body composition	M6	0	4
+S	no	clinical	body composition	clinical_body composition	M0	1	5
+S	no	clinical	body composition	clinical_body composition	M2	1	5
+S	no	clinical	body composition	clinical_body composition	M4	1	5
+S	no	clinical	body composition	clinical_body composition	M6	1	5
+S	yes	clinical	body composition	clinical_body composition	M0	1	6
+S	yes	clinical	body composition	clinical_body composition	M2	1	6
+S	yes	clinical	body composition	clinical_body composition	M4	0	6
+S	yes	clinical	body composition	clinical_body composition	M6	0	6
+S	yes	clinical	body composition	clinical_body composition	M0	1	7
+S	yes	clinical	body composition	clinical_body composition	M2	1	7
+S	yes	clinical	body composition	clinical_body composition	M4	0	7
+S	yes	clinical	body composition	clinical_body composition	M6	0	7
+S	yes	clinical	body composition	clinical_body composition	M0	1	8
+S	yes	clinical	body composition	clinical_body composition	M2	1	8
+S	yes	clinical	body composition	clinical_body composition	M4	1	8
+S	yes	clinical	body composition	clinical_body composition	M6	0	8
+S	no	clinical	body composition	clinical_body composition	M0	1	9
+S	no	clinical	body composition	clinical_body composition	M2	1	9
+S	no	clinical	body composition	clinical_body composition	M4	1	9
+S	no	clinical	body composition	clinical_body composition	M6	1	9
+S	no	clinical	body composition	clinical_body composition	M0	1	10
+S	no	clinical	body composition	clinical_body composition	M2	1	10
+S	no	clinical	body composition	clinical_body composition	M4	1	10
+S	no	clinical	body composition	clinical_body composition	M6	1	10
+S	no	clinical	body composition	clinical_body composition	M0	1	11
+S	no	clinical	body composition	clinical_body composition	M2	1	11
+S	no	clinical	body composition	clinical_body composition	M4	1	11
+S	no	clinical	body composition	clinical_body composition	M6	1	11
+S	yes	clinical	body composition	clinical_body composition	M0	1	12
+S	yes	clinical	body composition	clinical_body composition	M2	1	12
+S	yes	clinical	body composition	clinical_body composition	M4	0	12
+S	yes	clinical	body composition	clinical_body composition	M6	0	12
+S	no	clinical	body composition	clinical_body composition	M0	1	13
+S	no	clinical	body composition	clinical_body composition	M2	1	13
+S	no	clinical	body composition	clinical_body composition	M4	1	13
+S	no	clinical	body composition	clinical_body composition	M6	1	13
+S	yes	clinical	body composition	clinical_body composition	M0	1	14
+S	yes	clinical	body composition	clinical_body composition	M2	1	14
+S	yes	clinical	body composition	clinical_body composition	M4	1	14
+S	yes	clinical	body composition	clinical_body composition	M6	0	14
+S	no	clinical	body composition	clinical_body composition	M0	1	15
+S	no	clinical	body composition	clinical_body composition	M2	1	15
+S	no	clinical	body composition	clinical_body composition	M4	1	15
+S	no	clinical	body composition	clinical_body composition	M6	1	15
+S	no	clinical	body composition	clinical_body composition	M0	1	16
+S	no	clinical	body composition	clinical_body composition	M2	1	16
+S	no	clinical	body composition	clinical_body composition	M4	1	16
+S	no	clinical	body composition	clinical_body composition	M6	1	16
+S	yes	clinical	body composition	clinical_body composition	M0	1	17
+S	yes	clinical	body composition	clinical_body composition	M2	1	17
+S	yes	clinical	body composition	clinical_body composition	M4	1	17
+S	yes	clinical	body composition	clinical_body composition	M6	0	17
+S	no	clinical	body composition	clinical_body composition	M0	1	18
+S	no	clinical	body composition	clinical_body composition	M2	1	18
+S	no	clinical	body composition	clinical_body composition	M4	1	18
+S	no	clinical	body composition	clinical_body composition	M6	0	18
+S	no	clinical	body composition	clinical_body composition	M0	1	19
+S	no	clinical	body composition	clinical_body composition	M2	1	19
+S	no	clinical	body composition	clinical_body composition	M4	1	19
+S	no	clinical	body composition	clinical_body composition	M6	1	19
+S	no	clinical	body composition	clinical_body composition	M0	1	20
+S	no	clinical	body composition	clinical_body composition	M2	1	20
+S	no	clinical	body composition	clinical_body composition	M4	1	20
+S	no	clinical	body composition	clinical_body composition	M6	0	20
+S	yes	clinical	body composition	clinical_body composition	M0	1	21
+S	yes	clinical	body composition	clinical_body composition	M2	1	21
+S	yes	clinical	body composition	clinical_body composition	M4	0	21
+S	yes	clinical	body composition	clinical_body composition	M6	0	21
+S	yes	clinical	body composition	clinical_body composition	M0	1	22
+S	yes	clinical	body composition	clinical_body composition	M2	1	22
+S	yes	clinical	body composition	clinical_body composition	M4	1	22
+S	yes	clinical	body composition	clinical_body composition	M6	0	22
+S	yes	clinical	body composition	clinical_body composition	M0	1	23
+S	yes	clinical	body composition	clinical_body composition	M2	1	23
+S	yes	clinical	body composition	clinical_body composition	M4	0	23
+S	yes	clinical	body composition	clinical_body composition	M6	0	23
+S	yes	clinical	body composition	clinical_body composition	M0	1	24
+S	yes	clinical	body composition	clinical_body composition	M2	1	24
+S	yes	clinical	body composition	clinical_body composition	M4	0	24
+S	yes	clinical	body composition	clinical_body composition	M6	0	24
+S	no	clinical	body composition	clinical_body composition	M0	1	25
+S	no	clinical	body composition	clinical_body composition	M2	1	25
+S	no	clinical	body composition	clinical_body composition	M4	1	25
+S	no	clinical	body composition	clinical_body composition	M6	1	25
+S	yes	clinical	body composition	clinical_body composition	M0	1	26
+S	yes	clinical	body composition	clinical_body composition	M2	1	26
+S	yes	clinical	body composition	clinical_body composition	M4	1	26
+S	yes	clinical	body composition	clinical_body composition	M6	0	26
+S	yes	clinical	body composition	clinical_body composition	M0	1	27
+S	yes	clinical	body composition	clinical_body composition	M2	1	27
+S	yes	clinical	body composition	clinical_body composition	M4	0	27
+S	yes	clinical	body composition	clinical_body composition	M6	0	27
+S	yes	clinical	body composition	clinical_body composition	M0	1	28
+S	yes	clinical	body composition	clinical_body composition	M2	1	28
+S	yes	clinical	body composition	clinical_body composition	M4	0	28
+S	yes	clinical	body composition	clinical_body composition	M6	0	28
+S	yes	clinical	body composition	clinical_body composition	M0	1	29
+S	yes	clinical	body composition	clinical_body composition	M2	1	29
+S	yes	clinical	body composition	clinical_body composition	M4	0	29
+S	yes	clinical	body composition	clinical_body composition	M6	0	29
+S	no	clinical	body composition	clinical_body composition	M0	1	30
+S	no	clinical	body composition	clinical_body composition	M2	1	30
+S	no	clinical	body composition	clinical_body composition	M4	1	30
+S	no	clinical	body composition	clinical_body composition	M6	1	30
+S	no	clinical	body composition	clinical_body composition	M0	1	31
+S	no	clinical	body composition	clinical_body composition	M2	1	31
+S	no	clinical	body composition	clinical_body composition	M4	1	31
+S	no	clinical	body composition	clinical_body composition	M6	1	31
+S	yes	clinical	body composition	clinical_body composition	M0	1	32
+S	yes	clinical	body composition	clinical_body composition	M2	0	32
+S	yes	clinical	body composition	clinical_body composition	M4	0	32
+S	yes	clinical	body composition	clinical_body composition	M6	0	32
+S	no	clinical	body composition	clinical_body composition	M0	1	33
+S	no	clinical	body composition	clinical_body composition	M2	1	33
+S	no	clinical	body composition	clinical_body composition	M4	1	33
+S	no	clinical	body composition	clinical_body composition	M6	1	33
+S	no	clinical	body composition	clinical_body composition	M0	1	34
+S	no	clinical	body composition	clinical_body composition	M2	1	34
+S	no	clinical	body composition	clinical_body composition	M4	1	34
+S	no	clinical	body composition	clinical_body composition	M6	1	34
+S	yes	clinical	body composition	clinical_body composition	M0	1	35
+S	yes	clinical	body composition	clinical_body composition	M2	1	35
+S	yes	clinical	body composition	clinical_body composition	M4	0	35
+S	yes	clinical	body composition	clinical_body composition	M6	0	35
+S	no	clinical	body composition	clinical_body composition	M0	1	36
+S	no	clinical	body composition	clinical_body composition	M2	1	36
+S	no	clinical	body composition	clinical_body composition	M4	1	36
+S	no	clinical	body composition	clinical_body composition	M6	1	36
+S	no	clinical	body composition	clinical_body composition	M0	1	37
+S	no	clinical	body composition	clinical_body composition	M2	1	37
+S	no	clinical	body composition	clinical_body composition	M4	1	37
+S	no	clinical	body composition	clinical_body composition	M6	1	37
+S	no	clinical	body composition	clinical_body composition	M0	1	38
+S	no	clinical	body composition	clinical_body composition	M2	1	38
+S	no	clinical	body composition	clinical_body composition	M4	1	38
+S	no	clinical	body composition	clinical_body composition	M6	1	38
+S	no	clinical	body composition	clinical_body composition	M0	1	39
+S	no	clinical	body composition	clinical_body composition	M2	1	39
+S	no	clinical	body composition	clinical_body composition	M4	1	39
+S	no	clinical	body composition	clinical_body composition	M6	1	39
+S	no	clinical	body composition	clinical_body composition	M0	1	40
+S	no	clinical	body composition	clinical_body composition	M2	1	40
+S	no	clinical	body composition	clinical_body composition	M4	1	40
+S	no	clinical	body composition	clinical_body composition	M6	1	40
+S	yes	clinical	body composition	clinical_body composition	M0	1	41
+S	yes	clinical	body composition	clinical_body composition	M2	0	41
+S	yes	clinical	body composition	clinical_body composition	M4	0	41
+S	yes	clinical	body composition	clinical_body composition	M6	0	41
+S	no	clinical	body composition	clinical_body composition	M0	1	42
+S	no	clinical	body composition	clinical_body composition	M2	1	42
+S	no	clinical	body composition	clinical_body composition	M4	1	42
+S	no	clinical	body composition	clinical_body composition	M6	1	42
+S	no	clinical	functional exam	clinical_functional exam	M0	1	1
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	1
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	1
+S	no	clinical	functional exam	clinical_functional exam	M6	1	1
+S	no	clinical	functional exam	clinical_functional exam	M0	1	2
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	2
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	2
+S	no	clinical	functional exam	clinical_functional exam	M6	1	2
+S	no	clinical	functional exam	clinical_functional exam	M0	1	3
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	3
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	3
+S	no	clinical	functional exam	clinical_functional exam	M6	1	3
+S	yes	clinical	functional exam	clinical_functional exam	M0	1	4
+S	yes	clinical	functional exam	clinical_functional exam	M2	NA	4
+S	yes	clinical	functional exam	clinical_functional exam	M4	NA	4
+S	yes	clinical	functional exam	clinical_functional exam	M6	0	4
+S	no	clinical	functional exam	clinical_functional exam	M0	1	5
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	5
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	5
+S	no	clinical	functional exam	clinical_functional exam	M6	1	5
+S	yes	clinical	functional exam	clinical_functional exam	M0	1	6
+S	yes	clinical	functional exam	clinical_functional exam	M2	NA	6
+S	yes	clinical	functional exam	clinical_functional exam	M4	NA	6
+S	yes	clinical	functional exam	clinical_functional exam	M6	0	6
+S	yes	clinical	functional exam	clinical_functional exam	M0	1	7
+S	yes	clinical	functional exam	clinical_functional exam	M2	NA	7
+S	yes	clinical	functional exam	clinical_functional exam	M4	NA	7
+S	yes	clinical	functional exam	clinical_functional exam	M6	0	7
+S	yes	clinical	functional exam	clinical_functional exam	M0	1	8
+S	yes	clinical	functional exam	clinical_functional exam	M2	NA	8
+S	yes	clinical	functional exam	clinical_functional exam	M4	NA	8
+S	yes	clinical	functional exam	clinical_functional exam	M6	0	8
+S	no	clinical	functional exam	clinical_functional exam	M0	1	9
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	9
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	9
+S	no	clinical	functional exam	clinical_functional exam	M6	1	9
+S	no	clinical	functional exam	clinical_functional exam	M0	1	10
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	10
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	10
+S	no	clinical	functional exam	clinical_functional exam	M6	0	10
+S	no	clinical	functional exam	clinical_functional exam	M0	1	11
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	11
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	11
+S	no	clinical	functional exam	clinical_functional exam	M6	1	11
+S	yes	clinical	functional exam	clinical_functional exam	M0	1	12
+S	yes	clinical	functional exam	clinical_functional exam	M2	NA	12
+S	yes	clinical	functional exam	clinical_functional exam	M4	NA	12
+S	yes	clinical	functional exam	clinical_functional exam	M6	0	12
+S	no	clinical	functional exam	clinical_functional exam	M0	1	13
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	13
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	13
+S	no	clinical	functional exam	clinical_functional exam	M6	1	13
+S	yes	clinical	functional exam	clinical_functional exam	M0	1	14
+S	yes	clinical	functional exam	clinical_functional exam	M2	NA	14
+S	yes	clinical	functional exam	clinical_functional exam	M4	NA	14
+S	yes	clinical	functional exam	clinical_functional exam	M6	0	14
+S	no	clinical	functional exam	clinical_functional exam	M0	1	15
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	15
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	15
+S	no	clinical	functional exam	clinical_functional exam	M6	1	15
+S	no	clinical	functional exam	clinical_functional exam	M0	1	16
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	16
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	16
+S	no	clinical	functional exam	clinical_functional exam	M6	1	16
+S	yes	clinical	functional exam	clinical_functional exam	M0	1	17
+S	yes	clinical	functional exam	clinical_functional exam	M2	NA	17
+S	yes	clinical	functional exam	clinical_functional exam	M4	NA	17
+S	yes	clinical	functional exam	clinical_functional exam	M6	0	17
+S	no	clinical	functional exam	clinical_functional exam	M0	1	18
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	18
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	18
+S	no	clinical	functional exam	clinical_functional exam	M6	1	18
+S	no	clinical	functional exam	clinical_functional exam	M0	1	19
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	19
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	19
+S	no	clinical	functional exam	clinical_functional exam	M6	1	19
+S	no	clinical	functional exam	clinical_functional exam	M0	1	20
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	20
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	20
+S	no	clinical	functional exam	clinical_functional exam	M6	0	20
+S	yes	clinical	functional exam	clinical_functional exam	M0	1	21
+S	yes	clinical	functional exam	clinical_functional exam	M2	NA	21
+S	yes	clinical	functional exam	clinical_functional exam	M4	NA	21
+S	yes	clinical	functional exam	clinical_functional exam	M6	0	21
+S	yes	clinical	functional exam	clinical_functional exam	M0	1	22
+S	yes	clinical	functional exam	clinical_functional exam	M2	NA	22
+S	yes	clinical	functional exam	clinical_functional exam	M4	NA	22
+S	yes	clinical	functional exam	clinical_functional exam	M6	0	22
+S	yes	clinical	functional exam	clinical_functional exam	M0	1	23
+S	yes	clinical	functional exam	clinical_functional exam	M2	NA	23
+S	yes	clinical	functional exam	clinical_functional exam	M4	NA	23
+S	yes	clinical	functional exam	clinical_functional exam	M6	0	23
+S	yes	clinical	functional exam	clinical_functional exam	M0	1	24
+S	yes	clinical	functional exam	clinical_functional exam	M2	NA	24
+S	yes	clinical	functional exam	clinical_functional exam	M4	NA	24
+S	yes	clinical	functional exam	clinical_functional exam	M6	0	24
+S	no	clinical	functional exam	clinical_functional exam	M0	1	25
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	25
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	25
+S	no	clinical	functional exam	clinical_functional exam	M6	0	25
+S	yes	clinical	functional exam	clinical_functional exam	M0	1	26
+S	yes	clinical	functional exam	clinical_functional exam	M2	NA	26
+S	yes	clinical	functional exam	clinical_functional exam	M4	NA	26
+S	yes	clinical	functional exam	clinical_functional exam	M6	0	26
+S	yes	clinical	functional exam	clinical_functional exam	M0	1	27
+S	yes	clinical	functional exam	clinical_functional exam	M2	NA	27
+S	yes	clinical	functional exam	clinical_functional exam	M4	NA	27
+S	yes	clinical	functional exam	clinical_functional exam	M6	0	27
+S	yes	clinical	functional exam	clinical_functional exam	M0	1	28
+S	yes	clinical	functional exam	clinical_functional exam	M2	NA	28
+S	yes	clinical	functional exam	clinical_functional exam	M4	NA	28
+S	yes	clinical	functional exam	clinical_functional exam	M6	0	28
+S	yes	clinical	functional exam	clinical_functional exam	M0	1	29
+S	yes	clinical	functional exam	clinical_functional exam	M2	NA	29
+S	yes	clinical	functional exam	clinical_functional exam	M4	NA	29
+S	yes	clinical	functional exam	clinical_functional exam	M6	0	29
+S	no	clinical	functional exam	clinical_functional exam	M0	1	30
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	30
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	30
+S	no	clinical	functional exam	clinical_functional exam	M6	1	30
+S	no	clinical	functional exam	clinical_functional exam	M0	1	31
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	31
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	31
+S	no	clinical	functional exam	clinical_functional exam	M6	0	31
+S	yes	clinical	functional exam	clinical_functional exam	M0	1	32
+S	yes	clinical	functional exam	clinical_functional exam	M2	NA	32
+S	yes	clinical	functional exam	clinical_functional exam	M4	NA	32
+S	yes	clinical	functional exam	clinical_functional exam	M6	0	32
+S	no	clinical	functional exam	clinical_functional exam	M0	1	33
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	33
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	33
+S	no	clinical	functional exam	clinical_functional exam	M6	1	33
+S	no	clinical	functional exam	clinical_functional exam	M0	1	34
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	34
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	34
+S	no	clinical	functional exam	clinical_functional exam	M6	0	34
+S	yes	clinical	functional exam	clinical_functional exam	M0	1	35
+S	yes	clinical	functional exam	clinical_functional exam	M2	NA	35
+S	yes	clinical	functional exam	clinical_functional exam	M4	NA	35
+S	yes	clinical	functional exam	clinical_functional exam	M6	0	35
+S	no	clinical	functional exam	clinical_functional exam	M0	1	36
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	36
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	36
+S	no	clinical	functional exam	clinical_functional exam	M6	1	36
+S	no	clinical	functional exam	clinical_functional exam	M0	1	37
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	37
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	37
+S	no	clinical	functional exam	clinical_functional exam	M6	1	37
+S	no	clinical	functional exam	clinical_functional exam	M0	1	38
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	38
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	38
+S	no	clinical	functional exam	clinical_functional exam	M6	1	38
+S	no	clinical	functional exam	clinical_functional exam	M0	1	39
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	39
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	39
+S	no	clinical	functional exam	clinical_functional exam	M6	1	39
+S	no	clinical	functional exam	clinical_functional exam	M0	1	40
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	40
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	40
+S	no	clinical	functional exam	clinical_functional exam	M6	1	40
+S	no	clinical	functional exam	clinical_functional exam	M0	1	42
+S	no	clinical	functional exam	clinical_functional exam	M2	NA	42
+S	no	clinical	functional exam	clinical_functional exam	M4	NA	42
+S	no	clinical	functional exam	clinical_functional exam	M6	1	42
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	1
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	1
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	1
+S	no	clinical	vascular exam	clinical_vascular exam	M6	1	1
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	2
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	2
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	2
+S	no	clinical	vascular exam	clinical_vascular exam	M6	1	2
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	3
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	3
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	3
+S	no	clinical	vascular exam	clinical_vascular exam	M6	1	3
+S	yes	clinical	vascular exam	clinical_vascular exam	M0	1	4
+S	yes	clinical	vascular exam	clinical_vascular exam	M2	NA	4
+S	yes	clinical	vascular exam	clinical_vascular exam	M4	NA	4
+S	yes	clinical	vascular exam	clinical_vascular exam	M6	0	4
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	5
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	5
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	5
+S	no	clinical	vascular exam	clinical_vascular exam	M6	1	5
+S	yes	clinical	vascular exam	clinical_vascular exam	M0	1	6
+S	yes	clinical	vascular exam	clinical_vascular exam	M2	NA	6
+S	yes	clinical	vascular exam	clinical_vascular exam	M4	NA	6
+S	yes	clinical	vascular exam	clinical_vascular exam	M6	0	6
+S	yes	clinical	vascular exam	clinical_vascular exam	M0	1	7
+S	yes	clinical	vascular exam	clinical_vascular exam	M2	NA	7
+S	yes	clinical	vascular exam	clinical_vascular exam	M4	NA	7
+S	yes	clinical	vascular exam	clinical_vascular exam	M6	0	7
+S	yes	clinical	vascular exam	clinical_vascular exam	M0	1	8
+S	yes	clinical	vascular exam	clinical_vascular exam	M2	NA	8
+S	yes	clinical	vascular exam	clinical_vascular exam	M4	NA	8
+S	yes	clinical	vascular exam	clinical_vascular exam	M6	0	8
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	9
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	9
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	9
+S	no	clinical	vascular exam	clinical_vascular exam	M6	1	9
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	10
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	10
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	10
+S	no	clinical	vascular exam	clinical_vascular exam	M6	0	10
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	11
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	11
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	11
+S	no	clinical	vascular exam	clinical_vascular exam	M6	1	11
+S	yes	clinical	vascular exam	clinical_vascular exam	M0	1	12
+S	yes	clinical	vascular exam	clinical_vascular exam	M2	NA	12
+S	yes	clinical	vascular exam	clinical_vascular exam	M4	NA	12
+S	yes	clinical	vascular exam	clinical_vascular exam	M6	0	12
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	13
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	13
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	13
+S	no	clinical	vascular exam	clinical_vascular exam	M6	1	13
+S	yes	clinical	vascular exam	clinical_vascular exam	M0	1	14
+S	yes	clinical	vascular exam	clinical_vascular exam	M2	NA	14
+S	yes	clinical	vascular exam	clinical_vascular exam	M4	NA	14
+S	yes	clinical	vascular exam	clinical_vascular exam	M6	0	14
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	15
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	15
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	15
+S	no	clinical	vascular exam	clinical_vascular exam	M6	1	15
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	16
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	16
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	16
+S	no	clinical	vascular exam	clinical_vascular exam	M6	1	16
+S	yes	clinical	vascular exam	clinical_vascular exam	M0	1	17
+S	yes	clinical	vascular exam	clinical_vascular exam	M2	NA	17
+S	yes	clinical	vascular exam	clinical_vascular exam	M4	NA	17
+S	yes	clinical	vascular exam	clinical_vascular exam	M6	0	17
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	18
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	18
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	18
+S	no	clinical	vascular exam	clinical_vascular exam	M6	1	18
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	19
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	19
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	19
+S	no	clinical	vascular exam	clinical_vascular exam	M6	1	19
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	20
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	20
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	20
+S	no	clinical	vascular exam	clinical_vascular exam	M6	0	20
+S	yes	clinical	vascular exam	clinical_vascular exam	M0	1	21
+S	yes	clinical	vascular exam	clinical_vascular exam	M2	NA	21
+S	yes	clinical	vascular exam	clinical_vascular exam	M4	NA	21
+S	yes	clinical	vascular exam	clinical_vascular exam	M6	0	21
+S	yes	clinical	vascular exam	clinical_vascular exam	M0	1	22
+S	yes	clinical	vascular exam	clinical_vascular exam	M2	NA	22
+S	yes	clinical	vascular exam	clinical_vascular exam	M4	NA	22
+S	yes	clinical	vascular exam	clinical_vascular exam	M6	0	22
+S	yes	clinical	vascular exam	clinical_vascular exam	M0	1	23
+S	yes	clinical	vascular exam	clinical_vascular exam	M2	NA	23
+S	yes	clinical	vascular exam	clinical_vascular exam	M4	NA	23
+S	yes	clinical	vascular exam	clinical_vascular exam	M6	0	23
+S	yes	clinical	vascular exam	clinical_vascular exam	M0	1	24
+S	yes	clinical	vascular exam	clinical_vascular exam	M2	NA	24
+S	yes	clinical	vascular exam	clinical_vascular exam	M4	NA	24
+S	yes	clinical	vascular exam	clinical_vascular exam	M6	0	24
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	25
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	25
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	25
+S	no	clinical	vascular exam	clinical_vascular exam	M6	1	25
+S	yes	clinical	vascular exam	clinical_vascular exam	M0	1	26
+S	yes	clinical	vascular exam	clinical_vascular exam	M2	NA	26
+S	yes	clinical	vascular exam	clinical_vascular exam	M4	NA	26
+S	yes	clinical	vascular exam	clinical_vascular exam	M6	0	26
+S	yes	clinical	vascular exam	clinical_vascular exam	M0	1	27
+S	yes	clinical	vascular exam	clinical_vascular exam	M2	NA	27
+S	yes	clinical	vascular exam	clinical_vascular exam	M4	NA	27
+S	yes	clinical	vascular exam	clinical_vascular exam	M6	0	27
+S	yes	clinical	vascular exam	clinical_vascular exam	M0	1	28
+S	yes	clinical	vascular exam	clinical_vascular exam	M2	NA	28
+S	yes	clinical	vascular exam	clinical_vascular exam	M4	NA	28
+S	yes	clinical	vascular exam	clinical_vascular exam	M6	0	28
+S	yes	clinical	vascular exam	clinical_vascular exam	M0	1	29
+S	yes	clinical	vascular exam	clinical_vascular exam	M2	NA	29
+S	yes	clinical	vascular exam	clinical_vascular exam	M4	NA	29
+S	yes	clinical	vascular exam	clinical_vascular exam	M6	0	29
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	30
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	30
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	30
+S	no	clinical	vascular exam	clinical_vascular exam	M6	0	30
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	31
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	31
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	31
+S	no	clinical	vascular exam	clinical_vascular exam	M6	1	31
+S	yes	clinical	vascular exam	clinical_vascular exam	M0	1	32
+S	yes	clinical	vascular exam	clinical_vascular exam	M2	NA	32
+S	yes	clinical	vascular exam	clinical_vascular exam	M4	NA	32
+S	yes	clinical	vascular exam	clinical_vascular exam	M6	0	32
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	33
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	33
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	33
+S	no	clinical	vascular exam	clinical_vascular exam	M6	1	33
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	34
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	34
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	34
+S	no	clinical	vascular exam	clinical_vascular exam	M6	1	34
+S	yes	clinical	vascular exam	clinical_vascular exam	M0	1	35
+S	yes	clinical	vascular exam	clinical_vascular exam	M2	NA	35
+S	yes	clinical	vascular exam	clinical_vascular exam	M4	NA	35
+S	yes	clinical	vascular exam	clinical_vascular exam	M6	0	35
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	36
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	36
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	36
+S	no	clinical	vascular exam	clinical_vascular exam	M6	1	36
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	37
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	37
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	37
+S	no	clinical	vascular exam	clinical_vascular exam	M6	1	37
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	38
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	38
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	38
+S	no	clinical	vascular exam	clinical_vascular exam	M6	1	38
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	39
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	39
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	39
+S	no	clinical	vascular exam	clinical_vascular exam	M6	0	39
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	40
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	40
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	40
+S	no	clinical	vascular exam	clinical_vascular exam	M6	0	40
+S	no	clinical	vascular exam	clinical_vascular exam	M0	1	42
+S	no	clinical	vascular exam	clinical_vascular exam	M2	NA	42
+S	no	clinical	vascular exam	clinical_vascular exam	M4	NA	42
+S	no	clinical	vascular exam	clinical_vascular exam	M6	1	42
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	1
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	1
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	1
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	1
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	2
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	2
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	2
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	2
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	3
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	3
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	3
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	3
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	4
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	4
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M4	0	4
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M6	0	4
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	5
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	5
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	5
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	5
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	6
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	6
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	6
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M6	0	6
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	7
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	7
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M4	0	7
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M6	0	7
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	8
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	8
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	8
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M6	0	8
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	9
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	9
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	9
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	9
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	10
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	10
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	10
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	10
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	11
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	11
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	11
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	11
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	12
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	12
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M4	0	12
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M6	0	12
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	13
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	13
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	13
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	13
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	14
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	14
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	14
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M6	0	14
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	15
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	15
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	0	15
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	0	15
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	16
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	16
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	16
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	16
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	17
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	17
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	17
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M6	0	17
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	18
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	18
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	18
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	18
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	19
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	19
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	19
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	19
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	20
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	20
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	20
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	20
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	21
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	21
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M4	0	21
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M6	0	21
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	22
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	22
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	22
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M6	0	22
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	23
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	23
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M4	0	23
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M6	0	23
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	24
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	24
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M4	0	24
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M6	0	24
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	25
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	25
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	25
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	25
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	26
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	26
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	26
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M6	0	26
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	27
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	27
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M4	0	27
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M6	0	27
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	28
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	28
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M4	0	28
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M6	0	28
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	29
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	29
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	29
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M6	0	29
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	30
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	30
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	30
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	30
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	31
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	31
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	31
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	31
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	32
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M2	0	32
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M4	0	32
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M6	0	32
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	33
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	33
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	33
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	33
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	34
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	34
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	34
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	34
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	35
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	35
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M4	0	35
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M6	0	35
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	36
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	36
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	36
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	36
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	37
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	37
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	37
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	37
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	38
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	38
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	38
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	38
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	39
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	39
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	39
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	39
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	40
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	1	40
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	1	40
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	40
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	41
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M2	0	41
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M4	0	41
+S	yes	clinical	cotinine measurements	clinical_cotinine measurements	M6	0	41
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M0	1	42
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M2	0	42
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M4	0	42
+S	no	clinical	cotinine measurements	clinical_cotinine measurements	M6	1	42

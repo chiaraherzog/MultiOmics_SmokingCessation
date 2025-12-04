@@ -1,0 +1,2342 @@
+assay1	assay2	cor
+Routine
+bloods	Blood
+methylation	0.29968027505048
+Routine
+bloods	Blood
+methylation	0.276050652340873
+Routine
+bloods	Flow cytometry:
+immune cells	0.288021522746455
+Routine
+bloods	Flow cytometry:
+immune cells	0.372904483192363
+Routine
+bloods	Flow cytometry:
+immune cells	0.320465667844008
+Routine
+bloods	Flow cytometry:
+immune cells	0.616817004330212
+Routine
+bloods	Saliva
+microbiome	0.303569408463371
+Routine
+bloods	Blood
+methylation	0.283319624574011
+Routine
+bloods	Buccal
+methylation	0.270892865707029
+Routine
+bloods	Clinical
+measures	0.578327144230207
+Routine
+bloods	Saliva
+metabolome	-0.272763745002046
+Routine
+bloods	Body
+composition	-0.374376772045354
+Routine
+bloods	Buccal
+methylation	0.274166733311428
+Routine
+bloods	Buccal
+methylation	-0.310244568287418
+Routine
+bloods	Flow cytometry:
+immune cells	0.263157405560858
+Routine
+bloods	Flow cytometry:
+immune cells	-0.280231721417849
+Routine
+bloods	Saliva
+microbiome	0.275552653613102
+Routine
+bloods	Saliva
+microbiome	-0.342843503986978
+Routine
+bloods	Saliva
+metabolome	-0.333133455190929
+Routine
+bloods	Saliva
+metabolome	0.298265349148839
+Routine
+bloods	Stool
+microbiome	0.286244210144141
+Routine
+bloods	Blood
+methylation	0.286191944749718
+Routine
+bloods	Blood
+methylation	-0.281141821805552
+Routine
+bloods	Clinical
+measures	0.588186182305266
+Routine
+bloods	Saliva
+microbiome	0.298777212206318
+Routine
+bloods	Stool
+microbiome	0.283789172159957
+Routine
+bloods	Body
+composition	-0.346427550816368
+Routine
+bloods	Blood
+methylation	-0.308209394658513
+Routine
+bloods	Blood
+methylation	-0.269037025906734
+Routine
+bloods	Buccal
+methylation	0.293275402769386
+Routine
+bloods	Saliva
+microbiome	-0.290917770254897
+Routine
+bloods	Saliva
+microbiome	0.277284653199248
+Routine
+bloods	Saliva
+metabolome	-0.283927021175007
+Routine
+bloods	Body
+composition	-0.40427537235303
+Routine
+bloods	Flow cytometry:
+immune cells	-0.287611786721036
+Routine
+bloods	Saliva
+microbiome	-0.332558216136319
+Routine
+bloods	Saliva
+metabolome	0.293061147685846
+Routine
+bloods	Saliva
+metabolome	-0.26870476571682
+Routine
+bloods	Blood
+methylation	0.289275099658822
+Routine
+bloods	Blood
+methylation	0.427160640533023
+Routine
+bloods	Blood
+methylation	0.314225795848613
+Routine
+bloods	Clinical
+measures	-0.571040461188761
+Routine
+bloods	Clinical
+measures	-0.647629890410608
+Routine
+bloods	Saliva
+microbiome	-0.266121626561579
+Routine
+bloods	Saliva
+microbiome	-0.277724651629058
+Routine
+bloods	Saliva
+microbiome	-0.320687491977239
+Routine
+bloods	Stool
+microbiome	-0.316041311030909
+Routine
+bloods	Urine
+metabolome	-0.268317911613225
+Routine
+bloods	Urine
+metabolome	0.31404694311647
+Routine
+bloods	Urine
+metabolome	-0.265804509901485
+Routine
+bloods	Blood
+methylation	0.279126026859845
+Routine
+bloods	Buccal
+methylation	-0.294934449826454
+Routine
+bloods	Flow cytometry:
+immune cells	0.288903326911434
+Routine
+bloods	Flow cytometry:
+immune cells	0.269730249034535
+Routine
+bloods	Flow cytometry:
+immune cells	0.358095720613599
+Routine
+bloods	Flow cytometry:
+immune cells	-0.277338983845856
+Routine
+bloods	Flow cytometry:
+immune cells	0.276160242662552
+Routine
+bloods	Flow cytometry:
+immune cells	0.385412528831588
+Routine
+bloods	Flow cytometry:
+immune cells	0.369006596258327
+Routine
+bloods	Saliva
+metabolome	-0.271778079673847
+Routine
+bloods	Flow cytometry:
+immune cells	-0.29293507642212
+Routine
+bloods	Flow cytometry:
+immune cells	0.298494396689197
+Routine
+bloods	Flow cytometry:
+immune cells	0.306881442108525
+Routine
+bloods	Flow cytometry:
+immune cells	0.344460414129703
+Routine
+bloods	Clinical
+measures	-0.574642378009852
+Routine
+bloods	Buccal
+methylation	0.276608459009031
+Routine
+bloods	Buccal
+methylation	0.289802559545035
+Routine
+bloods	Clinical
+measures	0.645423354680622
+Routine
+bloods	Blood
+methylation	-0.349671569756548
+Routine
+bloods	Flow cytometry:
+immune cells	-0.263591508783355
+Routine
+bloods	Flow cytometry:
+immune cells	-0.287104500758824
+Routine
+bloods	Flow cytometry:
+immune cells	0.271925418880276
+Routine
+bloods	Flow cytometry:
+immune cells	0.409483843662477
+Routine
+bloods	Flow cytometry:
+immune cells	0.296868679672566
+Routine
+bloods	Stool
+microbiome	-0.30326987791253
+Routine
+bloods	Blood
+methylation	0.5532848748161
+Routine
+bloods	Blood
+methylation	0.448806173575458
+Routine
+bloods	Blood
+methylation	0.920982769431137
+Routine
+bloods	Blood
+methylation	-0.40727133034971
+Routine
+bloods	Blood
+methylation	-0.476437900118568
+Routine
+bloods	Blood
+methylation	0.362589284272976
+Routine
+bloods	Blood
+methylation	0.455008355481817
+Routine
+bloods	Flow cytometry:
+immune cells	-0.296010792485331
+Routine
+bloods	Flow cytometry:
+immune cells	0.264230923132519
+Routine
+bloods	Flow cytometry:
+immune cells	-0.31301586781873
+Routine
+bloods	Saliva
+metabolome	-0.339673815238132
+Routine
+bloods	Urine
+metabolome	0.296412838957504
+Routine
+bloods	Blood
+methylation	-0.292958750550348
+Routine
+bloods	Flow cytometry:
+immune cells	0.283656021291091
+Routine
+bloods	Saliva
+metabolome	-0.288335348966659
+Body
+composition	Blood
+methylation	-0.313044859518295
+Body
+composition	Saliva
+microbiome	0.274236674856961
+Body
+composition	Stool
+microbiome	-0.274419985266436
+Body
+composition	Stool
+microbiome	-0.300806080518245
+Body
+composition	Blood
+methylation	-0.381397177028539
+Body
+composition	Urine
+metabolome	-0.376182454407782
+Body
+composition	Saliva
+microbiome	-0.311683850437213
+Body
+composition	Saliva
+microbiome	-0.382628710462415
+Body
+composition	Saliva
+microbiome	0.319049496408239
+Blood
+methylation	Buccal
+methylation	0.270154629804456
+Blood
+methylation	Flow cytometry:
+immune cells	-0.278101319943987
+Blood
+methylation	Clinical
+measures	-0.592297444296759
+Blood
+methylation	Saliva
+microbiome	0.286678267030132
+Blood
+methylation	Urine
+metabolome	-0.386097837179389
+Blood
+methylation	Urine
+metabolome	-0.311103610985386
+Blood
+methylation	Flow cytometry:
+immune cells	0.266191917881981
+Blood
+methylation	Saliva
+microbiome	-0.275281062544531
+Blood
+methylation	Clinical
+measures	-0.609472062706332
+Blood
+methylation	Clinical
+measures	-0.622838163061514
+Blood
+methylation	Urine
+metabolome	-0.28066503983242
+Blood
+methylation	Flow cytometry:
+immune cells	0.29723921490655
+Blood
+methylation	Flow cytometry:
+immune cells	0.273422871183799
+Blood
+methylation	Flow cytometry:
+immune cells	0.341762161729208
+Blood
+methylation	Clinical
+measures	0.691296959006455
+Blood
+methylation	Clinical
+measures	0.685351427488109
+Blood
+methylation	Saliva
+microbiome	-0.284210261647525
+Blood
+methylation	Saliva
+microbiome	-0.357141310454688
+Blood
+methylation	Stool
+microbiome	0.312609537985211
+Blood
+methylation	Saliva
+microbiome	-0.26979485418347
+Blood
+methylation	Buccal
+methylation	0.270865159415746
+Blood
+methylation	Flow cytometry:
+immune cells	-0.281589134638071
+Blood
+methylation	Saliva
+metabolome	-0.293770933466084
+Blood
+methylation	Stool
+microbiome	0.286443469390695
+Blood
+methylation	Stool
+microbiome	0.33456509544766
+Blood
+methylation	Urine
+metabolome	0.358857379854148
+Blood
+methylation	Urine
+metabolome	-0.31039788163287
+Blood
+methylation	Cervical
+methylation	0.278737463301833
+Blood
+methylation	Cervical
+methylation	0.298725700512377
+Blood
+methylation	Flow cytometry:
+immune cells	-0.268218180864413
+Blood
+methylation	Clinical
+measures	-0.602658664019738
+Blood
+methylation	Urine
+metabolome	-0.273949548741652
+Blood
+methylation	Flow cytometry:
+immune cells	-0.271560272605735
+Blood
+methylation	Flow cytometry:
+immune cells	-0.267232893773395
+Blood
+methylation	Flow cytometry:
+immune cells	-0.289205458826308
+Blood
+methylation	Saliva
+microbiome	0.272480665082805
+Blood
+methylation	Saliva
+microbiome	0.320159499791125
+Blood
+methylation	Saliva
+metabolome	-0.312546454758606
+Blood
+methylation	Urine
+metabolome	-0.303639193599882
+Blood
+methylation	Saliva
+metabolome	-0.333942065206605
+Blood
+methylation	Saliva
+metabolome	-0.293922450274851
+Blood
+methylation	Stool
+microbiome	0.295040992716272
+Blood
+methylation	Urine
+metabolome	-0.312314650115197
+Blood
+methylation	Urine
+metabolome	-0.299912609170818
+Blood
+methylation	Flow cytometry:
+immune cells	-0.274399659607741
+Blood
+methylation	Flow cytometry:
+immune cells	-0.279162354342849
+Blood
+methylation	Saliva
+microbiome	0.313462871307143
+Blood
+methylation	Saliva
+microbiome	0.278389520849384
+Blood
+methylation	Saliva
+microbiome	-0.291130161564485
+Blood
+methylation	Saliva
+metabolome	-0.316798023394049
+Blood
+methylation	Stool
+microbiome	0.303174453172974
+Blood
+methylation	Urine
+metabolome	-0.359375449419945
+Blood
+methylation	Saliva
+metabolome	-0.332584866391747
+Blood
+methylation	Clinical
+measures	-0.580542135187321
+Blood
+methylation	Cervical
+methylation	0.270861959315847
+Blood
+methylation	Cervical
+methylation	0.293418178309158
+Blood
+methylation	Flow cytometry:
+immune cells	-0.30532314752253
+Blood
+methylation	Flow cytometry:
+immune cells	0.32584070115901
+Blood
+methylation	Clinical
+measures	-0.586565249406415
+Blood
+methylation	Buccal
+methylation	0.274308835027267
+Blood
+methylation	Cervical
+methylation	0.279982671735065
+Blood
+methylation	Flow cytometry:
+immune cells	0.297408354427893
+Blood
+methylation	Flow cytometry:
+immune cells	-0.270859484948688
+Blood
+methylation	Saliva
+microbiome	0.320962244293938
+Blood
+methylation	Cervical
+methylation	0.26997669038861
+Blood
+methylation	Cervical
+methylation	0.304075867980927
+Blood
+methylation	Flow cytometry:
+immune cells	-0.270922181620534
+Blood
+methylation	Clinical
+measures	-0.635869826543779
+Blood
+methylation	Urine
+metabolome	-0.277684565058603
+Blood
+methylation	Urine
+metabolome	-0.274476253486944
+Blood
+methylation	Urine
+metabolome	-0.275871824707359
+Blood
+methylation	Cervical
+methylation	0.281214017725472
+Blood
+methylation	Flow cytometry:
+immune cells	0.345301931611399
+Blood
+methylation	Flow cytometry:
+immune cells	0.29944342021592
+Blood
+methylation	Flow cytometry:
+immune cells	-0.301014456077068
+Blood
+methylation	Flow cytometry:
+immune cells	-0.274300274780939
+Blood
+methylation	Flow cytometry:
+immune cells	-0.292193400353759
+Blood
+methylation	Urine
+metabolome	0.287717482819897
+Blood
+methylation	Flow cytometry:
+immune cells	-0.276747857513605
+Blood
+methylation	Clinical
+measures	-0.593804880762581
+Blood
+methylation	Clinical
+measures	-0.580495241139688
+Blood
+methylation	Flow cytometry:
+immune cells	0.308999754186465
+Blood
+methylation	Saliva
+microbiome	-0.343263643934397
+Blood
+methylation	Flow cytometry:
+immune cells	0.277887381633806
+Blood
+methylation	Saliva
+microbiome	-0.308113722005526
+Blood
+methylation	Saliva
+metabolome	-0.279441269862076
+Blood
+methylation	Saliva
+metabolome	-0.278080158381361
+Blood
+methylation	Stool
+microbiome	0.333954785112303
+Blood
+methylation	Stool
+microbiome	0.292766638042988
+Blood
+methylation	Buccal
+methylation	0.316463994105653
+Blood
+methylation	Flow cytometry:
+immune cells	0.325799649038803
+Blood
+methylation	Flow cytometry:
+immune cells	0.335745616101819
+Blood
+methylation	Clinical
+measures	0.718929930540051
+Blood
+methylation	Clinical
+measures	0.733034363613469
+Blood
+methylation	Stool
+microbiome	0.29728474824223
+Buccal
+methylation	Flow cytometry:
+immune cells	0.533460942008556
+Buccal
+methylation	Saliva
+microbiome	-0.34618554856299
+Buccal
+methylation	Stool
+microbiome	0.334281646963966
+Buccal
+methylation	Stool
+microbiome	-0.32534082148253
+Buccal
+methylation	Urine
+metabolome	-0.360284787251767
+Buccal
+methylation	Flow cytometry:
+immune cells	0.5558033807589
+Buccal
+methylation	Saliva
+microbiome	-0.42196486557092
+Buccal
+methylation	Stool
+microbiome	0.443165669436558
+Buccal
+methylation	Stool
+microbiome	-0.32635412605847
+Buccal
+methylation	Flow cytometry:
+immune cells	0.517604561369419
+Buccal
+methylation	Saliva
+microbiome	-0.37871311497334
+Buccal
+methylation	Stool
+microbiome	0.392373075431651
+Buccal
+methylation	Stool
+microbiome	-0.281662466073558
+Buccal
+methylation	Flow cytometry:
+immune cells	0.471089608376094
+Buccal
+methylation	Saliva
+microbiome	-0.334474783354741
+Buccal
+methylation	Stool
+microbiome	0.36120924392532
+Buccal
+methylation	Flow cytometry:
+immune cells	-0.327351043288511
+Buccal
+methylation	Clinical
+measures	0.625159104482477
+Buccal
+methylation	Clinical
+measures	0.614357352422983
+Buccal
+methylation	Saliva
+microbiome	-0.279958636231242
+Buccal
+methylation	Saliva
+microbiome	-0.276367798381049
+Buccal
+methylation	Saliva
+microbiome	0.272477333567922
+Buccal
+methylation	Saliva
+metabolome	-0.312283755223248
+Buccal
+methylation	Cervical
+methylation	0.300526236083947
+Buccal
+methylation	Saliva
+metabolome	0.271564317107652
+Buccal
+methylation	Urine
+metabolome	-0.299416756962944
+Buccal
+methylation	Urine
+metabolome	-0.330876908630863
+Buccal
+methylation	Urine
+metabolome	-0.269185454792259
+Buccal
+methylation	Flow cytometry:
+immune cells	-0.273085479109024
+Buccal
+methylation	Urine
+metabolome	0.345386009585751
+Buccal
+methylation	Flow cytometry:
+immune cells	-0.276539862426653
+Buccal
+methylation	Flow cytometry:
+immune cells	0.296128685163306
+Buccal
+methylation	Saliva
+microbiome	-0.362600937478965
+Buccal
+methylation	Saliva
+metabolome	-0.296605860503345
+Buccal
+methylation	Stool
+microbiome	0.326131020442683
+Buccal
+methylation	Urine
+metabolome	-0.266024504596228
+Buccal
+methylation	Urine
+metabolome	-0.277591470515386
+Buccal
+methylation	Clinical
+measures	0.585681718524905
+Buccal
+methylation	Saliva
+metabolome	0.325368023459928
+Buccal
+methylation	Stool
+microbiome	0.288671594106716
+Buccal
+methylation	Flow cytometry:
+immune cells	-0.484844991532891
+Buccal
+methylation	Flow cytometry:
+immune cells	0.283275588974693
+Buccal
+methylation	Saliva
+metabolome	-0.308436561005147
+Buccal
+methylation	Stool
+microbiome	-0.355617775806154
+Buccal
+methylation	Stool
+microbiome	-0.281781611115128
+Buccal
+methylation	Stool
+microbiome	0.348988753300359
+Buccal
+methylation	Stool
+microbiome	0.296916629779423
+Buccal
+methylation	Urine
+metabolome	0.410775007221608
+Buccal
+methylation	Flow cytometry:
+immune cells	0.334600230976082
+Buccal
+methylation	Clinical
+measures	0.581361406665875
+Buccal
+methylation	Saliva
+microbiome	0.287989047382931
+Buccal
+methylation	Saliva
+microbiome	0.267302332105696
+Buccal
+methylation	Saliva
+microbiome	-0.271800334930797
+Buccal
+methylation	Saliva
+metabolome	0.294054871556905
+Buccal
+methylation	Stool
+microbiome	0.277611707345299
+Buccal
+methylation	Urine
+metabolome	0.333283081352706
+Buccal
+methylation	Urine
+metabolome	0.283914426643792
+Buccal
+methylation	Urine
+metabolome	0.279056003038175
+Buccal
+methylation	Urine
+metabolome	-0.282486114058013
+Buccal
+methylation	Urine
+metabolome	0.267476179284257
+Buccal
+methylation	Saliva
+metabolome	-0.276246124283617
+Buccal
+methylation	Urine
+metabolome	0.336820147677208
+Buccal
+methylation	Saliva
+microbiome	-0.281746732077102
+Buccal
+methylation	Saliva
+metabolome	0.353612134246175
+Buccal
+methylation	Saliva
+metabolome	-0.286466403626453
+Buccal
+methylation	Stool
+microbiome	-0.286126809054895
+Cervical
+methylation	Flow cytometry:
+immune cells	-0.370496682214568
+Cervical
+methylation	Clinical
+measures	0.616787581067534
+Cervical
+methylation	Saliva
+metabolome	0.2864539845054
+Cervical
+methylation	Saliva
+metabolome	0.281681585246634
+Cervical
+methylation	Saliva
+microbiome	-0.274868950132876
+Cervical
+methylation	Stool
+microbiome	0.274535472422795
+Cervical
+methylation	Stool
+microbiome	-0.290655854402723
+Cervical
+methylation	Stool
+microbiome	-0.340438578156932
+Cervical
+methylation	Flow cytometry:
+immune cells	-0.272650621700994
+Cervical
+methylation	Flow cytometry:
+immune cells	0.267196173739359
+Cervical
+methylation	Clinical
+measures	0.58054040749857
+Cervical
+methylation	Saliva
+metabolome	0.349361952690976
+Cervical
+methylation	Saliva
+metabolome	0.34593565589831
+Cervical
+methylation	Flow cytometry:
+immune cells	0.337535077797322
+Cervical
+methylation	Flow cytometry:
+immune cells	-0.264735151203298
+Cervical
+methylation	Saliva
+metabolome	0.279360817010778
+Cervical
+methylation	Saliva
+metabolome	-0.272222260188467
+Cervical
+methylation	Saliva
+metabolome	0.273849920303909
+Cervical
+methylation	Flow cytometry:
+immune cells	0.343178132366635
+Cervical
+methylation	Saliva
+metabolome	0.270130034871642
+Cervical
+methylation	Saliva
+metabolome	-0.270891995036423
+Cervical
+methylation	Clinical
+measures	0.588246119794939
+Cervical
+methylation	Clinical
+measures	0.702563015094515
+Cervical
+methylation	Urine
+metabolome	0.316862721249438
+Cervical
+methylation	Flow cytometry:
+immune cells	0.338001429663389
+Cervical
+methylation	Clinical
+measures	0.582257220507275
+Cervical
+methylation	Stool
+microbiome	0.306864786919253
+Cervical
+methylation	Stool
+microbiome	-0.279747622900281
+Cervical
+methylation	Stool
+microbiome	-0.321558718351392
+Cervical
+methylation	Urine
+metabolome	0.278262380502035
+Cervical
+methylation	Flow cytometry:
+immune cells	0.381048417613839
+Cervical
+methylation	Flow cytometry:
+immune cells	0.338051894169646
+Cervical
+methylation	Saliva
+microbiome	-0.27074799561865
+Cervical
+methylation	Stool
+microbiome	0.329134633992413
+Cervical
+methylation	Stool
+microbiome	-0.292691919539304
+Cervical
+methylation	Clinical
+measures	-0.619721363346797
+Cervical
+methylation	Saliva
+microbiome	-0.286034541913877
+Cervical
+methylation	Stool
+microbiome	-0.313303967240463
+Cervical
+methylation	Flow cytometry:
+immune cells	-0.35629080805586
+Cervical
+methylation	Flow cytometry:
+immune cells	-0.278742323449687
+Cervical
+methylation	Clinical
+measures	-0.588636335147589
+Cervical
+methylation	Clinical
+measures	-0.620851804289857
+Cervical
+methylation	Saliva
+metabolome	0.270933143949054
+Cervical
+methylation	Saliva
+metabolome	-0.281039425743734
+Cervical
+methylation	Saliva
+metabolome	-0.305511750502458
+Cervical
+methylation	Flow cytometry:
+immune cells	0.428829515211467
+Cervical
+methylation	Flow cytometry:
+immune cells	0.384522027825964
+Cervical
+methylation	Stool
+microbiome	0.308327205508961
+Cervical
+methylation	Clinical
+measures	0.672371217636715
+Cervical
+methylation	Saliva
+microbiome	0.287735522341795
+Cervical
+methylation	Stool
+microbiome	0.27357812857741
+Cervical
+methylation	Stool
+microbiome	-0.351468997692426
+Cervical
+methylation	Saliva
+microbiome	0.266019757633282
+Cervical
+methylation	Saliva
+metabolome	-0.312717260079034
+Cervical
+methylation	Saliva
+microbiome	-0.302812499144654
+Cervical
+methylation	Clinical
+measures	0.657843933618865
+Cervical
+methylation	Stool
+microbiome	-0.330092605529984
+Cervical
+methylation	Urine
+metabolome	-0.271325645059369
+Cervical
+methylation	Flow cytometry:
+immune cells	-0.360918192027829
+Cervical
+methylation	Saliva
+microbiome	-0.34460240609755
+Cervical
+methylation	Urine
+metabolome	-0.454641139229835
+Cervical
+methylation	Saliva
+microbiome	-0.264274304306671
+Cervical
+methylation	Stool
+microbiome	-0.310596941622594
+Cervical
+methylation	Saliva
+metabolome	0.306509738660279
+Cervical
+methylation	Stool
+microbiome	0.272297323141998
+Cervical
+methylation	Clinical
+measures	-0.59629080954685
+Urine
+metabolome	Clinical
+measures	0.605534906228221
+Urine
+metabolome	Saliva
+microbiome	0.303248612717132
+Urine
+metabolome	Saliva
+microbiome	0.338225539165667
+Urine
+metabolome	Saliva
+microbiome	-0.365910785025592
+Urine
+metabolome	Saliva
+microbiome	-0.270030279265823
+Urine
+metabolome	Stool
+microbiome	-0.274522370405548
+Urine
+metabolome	Stool
+microbiome	0.34849006093747
+Urine
+metabolome	Stool
+microbiome	0.450891617877454
+Urine
+metabolome	Urine
+metabolome	0.283324688045078
+Urine
+metabolome	Urine
+metabolome	0.302012584612411
+Urine
+metabolome	Urine
+metabolome	0.276488351309873
+Urine
+metabolome	Urine
+metabolome	0.338970295116156
+Flow cytometry:
+immune cells	Stool
+microbiome	0.342859614667384
+Flow cytometry:
+immune cells	Urine
+metabolome	0.334301719925214
+Flow cytometry:
+immune cells	Clinical
+measures	0.602718223983932
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.293362855031247
+Flow cytometry:
+immune cells	Urine
+metabolome	0.322089109816487
+Flow cytometry:
+immune cells	Urine
+metabolome	0.288986968126243
+Flow cytometry:
+immune cells	Clinical
+measures	0.564921632562453
+Flow cytometry:
+immune cells	Saliva
+metabolome	0.277849303307861
+Flow cytometry:
+immune cells	Urine
+metabolome	-0.273646895914019
+Flow cytometry:
+immune cells	Saliva
+microbiome	-0.266051303280778
+Flow cytometry:
+immune cells	Stool
+microbiome	0.312277293335537
+Flow cytometry:
+immune cells	Clinical
+measures	0.590102808639887
+Flow cytometry:
+immune cells	Clinical
+measures	0.652412236207679
+Flow cytometry:
+immune cells	Saliva
+microbiome	-0.308015193433202
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.309809088985701
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.2749235885432
+Flow cytometry:
+immune cells	Urine
+metabolome	0.288578226940895
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.278279950818164
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.291723236857524
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.271098183106166
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.319183086714986
+Flow cytometry:
+immune cells	Urine
+metabolome	0.310415354683074
+Flow cytometry:
+immune cells	Clinical
+measures	-0.58532401730635
+Flow cytometry:
+immune cells	Saliva
+microbiome	-0.295893826181972
+Flow cytometry:
+immune cells	Stool
+microbiome	0.278155243560129
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.30988500720328
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.295733634471165
+Flow cytometry:
+immune cells	Saliva
+metabolome	0.286281528565486
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.283989223939978
+Flow cytometry:
+immune cells	Clinical
+measures	0.643860019514085
+Flow cytometry:
+immune cells	Saliva
+microbiome	-0.26886681100325
+Flow cytometry:
+immune cells	Saliva
+metabolome	0.33558386555223
+Flow cytometry:
+immune cells	Saliva
+metabolome	0.322967013282765
+Flow cytometry:
+immune cells	Saliva
+metabolome	0.280658643060384
+Flow cytometry:
+immune cells	Saliva
+metabolome	0.342469417063685
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.344093345725748
+Flow cytometry:
+immune cells	Clinical
+measures	-0.662901205379436
+Flow cytometry:
+immune cells	Clinical
+measures	0.562246482164203
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.295792551150449
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.290416404490791
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.352042565701222
+Flow cytometry:
+immune cells	Stool
+microbiome	0.332531229206966
+Flow cytometry:
+immune cells	Clinical
+measures	0.644765728382943
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.28866956530456
+Flow cytometry:
+immune cells	Clinical
+measures	0.713524569261557
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.285961722098548
+Flow cytometry:
+immune cells	Stool
+microbiome	0.292006561373592
+Flow cytometry:
+immune cells	Urine
+metabolome	-0.322340347367323
+Flow cytometry:
+immune cells	Urine
+metabolome	-0.278386511010823
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.326219912785768
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.331075668660356
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.350408153275709
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.292365629963822
+Flow cytometry:
+immune cells	Saliva
+microbiome	-0.268622489139174
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.279039874735522
+Flow cytometry:
+immune cells	Clinical
+measures	-0.75050109252931
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.272393655582151
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.263980912749459
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.294762197947233
+Flow cytometry:
+immune cells	Stool
+microbiome	0.376934613350371
+Flow cytometry:
+immune cells	Saliva
+metabolome	0.293483207230161
+Flow cytometry:
+immune cells	Saliva
+metabolome	0.298545080073613
+Flow cytometry:
+immune cells	Clinical
+measures	-0.57349296351064
+Flow cytometry:
+immune cells	Clinical
+measures	0.573580029567012
+Flow cytometry:
+immune cells	Clinical
+measures	0.751555475921509
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.299692655179434
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.314246146028462
+Flow cytometry:
+immune cells	Clinical
+measures	-0.572399876465154
+Flow cytometry:
+immune cells	Clinical
+measures	0.59273155663729
+Flow cytometry:
+immune cells	Clinical
+measures	0.647179121041897
+Flow cytometry:
+immune cells	Saliva
+microbiome	-0.298142980102505
+Flow cytometry:
+immune cells	Saliva
+metabolome	0.317299067291915
+Flow cytometry:
+immune cells	Saliva
+metabolome	0.31122512903767
+Flow cytometry:
+immune cells	Clinical
+measures	-0.567961363677332
+Flow cytometry:
+immune cells	Clinical
+measures	0.641333525530282
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.397040616900466
+Flow cytometry:
+immune cells	Stool
+microbiome	0.271087584144768
+Flow cytometry:
+immune cells	Stool
+microbiome	0.279347003610939
+Flow cytometry:
+immune cells	Clinical
+measures	-0.56337005864088
+Flow cytometry:
+immune cells	Stool
+microbiome	0.286436179627318
+Flow cytometry:
+immune cells	Stool
+microbiome	0.411935343330646
+Flow cytometry:
+immune cells	Stool
+microbiome	0.268752163493956
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.27500528043192
+Flow cytometry:
+immune cells	Stool
+microbiome	0.339595506970694
+Flow cytometry:
+immune cells	Urine
+metabolome	0.266148686953934
+Flow cytometry:
+immune cells	Saliva
+metabolome	0.373252299304951
+Flow cytometry:
+immune cells	Saliva
+metabolome	0.376410070144983
+Flow cytometry:
+immune cells	Stool
+microbiome	0.324810203368124
+Flow cytometry:
+immune cells	Stool
+microbiome	0.361983688181091
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.372249780977248
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.37492346058341
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.319884998023343
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.359573667273651
+Flow cytometry:
+immune cells	Clinical
+measures	0.60606191471318
+Flow cytometry:
+immune cells	Saliva
+metabolome	0.395084834438637
+Flow cytometry:
+immune cells	Stool
+microbiome	0.510655625074182
+Flow cytometry:
+immune cells	Urine
+metabolome	0.372921877739698
+Flow cytometry:
+immune cells	Urine
+metabolome	0.3644797722552
+Flow cytometry:
+immune cells	Clinical
+measures	0.590984465075328
+Flow cytometry:
+immune cells	Clinical
+measures	-0.604034063255459
+Flow cytometry:
+immune cells	Clinical
+measures	0.604020396988403
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.29294116181348
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.348512538811537
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.275558162492169
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.272499803403187
+Flow cytometry:
+immune cells	Saliva
+microbiome	-0.376863865437474
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.30783009747119
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.291222854075144
+Flow cytometry:
+immune cells	Urine
+metabolome	-0.310860645138626
+Flow cytometry:
+immune cells	Clinical
+measures	0.674614576708974
+Flow cytometry:
+immune cells	Clinical
+measures	0.563148676318282
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.278558658078107
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.297671871180203
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.295310120393718
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.464047055141501
+Flow cytometry:
+immune cells	Urine
+metabolome	-0.328301002287436
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.296948013428202
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.272951159590603
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.273485305455937
+Flow cytometry:
+immune cells	Urine
+metabolome	0.291418899504784
+Flow cytometry:
+immune cells	Clinical
+measures	0.591110178059444
+Flow cytometry:
+immune cells	Clinical
+measures	0.606135547883699
+Flow cytometry:
+immune cells	Saliva
+microbiome	-0.283277472082192
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.273012588585544
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.389190913758879
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.322399118617743
+Flow cytometry:
+immune cells	Saliva
+microbiome	-0.355078018989077
+Flow cytometry:
+immune cells	Saliva
+microbiome	-0.286002681103608
+Flow cytometry:
+immune cells	Stool
+microbiome	0.377757927342394
+Flow cytometry:
+immune cells	Urine
+metabolome	0.286288967634776
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.351304590705102
+Flow cytometry:
+immune cells	Clinical
+measures	0.574065981999997
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.270053142856555
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.35891483794796
+Flow cytometry:
+immune cells	Saliva
+microbiome	-0.346631498161291
+Flow cytometry:
+immune cells	Stool
+microbiome	0.309312683985574
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.306891185881859
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.396309527715747
+Flow cytometry:
+immune cells	Clinical
+measures	-0.578462020211575
+Flow cytometry:
+immune cells	Clinical
+measures	-0.573860627251301
+Flow cytometry:
+immune cells	Stool
+microbiome	0.322121674300615
+Flow cytometry:
+immune cells	Clinical
+measures	-0.627567735148122
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.325129493423379
+Flow cytometry:
+immune cells	Stool
+microbiome	0.290041423534557
+Flow cytometry:
+immune cells	Stool
+microbiome	0.326798096656874
+Flow cytometry:
+immune cells	Stool
+microbiome	0.265886788557162
+Flow cytometry:
+immune cells	Clinical
+measures	0.565943140300615
+Flow cytometry:
+immune cells	Clinical
+measures	-0.604900606513356
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.262755915537327
+Flow cytometry:
+immune cells	Saliva
+metabolome	0.315497823237356
+Flow cytometry:
+immune cells	Saliva
+metabolome	0.29276195228244
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.384566689070967
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.309534874416664
+Flow cytometry:
+immune cells	Stool
+microbiome	0.399228424193235
+Flow cytometry:
+immune cells	Clinical
+measures	-0.627169698144243
+Flow cytometry:
+immune cells	Saliva
+microbiome	-0.268799475025726
+Flow cytometry:
+immune cells	Stool
+microbiome	0.27403056103805
+Flow cytometry:
+immune cells	Clinical
+measures	0.626373336465611
+Flow cytometry:
+immune cells	Clinical
+measures	0.91909518164978
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.324092933572612
+Flow cytometry:
+immune cells	Saliva
+microbiome	-0.387031500098044
+Flow cytometry:
+immune cells	Saliva
+microbiome	-0.290447370702048
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.313661991232002
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.285365517809095
+Flow cytometry:
+immune cells	Stool
+microbiome	0.289534076282896
+Flow cytometry:
+immune cells	Urine
+metabolome	-0.31081881470527
+Flow cytometry:
+immune cells	Clinical
+measures	-0.583049405070177
+Flow cytometry:
+immune cells	Saliva
+microbiome	-0.366349457192695
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.348657215010623
+Flow cytometry:
+immune cells	Stool
+microbiome	0.27742731180446
+Flow cytometry:
+immune cells	Stool
+microbiome	0.268175336749692
+Flow cytometry:
+immune cells	Clinical
+measures	0.583087127120581
+Flow cytometry:
+immune cells	Clinical
+measures	0.594466792850041
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.414438953728387
+Flow cytometry:
+immune cells	Urine
+metabolome	-0.279716581656411
+Flow cytometry:
+immune cells	Clinical
+measures	0.638374150413841
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.309255909746189
+Flow cytometry:
+immune cells	Saliva
+microbiome	-0.272470106707913
+Flow cytometry:
+immune cells	Saliva
+microbiome	-0.334649532079866
+Flow cytometry:
+immune cells	Saliva
+microbiome	0.373840872661792
+Flow cytometry:
+immune cells	Saliva
+metabolome	0.275821627025327
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.324568568619897
+Flow cytometry:
+immune cells	Saliva
+metabolome	-0.27168069830506
+Flow cytometry:
+immune cells	Stool
+microbiome	-0.335910244497042
+Flow cytometry:
+immune cells	Urine
+metabolome	-0.350670642502175
+Flow cytometry:
+immune cells	Urine
+metabolome	-0.328198747350184
+Clinical
+measures	Saliva
+metabolome	-0.610127970074264
+Clinical
+measures	Saliva
+metabolome	-0.770263542965901
+Clinical
+measures	Urine
+metabolome	0.58354148449419
+Clinical
+measures	Stool
+microbiome	0.622278475045739
+Clinical
+measures	Saliva
+metabolome	-0.627756807256255
+Clinical
+measures	Urine
+metabolome	0.563427821773351
+Clinical
+measures	Urine
+metabolome	0.591095260024769
+Clinical
+measures	Urine
+metabolome	0.591571776450399
+Clinical
+measures	Immune
+age	0.578977247414052
+Clinical
+measures	Saliva
+microbiome	-0.579586848776865
+Clinical
+measures	Stool
+microbiome	-0.605583097924177
+Clinical
+measures	Urine
+metabolome	0.672352100785415
+Clinical
+measures	Urine
+metabolome	0.632852518845804
+Clinical
+measures	Clinical
+measures	0.650063607728452
+Clinical
+measures	Saliva
+microbiome	0.595294653482976
+Clinical
+measures	Stool
+microbiome	-0.631509854016773
+Clinical
+measures	Clinical
+measures	0.640227771122112
+Clinical
+measures	Clinical
+measures	-0.620762454737918
+Clinical
+measures	Saliva
+microbiome	-0.563969787085602
+Clinical
+measures	Saliva
+microbiome	-0.670156783945175
+Clinical
+measures	Saliva
+microbiome	0.629217316771316
+Clinical
+measures	Clinical
+measures	-0.71140316792756
+Clinical
+measures	Saliva
+microbiome	-0.703616694199695
+Clinical
+measures	Urine
+metabolome	0.640390867280321
+Clinical
+measures	Immune
+age	-0.61125387895231
+Clinical
+measures	Saliva
+microbiome	-0.713699272537425
+Clinical
+measures	Clinical
+measures	0.585809085987948
+Clinical
+measures	Saliva
+microbiome	0.593582591813892
+Clinical
+measures	Saliva
+microbiome	0.604515564844101
+Clinical
+measures	Saliva
+microbiome	0.706917885872111
+Clinical
+measures	Saliva
+microbiome	-0.627695452035242
+Clinical
+measures	Stool
+microbiome	0.60860295040026
+Clinical
+measures	Urine
+metabolome	0.587972404906092
+Clinical
+measures	Urine
+metabolome	0.673119296043682
+Clinical
+measures	Saliva
+microbiome	-0.57373903165694
+Clinical
+measures	Immune
+age	0.635037849382664
+Clinical
+measures	Stool
+microbiome	-0.589126756961928
+Clinical
+measures	Saliva
+microbiome	0.627671134972884
+Clinical
+measures	Stool
+microbiome	0.61470961018187
+Clinical
+measures	Stool
+microbiome	-0.634558183238139
+Clinical
+measures	Urine
+metabolome	0.72748257497329
+Clinical
+measures	Urine
+metabolome	0.673093435276796
+Clinical
+measures	Saliva
+microbiome	-0.58570723933586
+Clinical
+measures	Saliva
+microbiome	-0.679323359282221
+Clinical
+measures	Stool
+microbiome	0.575358292499191
+Clinical
+measures	Saliva
+microbiome	-0.663784429798747
+Clinical
+measures	Urine
+metabolome	0.641861756974872
+Clinical
+measures	Stool
+microbiome	0.721220591441652
+Clinical
+measures	Stool
+microbiome	0.593188712129027
+Clinical
+measures	Urine
+metabolome	-0.573095635898422
+Clinical
+measures	Saliva
+microbiome	-0.890742973869018
+Clinical
+measures	Stool
+microbiome	0.65277846485261
+Clinical
+measures	Stool
+microbiome	-0.693380335324097
+Clinical
+measures	Stool
+microbiome	-0.68501846633451
+Clinical
+measures	Stool
+microbiome	-0.613671801349778
+Clinical
+measures	Stool
+microbiome	0.882137252984173
+Clinical
+measures	Urine
+metabolome	-0.864067593855229
+Clinical
+measures	Saliva
+metabolome	0.628501634596934
+Clinical
+measures	Urine
+metabolome	0.611472775565123
+Clinical
+measures	Saliva
+microbiome	0.725407711714603
+Clinical
+measures	Saliva
+microbiome	-0.573207560630875
+Clinical
+measures	Saliva
+microbiome	-0.585733866892056
+Clinical
+measures	Urine
+metabolome	-0.660601236671801
+Clinical
+measures	Urine
+metabolome	-0.6442861489311
+Clinical
+measures	Urine
+metabolome	0.590944315819056
+Clinical
+measures	Urine
+metabolome	0.562312392370149
+Clinical
+measures	Saliva
+microbiome	-0.671025374181787
+Clinical
+measures	Urine
+metabolome	0.633371967695564
+Clinical
+measures	Saliva
+microbiome	-0.683641649713709
+Clinical
+measures	Saliva
+microbiome	0.638534698716032
+Clinical
+measures	Stool
+microbiome	-0.576894634770139
+Clinical
+measures	Saliva
+microbiome	0.623483950627997
+Clinical
+measures	Stool
+microbiome	0.642778849216479
+Clinical
+measures	Saliva
+metabolome	0.642665269250052
+Clinical
+measures	Saliva
+metabolome	0.654486160734211
+Clinical
+measures	Saliva
+metabolome	0.669564090558561
+Clinical
+measures	Saliva
+metabolome	0.610735590902205
+Clinical
+measures	Saliva
+metabolome	0.648477262848291
+Clinical
+measures	Stool
+microbiome	-0.608801701516183
+Clinical
+measures	Stool
+microbiome	-0.8432925704104
+Clinical
+measures	Urine
+metabolome	0.567212370731636
+Clinical
+measures	Saliva
+metabolome	-0.628018527379192
+Clinical
+measures	Urine
+metabolome	-0.647996909823784
+Clinical
+measures	Urine
+metabolome	-0.587227717493206
+Clinical
+measures	Saliva
+microbiome	0.586709076208824
+Clinical
+measures	Saliva
+metabolome	-0.638614784175872
+Clinical
+measures	Stool
+microbiome	-0.717358850246438
+Clinical
+measures	Urine
+metabolome	0.599820550237689
+Immune
+age	Saliva
+microbiome	0.274467026689329
+Immune
+age	Saliva
+metabolome	-0.352223693020141
+Immune
+age	Saliva
+metabolome	-0.364038015087753
+Immune
+age	Saliva
+metabolome	-0.301970015779698
+Immune
+age	Saliva
+metabolome	-0.309837630110004
+Immune
+age	Saliva
+metabolome	-0.286699718260511
+Immune
+age	Stool
+microbiome	0.286170241314934
+Immune
+age	Urine
+metabolome	0.271462490220407
+ImmuneSMK	Saliva
+metabolome	0.373912287139521
+ImmuneSMK	Saliva
+metabolome	-0.33574848905657
+ImmuneSMK	Saliva
+metabolome	0.378991309986617
+ImmuneSMK	Stool
+microbiome	-0.302287571007725
+ImmuneSMK	Stool
+microbiome	0.331194286290396
+Saliva
+microbiome	Stool
+microbiome	0.275234283261756
+Saliva
+microbiome	Stool
+microbiome	0.275759974405748
+Saliva
+microbiome	Urine
+metabolome	-0.301935403735979
+Saliva
+microbiome	Urine
+metabolome	-0.273240027298078
+Saliva
+microbiome	Urine
+metabolome	-0.413613486025933
+Saliva
+microbiome	Urine
+metabolome	-0.367427169049589
+Saliva
+microbiome	Stool
+microbiome	0.294024455505322
+Saliva
+microbiome	Stool
+microbiome	0.319210383305996
+Saliva
+microbiome	Urine
+metabolome	0.283029729212815
+Saliva
+microbiome	Stool
+microbiome	-0.29964106407652
+Saliva
+microbiome	Urine
+metabolome	-0.264302550907351
+Saliva
+microbiome	Urine
+metabolome	0.326856983390724
+Saliva
+microbiome	Stool
+microbiome	-0.362888045831738
+Saliva
+microbiome	Stool
+microbiome	0.323830033642739
+Saliva
+microbiome	Urine
+metabolome	-0.306873764506638
+Saliva
+microbiome	Saliva
+metabolome	-0.32634345012921
+Saliva
+microbiome	Urine
+metabolome	-0.280874958220526
+Saliva
+microbiome	Stool
+microbiome	-0.366674490285654
+Saliva
+microbiome	Stool
+microbiome	-0.290084017911976
+Saliva
+microbiome	Stool
+microbiome	0.275708405805277
+Saliva
+microbiome	Stool
+microbiome	0.288674915872981
+Saliva
+microbiome	Urine
+metabolome	0.315593096612673
+Saliva
+microbiome	Saliva
+metabolome	-0.408393483662949
+Saliva
+microbiome	Urine
+metabolome	0.275084751722752
+Saliva
+microbiome	Saliva
+metabolome	0.317386960664583
+Saliva
+microbiome	Stool
+microbiome	-0.27707606806142
+Saliva
+microbiome	Stool
+microbiome	-0.311023058847328
+Saliva
+microbiome	Urine
+metabolome	0.267395634650525
+Saliva
+microbiome	Urine
+metabolome	0.306984460316669
+Saliva
+microbiome	Stool
+microbiome	0.267677301330886
+Saliva
+microbiome	Urine
+metabolome	-0.295977729938527
+Saliva
+microbiome	Urine
+metabolome	-0.336687429889906
+Saliva
+microbiome	Urine
+metabolome	-0.29322492636099
+Saliva
+microbiome	Urine
+metabolome	-0.281150135891046
+Saliva
+microbiome	Urine
+metabolome	-0.356174668167027
+Saliva
+microbiome	Stool
+microbiome	0.303886161541953
+Saliva
+microbiome	Stool
+microbiome	-0.442644655963402
+Saliva
+microbiome	Stool
+microbiome	-0.276967339208361
+Saliva
+microbiome	Stool
+microbiome	-0.36755452228002
+Saliva
+microbiome	Stool
+microbiome	-0.353381879460467
+Saliva
+microbiome	Urine
+metabolome	-0.283923254117121
+Saliva
+microbiome	Urine
+metabolome	-0.343287812243984
+Saliva
+microbiome	Saliva
+metabolome	-0.317203468697729
+Saliva
+microbiome	Stool
+microbiome	0.288644397969674
+Saliva
+microbiome	Stool
+microbiome	0.325638198053857
+Saliva
+microbiome	Saliva
+metabolome	-0.282981274640676
+Saliva
+microbiome	Saliva
+metabolome	0.343652156794825
+Saliva
+microbiome	Urine
+metabolome	0.299794653701108
+Saliva
+microbiome	Urine
+metabolome	0.269214617299393
+Saliva
+microbiome	Urine
+metabolome	0.301323908392102
+Saliva
+microbiome	Urine
+metabolome	0.278205092028934
+Saliva
+microbiome	Urine
+metabolome	0.325045347270951
+Saliva
+microbiome	Saliva
+metabolome	-0.274098330668288
+Saliva
+microbiome	Urine
+metabolome	0.300357741047666
+Saliva
+microbiome	Urine
+metabolome	0.336503691492614
+Saliva
+microbiome	Urine
+metabolome	0.340958269570447
+Saliva
+microbiome	Urine
+metabolome	0.26346933868482
+Saliva
+microbiome	Saliva
+metabolome	0.288147544060229
+Saliva
+microbiome	Stool
+microbiome	-0.307493640355361
+Saliva
+microbiome	Stool
+microbiome	-0.418070196520268
+Saliva
+microbiome	Urine
+metabolome	0.41584019917276
+Saliva
+microbiome	Clinical
+measures	0.618686513149685
+Saliva
+microbiome	Urine
+metabolome	-0.301177867127532
+Saliva
+microbiome	Stool
+microbiome	-0.290984786212378
+Saliva
+microbiome	Urine
+metabolome	0.271779940253195
+Saliva
+microbiome	Clinical
+measures	0.62045977103628
+Saliva
+microbiome	Saliva
+metabolome	0.293157124586198
+Saliva
+microbiome	Urine
+metabolome	0.312691072395471
+Saliva
+microbiome	Urine
+metabolome	0.266687454315695
+Saliva
+microbiome	Urine
+metabolome	-0.295669815823988
+Saliva
+microbiome	Saliva
+metabolome	0.346770614678267
+Saliva
+microbiome	Saliva
+metabolome	-0.296218654180425
+Saliva
+microbiome	Urine
+metabolome	-0.292242781530699
+Saliva
+metabolome	Urine
+metabolome	0.311962845323682
+Saliva
+metabolome	Stool
+microbiome	0.302971841986208
+Saliva
+metabolome	Stool
+microbiome	0.444555726072828
+Saliva
+metabolome	Stool
+microbiome	0.363149549943832
+Saliva
+metabolome	Urine
+metabolome	-0.282033452357943
+Saliva
+metabolome	Stool
+microbiome	-0.327247550512727
+Saliva
+metabolome	Stool
+microbiome	0.271954667974213
+Saliva
+metabolome	Urine
+metabolome	0.30971882860119
+Saliva
+metabolome	Stool
+microbiome	-0.301025092410303
+Saliva
+metabolome	Urine
+metabolome	-0.351292256547349
+Saliva
+metabolome	Urine
+metabolome	0.288212356497131
+Saliva
+metabolome	Stool
+microbiome	0.285275838787017
+Saliva
+metabolome	Stool
+microbiome	-0.27452482798586
+Saliva
+metabolome	Stool
+microbiome	0.282701212861524
+Saliva
+metabolome	Urine
+metabolome	0.302176582184287
+Saliva
+metabolome	Stool
+microbiome	0.274226403588802
+Saliva
+metabolome	Urine
+metabolome	0.335798008806752
+Saliva
+metabolome	Stool
+microbiome	-0.275179517384533
+Saliva
+metabolome	Urine
+metabolome	0.294959765383559
+Saliva
+metabolome	Urine
+metabolome	0.276937545509316
+Saliva
+metabolome	Urine
+metabolome	0.304126747423729
+Saliva
+metabolome	Urine
+metabolome	0.280385055075381
+Saliva
+metabolome	Stool
+microbiome	-0.29603048761466
+Saliva
+metabolome	Stool
+microbiome	0.28069068638312
+Saliva
+metabolome	Urine
+metabolome	-0.294484993747537
+Saliva
+metabolome	Stool
+microbiome	-0.274710817715549
+Saliva
+metabolome	Urine
+metabolome	-0.287508848333717
+Saliva
+metabolome	Urine
+metabolome	-0.277432436365402
+Saliva
+metabolome	Urine
+metabolome	-0.269289631692231
+Saliva
+metabolome	Urine
+metabolome	-0.281832652777029
+Saliva
+metabolome	Urine
+metabolome	-0.328234239301041
+Saliva
+metabolome	Urine
+metabolome	-0.27527459048517
+Saliva
+metabolome	Stool
+microbiome	0.340281663169929
+Saliva
+metabolome	Urine
+metabolome	-0.2775091281477
+Saliva
+metabolome	Urine
+metabolome	0.298535204037295
+Saliva
+metabolome	Urine
+metabolome	0.302641818684122
+Saliva
+metabolome	Urine
+metabolome	-0.289651496113436
+Saliva
+metabolome	Stool
+microbiome	0.450175614069453
+Saliva
+metabolome	Stool
+microbiome	0.367110749726045
+Saliva
+metabolome	Urine
+metabolome	-0.270829477177429
+Saliva
+metabolome	Stool
+microbiome	0.279302057696244
+Saliva
+metabolome	Stool
+microbiome	-0.431444591264694
+Saliva
+metabolome	Urine
+metabolome	0.302032436088241
+Saliva
+metabolome	Urine
+metabolome	0.29457512267579
+Saliva
+metabolome	Urine
+metabolome	0.288311043915092
+Saliva
+metabolome	Stool
+microbiome	-0.278335538441316
+Saliva
+metabolome	Urine
+metabolome	0.309405626187035
+Saliva
+metabolome	Urine
+metabolome	0.273356116274296
+Saliva
+metabolome	Stool
+microbiome	0.299502355585832
+Saliva
+metabolome	Stool
+microbiome	0.366593191003876
+Saliva
+metabolome	Urine
+metabolome	0.280925853368084
+Saliva
+metabolome	Stool
+microbiome	0.296268591375018
+Saliva
+metabolome	Stool
+microbiome	0.293968060780626
+Saliva
+metabolome	Stool
+microbiome	0.349618912906659
+Saliva
+metabolome	Stool
+microbiome	0.387112824756217
+Saliva
+metabolome	Urine
+metabolome	0.275980922219744
+Saliva
+metabolome	Urine
+metabolome	0.341735843453431
+Saliva
+metabolome	Urine
+metabolome	0.392469012490287
+Saliva
+metabolome	Stool
+microbiome	-0.357900254429088
+Stool
+microbiome	Urine
+metabolome	0.334581972469253
+Stool
+microbiome	Urine
+metabolome	-0.292743783145757
+Stool
+microbiome	Urine
+metabolome	-0.275339223393976
+Stool
+microbiome	Urine
+metabolome	0.4225847993295
+Stool
+microbiome	Urine
+metabolome	0.268049805598859
+Stool
+microbiome	Urine
+metabolome	-0.276818091144779
+Stool
+microbiome	Urine
+metabolome	0.285836142172351
+Stool
+microbiome	Urine
+metabolome	-0.301297615840364
+Stool
+microbiome	Urine
+metabolome	-0.268965885100859
+Stool
+microbiome	Urine
+metabolome	-0.277271489185308
+Stool
+microbiome	Urine
+metabolome	0.271012821508318
+Stool
+microbiome	Urine
+metabolome	0.299829825709985
+Stool
+microbiome	Urine
+metabolome	-0.331113842894028
+Stool
+microbiome	Urine
+metabolome	0.359745389566092
+Stool
+microbiome	Urine
+metabolome	-0.321536172620104
+Stool
+microbiome	Urine
+metabolome	0.270769277639554
+Stool
+microbiome	Urine
+metabolome	0.282905611445581
+Stool
+microbiome	Urine
+metabolome	0.317823178200677
+Stool
+microbiome	Clinical
+measures	0.620486274793906
+Stool
+microbiome	Urine
+metabolome	-0.301999469651045
+Stool
+microbiome	Urine
+metabolome	0.286374577032995
+Stool
+microbiome	Urine
+metabolome	0.321135109308009
+Stool
+microbiome	Urine
+metabolome	0.275298526955171
+Stool
+microbiome	Urine
+metabolome	0.329556038217898
+Stool
+microbiome	Clinical
+measures	-0.630622606835432

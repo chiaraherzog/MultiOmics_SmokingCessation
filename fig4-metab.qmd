@@ -1,5 +1,5 @@
 w---
-title: "Metabolome data (F4, E4)"
+title: "Metabolome data (F4, S5)"
 format:
   html:
     toc: true
@@ -16,7 +16,7 @@ format:
 
 ![](figures-png/figure4.png)
 
-## Extended Data Figure 4
+## Supplementary Figure 4
 
 ![](figures-png/e4.png)
 
@@ -98,6 +98,7 @@ time <- wilcoxon_tests$overall |>
 comp <- wilcoxon_tests$`compliance comparison` |> 
   tidyr::separate(rowname, "_", into = c("assay", "variable"), extra = 'merge') |> 
   dplyr::filter(grepl("Saliva", assay) & grepl("normalized", assay))
+
 saliva_heatmap <- plot_heatmap_Metab(time,
                                      comp,
                                      relabel = labels, 
@@ -107,17 +108,24 @@ saliva_heatmap <- plot_heatmap_Metab(time,
 
 
 ```{r}
-cairo_pdf(here("out/pdf/4a.pdf"), width = 5.5, height = 3)
+cairo_pdf(here("out/pdf/4a.pdf"), width = 5.75, height = 3)
 print(saliva_heatmap)
 dev.off()
 ```
+
+```{r sourcedata.saliva.heatmap}
+out <- saliva_heatmap@matrix
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/4a.txt')
+```
+
 
 ### 4b) Hyroxyacetone
 
 ```{r}
 load(here("data/data_normalized_baseline.Rdata"))
 
-df <- longFormat(data[,,28], colDataCols = c("interventionId", "subjectId", "visitId", "time", "compliance")) |>
+df <- longForm(data[,,40], colDataCols = c("interventionId", "subjectId", "visitId", "time", "compliance")) |>
   as.data.frame() |>
   dplyr::filter(interventionId == 'S' & ! visitId %in% c("M12", "M18")) |>
   dplyr::mutate(compliance = factor(compliance, levels = c("lower compliance", "higher compliance"))) |>
@@ -133,44 +141,69 @@ print(hydroxy)
 dev.off()
 ```
 
+```{r sourcedata.hydroxy}
+out <-  hydroxy$data |> dplyr::select(visitId, subjectId, value) |> 
+  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/4b.txt')
+```
+
 ### 4c) Acetoin
 
 ```{r}
-cairo_pdf(here("out/pdf/4c.pdf"), width = 2, height = 3)
-longitudinal(df, variable = 'Acetoin', p = 'p.signif',
+acetoin <- longitudinal(df, variable = 'Acetoin', p = 'p.signif',
              ylab = '<b>∆ Acetoin</b><br>(saliva; normalized)')
+cairo_pdf(here("out/pdf/4c.pdf"), width = 2, height = 3)
+acetoin
 dev.off()
 ```
 
+
+```{r sourcedata.acetoin}
+out <-  acetoin$data |> dplyr::select(visitId, subjectId, value) |> 
+  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/4c.txt')
+```
 
 ### 4d) Thymine
 
 ```{r}
 cairo_pdf(here("out/pdf/4d.pdf"), width = 2, height = 3)
-longitudinal(df, variable = 'Thymine', p = 'p.signif',
-             ylab = '<b>∆ Thymine</b><br>(saliva; normalized)')
+(thymine <- longitudinal(df, variable = 'Thymine', p = 'p.signif',
+             ylab = '<b>∆ Thymine</b><br>(saliva; normalized)'))
 dev.off()
 ```
 
-### 4e) Ethanol
+```{r sourcedata.thymine}
+out <-  thymine$data |> dplyr::select(visitId, subjectId, value) |> 
+  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/4d.txt')
+```
+
+### 4e) Lysine
 
 ```{r}
-cairo_pdf(here("out/pdf/4e.pdf"), width = 4.25, height = 3)
-paired_longitudinal_compliance(df, variable = 'Ethanol', p = 'p.signif',
-             ylab = '<b>∆ Ethanol</b><br>(saliva; normalized)')
+cairo_pdf(here("out/pdf/4e.pdf"), width = 2, height = 3)
+(lysine <- longitudinal(df, variable = 'Lysine', p = 'p.signif',
+             ylab = '<b>∆ Lysine</b><br>(saliva; normalized)'))
 dev.off()
 ```
 
-### 4f) TMAO
+```{r sourcedata.lysine}
+out <-  lysine$data |> dplyr::select(visitId, subjectId, value) |> 
+  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
 
-```{r}
-cairo_pdf(here("out/pdf/4f.pdf"), width = 4.25, height = 3)
-paired_longitudinal_compliance(df, variable = 'TMA..N.oxide', p = 'p.signif',
-             ylab = '<b>∆ Trimethylamine N-oxide</b><br>(saliva; normalized)')
-dev.off()
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/4e.txt')
 ```
 
-### g) Urine heatmap (t tests)
+
+### f) Urine heatmap (t tests)
 
 ```{r urine.heatmap}
 labels <- ref_urine |> 
@@ -204,12 +237,18 @@ print(urine_heatmap)
 dev.off()
 ```
 
-### 4h) Lactate 
+```{r sourcedata.urine}
+out <-  urine_heatmap@matrix
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/4f.txt')
+```
+
+### 4g) Lactate 
 
 ```{r}
 load(here("data/data_normalized_baseline.Rdata"))
 
-df <- longFormat(data[,,29], colDataCols = c("interventionId", "subjectId", "visitId", "time", "compliance")) |>
+df <- longForm(data[,,11], colDataCols = c("interventionId", "subjectId", "visitId", "time", "compliance")) |>
   as.data.frame() |>
   dplyr::filter(interventionId == 'S' & ! visitId %in% c("M12", "M18")) |>
   dplyr::mutate(compliance = factor(compliance, levels = c("lower compliance", "higher compliance"))) |>
@@ -218,41 +257,76 @@ df <- longFormat(data[,,29], colDataCols = c("interventionId", "subjectId", "vis
 
 
 ```{r}
-cairo_pdf(here("out/pdf/4h.pdf"), width = 5.5, height = 3)
-paired_longitudinal_compliance(df, variable = 'Lactate', p = 'p.signif',
-             ylab = '<b>∆ Lactate</b><br>(urine; normalized)')
+cairo_pdf(here("out/pdf/4g.pdf"), width = 5.5, height = 3)
+(lact <- longitudinal(df, variable = 'Lactate', p = 'p.signif',
+             ylab = '<b>∆ Lactate</b><br>(urine; normalized)'))
 dev.off()
 ```
 
-### 4i) Choline 
+```{r sourcedata.lact}
+out <-  lact$data |> dplyr::select(visitId, subjectId, value) |> 
+  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/4g.txt')
+```
+
+### 4g) Choline 
+
+```{r}
+cairo_pdf(here("out/pdf/4g.pdf"), width = 2, height = 3)
+(chol <- longitudinal(df, variable = 'Choline', p = 'p.signif',
+             ylab = '<b>∆ Choline</b><br>(urine; normalized)'))
+dev.off()
+```
+
+```{r sourcedata.chol}
+out <-  chol$data |> dplyr::select(visitId, subjectId, value) |> 
+  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/4h.txt')
+```
+
+
+### 4i) Trimethylamine 
 
 ```{r}
 cairo_pdf(here("out/pdf/4i.pdf"), width = 2, height = 3)
-longitudinal(df, variable = 'Choline', p = 'p.signif',
-             ylab = '<b>∆ Choline</b><br>(urine; normalized)')
+(trim <- longitudinal(df, variable = 'Trimethylamine', p = 'p.signif',
+             ylab = '<b>∆ Trimethylamine</b><br>(urine; normalized)'))
 dev.off()
 ```
 
-### 4j) Trimethylamine 
+```{r sourcedata.trim}
+out <-  trim$data |> dplyr::select(visitId, compliance, subjectId, value) |> 
+  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
 
-```{r}
-cairo_pdf(here("out/pdf/4j.pdf"), width = 2, height = 3)
-longitudinal(df, variable = 'Trimethylamine', p = 'p.signif',
-             ylab = '<b>∆ Trimethylamine</b><br>(urine; normalized)')
-dev.off()
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/4i.txt')
 ```
 
-### 4k) Tartrate 
+
+### 4k) Betaine 
 
 ```{r}
 cairo_pdf(here("out/pdf/4k.pdf"), width = 2, height = 3)
-longitudinal(df, variable = 'Tartrate', p = 'p.signif',
-             ylab = '<b>∆ Tartrate</b><br>(urine; normalized)')
+(beta <- longitudinal(df, variable = 'Betaine', p = 'p.signif',
+             ylab = '<b>∆ Betaine</b><br>(urine; normalized)'))
 dev.off()
 ```
 
+```{r sourcedata.beta}
+out <-  beta$data |> dplyr::select(visitId, subjectId, value) |> 
+  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
 
-## Extended Data
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/4j.txt')
+```
+
+
+
+## Supplementary
 
 ### Saliva PCA
 
@@ -286,6 +360,13 @@ print(pc_saliva$scree)
 dev.off()
 ```
 
+```{r sourcedata.scree}
+out <-  pc_saliva$scree$data
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s5a.txt')
+```
+
+
 #### 3b) Saliva PCA heatmap
 
 ```{r print.saliva.pca.heatmap}
@@ -293,6 +374,12 @@ cairo_pdf(here("out/pdf/e4b.pdf"),
           width = 3.5, height = 3)
 print(pc_saliva$heatmap)
 dev.off()
+```
+
+```{r sourcedata.hm}
+out <-  pc_saliva$heatmap@matrix
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s5b.txt')
 ```
 
 ### Urine PCA
@@ -326,6 +413,13 @@ print(pc_urine$scree)
 dev.off()
 ```
 
+
+```{r sourcedata.scree.urine}
+out <-  pc_urine$scree$data
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s5c.txt')
+```
+
 #### 3d) Urine: PCA - Heatmap
 
 ```{r print.urine.pca.heatmap}
@@ -333,6 +427,13 @@ cairo_pdf(here("out/pdf/e4d.pdf"),
           width = 3.5, height = 3)
 print(pc_urine$heatmap)
 dev.off()
+```
+
+
+```{r sourcedata.hm}
+out <-  pc_urine$heatmap@matrix
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s5d.txt')
 ```
 
 
@@ -369,48 +470,6 @@ hist <- corr |>
        y = 'n')
 
 saliva.corr.volcano <- corr |> 
-  dplyr::mutate(padj = p.adjust(p, method = 'holm'),
-                lab = ifelse(padj < 0.05, label, NA),
-                lab2 = ifelse(p<0.05, label, NA)) |> 
-  ggplot(aes(x = cor,
-             y = as.numeric(-log10(p)),
-             size = as.numeric(-log10(p)),
-             colour = as.numeric(-log10(p)))) +
-  geom_point(alpha = 0.7) +
-  scale_size_continuous(range = c(1, 3.5)) +
-  scale_colour_viridis_c(option = 'G',end = 0.8,
-                         name = '-log10(p)') +
-  ggrepel::geom_text_repel(aes(label = lab2)) +
-  theme_bw() +
-  labs(x = 'Correlation', y = '-log10(p value)') +
-  coord_cartesian(clip = 'off',
-                  xlim = c(-0.5, 0.5)) +
-  guides(size = 'none')
-```
-
-### Urine association with smoking at baseline (histogram and volcano plot) [not shown]
-
-```{r}
-# Filter corr
-load(here("out/corrSPYbaseline.Rdata"))
-
-corr <- corr |> 
-  tidyr::separate(rowname, "_", into = c("assay", "x"), extra = 'merge')  |> 
-  dplyr::filter(assay == 'Urine nuclear magnetic resonance: normalized') |> 
-  dplyr::left_join(labels)
-
-# Histogram
-hist.urine <- corr |>
-  ggplot(aes(x = p)) +
-  geom_histogram(bins = 10,
-                 # alpha = 0.5,
-                 colour = 'black',fill = 'grey60') +
-  theme_bw() +
-  theme(panel.grid = element_blank()) +
-  labs(x = 'p value',
-       y = 'n')
-
-urine.corr.volcano <- corr |> 
   dplyr::mutate(padj = p.adjust(p, method = 'holm'),
                 lab = ifelse(padj < 0.05, label, NA),
                 lab2 = ifelse(p<0.05, label, NA)) |> 
@@ -469,6 +528,12 @@ print(hist)
 dev.off()
 ```
 
+```{r sourcedata.hist.saliva}
+out <- hist$data
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s5e.txt')
+```
+
 
 ### 3f) Saliva association with cig_curr at baseline, volcano plot
 
@@ -500,11 +565,66 @@ dev.off()
 ```
 
 
-### 3g) Urine association with smoking at baseline, histogram
+```{r sourcedata.volc.saliva}
+out <- saliva.corr.volcano$data
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s5f.txt')
+```
+
+
+
+ 
+### Urine association with smoking at baseline, histogram [not shown]
 
 ```{r}
 # Filter corr
 load(here("out/corrCigBaseline.Rdata"))
+
+corr <- corr |> 
+  tidyr::separate(rowname, "_", into = c("assay", "x"), extra = 'merge')  |> 
+  dplyr::filter(assay == 'Urine nuclear magnetic resonance: normalized') |> 
+  dplyr::left_join(labels)
+
+# Histogram
+hist.urine <- corr |>
+  ggplot(aes(x = p)) +
+  geom_histogram(bins = 10,
+                 # alpha = 0.5,
+                 colour = 'black',fill = 'grey60') +
+  theme_bw() +
+  theme(panel.grid = element_blank()) +
+  labs(x = 'p value',
+       y = 'n')
+```
+
+### Urine association with smoking at baseline, volcano plot [not shown]
+
+```{r}
+urine.corr.volcano <- corr |> 
+  dplyr::mutate(padj = p.adjust(p, method = 'holm'),
+                lab = ifelse(padj < 0.05, label, NA),
+                lab2 = ifelse(p<0.05, label, NA))  |> 
+  ggplot(aes(x = cor,
+             y = as.numeric(-log10(p)),
+             size = as.numeric(-log10(p)),
+             colour = as.numeric(-log10(p)))) +
+  geom_point(alpha = 0.7) +
+  scale_size_continuous(range = c(1, 3.5)) +
+  scale_colour_viridis_c(option = 'G',end = 0.8,
+                         name = '-log10(p)') +
+  ggrepel::geom_text_repel(aes(label = lab2)) +
+  theme_bw() +
+  labs(x = 'Correlation', y = '-log10(p value)') +
+  coord_cartesian(clip = 'off',
+                  xlim = c(-0.5, 0.5)) +
+  guides(size = 'none')
+```
+
+### 3g) Urine association with cumulative smoking (histogram and volcano plot)
+
+```{r}
+# Filter corr
+load(here("out/corrSPYbaseline.Rdata"))
 
 corr <- corr |> 
   tidyr::separate(rowname, "_", into = c("assay", "x"), extra = 'merge')  |> 
@@ -529,12 +649,20 @@ print(hist.urine)
 dev.off()
 ```
 
-### 3h) Urine association with smoking at baseline, volcano plot
+
+```{r sourcedata.volc.urine}
+out <- hist.urine$data
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s5g.txt')
+```
+
+### 3g) Urine association with cumulative smoking (histogram and volcano plot)
+
 
 ```{r}
 urine.corr.volcano <- corr |> 
   dplyr::mutate(padj = p.adjust(p, method = 'holm'),
-                lab = ifelse(padj < 0.05, label, NA),
+                lab = ifelse(p < 0.05, x, NA),
                 lab2 = ifelse(p<0.05, label, NA)) |> 
   ggplot(aes(x = cor,
              y = as.numeric(-log10(p)),
@@ -544,7 +672,7 @@ urine.corr.volcano <- corr |>
   scale_size_continuous(range = c(1, 3.5)) +
   scale_colour_viridis_c(option = 'G',end = 0.8,
                          name = '-log10(p)') +
-  ggrepel::geom_text_repel(aes(label = lab2)) +
+  ggrepel::geom_text_repel(aes(label = lab)) +
   theme_bw() +
   labs(x = 'Correlation', y = '-log10(p value)') +
   coord_cartesian(clip = 'off',
@@ -556,4 +684,11 @@ urine.corr.volcano <- corr |>
 cairo_pdf(here("out/pdf/e4h.pdf"), width = 4.5, height = 3)
 print(urine.corr.volcano)
 dev.off()
+```
+
+
+```{r sourcedata.volc.saliva}
+out <- urine.corr.volcano$data
+out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
+                   file = 'srcdata/s5h.txt')
 ```

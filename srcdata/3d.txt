@@ -1,0 +1,6 @@
+tmp$x	estimate_visitIdM2	estimate_visitIdM4	estimate_visitIdM6	estimate_visitIdM2:compliancehigher compliance	estimate_visitIdM4:compliancehigher compliance	estimate_visitIdM6:compliancehigher compliance	p.value_visitIdM2	p.value_visitIdM4	p.value_visitIdM6	p.value_visitIdM2:compliancehigher compliance	p.value_visitIdM4:compliancehigher compliance	p.value_visitIdM6:compliancehigher compliance
+WID-SMK (proximal epithelial hyperM)	-0.0993114087174742	-0.142333541160493	-0.0949000663351251	-0.316438381517405	-0.188202476308405	-0.636731797628652	 	 	 	*	 	**
+WID-buccal-BC	-0.110491746908974	-0.299350082449386	-0.00802975552460323	-0.0393285604979214	0.319697161769987	-0.863958739671211	 	 	 	 	 	*
+WID-REA	0.291299108716973	0.0944401802253566	0.29454601693106	0.231454570294946	-0.550459199291312	0.239885653379208	 	 	 	 	 	 
+WID-SMK (epithelial hypoM)	-0.0821359313068918	-0.121771659919997	-0.215880658566093	-0.414718565700173	-0.327430423810006	-0.562160788391733	 	 	*	**	*	***
+ic	-0.0487052985763934	0.198415561442102	-0.01398538536781	-0.0714991800414875	0.410078986315529	-0.217902416731133	 	 	 	 	*	 

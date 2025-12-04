@@ -89,5 +89,10 @@ plot_taxa_heatmap <- function(ASVtable, pheno, agg, add, abu, type, colors, ctrl
                   show_colnames=FALSE,
                   border_color = NA)
   
-  return(plot)
+  
+  out <- list(plot = plot,
+              data = d, 
+              annot = annot)
+  
+  return(out)
 }

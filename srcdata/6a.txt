@@ -1,0 +1,103 @@
+assay	visitId	num_significant	proportion_significant	group
+Blood methylation	M2	1	0.032258064516129	Blood
+omics
+Blood methylation	M4	3	0.0967741935483871	Blood
+omics
+Blood methylation	M6	6	0.193548387096774	Blood
+omics
+Body weight and composition	M2	0	0	Clinical
+features
+Body weight and composition	M4	2	1	Clinical
+features
+Body weight and composition	M6	0	0	Clinical
+features
+Buccal methylation	M2	0	0	Oral
+omics
+Buccal methylation	M4	3	0.166666666666667	Oral
+omics
+Buccal methylation	M6	2	0.111111111111111	Oral
+omics
+Cervical methylation	M2	1	0.0454545454545455	Cervix
+omics
+Cervical methylation	M4	0	0	Cervix
+omics
+Cervical methylation	M6	0	0	Cervix
+omics
+Flow cytometry: T cell staining	M2	0	0	Blood
+omics
+Flow cytometry: T cell staining	M4	1	0.0384615384615385	Blood
+omics
+Flow cytometry: T cell staining	M6	8	0.307692307692308	Blood
+omics
+Flow cytometry: white blood cell staining	M2	12	0.444444444444444	Blood
+omics
+Flow cytometry: white blood cell staining	M4	9	0.333333333333333	Blood
+omics
+Flow cytometry: white blood cell staining	M6	10	0.37037037037037	Blood
+omics
+Functional exercise capacity	M2	NA	NA	Clinical
+features
+Functional exercise capacity	M4	NA	NA	Clinical
+features
+Functional exercise capacity	M6	2	0.285714285714286	Clinical
+features
+Immune age: general	M2	0	0	Blood
+omics
+Immune age: general	M4	0	0	Blood
+omics
+Immune age: general	M6	0	0	Blood
+omics
+ImmuneSMK	M2	1	1	Blood
+omics
+ImmuneSMK	M4	0	0	Blood
+omics
+ImmuneSMK	M6	1	1	Blood
+omics
+Routine bloods	M2	NA	NA	Clinical
+features
+Routine bloods	M4	NA	NA	Clinical
+features
+Routine bloods	M6	7	0.170731707317073	Clinical
+features
+Saliva metabolome	M2	4	0.0816326530612245	Oral
+omics
+Saliva metabolome	M4	1	0.0204081632653061	Oral
+omics
+Saliva metabolome	M6	4	0.0816326530612245	Oral
+omics
+Saliva microbiome	M2	13	0.254901960784314	Oral
+omics
+Saliva microbiome	M4	6	0.117647058823529	Oral
+omics
+Saliva microbiome	M6	8	0.156862745098039	Oral
+omics
+Spirometry	M2	NA	NA	Clinical
+features
+Spirometry	M4	NA	NA	Clinical
+features
+Spirometry	M6	2	0.666666666666667	Clinical
+features
+Stool microbiome	M2	0	0	Stool
+omics
+Stool microbiome	M4	5	0.0675675675675676	Stool
+omics
+Stool microbiome	M6	2	0.027027027027027	Stool
+omics
+Subcutaneous and visceral fat	M2	NA	NA	Clinical
+features
+Subcutaneous and visceral fat	M4	NA	NA	Clinical
+features
+Subcutaneous and visceral fat	M6	1	0.5	Clinical
+features
+Urine metabolome	M2	5	0.138888888888889	Urine
+omics
+Urine metabolome	M4	2	0.0555555555555556	Urine
+omics
+Urine metabolome	M6	8	0.222222222222222	Urine
+omics
+Vascular features	M2	NA	NA	Clinical
+features
+Vascular features	M4	NA	NA	Clinical
+features
+Vascular features	M6	0	0	Clinical
+features

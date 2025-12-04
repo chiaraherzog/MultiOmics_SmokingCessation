@@ -1,0 +1,151 @@
+factor	view	value	group
+Factor1	Blood haemogram	3.17224860191345	S
+Factor2	Blood haemogram	3.19580435752869	S
+Factor3	Blood haemogram	2.33590006828308	S
+Factor4	Blood haemogram	0.14798641204834	S
+Factor5	Blood haemogram	6.43047690391541	S
+Factor6	Blood haemogram	1.04043483734131	S
+Factor7	Blood haemogram	2.98592448234558	S
+Factor8	Blood haemogram	1.05185508728027	S
+Factor9	Blood haemogram	1.64573192596436	S
+Factor10	Blood haemogram	0.0198960304260254	S
+Factor11	Blood haemogram	1.86475515365601	S
+Factor12	Blood haemogram	0.441831350326538	S
+Factor13	Blood haemogram	0.00246763229370117	S
+Factor14	Blood haemogram	0.00110864639282227	S
+Factor15	Blood haemogram	2.31330990791321	S
+Factor1	Composite methylation scores: blood	31.1253786087036	S
+Factor2	Composite methylation scores: blood	12.8008008003235	S
+Factor3	Composite methylation scores: blood	3.60382199287415	S
+Factor4	Composite methylation scores: blood	0.00112652778625488	S
+Factor5	Composite methylation scores: blood	8.57497453689575	S
+Factor6	Composite methylation scores: blood	1.19209289550781e-05	S
+Factor7	Composite methylation scores: blood	11.6657614707947	S
+Factor8	Composite methylation scores: blood	0.668591260910034	S
+Factor9	Composite methylation scores: blood	15.6227350234985	S
+Factor10	Composite methylation scores: blood	0.000101327896118164	S
+Factor11	Composite methylation scores: blood	0.000178813934326172	S
+Factor12	Composite methylation scores: blood	0.349807739257812	S
+Factor13	Composite methylation scores: blood	0.000262260437011719	S
+Factor14	Composite methylation scores: blood	8.94069671630859e-05	S
+Factor15	Composite methylation scores: blood	6.55651092529297e-05	S
+Factor1	Composite methylation scores: buccal	5.23603558540344	S
+Factor2	Composite methylation scores: buccal	9.70821380615234	S
+Factor3	Composite methylation scores: buccal	0.48028826713562	S
+Factor4	Composite methylation scores: buccal	29.7240376472473	S
+Factor5	Composite methylation scores: buccal	0.000119209289550781	S
+Factor6	Composite methylation scores: buccal	0.000143051147460938	S
+Factor7	Composite methylation scores: buccal	0.0110983848571777	S
+Factor8	Composite methylation scores: buccal	0.30028223991394	S
+Factor9	Composite methylation scores: buccal	0.000244379043579102	S
+Factor10	Composite methylation scores: buccal	0.000154972076416016	S
+Factor11	Composite methylation scores: buccal	0.000548362731933594	S
+Factor12	Composite methylation scores: buccal	0.719070434570312	S
+Factor13	Composite methylation scores: buccal	0.000184774398803711	S
+Factor14	Composite methylation scores: buccal	14.6698653697968	S
+Factor15	Composite methylation scores: buccal	0.410115718841553	S
+Factor1	Composite methylation scores: cervical	3.88379693031311	S
+Factor2	Composite methylation scores: cervical	5.30292391777039	S
+Factor3	Composite methylation scores: cervical	0.000184774398803711	S
+Factor4	Composite methylation scores: cervical	6.55651092529297e-05	S
+Factor5	Composite methylation scores: cervical	6.40620589256287	S
+Factor6	Composite methylation scores: cervical	4.17232513427734e-05	S
+Factor7	Composite methylation scores: cervical	0.00146627426147461	S
+Factor8	Composite methylation scores: cervical	0.000524520874023438	S
+Factor9	Composite methylation scores: cervical	0.000119209289550781	S
+Factor10	Composite methylation scores: cervical	1.97231769561768	S
+Factor11	Composite methylation scores: cervical	0.000172853469848633	S
+Factor12	Composite methylation scores: cervical	3.89904379844666	S
+Factor13	Composite methylation scores: cervical	0.000137090682983398	S
+Factor14	Composite methylation scores: cervical	0.113409757614136	S
+Factor15	Composite methylation scores: cervical	9.17786955833435	S
+Factor1	Flow cytometry: T cell staining	3.6532998085022	S
+Factor2	Flow cytometry: T cell staining	1.23191475868225	S
+Factor3	Flow cytometry: T cell staining	20.2834963798523	S
+Factor4	Flow cytometry: T cell staining	0.00199079513549805	S
+Factor5	Flow cytometry: T cell staining	0.55699348449707	S
+Factor6	Flow cytometry: T cell staining	8.94069671630859e-05	S
+Factor7	Flow cytometry: T cell staining	2.16885805130005	S
+Factor8	Flow cytometry: T cell staining	16.9680297374725	S
+Factor9	Flow cytometry: T cell staining	1.78247690200806	S
+Factor10	Flow cytometry: T cell staining	0.0052332878112793	S
+Factor11	Flow cytometry: T cell staining	9.46248769760132	S
+Factor12	Flow cytometry: T cell staining	8.45752358436584	S
+Factor13	Flow cytometry: T cell staining	1.19137167930603	S
+Factor14	Flow cytometry: T cell staining	7.74860382080078e-05	S
+Factor15	Flow cytometry: T cell staining	5.96046447753906e-05	S
+Factor1	Flow cytometry: white blood cell staining	4.41064238548279	S
+Factor2	Flow cytometry: white blood cell staining	1.6531229019165	S
+Factor3	Flow cytometry: white blood cell staining	7.48863220214844	S
+Factor4	Flow cytometry: white blood cell staining	0.508260726928711	S
+Factor5	Flow cytometry: white blood cell staining	2.61592864990234	S
+Factor6	Flow cytometry: white blood cell staining	0.00351667404174805	S
+Factor7	Flow cytometry: white blood cell staining	3.29428911209106	S
+Factor8	Flow cytometry: white blood cell staining	0.0141263008117676	S
+Factor9	Flow cytometry: white blood cell staining	0.510567426681519	S
+Factor10	Flow cytometry: white blood cell staining	0.677680969238281	S
+Factor11	Flow cytometry: white blood cell staining	6.99406862258911	S
+Factor12	Flow cytometry: white blood cell staining	1.450514793396	S
+Factor13	Flow cytometry: white blood cell staining	0.803250074386597	S
+Factor14	Flow cytometry: white blood cell staining	0.00311136245727539	S
+Factor15	Flow cytometry: white blood cell staining	0.722432136535645	S
+Factor1	Saliva microbiome: families	0.00610947608947754	S
+Factor2	Saliva microbiome: families	9.91770029067993	S
+Factor3	Saliva microbiome: families	1.78813934326172e-05	S
+Factor4	Saliva microbiome: families	2.38418579101562e-05	S
+Factor5	Saliva microbiome: families	0.548338890075684	S
+Factor6	Saliva microbiome: families	0	S
+Factor7	Saliva microbiome: families	0	S
+Factor8	Saliva microbiome: families	0	S
+Factor9	Saliva microbiome: families	4.76837158203125e-05	S
+Factor10	Saliva microbiome: families	16.7651653289795	S
+Factor11	Saliva microbiome: families	1.78813934326172e-05	S
+Factor12	Saliva microbiome: families	5.96046447753906e-06	S
+Factor13	Saliva microbiome: families	1.78813934326172e-05	S
+Factor14	Saliva microbiome: families	5.96046447753906e-06	S
+Factor15	Saliva microbiome: families	5.96046447753906e-06	S
+Factor1	Saliva nuclear magnetic resonance: normalized	0.00244379043579102	S
+Factor2	Saliva nuclear magnetic resonance: normalized	0.00657439231872559	S
+Factor3	Saliva nuclear magnetic resonance: normalized	0.00109076499938965	S
+Factor4	Saliva nuclear magnetic resonance: normalized	0.000596046447753906	S
+Factor5	Saliva nuclear magnetic resonance: normalized	0.000846385955810547	S
+Factor6	Saliva nuclear magnetic resonance: normalized	20.1365232467651	S
+Factor7	Saliva nuclear magnetic resonance: normalized	0.00462532043457031	S
+Factor8	Saliva nuclear magnetic resonance: normalized	0.00125765800476074	S
+Factor9	Saliva nuclear magnetic resonance: normalized	0.0027775764465332	S
+Factor10	Saliva nuclear magnetic resonance: normalized	0.000876188278198242	S
+Factor11	Saliva nuclear magnetic resonance: normalized	0.00377893447875977	S
+Factor12	Saliva nuclear magnetic resonance: normalized	0.0287830829620361	S
+Factor13	Saliva nuclear magnetic resonance: normalized	0.000911951065063477	S
+Factor14	Saliva nuclear magnetic resonance: normalized	0.00603795051574707	S
+Factor15	Saliva nuclear magnetic resonance: normalized	0.00795125961303711	S
+Factor1	Stool microbiome: families	0	S
+Factor2	Stool microbiome: families	0	S
+Factor3	Stool microbiome: families	0	S
+Factor4	Stool microbiome: families	0	S
+Factor5	Stool microbiome: families	0	S
+Factor6	Stool microbiome: families	0	S
+Factor7	Stool microbiome: families	0	S
+Factor8	Stool microbiome: families	0	S
+Factor9	Stool microbiome: families	0	S
+Factor10	Stool microbiome: families	0	S
+Factor11	Stool microbiome: families	0	S
+Factor12	Stool microbiome: families	0	S
+Factor13	Stool microbiome: families	0	S
+Factor14	Stool microbiome: families	0	S
+Factor15	Stool microbiome: families	0	S
+Factor1	Urine nuclear magnetic resonance: normalized	1.55922770500183	S
+Factor2	Urine nuclear magnetic resonance: normalized	0.00321865081787109	S
+Factor3	Urine nuclear magnetic resonance: normalized	0.0234544277191162	S
+Factor4	Urine nuclear magnetic resonance: normalized	0.00473856925964355	S
+Factor5	Urine nuclear magnetic resonance: normalized	0.0891029834747314	S
+Factor6	Urine nuclear magnetic resonance: normalized	0.000661611557006836	S
+Factor7	Urine nuclear magnetic resonance: normalized	0.323086977005005	S
+Factor8	Urine nuclear magnetic resonance: normalized	1.2799084186554	S
+Factor9	Urine nuclear magnetic resonance: normalized	0.132912397384644	S
+Factor10	Urine nuclear magnetic resonance: normalized	0.0115931034088135	S
+Factor11	Urine nuclear magnetic resonance: normalized	0.066530704498291	S
+Factor12	Urine nuclear magnetic resonance: normalized	1.86430215835571	S
+Factor13	Urine nuclear magnetic resonance: normalized	14.7618055343628	S
+Factor14	Urine nuclear magnetic resonance: normalized	0.00437498092651367	S
+Factor15	Urine nuclear magnetic resonance: normalized	0.526213645935059	S
