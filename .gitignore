@@ -27,5 +27,6 @@ out/*
 /figures-png/
 
 !src/*
+srcdata/*
 
 Manuscript.docx
