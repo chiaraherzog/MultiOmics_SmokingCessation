@@ -65,8 +65,8 @@ source(here("src/highlightIndivLongitudinal.R"))
 ```
 
 ```{r cerv.load, eval = F}
-#path = here("data/data_raw.Rdata")
-path <- "~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/data/data_raw.Rdata"
+path = here("data/data_raw.Rdata")
+
 df_raw_cerv <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: cervical"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_cervical", "age_at_consent",
@@ -75,8 +75,8 @@ df_raw_cerv <- as.data.frame(longForm(get(load(path))[,,"Composite methylation s
                                                     "cessation_date"))) |> 
    filter_smk(age_norm = T, type_norm = T)
 
-#path = here("data/data_baseline_change.Rdata")
-path <- "~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/data/data_baseline_change.Rdata"
+path = here("data/data_baseline_change.Rdata")
+
 df_change_cerv <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: cervical"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_cervical", "age_at_consent",
@@ -86,8 +86,8 @@ df_change_cerv <- as.data.frame(longForm(get(load(path))[,,"Composite methylatio
    filter_smk(age_norm = T, type_norm = T)
 
 
-#path = here("data/data_normalized.Rdata")
-path <- "~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/data/data_normalized.Rdata"
+path = here("data/data_normalized.Rdata")
+
 df_scaled_cerv <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: cervical"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_cervical", "age_at_consent", "bmi_at_consent",
@@ -96,8 +96,7 @@ df_scaled_cerv <- as.data.frame(longForm(get(load(path))[,,"Composite methylatio
                                                     "cessation_date"))) |> 
    filter_smk(age_norm = T, type_norm = T)
 
-#path = here("data/data_normalized_baseline.Rdata")
-path <- "~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/data/data_normalized_baseline.Rdata"
+path = here("data/data_normalized_baseline.Rdata")
 df_scaled_change_cerv <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: cervical"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_cervical", "age_at_consent",
@@ -108,8 +107,8 @@ df_scaled_change_cerv <- as.data.frame(longForm(get(load(path))[,,"Composite met
 ```
 
 ```{r buc.load, eval = F}
-#path = here("data/data_raw.Rdata")
-path <- "~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/data/data_raw.Rdata"
+path = here("data/data_raw.Rdata")
+
 df_raw_buccal <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: buccal"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_buccal", "age_at_consent",
@@ -118,8 +117,8 @@ df_raw_buccal <- as.data.frame(longForm(get(load(path))[,,"Composite methylation
                                                     "cessation_date"))) |> 
    filter_smk(age_norm = T, type_norm = T)
 
-#path = here("data/data_baseline_change.Rdata")
-path <- "~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/data/data_baseline_change.Rdata"
+path = here("data/data_baseline_change.Rdata")
+
 df_change_buccal <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: buccal"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_buccal", "age_at_consent",
@@ -129,8 +128,8 @@ df_change_buccal <- as.data.frame(longForm(get(load(path))[,,"Composite methylat
    filter_smk(age_norm = T, type_norm = T)
 
 
-#path = here("data/data_normalized.Rdata")
-path <- "~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/data/data_normalized.Rdata"
+path = here("data/data_normalized.Rdata")
+
 df_scaled_buccal <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: buccal"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_buccal", "age_at_consent",
@@ -139,8 +138,8 @@ df_scaled_buccal <- as.data.frame(longForm(get(load(path))[,,"Composite methylat
                                                     "cessation_date"))) |> 
    filter_smk(age_norm = T, type_norm = T)
 
-#path = here("data/data_normalized_baseline.Rdata")
-path <- "~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/data/data_normalized_baseline.Rdata"
+path = here("data/data_normalized_baseline.Rdata")
+
 df_scaled_change_buccal <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: buccal"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_buccal", "age_at_consent",
@@ -151,8 +150,8 @@ df_scaled_change_buccal <- as.data.frame(longForm(get(load(path))[,,"Composite m
 ```
 
 ```{r blood.load, eval = F}
-#path = here("data/data_raw.Rdata")
-path <- "~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/data/data_raw.Rdata"
+path = here("data/data_raw.Rdata")
+
 df_raw_blood <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: blood"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_blood", "age_at_consent",
@@ -161,8 +160,8 @@ df_raw_blood <- as.data.frame(longForm(get(load(path))[,,"Composite methylation 
                                                     "cessation_date"))) |> 
    filter_smk(age_norm = T, type_norm = T) 
 
-#path = here("data/data_baseline_change.Rdata")
-path <- "~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/data/data_baseline_change.Rdata"
+path = here("data/data_baseline_change.Rdata")
+
 df_change_blood <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: blood"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_blood", "age_at_consent",
@@ -172,8 +171,8 @@ df_change_blood <- as.data.frame(longForm(get(load(path))[,,"Composite methylati
    filter_smk(age_norm = T, type_norm = T)
 
 
-#path = here("data/data_normalized.Rdata")
-path <- "~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/data/data_normalized.Rdata"
+path = here("data/data_normalized.Rdata")
+
 df_scaled_blood <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: blood"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_blood", "age_at_consent", "bmi_at_consent",
@@ -182,8 +181,8 @@ df_scaled_blood <- as.data.frame(longForm(get(load(path))[,,"Composite methylati
                                                     "cessation_date"))) |> 
    filter_smk(age_norm = T, type_norm = T) 
 
-#path = here("data/data_normalized_baseline.Rdata")
-path <- "~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/data/data_normalized_baseline.Rdata"
+path = here("data/data_normalized_baseline.Rdata")
+
 df_scaled_change_blood <- as.data.frame(longForm(get(load(path))[,,"Composite methylation scores: blood"],
                                         colData = c("interventionId", "subjectId", "visitId", "time", "compliance", "smoking_py",
                                                     "basename_blood", "age_at_consent",
@@ -414,29 +413,16 @@ colour_assays = list(
 )
 
 
-# load(here("out/out_lmm_factor.Rdata"))
-load("~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/out/out_lmm_factor.Rdata")
+load(here("out/out_lmm_factor.Rdata"))
 
-#vars_keep <- readxl::read_xlsx(here("src/indices_info_completed.xlsx"))
-# vars <- 
-#   rbind(
-#     readxl::read_xlsx(here("src/indices.xlsx"), sheet = 1),
-#     readxl::read_xlsx(here("src/indices.xlsx"), sheet = 2)) %>%
-#   rbind(readxl::read_xlsx(here("src/indices.xlsx"), sheet = 3)) %>%
-#   distinct() %>%
-#   dplyr::filter(label %in% vars_keep)
-vars_keep <- readxl::read_xlsx("~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/src/indices_info_completed.xlsx") %>%
-  dplyr::select(label, Outcome_cat)
-vars <- 
+vars_keep <- readxl::read_xlsx(here("src/indices_info_completed.xlsx"))
+vars <-
   rbind(
-    readxl::read_xlsx("~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/src/indices.xlsx", sheet = 1),
-    readxl::read_xlsx("~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/src/indices.xlsx", sheet = 2)) %>%
-  rbind(readxl::read_xlsx("~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/src/indices.xlsx", sheet = 3)) %>%
+    readxl::read_xlsx(here("src/indices.xlsx"), sheet = 1),
+    readxl::read_xlsx(here("src/indices.xlsx"), sheet = 2)) %>%
+  rbind(readxl::read_xlsx(here("src/indices.xlsx"), sheet = 3)) %>%
   distinct() %>%
-  dplyr::filter(label %in% vars_keep$label) %>%
-  dplyr::left_join(vars_keep, by = "label") %>%
-  dplyr::mutate(x = gsub("_adj","",x)) %>%
-  distinct()
+  dplyr::filter(label %in% vars_keep)
 
 time <- out_lmm$`Basic model with packyears` |> 
   dplyr::filter(grepl("Composite", x)) |> 
@@ -502,8 +488,8 @@ draw(p)
 ```
 
 ```{r print.sharedheatmap, eval = F}
-#cairo_pdf(here("out/pdf/3c_revised.pdf"), width = 9.5, height = 4)
-cairo_pdf("~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/out/pdf/3c_revised.pdf", width = 9.5, height = 5)
+cairo_pdf(here("out/pdf/3c_revised.pdf"), width = 9.5, height = 4)
+
 print(p)
 dev.off()
 ```
