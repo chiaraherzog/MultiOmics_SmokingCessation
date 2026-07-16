@@ -1,0 +1,35 @@
+---
+title: "Epigenetic biomarkers info (ST)"
+format:
+  html:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, message = F, warning = F, eval = T)
+```
+
+```{r libraries, eval = F}
+library(tidyverse)
+library(gtsummary)
+library(gt)
+library(openxlsx)
+
+```
+
+```{r, eval = F}
+
+# First created a list of all biomarkers assessed in Figure 3, then added this Excel file manually looking up information on each biomarker in the literature
+
+dat <- 
+  rbind(
+    readxl::read_xlsx("~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/src/indices.xlsx", sheet = 1),
+    readxl::read_xlsx("~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/src/indices.xlsx", sheet = 2)) %>%
+  rbind(readxl::read_xlsx("~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/src/indices.xlsx", sheet = 3)) %>%
+  dplyr::select(-x) %>%
+  distinct()
+write.xlsx(dat, file = "~/Dropbox/eca/tirolgesund/7-manuscripts/smk1/smk-repository/src/indices_info.xlsx")
+
+
+```
+
