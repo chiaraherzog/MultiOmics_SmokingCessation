@@ -25,8 +25,14 @@ out/*
 /data/
 /figures-ai/
 /figures-png/
+/srcdata/*
 
 !src/*
 srcdata/*
+src/indices_info.xlsx
+src/indices_info_completed.xlsx
+src/$indices_info_completed.xlsx
 
+.DS_Store
 Manuscript.docx
+src/indices_Supp_table.docx

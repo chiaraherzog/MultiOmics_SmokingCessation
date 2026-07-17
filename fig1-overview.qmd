@@ -61,12 +61,12 @@ db_path <- fs::path_expand("~/Dropbox/")
 ```
 
 ```{r}
-# Number of former and never smokers.
-path = here("data/data_raw.Rdata")
-x <- as.data.frame(colData(data))
-
-x <- x[x$visitId=='M0',]
-table(x$smoking_ever, x$smoking_curr, useNA = 'always')
+# # Number of former and never smokers.
+# path = here("data/data_raw.Rdata")
+# x <- as.data.frame(colData(data))
+# 
+# x <- x[x$visitId=='M0',]
+# table(x$smoking_ever, x$smoking_curr, useNA = 'always')
 ```
 
 
@@ -163,10 +163,11 @@ dev.off()
 
 ```{r sourcedata.apt, eval = F}
 out <- appointments |>
-  dplyr::filter(interventionId == "S" & ! visitId %in% c("M12", "M18")) |> 
-  dplyr::select(subjectId, visitId, t, visitType, dropout) |> 
-  dplyr::group_by(subjectId) |> dplyr::mutate(id = cur_group_id())|> 
-  dplyr::select(-subjectId)
+  dplyr::filter(interventionId == "S" & !visitId %in% c("M12", "M18")) |>
+  dplyr::select(subjectId, visitId, t, visitType, dropout) |>
+  dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |>
+  dplyr::select(-subjectId) |> 
+  dplyr::arrange(id)
 
 out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/1a.txt')
@@ -291,9 +292,8 @@ dev.off()
 
 ```{r sourcedata.grid}
 out <- tmp |> 
-  dplyr::group_by(subjectId) |>
-  dplyr::mutate(id = cur_group_id())|> 
-  dplyr::ungroup() |> 
+  dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |> 
+  dplyr::arrange(id) |> 
   dplyr::select(-subjectId)
 
 out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
@@ -361,8 +361,9 @@ dev.off()
 out <- cotinine |>
   dplyr::filter(subjectId %in% complete$subjectId) |> 
   dplyr::select(subjectId, visitId, t, dailycig_longitudinal, value) |> 
-  dplyr::group_by(subjectId) |> dplyr::mutate(id = cur_group_id()) |> 
-  dplyr::select(-subjectId)
+  dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |>
+  dplyr::select(-subjectId) |> 
+  dplyr::arrange(id)
 
 out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/1c.txt')
@@ -602,9 +603,8 @@ dev.off()
 out <- pcdat
 rownames(out) <- NULL
 out <- out |> 
-  dplyr::group_by(subjectId) |>
-  dplyr::mutate(id = cur_group_id())|> dplyr::ungroup() |> 
-  dplyr::select(-subjectId)
+  dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |>
+  dplyr::arrange(id) |> dplyr::select(-subjectId)
 out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/1f.txt')
 ```
@@ -838,7 +838,6 @@ dev.off()
 
 
 ## Extended Data Figure 1
->>>>>>> 0e91628f457a5ba45cbff43513d9ac74be88a778
 
 ### a) PC and age
 
@@ -898,12 +897,11 @@ smk <- pcdat |>
 
 ```{r sourcedata.s1ab}
 out <- pcdat |> dplyr::filter(!visitId %in% c("M12", "M18")) |> 
-  dplyr::mutate(log_smoking_py = log(smoking_py)) |> 
+  dplyr::mutate(log_smoking_py = log(smoking_py),
+                age_at_consent = paste0(floor(age_at_consent / 5) * 5, "-", floor(age_at_consent / 5) * 5 + 4)) |> 
   dplyr::select(Dim.1, Dim.2, visitId, log_smoking_py, subjectId, age_at_consent) |> 
-  dplyr::group_by(subjectId) |> 
-  dplyr::mutate(id = cur_group_id()) |>
-  dplyr::ungroup() |> 
-  dplyr::select(-subjectId)
+  dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |>
+  dplyr::arrange(id) |> dplyr::select(-subjectId)
 
 out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/s1ab.txt')

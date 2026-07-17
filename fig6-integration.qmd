@@ -581,8 +581,10 @@ dev.off()
 
 
 ```{r sourcedata.covariates}
-out <- p$data |> dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> 
-  dplyr::ungroup() |> dplyr::select(-c(subjectId, compliance_smkgroup, mpstatrs))
+out <- p$data |> dplyr::mutate(id = match(subjectId, sample(unique(subjectId))),
+                               age_at_consent = paste0(floor(age_at_consent / 5) * 5, "-", floor(age_at_consent / 5) * 5 + 4)) |>
+  dplyr::arrange(id) |> dplyr::select(-c(compliance_smkgroup, mpstatrs, subjectId))
+
 out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/s8d.txt')
 ```
@@ -601,8 +603,9 @@ dev.off()
 ```
 
 ```{r sourcedata.covariates}
-out <- p$data |> dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> 
-  dplyr::ungroup() |> dplyr::select(-c(subjectId, sample))
+out <- p$data |> dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |>
+  dplyr::arrange(id) |> dplyr::select(-c(subjectId, sample, group))
+
 out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/s8e.txt')
 ```
@@ -625,7 +628,8 @@ dev.off()
 ```
 
 ```{r sourcedata.weights}
-out <- p$data
+out <- p$data |>  dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |>
+  dplyr::arrange(id) |> dplyr::select(-c(subjectId, sample, group))
 out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/s8f.txt')
 ```
@@ -659,7 +663,8 @@ a <- rmcorr_plot(m1, m2, lab1, lab2)
 ```
 
 ```{r sourcedata.crp.mono.rmcorr}
-out <- a$data |> dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+out <- a$data |> dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |>
+  dplyr::arrange(id) |> dplyr::select(-c(subjectId))
 
 out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/s9a.txt')
@@ -677,7 +682,8 @@ b <- rmcorr_plot(m1, m2, lab1, lab2)
 ```
 
 ```{r sourcedata.cotinine.hypom.rmcorr}
-out <- b$data |> dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+out <- b$data |> dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |>
+  dplyr::arrange(id) |> dplyr::select(-c(subjectId))
 
 out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/s9b.txt')
@@ -697,7 +703,8 @@ c
 ```
 
 ```{r sourcedata.butyric.prox.rmcorr}
-out <- c$data |> dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+out <- c$data |> dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |>
+  dplyr::arrange(id) |> dplyr::select(-c(subjectId))
 
 out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/s9c.txt')
@@ -722,11 +729,13 @@ e <- rmcorr_plot(m1, m2, lab1, lab2)
 ```
 
 ```{r sourcedata.adapt.damage}
-out <- d$data |> dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+out <- d$data |> dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |>
+  dplyr::arrange(id) |> dplyr::select(-c(subjectId))
 
 out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/s9d.txt')
-out <- e$data |> dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+out <- e$data |> dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |>
+  dplyr::arrange(id) |> dplyr::select(-c(subjectId))
 
 out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/s9e.txt')

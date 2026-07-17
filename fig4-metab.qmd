@@ -142,8 +142,8 @@ dev.off()
 ```
 
 ```{r sourcedata.hydroxy}
-out <-  hydroxy$data |> dplyr::select(visitId, subjectId, value) |> 
-  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+out <-  hydroxy$data |> dplyr::arrange(value) |> dplyr::select(visitId, subjectId, value) |> dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |>
+  dplyr::arrange(id) |> dplyr::select(-subjectId)
 
 out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/4b.txt')
@@ -161,8 +161,8 @@ dev.off()
 
 
 ```{r sourcedata.acetoin}
-out <-  acetoin$data |> dplyr::select(visitId, subjectId, value) |> 
-  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+out <-  acetoin$data |> dplyr::arrange(value) |> dplyr::select(visitId, subjectId, value) |> dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |>
+  dplyr::arrange(id) |> dplyr::select(-subjectId)
 
 out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/4c.txt')
@@ -178,8 +178,8 @@ dev.off()
 ```
 
 ```{r sourcedata.thymine}
-out <-  thymine$data |> dplyr::select(visitId, subjectId, value) |> 
-  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+out <-  thymine$data |> dplyr::arrange(value)|> dplyr::select(visitId, subjectId, value) |> dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |>
+  dplyr::arrange(id) |> dplyr::select(-subjectId)
 
 out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/4d.txt')
@@ -195,8 +195,8 @@ dev.off()
 ```
 
 ```{r sourcedata.lysine}
-out <-  lysine$data |> dplyr::select(visitId, subjectId, value) |> 
-  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+out <-  lysine$data |> dplyr::arrange(value)|> dplyr::select(visitId, subjectId, value) |> dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |>
+  dplyr::arrange(id) |> dplyr::select(-subjectId)
 
 out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/4e.txt')
@@ -263,8 +263,8 @@ dev.off()
 ```
 
 ```{r sourcedata.lact}
-out <-  lact$data |> dplyr::select(visitId, subjectId, value) |> 
-  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+out <-  lact$data |> dplyr::arrange(value)|> dplyr::select(visitId, subjectId, value) |> dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |>
+  dplyr::arrange(id) |> dplyr::select(-subjectId)
 
 out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/4g.txt')
@@ -280,8 +280,8 @@ dev.off()
 ```
 
 ```{r sourcedata.chol}
-out <-  chol$data |> dplyr::select(visitId, subjectId, value) |> 
-  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+out <-  chol$data |> dplyr::select(visitId, subjectId, value) |> dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |>
+  dplyr::arrange(id) |> dplyr::select(-subjectId)
 
 out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/4h.txt')
@@ -298,8 +298,8 @@ dev.off()
 ```
 
 ```{r sourcedata.trim}
-out <-  trim$data |> dplyr::select(visitId, compliance, subjectId, value) |> 
-  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+out <-  trim$data |> dplyr::select(visitId, compliance, subjectId, value) |> dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |>
+  dplyr::arrange(id) |> dplyr::select(-subjectId)
 
 out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/4i.txt')
@@ -316,8 +316,8 @@ dev.off()
 ```
 
 ```{r sourcedata.beta}
-out <-  beta$data |> dplyr::select(visitId, subjectId, value) |> 
-  dplyr::group_by(subjectId) |> dplyr::mutate(id = dplyr::cur_group_id()) |> dplyr::ungroup() |> dplyr::select(-subjectId)
+out <-  beta$data |> dplyr::select(visitId, subjectId, value) |> dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |>
+  dplyr::arrange(id) |> dplyr::select(-subjectId)
 
 out |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/4j.txt')
@@ -465,7 +465,7 @@ hist <- corr |>
                  colour = 'black',fill = 'grey60') +
   theme_bw() +
   theme(panel.grid = element_blank()) +
-  labs(x = 'p value',
+  labs(x = 'P value',
        y = 'n')
 
 saliva.corr.volcano <- corr |> 
@@ -479,7 +479,7 @@ saliva.corr.volcano <- corr |>
   geom_point(alpha = 0.7) +
   scale_size_continuous(range = c(1, 3.5)) +
   scale_colour_viridis_c(option = 'G',end = 0.8,
-                         name = '-log10(p)') +
+                         name = '-log10(P value)') +
   ggrepel::geom_text_repel(aes(label = lab2)) +
   theme_bw() +
   labs(x = 'Correlation', y = '-log10(p value)') +
@@ -517,7 +517,7 @@ hist <- corr |>
                  colour = 'black',fill = 'grey60') +
   theme_bw() +
   theme(panel.grid = element_blank()) +
-  labs(x = 'p value',
+  labs(x = 'P value',
        y = 'n')
 ```
 
@@ -548,10 +548,10 @@ saliva.corr.volcano <- corr |>
   geom_point(alpha = 0.7) +
   scale_size_continuous(range = c(1, 3.5)) +
   scale_colour_viridis_c(option = 'G',end = 0.8,
-                         name = '-log10(p)') +
+                         name = '-log10(P value)') +
   ggrepel::geom_text_repel(aes(label = lab2)) +
   theme_bw() +
-  labs(x = 'Correlation', y = '-log10(p value)') +
+  labs(x = 'Correlation', y = '-log10(P value)') +
   coord_cartesian(clip = 'off',
                   xlim = c(-0.5, 0.5)) +
   guides(size = 'none')
@@ -592,7 +592,7 @@ hist.urine <- corr |>
                  colour = 'black',fill = 'grey60') +
   theme_bw() +
   theme(panel.grid = element_blank()) +
-  labs(x = 'p value',
+  labs(x = 'P value',
        y = 'n')
 ```
 
@@ -610,10 +610,10 @@ urine.corr.volcano <- corr |>
   geom_point(alpha = 0.7) +
   scale_size_continuous(range = c(1, 3.5)) +
   scale_colour_viridis_c(option = 'G',end = 0.8,
-                         name = '-log10(p)') +
+                         name = '-log10(P value)') +
   ggrepel::geom_text_repel(aes(label = lab2)) +
   theme_bw() +
-  labs(x = 'Correlation', y = '-log10(p value)') +
+  labs(x = 'Correlation', y = '-log10(P value)') +
   coord_cartesian(clip = 'off',
                   xlim = c(-0.5, 0.5)) +
   guides(size = 'none')
@@ -638,7 +638,7 @@ hist.urine <- corr |>
                  colour = 'black',fill = 'grey60') +
   theme_bw() +
   theme(panel.grid = element_blank()) +
-  labs(x = 'p value',
+  labs(x = 'P value',
        y = 'n')
 ```
 
@@ -670,10 +670,10 @@ urine.corr.volcano <- corr |>
   geom_point(alpha = 0.7) +
   scale_size_continuous(range = c(1, 3.5)) +
   scale_colour_viridis_c(option = 'G',end = 0.8,
-                         name = '-log10(p)') +
+                         name = '-log10(P value)') +
   ggrepel::geom_text_repel(aes(label = lab)) +
   theme_bw() +
-  labs(x = 'Correlation', y = '-log10(p value)') +
+  labs(x = 'Correlation', y = '-log10(P value)') +
   coord_cartesian(clip = 'off',
                   xlim = c(-0.5, 0.5)) +
   guides(size = 'none')

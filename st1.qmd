@@ -91,7 +91,8 @@ et1 <- df |>
   gtsummary::add_overall() |> 
   gtsummary::bold_labels() |> 
   modify_header(update = all_stat_cols() ~"<b>{level}</b><br>n = {n}") |> 
-  modify_header(update = stat_0 ~ "<b>{level}</b><br><br>n = {n}")
+  modify_header(update = stat_0 ~ "<b>{level}</b><br><br>n = {n}") |> 
+  modify_header(update = p.value ~ "<b>P value</b>")
 
 
 et1 <- et1 |> 

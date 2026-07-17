@@ -546,7 +546,7 @@ dat1 <- as.data.frame(out_lmm$`Higher compliance only with packyears`) %>%
   filter(str_detect(x, exp))
 dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
 
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- as.data.frame(longForm(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
 dat2 <- dat2 |>
   dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
   
@@ -572,7 +572,7 @@ dat1 <- as.data.frame(out_lmm$`Higher compliance only with packyears`) %>%
   filter(str_detect(x, exp))
 dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
 
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- as.data.frame(longForm(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
 dat2 <- dat2 |>
   dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
   
@@ -688,7 +688,7 @@ dat1 <- as.data.frame(out_lmm$`Higher compliance only with packyears`) %>%
   filter(str_detect(x, exp))
 dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
 
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- as.data.frame(longForm(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
 dat2 <- dat2 |>
   dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
   
@@ -714,7 +714,7 @@ dat1 <- as.data.frame(out_lmm$`Higher compliance only with packyears`) %>%
   filter(str_detect(x, exp))
 dat1$x = gsub(paste0(exp,"_"),"",dat1$x)
 
-dat2 <- as.data.frame(longFormat(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
+dat2 <- as.data.frame(longForm(data[,,exp], colData = c("interventionId", "subjectId", "visitId",'compliance')))
 dat2 <- dat2 |>
   dplyr::filter(interventionId=='S' & !visitId %in% c("M12", "M18")) |>
   
@@ -1797,7 +1797,7 @@ p
 
 :::
   
-  ## Predicted KO
+## Predicted KO
   
   * for the first four models only rows with adjusted p-value < 0.05 for the interaction term are kept
 * for the last two high compliance models only rows with adjust p-value < 0.05 (time terms) are kept
@@ -2270,15 +2270,13 @@ dev.off()
 ```
 
 ```{r sourcedata.selbal}
-out1 <- p1$data |> dplyr::select(-sampleId)
+out1 <- p1$data |> dplyr::ungroup() |> dplyr::select(-sampleId)
 out1 |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/5c.boxplots.txt')
 
 out2 <- p2$data |> 
-  dplyr::group_by(subjectId) |> 
-  dplyr::mutate(id = dplyr::cur_group_id()) |> 
-  dplyr::ungroup() |> 
-  dplyr::select(-c(subjectId, primary))
+  dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |>
+  dplyr::arrange(id) |> dplyr::select(-c(subjectId, primary))
 
 out2 |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/5c.longitudinal.txt')
@@ -2467,10 +2465,8 @@ out1 |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/5d.boxplots.txt')
 
 out2 <- p2$data |> 
-  dplyr::group_by(subjectId) |> 
-  dplyr::mutate(id = dplyr::cur_group_id()) |> 
-  dplyr::ungroup() |> 
-  dplyr::select(-c(subjectId, primary))
+dplyr::mutate(id = match(subjectId, sample(unique(subjectId)))) |>
+  dplyr::arrange(id) |> dplyr::select(-c(subjectId, primary))
 
 out2 |> write.table(quote = F, sep = "\t", row.names = F, col.names = T,
                    file = 'srcdata/5d.longitudinal.txt')
