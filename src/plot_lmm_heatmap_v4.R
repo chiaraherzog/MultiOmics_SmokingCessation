@@ -178,14 +178,14 @@ plot_lmm_heatmap_v4 <- function(lmm_data_time,
     border = T
   )
   
-    full_df <- cbind(tmp$x,
-                     tmp[,ind_est], tmp[,ind_p])
-    
-    out <- list(val = tmp[,ind_est],
-                pval = tmp[,ind_p],
-                plot = p,
-                full_df = full_df)
-
+  full_df <- cbind(tmp$x,
+                   tmp[,ind_est], tmp[,ind_p])
+  
+  out <- list(val = tmp[,ind_est],
+              pval = tmp[,ind_p],
+              plot = p,
+              full_df = full_df)
+  
   
   return(out)
   
